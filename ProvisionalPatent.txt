@@ -1,0 +1,277 @@
+﻿PROVISIONAL PATENT FOR
+
+
+Latent space classifier for the purposes of preferential generative data, targeted modification of data, similarity matching and scoring
+
+
+BACKGROUND
+
+
+Field of the Invention:
+
+
+* Applicable to, but not limited to, personal dating, entertainment, graphic design tools, music generation, beauty, makeup styling, clothing, and interior decorating.
+
+* Generating an artificial representation of a desired outcome based on the learned preferences of a user
+
+
+   * Representations of data could be, but not limited to, such things as music, images, videos, recipes, 3D models, behavior, layout, stories, genetic information. 
+
+   * Creating analytical model(s) of a users preferences based on data obtained by the labelling of artificially generated representations, which can be used for targeted artificially generated representations, for the matching/scoring of real-world representations, or for the targeted modification of data.
+
+   * Matching, scoring, or transforming a generated or non-generated input using the analytical model
+
+
+      * The tools, process, and application of the classification [or analytical modeling] of the latent space within a GANS [or autoencoder] model (generative adversarial neural network) 
+
+      * Generating an artificial representation of data to a specified measure of classified model accuracy for the purpose of further training data 
+
+      * Modifying or transforming a non-artificially generated input to a specified classification accuracy based on learned preferences
+
+      * The mobile, web, voice-assistant, desktop application and interface designs used for training of artificially generated representations of data 
+
+
+
+
+
+
+Description of the Related Art:
+
+
+         * Generative models exist that allow users to adjust sliders that represent classified attributes resulting in different generated outputs. These tools offer users rigid options and a fixed set of adjustable attributes that must be changed directly to obtain a desired outcome. Not all desired outcomes may easily be accessible or at accessible at all with this method.
+
+
+         * Converting an image into a latent space, such as with an autoencoder, is possible, however using solely the latent space to classify or score the input image is not obvious or common practice with the task of image classification.
+
+         * Tools to rate a person’s photo as hot or not exist, which uses a community of people to manually rate a person’s photo. Leveraging neural networks to judge a person’s attractiveness is also undergoing investigation using labels applied to real human photos as training data
+
+         * Dating applications like Tinder or Match do not primarily utilize machine learning analysis of image contents for matching or determination of user preferences. General community consensus as to whether an image is attractive or not is commonly used, which has limited transferable use and ignores the content of the image. Desirable physical attributes require manually specified labels by users and are generally not obtained from within images.
+
+         * Generation of a custom image using existing GANS or autoencoder models is often by trial and error or by changing the value of a limited set of classes.
+
+         * Beauty makeup providers or hair salons may offer examples of generated styles in a catalog, but it is up to the artist to generate a representation and interpretation of what a customer may have selected from the catalogs. 
+
+         * Merging of two latent spaces to generate a latent space representing a bit of both in a hybrid sense is being experimented with recently by the community, but this is different than training a model, particularly when using larger data sets or when trying to create a representation that is better than just the sum of its parts.
+
+
+SUMMARY
+
+
+            * In one embodiment of the present invention, a user should be able to have an artificially generated ideal representation of their preferences based on prior training, be it from training on real representations or artificially generated representations.
+
+            * In another embodiment of the present invention, latent-space or encoded versions of data representations (the data), can be classified [clustered] by means of user training indirectly by means of labelling the data representations rather than the encoded data.
+
+            * In another embodiment of the present invention, a users trained model can be used to match or score similarity to other data, either data based on real or generated data representations. For example, useful in a dating application.
+
+
+
+
+BRIEF DESCRIPTION OF THE DRAWINGS
+
+
+               * Fig 1. An example of an autoencoder or GANS model for images, where there is an encoding and decoding stage. 
+
+The latent space may, for example, have a dimensional size of 512x1, where as an image (output or input) may have a dimensional size of 1024x1024x3.
+
+Encoders and Decoders are typically domain-specific. In this figure, it is for photos of persons. A photo of a person can be encoded down to a latent space, and that latent space can be stored, classified, or decoded back into an appropriation of the original input image.
+
+It may be possible to essentially switch out encoders or decoders for different ones in a GANS model, resulting in a style transfer, implying latent space representations can be varied despite constant latent space data.
+
+
+                  * Fig 2. Random input fed into the latent space can generate a valid, yet also random, generated image; in this case, a face.  GANS models use a discriminator model typically to ensure the decoder will always generate a realistic face, even if given random input.
+
+Training a GANS model on a limited set of data can result in the later generation of near endless synthetic images. These synthetic images can be used in place of original images for training data generation for latent-space classification. It also is useful in a dating-app situation where original user images may wish to be kept private, or in the case of music/artwork, copyrights on the originals may be limiting.
+
+
+                     * Fig 3. It may be desirable in stages of training a latent space model to generate training data that is less random and more targeted. For example, if generating a latent-space classification model that will represent your ideal sexual preference of a face, a user might get bored of training the model if nearly every face presented is ugly. Weighting the latent input, based on known bias, perhaps from the actively training model, can ensure the training data set is presented with a more balanced or interesting set of data representations. ie: Half ugly, half attractive.
+
+
+                     * Fig 4. When a classifier is complete, latent space data can be generated that reflects a 100% ideal personal representation. This data can be generated using the decoder. Each user who trains a classification model, using the same GANS model (or autoencoder, or such), can obtain their own classification model and hence, will have their own unique data representation of a 100% match. 
+
+There may be more than one ideal representation depending on the type of classification model. Multiple classes can be represented by a classifier; it does not need to be one or another, but it can consist of a spectrum of many choices or multiple choices. 
+
+
+                        * Fig 5. Multiple users can train their own models, and those models or the data from those training sessions can be used to create an analytical model representing the group’s preferences. 
+
+If trained as a classifier, a data representation can be created that best matches the group’s preferences in some way; such as as a mean or median average. 
+
+
+                           * Fig.6. If an input image is encoded into a latent space, the classifier can make a prediction, and provide a measure of accuracy/weight. 
+
+In this example, a gender classifier is used to predict the gender of a person within a photo and to what degree. For a dating app, a single classifier might be used to detect gender via a single latent-space classifier, but each user on the system might have their own to score the personalized physical appeal of other users on the platform. 
+
+This personalized physical rating and matching can help surface potential matches on a dating site without exposing personal photos of an individuals to the public at large. 
+
+
+                              * Fig 7. Using a latent space classifier to transform a data representation towards scoring higher.
+
+A user might wish to transform their appearance to become more attractive to another individual or group. Using a latent space classifier trained for beauty by that group or individual, the user may encode their own face into a latent space and nudge their latent space representation to classifier better as beautiful. 
+
+Minimizing changes to the latent space or it’s perceptual data representation, while maximizing the classification shift, can allow a user to see what physical changes they can make on their own face to become more attractive.
+
+For women, this might be obtainable by means of a recommended makeup style or coloring. This can also be applied to not just faces, but interior decorating, cars, music, and more.
+
+An exciting application in advertising or news is perhaps custom ads or news stories tailored towards the way a particular user has shown interest in past ads or news stories. The ad or news headline does not need to be filtered; just transformed to be more preferential to that user.
+
+                              * Fig. 8. An example workflow of how there may be many classifiers, each personalized, allowing for the filtering or matching of inbound data. 
+
+This would work for dating applications, but it could work for advertising and music recommendations as well. You cannot generate a real person, so unlike generating a custom headline, filtering or ranking is still valuable.
+
+
+                                 * Fig. 9.  Generating a face of the person most likely to find you attractive as an example workflow. Since dating is a two-way game, finding a mutual match is a valuable endeavour. It is also useful to allow a user to garner insights into who they are attracting. This could also apply to advertisers.
+
+                                 * Fig 10.  Basic workflow of a simple entertainment application for generating an artificially generated portrait of a most-attractive person. Uses a GANS model trained on a dataset of real faces to generate artificial portraits for user training. Training data can be optimized during the training to ensure the training set is balanced between attractive and unattractive faces, etc
+
+This workflow can be applied to makeup, cars, interior design, music, and more, assuming the GANS model (autoencoder, etc) were trained for that domain also.
+
+The training data does not need to be artificially generated, as it can be non-generated. It can also be a mix of random and non-randomly generated data. Generated images can be created and stored ahead of time, or created on the fly.
+
+Filtering of pre-generated or real photos on demand may be needed if training demands so, but this is not depicted in this diagram.
+
+
+                                    * Fig 11. An example interface for training data. Options to skip, undo, and label between binary data options. The image would change to the next image in the data set upon selecting an option.
+
+
+                                    * Fig 12. A simpler interface, more for mobile, with options to swipe to train exist. Photo likely a generated image, either random, curated, or custom generated.
+
+                                    * Fig. 13. Options for a simple binary classifier does not need be just binary options. A sliding scale of value, from 0.0 to 1.0 for example, such as 0.5 being a possibly value, would work too.. 1 to 10 is another example of this.
+
+Numerous categories can also exist; “Kiss, Marry, Kill” as the theme for an entertainment app would require three classes for example, where three generated ideal outcomes could be generated -- one for each class.
+
+                                    * Fig. 14. Pick between two images is an example of another interface option for training.
+
+                                    * Fig 15. Same concept as Fig 14, but with 4 options to pick from. This may accelerate the training process by forcing labeling of positive matches.
+
+                                    * Fig 16. Upon completion of training, a user may be able to swipe through a generated deck of images that all have a high level of class accuracy. 
+
+                                    * Fig 17. Mentions an example of a latent space classifier. Uses dense layers in a neural network, with bias and weights, to form the classifier, to which is also easily reversible to form an ideal classification match. Quick to train and perhaps more accurate than an SVM method. 
+
+Speed and accuracy are important aspects for a classifier here, as a model needs to train quick, can’t fall prey to over-fitting, and needs to be accurate.
+
+
+                                       * Fig. 18. Mentions how on-the-fly generated images can be used to speed up the training process by providing more relevant training data to the user. The more the classifier knows about the user, the more deliberate the training queries can become.  Users do not have much patience while training so an emphasis on accelerating this process is of importance. This is perhaps one method of achieving a speed up, although it perhaps comes at an added compute cost.
+
+                                       * Fig. 19. An example of how two different domains can be trained to share the same latent space. In this example, DNA can be used to generate a photo of a person based on enough training data. 
+
+With this concept applied to latent-space classification, one can indirectly classify DNA by means of classifying the latent space of images.
+
+
+
+DETAILED DESCRIPTION
+
+
+The invention centers around the classification or clustering of the encoded representation (latent space) of a data set, rather than on the raw data.
+
+
+Unlike with raw data, latent space data for training purposes can be created in near endless quantities, even representing data that may not be available with raw data alone. It can also be generated with preferential features, improving the speed at which one might label data needed to train a classifier by creating a more relevant training dataset.
+
+Using the decoder from a generative adversarial network will produce realistic results regardless of input value, even if that input is of a randomly generated latent space. What is generated by the decoder can also be ensured to not represent any of the real raw training data used to create the decoder, which is useful for enhancing privacy and avoiding potential copyright issues.
+
+
+Training a classifier of the latent space can be a more efficient method than trying to classify the raw images directly. The latent space data often contains less data than the raw data, but its data is more dense in value for a classifier. While methods such as PCA, ICA, SVM, k-means, random forest, and convolutional neural networks can offer effective classification or clustering of labelled latent space data, a single dense layer neural network with sigmoid activation has shown promising results. It provides fast on-demand training times, competitive model accuracies, and very fast inference speeds. Other methods of classifying, clustering, or vector quantization would still be a reasonable substitute as it applies to this invention.
+
+
+While classifying a latent space vector with such a trained classifier is a valuable function, it is not the sole purpose. Inverting the process of classification, going from a targeted desired accuracy of classes in a model, and generating a latent space representation that meets that desired accuracy, is also of core importance to this invention. Figure 10 depicts an example workflow of where this is useful.
+
+Reversing the classification can be used in conjunction with the decoder to generate idealized yet still realistic variations of the original raw data the decoder was trained on. Many variations of the data can be generated, particularly for if the classifier has been trained on many class types, if multiple latent spaces generated from different classifiers are merged to represent their average expression, if random noise is added to a generated latent space, or some allowance on error is provided on the reverse classification. There are many possible latent space variations if the desired accuracy for them is to match, lets say, 99-percent instead of a solid 100-percent.
+
+
+This reverse classification of a latent space using a latent-space classifier is useful in many fields, such as entertainment, beauty, music, text, 3D modeling, interior design, makeup, and advertising. Training a generative adversarial network or the like is a required step for domains of interest, but once a decoder for a latent space is obtained, near endlessly generated data is available. Reversing a single-layer dense layer neural network classifier is particularly easy and fast.
+
+After the labeling step of a latent-space classifier is complete, the decoded outputs of the latent-space training data may no longer be needed. Since the latent space is commonly of smaller size than the decoded outputs, training datasets do not take up as much room in data storage or potentially can use less system resources during training. The decoded outputs would still be retrievable however if required by simply undergoing the decoding step on a store latent-space.
+
+Generating a song that is trained to be appealing based on the preferences given to a set of artificially generated songs using the described latent space classification technique is promising, however it may be valuable to still train an initial classifier based on the latent space representations of real data samples, such as songs liked in an existing song playlist. The latent spaces representing real world data is a viable source for latent space data, along with their existing training labels. Songs artificially generated thereafter can be used to further and continuously improve the training data set of latent space, resulting in even further improved personalization accuracies. 
+
+Given how not all generated outputs are tangible, such as a photo of generated face does not represent a tangible person, a latent-space classifier can still be useful in the computationally efficient classification of real world data, based on their latent representations. 
+
+For example, a user of a dating website may upload their photos to the service, which in turn generates a latent space representation of their face that is stored. Other users on the dating website may have already trained a personalized latent-space classifier to provide the dating site with their visual preferences of different faces. Training of this classifier could be completed with generated faces rather than real ones, ensuring the privacy of users on the platform, but the training data does not need to be exclusively obtained from generated latent-space representations. 
+
+
+The user who uploaded their photo may then have their face classified by other user’s classifiers on the platform, or perhaps a set of generalized representative models. The results from this mass classification could be used to help create matches between users on the platform. User profiles containing real images could perhaps be mutually revealed to a set of matched users on the dating site, assuming the classifier determined their mutual appeal rating was high enough. In this example, real world images were used with the latent-space classifier that was trained using primarily generated latent-space representations.
+
+Another scenario where the latent space classifier would be of value is in the transformation of real world images, resulting in a hybrid of generated and real representations. For example, a makeup app can be used to apply generated makeup to a photo of a real face. The real face would be encoded to a latent space, and based on the classifier and amount of shift in accuracy of a classification accuracy, that latent space would be modified so that the amount of change needed is minimized relative to the amount of improvement to classification score is achieved. When that modified latent space representation is converted back into an image with the decoder, the user may see a change towards their initial photo. For example, they may have an increased amount of makeup applied to their appearance, varying based on the classification target set. The makeup app may use that adjusted latent space information with its own classifier, which can perhaps be used to recommend products needed to achieve that affect in real life.
+
+Interfaces of training latent space data and efficient techniques for training of latent space generated data is also of importance. Simple examples for image labelling interfaces are provided, such as figures 11 to 15. During labelling it may be desired to use pre-generated data representations to reduce computation costs. It may also be desirable to generate data representations (ie, images) during training to help speed up latent space classification training by generating representations that have the greatest impact on accuracy if labelled.
+
+One such method of producing generated data on the fly is seen in Figure 18. If using a GPU for generation of training images, it perhaps may be preferable to generate such custom images in a batch size to maximize compute efficiency rather than one at a time. This may entail that a user label data in batches, with each batch reflecting an updated and retrained latent-space classifier.
+
+Testing training accuracy with split labelled data sets can help provide a user feedback as to the progress of their labelling efforts or the accuracy of their generated ideal decoded output. A generated image that is based on a 100-percent classification match may only be as good as the accuracy of that model, so both factors may need to be considered in achieving desired results.
+
+While classification is used to define the method of determining a near 100-percent ideal latent space result, there may be cases where there are numerous maximas in a training model that can reflect a 100-percent match. Clustering techniques, gradient vector analysis, k-means, and other analytical techniques may provide better results than a simple single layer dense neural network classifier depending on application.
+
+A swiping interface is a desirable method of labelling data quickly and with enough labelling with this approach, a latent-space classification model can quickly obtain seemingly deep and personalized insights that take into account numerous attributes; some of which may not even be describable with words. Added classes, options to skip, or a spectrum of choice are viable features as well in a photo labelling tool, providing data that can be used to train a classification model.
+
+Audible labeling of data is a viable option too, such as is the case with perhaps music. Mobile, desktop, laptop, web, or kiosk are also devices that can operate as data collection interfaces. Behavioural data may be labelled through other actions, such as surveillance, and not all data may be human-derived either.  DNA data can be a source of training data, which may see data derived for training by sensors, health reports, or more. Human-machine brain interfaces also offer an opportunity to gather data.
+
+
+CLAIMS
+
+
+The following claims and subclaims are hoped to be taken each as independent valid claims if possible, however combining certain claims to narrow the scope to what is an acceptable claim if needed is the desired fallback. Dismissing or integrating subclaims is preferential to dismissing a claim in its entirety. Obviously I’d like to claim as much as possible, including what has been presented in the other sections, but for this provisional I hope to be able to capture as much of the invention(s) as reasonable.
+
+
+                                          * The training and/or use of a classifier (clustering) model that uses latent space data (encoded data) and relevant labelling data for the training data and subsequent classification.
+                                          * latent space from a GANS model if specific
+                                          * unsupervised clustering techniques may not need labelling data for latent space data, but instead for the labelling of generated clusters
+
+                                             * Reverse Latent-space classifier for purposes of generation or transformation 
+                                             * clustering, k-means, cnns, vector quantizer are possible substitutes for a classifier.
+                                             * A reverse classifier can be modified from the function of a classifier to no longer be useful as a classifier, such as
+                                             * during the generation of a 100-percent classification latent space data generator
+                                             * or one that generates a variety of numerous latent space outputs
+                                             * or one that generates an ideal result for training data purposes
+                                             * or one that generates noisey results for added variance.
+                                             * or one that generates results for improving labelling performance
+                                             * Can be used to generate a resultant latent space that would achieve a desired accuracy or classification according to the classifier
+                                             * ideal result or variations of a class type
+
+
+                                             * Multiple reverse classifiers can be used in combination to create a single latent space that achieves a specified class accuracy for each classifier. 
+                                             * reverse classifiers may not be usable as a regular classifier with applied changes
+                                             * combining of latent spaces from multiple reverse classifiers can be achieved if without needing to preserve desired accuracy
+
+                                                * Transforming the latent space data derived from non-generated data based on a latent-space classifier, vector quantizer, or clustering model.
+                                                * Minimizing the latent space change or decoded perceptual change to a minimum while maximizing or achieving the requested transformation
+                                                * Targeted amounts of change based on latent-space classification accuracies or amount of latent-space change / perceptual change desirable.
+
+                                                   * Decoding of said reverse classifier derived latent space data
+
+                                                   * Generating decoded data from generated latent space data for purposes of labeling
+                                                      * optimizing training or labelling times or focusing on class requirements
+                                                      * increasing amount of training data available for labelling
+
+                                                         * A system or method or tool to ensure generated data produced from the latent space is not similar or matching the original data set used to generate the decoder and / or encoder
+                                                         * tool or system used to measure similarity to that data used to train the GANS model
+                                                         * compares latent space data of training data to latent space of generated data for this determination or calculation
+                                                         * Used for purposes of privacy, concealment, anonymization, copyright avoidance, data infringement avoidance
+                                                         *                                                          * A system or tool to ensure training data generated data or raw data is variant enough that it is not considered a duplicate during training/labelling of data.
+                                                         * method to ensure latent space generated data for purposes of labelling is not duplicated 
+
+
+                                                         * A tool or model designed for latent space data that is trained using perceptual similarity scores of decoded latent-space values to predict whether two latent space values are perceptually similar
+                                                         * scoring or classification as an output is possible
+                                                         * can be used for creating training data sets more efficient
+                                                         * can be used to help the transformation of a latent space to efficiently judge how much perceptual change may happen by a change to the latent space.
+                                                         * can be used to simply judge or score the perceptual similarity of two latent spaces efficiently; not just for optimizing training
+
+                                                            * Training a classifier for use on latent space data that was labeled using decoded representations of latent space data
+                                                            * applicable to generated latent data and latent data encoded from raw data
+
+                                                               * Classification of data using its encodings in a latent-space classifier
+
+
+                                                               * Not exclusively limited to, but includes the application of the above towards music generation, makeup and beauty transformation, personal relationship matching, personalized face or body generator for entertainment or character casting, car design, 3D modeling, interior decorating, custom DNA design, behavioural decisions, video generation, 
+
+
+
+
+
+
+ABSTRACT
+
+
+Modern neural networks have enabled the possibility to generate realistic data from a previously trained data set. The invention(s) described in this provisional patent leverages the encoded data layer of such modern neural networks, such as GANS models, to make the process of generating a desired data outcome efficient, effective, and perhaps entertaining.
+
+The tools described can also be used for efficient and automated filtering, ranking and matching of data to a user’s preferences, based on leveraging the latent space of the data for modeling and matching.
+
+Other inventions proposed in this document include tools, methods, interfaces, and use cases.
