@@ -192,6 +192,7 @@ body {
 /* Sections */
 .section {
     padding: 4rem 2rem;
+    overflow-x: hidden;
 }
 
 .section-dark {
@@ -456,6 +457,24 @@ code {
 
 .tab-content.active {
     display: block;
+}
+
+/* Code blocks */
+pre {
+    overflow-x: auto;
+    background: #1E293B;
+    color: #E2E8F0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
 }
 
 /* CTA Section */
@@ -1047,8 +1066,29 @@ code {
     
     /* Code blocks */
     pre {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         overflow-x: auto;
+        padding: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    code {
+        font-size: 0.75rem;
+    }
+    
+    /* Tabs */
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .tab-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     
     /* Tables */
