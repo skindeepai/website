@@ -94,6 +94,17 @@ if (latentCanvas) {
 // 2D Latent Space Navigation Demo - Batch Generation & Refinement
 const demo2DCanvas = document.getElementById('demo2D');
 if (demo2DCanvas) {
+    // Set canvas size responsively
+    function resizeCanvas() {
+        const container = demo2DCanvas.parentElement;
+        const maxWidth = Math.min(600, container.clientWidth - 32); // 32px for padding
+        demo2DCanvas.width = maxWidth;
+        demo2DCanvas.height = Math.min(400, maxWidth * 0.67); // Maintain aspect ratio
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
     const ctx = demo2DCanvas.getContext('2d');
     let animationId = null;
     let isRunning = false;
@@ -575,6 +586,17 @@ const sampleGrid = document.getElementById('sampleGrid');
 const learningCurveCanvas = document.getElementById('learningCurve');
 
 if (sampleGrid && learningCurveCanvas) {
+    // Set canvas size responsively
+    function resizeLearningCanvas() {
+        const container = learningCurveCanvas.parentElement;
+        const maxWidth = Math.min(400, container.clientWidth - 32);
+        learningCurveCanvas.width = maxWidth;
+        learningCurveCanvas.height = Math.min(200, maxWidth * 0.5);
+    }
+    
+    resizeLearningCanvas();
+    window.addEventListener('resize', resizeLearningCanvas);
+    
     let samples = [];
     let ratings = [];
     let accuracy = [];
