@@ -115,7 +115,10 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">PLGL</div>
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="how-it-works.html" class="active">How It Works</a></li>
@@ -126,6 +129,8 @@
                 <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
                 <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
             </ul>
+			
+			<button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
 
@@ -434,10 +439,10 @@
         <!-- Interactive Demo: 2D Preference Learning -->
         <div class="concept-card">
             <h2>Try It Yourself! 🎮</h2>
-            <p>Click on the space below to indicate what you like (👍) and dislike (👎). Watch how the AI learns your preferences and finds your ideal spot!</p>
+            <p>Click or tap on the space below to indicate what you like (👍) and dislike (👎). Watch how the AI learns your preferences and finds your ideal spot!</p>
             
             <div class="interactive-demo">
-                <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair;"></canvas>
+                <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair; -webkit-tap-highlight-color: transparent; touch-action: none; user-select: none; -webkit-user-select: none;"></canvas>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                     <button onclick="setRatingMode('like')" id="likeBtn" class="btn btn-primary" style="background: #10B981;">
@@ -618,10 +623,24 @@
             status.textContent = mode === 'like' ? 'Click to add likes 👍' : 'Click to add dislikes 👎';
         }
         
-        canvas.addEventListener('click', (e) => {
+        function handleCanvasInteraction(e) {
+            e.preventDefault(); // Prevent scrolling on touch
             const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            let x, y;
+            
+            if (e.touches && e.touches.length > 0) {
+                // Touch event
+                x = e.touches[0].clientX - rect.left;
+                y = e.touches[0].clientY - rect.top;
+            } else {
+                // Mouse event
+                x = e.clientX - rect.left;
+                y = e.clientY - rect.top;
+            }
+            
+            // Scale coordinates if canvas has been resized
+            x = x * (canvas.width / rect.width);
+            y = y * (canvas.height / rect.height);
             
             samples.push({
                 x: x,
@@ -631,7 +650,10 @@
             
             drawScene();
             updateStatus();
-        });
+        }
+        
+        canvas.addEventListener('click', handleCanvasInteraction);
+        canvas.addEventListener('touchstart', handleCanvasInteraction);
         
         function drawScene() {
             // Clear canvas
@@ -812,6 +834,35 @@
         
         // Initial draw
         drawScene();
+		
+		// Mobile menu toggle
+		function createMobileMenu() {
+			
+			if (nav.querySelector('.mobile-menu-toggle')){
+				if (window.innerWidth > 768){
+					nav.querySelector('.mobile-menu-toggle').remove();
+				}
+				return;
+			} else if (window.innerWidth > 768){
+				return;
+			}
+			
+			const nav = document.querySelector('.navbar');
+			const menuButton = document.createElement('button');
+			menuButton.className = 'mobile-menu-toggle';
+			menuButton.innerHTML = '☰';
+			
+			menuButton.addEventListener('click', () => {
+				document.querySelector('.nav-menu').classList.toggle('mobile-active');
+			});
+			
+
+			nav.querySelector('.nav-container').appendChild(menuButton);
+		}
+
+		window.addEventListener('resize', createMobileMenu);
+		window.addEventListener('load', createMobileMenu);
+
     </script>
 </body>
 </html>

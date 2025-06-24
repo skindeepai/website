@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Design with PLGL - Personalized Visual Creation</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../how-it-works.html">How It Works</a></li>
+                <li><a href="../index.html#applications">Applications</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li><a href="../getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="section-title">🎨 Art & Design with PLGL</h1>
+            <p class="section-subtitle">Generate personalized artwork by learning from visual preferences - no artistic skills required</p>
+            
+            <div class="concept-card" style="margin: 2rem 0;">
+                <h2>The Original Application: SkinDeep.ai (2018-2019)</h2>
+                <p style="font-size: 1.1rem; color: var(--accent-color); margin: 1rem 0;">
+                    "Perfection is just a few swipes away"
+                </p>
+                <p>PLGL was pioneered at SkinDeep.ai for personalized face generation using StyleGAN. Users would rate generated faces with simple swipes, and the system would learn their preferences to generate their "perfect" face - all without any prompting or description.</p>
+            </div>
+
+            <div class="concept-card">
+                <h2>How Visual PLGL Works</h2>
+                
+                <h3>1. StyleGAN Integration</h3>
+                <p>The original implementation used StyleGAN's 512-dimensional latent space. Each point in this space represents a unique image:</p>
+                
+                <pre><code class="language-python"># Original SkinDeep.ai approach (simplified)
+import numpy as np
+from sklearn.svm import SVC
+
+class VisualPreferenceLearner:
+    def __init__(self, generator, latent_dim=512):
+        self.generator = generator  # StyleGAN
+        self.latent_dim = latent_dim
+        self.samples = []
+        self.ratings = []
+        
+    def generate_image(self, z=None):
+        """Generate image from latent code"""
+        if z is None:
+            z = np.random.randn(1, self.latent_dim)
+        
+        # StyleGAN generation
+        image = self.generator.run(z, None, 
+                                   truncation_psi=0.7,
+                                   randomize_noise=False)
+        return image[0]</code></pre>
+
+                <h3>2. Simple Binary Feedback</h3>
+                <p>Users provide feedback through intuitive actions - no complex rating scales:</p>
+                
+                <pre><code class="language-python">def collect_preferences(self, n_samples=100):
+    """Collect user preferences through swipe interface"""
+    for i in range(n_samples):
+        # Generate diverse samples
+        z = np.random.randn(1, self.latent_dim)
+        image = self.generate_image(z)
+        
+        # User swipes left (dislike=0) or right (like=1)
+        rating = get_user_swipe(image)
+        
+        self.samples.append(z)
+        self.ratings.append(rating)
+        
+        print(f"Sample {i+1}: {'Liked' if rating else 'Disliked'}")</code></pre>
+
+                <h3>3. SVM Classifier for Preferences</h3>
+                <p>A Support Vector Machine learns the boundary between liked and disliked images in latent space:</p>
+                
+                <pre><code class="language-python">def train_preference_model(self):
+    """Train SVM classifier on latent space"""
+    X = np.array(self.samples).reshape(-1, self.latent_dim)
+    y = np.array(self.ratings)
+    
+    # SVM works well in high-dimensional latent spaces
+    self.classifier = SVC(kernel='rbf', probability=True)
+    self.classifier.fit(X, y)
+    
+    accuracy = self.classifier.score(X, y)
+    print(f"Preference model accuracy: {accuracy:.2%}")</code></pre>
+
+                <h3>4. Reverse Classification™</h3>
+                <p>The key innovation: compute the optimal latent vector directly from the trained classifier:</p>
+                
+                <pre><code class="language-python">def reverse_classify(self, target_score=0.99):
+    """Find latent vector that maximizes preference score"""
+    # Get SVM weights and bias
+    weights = self.classifier.coef_[0]
+    bias = self.classifier.intercept_[0]
+    
+    # Initialize output
+    optimal_z = np.zeros(self.latent_dim)
+    
+    # Compute optimal value for each dimension
+    # This is the "reverse" of classification
+    x = np.log(target_score / (1 - target_score)) - bias
+    
+    for i in np.random.permutation(self.latent_dim):
+        y = x / weights[i]
+        
+        if abs(y) >= 1.0:
+            # Clip to valid range
+            optimal_z[i] = np.sign(y) * 1.0
+            x -= weights[i] * optimal_z[i]
+        else:
+            # Final dimension
+            optimal_z[i] = y
+            break
+    
+    return optimal_z</code></pre>
+
+                <h3>5. Batch Generation Strategy</h3>
+                <p>Generate diverse samples while focusing on high-preference regions:</p>
+                
+                <pre><code class="language-python">def generate_batch(self, n_samples=64, exploitation_ratio=0.7):
+    """70% exploitation (refine preferences) + 30% exploration"""
+    batch = []
+    
+    n_exploit = int(n_samples * exploitation_ratio)
+    n_explore = n_samples - n_exploit
+    
+    # Exploitation: Generate near high-confidence regions
+    for _ in range(n_exploit):
+        z = np.random.randn(1, self.latent_dim)
+        
+        # Only keep if predicted preference is high
+        score = self.classifier.predict_proba([z])[0, 1]
+        if score > 0.7:
+            batch.append(z)
+    
+    # Exploration: Random samples for diversity
+    for _ in range(n_explore):
+        z = np.random.randn(1, self.latent_dim)
+        batch.append(z)
+    
+    return batch</code></pre>
+            </div>
+
+            <div class="concept-card">
+                <h2>Modern Applications</h2>
+                
+                <div class="app-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="app-example">
+                        <h3>🎨 Digital Art Creation</h3>
+                        <p>Generate artwork matching your aesthetic preferences without describing styles or using prompts.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🏠 Interior Design</h3>
+                        <p>Create room designs by rating examples - the AI learns your style preferences.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>👗 Fashion Design</h3>
+                        <p>Design clothing and accessories that match personal style through simple ratings.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🎯 Logo Generation</h3>
+                        <p>Create brand logos by rating designs - no need to describe abstract concepts.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🖼️ NFT Collections</h3>
+                        <p>Generate cohesive NFT collections that match collector preferences.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>📱 Avatar Creation</h3>
+                        <p>Design personalized avatars through preference learning instead of sliders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h2>Implementation with Modern Models</h2>
+                <p>PLGL works with any generative model that has a latent space:</p>
+                
+                <pre><code class="language-python"># Example with Stable Diffusion
+class StableDiffusionPLGL:
+    def __init__(self, sd_pipeline):
+        self.pipeline = sd_pipeline
+        self.latent_dim = 4 * 64 * 64  # SD latent shape
+        
+    def generate_from_latent(self, latent):
+        """Generate image from latent code"""
+        # Reshape to SD format
+        latent = latent.reshape(1, 4, 64, 64)
+        
+        # Decode through VAE
+        with torch.no_grad():
+            image = self.pipeline.vae.decode(latent)
+            
+        return self.pipeline.image_processor.postprocess(image)[0]
+    
+    def navigate_latent_space(self, direction, step_size=0.1):
+        """Move through latent space in preference direction"""
+        return self.current_latent + direction * step_size</code></pre>
+            </div>
+
+            <div class="concept-card">
+                <h2>Key Advantages for Visual Creation</h2>
+                
+                <ul style="font-size: 1.1rem; line-height: 1.8;">
+                    <li><strong>No Prompt Engineering:</strong> Users don't need to describe what they want in words</li>
+                    <li><strong>Captures Subtle Preferences:</strong> Learns aesthetic preferences that are hard to articulate</li>
+                    <li><strong>Fast Iteration:</strong> Quickly refine results through additional ratings</li>
+                    <li><strong>Consistent Style:</strong> Generates cohesive collections matching learned preferences</li>
+                    <li><strong>Privacy First:</strong> Learn preferences without uploading personal images</li>
+                </ul>
+            </div>
+
+            <div class="cta-section" style="text-align: center; margin: 4rem 0;">
+                <h2>Start Creating with PLGL</h2>
+                <p>Ready to build preference-based visual generation?</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/skindeepai/skindeep-core-legacy" class="btn btn-primary">Original Source Code</a>
+                    <a href="../getting-started.html" class="btn btn-secondary">Implementation Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

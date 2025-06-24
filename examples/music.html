@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Generation with PLGL - Personalized Composition</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../how-it-works.html">How It Works</a></li>
+                <li><a href="../index.html#applications">Applications</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li><a href="../getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="section-title">🎵 Music Generation with PLGL</h1>
+            <p class="section-subtitle">Create personalized music by learning from simple ratings - no musical knowledge required</p>
+            
+            <div class="concept-card" style="margin: 2rem 0;">
+                <h2>How It Works</h2>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Rate Melodies</h3>
+                        <p>Listen to generated melodies and rate them</p>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Learn Preferences</h3>
+                        <p>PLGL learns your musical taste from ratings</p>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Generate Music</h3>
+                        <p>Create new compositions matching your preferences</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h2>Key Implementation Details</h2>
+                
+                <h3>1. Music VAE Architecture</h3>
+                <p>The system uses a Variational Autoencoder (VAE) to learn a latent representation of music. This creates a continuous space where similar melodies are close together.</p>
+                
+                <pre><code class="language-python">class MusicVAE(nn.Module):
+    def __init__(self, latent_dim: int = 256):
+        super().__init__()
+        self.latent_dim = latent_dim
+        
+        # Encoder: Piano roll → Latent space
+        self.encoder = nn.Sequential(
+            nn.Conv2d(1, 32, kernel_size=(12, 4), stride=(2, 2)),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=(12, 4), stride=(2, 2)),
+            # ... compress to latent dimensions
+        )
+        
+        # Decoder: Latent space → Piano roll
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, 512),
+            nn.ReLU(),
+            # ... expand back to piano roll
+            nn.Sigmoid()  # Note probabilities 0-1
+        )</code></pre>
+
+                <h3>2. Musical Feature Extraction</h3>
+                <p>PLGL extracts interpretable musical features to understand what makes melodies appealing:</p>
+                
+                <pre><code class="language-python">def extract_musical_features(self, melody: torch.Tensor) -> Dict[str, float]:
+    """Extract interpretable musical features"""
+    features = {
+        'pitch_range': self._compute_pitch_range(piano_roll),      # How wide
+        'note_density': self._compute_note_density(piano_roll),    # How busy
+        'rhythmic_complexity': self._compute_rhythmic_complexity(), # Rhythm variety
+        'melodic_contour': self._compute_melodic_contour(),       # Up/down movement
+        'harmonic_consistency': self._compute_harmonic_consistency() # Musical intervals
+    }
+    return features</code></pre>
+
+                <h3>3. Preference Learning</h3>
+                <p>A neural network learns to predict your ratings from musical features:</p>
+                
+                <pre><code class="language-python">class MusicPreferenceLearner:
+    def __init__(self, music_vae: MusicVAE):
+        self.vae = music_vae
+        
+        # Preference model: Piano roll → Rating (0-1)
+        self.preference_model = nn.Sequential(
+            nn.Linear(128 * 32, 512),  # Flattened piano roll
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, 1),
+            nn.Sigmoid()  # Output preference score
+        )</code></pre>
+
+                <h3>4. Personalized Generation</h3>
+                <p>Navigate the latent space to find melodies with high preference scores:</p>
+                
+                <pre><code class="language-python">def generate_personalized_melody(self, optimization_steps: int = 500):
+    # Start from random point in latent space
+    z = torch.randn(1, self.latent_dim, requires_grad=True)
+    optimizer = torch.optim.Adam([z], lr=0.01)
+    
+    for step in range(optimization_steps):
+        # Generate melody from latent code
+        melody = self.vae.decode(z)
+        
+        # Score with preference model
+        score = self.preference_model(melody.flatten())
+        
+        # Optimize to maximize score
+        loss = -score
+        loss.backward()
+        optimizer.step()
+        
+        # Add exploration noise
+        z += torch.randn_like(z) * 0.01
+    
+    return self.generate_melody(z)</code></pre>
+
+                <h3>5. Playlist Generation</h3>
+                <p>Create diverse playlists that still match your preferences:</p>
+                
+                <pre><code class="language-python">def generate_playlist(self, n_songs: int = 10, diversity: float = 0.5):
+    playlist = []
+    
+    for i in range(n_songs):
+        if i % 2 == 0:
+            # High-preference melody (exploitation)
+            melody = self.generate_personalized_melody()
+        else:
+            # Diverse but still good (exploration)
+            z = torch.randn(1, self.latent_dim)
+            
+            # Ensure different from previous songs
+            if playlist:
+                distances = torch.norm(z - prev_latents, dim=1)
+                while distances.min() < diversity:
+                    z = torch.randn(1, self.latent_dim)
+                    
+        playlist.append(melody)
+    
+    return playlist</code></pre>
+            </div>
+
+            <div class="concept-card">
+                <h2>Real-World Applications</h2>
+                
+                <div class="app-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="app-example">
+                        <h3>🎧 Personalized Playlists</h3>
+                        <p>Generate infinite playlists that match your mood and taste, discovering new melodies you'll love.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🎮 Adaptive Game Music</h3>
+                        <p>Create dynamic soundtracks that adapt to player preferences in real-time.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🎬 Film Scoring</h3>
+                        <p>Generate music that matches director preferences without describing technical requirements.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>📱 Music Discovery Apps</h3>
+                        <p>Like TikTok for music - swipe through generated melodies, no searching or prompting needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h2>Key Advantages</h2>
+                
+                <ul style="font-size: 1.1rem; line-height: 1.8;">
+                    <li><strong>No Musical Knowledge Required:</strong> Users don't need to know tempo, key, or music theory</li>
+                    <li><strong>Continuous Learning:</strong> The more you rate, the better it understands your taste</li>
+                    <li><strong>Infinite Variety:</strong> Generate new music that doesn't exist yet</li>
+                    <li><strong>Controlled Diversity:</strong> Balance between your favorites and discovering new styles</li>
+                    <li><strong>Privacy Preserving:</strong> Learn preferences without analyzing your existing playlists</li>
+                </ul>
+            </div>
+
+            <div class="cta-section" style="text-align: center; margin: 4rem 0;">
+                <h2>Try It Yourself</h2>
+                <p>Ready to implement PLGL for music generation?</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/skindeepai/plgl-examples/blob/main/music_generation.py" class="btn btn-primary">View Full Code</a>
+                    <a href="../getting-started.html" class="btn btn-secondary">Get Started Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

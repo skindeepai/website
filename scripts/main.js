@@ -68,8 +68,8 @@ function animateValue(obj, start, end, duration) {
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.01,
+    rootMargin: '50px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -91,6 +91,16 @@ document.querySelectorAll('.section').forEach(section => {
 
 // Mobile menu toggle
 function createMobileMenu() {
+	
+	if (nav.querySelector('.mobile-menu-toggle')){
+		if (window.innerWidth > 768){
+			nav.querySelector('.mobile-menu-toggle').remove();
+		}
+		return;
+	} else if (window.innerWidth > 768){
+		return;
+	}
+	
     const nav = document.querySelector('.navbar');
     const menuButton = document.createElement('button');
     menuButton.className = 'mobile-menu-toggle';
@@ -99,10 +109,9 @@ function createMobileMenu() {
     menuButton.addEventListener('click', () => {
         document.querySelector('.nav-menu').classList.toggle('mobile-active');
     });
-    
-    if (window.innerWidth <= 768) {
-        nav.querySelector('.nav-container').appendChild(menuButton);
-    }
+	
+
+    nav.querySelector('.nav-container').appendChild(menuButton);
 }
 
 window.addEventListener('resize', createMobileMenu);

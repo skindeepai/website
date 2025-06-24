@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Dating with PLGL - Match Without Sharing Photos</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../how-it-works.html">How It Works</a></li>
+                <li><a href="../index.html#applications">Applications</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li><a href="../getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="section-title">💕 Privacy-Preserving Dating with PLGL</h1>
+            <p class="section-subtitle">Revolutionary dating system where you match without ever sharing your photos</p>
+            
+            <div class="concept-card" style="margin: 2rem 0;">
+                <h2>The Privacy Problem in Dating Apps</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                    <div style="background: #FEE2E2; padding: 1.5rem; border-radius: 0.5rem;">
+                        <h3 style="color: #DC2626;">Traditional Dating Apps</h3>
+                        <ul>
+                            <li>Photos visible to everyone</li>
+                            <li>Risk of screenshots/misuse</li>
+                            <li>Professional concerns</li>
+                            <li>Privacy breaches</li>
+                        </ul>
+                    </div>
+                    <div style="background: #D1FAE5; padding: 1.5rem; border-radius: 0.5rem;">
+                        <h3 style="color: #059669;">PLGL Dating</h3>
+                        <ul>
+                            <li>Train on AI faces only</li>
+                            <li>Photos encoded privately</li>
+                            <li>Match in latent space</li>
+                            <li>Reveal only after mutual match</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h2>How Privacy-Preserving Dating Works</h2>
+                
+                <h3>1. Train Your Preferences (No Real Photos)</h3>
+                <p>Users rate AI-generated faces to teach the system their preferences:</p>
+                
+                <pre><code class="language-python">def train_user_preferences(self, user_id: str, n_training_faces=50):
+    """
+    User trains preferences on AI-generated faces
+    No real user photos are ever shown during training!
+    """
+    training_data = []
+    
+    print("Please rate these AI-generated faces...")
+    
+    for i in range(n_training_faces):
+        # Generate random face
+        z = torch.randn(1, self.latent_dim)
+        ai_face = self.face_generator(z)
+        
+        # User rates (swipe right/left)
+        rating = get_user_rating(ai_face)  # 1 for like, 0 for dislike
+        
+        training_data.append({
+            'latent': z,
+            'rating': rating
+        })
+    
+    # Train preference model
+    self.train_preference_model(user_id, training_data)
+    print(f"Learned your preferences from {n_training_faces} ratings!")</code></pre>
+
+                <h3>2. Secure Photo Encoding</h3>
+                <p>Your photos are immediately encoded and the originals are discarded:</p>
+                
+                <pre><code class="language-python">def onboard_new_user(self, user_id: str, user_photos: List[Image]):
+    """
+    Encode user photos to latent space
+    Original photos are NEVER stored!
+    """
+    latent_representations = []
+    
+    for photo in user_photos:
+        # Encode to latent space
+        with torch.no_grad():
+            latent = self.encoder(photo)
+            latent_representations.append(latent)
+        
+        # Photo is immediately discarded after encoding
+        del photo
+    
+    # Average latent representations
+    user_latent = torch.stack(latent_representations).mean(dim=0)
+    
+    # Add privacy noise
+    privacy_noise = torch.randn_like(user_latent) * 0.1
+    secure_latent = user_latent + privacy_noise
+    
+    # Store only the latent representation
+    profile = DatingProfile(
+        user_id=user_id,
+        latent_representation=secure_latent,
+        preference_model=preference_model
+    )
+    
+    print(f"Photos encoded and discarded. Privacy preserved!")</code></pre>
+
+                <h3>3. Latent Space Matching</h3>
+                <p>Find compatible matches without comparing actual photos:</p>
+                
+                <pre><code class="language-python">def find_matches(self, user_id: str, top_k: int = 10):
+    """
+    Find compatible matches in latent space
+    No photos are compared - only mathematical representations!
+    """
+    user_profile = self.users[user_id]
+    user_pref_model = user_profile.preference_model
+    
+    potential_matches = []
+    
+    for other_id, other_profile in self.users.items():
+        if other_id == user_id:
+            continue
+        
+        # Bidirectional compatibility check
+        # Does user like other's latent representation?
+        user_likes_other = user_pref_model(
+            other_profile.anonymize_latent()
+        ).item()
+        
+        # Would other like user's latent representation?
+        other_likes_user = other_profile.preference_model(
+            user_profile.anonymize_latent()
+        ).item()
+        
+        # Mutual compatibility score
+        compatibility = (user_likes_other + other_likes_user) / 2
+        
+        potential_matches.append({
+            'user_id': other_id,
+            'compatibility': compatibility,
+            'mutual_interest': min(user_likes_other, other_likes_user)
+        })
+    
+    # Sort by compatibility
+    matches = sorted(potential_matches, 
+                    key=lambda x: x['compatibility'], 
+                    reverse=True)[:top_k]
+    
+    return matches</code></pre>
+
+                <h3>4. Secure Photo Exchange</h3>
+                <p>Photos are only reconstructed after mutual consent:</p>
+                
+                <pre><code class="language-python">def request_photo_reveal(self, user1_id: str, user2_id: str):
+    """
+    Both users must consent before photos are revealed
+    """
+    # Check mutual match
+    if not self.is_mutual_match(user1_id, user2_id):
+        return "Match required before photo exchange"
+    
+    # Both must explicitly consent
+    consent_key = f"{user1_id}:{user2_id}"
+    
+    if self.has_both_consented(consent_key):
+        # Generate photos from latent representations
+        user1_face = self.generate_from_latent(
+            self.users[user1_id].latent_representation
+        )
+        user2_face = self.generate_from_latent(
+            self.users[user2_id].latent_representation
+        )
+        
+        # Secure exchange
+        return self.secure_photo_exchange(user1_face, user2_face)
+    
+    return "Waiting for mutual consent"</code></pre>
+
+                <h3>5. Additional Privacy Features</h3>
+                <pre><code class="language-python">class EnhancedPrivacy:
+    def differential_privacy_training(self, user_data):
+        """Add noise to training for differential privacy"""
+        # Add calibrated noise to gradients
+        dp_noise = torch.randn_like(gradients) * self.privacy_budget
+        private_gradients = gradients + dp_noise
+        
+    def homomorphic_matching(self, encrypted_latent1, encrypted_latent2):
+        """Compute compatibility on encrypted data"""
+        # Match without decrypting latent representations
+        encrypted_score = self.he_scheme.compute(
+            encrypted_latent1, 
+            encrypted_latent2
+        )
+        return encrypted_score
+    
+    def zero_knowledge_verification(self, user_id):
+        """Verify user properties without revealing them"""
+        # Prove age/location without exposing actual values
+        proof = self.zk_prove(
+            statement="user is 18+ and in same city",
+            witness=user_private_data
+        )
+        return proof</code></pre>
+            </div>
+
+            <div class="concept-card">
+                <h2>Why This Is Revolutionary</h2>
+                
+                <div class="app-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="app-example">
+                        <h3>🔒 Complete Privacy</h3>
+                        <p>Your photos never exist on the platform - only mathematical representations.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🎯 Better Matches</h3>
+                        <p>AI understands your "type" better than keyword matching ever could.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🚫 No Superficial Swiping</h3>
+                        <p>Initial connections based on true compatibility, not just photos.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>👤 Professional Safety</h3>
+                        <p>Perfect for people who can't have photos on dating apps.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🛡️ Screenshot Proof</h3>
+                        <p>Photos only exist temporarily after mutual consent.</p>
+                    </div>
+                    
+                    <div class="app-example">
+                        <h3>🌐 Global Compatibility</h3>
+                        <p>Match across cultures without bias from photos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h2>The Original Vision</h2>
+                <p style="font-size: 1.2rem; color: var(--accent-color); margin: 1rem 0;">
+                    "Perfection is just a few swipes away" - SkinDeep.ai (2018)
+                </p>
+                <p>This application extends the original SkinDeep.ai concept. Instead of just finding your perfect AI-generated face, it finds your perfect real match while preserving complete privacy. The same preference learning that could generate your ideal face can now find real people who match that ideal.</p>
+            </div>
+
+            <div class="cta-section" style="text-align: center; margin: 4rem 0;">
+                <h2>Build Privacy-First Dating</h2>
+                <p>Ready to revolutionize online dating with PLGL?</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/skindeepai/plgl-examples/blob/main/dating-privacy.py" class="btn btn-primary">View Implementation</a>
+                    <a href="../whitepaper.html" class="btn btn-secondary">Technical Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

@@ -28,8 +28,22 @@
                 <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
                 <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
             </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a></li>
+            <li><a href="index.html#applications" onclick="closeMobileMenu()">Applications</a></li>
+            <li><a href="index.html#demos" onclick="closeMobileMenu()">Demos</a></li>
+            <li><a href="getting-started.html" class="active" onclick="closeMobileMenu()">Get Started</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
+        </ul>
+    </div>
 
     <div class="docs-container">
         <aside class="docs-sidebar">
@@ -599,17 +613,9 @@ print("Found optimal latent vector with preference score:",
             <div class="next-steps">
                 <h2>Next Steps</h2>
                 <div class="next-steps-grid">
-                    <a href="documentation.html" class="next-step-card">
-                        <h3>📖 Read the Docs</h3>
-                        <p>Comprehensive API reference and guides</p>
-                    </a>
                     <a href="https://github.com/skindeepai" class="next-step-card">
                         <h3>💻 Explore Code</h3>
                         <p>Dive into the source code on GitHub</p>
-                    </a>
-                    <a href="https://discord.gg/plgl" class="next-step-card">
-                        <h3>💬 Join Community</h3>
-                        <p>Get help and share your projects</p>
                     </a>
                 </div>
             </div>
