@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLGL - Preference Learning in Generative Latent Spaces | SkinDeep.ai Inc</title>
-    <meta name="description" content="PLGL technology by SkinDeep.ai Inc - Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy!"
+    <meta name="description" content="PLGL technology by SkinDeep.ai Inc - Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy!">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -426,13 +426,14 @@ content_distribution = learner.generate_distribution(
         </div>
     </section>
 
-    <section class="implementation-guide section section-dark">
+    <section class="implementation-guide section">
         <div class="container">
             <h2 class="section-title">Implementation Examples</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab('pytorch')">PyTorch</button>
                 <button class="tab-button" onclick="showTab('tensorflow')">TensorFlow</button>
                 <button class="tab-button" onclick="showTab('jax')">JAX</button>
+                <button class="tab-button" onclick="showTab('numpy-original')">Original (NumPy)</button>
             </div>
 
             <div id="pytorch" class="tab-content active">
@@ -658,6 +659,261 @@ class PLGLJAX:
             
         return z</code></pre>
             </div>
+
+            <div id="numpy-original" class="tab-content">
+                <pre><code class="language-python">"""
+Original PLGL Implementation (2018-2019)
+SkinDeep.ai Inc - Historical Reference
+
+This is the original numpy-based implementation that pioneered
+preference learning in generative latent spaces.
+"""
+
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+from scipy.optimize import minimize
+import pickle
+
+class OriginalPLGL:
+    """
+    Original 2018-2019 implementation using NumPy and scikit-learn
+    Designed for StyleGAN latent space navigation
+    """
+    
+    def __init__(self, latent_dim=512, generator_func=None):
+        self.latent_dim = latent_dim
+        self.generator_func = generator_func
+        self.classifier = None
+        self.user_ratings = []
+        self.latent_vectors = []
+        
+    def collect_preferences(self, n_samples=100, save_path=None):
+        """
+        Original preference collection approach
+        Used random sampling with human-in-the-loop rating
+        """
+        print(f"Collecting {n_samples} preference ratings...")
+        
+        for i in range(n_samples):
+            # Sample from standard normal (StyleGAN convention)
+            z = np.random.randn(1, self.latent_dim)
+            
+            # Generate content (originally face images)
+            if self.generator_func:
+                content = self.generator_func(z)
+                # Display to user and collect rating
+                # In the original app, this was done via mobile UI
+                rating = self._get_user_rating(content)
+            else:
+                # Simulated for demonstration
+                rating = np.random.choice([0, 1])
+            
+            self.latent_vectors.append(z[0])
+            self.user_ratings.append(rating)
+            
+            if save_path and i % 10 == 0:
+                self._save_checkpoint(save_path)
+                
+        return np.array(self.latent_vectors), np.array(self.user_ratings)
+    
+    def train_classifier(self, kernel='rbf', C=1.0, gamma='scale'):
+        """
+        Original approach: SVM classifier for preference prediction
+        Found to work well in high-dimensional latent spaces
+        """
+        if len(self.user_ratings) < 10:
+            raise ValueError("Need at least 10 ratings to train")
+            
+        X = np.array(self.latent_vectors)
+        y = np.array(self.user_ratings)
+        
+        # Split for validation
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+        
+        # Train SVM classifier
+        self.classifier = SVC(kernel=kernel, C=C, gamma=gamma, probability=True)
+        self.classifier.fit(X_train, y_train)
+        
+        # Report accuracy
+        train_acc = self.classifier.score(X_train, y_train)
+        test_acc = self.classifier.score(X_test, y_test)
+        
+        print(f"Training accuracy: {train_acc:.2f}")
+        print(f"Test accuracy: {test_acc:.2f}")
+        
+        return self.classifier
+    
+    def find_optimal_latent(self, n_starts=10, method='L-BFGS-B'):
+        """
+        Original optimization: Scipy minimize with multiple restarts
+        Objective: Find z that maximizes classifier confidence
+        """
+        if self.classifier is None:
+            raise ValueError("Train classifier first")
+            
+        best_z = None
+        best_score = -np.inf
+        
+        def objective(z):
+            # Reshape for classifier
+            z_reshaped = z.reshape(1, -1)
+            # Get probability of positive class
+            prob = self.classifier.predict_proba(z_reshaped)[0, 1]
+            # Minimize negative probability (maximize positive)
+            return -prob
+        
+        # Multiple random restarts for global optimization
+        for _ in range(n_starts):
+            # Random initialization
+            z0 = np.random.randn(self.latent_dim)
+            
+            # Optimize
+            result = minimize(
+                objective,
+                z0,
+                method=method,
+                options={'maxiter': 100}
+            )
+            
+            if -result.fun > best_score:
+                best_score = -result.fun
+                best_z = result.x
+                
+        print(f"Found optimal with score: {best_score:.3f}")
+        return best_z
+    
+    def generate_distribution(self, n_samples=100, threshold=0.7):
+        """
+        Original distribution generation approach
+        Sample and filter based on classifier confidence
+        """
+        if self.classifier is None:
+            raise ValueError("Train classifier first")
+            
+        accepted_samples = []
+        total_tried = 0
+        
+        while len(accepted_samples) < n_samples:
+            # Batch sampling for efficiency
+            batch_size = min(100, (n_samples - len(accepted_samples)) * 2)
+            z_batch = np.random.randn(batch_size, self.latent_dim)
+            
+            # Get probabilities
+            probs = self.classifier.predict_proba(z_batch)[:, 1]
+            
+            # Accept high-scoring samples
+            accepted_idx = probs > threshold
+            accepted_samples.extend(z_batch[accepted_idx])
+            
+            total_tried += batch_size
+            
+            # Prevent infinite loop
+            if total_tried > n_samples * 100:
+                print(f"Warning: Could only find {len(accepted_samples)} samples")
+                break
+                
+        return np.array(accepted_samples[:n_samples])
+    
+    def iterative_refinement(self, n_iterations=5, samples_per_iter=20):
+        """
+        Original iterative improvement strategy
+        Alternates between generation and rating collection
+        """
+        print("Starting iterative refinement process...")
+        
+        for iteration in range(n_iterations):
+            print(f"\nIteration {iteration + 1}/{n_iterations}")
+            
+            # Generate samples from current model
+            if iteration == 0:
+                # First iteration: random sampling
+                new_samples = np.random.randn(samples_per_iter, self.latent_dim)
+            else:
+                # Later iterations: guided by current classifier
+                distribution = self.generate_distribution(samples_per_iter * 2)
+                # Add some random samples for exploration
+                guided = distribution[:int(samples_per_iter * 0.8)]
+                random = np.random.randn(int(samples_per_iter * 0.2), self.latent_dim)
+                new_samples = np.vstack([guided, random])
+            
+            # Collect ratings for new samples
+            for z in new_samples:
+                if self.generator_func:
+                    content = self.generator_func(z.reshape(1, -1))
+                    rating = self._get_user_rating(content)
+                else:
+                    # Simulated
+                    rating = np.random.choice([0, 1])
+                    
+                self.latent_vectors.append(z)
+                self.user_ratings.append(rating)
+            
+            # Retrain classifier with all data
+            self.train_classifier()
+            
+            # Find current optimal
+            optimal_z = self.find_optimal_latent()
+            
+            print(f"Total ratings collected: {len(self.user_ratings)}")
+            
+    def _get_user_rating(self, content):
+        """
+        In the original app, this displayed content on mobile device
+        and collected swipe left (0) or swipe right (1)
+        """
+        # Placeholder for actual user interaction
+        return np.random.choice([0, 1])
+    
+    def _save_checkpoint(self, path):
+        """Save current state for recovery"""
+        checkpoint = {
+            'latent_vectors': self.latent_vectors,
+            'user_ratings': self.user_ratings,
+            'classifier': self.classifier
+        }
+        with open(path, 'wb') as f:
+            pickle.dump(checkpoint, f)
+            
+    def load_checkpoint(self, path):
+        """Load saved state"""
+        with open(path, 'rb') as f:
+            checkpoint = pickle.load(f)
+        self.latent_vectors = checkpoint['latent_vectors']
+        self.user_ratings = checkpoint['user_ratings']
+        self.classifier = checkpoint['classifier']
+
+
+# Example usage demonstrating the original workflow
+if __name__ == "__main__":
+    print("=== Original PLGL Implementation Demo ===")
+    print("Historical reference from SkinDeep.ai (2018-2019)\n")
+    
+    # Initialize with StyleGAN dimensions
+    plgl = OriginalPLGL(latent_dim=512)
+    
+    # Simulate the original data collection process
+    print("Phase 1: Initial preference collection")
+    plgl.collect_preferences(n_samples=50)
+    
+    print("\nPhase 2: Train preference classifier")
+    plgl.train_classifier()
+    
+    print("\nPhase 3: Find optimal latent vector")
+    optimal_z = plgl.find_optimal_latent()
+    
+    print("\nPhase 4: Generate preference distribution")
+    distribution = plgl.generate_distribution(n_samples=10)
+    print(f"Generated {len(distribution)} samples matching preferences")
+    
+    print("\nPhase 5: Iterative refinement")
+    plgl.iterative_refinement(n_iterations=3)
+    
+    print("\n✨ This approach pioneered preference learning in latent spaces!")
+    print("Now evolved into the modern PLGL framework with deep learning.")</code></pre>
+            </div>
         </div>
     </section>
 
@@ -712,7 +968,7 @@ class PLGLJAX:
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
+                <p>&copy; 2025 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
             </div>
         </div>
     </footer>

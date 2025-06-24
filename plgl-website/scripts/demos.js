@@ -91,126 +91,483 @@ if (latentCanvas) {
     animateLatentSpace();
 }
 
-// 2D Latent Space Navigation Demo
+// 2D Latent Space Navigation Demo - Batch Generation & Refinement
 const demo2DCanvas = document.getElementById('demo2D');
 if (demo2DCanvas) {
     const ctx = demo2DCanvas.getContext('2d');
+    let animationId = null;
     let isRunning = false;
-    let currentPoint = null;
-    let targetPoint = null;
-    let preferenceMap = [];
-    let trajectory = [];
     
-    // Initialize preference map (simulated)
-    function initPreferenceMap() {
-        preferenceMap = [];
-        for (let x = 0; x < demo2DCanvas.width; x += 20) {
-            for (let y = 0; y < demo2DCanvas.height; y += 20) {
-                // Create multiple preference peaks
-                const peak1 = Math.exp(-((x - 150) ** 2 + (y - 150) ** 2) / 5000);
-                const peak2 = Math.exp(-((x - 450) ** 2 + (y - 250) ** 2) / 5000);
-                const peak3 = Math.exp(-((x - 300) ** 2 + (y - 100) ** 2) / 3000);
-                const preference = Math.max(peak1, peak2, peak3) + Math.random() * 0.1;
-                
-                preferenceMap.push({
-                    x: x,
-                    y: y,
-                    preference: Math.min(1, preference)
-                });
+    // Demo state
+    let currentBatch = 1;
+    let allSamples = [];
+    let currentBatchSamples = [];
+    let classifier = null;
+    let idealPoint = { x: 420, y: 180 }; // User's true preference (hidden)
+    let uncertaintyMap = [];
+    
+    // Stats
+    let totalSamples = 0;
+    let accuracy = 0;
+    
+    // Color scheme
+    const colors = {
+        like: '#10B981',
+        dislike: '#EF4444',
+        exploration: '#8B5CF6',
+        exploitation: '#3B82F6',
+        ideal: '#F59E0B',
+        uncertainty: '#6B7280'
+    };
+    
+    function drawScene() {
+        // Clear canvas
+        ctx.fillStyle = '#FAFAFA';
+        ctx.fillRect(0, 0, demo2DCanvas.width, demo2DCanvas.height);
+        
+        // Draw uncertainty/confidence heatmap
+        if (classifier && uncertaintyMap.length > 0) {
+            uncertaintyMap.forEach(point => {
+                const confidence = getClassifierConfidence(point.x, point.y);
+                const opacity = 0.15 * (1 - confidence); // Higher uncertainty = more visible
+                ctx.fillStyle = `rgba(107, 114, 128, ${opacity})`;
+                ctx.fillRect(point.x - 10, point.y - 10, 20, 20);
+            });
+        }
+        
+        // Draw all previous samples (faded)
+        allSamples.forEach(sample => {
+            if (!currentBatchSamples.includes(sample)) {
+                ctx.globalAlpha = 0.3;
+                drawSample(sample);
+                ctx.globalAlpha = 1;
             }
+        });
+        
+        // Draw current batch samples
+        currentBatchSamples.forEach(sample => {
+            drawSample(sample);
+            
+            // Highlight if it's exploration vs exploitation
+            if (sample.type === 'exploration') {
+                ctx.strokeStyle = colors.exploration;
+                ctx.lineWidth = 3;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.arc(sample.x, sample.y, 25, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+        });
+        
+        // Draw predicted high-preference regions
+        if (classifier) {
+            drawPreferenceRegions();
+        }
+        
+        // Draw batch info
+        ctx.fillStyle = '#1F2937';
+        ctx.font = 'bold 16px Inter';
+        ctx.textAlign = 'left';
+        ctx.fillText(`Batch ${currentBatch}: ${currentBatch === 1 ? 'Initial Exploration' : currentBatch === 2 ? 'Focused Refinement' : 'Fine-tuning + Exploration'}`, 20, 30);
+        
+        // Draw legend
+        ctx.font = '12px Inter';
+        ctx.fillStyle = '#6B7280';
+        const legendY = 350;
+        ctx.fillText('● Exploitation (refining known good areas)', 20, legendY);
+        ctx.fillText('◌ Exploration (checking uncertain areas)', 20, legendY + 20);
+        
+        // Show accuracy improving
+        if (accuracy > 0) {
+            ctx.fillStyle = colors.like;
+            ctx.font = 'bold 14px Inter';
+            ctx.fillText(`Model Accuracy: ${Math.round(accuracy)}%`, 450, 30);
         }
     }
     
-    function drawPreferenceMap() {
-        preferenceMap.forEach(point => {
-            const hue = point.preference * 120; // Red to green
-            ctx.fillStyle = `hsla(${hue}, 70%, 50%, 0.5)`;
-            ctx.fillRect(point.x - 10, point.y - 10, 20, 20);
-        });
+    function drawSample(sample) {
+        // Draw influence gradient
+        const gradient = ctx.createRadialGradient(sample.x, sample.y, 0, sample.x, sample.y, 50);
+        if (sample.rated) {
+            if (sample.liked) {
+                gradient.addColorStop(0, 'rgba(16, 185, 129, 0.2)');
+                gradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
+            } else {
+                gradient.addColorStop(0, 'rgba(239, 68, 68, 0.2)');
+                gradient.addColorStop(1, 'rgba(239, 68, 68, 0)');
+            }
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(sample.x, sample.y, 50, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // Draw sample point
+        ctx.beginPath();
+        ctx.arc(sample.x, sample.y, 12, 0, Math.PI * 2);
+        if (sample.rated) {
+            ctx.fillStyle = sample.liked ? colors.like : colors.dislike;
+        } else {
+            ctx.fillStyle = '#E5E7EB';
+        }
+        ctx.fill();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        
+        // Draw rating emoji
+        if (sample.rated) {
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(sample.liked ? '👍' : '👎', sample.x, sample.y);
+        }
     }
     
-    function getPreferenceAt(x, y) {
-        // Interpolate preference value at arbitrary point
-        let closestPoint = preferenceMap[0];
-        let minDist = Infinity;
+    function drawPreferenceRegions() {
+        // Draw contour lines for preference predictions
+        ctx.strokeStyle = colors.exploitation;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([10, 5]);
         
-        preferenceMap.forEach(point => {
-            const dist = Math.sqrt((point.x - x) ** 2 + (point.y - y) ** 2);
-            if (dist < minDist) {
-                minDist = dist;
-                closestPoint = point;
+        // Simple visualization of high-preference regions
+        const regions = getHighPreferenceRegions();
+        regions.forEach(region => {
+            ctx.globalAlpha = 0.1;
+            ctx.fillStyle = colors.exploitation;
+            ctx.beginPath();
+            ctx.arc(region.x, region.y, region.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        });
+        
+        ctx.setLineDash([]);
+    }
+    
+    function getUserPreference(x, y) {
+        // Simulate user's hidden preference function with multiple peaks
+        const dist1 = Math.sqrt((x - idealPoint.x) ** 2 + (y - idealPoint.y) ** 2);
+        const dist2 = Math.sqrt((x - 150) ** 2 + (y - 250) ** 2);
+        
+        // Main preference peak + secondary peak
+        const preference = Math.exp(-dist1 / 80) + 0.3 * Math.exp(-dist2 / 100);
+        
+        // Add noise and threshold
+        return preference > 0.45 + (Math.random() - 0.5) * 0.2;
+    }
+    
+    function generateBatch(batchNumber) {
+        const batchSize = 8;
+        const samples = [];
+        
+        if (batchNumber === 1) {
+            // First batch: Pure exploration - grid sampling
+            for (let i = 0; i < batchSize; i++) {
+                const angle = (i / batchSize) * Math.PI * 2;
+                const radius = 120 + (i % 2) * 80;
+                samples.push({
+                    x: demo2DCanvas.width / 2 + Math.cos(angle) * radius,
+                    y: demo2DCanvas.height / 2 + Math.sin(angle) * radius,
+                    type: 'exploration',
+                    rated: false,
+                    batch: batchNumber
+                });
+            }
+        } else {
+            // Later batches: Mix of exploitation and exploration
+            const exploitCount = Math.floor(batchSize * 0.7); // 70% exploitation
+            const exploreCount = batchSize - exploitCount; // 30% exploration
+            
+            // Exploitation: Generate near high-confidence positive areas
+            const goodRegions = getHighPreferenceRegions();
+            for (let i = 0; i < exploitCount && goodRegions.length > 0; i++) {
+                const region = goodRegions[i % goodRegions.length];
+                const angle = Math.random() * Math.PI * 2;
+                const r = Math.random() * region.radius * 0.8;
+                samples.push({
+                    x: region.x + Math.cos(angle) * r,
+                    y: region.y + Math.sin(angle) * r,
+                    type: 'exploitation',
+                    rated: false,
+                    batch: batchNumber
+                });
+            }
+            
+            // Exploration: Sample uncertain areas
+            for (let i = 0; i < exploreCount; i++) {
+                const uncertainPoint = getUncertainArea();
+                samples.push({
+                    x: uncertainPoint.x,
+                    y: uncertainPoint.y,
+                    type: 'exploration',
+                    rated: false,
+                    batch: batchNumber
+                });
+            }
+        }
+        
+        // Keep samples in bounds
+        samples.forEach(s => {
+            s.x = Math.max(30, Math.min(demo2DCanvas.width - 30, s.x));
+            s.y = Math.max(30, Math.min(demo2DCanvas.height - 30, s.y));
+        });
+        
+        return samples;
+    }
+    
+    function getHighPreferenceRegions() {
+        if (!classifier || allSamples.length < 5) return [];
+        
+        const regions = [];
+        const likedSamples = allSamples.filter(s => s.rated && s.liked);
+        
+        // Cluster liked samples
+        likedSamples.forEach(sample => {
+            let merged = false;
+            for (let region of regions) {
+                const dist = Math.sqrt((region.x - sample.x) ** 2 + (region.y - sample.y) ** 2);
+                if (dist < 100) {
+                    // Merge into existing region
+                    region.x = (region.x * region.count + sample.x) / (region.count + 1);
+                    region.y = (region.y * region.count + sample.y) / (region.count + 1);
+                    region.count++;
+                    region.radius = Math.min(80, 30 + region.count * 10);
+                    merged = true;
+                    break;
+                }
+            }
+            if (!merged) {
+                regions.push({
+                    x: sample.x,
+                    y: sample.y,
+                    radius: 40,
+                    count: 1
+                });
             }
         });
         
-        return closestPoint.preference;
+        return regions.sort((a, b) => b.count - a.count);
     }
     
-    function gradientAscent() {
-        if (!currentPoint || !isRunning) return;
+    function getUncertainArea() {
+        // Find areas far from existing samples
+        let bestX = 0, bestY = 0, maxMinDist = 0;
         
-        // Calculate gradient
-        const step = 5;
-        const currentPref = getPreferenceAt(currentPoint.x, currentPoint.y);
-        const rightPref = getPreferenceAt(currentPoint.x + step, currentPoint.y);
-        const topPref = getPreferenceAt(currentPoint.x, currentPoint.y - step);
+        for (let i = 0; i < 20; i++) {
+            const x = Math.random() * (demo2DCanvas.width - 60) + 30;
+            const y = Math.random() * (demo2DCanvas.height - 60) + 30;
+            
+            let minDist = Infinity;
+            allSamples.forEach(sample => {
+                const dist = Math.sqrt((sample.x - x) ** 2 + (sample.y - y) ** 2);
+                minDist = Math.min(minDist, dist);
+            });
+            
+            if (minDist > maxMinDist) {
+                maxMinDist = minDist;
+                bestX = x;
+                bestY = y;
+            }
+        }
         
-        const gradX = (rightPref - currentPref) / step;
-        const gradY = (topPref - currentPref) / step;
+        return { x: bestX, y: bestY };
+    }
+    
+    function getClassifierConfidence(x, y) {
+        if (!classifier || allSamples.length === 0) return 0;
         
-        // Update position
-        const learningRate = 10;
-        currentPoint.x += gradX * learningRate;
-        currentPoint.y += gradY * learningRate;
-        
-        // Add to trajectory
-        trajectory.push({x: currentPoint.x, y: currentPoint.y});
-        
-        // Redraw
-        ctx.clearRect(0, 0, demo2DCanvas.width, demo2DCanvas.height);
-        drawPreferenceMap();
-        
-        // Draw trajectory
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        trajectory.forEach((point, i) => {
-            if (i === 0) ctx.moveTo(point.x, point.y);
-            else ctx.lineTo(point.x, point.y);
+        // Simple confidence based on distance to nearest samples
+        let nearestDist = Infinity;
+        allSamples.forEach(sample => {
+            if (sample.rated) {
+                const dist = Math.sqrt((sample.x - x) ** 2 + (sample.y - y) ** 2);
+                nearestDist = Math.min(nearestDist, dist);
+            }
         });
-        ctx.stroke();
         
-        // Draw current point
-        ctx.fillStyle = 'white';
-        ctx.beginPath();
-        ctx.arc(currentPoint.x, currentPoint.y, 8, 0, Math.PI * 2);
-        ctx.fill();
+        return Math.max(0, 1 - nearestDist / 150);
+    }
+    
+    function updateClassifier() {
+        // Simple classifier based on rated samples
+        classifier = {
+            predict: function(x, y) {
+                let weightedSum = 0;
+                let totalWeight = 0;
+                
+                allSamples.forEach(sample => {
+                    if (sample.rated) {
+                        const dist = Math.sqrt((sample.x - x) ** 2 + (sample.y - y) ** 2) + 1;
+                        const weight = 1 / (dist * dist);
+                        weightedSum += (sample.liked ? 1 : -1) * weight;
+                        totalWeight += weight;
+                    }
+                });
+                
+                return totalWeight > 0 ? weightedSum / totalWeight : 0;
+            }
+        };
         
-        // Continue optimization
+        // Calculate accuracy
+        let correct = 0;
+        let total = 0;
+        allSamples.forEach(sample => {
+            if (sample.rated) {
+                const predicted = classifier.predict(sample.x, sample.y) > 0;
+                if (predicted === sample.liked) correct++;
+                total++;
+            }
+        });
+        accuracy = total > 0 ? (correct / total) * 100 : 0;
+    }
+    
+    let frameCount = 0;
+    let ratingDelay = 30; // frames between ratings
+    let batchDelay = 120; // frames between batches
+    let lastRatingFrame = 0;
+    let waitingForNextBatch = false;
+    let batchCompleteFrame = 0;
+    
+    function animate() {
+        if (!isRunning) return;
+        
+        frameCount++;
+        
+        // Rate samples one by one with delay
+        if (!waitingForNextBatch && frameCount - lastRatingFrame > ratingDelay) {
+            let unratedSample = currentBatchSamples.find(s => !s.rated);
+            if (unratedSample) {
+                unratedSample.liked = getUserPreference(unratedSample.x, unratedSample.y);
+                unratedSample.rated = true;
+                totalSamples++;
+                lastRatingFrame = frameCount;
+                
+                // Update stats
+                updateStats();
+                
+                // Check if batch is complete
+                if (currentBatchSamples.every(s => s.rated)) {
+                    waitingForNextBatch = true;
+                    batchCompleteFrame = frameCount;
+                    updateClassifier();
+                }
+            }
+        }
+        
+        // Wait before generating next batch
+        if (waitingForNextBatch && frameCount - batchCompleteFrame > batchDelay) {
+            if (currentBatch < 3) {
+                // Generate next batch
+                currentBatch++;
+                currentBatchSamples = generateBatch(currentBatch);
+                currentBatchSamples.forEach(s => allSamples.push(s));
+                waitingForNextBatch = false;
+                updateStats();
+            } else {
+                // Demo complete
+                isRunning = false;
+                showFinalResult();
+            }
+        }
+        
+        drawScene();
+        
         if (isRunning) {
-            requestAnimationFrame(gradientAscent);
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    
+    function updateStats() {
+        document.getElementById('batch-number').textContent = currentBatch;
+        document.getElementById('sample-count').textContent = totalSamples;
+        document.getElementById('accuracy').textContent = Math.round(accuracy) + '%';
+    }
+    
+    function showFinalResult() {
+        // Highlight the best found region
+        const regions = getHighPreferenceRegions();
+        if (regions.length > 0) {
+            ctx.save();
+            ctx.strokeStyle = colors.ideal;
+            ctx.lineWidth = 3;
+            ctx.setLineDash([10, 5]);
+            ctx.beginPath();
+            ctx.arc(regions[0].x, regions[0].y, regions[0].radius + 10, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+            
+            ctx.font = '24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('⭐', regions[0].x, regions[0].y);
+            
+            ctx.fillStyle = '#1F2937';
+            ctx.font = 'bold 14px Inter';
+            ctx.fillText('Ideal region found!', regions[0].x, regions[0].y + 40);
+        }
+    }
+    
+    // Initialize uncertainty map
+    function initUncertaintyMap() {
+        uncertaintyMap = [];
+        for (let x = 20; x < demo2DCanvas.width; x += 20) {
+            for (let y = 20; y < demo2DCanvas.height; y += 20) {
+                uncertaintyMap.push({ x, y });
+            }
         }
     }
     
     window.startDemo2D = function() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        // Reset state
         isRunning = true;
-        currentPoint = {
-            x: Math.random() * demo2DCanvas.width,
-            y: Math.random() * demo2DCanvas.height
-        };
-        trajectory = [currentPoint];
-        gradientAscent();
+        currentBatch = 1;
+        allSamples = [];
+        totalSamples = 0;
+        accuracy = 0;
+        classifier = null;
+        
+        // Reset animation timing
+        frameCount = 0;
+        lastRatingFrame = 0;
+        waitingForNextBatch = false;
+        batchCompleteFrame = 0;
+        
+        // Initialize uncertainty map
+        initUncertaintyMap();
+        
+        // Generate first batch
+        currentBatchSamples = generateBatch(1);
+        currentBatchSamples.forEach(s => allSamples.push(s));
+        
+        // Start animation
+        updateStats();
+        animate();
     };
     
     window.resetDemo2D = function() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
         isRunning = false;
-        trajectory = [];
-        ctx.clearRect(0, 0, demo2DCanvas.width, demo2DCanvas.height);
-        drawPreferenceMap();
+        currentBatch = 1;
+        allSamples = [];
+        currentBatchSamples = [];
+        totalSamples = 0;
+        accuracy = 0;
+        classifier = null;
+        
+        updateStats();
+        drawScene();
     };
     
     // Initialize
-    initPreferenceMap();
-    drawPreferenceMap();
+    initUncertaintyMap();
+    drawScene();
 }
 
 // Preference Learning Simulation
