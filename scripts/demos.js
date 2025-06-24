@@ -186,14 +186,14 @@ if (demo2DCanvas) {
         ctx.font = '12px Inter';
         ctx.fillStyle = '#6B7280';
         const legendY = 350;
-        ctx.fillText('● Exploitation (refining known good areas)', 20, legendY);
-        ctx.fillText('◌ Exploration (checking uncertain areas)', 20, legendY + 20);
+        ctx.fillText('● Exploitation (refining known good areas)', 20, legendY - 20);
+        ctx.fillText('◌ Exploration (checking uncertain areas)', 20, legendY );
         
         // Show accuracy improving
         if (accuracy > 0) {
             ctx.fillStyle = colors.like;
             ctx.font = 'bold 14px Inter';
-            ctx.fillText(`Model Accuracy: ${Math.round(accuracy)}%`, 450, 30);
+            ctx.fillText(`Model Accuracy: ${Math.round(accuracy)}%`, 380, 20);
         }
     }
     
