@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How PLGL Works - Visual Guide to Preference Learning in Latent Spaces</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .visual-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .concept-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .analogy-box {
+            background: #F0F9FF;
+            border-left: 4px solid #3B82F6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        
+        .diagram-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .interactive-demo {
+            background: #F8FAFC;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .step-by-step {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .step-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        
+        .step-number {
+            background: #6366F1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .highlight-box {
+            background: #FEF3C7;
+            border: 2px solid #F59E0B;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .slider-container {
+            margin: 1rem 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 40px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #E5E7EB;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #6366F1;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PLGL</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html" class="active">How It Works</a></li>
+                <li><a href="index.html#applications">Applications</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/plgl/core" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="visual-section" style="padding-top: 6rem;">
+        <h1 style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">How PLGL Works</h1>
+        <p style="text-align: center; font-size: 1.25rem; color: #64748B; margin-bottom: 3rem;">
+            A visual guide to understanding preference learning in generative latent spaces
+        </p>
+
+        <!-- Concept 1: What is a Latent Space? -->
+        <div class="concept-card">
+            <h2>What is a Latent Space? 🗺️</h2>
+            
+            <div class="analogy-box">
+                <h3>🎨 Think of it like a Recipe Book</h3>
+                <p>Imagine you're a chef with millions of possible dishes. Instead of memorizing every single dish, you learn the <strong>core ingredients and techniques</strong>. With just 20 ingredients and 10 cooking methods, you can create thousands of unique dishes!</p>
+                <p>A <strong>latent space</strong> is like this recipe system - it's a compressed representation of all possibilities, where similar things are close together.</p>
+            </div>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 1000 500" style="max-width: 1000px;">
+                    <!-- Input Space - Multi-layer visualization -->
+                    <g transform="translate(20, 100)">
+                        <text x="80" y="-70" font-size="20" font-weight="600" fill="#1F2937">Original Image</text>
+                        <text x="80" y="-50" font-size="14" fill="#6B7280">(e.g., 512×512 = 262,144 pixels)</text>
+                        
+                        <!-- Layer 1: Full Image -->
+                        <rect x="20" y="0" width="120" height="120" fill="#FEF3F2" stroke="#DC2626" stroke-width="2" rx="5"/>
+                        <text x="80" y="60" font-size="40" text-anchor="middle">🖼️</text>
+                        
+                        <!-- Arrow to layer 2 -->
+                        <path d="M 140 60 L 170 60" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Layer 2: Pixel Grid -->
+                        <g transform="translate(170, 0)">
+                            <rect x="0" y="0" width="120" height="120" fill="#FEE2E2" stroke="#DC2626" stroke-width="1" rx="3"/>
+                            <!-- Pixel grid -->
+                            <g opacity="0.7">
+                                <rect x="10" y="10" width="20" height="20" fill="#EF4444"/>
+                                <rect x="30" y="10" width="20" height="20" fill="#F59E0B"/>
+                                <rect x="50" y="10" width="20" height="20" fill="#84CC16"/>
+                                <rect x="70" y="10" width="20" height="20" fill="#10B981"/>
+                                <rect x="90" y="10" width="20" height="20" fill="#3B82F6"/>
+                                
+                                <rect x="10" y="30" width="20" height="20" fill="#8B5CF6"/>
+                                <rect x="30" y="30" width="20" height="20" fill="#EC4899"/>
+                                <rect x="50" y="30" width="20" height="20" fill="#6366F1"/>
+                                <rect x="70" y="30" width="20" height="20" fill="#14B8A6"/>
+                                <rect x="90" y="30" width="20" height="20" fill="#F97316"/>
+                                
+                                <text x="60" y="65" font-size="20" text-anchor="middle" fill="#6B7280">...</text>
+                                
+                                <rect x="10" y="90" width="20" height="20" fill="#0EA5E9"/>
+                                <rect x="30" y="90" width="20" height="20" fill="#A855F7"/>
+                                <rect x="50" y="90" width="20" height="20" fill="#EAB308"/>
+                                <rect x="70" y="90" width="20" height="20" fill="#64748B"/>
+                                <rect x="90" y="90" width="20" height="20" fill="#DC2626"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Arrow to encoder -->
+                        <path d="M 290 60 L 320 100" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <path d="M 290 80 L 320 110" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <path d="M 290 100 L 320 120" stroke="#6366F1" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Many pixels label -->
+                        <text x="160" y="150" font-size="12" fill="#6B7280" text-anchor="middle">Millions of values</text>
+                    </g>
+
+                    <!-- Encoder -->
+                    <g transform="translate(320, 80)">
+                        <rect x="0" y="0" width="100" height="140" fill="#6366F1" rx="10"/>
+                        <text x="50" y="30" font-size="16" fill="white" text-anchor="middle" font-weight="600">Encoder</text>
+                        
+                        <!-- Compression visualization -->
+                        <path d="M 20 50 L 80 70" stroke="white" stroke-width="2" opacity="0.7"/>
+                        <path d="M 20 70 L 80 75" stroke="white" stroke-width="2" opacity="0.7"/>
+                        <path d="M 20 90 L 80 80" stroke="white" stroke-width="2" opacity="0.7"/>
+                        
+                        <text x="50" y="110" font-size="12" fill="white" text-anchor="middle">Compress</text>
+                    </g>
+
+                    <!-- Latent Space with Sliders -->
+                    <g transform="translate(470, 50)">
+                        <rect x="-20" y="-20" width="160" height="240" fill="#F0F9FF" stroke="#3B82F6" stroke-width="3" rx="10"/>
+                        <text x="60" y="-30" font-size="18" font-weight="600" fill="#1F2937" text-anchor="middle">Latent Space</text>
+                        <text x="60" y="-45" font-size="12" fill="#6B7280" text-anchor="middle">Control Panel</text>
+                        
+                        <!-- Slider visualization -->
+                        <g transform="translate(10, 20)">
+                            <!-- Slider 1 -->
+                            <text x="0" y="0" font-size="12" fill="#1F2937">Style</text>
+                            <rect x="30" y="-8" width="80" height="4" fill="#E5E7EB" rx="2"/>
+                            <circle cx="70" cy="-6" r="8" fill="#6366F1"/>
+                            
+                            <!-- Slider 2 -->
+                            <text x="0" y="30" font-size="12" fill="#1F2937">Color</text>
+                            <rect x="30" y="22" width="80" height="4" fill="#E5E7EB" rx="2"/>
+                            <circle cx="45" cy="24" r="8" fill="#8B5CF6"/>
+                            
+                            <!-- Slider 3 -->
+                            <text x="0" y="60" font-size="12" fill="#1F2937">Shape</text>
+                            <rect x="30" y="52" width="80" height="4" fill="#E5E7EB" rx="2"/>
+                            <circle cx="90" cy="54" r="8" fill="#EC4899"/>
+                            
+                            <!-- Slider 4 -->
+                            <text x="0" y="90" font-size="12" fill="#1F2937">Detail</text>
+                            <rect x="30" y="82" width="80" height="4" fill="#E5E7EB" rx="2"/>
+                            <circle cx="60" cy="84" r="8" fill="#10B981"/>
+                            
+                            <!-- More sliders indicated -->
+                            <text x="50" y="120" font-size="16" fill="#6B7280" text-anchor="middle">...</text>
+                            
+                            <text x="50" y="150" font-size="10" fill="#6B7280" text-anchor="middle">512 dimensions</text>
+                            <text x="50" y="165" font-size="10" fill="#6B7280" text-anchor="middle">(like 512 sliders!)</text>
+                        </g>
+                    </g>
+
+                    <!-- Decoder -->
+                    <g transform="translate(650, 80)">
+                        <rect x="0" y="0" width="100" height="140" fill="#10B981" rx="10"/>
+                        <text x="50" y="30" font-size="16" fill="white" text-anchor="middle" font-weight="600">Decoder</text>
+                        
+                        <!-- Expansion visualization -->
+                        <path d="M 20 70 L 80 50" stroke="white" stroke-width="2" opacity="0.7"/>
+                        <path d="M 20 75 L 80 70" stroke="white" stroke-width="2" opacity="0.7"/>
+                        <path d="M 20 80 L 80 90" stroke="white" stroke-width="2" opacity="0.7"/>
+                        
+                        <text x="50" y="110" font-size="12" fill="white" text-anchor="middle">Expand</text>
+                    </g>
+
+                    <!-- Output Space - Multi-layer -->
+                    <g transform="translate(780, 100)">
+                        <!-- Arrows from decoder -->
+                        <path d="M -30 0 L 0 0" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <path d="M -30 20 L 0 20" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <path d="M -30 40 L 0 40" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        
+                        <!-- Layer 1: Pixels -->
+                        <g>
+                            <rect x="0" y="-40" width="80" height="120" fill="#ECFDF5" stroke="#10B981" stroke-width="1" rx="3"/>
+                            <!-- Pixel grid -->
+                            <g opacity="0.7" transform="scale(0.6) translate(10, -40)">
+                                <rect x="10" y="10" width="20" height="20" fill="#10B981"/>
+                                <rect x="30" y="10" width="20" height="20" fill="#34D399"/>
+                                <rect x="50" y="10" width="20" height="20" fill="#6EE7B7"/>
+                                <rect x="70" y="10" width="20" height="20" fill="#86EFAC"/>
+                                <rect x="90" y="10" width="20" height="20" fill="#BBF7D0"/>
+                                
+                                <rect x="10" y="30" width="20" height="20" fill="#14B8A6"/>
+                                <rect x="30" y="30" width="20" height="20" fill="#2DD4BF"/>
+                                <rect x="50" y="30" width="20" height="20" fill="#5EEAD4"/>
+                                <rect x="70" y="30" width="20" height="20" fill="#99F6E4"/>
+                                <rect x="90" y="30" width="20" height="20" fill="#CCFBF1"/>
+                                
+                                <text x="60" y="80" font-size="24" text-anchor="middle" fill="#6B7280">...</text>
+                            </g>
+                        </g>
+                        
+                        <!-- Arrow to final output -->
+                        <path d="M 80 40 L 110 40" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        
+                        <!-- Layer 2: Final Image -->
+                        <rect x="110" y="-40" width="120" height="120" fill="#F0FDF4" stroke="#10B981" stroke-width="2" rx="5"/>
+                        <text x="170" y="20" font-size="40" text-anchor="middle">🎨</text>
+                        
+                        <text x="155" y="-50" font-size="18" font-weight="600" fill="#1F2937" text-anchor="middle">Your Result!</text>
+                        <text x="155" y="100" font-size="12" fill="#6B7280" text-anchor="middle">New 512×512 image</text>
+                    </g>
+
+                    <!-- Bottom annotation -->
+                    <g transform="translate(500, 320)">
+                        <rect x="-400" y="0" width="800" height="120" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="10"/>
+                        <text x="0" y="30" font-size="16" font-weight="600" text-anchor="middle" fill="#92400E">
+                            🎯 The Magic: Instead of controlling 262,144 individual pixels...
+                        </text>
+                        <text x="0" y="55" font-size="14" text-anchor="middle" fill="#92400E">
+                            You navigate a "control panel" with just 512 sliders that intelligently control everything!
+                        </text>
+                        <text x="0" y="80" font-size="14" text-anchor="middle" fill="#92400E">
+                            Moving one slider might change multiple aspects: color scheme, artistic style, or facial features.
+                        </text>
+                        <text x="0" y="100" font-size="14" text-anchor="middle" fill="#92400E">
+                            Your preferences teach the AI which slider positions create content you love!
+                        </text>
+                    </g>
+
+                    <!-- Arrow markers -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6366F1"/>
+                        </marker>
+                        <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Key Insight:</strong> The latent space is like a "control panel" with just a few knobs. Each knob controls multiple aspects of the output, making it much easier to navigate than dealing with millions of individual pixels!
+            </div>
+        </div>
+
+        <!-- Concept 2: How Preferences Guide Generation -->
+        <div class="concept-card">
+            <h2>How Your Preferences Guide Generation 🎯</h2>
+            
+            <div class="analogy-box">
+                <h3>🧭 Like a Treasure Hunt with a Heat Map</h3>
+                <p>Imagine you're searching for treasure on an island. As you rate different locations (👍 or 👎), you build a "heat map" showing where treasure is likely to be. The AI uses this heat map to find the best spot!</p>
+            </div>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 900 500" style="max-width: 900px;">
+                    <!-- Step 1: Random Sampling -->
+                    <g transform="translate(50, 50)">
+                        <rect x="0" y="0" width="200" height="200" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="10"/>
+                        <text x="100" y="-10" font-size="16" font-weight="600" fill="#1F2937" text-anchor="middle">1. Random Samples</text>
+                        
+                        <!-- Random points -->
+                        <circle cx="30" cy="40" r="8" fill="#EF4444"/>
+                        <circle cx="170" cy="60" r="8" fill="#10B981"/>
+                        <circle cx="100" cy="100" r="8" fill="#EF4444"/>
+                        <circle cx="60" cy="150" r="8" fill="#10B981"/>
+                        <circle cx="140" cy="140" r="8" fill="#10B981"/>
+                        <circle cx="80" cy="80" r="8" fill="#EF4444"/>
+                        
+                        <!-- Ratings -->
+                        <text x="30" y="25" font-size="12" text-anchor="middle">👎</text>
+                        <text x="170" y="45" font-size="12" text-anchor="middle">👍</text>
+                        <text x="100" y="85" font-size="12" text-anchor="middle">👎</text>
+                        <text x="60" y="135" font-size="12" text-anchor="middle">👍</text>
+                        <text x="140" y="125" font-size="12" text-anchor="middle">👍</text>
+                        <text x="80" y="65" font-size="12" text-anchor="middle">👎</text>
+                    </g>
+
+                    <!-- Arrow 1 -->
+                    <path d="M 270 150 L 320 150" stroke="#6366F1" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                    <!-- Step 2: Learn Preferences -->
+                    <g transform="translate(350, 50)">
+                        <rect x="0" y="0" width="200" height="200" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="10"/>
+                        <text x="100" y="-10" font-size="16" font-weight="600" fill="#1F2937" text-anchor="middle">2. Learn Preferences</text>
+                        
+                        <!-- Heat map visualization -->
+                        <defs>
+                            <radialGradient id="heatmap">
+                                <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8"/>
+                                <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.5"/>
+                                <stop offset="100%" style="stop-color:#EF4444;stop-opacity:0.3"/>
+                            </radialGradient>
+                        </defs>
+                        
+                        <rect x="10" y="10" width="180" height="180" fill="url(#heatmap)" rx="5"/>
+                        
+                        <!-- Preference classifier visualization -->
+                        <text x="100" y="105" font-size="14" fill="white" font-weight="600" text-anchor="middle">Preference</text>
+                        <text x="100" y="125" font-size="14" fill="white" font-weight="600" text-anchor="middle">Heat Map</text>
+                    </g>
+
+                    <!-- Arrow 2 -->
+                    <path d="M 570 150 L 620 150" stroke="#6366F1" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+                    <!-- Step 3: Navigate to Best -->
+                    <g transform="translate(650, 50)">
+                        <rect x="0" y="0" width="200" height="200" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="10"/>
+                        <text x="100" y="-10" font-size="16" font-weight="600" fill="#1F2937" text-anchor="middle">3. Find Your Perfect</text>
+                        
+                        <!-- Optimization path -->
+                        <path d="M 50 150 Q 80 100, 120 80 T 160 60" 
+                              stroke="#6366F1" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        
+                        <!-- Start point -->
+                        <circle cx="50" cy="150" r="6" fill="#6B7280"/>
+                        <text x="50" y="170" font-size="10" text-anchor="middle">Start</text>
+                        
+                        <!-- Optimal point -->
+                        <circle cx="160" cy="60" r="12" fill="#10B981"/>
+                        <text x="160" y="45" font-size="20" text-anchor="middle">⭐</text>
+                        <text x="160" y="90" font-size="12" text-anchor="middle" font-weight="600">Your Ideal!</text>
+                    </g>
+
+                    <!-- Bottom: Distribution Generation -->
+                    <g transform="translate(150, 300)">
+                        <rect x="0" y="0" width="600" height="150" fill="#F0F9FF" stroke="#3B82F6" stroke-width="2" rx="10"/>
+                        <text x="300" y="25" font-size="16" font-weight="600" fill="#1F2937" text-anchor="middle">4. Generate Variety Around Your Preferences</text>
+                        
+                        <!-- Multiple good samples -->
+                        <circle cx="100" cy="75" r="10" fill="#10B981" opacity="0.8"/>
+                        <circle cx="150" cy="85" r="10" fill="#10B981" opacity="0.7"/>
+                        <circle cx="200" cy="70" r="10" fill="#10B981" opacity="0.9"/>
+                        <circle cx="250" cy="80" r="10" fill="#10B981" opacity="0.6"/>
+                        <circle cx="300" cy="75" r="12" fill="#10B981"/>
+                        <circle cx="350" cy="85" r="10" fill="#10B981" opacity="0.7"/>
+                        <circle cx="400" cy="70" r="10" fill="#10B981" opacity="0.8"/>
+                        <circle cx="450" cy="80" r="10" fill="#10B981" opacity="0.6"/>
+                        <circle cx="500" cy="75" r="10" fill="#10B981" opacity="0.9"/>
+                        
+                        <text x="300" y="120" font-size="14" fill="#6B7280" text-anchor="middle">Each circle is a unique variation you'll probably like!</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Interactive Demo: 2D Preference Learning -->
+        <div class="concept-card">
+            <h2>Try It Yourself! 🎮</h2>
+            <p>Click on the space below to indicate what you like (👍) and dislike (👎). Watch how the AI learns your preferences and finds your ideal spot!</p>
+            
+            <div class="interactive-demo">
+                <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair;"></canvas>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <button onclick="setRatingMode('like')" id="likeBtn" class="btn btn-primary" style="background: #10B981;">
+                        👍 Like Mode
+                    </button>
+                    <button onclick="setRatingMode('dislike')" id="dislikeBtn" class="btn btn-secondary">
+                        👎 Dislike Mode
+                    </button>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <button onclick="findOptimal()" class="btn btn-primary">
+                        🎯 Find My Perfect Spot
+                    </button>
+                    <button onclick="resetDemo()" class="btn btn-outline">
+                        🔄 Reset
+                    </button>
+                </div>
+                
+                <div id="demoStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
+            </div>
+        </div>
+
+        <!-- Real-World Analogy -->
+        <div class="concept-card">
+            <h2>Real-World Applications 🌍</h2>
+            
+            <div class="visualization-grid">
+                <div class="analogy-box">
+                    <h3>🎵 Music Generation</h3>
+                    <p><strong>Latent Space:</strong> Musical elements like tempo, instruments, mood</p>
+                    <p><strong>Your Ratings:</strong> Like/dislike songs</p>
+                    <p><strong>Result:</strong> New songs perfectly matching your taste!</p>
+                </div>
+                
+                <div class="analogy-box">
+                    <h3>🏠 Home Design</h3>
+                    <p><strong>Latent Space:</strong> Style, layout, colors, materials</p>
+                    <p><strong>Your Ratings:</strong> Rate house designs</p>
+                    <p><strong>Result:</strong> Your dream home design!</p>
+                </div>
+                
+                <div class="analogy-box">
+                    <h3>🍕 Recipe Creation</h3>
+                    <p><strong>Latent Space:</strong> Ingredients, cooking methods, flavors</p>
+                    <p><strong>Your Ratings:</strong> Rate different dishes</p>
+                    <p><strong>Result:</strong> New recipes you'll love!</p>
+                </div>
+                
+                <div class="analogy-box">
+                    <h3>💕 Private Dating</h3>
+                    <p><strong>Latent Space:</strong> Facial features, expressions, style</p>
+                    <p><strong>Your Ratings:</strong> Rate AI-generated faces</p>
+                    <p><strong>Result:</strong> Match without sharing photos!</p>
+                </div>
+                
+                <div class="analogy-box">
+                    <h3>📱 Zero-Prompt Content</h3>
+                    <p><strong>Latent Space:</strong> Content style, topics, mood</p>
+                    <p><strong>Your Ratings:</strong> Just swipe like TikTok</p>
+                    <p><strong>Result:</strong> Infinite personalized AI content!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step by Step Process -->
+        <div class="concept-card">
+            <h2>The Complete Process 📋</h2>
+            
+            <div class="step-by-step">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>AI Shows You Samples</h3>
+                        <p>The AI generates diverse examples from different parts of the latent space - like showing you different dishes from around the menu.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>You Rate What You See</h3>
+                        <p>Simply indicate what you like (👍) or dislike (👎). No technical knowledge needed - just your honest preferences!</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>AI Learns Your Taste</h3>
+                        <p>Using machine learning, the AI builds a model of your preferences - understanding the patterns in what you enjoy.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Navigate to Your Ideal</h3>
+                        <p>The AI uses your preference model as a compass, navigating through the latent space to find the perfect content for you.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3>Generate Variations</h3>
+                        <p>Not just one result - the AI creates multiple variations around your ideal, giving you options while staying true to your preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why This Matters -->
+        <div class="concept-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2>Why PLGL is Revolutionary 🚀</h2>
+            
+            <div style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+                    <h3>🎯 No Technical Skills Required</h3>
+                    <p>You don't need to understand AI or coding. Just rate what you like - the system handles all the complexity.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+                    <h3>🧬 Truly Personalized</h3>
+                    <p>Unlike one-size-fits-all AI, PLGL learns YOUR unique preferences and generates content specifically for you.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+                    <h3>♾️ Infinite Possibilities</h3>
+                    <p>Navigate continuous spaces of possibilities rather than choosing from pre-made options. Create things that have never existed before!</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+                    <h3>🔄 Continuous Learning</h3>
+                    <p>The more you use it, the better it understands you. Your preference model evolves with your changing tastes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="PLGL_Whitepaper.md">Technical Details</a></li>
+                        <li><a href="getting-started.html">Get Started</a></li>
+                        <li><a href="https://github.com/plgl/core">Source Code</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PLGL Project. Originally developed at <a href="https://skindeep.ai">SkinDeep.ai</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Latent Space Demo
+        const canvas = document.getElementById('interactiveLatentSpace');
+        const ctx = canvas.getContext('2d');
+        const status = document.getElementById('demoStatus');
+        
+        let ratingMode = 'like';
+        let samples = [];
+        let preferenceMap = null;
+        let optimal = null;
+        
+        // Initialize
+        resetDemo();
+        
+        function setRatingMode(mode) {
+            ratingMode = mode;
+            document.getElementById('likeBtn').style.opacity = mode === 'like' ? '1' : '0.6';
+            document.getElementById('dislikeBtn').style.opacity = mode === 'dislike' ? '1' : '0.6';
+            status.textContent = mode === 'like' ? 'Click to add likes 👍' : 'Click to add dislikes 👎';
+        }
+        
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            samples.push({
+                x: x,
+                y: y,
+                rating: ratingMode === 'like'
+            });
+            
+            drawScene();
+            updateStatus();
+        });
+        
+        function drawScene() {
+            // Clear canvas
+            ctx.fillStyle = '#F3F4F6';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grid
+            ctx.strokeStyle = '#E5E7EB';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= canvas.width; i += 50) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let i = 0; i <= canvas.height; i += 50) {
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(canvas.width, i);
+                ctx.stroke();
+            }
+            
+            // Draw preference heatmap if we have enough samples
+            if (samples.length >= 5 && preferenceMap) {
+                drawHeatmap();
+            }
+            
+            // Draw samples
+            samples.forEach(sample => {
+                ctx.beginPath();
+                ctx.arc(sample.x, sample.y, 12, 0, Math.PI * 2);
+                ctx.fillStyle = sample.rating ? '#10B981' : '#EF4444';
+                ctx.fill();
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw emoji
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(sample.rating ? '👍' : '👎', sample.x, sample.y);
+            });
+            
+            // Draw optimal point if found
+            if (optimal) {
+                // Draw path
+                ctx.strokeStyle = '#6366F1';
+                ctx.lineWidth = 3;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                ctx.lineTo(optimal.x, optimal.y);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Draw star
+                ctx.font = '30px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('⭐', optimal.x, optimal.y);
+                
+                // Label
+                ctx.fillStyle = '#1F2937';
+                ctx.font = 'bold 14px Arial';
+                ctx.fillText('Your Perfect Spot!', optimal.x, optimal.y + 30);
+            }
+        }
+        
+        function drawHeatmap() {
+            // Simple heatmap visualization
+            const imageData = ctx.createImageData(canvas.width, canvas.height);
+            
+            for (let x = 0; x < canvas.width; x += 2) {
+                for (let y = 0; y < canvas.height; y += 2) {
+                    const score = getPreferenceScore(x, y);
+                    const color = getHeatmapColor(score);
+                    
+                    // Fill 2x2 pixel block
+                    for (let dx = 0; dx < 2; dx++) {
+                        for (let dy = 0; dy < 2; dy++) {
+                            const idx = ((y + dy) * canvas.width + (x + dx)) * 4;
+                            imageData.data[idx] = color.r;
+                            imageData.data[idx + 1] = color.g;
+                            imageData.data[idx + 2] = color.b;
+                            imageData.data[idx + 3] = 50; // Semi-transparent
+                        }
+                    }
+                }
+            }
+            
+            ctx.putImageData(imageData, 0, 0);
+        }
+        
+        function getPreferenceScore(x, y) {
+            let score = 0;
+            let totalWeight = 0;
+            
+            samples.forEach(sample => {
+                const dist = Math.sqrt((x - sample.x) ** 2 + (y - sample.y) ** 2);
+                const weight = Math.exp(-dist / 50);
+                score += (sample.rating ? 1 : -1) * weight;
+                totalWeight += weight;
+            });
+            
+            return totalWeight > 0 ? score / totalWeight : 0;
+        }
+        
+        function getHeatmapColor(score) {
+            // Map score to color gradient
+            const normalized = (score + 1) / 2; // Normalize to 0-1
+            
+            if (normalized < 0.5) {
+                // Red to yellow
+                const t = normalized * 2;
+                return {
+                    r: 255,
+                    g: Math.floor(255 * t),
+                    b: 0
+                };
+            } else {
+                // Yellow to green
+                const t = (normalized - 0.5) * 2;
+                return {
+                    r: Math.floor(255 * (1 - t)),
+                    g: 255,
+                    b: 0
+                };
+            }
+        }
+        
+        function findOptimal() {
+            if (samples.length < 3) {
+                status.textContent = '❗ Add at least 3 ratings first!';
+                return;
+            }
+            
+            // Build preference map
+            preferenceMap = true;
+            
+            // Find optimal point (simplified - just find best scoring location)
+            let bestX = 0, bestY = 0, bestScore = -Infinity;
+            
+            for (let x = 0; x < canvas.width; x += 10) {
+                for (let y = 0; y < canvas.height; y += 10) {
+                    const score = getPreferenceScore(x, y);
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestX = x;
+                        bestY = y;
+                    }
+                }
+            }
+            
+            optimal = { x: bestX, y: bestY };
+            drawScene();
+            status.textContent = '⭐ Found your ideal spot! The AI navigated to the best location based on your preferences.';
+        }
+        
+        function resetDemo() {
+            samples = [];
+            preferenceMap = null;
+            optimal = null;
+            drawScene();
+            setRatingMode('like');
+            updateStatus();
+        }
+        
+        function updateStatus() {
+            if (samples.length === 0) {
+                status.textContent = '👆 Click anywhere to start rating!';
+            } else if (samples.length < 3) {
+                status.textContent = `Added ${samples.length} rating${samples.length > 1 ? 's' : ''}. Add ${3 - samples.length} more to find your ideal!`;
+            } else if (!optimal) {
+                status.textContent = `${samples.length} ratings collected. Click "Find My Perfect Spot" to see the magic! 🎯`;
+            }
+        }
+        
+        // Initial draw
+        drawScene();
+    </script>
+</body>
+</html>

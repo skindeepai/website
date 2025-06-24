@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with PLGL - Preference Learning in Generative Latent Spaces</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PLGL</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="index.html#applications">Applications</a></li>
+                <li><a href="index.html#demos">Demos</a></li>
+                <li><a href="getting-started.html" class="active">Get Started</a></li>
+                <li><a href="documentation.html">Docs</a></li>
+                <li><a href="https://github.com/plgl/core" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quickstart">Quick Start</a></li>
+                <li><a href="#concepts">Core Concepts</a></li>
+                <li><a href="#first-project">Your First Project</a></li>
+                <li><a href="#advanced">Advanced Usage</a></li>
+                <li><a href="#examples">Example Projects</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Getting Started with PLGL</h1>
+            <p class="lead">Build personalized AI applications using preference learning and generative models</p>
+
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>PLGL (Preference Learning in Generative Latent Spaces) enables you to create AI applications that learn and adapt to individual user preferences. This guide will walk you through everything you need to start building with PLGL.</p>
+                
+                <div class="info-box">
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>How to set up PLGL in your project</li>
+                        <li>Understanding the core concepts</li>
+                        <li>Building your first preference-learning application</li>
+                        <li>Best practices and optimization techniques</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="installation">
+                <h2>Installation</h2>
+                
+                <h3>Using pip</h3>
+                <pre><code class="language-bash">pip install plgl
+
+# For specific deep learning frameworks
+pip install plgl[torch]     # PyTorch support
+pip install plgl[tf]        # TensorFlow support
+pip install plgl[jax]       # JAX support</code></pre>
+
+                <h3>From Source</h3>
+                <pre><code class="language-bash">git clone https://github.com/plgl/core.git
+cd core
+pip install -e .</code></pre>
+
+                <h3>Requirements</h3>
+                <ul>
+                    <li>Python 3.8+</li>
+                    <li>A deep learning framework (PyTorch, TensorFlow, or JAX)</li>
+                    <li>A pre-trained generative model with accessible latent space</li>
+                </ul>
+            </section>
+
+            <section id="quickstart">
+                <h2>Quick Start</h2>
+                <p>Here's a minimal example to get you started with PLGL:</p>
+
+                <pre><code class="language-python">from plgl import PreferenceLearner
+from your_model import load_generator  # Your generative model
+
+# 1. Load your generative model
+generator = load_generator('path/to/model')
+
+# 2. Initialize PLGL
+learner = PreferenceLearner(
+    generator=generator,
+    latent_dim=512,  # Your model's latent dimension
+    device='cuda'
+)
+
+# 3. Collect user preferences
+print("Rate the generated samples (1-5):")
+preferences = learner.collect_preferences(n_samples=20)
+
+# 4. Train preference model
+learner.train(preferences)
+
+# 5. Generate personalized content
+optimal_content = learner.generate_optimal()
+print("Generated personalized content!")</code></pre>
+            </section>
+
+            <section id="concepts">
+                <h2>Core Concepts</h2>
+
+                <h3>1. Generative Models & Latent Spaces</h3>
+                <p>PLGL works with any generative model that has a continuous latent space. This includes:</p>
+                <ul>
+                    <li><strong>GANs</strong> (StyleGAN, ProGAN, etc.)</li>
+                    <li><strong>VAEs</strong> (Variational Autoencoders)</li>
+                    <li><strong>Diffusion Models</strong> with latent representations</li>
+                    <li><strong>Any model</strong> where inputs map to outputs through a continuous space</li>
+                </ul>
+
+                <h3>2. Preference Learning</h3>
+                <p>PLGL learns preferences through various rating mechanisms:</p>
+                <pre><code class="language-python"># Binary preferences (like/dislike)
+rating = learner.get_binary_rating(content)  # True/False
+
+# Scaled preferences (1-5 stars)
+rating = learner.get_scaled_rating(content)  # 1-5
+
+# Comparative preferences (A vs B)
+preference = learner.get_comparison(content_a, content_b)  # 0 or 1
+
+# Multi-criteria preferences
+ratings = learner.get_multicriteria_rating(content, 
+    criteria=['style', 'quality', 'relevance']
+)</code></pre>
+
+                <h3>3. Latent Space Navigation</h3>
+                <p>PLGL optimizes through the latent space to find content matching learned preferences:</p>
+                <pre><code class="language-python"># Gradient-based optimization
+optimal_z = learner.optimize_latent(
+    initial_z=torch.randn(1, latent_dim),
+    steps=1000,
+    learning_rate=0.01
+)
+
+# Evolutionary optimization (for non-differentiable models)
+optimal_z = learner.optimize_evolutionary(
+    population_size=50,
+    generations=100
+)
+
+# Distribution generation
+distribution = learner.generate_distribution(
+    n_samples=20,
+    diversity=0.5  # Balance between quality and diversity
+)</code></pre>
+            </section>
+
+            <section id="first-project">
+                <h2>Your First PLGL Project</h2>
+                <p>Let's build a complete preference-learning application step by step.</p>
+
+                <h3>Project: Personalized Art Generator</h3>
+
+                <h4>Step 1: Setup</h4>
+                <pre><code class="language-python">import torch
+from plgl import PreferenceLearner, RatingInterface
+from torchvision.utils import save_image
+import matplotlib.pyplot as plt
+
+# For this example, we'll use a pre-trained StyleGAN2
+from stylegan2_pytorch import StyleGAN2
+
+# Load model
+generator = StyleGAN2.load('stylegan2-ffhq-config-f.pt')
+latent_dim = 512</code></pre>
+
+                <h4>Step 2: Create Rating Interface</h4>
+                <pre><code class="language-python">class ArtRatingInterface(RatingInterface):
+    """Custom interface for rating artwork"""
+    
+    def display_content(self, content):
+        """Display generated artwork"""
+        plt.figure(figsize=(8, 8))
+        plt.imshow(content.permute(1, 2, 0).cpu())
+        plt.axis('off')
+        plt.show()
+    
+    def get_rating(self, content):
+        """Get user rating"""
+        self.display_content(content)
+        
+        while True:
+            rating = input("Rate this artwork (1-5, or 's' to skip): ")
+            if rating == 's':
+                return None
+            try:
+                rating = int(rating)
+                if 1 <= rating <= 5:
+                    return rating / 5.0  # Normalize to [0, 1]
+            except ValueError:
+                pass
+            print("Invalid input. Please enter 1-5 or 's'.")
+
+# Initialize learner with custom interface
+learner = PreferenceLearner(
+    generator=generator,
+    latent_dim=latent_dim,
+    rating_interface=ArtRatingInterface()
+)</code></pre>
+
+                <h4>Step 3: Collect Preferences</h4>
+                <pre><code class="language-python"># Smart sampling for diverse initial examples
+from plgl.sampling import DiversitySampler
+
+sampler = DiversitySampler(latent_dim=latent_dim)
+initial_samples = sampler.sample(n=30, diversity=0.8)
+
+# Collect ratings
+print("Please rate the following artworks:")
+preferences = learner.collect_preferences(
+    initial_latents=initial_samples,
+    min_ratings=20  # Minimum ratings before training
+)</code></pre>
+
+                <h4>Step 4: Train Preference Model</h4>
+                <pre><code class="language-python"># Train with validation
+from plgl.models import DeepPreferenceModel
+
+preference_model = DeepPreferenceModel(
+    input_dim=generator.output_dim,
+    hidden_dims=[512, 256, 128],
+    dropout=0.2
+)
+
+history = learner.train(
+    preferences,
+    model=preference_model,
+    epochs=200,
+    validation_split=0.2,
+    early_stopping=True
+)
+
+# Visualize training
+plt.plot(history['loss'], label='Training Loss')
+plt.plot(history['val_loss'], label='Validation Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()</code></pre>
+
+                <h4>Step 5: Generate Personalized Art</h4>
+                <pre><code class="language-python"># Generate single optimal artwork
+optimal_art = learner.generate_optimal(
+    optimization_steps=2000,
+    learning_rate=0.005
+)
+
+save_image(optimal_art, 'personalized_artwork.png')
+print("Saved your personalized artwork!")
+
+# Generate a collection
+collection = learner.generate_collection(
+    n_pieces=10,
+    diversity=0.3,  # Some variety while maintaining preferences
+    min_score=0.8   # Quality threshold
+)
+
+for i, art in enumerate(collection):
+    save_image(art, f'collection/artwork_{i}.png')</code></pre>
+
+                <h4>Step 6: Active Learning (Optional)</h4>
+                <pre><code class="language-python"># Improve preferences with active learning
+from plgl.active import UncertaintySampler
+
+active_sampler = UncertaintySampler(learner.preference_model)
+
+for round in range(3):
+    print(f"\nActive Learning Round {round + 1}")
+    
+    # Get most informative samples
+    uncertain_samples = active_sampler.select_samples(
+        n_samples=10,
+        method='entropy'
+    )
+    
+    # Collect ratings for these specific samples
+    new_preferences = learner.collect_preferences(
+        initial_latents=uncertain_samples
+    )
+    
+    # Retrain with all data
+    learner.update_preferences(new_preferences)
+    learner.train(learner.all_preferences)</code></pre>
+            </section>
+
+            <section id="advanced">
+                <h2>Advanced Usage</h2>
+
+                <h3>Multi-Modal Preferences</h3>
+                <pre><code class="language-python">from plgl.multimodal import MultiModalLearner
+
+# Combine visual and textual preferences
+learner = MultiModalLearner(
+    generators={
+        'visual': visual_generator,
+        'text': text_generator
+    },
+    fusion_method='attention'
+)
+
+# Learn from multiple modalities
+preferences = learner.collect_preferences(
+    modalities=['visual', 'text'],
+    n_samples_per_modality=20
+)</code></pre>
+
+                <h3>Conditional Generation</h3>
+                <pre><code class="language-python"># Generate content with conditions
+from plgl.conditional import ConditionalPLGL
+
+conditional_learner = ConditionalPLGL(generator, latent_dim)
+
+# Learn preferences for different contexts
+preferences_happy = learner.collect_preferences(condition='happy')
+preferences_calm = learner.collect_preferences(condition='calm')
+
+# Generate based on mood
+happy_content = conditional_learner.generate(
+    condition='happy',
+    user_preferences=preferences_happy
+)</code></pre>
+
+                <h3>Real-Time Adaptation</h3>
+                <pre><code class="language-python">from plgl.realtime import AdaptiveLearner
+
+# Continuously adapt to user feedback
+adaptive = AdaptiveLearner(
+    generator,
+    learning_rate=0.001,
+    buffer_size=100
+)
+
+# In your application loop
+while True:
+    content = adaptive.generate()
+    display(content)
+    
+    feedback = get_user_feedback()  # Implicit or explicit
+    adaptive.update(content, feedback)
+    
+    # Model continuously improves
+    if adaptive.confidence > 0.9:
+        print("Model has high confidence in preferences!")</code></pre>
+
+                <h3>Distributed Learning</h3>
+                <pre><code class="language-python">from plgl.distributed import FederatedPLGL
+
+# Learn from multiple users while preserving privacy
+federated = FederatedPLGL(
+    generator,
+    aggregation='fedavg',
+    differential_privacy=True
+)
+
+# Each user trains locally
+local_model = federated.create_local_model(user_id='user123')
+local_model.train(user_preferences)
+
+# Aggregate learnings
+global_model = federated.aggregate_models(
+    local_models=[model1, model2, model3],
+    weights=[0.3, 0.4, 0.3]
+)</code></pre>
+            </section>
+
+            <section id="examples">
+                <h2>Example Projects</h2>
+
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>🎵 Music Preference Learning</h4>
+                        <p>Generate personalized music using MusicVAE</p>
+                        <a href="https://github.com/plgl/examples/music-generation" class="example-link">View Code →</a>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>🏗️ Architecture Design</h4>
+                        <p>Create buildings matching style preferences</p>
+                        <a href="https://github.com/plgl/examples/architecture-gan" class="example-link">View Code →</a>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>🧬 Molecule Discovery</h4>
+                        <p>Design molecules with desired properties</p>
+                        <a href="https://github.com/plgl/examples/molecular-vae" class="example-link">View Code →</a>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>📚 Story Generation</h4>
+                        <p>Create narratives matching reading preferences</p>
+                        <a href="https://github.com/plgl/examples/story-gpt" class="example-link">View Code →</a>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>👗 Fashion Design</h4>
+                        <p>Generate clothing matching personal style</p>
+                        <a href="https://github.com/plgl/examples/fashion-gan" class="example-link">View Code →</a>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>🎮 Game Level Generation</h4>
+                        <p>Create levels matching player preferences</p>
+                        <a href="https://github.com/plgl/examples/level-vae" class="example-link">View Code →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="troubleshooting">
+                <h2>Troubleshooting</h2>
+
+                <h3>Common Issues</h3>
+
+                <div class="troubleshooting-item">
+                    <h4>Preference model not converging</h4>
+                    <p><strong>Solution:</strong> Try these approaches:</p>
+                    <pre><code class="language-python"># 1. Collect more diverse preferences
+sampler = DiversitySampler(method='maxmin')
+diverse_samples = sampler.sample(n=50)
+
+# 2. Use a simpler model first
+simple_model = LinearPreferenceModel()
+
+# 3. Adjust learning rate
+learner.train(preferences, learning_rate=0.0001)
+
+# 4. Check for contradictory preferences
+stats = learner.analyze_preferences()
+print(f"Consistency score: {stats['consistency']}")</code></pre>
+                </div>
+
+                <div class="troubleshooting-item">
+                    <h4>Generated content lacks diversity</h4>
+                    <p><strong>Solution:</strong> Increase exploration:</p>
+                    <pre><code class="language-python"># Use temperature sampling
+samples = learner.generate_distribution(
+    n_samples=20,
+    temperature=1.5,  # Higher = more diversity
+    min_distance=0.3  # Ensure variety
+)
+
+# Or use different optimization starting points
+starts = torch.randn(10, latent_dim) * 2  # Wider distribution
+results = [learner.optimize_from(z) for z in starts]</code></pre>
+                </div>
+
+                <div class="troubleshooting-item">
+                    <h4>Memory issues with large models</h4>
+                    <p><strong>Solution:</strong> Use efficient techniques:</p>
+                    <pre><code class="language-python"># Gradient checkpointing
+learner = PreferenceLearner(
+    generator,
+    gradient_checkpointing=True
+)
+
+# Batch processing
+for batch in learner.process_in_batches(preferences, batch_size=4):
+    process(batch)
+
+# Use mixed precision
+with torch.cuda.amp.autocast():
+    result = learner.generate_optimal()</code></pre>
+                </div>
+            </section>
+
+            <div class="next-steps">
+                <h2>Next Steps</h2>
+                <div class="next-steps-grid">
+                    <a href="documentation.html" class="next-step-card">
+                        <h3>📖 Read the Docs</h3>
+                        <p>Comprehensive API reference and guides</p>
+                    </a>
+                    <a href="https://github.com/plgl/core" class="next-step-card">
+                        <h3>💻 Explore Code</h3>
+                        <p>Dive into the source code on GitHub</p>
+                    </a>
+                    <a href="https://discord.gg/plgl" class="next-step-card">
+                        <h3>💬 Join Community</h3>
+                        <p>Get help and share your projects</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        .docs-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        .docs-sidebar {
+            background: #F8FAFC;
+            padding: 2rem;
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+
+        .docs-sidebar h3 {
+            margin-bottom: 1rem;
+        }
+
+        .docs-sidebar ul {
+            list-style: none;
+        }
+
+        .docs-sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .docs-sidebar a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .docs-sidebar a:hover,
+        .docs-sidebar a.active {
+            color: var(--primary-color);
+        }
+
+        .docs-content {
+            padding: 2rem 4rem;
+            max-width: 900px;
+        }
+
+        .docs-content h1 {
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .docs-content section {
+            margin-bottom: 3rem;
+        }
+
+        .docs-content h2 {
+            margin: 2rem 0 1rem;
+            padding-top: 2rem;
+        }
+
+        .docs-content h3 {
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .info-box {
+            background: #F0F9FF;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .example-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .example-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .troubleshooting-item {
+            background: #FEF3C7;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .next-steps {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .next-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .next-step-card {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .next-step-card:hover {
+            transform: translateY(-2px);
+            background: var(--secondary-color);
+        }
+
+        .next-step-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-sidebar {
+                display: none;
+            }
+            
+            .docs-content {
+                padding: 1rem;
+            }
+            
+            .next-steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
