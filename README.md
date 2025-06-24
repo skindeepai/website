@@ -39,10 +39,8 @@ PLGL technology can be applied to:
 ## Original Implementation
 
 The original SkinDeep.ai app (2018-2019) demonstrated this technology for facial preference learning. Archive repositories:
-- [Mobile App](https://github.com/skindeep-ai/skindeep-mobile)
-- [Server Code](https://github.com/skindeep-ai/skindeep-server)
-- [Analysis Tools](https://github.com/skindeep-ai/analysis)
-- [Notebooks](https://github.com/skindeep-ai/notebooks)
+- [Mobile App](https://github.com/skindeepai/skindeep-mobile)
+- [Server Code](https://github.com/skindeepai/skindeep-server)
 
 ## Getting Started
 
