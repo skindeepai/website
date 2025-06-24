@@ -52,7 +52,6 @@
             <div class="hero-buttons">
                 <a href="how-it-works.html" class="btn btn-primary">See How It Works</a>
                 <a href="#demos" class="btn btn-secondary">Try Live Demo</a>
-                <a href="getting-started.html" class="btn btn-secondary">Get Started</a>
                 <a href="whitepaper.html" class="btn btn-outline">Read Whitepaper</a>
             </div>
             <div class="hero-stats">
@@ -81,8 +80,8 @@
 
     <section id="technology" class="section">
         <div class="container">
-            <h2 class="section-title">How PLGL Works</h2>
-            <p class="section-subtitle">A revolutionary approach to personalized content generation</p>
+            <h2 class="section-title"><i>Tinder doesn't ask you to describe your perfect match</i></h2>
+            <p class="section-subtitle">PLGL is a revolutionary approach to personalized content discovery and generation</p>
             
             <div class="audio-player-container">
                 <div class="audio-player-card">
@@ -126,30 +125,6 @@
                     <p>Create perfectly personalized results</p>
                     <div class="step-icon">✨</div>
                 </div>
-            </div>
-
-            <div class="code-example">
-                <h3>Simple Implementation</h3>
-                <pre><code class="language-python"># Core PLGL Pipeline
-from plgl import PreferenceLearner, LatentOptimizer
-
-# 1. Initialize with any generative model
-learner = PreferenceLearner(generator_model)
-
-# 2. Collect user preferences
-ratings = learner.collect_ratings(n_samples=50)
-
-# 3. Train preference model
-preference_model = learner.train(ratings)
-
-# 4. Generate personalized content
-optimal_content = learner.generate_optimal(preference_model)
-
-# 5. Create distribution for variety
-content_distribution = learner.generate_distribution(
-    preference_model, 
-    n_samples=10
-)</code></pre>
             </div>
         </div>
     </section>

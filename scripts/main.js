@@ -66,14 +66,6 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// Animate stats on page load
-window.addEventListener('load', () => {
-    const stats = document.querySelectorAll('.stat h3');
-    if (stats.length > 1) {
-        animateValue(stats[1], 0, 15, 2000);
-    }
-});
-
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
@@ -233,6 +225,7 @@ style.textContent = `
         justify-content: center;
         gap: 1rem;
         margin-bottom: 2rem;
+		flex-wrap: wrap;
     }
     
     .filter-btn {
