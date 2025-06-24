@@ -1080,6 +1080,183 @@ code {
     margin: 2rem 0;
 }
 
+/* Documentation Pages */
+.docs-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding: 0 1rem;
+    gap: 3rem;
+    min-height: calc(100vh - 80px);
+}
+
+.docs-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    padding: 2rem 0;
+}
+
+.docs-sidebar h3 {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.docs-sidebar ul {
+    list-style: none;
+}
+
+.docs-sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.docs-sidebar a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    display: block;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.docs-sidebar a:hover {
+    color: var(--primary-color);
+}
+
+.docs-content {
+    flex: 1;
+    padding: 2rem 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.docs-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.docs-content .lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.docs-content section {
+    margin-bottom: 3rem;
+}
+
+.docs-content h2 {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+
+.docs-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.docs-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.docs-content p {
+    margin-bottom: 1rem;
+}
+
+.docs-content ul, .docs-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.docs-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Code blocks in docs */
+.docs-content pre {
+    background: #1F2937;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.docs-content pre code {
+    color: #E5E7EB;
+    font-size: 0.875rem;
+    white-space: pre;
+    word-wrap: normal;
+    display: block;
+}
+
+/* Info and warning boxes */
+.info-box, .warning-box, .concept-box {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.info-box {
+    background: #EFF6FF;
+    border-left: 4px solid #3B82F6;
+}
+
+.warning-box {
+    background: #FEF3C7;
+    border-left: 4px solid #F59E0B;
+}
+
+.concept-box {
+    background: #F0F9FF;
+    border-left: 4px solid #06B6D4;
+}
+
+.info-box h4, .warning-box h4, .concept-box h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile styles for docs */
+@media (max-width: 768px) {
+    .docs-container {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+    
+    .docs-sidebar {
+        width: 100%;
+        padding: 1rem;
+        background: #F8FAFC;
+        border-bottom: 1px solid #E5E7EB;
+    }
+    
+    .docs-content {
+        padding: 1rem;
+    }
+    
+    .docs-content h1 {
+        font-size: 1.875rem;
+    }
+    
+    .docs-content .lead {
+        font-size: 1.125rem;
+    }
+    
+    /* Ensure code blocks scroll horizontally on mobile */
+    .docs-content pre {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+    
+    /* Make sure long URLs and code lines don't break layout */
+    .docs-content pre code {
+        overflow-x: auto;
+        max-width: calc(100vw - 2rem);
+    }
+}
+
 .hero-highlight h3 {
     text-align: center;
     color: #F3F4F6;

@@ -80,8 +80,22 @@
                 <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
                 <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
             </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a></li>
+            <li><a href="index.html#applications" onclick="closeMobileMenu()">Applications</a></li>
+            <li><a href="index.html#demos" onclick="closeMobileMenu()">Demos</a></li>
+            <li><a href="getting-started.html" onclick="closeMobileMenu()">Get Started</a></li>
+            <li><a href="about.html" class="active" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
+        </ul>
+    </div>
 
     <section class="about-hero">
         <h1>About PLGL Technology</h1>
@@ -163,5 +177,7 @@
             </div>
         </div>
     </footer>
+    
+    <script src="scripts/main.js"></script>
 </body>
 </html>
