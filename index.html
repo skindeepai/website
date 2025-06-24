@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLGL - Preference Learning in Generative Latent Spaces | SkinDeep.ai Inc</title>
+    <meta name="description" content="PLGL technology by SkinDeep.ai Inc - Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy!">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#demos">Demos</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/skindeepai/core" class="github-link">GitHub</a></li>
+                <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Preference Learning in<br>Generative Latent Spaces</h1>
+            <p class="hero-subtitle">Transform user preferences into personalized AI-generated content across any domain</p>
+            <div class="hero-buttons">
+                <a href="how-it-works.html" class="btn btn-primary">See How It Works</a>
+                <a href="#demos" class="btn btn-secondary">Try Live Demo</a>
+                <a href="getting-started.html" class="btn btn-secondary">Get Started</a>
+                <a href="PLGL_Whitepaper.md" class="btn btn-outline">Read Whitepaper</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>2018</h3>
+                    <p>Pioneered</p>
+                </div>
+                <div class="stat">
+                    <h3>2019</h3>
+                    <p>Patented</p>
+                </div>
+                <div class="stat">
+                    <h3>15+</h3>
+                    <p>Domains</p>
+                </div>
+                <div class="stat">
+                    <h3>∞</h3>
+                    <p>Possibilities</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <canvas id="latentSpaceVisualization"></canvas>
+        </div>
+    </section>
+
+    <section id="technology" class="section">
+        <div class="container">
+            <h2 class="section-title">How PLGL Works</h2>
+            <p class="section-subtitle">A revolutionary approach to personalized content generation</p>
+            
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Rate Samples</h3>
+                    <p>Users rate AI-generated content based on their preferences</p>
+                    <div class="step-icon">👍/👎</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Learn Preferences</h3>
+                    <p>Build personalized ML models from rating patterns</p>
+                    <div class="step-icon">🧠</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Navigate Latent Space</h3>
+                    <p>Optimize through generative model's latent dimensions</p>
+                    <div class="step-icon">🎯</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Generate Ideal Content</h3>
+                    <p>Create perfectly personalized results</p>
+                    <div class="step-icon">✨</div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <h3>Simple Implementation</h3>
+                <pre><code class="language-python"># Core PLGL Pipeline
+from plgl import PreferenceLearner, LatentOptimizer
+
+# 1. Initialize with any generative model
+learner = PreferenceLearner(generator_model)
+
+# 2. Collect user preferences
+ratings = learner.collect_ratings(n_samples=50)
+
+# 3. Train preference model
+preference_model = learner.train(ratings)
+
+# 4. Generate personalized content
+optimal_content = learner.generate_optimal(preference_model)
+
+# 5. Create distribution for variety
+content_distribution = learner.generate_distribution(
+    preference_model, 
+    n_samples=10
+)</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="applications" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Infinite Applications</h2>
+            <p class="section-subtitle">PLGL works with any generative model that has a latent space</p>
+            
+            <div class="applications-grid">
+                <div class="app-card" data-category="creative">
+                    <div class="app-icon">🎵</div>
+                    <h3>Music Generation</h3>
+                    <p>Create infinite personalized playlists and compositions</p>
+                    <ul>
+                        <li>Spotify-style "Made for You" generation</li>
+                        <li>Game soundtrack adaptation</li>
+                        <li>Mood-based composition</li>
+                    </ul>
+                    <a href="examples/music.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="creative">
+                    <div class="app-icon">🎨</div>
+                    <h3>Art & Design</h3>
+                    <p>Generate artwork matching personal aesthetic preferences</p>
+                    <ul>
+                        <li>Logo design automation</li>
+                        <li>NFT collection generation</li>
+                        <li>Interior design concepts</li>
+                    </ul>
+                    <a href="examples/art.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="science">
+                    <div class="app-icon">🧬</div>
+                    <h3>Drug Discovery</h3>
+                    <p>Design molecules with desired properties</p>
+                    <ul>
+                        <li>Optimize for bioavailability</li>
+                        <li>Minimize side effects</li>
+                        <li>Target specific proteins</li>
+                    </ul>
+                    <a href="examples/molecules.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="product">
+                    <div class="app-icon">🏗️</div>
+                    <h3>Architecture</h3>
+                    <p>Design buildings matching lifestyle preferences</p>
+                    <ul>
+                        <li>Residential layouts</li>
+                        <li>Commercial facades</li>
+                        <li>Urban planning</li>
+                    </ul>
+                    <a href="examples/architecture.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="content">
+                    <div class="app-icon">📚</div>
+                    <h3>Story Generation</h3>
+                    <p>Create narratives matching reading preferences</p>
+                    <ul>
+                        <li>Personalized novels</li>
+                        <li>Interactive fiction</li>
+                        <li>Educational content</li>
+                    </ul>
+                    <a href="examples/stories.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="product">
+                    <div class="app-icon">👗</div>
+                    <h3>Fashion Design</h3>
+                    <p>Generate clothing matching personal style</p>
+                    <ul>
+                        <li>Custom garment design</li>
+                        <li>Outfit recommendations</li>
+                        <li>Trend prediction</li>
+                    </ul>
+                    <a href="examples/fashion.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="science">
+                    <div class="app-icon">🔬</div>
+                    <h3>Material Science</h3>
+                    <p>Design materials with optimal properties</p>
+                    <ul>
+                        <li>Strength optimization</li>
+                        <li>Conductivity tuning</li>
+                        <li>Sustainability focus</li>
+                    </ul>
+                    <a href="examples/materials.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="content">
+                    <div class="app-icon">🎮</div>
+                    <h3>Game Design</h3>
+                    <p>Create levels matching player preferences</p>
+                    <ul>
+                        <li>Difficulty adaptation</li>
+                        <li>Style preferences</li>
+                        <li>Reward optimization</li>
+                    </ul>
+                    <a href="examples/games.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="social">
+                    <div class="app-icon">💕</div>
+                    <h3>Private Dating</h3>
+                    <p>Match without sharing photos - AI understands your type</p>
+                    <ul>
+                        <li>Train on generated faces</li>
+                        <li>Match via latent preferences</li>
+                        <li>Privacy-first dating</li>
+                    </ul>
+                    <a href="examples/dating.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="social">
+                    <div class="app-icon">📱</div>
+                    <h3>Zero-Prompt Social Media</h3>
+                    <p>Like TikTok for AI content - just swipe, no prompting</p>
+                    <ul>
+                        <li>Personalized video streams</li>
+                        <li>Custom music feeds</li>
+                        <li>Infinite fresh content</li>
+                    </ul>
+                    <a href="examples/social-media.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="content">
+                    <div class="app-icon">📰</div>
+                    <h3>News & Content Curation</h3>
+                    <p>Transform headlines and stories to match reader preferences</p>
+                    <ul>
+                        <li>Personalized headlines</li>
+                        <li>Adaptive storytelling</li>
+                        <li>Interest-based ranking</li>
+                    </ul>
+                    <a href="examples/news.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="creative">
+                    <div class="app-icon">💄</div>
+                    <h3>Beauty & Makeup</h3>
+                    <p>See your ideal look and how to achieve it</p>
+                    <ul>
+                        <li>Personalized transformations</li>
+                        <li>Product recommendations</li>
+                        <li>Style optimization</li>
+                    </ul>
+                    <a href="examples/beauty.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="product">
+                    <div class="app-icon">🚗</div>
+                    <h3>Automotive Design</h3>
+                    <p>Design your perfect car through preferences</p>
+                    <ul>
+                        <li>Custom car generation</li>
+                        <li>Style preferences</li>
+                        <li>Feature optimization</li>
+                    </ul>
+                    <a href="examples/automotive.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="science">
+                    <div class="app-icon">🧬</div>
+                    <h3>DNA & Genetics</h3>
+                    <p>Design genetic sequences for desired traits</p>
+                    <ul>
+                        <li>Trait optimization</li>
+                        <li>Gene expression control</li>
+                        <li>Synthetic biology</li>
+                    </ul>
+                    <a href="examples/genetics.html" class="app-link">See Example →</a>
+                </div>
+
+                <div class="app-card" data-category="more">
+                    <div class="app-icon">➕</div>
+                    <h3>Your Application</h3>
+                    <p>PLGL works with any generative model</p>
+                    <ul>
+                        <li>3D model generation</li>
+                        <li>Recipe creation</li>
+                        <li>Any latent space!</li>
+                    </ul>
+                    <a href="getting-started.html" class="app-link">Build Your Own →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="original" class="section">
+        <div class="container">
+            <h2 class="section-title">The Origin Story</h2>
+            <p class="section-subtitle">How SkinDeep.ai Inc pioneered PLGL technology in 2018-2019</p>
+            
+            <div class="original-showcase">
+                <div class="showcase-content">
+                    <h3>First Implementation of Preference Learning in Latent Spaces</h3>
+                    <p>In 2018-2019, SkinDeep.ai Inc developed the groundbreaking PLGL (Preference Learning in Generative Latent Spaces) technology. Our original app demonstrated how user ratings could train personalized classifiers to navigate StyleGAN's latent space, creating ideal personalized content without any prompting.</p>
+                    
+                    <div class="showcase-features">
+                        <div class="feature">
+                            <span class="feature-icon">🧠</span>
+                            <h4>Learned Individual Preferences</h4>
+                            <p>Built unique preference models for each user based on simple ratings</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎯</span>
+                            <h4>Reverse Classification</h4>
+                            <p>Used trained classifiers to find optimal points in StyleGAN's latent space</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📊</span>
+                            <h4>Distribution Generation</h4>
+                            <p>Created diverse samples for iterative preference refinement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="patent-note">
+                        <p><strong>Patent Filed:</strong> SkinDeep.ai Inc filed a provisional patent in 2019 for the PLGL methodology. We've now open sourced this technology for community benefit and widespread adoption.</p>
+                    </div>
+                </div>
+                
+                <div class="showcase-videos">
+                    <h3>Original Demo Videos & Patent (2019)</h3>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <h4>SkinDeep.ai Technology Overview</h4>
+                            <p>See the original app in action and learn about the core concepts</p>
+                            <a href="https://www.youtube.com/watch?v=M4oQLev_Sk8" target="_blank" class="video-link">
+                                <span class="play-icon">▶</span> Watch Demo
+                            </a>
+                        </div>
+                        <div class="video-card">
+                            <h4>Technical Deep Dive</h4>
+                            <p>Detailed explanation of the preference learning algorithm</p>
+                            <a href="https://www.youtube.com/watch?v=-6mAyFJ4_ME" target="_blank" class="video-link">
+                                <span class="play-icon">▶</span> Watch Video
+                            </a>
+                        </div>
+                        <div class="video-card">
+                            <h4>Provisional Patent</h4>
+                            <p>Read the original patent filing describing the technology and applications</p>
+                            <a href="ProvisionalPatent.txt" target="_blank" class="video-link">
+                                <span class="play-icon">📄</span> View Patent
+                            </a>
+                        </div>
+                        <div class="video-card">
+                            <h4>Original Source Code</h4>
+                            <p>Archive of the original SkinDeep.ai repositories (2018-2019)</p>
+                            <div class="repo-links">
+                                <a href="https://github.com/skindeep-ai/skindeep-mobile" target="_blank" class="video-link">
+                                    <span class="play-icon">📱</span> Mobile App
+                                </a>
+                                <a href="https://github.com/skindeep-ai/skindeep-server" target="_blank" class="video-link">
+                                    <span class="play-icon">🖥️</span> Server Code
+                                </a>
+                                <a href="https://github.com/skindeep-ai/analysis" target="_blank" class="video-link">
+                                    <span class="play-icon">📊</span> Analysis Tools
+                                </a>
+                                <a href="https://github.com/skindeep-ai/notebooks" target="_blank" class="video-link">
+                                    <span class="play-icon">📓</span> Notebooks
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demos" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Interactive Demos</h2>
+            <p class="section-subtitle">Experience PLGL in action</p>
+            
+            <div class="demo-container">
+                <div class="demo-card">
+                    <h3>2D Latent Space Navigation</h3>
+                    <p>Watch how preferences guide exploration of a generative space</p>
+                    <canvas id="demo2D" width="600" height="400"></canvas>
+                    <div class="demo-controls">
+                        <button onclick="startDemo2D()">Start Demo</button>
+                        <button onclick="resetDemo2D()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>Preference Learning Simulation</h3>
+                    <p>See how quickly PLGL learns your preferences</p>
+                    <div id="preferenceDemo">
+                        <div class="sample-grid" id="sampleGrid"></div>
+                        <div class="learning-metrics">
+                            <canvas id="learningCurve" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="implementation-guide section">
+        <div class="container">
+            <h2 class="section-title">Implementation Examples</h2>
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('pytorch')">PyTorch</button>
+                <button class="tab-button" onclick="showTab('tensorflow')">TensorFlow</button>
+                <button class="tab-button" onclick="showTab('jax')">JAX</button>
+                <button class="tab-button" onclick="showTab('numpy-original')">Original (NumPy)</button>
+            </div>
+
+            <div id="pytorch" class="tab-content active">
+                <pre><code class="language-python">import torch
+import torch.nn as nn
+from torch.optim import Adam
+
+class PLGLFramework:
+    """Complete PLGL implementation in PyTorch"""
+    
+    def __init__(self, generator, latent_dim, device='cuda'):
+        self.generator = generator.to(device)
+        self.latent_dim = latent_dim
+        self.device = device
+        self.preference_model = None
+        
+    def collect_preferences(self, n_samples=100):
+        """Interactive preference collection"""
+        samples = []
+        with torch.no_grad():
+            for _ in range(n_samples):
+                # Sample from latent space
+                z = torch.randn(1, self.latent_dim).to(self.device)
+                
+                # Generate content
+                content = self.generator(z)
+                
+                # Get user rating (implement UI here)
+                rating = get_user_rating(content)
+                
+                samples.append({
+                    'latent': z,
+                    'content': content,
+                    'rating': rating
+                })
+        return samples
+    
+    def train_preference_model(self, samples, epochs=100):
+        """Train personalized preference classifier"""
+        # Prepare data
+        X = torch.cat([s['content'] for s in samples])
+        y = torch.tensor([s['rating'] for s in samples]).float()
+        
+        # Define preference model
+        self.preference_model = nn.Sequential(
+            nn.Linear(X.shape[1], 256),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1),
+            nn.Sigmoid()
+        ).to(self.device)
+        
+        # Train
+        optimizer = Adam(self.preference_model.parameters())
+        criterion = nn.BCELoss()
+        
+        for epoch in range(epochs):
+            pred = self.preference_model(X).squeeze()
+            loss = criterion(pred, y)
+            
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+    def generate_optimal(self, n_steps=1000, lr=0.01):
+        """Navigate latent space to find optimal content"""
+        # Initialize from random point
+        z = torch.randn(1, self.latent_dim, requires_grad=True)
+        optimizer = Adam([z], lr=lr)
+        
+        for step in range(n_steps):
+            # Generate and score
+            content = self.generator(z)
+            score = self.preference_model(content)
+            
+            # Maximize preference score
+            loss = -score
+            
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+            # Optional: Constrain to valid latent space
+            with torch.no_grad():
+                z.clamp_(-3, 3)  # Adjust based on your model
+                
+        return self.generator(z.detach())
+    
+    def generate_distribution(self, n_samples=100, temperature=1.0):
+        """Generate diverse high-preference samples"""
+        samples = []
+        scores = []
+        
+        with torch.no_grad():
+            while len(samples) < n_samples:
+                # Sample and evaluate
+                z = torch.randn(1, self.latent_dim) * temperature
+                content = self.generator(z)
+                score = self.preference_model(content)
+                
+                # Accept based on score
+                if score > 0.7:  # Threshold
+                    samples.append(content)
+                    scores.append(score.item())
+                    
+        return samples, scores
+
+# Active Learning Extension
+class ActivePLGL(PLGLFramework):
+    """PLGL with active learning for efficient preference capture"""
+    
+    def uncertainty_sampling(self, n_samples=10):
+        """Select most informative samples for rating"""
+        candidates = []
+        uncertainties = []
+        
+        with torch.no_grad():
+            # Generate candidate pool
+            for _ in range(n_samples * 10):
+                z = torch.randn(1, self.latent_dim)
+                content = self.generator(z)
+                score = self.preference_model(content)
+                
+                # Uncertainty = distance from decision boundary
+                uncertainty = abs(score - 0.5)
+                
+                candidates.append((z, content))
+                uncertainties.append(uncertainty)
+        
+        # Select most uncertain
+        indices = torch.argsort(torch.tensor(uncertainties))[:n_samples]
+        return [candidates[i] for i in indices]</code></pre>
+            </div>
+
+            <div id="tensorflow" class="tab-content">
+                <pre><code class="language-python">import tensorflow as tf
+import numpy as np
+
+class PLGLTensorFlow:
+    """PLGL implementation in TensorFlow 2.x"""
+    
+    def __init__(self, generator, latent_dim):
+        self.generator = generator
+        self.latent_dim = latent_dim
+        self.preference_model = None
+        
+    def build_preference_model(self, input_shape):
+        """Build preference classifier"""
+        model = tf.keras.Sequential([
+            tf.keras.layers.Dense(256, activation='relu'),
+            tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dense(128, activation='relu'),
+            tf.keras.layers.Dense(1, activation='sigmoid')
+        ])
+        model.compile(
+            optimizer='adam',
+            loss='binary_crossentropy',
+            metrics=['accuracy']
+        )
+        return model
+    
+    @tf.function
+    def optimize_latent(self, initial_z, steps=100):
+        """Gradient-based latent optimization"""
+        z = tf.Variable(initial_z)
+        optimizer = tf.keras.optimizers.Adam(0.01)
+        
+        for _ in range(steps):
+            with tf.GradientTape() as tape:
+                content = self.generator(z)
+                score = self.preference_model(content)
+                loss = -score  # Maximize
+                
+            grads = tape.gradient(loss, [z])
+            optimizer.apply_gradients(zip(grads, [z]))
+            
+        return z</code></pre>
+            </div>
+
+            <div id="jax" class="tab-content">
+                <pre><code class="language-python">import jax
+import jax.numpy as jnp
+from jax import grad, jit, vmap
+import optax
+
+class PLGLJAX:
+    """PLGL implementation in JAX"""
+    
+    def __init__(self, generator_fn, latent_dim):
+        self.generator_fn = generator_fn
+        self.latent_dim = latent_dim
+        
+    @jit
+    def preference_loss(self, params, z, target):
+        """Preference model loss"""
+        content = self.generator_fn(z)
+        pred = self.preference_model(params, content)
+        return jnp.mean((pred - target) ** 2)
+    
+    @jit
+    def optimize_latent(self, preference_params, initial_z):
+        """Optimize in latent space"""
+        def score_fn(z):
+            content = self.generator_fn(z)
+            return -self.preference_model(preference_params, content)
+        
+        grad_fn = grad(score_fn)
+        optimizer = optax.adam(0.01)
+        opt_state = optimizer.init(initial_z)
+        
+        def step(z, opt_state):
+            grads = grad_fn(z)
+            updates, opt_state = optimizer.update(grads, opt_state)
+            z = optax.apply_updates(z, updates)
+            return z, opt_state
+        
+        # Run optimization
+        z = initial_z
+        for _ in range(100):
+            z, opt_state = step(z, opt_state)
+            
+        return z</code></pre>
+            </div>
+
+            <div id="numpy-original" class="tab-content">
+                <pre><code class="language-python">"""
+Original PLGL Implementation (2018-2019)
+SkinDeep.ai Inc - Historical Reference
+
+This is the original numpy-based implementation that pioneered
+preference learning in generative latent spaces.
+"""
+
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+from scipy.optimize import minimize
+import pickle
+
+class OriginalPLGL:
+    """
+    Original 2018-2019 implementation using NumPy and scikit-learn
+    Designed for StyleGAN latent space navigation
+    """
+    
+    def __init__(self, latent_dim=512, generator_func=None):
+        self.latent_dim = latent_dim
+        self.generator_func = generator_func
+        self.classifier = None
+        self.user_ratings = []
+        self.latent_vectors = []
+        
+    def collect_preferences(self, n_samples=100, save_path=None):
+        """
+        Original preference collection approach
+        Used random sampling with human-in-the-loop rating
+        """
+        print(f"Collecting {n_samples} preference ratings...")
+        
+        for i in range(n_samples):
+            # Sample from standard normal (StyleGAN convention)
+            z = np.random.randn(1, self.latent_dim)
+            
+            # Generate content (originally face images)
+            if self.generator_func:
+                content = self.generator_func(z)
+                # Display to user and collect rating
+                # In the original app, this was done via mobile UI
+                rating = self._get_user_rating(content)
+            else:
+                # Simulated for demonstration
+                rating = np.random.choice([0, 1])
+            
+            self.latent_vectors.append(z[0])
+            self.user_ratings.append(rating)
+            
+            if save_path and i % 10 == 0:
+                self._save_checkpoint(save_path)
+                
+        return np.array(self.latent_vectors), np.array(self.user_ratings)
+    
+    def train_classifier(self, kernel='rbf', C=1.0, gamma='scale'):
+        """
+        Original approach: SVM classifier for preference prediction
+        Found to work well in high-dimensional latent spaces
+        """
+        if len(self.user_ratings) < 10:
+            raise ValueError("Need at least 10 ratings to train")
+            
+        X = np.array(self.latent_vectors)
+        y = np.array(self.user_ratings)
+        
+        # Split for validation
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+        
+        # Train SVM classifier
+        self.classifier = SVC(kernel=kernel, C=C, gamma=gamma, probability=True)
+        self.classifier.fit(X_train, y_train)
+        
+        # Report accuracy
+        train_acc = self.classifier.score(X_train, y_train)
+        test_acc = self.classifier.score(X_test, y_test)
+        
+        print(f"Training accuracy: {train_acc:.2f}")
+        print(f"Test accuracy: {test_acc:.2f}")
+        
+        return self.classifier
+    
+    def find_optimal_latent(self, n_starts=10, method='L-BFGS-B'):
+        """
+        Original optimization: Scipy minimize with multiple restarts
+        Objective: Find z that maximizes classifier confidence
+        """
+        if self.classifier is None:
+            raise ValueError("Train classifier first")
+            
+        best_z = None
+        best_score = -np.inf
+        
+        def objective(z):
+            # Reshape for classifier
+            z_reshaped = z.reshape(1, -1)
+            # Get probability of positive class
+            prob = self.classifier.predict_proba(z_reshaped)[0, 1]
+            # Minimize negative probability (maximize positive)
+            return -prob
+        
+        # Multiple random restarts for global optimization
+        for _ in range(n_starts):
+            # Random initialization
+            z0 = np.random.randn(self.latent_dim)
+            
+            # Optimize
+            result = minimize(
+                objective,
+                z0,
+                method=method,
+                options={'maxiter': 100}
+            )
+            
+            if -result.fun > best_score:
+                best_score = -result.fun
+                best_z = result.x
+                
+        print(f"Found optimal with score: {best_score:.3f}")
+        return best_z
+    
+    def generate_distribution(self, n_samples=100, threshold=0.7):
+        """
+        Original distribution generation approach
+        Sample and filter based on classifier confidence
+        """
+        if self.classifier is None:
+            raise ValueError("Train classifier first")
+            
+        accepted_samples = []
+        total_tried = 0
+        
+        while len(accepted_samples) < n_samples:
+            # Batch sampling for efficiency
+            batch_size = min(100, (n_samples - len(accepted_samples)) * 2)
+            z_batch = np.random.randn(batch_size, self.latent_dim)
+            
+            # Get probabilities
+            probs = self.classifier.predict_proba(z_batch)[:, 1]
+            
+            # Accept high-scoring samples
+            accepted_idx = probs > threshold
+            accepted_samples.extend(z_batch[accepted_idx])
+            
+            total_tried += batch_size
+            
+            # Prevent infinite loop
+            if total_tried > n_samples * 100:
+                print(f"Warning: Could only find {len(accepted_samples)} samples")
+                break
+                
+        return np.array(accepted_samples[:n_samples])
+    
+    def iterative_refinement(self, n_iterations=5, samples_per_iter=20):
+        """
+        Original iterative improvement strategy
+        Alternates between generation and rating collection
+        """
+        print("Starting iterative refinement process...")
+        
+        for iteration in range(n_iterations):
+            print(f"\nIteration {iteration + 1}/{n_iterations}")
+            
+            # Generate samples from current model
+            if iteration == 0:
+                # First iteration: random sampling
+                new_samples = np.random.randn(samples_per_iter, self.latent_dim)
+            else:
+                # Later iterations: guided by current classifier
+                distribution = self.generate_distribution(samples_per_iter * 2)
+                # Add some random samples for exploration
+                guided = distribution[:int(samples_per_iter * 0.8)]
+                random = np.random.randn(int(samples_per_iter * 0.2), self.latent_dim)
+                new_samples = np.vstack([guided, random])
+            
+            # Collect ratings for new samples
+            for z in new_samples:
+                if self.generator_func:
+                    content = self.generator_func(z.reshape(1, -1))
+                    rating = self._get_user_rating(content)
+                else:
+                    # Simulated
+                    rating = np.random.choice([0, 1])
+                    
+                self.latent_vectors.append(z)
+                self.user_ratings.append(rating)
+            
+            # Retrain classifier with all data
+            self.train_classifier()
+            
+            # Find current optimal
+            optimal_z = self.find_optimal_latent()
+            
+            print(f"Total ratings collected: {len(self.user_ratings)}")
+            
+    def _get_user_rating(self, content):
+        """
+        In the original app, this displayed content on mobile device
+        and collected swipe left (0) or swipe right (1)
+        """
+        # Placeholder for actual user interaction
+        return np.random.choice([0, 1])
+    
+    def _save_checkpoint(self, path):
+        """Save current state for recovery"""
+        checkpoint = {
+            'latent_vectors': self.latent_vectors,
+            'user_ratings': self.user_ratings,
+            'classifier': self.classifier
+        }
+        with open(path, 'wb') as f:
+            pickle.dump(checkpoint, f)
+            
+    def load_checkpoint(self, path):
+        """Load saved state"""
+        with open(path, 'rb') as f:
+            checkpoint = pickle.load(f)
+        self.latent_vectors = checkpoint['latent_vectors']
+        self.user_ratings = checkpoint['user_ratings']
+        self.classifier = checkpoint['classifier']
+
+
+# Example usage demonstrating the original workflow
+if __name__ == "__main__":
+    print("=== Original PLGL Implementation Demo ===")
+    print("Historical reference from SkinDeep.ai (2018-2019)\n")
+    
+    # Initialize with StyleGAN dimensions
+    plgl = OriginalPLGL(latent_dim=512)
+    
+    # Simulate the original data collection process
+    print("Phase 1: Initial preference collection")
+    plgl.collect_preferences(n_samples=50)
+    
+    print("\nPhase 2: Train preference classifier")
+    plgl.train_classifier()
+    
+    print("\nPhase 3: Find optimal latent vector")
+    optimal_z = plgl.find_optimal_latent()
+    
+    print("\nPhase 4: Generate preference distribution")
+    distribution = plgl.generate_distribution(n_samples=10)
+    print(f"Generated {len(distribution)} samples matching preferences")
+    
+    print("\nPhase 5: Iterative refinement")
+    plgl.iterative_refinement(n_iterations=3)
+    
+    print("\n✨ This approach pioneered preference learning in latent spaces!")
+    print("Now evolved into the modern PLGL framework with deep learning.")</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Personalize AI?</h2>
+            <p>Join the revolution in preference-driven content generation with PLGL by SkinDeep.ai Inc</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/skindeepai/core" class="btn btn-primary">View on GitHub</a>
+                <a href="getting-started.html" class="btn btn-secondary">Start Building</a>
+                <a href="mailto:contact@skindeep.ai" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PLGL Technology</h4>
+                    <p>Developed by SkinDeep.ai Inc<br>
+                    Pioneered in 2018-2019<br>
+                    Open source and free to use<br>
+                    Works with any generative model</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="PLGL_Whitepaper.md">Whitepaper</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="examples/">Code Examples</a></li>
+                        <li><a href="research.html">Research Papers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/skindeepai/core">GitHub</a></li>
+                        <li><a href="https://discord.gg/plgl">Discord</a></li>
+                        <li><a href="https://twitter.com/plgl_ai">Twitter</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applications</h4>
+                    <ul>
+                        <li><a href="examples/music.html">Music Generation</a></li>
+                        <li><a href="examples/art.html">Art & Design</a></li>
+                        <li><a href="examples/science.html">Scientific Discovery</a></li>
+                        <li><a href="showcase.html">Showcase</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkinDeep.ai Inc. | PLGL Technology released under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/demos.js"></script>
+</body>
+</html>
