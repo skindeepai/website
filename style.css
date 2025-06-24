@@ -369,6 +369,24 @@ code {
     margin-bottom: 1rem;
 }
 
+.demo-stats {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.demo-stats span {
+    font-weight: 600;
+}
+
+.demo-stats span span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 .demo-controls {
     margin-top: 1rem;
     display: flex;

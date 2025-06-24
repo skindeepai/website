@@ -406,6 +406,11 @@ content_distribution = learner.generate_distribution(
                     <h3>2D Latent Space Navigation</h3>
                     <p>Watch how preferences guide exploration of a generative space</p>
                     <canvas id="demo2D" width="600" height="400"></canvas>
+                    <div class="demo-stats">
+                        <span>Batch: <span id="batch-number">0</span></span>
+                        <span>Samples: <span id="sample-count">0</span></span>
+                        <span>Accuracy: <span id="accuracy">0</span>%</span>
+                    </div>
                     <div class="demo-controls">
                         <button onclick="startDemo2D()">Start Demo</button>
                         <button onclick="resetDemo2D()">Reset</button>
