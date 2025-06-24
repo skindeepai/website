@@ -1,5 +1,26 @@
 // Main JavaScript for PLGL Website
 
+// Mobile Menu Functions
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.remove('active');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+    }
+});
+
 // Tab functionality
 function showTab(tabName) {
     const tabs = document.querySelectorAll('.tab-content');
