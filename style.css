@@ -126,7 +126,41 @@ body {
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-hook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hook-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.hook-icon {
+    font-size: 1.25rem;
+}
+
+.hook-text {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.hook-divider {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .hero-buttons {
@@ -763,6 +797,23 @@ code {
     
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+    
+    .hero-hook {
+        gap: 0.5rem;
+    }
+    
+    .hook-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hook-icon {
+        font-size: 1rem;
+    }
+    
+    .hook-divider {
+        display: none;
     }
     
     .hero-buttons {
