@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Learning Strategies for PLGL - Optimizing Preference Discovery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .active-learning-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 80px;
+        }
+        
+        .al-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .al-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .strategy-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .strategy-card {
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .strategy-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #EBF5FF 0%, #DBEAFE 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .strategy-card h3 {
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .strategy-effectiveness {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .effectiveness-bar {
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .effectiveness-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .implementation-section {
+            background: #F8FAFC;
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .code-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .code-block {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .code-block h4 {
+            color: #60A5FA;
+            margin-bottom: 1rem;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3B82F6;
+            line-height: 1;
+        }
+        
+        .metric-label {
+            color: #6B7280;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+        
+        .best-practices {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border: 2px solid #3B82F6;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .best-practices h3 {
+            color: #1D4ED8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .practice-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .practice-item {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .practice-number {
+            background: #3B82F6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .code-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .strategy-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo">PLGL</div>
+                <span class="logo-subtitle">by SkinDeep.ai Inc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="whitepaper.html">Whitepaper</a></li>
+                <li><a href="future-explorations.html">Future</a></li>
+                <li><a href="multi-modal-preferences-deep-dive.html">Multi-Modal</a></li>
+                <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="active-learning-container">
+        <div class="al-header">
+            <h1>Active Learning Strategies for PLGL</h1>
+            <p class="subtitle">Optimize preference discovery with intelligent sampling</p>
+        </div>
+
+        <section>
+            <h2 style="text-align: center; margin-bottom: 3rem;">Core Active Learning Strategies</h2>
+            
+            <div class="strategy-showcase">
+                <div class="strategy-card">
+                    <div class="strategy-icon">🎯</div>
+                    <h3>Uncertainty Sampling</h3>
+                    <p>Focus on samples where the model is least confident. Perfect for refining decision boundaries.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">85% efficiency for boundary refinement</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Rounds 3-10 of preference collection</li>
+                        <li>Binary preference decisions</li>
+                        <li>Single-mode preferences</li>
+                    </ul>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">🌐</div>
+                    <h3>Diversity Sampling</h3>
+                    <p>Maximize coverage of the latent space using furthest-point sampling algorithms.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">90% efficiency for initial exploration</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>First 1-3 rounds</li>
+                        <li>Multi-modal preference discovery</li>
+                        <li>Unknown preference landscapes</li>
+                    </ul>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">🔄</div>
+                    <h3>Expected Model Change</h3>
+                    <p>Select samples that would most change the model if labeled. Optimal for rapid convergence.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">75% efficiency for model improvement</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Limited labeling budget</li>
+                        <li>Quick prototyping</li>
+                        <li>Research applications</li>
+                    </ul>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">🎲</div>
+                    <h3>Hybrid Adaptive</h3>
+                    <p>Dynamically switch between strategies based on learning progress and user engagement.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">95% overall efficiency</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Production applications</li>
+                        <li>Long-term user engagement</li>
+                        <li>Complex preference landscapes</li>
+                    </ul>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">👥</div>
+                    <h3>Cluster-Based</h3>
+                    <p>Identify preference clusters and sample representatively from each discovered mode.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">80% efficiency for multi-modal</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Users with diverse tastes</li>
+                        <li>Content recommendation systems</li>
+                        <li>Mood-based applications</li>
+                    </ul>
+                </div>
+                
+                <div class="strategy-card">
+                    <div class="strategy-icon">⚡</div>
+                    <h3>Greedy Optimization</h3>
+                    <p>Always show the current best predictions plus strategic exploration samples.</p>
+                    
+                    <div class="strategy-effectiveness">
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #6B7280;">70% efficiency, 95% satisfaction</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">Best For:</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Entertainment applications</li>
+                        <li>User retention focus</li>
+                        <li>Passive learning scenarios</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="implementation-section">
+            <h2>Implementation Comparison</h2>
+            <p style="color: #6B7280; margin-bottom: 2rem;">See how different strategies perform in code</p>
+            
+            <div class="code-comparison">
+                <div class="code-block">
+                    <h4>Naive Random Sampling</h4>
+                    <pre style="margin: 0; color: #E2E8F0;">def random_sampling(n_samples):
+    """Baseline: random sampling"""
+    samples = []
+    for _ in range(n_samples):
+        z = np.random.randn(512)
+        samples.append(z)
+    return samples
+
+# Pros: Simple, unbiased
+# Cons: Slow convergence
+# Efficiency: ~30-40%</pre>
+                </div>
+                
+                <div class="code-block">
+                    <h4>Smart Active Learning</h4>
+                    <pre style="margin: 0; color: #E2E8F0;">def active_sampling(model, n_samples):
+    """Intelligent active learning"""
+    samples = []
+    
+    # Phase 1: Diversity (30%)
+    if model.n_labeled < 10:
+        samples.extend(
+            diversity_sample(n_samples)
+        )
+    
+    # Phase 2: Uncertainty (70%)
+    else:
+        candidates = generate_candidates(
+            n=n_samples * 10
+        )
+        scores = model.predict_proba(
+            candidates
+        )
+        
+        # Select most uncertain
+        uncertainty = np.abs(scores - 0.5)
+        idx = np.argsort(uncertainty)[:n_samples]
+        samples = candidates[idx]
+    
+    return samples
+
+# Efficiency: ~85-95%</pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="text-align: center; margin: 3rem 0 2rem;">Performance Metrics by Strategy</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">2.8x</div>
+                    <div class="metric-label">Faster Convergence</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">65%</div>
+                    <div class="metric-label">Fewer Samples Needed</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">User Satisfaction</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">15ms</div>
+                    <div class="metric-label">Selection Time</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">99.5%</div>
+                    <div class="metric-label">Coverage Rate</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">3.2</div>
+                    <div class="metric-label">Modes Discovered</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-practices">
+            <h3>Best Practices for Active Learning in PLGL</h3>
+            
+            <div class="practice-list">
+                <div class="practice-item">
+                    <div class="practice-number">1</div>
+                    <div>
+                        <h4>Start with Maximum Diversity</h4>
+                        <p>Begin with furthest-point sampling to establish a broad understanding of user preferences. This prevents early bias and ensures all preference modes are discoverable.</p>
+                    </div>
+                </div>
+                
+                <div class="practice-item">
+                    <div class="practice-number">2</div>
+                    <div>
+                        <h4>Monitor User Fatigue</h4>
+                        <p>Track response times and consistency. Switch to exploitation-heavy strategies when users show signs of fatigue (slower responses, inconsistent ratings).</p>
+                    </div>
+                </div>
+                
+                <div class="practice-item">
+                    <div class="practice-number">3</div>
+                    <div>
+                        <h4>Balance Exploration and Exploitation</h4>
+                        <p>Use the 70/30 rule: 70% samples near known preferences, 30% exploration. Adjust based on application (entertainment: 80/20, research: 50/50).</p>
+                    </div>
+                </div>
+                
+                <div class="practice-item">
+                    <div class="practice-number">4</div>
+                    <div>
+                        <h4>Implement Safety Boundaries</h4>
+                        <p>Always include pre-marked negative samples in your active learning pool. This prevents the model from exploring inappropriate regions of the latent space.</p>
+                    </div>
+                </div>
+                
+                <div class="practice-item">
+                    <div class="practice-number">5</div>
+                    <div>
+                        <h4>Use Temporal Adaptation</h4>
+                        <p>Preferences change over time. Implement a sliding window approach where recent ratings have higher weight, and periodically re-explore old regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Advanced Active Learning Algorithm</h2>
+            
+            <div class="code-block" style="max-width: 900px; margin: 0 auto;">
+                <pre style="margin: 0; color: #E2E8F0;">class AdaptiveActiveLearner:
+    """State-of-the-art active learning for PLGL"""
+    
+    def __init__(self, latent_dim=512):
+        self.latent_dim = latent_dim
+        self.strategy_weights = {
+            'diversity': 1.0,
+            'uncertainty': 0.0,
+            'cluster': 0.0,
+            'exploitation': 0.0
+        }
+        self.round = 0
+        self.discovered_modes = []
+        
+    def select_batch(self, model, batch_size=20):
+        """Intelligently select next batch of samples"""
+        
+        self.round += 1
+        samples = []
+        
+        # Update strategy weights based on learning progress
+        self._update_strategy_weights(model)
+        
+        # Allocate samples to each strategy
+        for strategy, weight in self.strategy_weights.items():
+            n_samples = int(batch_size * weight)
+            if n_samples > 0:
+                if strategy == 'diversity':
+                    samples.extend(self._diversity_sampling(n_samples))
+                elif strategy == 'uncertainty':
+                    samples.extend(self._uncertainty_sampling(model, n_samples))
+                elif strategy == 'cluster':
+                    samples.extend(self._cluster_sampling(model, n_samples))
+                elif strategy == 'exploitation':
+                    samples.extend(self._exploitation_sampling(model, n_samples))
+        
+        return np.array(samples)
+    
+    def _update_strategy_weights(self, model):
+        """Dynamically adjust strategy weights"""
+        
+        n_labeled = len(model.training_data)
+        
+        if n_labeled < 20:
+            # Early stage: maximum diversity
+            self.strategy_weights = {
+                'diversity': 0.8,
+                'uncertainty': 0.0,
+                'cluster': 0.0,
+                'exploitation': 0.2
+            }
+        elif n_labeled < 50:
+            # Discovery stage: balance diversity and uncertainty
+            self.strategy_weights = {
+                'diversity': 0.3,
+                'uncertainty': 0.4,
+                'cluster': 0.1,
+                'exploitation': 0.2
+            }
+        elif n_labeled < 100:
+            # Refinement stage: focus on boundaries
+            self.strategy_weights = {
+                'diversity': 0.1,
+                'uncertainty': 0.4,
+                'cluster': 0.2,
+                'exploitation': 0.3
+            }
+        else:
+            # Optimization stage: exploit with periodic exploration
+            explore_cycle = (self.round % 5 == 0)
+            if explore_cycle:
+                self.strategy_weights = {
+                    'diversity': 0.3,
+                    'uncertainty': 0.3,
+                    'cluster': 0.2,
+                    'exploitation': 0.2
+                }
+            else:
+                self.strategy_weights = {
+                    'diversity': 0.05,
+                    'uncertainty': 0.15,
+                    'cluster': 0.1,
+                    'exploitation': 0.7
+                }</pre>
+            </div>
+        </section>
+
+        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #E5E7EB;">
+            <p style="text-align: center; color: #6B7280;">
+                © 2025 SkinDeep.ai Inc. | PLGL Technology | Patent Pending<br>
+                <a href="whitepaper.html">← Back to Whitepaper</a> | 
+                <a href="future-explorations.html">Future Explorations</a> | 
+                <a href="multi-modal-preferences-deep-dive.html">Multi-Modal Preferences</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

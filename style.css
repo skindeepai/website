@@ -138,6 +138,46 @@ body {
     align-items: center;
 }
 
+/* Tipping Point Banner */
+.tipping-point-banner {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.1);
+}
+
+.tp-icon {
+    font-size: 1.5rem;
+}
+
+.tp-text {
+    color: #92400E;
+    font-size: 1rem;
+}
+
+.tp-text strong {
+    color: #DC2626;
+    font-size: 1.1rem;
+}
+
+.tp-link {
+    color: #B45309;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: color 0.3s;
+}
+
+.tp-link:hover {
+    color: #92400E;
+    text-decoration: underline;
+}
+
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -724,6 +764,26 @@ code {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-primary);
+}
+
+/* Responsive tipping point banner */
+@media (max-width: 768px) {
+    .tipping-point-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0 1.5rem;
+    }
+    
+    .tp-text {
+        font-size: 0.9rem;
+    }
+    
+    .tp-text strong {
+        display: block;
+        margin-top: 0.25rem;
+    }
 }
 
 .mobile-menu {
