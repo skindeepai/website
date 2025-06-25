@@ -6,14 +6,6 @@ This repository contains the PLGL (Preference Learning in Generative Latent Spac
 
 PLGL is a revolutionary approach to personalized AI content generation that learns user preferences through simple ratings rather than complex prompts. Originally developed in 2018-2019, this technology enables any generative model with a latent space to create personalized content.
 
-## Repository Structure
-
-- `/plgl-website/` - The PLGL technology website and documentation
-- `/plgl-core/` - Core PLGL Python package (pip installable)
-- `/PLGL_Whitepaper.md` - Comprehensive technical whitepaper
-- `/ProvisionalPatent.txt` - Original provisional patent filing from 2019
-- `/LAUNCH_WEBSITE.md` - Instructions for deploying the website
-
 ## Key Features
 
 - **No Prompting Required**: Users simply rate examples, and the AI learns their preferences
@@ -41,23 +33,6 @@ PLGL technology can be applied to:
 The original SkinDeep.ai app (2018-2019) demonstrated this technology for facial preference learning. Archive repositories:
 - [Mobile App](https://github.com/skindeepai/skindeep-mobile)
 - [Server Code](https://github.com/skindeepai/skindeep-server)
-
-## Getting Started
-
-1. **Install the PLGL package**:
-   ```bash
-   pip install -e plgl-core/
-   ```
-
-2. **View the documentation**:
-   - Read the [whitepaper](PLGL_Whitepaper.md)
-   - Visit the website (see [deployment instructions](LAUNCH_WEBSITE.md))
-
-3. **Try the examples**:
-   ```bash
-   cd plgl-website/examples/
-   python music_generation.py
-   ```
 
 ## Demo Videos
 
