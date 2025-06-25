@@ -89,33 +89,7 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Mobile menu toggle
-function createMobileMenu() {
-	
-	if (nav.querySelector('.mobile-menu-toggle')){
-		if (window.innerWidth > 768){
-			nav.querySelector('.mobile-menu-toggle').remove();
-		}
-		return;
-	} else if (window.innerWidth > 768){
-		return;
-	}
-	
-    const nav = document.querySelector('.navbar');
-    const menuButton = document.createElement('button');
-    menuButton.className = 'mobile-menu-toggle';
-    menuButton.innerHTML = '☰';
-    
-    menuButton.addEventListener('click', () => {
-        document.querySelector('.nav-menu').classList.toggle('mobile-active');
-    });
-	
-
-    nav.querySelector('.nav-container').appendChild(menuButton);
-}
-
-window.addEventListener('resize', createMobileMenu);
-window.addEventListener('load', createMobileMenu);
+// Remove duplicate mobile menu code - using the functions defined at the top of this file
 
 // Copy code functionality
 document.querySelectorAll('pre').forEach(pre => {
@@ -176,38 +150,9 @@ if (appGrid) {
     });
 }
 
-// Add styles for new elements
+// Add styles for new elements (mobile menu styles should be in style.css)
 const style = document.createElement('style');
 style.textContent = `
-    .mobile-menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-    
-    @media (max-width: 768px) {
-        .mobile-menu-toggle {
-            display: block;
-        }
-        
-        .nav-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 1rem;
-            display: none;
-        }
-        
-        .nav-menu.mobile-active {
-            display: flex;
-        }
-    }
-    
     .code-wrapper {
         position: relative;
     }

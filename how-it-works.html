@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How PLGL Works - Visual Guide to Preference Learning in Latent Spaces</title>
+    <meta name="description" content="Visual guide to how PLGL works: Transform user feedback into personalized AI content through preference learning. No prompting required.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -134,12 +135,12 @@
                 <span class="logo-subtitle">by SkinDeep.ai Inc</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="how-it-works.html" class="active">How It Works</a></li>
                 <li><a href="index.html#applications">Applications</a></li>
-                <li><a href="index.html#demos">Demos</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
                 <li><a href="getting-started.html">Get Started</a></li>
-				<li><a href="about.html">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
                 <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
             </ul>
@@ -153,7 +154,7 @@
             <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
             <li><a href="how-it-works.html" class="active" onclick="closeMobileMenu()">How It Works</a></li>
             <li><a href="index.html#applications" onclick="closeMobileMenu()">Applications</a></li>
-            <li><a href="index.html#demos" onclick="closeMobileMenu()">Demos</a></li>
+            <li><a href="roadmap.html" onclick="closeMobileMenu()">Roadmap</a></li>
             <li><a href="getting-started.html" onclick="closeMobileMenu()">Get Started</a></li>
             <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
             <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
@@ -469,9 +470,11 @@
             <p>Click or tap on the space below to indicate what you like (👍) and dislike (👎). Watch how the AI learns your preferences and finds your ideal spot!</p>
             
             <div class="interactive-demo" style="display: flex; flex-direction: column; align-items: center;">
-                <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair; -webkit-tap-highlight-color: transparent; touch-action: none; user-select: none; -webkit-user-select: none; max-width: 100%; display: block;"></canvas>
+                <div style="width: 100%; max-width: 600px; margin: 0 auto;">
+                    <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair; -webkit-tap-highlight-color: transparent; touch-action: none; user-select: none; -webkit-user-select: none; width: 100%; height: auto; display: block;"></canvas>
+                </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; width: 100%; max-width: 600px;">
                     <button onclick="setRatingMode('like')" id="likeBtn" class="btn btn-primary" style="background: #10B981;">
                         👍 Like Mode
                     </button>
@@ -480,7 +483,7 @@
                     </button>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; width: 100%; max-width: 600px;">
                     <button onclick="findOptimal()" class="btn btn-primary">
                         🎯 Find My Perfect Spot
                     </button>

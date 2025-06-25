@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLGL Site Map - Navigate All Resources</title>
+    <meta name="description" content="Complete site map for PLGL resources. Navigate technical documentation, implementation guides, demos, and research papers in one place.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -187,13 +188,29 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="whitepaper.html">Whitepaper</a></li>
+                <li><a href="index.html#applications">Applications</a></li>
                 <li><a href="roadmap.html">Roadmap</a></li>
                 <li><a href="getting-started.html">Get Started</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+                <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
             </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="how-it-works.html" onclick="closeMobileMenu()">How It Works</a></li>
+            <li><a href="index.html#applications" onclick="closeMobileMenu()">Applications</a></li>
+            <li><a href="roadmap.html" onclick="closeMobileMenu()">Roadmap</a></li>
+            <li><a href="getting-started.html" onclick="closeMobileMenu()">Get Started</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            <li><a href="https://skindeep.ai" class="company-link">SkinDeep.ai</a></li>
+        </ul>
+    </div>
 
     <div class="sitemap-container">
         <div class="sitemap-header">
@@ -397,5 +414,6 @@
             <a href="getting-started.html">Get Started</a>
         </p>
     </footer>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
