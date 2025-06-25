@@ -5,8 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How PLGL Works - Visual Guide to Preference Learning in Latent Spaces</title>
     <meta name="description" content="Visual guide to how PLGL works: Transform user feedback into personalized AI content through preference learning. No prompting required.">
+    <meta name="keywords" content="PLGL tutorial, how PLGL works, preference learning guide, AI personalization tutorial, latent space visualization, generative AI guide">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://skindeep.ai/how-it-works.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="How PLGL Works - Visual Guide to Preference Learning">
+    <meta property="og:description" content="Visual guide to how PLGL works: Transform user feedback into personalized AI content through preference learning. No prompting required.">
+    <meta property="og:image" content="https://skindeep.ai/images/how-it-works-og-image.png">
+    <meta property="og:url" content="https://skindeep.ai/how-it-works.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="PLGL by SkinDeep.ai">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How PLGL Works - Visual Guide">
+    <meta name="twitter:description" content="Visual guide to how PLGL transforms user feedback into personalized AI content through preference learning.">
+    <meta name="twitter:image" content="https://skindeep.ai/images/how-it-works-twitter-image.png">
+    <meta name="twitter:site" content="@skindeepai">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon-simple.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data - HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use PLGL for Preference Learning",
+        "description": "Learn how PLGL transforms user feedback into personalized AI content through preference learning in generative latent spaces.",
+        "image": "https://skindeep.ai/images/how-it-works-feature.png",
+        "totalTime": "PT10M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+        },
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "PLGL-enabled application"
+            },
+            {
+                "@type": "HowToSupply",
+                "name": "User preferences or feedback"
+            }
+        ],
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Generate Initial Content",
+                "text": "The system generates initial content samples from the latent space.",
+                "image": "https://skindeep.ai/images/step1-generate.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Collect User Feedback",
+                "text": "Users provide simple feedback (like/dislike, ratings, or comparisons) on the generated content.",
+                "image": "https://skindeep.ai/images/step2-feedback.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Learn Preferences",
+                "text": "PLGL learns a preference function in the latent space based on user feedback.",
+                "image": "https://skindeep.ai/images/step3-learn.png"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Generate Personalized Content",
+                "text": "The system generates new content optimized for the learned preferences.",
+                "image": "https://skindeep.ai/images/step4-personalize.png"
+            }
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "SkinDeep.ai Inc"
+        }
+    }
+    </script>
     <style>
         .visual-section {
             padding: 4rem 2rem;
@@ -471,7 +550,7 @@
             
             <div class="interactive-demo" style="display: flex; flex-direction: column; align-items: center;">
                 <div style="width: 100%; max-width: 600px; margin: 0 auto;">
-                    <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair; -webkit-tap-highlight-color: transparent; touch-action: none; user-select: none; -webkit-user-select: none; width: 100%; height: auto; display: block;"></canvas>
+                    <canvas id="interactiveLatentSpace" width="600" height="400" style="border: 2px solid #E5E7EB; border-radius: 10px; cursor: crosshair; -webkit-tap-highlight-color: transparent; touch-action: none; user-select: none; -webkit-user-select: none; width: 100%; height: auto; display: block;" role="application" aria-label="Interactive latent space visualization - click to explore preference regions"></canvas>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; width: 100%; max-width: 600px;">

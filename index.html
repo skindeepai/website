@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLGL - Preference Learning in Generative Latent Spaces | SkinDeep.ai Inc</title>
-    <meta name="description" content="PLGL technology by SkinDeep.ai Inc - Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy!">
+    <meta name="description" content="PLGL: Open-source AI that learns what you love. Transform any generative AI with simple thumbs up/down. 1000x faster than prompting. MIT licensed. Try it now!">
+    <meta name="keywords" content="PLGL, preference learning, generative AI, latent spaces, personalized content, SkinDeep.ai, AI personalization, machine learning, recommendation system">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://skindeep.ai/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PLGL - Preference Learning in Generative Latent Spaces">
+    <meta property="og:description" content="Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy! Developed by SkinDeep.ai Inc.">
+    <meta property="og:image" content="https://skindeep.ai/images/plgl-og-image.png">
+    <meta property="og:url" content="https://skindeep.ai/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PLGL by SkinDeep.ai">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PLGL - Preference Learning in Generative Latent Spaces">
+    <meta name="twitter:description" content="Transform user preferences into personalized AI-generated content. No prompting needed, just rate and enjoy!">
+    <meta name="twitter:image" content="https://skindeep.ai/images/plgl-twitter-image.png">
+    <meta name="twitter:site" content="@skindeepai">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon-simple.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SkinDeep.ai Inc",
+        "alternateName": "SkinDeep AI",
+        "url": "https://skindeep.ai/",
+        "logo": "https://skindeep.ai/images/logo.png",
+        "description": "SkinDeep.ai Inc develops PLGL (Preference Learning in Generative Latent Spaces) technology for personalized AI content generation.",
+        "sameAs": [
+            "https://github.com/skindeepai",
+            "https://twitter.com/skindeepai"
+        ],
+        "foundingDate": "2024",
+        "founder": {
+            "@type": "Person",
+            "name": "SkinDeep.ai Team"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Technical Support",
+            "email": "support@skindeep.ai"
+        }
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -75,7 +124,7 @@
             </div>
         </div>
         <div class="hero-visual">
-            <canvas id="latentSpaceVisualization"></canvas>
+            <canvas id="latentSpaceVisualization" role="img" aria-label="Interactive visualization of PLGL preference learning in latent space"></canvas>
         </div>
     </section>
 
@@ -472,7 +521,7 @@
                         </p>
                     </div>
                     
-                    <canvas id="interactiveDemo" width="800" height="400" style="width: 100%; max-width: 800px; height: auto; border: 2px solid #374151; border-radius: 10px; cursor: crosshair; background: #1F2937; display: block; margin: 1rem auto;"></canvas>
+                    <canvas id="interactiveDemo" width="800" height="400" style="width: 100%; max-width: 800px; height: auto; border: 2px solid #374151; border-radius: 10px; cursor: crosshair; background: #1F2937; display: block; margin: 1rem auto;" role="application" aria-label="Interactive preference learning demonstration - click to indicate preferences"></canvas>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                         <button onclick="setInteractiveMode('like')" id="likeBtn" class="btn btn-primary" style="background: #10B981;">
@@ -501,7 +550,7 @@
                 <div class="demo-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
                     <h3 style="color: #F3F4F6;">📊 Automated Learning Demo</h3>
                     <p style="color: #9CA3AF;">Watch how PLGL automatically explores and learns preferences</p>
-                    <canvas id="demo2D"></canvas>
+                    <canvas id="demo2D" role="img" aria-label="2D visualization of preference learning process"></canvas>
                     <div class="demo-stats">
                         <span>Batch: <span id="batch-number">0</span></span>
                         <span>Samples: <span id="sample-count">0</span></span>

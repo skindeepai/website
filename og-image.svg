@@ -1,0 +1,62 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Latent space visualization -->
+    <radialGradient id="latentGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Latent space circles -->
+  <circle cx="900" cy="315" r="250" fill="url(#latentGradient)" opacity="0.5"/>
+  <circle cx="950" cy="280" r="150" fill="url(#latentGradient)" opacity="0.3"/>
+  <circle cx="850" cy="350" r="100" fill="url(#latentGradient)" opacity="0.4"/>
+  
+  <!-- Logo -->
+  <text x="100" y="150" font-family="Inter, sans-serif" font-size="80" font-weight="bold" fill="white">PLGL</text>
+  <text x="100" y="180" font-family="Inter, sans-serif" font-size="24" fill="white" opacity="0.8">by SkinDeep.ai Inc</text>
+  
+  <!-- Title -->
+  <text x="100" y="280" font-family="Inter, sans-serif" font-size="48" font-weight="600" fill="white">
+    Preference Learning in
+  </text>
+  <text x="100" y="340" font-family="Inter, sans-serif" font-size="48" font-weight="600" fill="white">
+    Generative Latent Spaces
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="420" font-family="Inter, sans-serif" font-size="28" fill="white" opacity="0.9">
+    Transform AI with simple ratings.
+  </text>
+  <text x="100" y="460" font-family="Inter, sans-serif" font-size="28" fill="white" opacity="0.9">
+    No prompting needed.
+  </text>
+  
+  <!-- Features -->
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="150" height="50" rx="25" fill="white" opacity="0.2"/>
+    <text x="75" y="32" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" fill="white">Open Source</text>
+    
+    <rect x="170" y="0" width="150" height="50" rx="25" fill="white" opacity="0.2"/>
+    <text x="245" y="32" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" fill="white">MIT License</text>
+    
+    <rect x="340" y="0" width="150" height="50" rx="25" fill="white" opacity="0.2"/>
+    <text x="415" y="32" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" fill="white">Since 2018</text>
+  </g>
+  
+  <!-- Visual elements representing preferences -->
+  <circle cx="850" cy="200" r="20" fill="#10B981" opacity="0.8"/>
+  <circle cx="920" cy="250" r="20" fill="#10B981" opacity="0.8"/>
+  <circle cx="800" cy="300" r="20" fill="#EF4444" opacity="0.8"/>
+  <circle cx="900" cy="350" r="25" fill="#FCD34D" stroke="#F59E0B" stroke-width="3"/>
+</svg>
