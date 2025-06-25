@@ -745,3 +745,395 @@ if (sampleGrid && learningCurveCanvas) {
     
     document.getElementById('preferenceDemo').appendChild(resetBtn);
 }
+
+// New Interactive Demo for index.html
+const interactiveDemo = document.getElementById('interactiveDemo');
+if (interactiveDemo) {
+    const ctx = interactiveDemo.getContext('2d');
+    let mode = 'like';
+    let likes = [];
+    let dislikes = [];
+    let heatmap = [];
+    let optimalPoint = null;
+    let explorationPoints = null; // Store fixed exploration positions
+    let cachedSamplePoints = null; // Store cached sample positions
+    
+    // Initialize canvas with proper scaling
+    function initInteractiveCanvas() {
+        const rect = interactiveDemo.getBoundingClientRect();
+        const scale = window.devicePixelRatio || 1;
+        
+        interactiveDemo.width = rect.width * scale;
+        interactiveDemo.height = rect.height * scale;
+        
+        ctx.scale(scale, scale);
+        interactiveDemo.style.width = rect.width + 'px';
+        interactiveDemo.style.height = rect.height + 'px';
+        
+        drawInteractiveScene();
+    }
+    
+    // Draw the interactive scene
+    function drawInteractiveScene() {
+        const width = interactiveDemo.width / (window.devicePixelRatio || 1);
+        const height = interactiveDemo.height / (window.devicePixelRatio || 1);
+        
+        // Clear canvas
+        ctx.fillStyle = '#1F2937';
+        ctx.fillRect(0, 0, width, height);
+        
+        // Draw heatmap
+        if (likes.length > 0 || dislikes.length > 0) {
+            drawHeatmap(width, height);
+        }
+        
+        // Draw likes
+        likes.forEach(point => {
+            ctx.fillStyle = '#10B981';
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('👍', point.x, point.y);
+        });
+        
+        // Draw dislikes
+        dislikes.forEach(point => {
+            ctx.fillStyle = '#EF4444';
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, 8, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('👎', point.x, point.y);
+        });
+        
+        // Draw optimal point if found
+        if (optimalPoint) {
+            // Slower pulsing animation
+            const pulse = Math.sin(Date.now() * 0.001) * 0.2 + 0.8;
+            const explorationPulse = Math.sin(Date.now() * 0.0015) * 0.15 + 0.85;
+            
+            // Draw exploitation region around optimal point (larger)
+            ctx.fillStyle = 'rgba(245, 158, 11, 0.1)';
+            ctx.beginPath();
+            ctx.arc(optimalPoint.x, optimalPoint.y, 90, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Draw exploitation samples (near optimal region)
+            ctx.fillStyle = 'rgba(245, 158, 11, 0.4)';
+            if (!optimalPoint.exploitationSamples) {
+                optimalPoint.exploitationSamples = [];
+                // Create samples in the larger optimal region
+                for (let i = 0; i < 8; i++) {
+                    const angle = (i / 8) * Math.PI * 2;
+                    const radius = 25 + Math.random() * 50; // Larger spread
+                    optimalPoint.exploitationSamples.push({
+                        x: optimalPoint.x + Math.cos(angle) * radius,
+                        y: optimalPoint.y + Math.sin(angle) * radius
+                    });
+                }
+            }
+            
+            optimalPoint.exploitationSamples.forEach(sample => {
+                ctx.beginPath();
+                ctx.arc(sample.x, sample.y, 4 * pulse, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            
+            // Draw cached samples (filling voids/negative areas)
+            if (cachedSamplePoints) {
+                cachedSamplePoints.forEach(point => {
+                    // Draw cached sample indicator with different pulse phase
+                    ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
+                    ctx.lineWidth = 1.5;
+                    ctx.setLineDash([2, 4]);
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 12 * explorationPulse, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    
+                    ctx.fillStyle = 'rgba(16, 185, 129, 0.3)';
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            }
+            
+            ctx.strokeStyle = '#F59E0B';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.arc(optimalPoint.x, optimalPoint.y, 30 * pulse, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            ctx.font = '24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('⭐', optimalPoint.x, optimalPoint.y);
+            
+            ctx.fillStyle = '#F59E0B';
+            ctx.font = 'bold 14px Inter';
+            ctx.fillText('Optimal region found!', optimalPoint.x, optimalPoint.y + 40);
+            
+            // Add legend for sample types
+            ctx.font = '11px Inter';
+            ctx.fillStyle = 'rgba(245, 158, 11, 0.8)';
+            ctx.textAlign = 'left';
+            ctx.fillText('● Exploitation samples (refining preferences)', 20, 20);
+            
+            ctx.fillStyle = 'rgba(16, 185, 129, 0.6)';
+            ctx.fillText('○ Cached samples (filling unexplored areas)', 20, 35);
+            
+            ctx.textAlign = 'center';
+            ctx.font = '12px Inter';
+            ctx.fillStyle = '#94A3B8';
+            ctx.fillText('PLGL balances multiple sampling strategies for robust learning', optimalPoint.x, optimalPoint.y + 55);
+        }
+        
+        // Draw instructions if empty
+        if (likes.length === 0 && dislikes.length === 0) {
+            ctx.fillStyle = '#9CA3AF';
+            ctx.font = '16px Inter';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Click anywhere to add your preferences', width / 2, height / 2);
+            
+            ctx.font = '14px Inter';
+            ctx.fillStyle = '#6B7280';
+            ctx.fillText('This 2D space represents a simplified view of a high-dimensional latent space', width / 2, height / 2 + 25);
+        }
+        
+        // Draw axis labels
+        ctx.font = '12px Inter';
+        ctx.fillStyle = '#4B5563';
+        ctx.textAlign = 'left';
+        ctx.fillText('Latent Dimension 1 →', 10, height - 10);
+        
+        ctx.save();
+        ctx.translate(10, height - 30);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText('Latent Dimension 2 →', 0, 0);
+        ctx.restore();
+        
+        updateStats();
+    }
+    
+    // Draw heatmap based on preferences
+    function drawHeatmap(width, height) {
+        const gridSize = 20;
+        
+        for (let x = 0; x < width; x += gridSize) {
+            for (let y = 0; y < height; y += gridSize) {
+                let score = 0;
+                
+                // Calculate preference score for this point
+                likes.forEach(like => {
+                    const dist = Math.sqrt((x - like.x) ** 2 + (y - like.y) ** 2);
+                    score += Math.exp(-dist / 100);
+                });
+                
+                dislikes.forEach(dislike => {
+                    const dist = Math.sqrt((x - dislike.x) ** 2 + (y - dislike.y) ** 2);
+                    score -= Math.exp(-dist / 100);
+                });
+                
+                // Normalize and draw
+                if (Math.abs(score) > 0.1) {
+                    const opacity = Math.min(0.5, Math.abs(score) * 0.3);
+                    if (score > 0) {
+                        ctx.fillStyle = `rgba(16, 185, 129, ${opacity})`;
+                    } else {
+                        ctx.fillStyle = `rgba(239, 68, 68, ${opacity})`;
+                    }
+                    ctx.fillRect(x, y, gridSize, gridSize);
+                }
+            }
+        }
+    }
+    
+    // Handle clicks/touches
+    function handleInteraction(e) {
+        e.preventDefault();
+        const rect = interactiveDemo.getBoundingClientRect();
+        
+        let x, y;
+        if (e.touches) {
+            x = e.touches[0].clientX - rect.left;
+            y = e.touches[0].clientY - rect.top;
+        } else {
+            x = e.clientX - rect.left;
+            y = e.clientY - rect.top;
+        }
+        
+        // Add to appropriate list
+        if (mode === 'like') {
+            likes.push({ x, y });
+        } else {
+            dislikes.push({ x, y });
+        }
+        
+        // Clear optimal point and exploration points when adding new preferences
+        optimalPoint = null;
+        explorationPoints = null;
+        cachedSamplePoints = null;
+        
+        drawInteractiveScene();
+        
+        // Update status
+        document.getElementById('demoStatus').textContent = 
+            mode === 'like' ? 'Added a like! 👍' : 'Added a dislike! 👎';
+        
+        setTimeout(() => {
+            document.getElementById('demoStatus').textContent = '';
+        }, 2000);
+    }
+    
+    // Add event listeners
+    interactiveDemo.addEventListener('click', handleInteraction);
+    interactiveDemo.addEventListener('touchstart', handleInteraction);
+    
+    // Set interaction mode
+    window.setInteractiveMode = function(newMode) {
+        mode = newMode;
+        
+        // Update button states
+        document.getElementById('likeBtn').style.opacity = mode === 'like' ? '1' : '0.6';
+        document.getElementById('dislikeBtn').style.opacity = mode === 'dislike' ? '1' : '0.6';
+        
+        document.getElementById('demoStatus').textContent = 
+            mode === 'like' ? 'Like mode active - click to add likes' : 'Dislike mode active - click to add dislikes';
+    };
+    
+    // Find optimal spot
+    window.findOptimalSpot = function() {
+        if (likes.length === 0) {
+            document.getElementById('demoStatus').textContent = 'Add some likes first!';
+            return;
+        }
+        
+        const width = interactiveDemo.width / (window.devicePixelRatio || 1);
+        const height = interactiveDemo.height / (window.devicePixelRatio || 1);
+        
+        let bestX = width / 2;
+        let bestY = height / 2;
+        let bestScore = -Infinity;
+        
+        // Grid search for optimal point
+        for (let x = 20; x < width - 20; x += 10) {
+            for (let y = 20; y < height - 20; y += 10) {
+                let score = 0;
+                
+                likes.forEach(like => {
+                    const dist = Math.sqrt((x - like.x) ** 2 + (y - like.y) ** 2);
+                    score += Math.exp(-dist / 80);
+                });
+                
+                dislikes.forEach(dislike => {
+                    const dist = Math.sqrt((x - dislike.x) ** 2 + (y - dislike.y) ** 2);
+                    score -= Math.exp(-dist / 80) * 1.5; // Slightly stronger avoidance
+                });
+                
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestX = x;
+                    bestY = y;
+                }
+            }
+        }
+        
+        optimalPoint = { x: bestX, y: bestY };
+        
+        // Generate cached sample points in unexplored/negative areas
+        cachedSamplePoints = [];
+        
+        // Create a grid of potential positions
+        const gridSpacing = 80;
+        const potentialPoints = [];
+        
+        for (let x = gridSpacing; x < width - gridSpacing; x += gridSpacing) {
+            for (let y = gridSpacing; y < height - gridSpacing; y += gridSpacing) {
+                // Calculate minimum distance to any existing preference
+                let minDist = Infinity;
+                let nearDislike = false;
+                
+                [...likes, ...dislikes].forEach(point => {
+                    const dist = Math.sqrt((x - point.x) ** 2 + (y - point.y) ** 2);
+                    minDist = Math.min(minDist, dist);
+                });
+                
+                // Check if near a dislike
+                dislikes.forEach(point => {
+                    const dist = Math.sqrt((x - point.x) ** 2 + (y - point.y) ** 2);
+                    if (dist < 100) nearDislike = true;
+                });
+                
+                // Also avoid being too close to the optimal region
+                const distToOptimal = Math.sqrt((x - optimalPoint.x) ** 2 + (y - optimalPoint.y) ** 2);
+                
+                // Score based on distance (prefer far from existing samples but not too far)
+                if (minDist > 60 && (minDist < 200 || nearDislike) && distToOptimal > 120) {
+                    potentialPoints.push({
+                        x: x + (Math.random() - 0.5) * 20, // Add slight randomness
+                        y: y + (Math.random() - 0.5) * 20,
+                        score: minDist + (nearDislike ? 50 : 0)
+                    });
+                }
+            }
+        }
+        
+        // Sort by score and take the best positions
+        potentialPoints.sort((a, b) => b.score - a.score);
+        cachedSamplePoints = potentialPoints.slice(0, 6).map(p => ({ x: p.x, y: p.y }));
+        
+        // Animate the discovery
+        document.getElementById('demoStatus').textContent = '🔍 Analyzing preference patterns in latent space...';
+        
+        setTimeout(() => {
+            document.getElementById('demoStatus').textContent = '⭐ Found optimal region! In real PLGL, new diverse samples would be generated here.';
+            requestAnimationFrame(animateOptimalPoint);
+        }, 1000);
+    };
+    
+    // Animate optimal point
+    function animateOptimalPoint() {
+        drawInteractiveScene();
+        if (optimalPoint) {
+            requestAnimationFrame(animateOptimalPoint);
+        }
+    }
+    
+    // Reset demo
+    window.resetInteractiveDemo = function() {
+        likes = [];
+        dislikes = [];
+        optimalPoint = null;
+        explorationPoints = null;
+        cachedSamplePoints = null;
+        drawInteractiveScene();
+        document.getElementById('demoStatus').textContent = 'Demo reset - start adding preferences!';
+    };
+    
+    // Update statistics
+    function updateStats() {
+        document.getElementById('like-count').textContent = likes.length;
+        document.getElementById('dislike-count').textContent = dislikes.length;
+        
+        const totalPoints = likes.length + dislikes.length;
+        const confidence = totalPoints > 0 ? Math.min(95, totalPoints * 10) : 0;
+        document.getElementById('confidence').textContent = confidence;
+    }
+    
+    // Initialize
+    initInteractiveCanvas();
+    window.addEventListener('resize', initInteractiveCanvas);
+    
+    // Set initial mode
+    setInteractiveMode('like');
+}

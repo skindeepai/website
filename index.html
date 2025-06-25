@@ -401,9 +401,50 @@
             <p class="section-subtitle">Experience PLGL in action</p>
             
             <div class="demo-container">
-                <div class="demo-card">
-                    <h3>2D Latent Space Navigation</h3>
-                    <p>Watch how preferences guide exploration of a generative space</p>
+                <div class="demo-card" style="grid-column: 1 / -1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #F3F4F6;">🎮 Try It Yourself - Interactive Preference Learning</h3>
+                    <p style="color: #9CA3AF;">Click or tap to show what you like (👍) and dislike (👎). Watch how the AI learns your preferences and finds your ideal spot!</p>
+                    
+                    <div style="background: rgba(99, 102, 241, 0.1); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 3px solid #6366F1;">
+                        <p style="color: #CBD5E1; margin: 0; font-size: 0.9rem;">
+                            <strong>How this demo works:</strong> This is a simplified 2D visualization of PLGL's latent space exploration. 
+                            In real applications, PLGL works with high-dimensional spaces (e.g., 512 dimensions for image generation). 
+                            When the optimal region is found, PLGL balances:<br>
+                            • <strong>Exploitation:</strong> Generating samples near the optimal region to refine preferences<br>
+                            • <strong>Exploration:</strong> Testing uncertain areas to find other potential maxima and improve model stability<br>
+                            This ensures diverse outputs while continuously learning your true preferences.
+                        </p>
+                    </div>
+                    
+                    <canvas id="interactiveDemo" width="800" height="400" style="width: 100%; max-width: 800px; height: auto; border: 2px solid #374151; border-radius: 10px; cursor: crosshair; background: #1F2937; display: block; margin: 1rem auto;"></canvas>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <button onclick="setInteractiveMode('like')" id="likeBtn" class="btn btn-primary" style="background: #10B981;">
+                            👍 Like Mode
+                        </button>
+                        <button onclick="setInteractiveMode('dislike')" id="dislikeBtn" class="btn btn-secondary">
+                            👎 Dislike Mode
+                        </button>
+                        <button onclick="findOptimalSpot()" class="btn btn-primary">
+                            🎯 Find My Spot
+                        </button>
+                        <button onclick="resetInteractiveDemo()" class="btn btn-outline">
+                            🔄 Reset
+                        </button>
+                    </div>
+                    
+                    <div class="demo-stats" style="margin-top: 1rem;">
+                        <span>Likes: <span id="like-count">0</span></span>
+                        <span>Dislikes: <span id="dislike-count">0</span></span>
+                        <span>Confidence: <span id="confidence">0</span>%</span>
+                    </div>
+                    
+                    <div id="demoStatus" style="margin-top: 1rem; text-align: center; font-weight: 600; color: #60A5FA;"></div>
+                </div>
+
+                <div class="demo-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #F3F4F6;">📊 Automated Learning Demo</h3>
+                    <p style="color: #9CA3AF;">Watch how PLGL automatically explores and learns preferences</p>
                     <canvas id="demo2D"></canvas>
                     <div class="demo-stats">
                         <span>Batch: <span id="batch-number">0</span></span>
@@ -416,14 +457,20 @@
                     </div>
                 </div>
 
-                <div class="demo-card">
-                    <h3>Preference Learning Simulation</h3>
-                    <p>See how quickly PLGL learns your preferences</p>
-                    <div id="preferenceDemo">
-                        <div class="sample-grid" id="sampleGrid"></div>
-                        <div class="learning-metrics">
-                            <canvas id="learningCurve"></canvas>
-                        </div>
+                <div class="demo-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #F3F4F6;">🎥 Original StyleGAN Demo</h3>
+                    <p style="color: #9CA3AF;">See the original 2019 SkinDeep.ai app that pioneered PLGL technology</p>
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📹</div>
+                        <p style="margin-bottom: 1.5rem;">Watch how the original app used StyleGAN to find users' ideal faces through simple swipe interactions</p>
+                        <a href="https://www.youtube.com/watch?v=M4oQLev_Sk8" target="_blank" class="btn btn-primary" style="display: inline-block;">
+                            ▶️ Watch Demo Video
+                        </a>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="https://www.youtube.com/watch?v=-6mAyFJ4_ME" target="_blank" style="color: #60A5FA; text-decoration: none;">
+                            📚 Technical Deep Dive →
+                        </a>
                     </div>
                 </div>
             </div>

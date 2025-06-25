@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+h2 {
+	margin: 1.5rem 0 1rem 0;
+}
+
 h3 {
 	margin: 12px 0 0px 0;
 }
