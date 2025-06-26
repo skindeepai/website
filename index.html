@@ -1714,8 +1714,14 @@ class OriginalPLGL:
         
         return self.classifier
     
-    def find_optimal_latent(self, n_starts=10, method='L-BFGS-B'):
+    def reverse_classification(self, n_starts=10, method='L-BFGS-B'):
         """
+        Reverse Classification™: Find optimal latent vector that maximizes preference
+        
+        This is the core innovation of PLGL - instead of classifying existing content,
+        we reverse the process to find the latent code that would produce the most
+        preferred content according to the trained classifier.
+        
         Original optimization: Scipy minimize with multiple restarts
         Objective: Find z that maximizes classifier confidence
         """
@@ -1752,6 +1758,10 @@ class OriginalPLGL:
                 
         print(f"Found optimal with score: {best_score:.3f}")
         return best_z
+    
+    def find_optimal_latent(self, *args, **kwargs):
+        """Alias for reverse_classification for backward compatibility"""
+        return self.reverse_classification(*args, **kwargs)
     
     def generate_distribution(self, n_samples=100, threshold=0.7):
         """
@@ -1822,8 +1832,8 @@ class OriginalPLGL:
             # Retrain classifier with all data
             self.train_classifier()
             
-            # Find current optimal
-            optimal_z = self.find_optimal_latent()
+            # Find current optimal using reverse classification
+            optimal_z = self.reverse_classification()
             
             print(f"Total ratings collected: {len(self.user_ratings)}")
             
@@ -1869,8 +1879,8 @@ if __name__ == "__main__":
     print("\nPhase 2: Train preference classifier")
     plgl.train_classifier()
     
-    print("\nPhase 3: Find optimal latent vector")
-    optimal_z = plgl.find_optimal_latent()
+    print("\nPhase 3: Reverse Classification - Find optimal latent vector")
+    optimal_z = plgl.reverse_classification()
     
     print("\nPhase 4: Generate preference distribution")
     distribution = plgl.generate_distribution(n_samples=10)
@@ -1880,7 +1890,12 @@ if __name__ == "__main__":
     plgl.iterative_refinement(n_iterations=3)
     
     print("\n✨ This approach pioneered preference learning in latent spaces!")
-    print("Now evolved into the modern PLGL framework with deep learning.")</code></pre>
+    print("Now evolved into the modern PLGL framework with deep learning.")
+
+# Original implementation references:
+# Server: https://github.com/skindeepai/skindeep-server/blob/master/server.py
+# Mobile App: https://github.com/skindeepai/skindeep-mobile
+# API: https://github.com/skindeepai/skindeep-server</code></pre>
             </div>
         </div>
     </section>
