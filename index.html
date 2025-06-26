@@ -586,144 +586,310 @@
         <div class="container">
             <h2 class="section-title">Implementation Examples</h2>
             <div class="tabs">
-                <button class="tab-button active" onclick="showTab('pytorch')">PyTorch</button>
+                <button class="tab-button active" onclick="showTab('numpy-original')">Original (NumPy)</button>
+                <button class="tab-button" onclick="showTab('pytorch')">PyTorch</button>
                 <button class="tab-button" onclick="showTab('tensorflow')">TensorFlow</button>
                 <button class="tab-button" onclick="showTab('jax')">JAX</button>
-                <button class="tab-button" onclick="showTab('numpy-original')">Original (NumPy)</button>
             </div>
 
-            <div id="pytorch" class="tab-content active">
+            <div id="pytorch" class="tab-content">
                 <pre><code class="language-python">import torch
 import torch.nn as nn
-from torch.optim import Adam
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
 
-class PLGLFramework:
-    """Complete PLGL implementation in PyTorch"""
+class PLGLPyTorch:
+    """
+    PyTorch-idiomatic PLGL implementation
+    
+    While the original PLGL used SVM classifiers, this implementation shows how to
+    achieve similar results using PyTorch-native components. The key insight is that
+    a neural network with appropriate regularization can approximate SVM behavior.
+    """
     
     def __init__(self, generator, latent_dim, device='cuda'):
         self.generator = generator.to(device)
         self.latent_dim = latent_dim
         self.device = device
         self.preference_model = None
+        self.preference_data = {'latents': [], 'ratings': []}
         
-    def collect_preferences(self, n_samples=100):
-        """Interactive preference collection"""
+    def collect_preferences(self, n_samples=100, user_rating_fn=None):
+        """
+        Collect user preferences on generated samples
+        
+        Args:
+            n_samples: Number of samples to generate
+            user_rating_fn: Function that displays content and returns rating (0 or 1)
+                           If None, uses simulated ratings for demonstration
+        """
         samples = []
+        
         with torch.no_grad():
-            for _ in range(n_samples):
+            for i in range(n_samples):
                 # Sample from latent space
                 z = torch.randn(1, self.latent_dim).to(self.device)
                 
                 # Generate content
                 content = self.generator(z)
                 
-                # Get user rating (implement UI here)
-                rating = get_user_rating(content)
+                # Get user rating
+                if user_rating_fn:
+                    rating = user_rating_fn(content)
+                else:
+                    # Simulated rating based on distance from origin
+                    # (In real use, implement actual UI)
+                    rating = 1 if torch.norm(z) < 1.5 else 0
+                
+                self.preference_data['latents'].append(z.cpu())
+                self.preference_data['ratings'].append(rating)
                 
                 samples.append({
                     'latent': z,
                     'content': content,
                     'rating': rating
                 })
+                
         return samples
     
-    def train_preference_model(self, samples, epochs=100):
-        """Train personalized preference classifier"""
-        # Prepare data
-        X = torch.cat([s['content'] for s in samples])
-        y = torch.tensor([s['rating'] for s in samples]).float()
-        
-        # Define preference model
+    def build_preference_model(self):
+        """
+        Build a neural network that mimics SVM behavior
+        Uses strong L2 regularization and limited capacity to encourage
+        smooth decision boundaries like an RBF kernel SVM
+        """
         self.preference_model = nn.Sequential(
-            nn.Linear(X.shape[1], 256),
-            nn.ReLU(),
-            nn.Dropout(0.2),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
+            nn.Linear(self.latent_dim, 64),
+            nn.Tanh(),  # Bounded activation like SVM
+            nn.Linear(64, 32),
+            nn.Tanh(),
+            nn.Linear(32, 1),
             nn.Sigmoid()
         ).to(self.device)
         
-        # Train
-        optimizer = Adam(self.preference_model.parameters())
+        return self.preference_model
+    
+    def train_preference_model(self, epochs=100, batch_size=32, lr=0.01, weight_decay=0.01):
+        """
+        Train the preference model with PyTorch optimization
+        
+        The weight_decay parameter provides L2 regularization similar to
+        the C parameter in SVMs (higher weight_decay = lower C)
+        """
+        if not self.preference_data['latents']:
+            raise ValueError("No preference data collected yet")
+            
+        # Prepare data
+        X = torch.cat(self.preference_data['latents']).to(self.device)
+        y = torch.tensor(self.preference_data['ratings']).float().to(self.device)
+        
+        # Create data loader
+        dataset = TensorDataset(X.squeeze(1), y)
+        loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+        
+        # Initialize model and optimizer
+        if self.preference_model is None:
+            self.build_preference_model()
+            
+        optimizer = optim.Adam(
+            self.preference_model.parameters(), 
+            lr=lr, 
+            weight_decay=weight_decay  # L2 regularization
+        )
         criterion = nn.BCELoss()
         
+        # Training loop
+        self.preference_model.train()
         for epoch in range(epochs):
-            pred = self.preference_model(X).squeeze()
-            loss = criterion(pred, y)
-            
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            
-    def generate_optimal(self, n_steps=1000, lr=0.01):
-        """Navigate latent space to find optimal content"""
-        # Initialize from random point
-        z = torch.randn(1, self.latent_dim, requires_grad=True)
-        optimizer = Adam([z], lr=lr)
-        
-        for step in range(n_steps):
-            # Generate and score
-            content = self.generator(z)
-            score = self.preference_model(content)
-            
-            # Maximize preference score
-            loss = -score
-            
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            
-            # Optional: Constrain to valid latent space
-            with torch.no_grad():
-                z.clamp_(-3, 3)  # Adjust based on your model
+            total_loss = 0
+            for batch_x, batch_y in loader:
+                optimizer.zero_grad()
                 
-        return self.generator(z.detach())
+                pred = self.preference_model(batch_x).squeeze()
+                loss = criterion(pred, batch_y)
+                
+                loss.backward()
+                optimizer.step()
+                
+                total_loss += loss.item()
+                
+            if (epoch + 1) % 20 == 0:
+                print(f"Epoch {epoch+1}/{epochs}, Loss: {total_loss/len(loader):.4f}")
     
-    def generate_distribution(self, n_samples=100, temperature=1.0):
-        """Generate diverse high-preference samples"""
-        samples = []
-        scores = []
+    def find_optimal_latent(self, n_starts=10, n_steps=1000, lr=0.1):
+        """
+        Find optimal point in latent space using gradient ascent
+        Multiple restarts ensure we find global optimum
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        best_z = None
+        best_score = -float('inf')
+        
+        self.preference_model.eval()
+        
+        for start in range(n_starts):
+            # Random initialization
+            z = torch.randn(1, self.latent_dim, requires_grad=True, device=self.device)
+            optimizer = optim.Adam([z], lr=lr)
+            
+            for step in range(n_steps):
+                optimizer.zero_grad()
+                
+                # Forward pass through preference model
+                score = self.preference_model(z)
+                
+                # Maximize score (minimize negative score)
+                loss = -score
+                loss.backward()
+                optimizer.step()
+                
+                # Constrain to reasonable latent space region
+                with torch.no_grad():
+                    z.clamp_(-3, 3)
+            
+            # Check if this is the best result
+            final_score = self.preference_model(z).item()
+            if final_score > best_score:
+                best_score = final_score
+                best_z = z.detach().clone()
+                
+        # Generate content from optimal latent
+        with torch.no_grad():
+            optimal_content = self.generator(best_z)
+            
+        return optimal_content, best_z, best_score
+    
+    def generate_distribution(self, n_samples=100, threshold=0.7, temperature=1.0):
+        """
+        Generate samples from high-preference regions
+        
+        Args:
+            n_samples: Number of samples to generate
+            threshold: Minimum preference score to accept
+            temperature: Controls diversity (higher = more diverse)
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        self.preference_model.eval()
+        accepted_samples = []
+        accepted_latents = []
         
         with torch.no_grad():
-            while len(samples) < n_samples:
-                # Sample and evaluate
-                z = torch.randn(1, self.latent_dim) * temperature
-                content = self.generator(z)
-                score = self.preference_model(content)
+            attempts = 0
+            while len(accepted_samples) < n_samples and attempts < n_samples * 100:
+                # Sample with temperature
+                z = torch.randn(1, self.latent_dim).to(self.device) * temperature
                 
-                # Accept based on score
-                if score > 0.7:  # Threshold
-                    samples.append(content)
-                    scores.append(score.item())
+                # Evaluate preference
+                score = self.preference_model(z).item()
+                
+                if score > threshold:
+                    content = self.generator(z)
+                    accepted_samples.append(content)
+                    accepted_latents.append(z)
                     
-        return samples, scores
-
-# Active Learning Extension
-class ActivePLGL(PLGLFramework):
-    """PLGL with active learning for efficient preference capture"""
+                attempts += 1
+                
+        return accepted_samples, accepted_latents
     
-    def uncertainty_sampling(self, n_samples=10):
-        """Select most informative samples for rating"""
+    def active_learning_step(self, n_samples=10):
+        """
+        Select most informative samples for next round of rating
+        Focuses on regions where the model is uncertain
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        self.preference_model.eval()
         candidates = []
         uncertainties = []
         
         with torch.no_grad():
             # Generate candidate pool
             for _ in range(n_samples * 10):
-                z = torch.randn(1, self.latent_dim)
-                content = self.generator(z)
-                score = self.preference_model(content)
+                z = torch.randn(1, self.latent_dim).to(self.device)
+                score = self.preference_model(z).item()
                 
-                # Uncertainty = distance from decision boundary
-                uncertainty = abs(score - 0.5)
+                # Uncertainty is highest near 0.5
+                uncertainty = 1 - abs(score - 0.5) * 2
                 
-                candidates.append((z, content))
+                candidates.append(z)
                 uncertainties.append(uncertainty)
         
-        # Select most uncertain
-        indices = torch.argsort(torch.tensor(uncertainties))[:n_samples]
-        return [candidates[i] for i in indices]</code></pre>
+        # Select most uncertain samples
+        uncertainties = torch.tensor(uncertainties)
+        top_indices = torch.topk(uncertainties, n_samples).indices
+        
+        selected_samples = []
+        for idx in top_indices:
+            z = candidates[idx]
+            content = self.generator(z)
+            selected_samples.append({
+                'latent': z,
+                'content': content,
+                'uncertainty': uncertainties[idx].item()
+            })
+            
+        return selected_samples
+
+# Example usage
+def example_usage():
+    """
+    Demonstrates how to use the PyTorch PLGL implementation
+    """
+    # Assume we have a pre-trained generator (e.g., StyleGAN, VAE, etc.)
+    # generator = load_pretrained_generator()
+    # latent_dim = 512
+    
+    # For demonstration, we'll use a simple generator
+    class DemoGenerator(nn.Module):
+        def __init__(self, latent_dim, output_dim):
+            super().__init__()
+            self.net = nn.Sequential(
+                nn.Linear(latent_dim, 256),
+                nn.ReLU(),
+                nn.Linear(256, output_dim),
+                nn.Tanh()
+            )
+            
+        def forward(self, z):
+            return self.net(z)
+    
+    # Initialize
+    latent_dim = 64
+    output_dim = 256
+    generator = DemoGenerator(latent_dim, output_dim)
+    
+    plgl = PLGLPyTorch(generator, latent_dim, device='cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # Step 1: Collect initial preferences
+    print("Collecting initial preferences...")
+    samples = plgl.collect_preferences(n_samples=100)
+    
+    # Step 2: Train preference model
+    print("Training preference model...")
+    plgl.train_preference_model(epochs=100)
+    
+    # Step 3: Find optimal content
+    print("Finding optimal content...")
+    optimal_content, optimal_z, score = plgl.find_optimal_latent()
+    print(f"Optimal score: {score:.3f}")
+    
+    # Step 4: Generate distribution of good samples
+    print("Generating high-preference samples...")
+    good_samples, _ = plgl.generate_distribution(n_samples=50)
+    
+    # Step 5: Active learning for refinement
+    print("Selecting samples for active learning...")
+    uncertain_samples = plgl.active_learning_step(n_samples=10)
+    
+    return plgl, optimal_content, good_samples
+
+if __name__ == "__main__":
+    plgl, optimal, samples = example_usage()</code></pre>
             </div>
 
             <div id="tensorflow" class="tab-content">
@@ -731,92 +897,738 @@ class ActivePLGL(PLGLFramework):
 import numpy as np
 
 class PLGLTensorFlow:
-    """PLGL implementation in TensorFlow 2.x"""
+    """
+    TensorFlow 2.x-idiomatic PLGL implementation
+    
+    This implementation uses TensorFlow's native capabilities while maintaining
+    the core PLGL philosophy. We use Keras models with regularization to
+    approximate the smooth decision boundaries of the original SVM approach.
+    """
     
     def __init__(self, generator, latent_dim):
         self.generator = generator
         self.latent_dim = latent_dim
         self.preference_model = None
+        self.preference_data = {'latents': [], 'ratings': []}
         
-    def build_preference_model(self, input_shape):
-        """Build preference classifier"""
-        model = tf.keras.Sequential([
-            tf.keras.layers.Dense(256, activation='relu'),
+    def collect_preferences(self, n_samples=100, user_rating_fn=None):
+        """
+        Collect user preferences using TensorFlow operations
+        
+        Args:
+            n_samples: Number of samples to generate
+            user_rating_fn: Function to get user ratings, None for simulation
+        """
+        samples = []
+        
+        for i in range(n_samples):
+            # Sample from latent space
+            z = tf.random.normal([1, self.latent_dim])
+            
+            # Generate content
+            content = self.generator(z, training=False)
+            
+            # Get user rating
+            if user_rating_fn:
+                rating = user_rating_fn(content.numpy())
+            else:
+                # Simulated rating for demonstration
+                rating = 1 if tf.norm(z) < 1.5 else 0
+            
+            self.preference_data['latents'].append(z.numpy())
+            self.preference_data['ratings'].append(rating)
+            
+            samples.append({
+                'latent': z,
+                'content': content,
+                'rating': rating
+            })
+            
+        return samples
+    
+    def build_preference_model(self):
+        """
+        Build a regularized neural network that approximates SVM behavior
+        Uses kernel regularization and dropout for smooth boundaries
+        """
+        self.preference_model = tf.keras.Sequential([
+            tf.keras.layers.Dense(
+                64, 
+                activation='tanh',
+                kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                input_shape=(self.latent_dim,)
+            ),
             tf.keras.layers.Dropout(0.2),
-            tf.keras.layers.Dense(128, activation='relu'),
+            tf.keras.layers.Dense(
+                32, 
+                activation='tanh',
+                kernel_regularizer=tf.keras.regularizers.l2(0.01)
+            ),
             tf.keras.layers.Dense(1, activation='sigmoid')
         ])
-        model.compile(
+        
+        # Compile with appropriate optimizer and loss
+        self.preference_model.compile(
+            optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+            loss='binary_crossentropy',
+            metrics=['accuracy']
+        )
+        
+        return self.preference_model
+    
+    def train_preference_model(self, epochs=100, batch_size=32, validation_split=0.2):
+        """
+        Train preference model using Keras fit method
+        """
+        if not self.preference_data['latents']:
+            raise ValueError("No preference data collected yet")
+            
+        # Prepare data
+        X = np.array(self.preference_data['latents']).squeeze()
+        y = np.array(self.preference_data['ratings'])
+        
+        # Build model if not exists
+        if self.preference_model is None:
+            self.build_preference_model()
+            
+        # Train with early stopping
+        early_stop = tf.keras.callbacks.EarlyStopping(
+            monitor='val_loss', patience=10, restore_best_weights=True
+        )
+        
+        history = self.preference_model.fit(
+            X, y,
+            epochs=epochs,
+            batch_size=batch_size,
+            validation_split=validation_split,
+            callbacks=[early_stop],
+            verbose=1
+        )
+        
+        return history
+    
+    @tf.function
+    def find_optimal_latent_gradient(self, n_steps=1000, lr=0.1):
+        """
+        Find optimal latent using TensorFlow's GradientTape
+        This is a single optimization run - call multiple times for restarts
+        """
+        # Initialize latent variable
+        z = tf.Variable(tf.random.normal([1, self.latent_dim]))
+        optimizer = tf.keras.optimizers.Adam(learning_rate=lr)
+        
+        for step in range(n_steps):
+            with tf.GradientTape() as tape:
+                # Get preference score
+                score = self.preference_model(z)
+                # Maximize score (minimize negative)
+                loss = -score
+                
+            # Compute and apply gradients
+            gradients = tape.gradient(loss, [z])
+            optimizer.apply_gradients(zip(gradients, [z]))
+            
+            # Constrain to reasonable range
+            z.assign(tf.clip_by_value(z, -3.0, 3.0))
+            
+        return z, self.preference_model(z)
+    
+    def find_optimal_latent(self, n_starts=10, n_steps=1000, lr=0.1):
+        """
+        Multiple restart optimization to find global optimum
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        best_z = None
+        best_score = -float('inf')
+        
+        for i in range(n_starts):
+            z, score = self.find_optimal_latent_gradient(n_steps, lr)
+            score_val = score.numpy()[0][0]
+            
+            if score_val > best_score:
+                best_score = score_val
+                best_z = z.numpy()
+                
+        # Generate optimal content
+        best_z_tensor = tf.constant(best_z)
+        optimal_content = self.generator(best_z_tensor, training=False)
+        
+        return optimal_content, best_z_tensor, best_score
+    
+    @tf.function
+    def generate_batch_scores(self, z_batch):
+        """Efficiently score a batch of latent vectors"""
+        return self.preference_model(z_batch)
+    
+    def generate_distribution(self, n_samples=100, threshold=0.7, temperature=1.0):
+        """
+        Generate samples from high-preference regions
+        Uses TensorFlow operations for efficiency
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        accepted_samples = []
+        accepted_latents = []
+        
+        # Use larger batches for efficiency
+        batch_size = 1000
+        attempts = 0
+        max_attempts = n_samples * 100
+        
+        while len(accepted_samples) < n_samples and attempts < max_attempts:
+            # Generate batch
+            z_batch = tf.random.normal([batch_size, self.latent_dim]) * temperature
+            
+            # Score batch
+            scores = self.generate_batch_scores(z_batch)
+            
+            # Find high-scoring samples
+            mask = scores[:, 0] > threshold
+            good_indices = tf.where(mask)
+            
+            # Generate content for good samples
+            for idx in good_indices:
+                if len(accepted_samples) >= n_samples:
+                    break
+                    
+                z = z_batch[idx[0]:idx[0]+1]
+                content = self.generator(z, training=False)
+                accepted_samples.append(content)
+                accepted_latents.append(z)
+                
+            attempts += batch_size
+            
+        return accepted_samples, accepted_latents
+    
+    def active_learning_step(self, n_samples=10, pool_size=1000):
+        """
+        Select uncertain samples for active learning
+        Uses entropy-based uncertainty sampling
+        """
+        if self.preference_model is None:
+            raise ValueError("Train preference model first")
+            
+        # Generate candidate pool
+        z_pool = tf.random.normal([pool_size, self.latent_dim])
+        
+        # Get predictions
+        scores = self.preference_model(z_pool)
+        
+        # Calculate uncertainty (entropy)
+        # H = -p*log(p) - (1-p)*log(1-p)
+        p = scores[:, 0]
+        entropy = -p * tf.math.log(p + 1e-7) - (1-p) * tf.math.log(1-p + 1e-7)
+        
+        # Select top uncertain samples
+        top_k = tf.nn.top_k(entropy, k=n_samples)
+        uncertain_indices = top_k.indices
+        
+        selected_samples = []
+        for idx in uncertain_indices:
+            z = z_pool[idx:idx+1]
+            content = self.generator(z, training=False)
+            selected_samples.append({
+                'latent': z,
+                'content': content,
+                'uncertainty': entropy[idx].numpy()
+            })
+            
+        return selected_samples
+
+# Advanced TensorFlow features
+class AdvancedPLGLTensorFlow(PLGLTensorFlow):
+    """
+    Enhanced version with TensorFlow-specific optimizations
+    """
+    
+    def build_preference_model_with_attention(self):
+        """
+        Build a more sophisticated model with attention mechanism
+        Useful for high-dimensional latent spaces
+        """
+        inputs = tf.keras.Input(shape=(self.latent_dim,))
+        
+        # Self-attention on latent dimensions
+        x = tf.keras.layers.Dense(64)(inputs)
+        attention = tf.keras.layers.MultiHeadAttention(
+            num_heads=4, key_dim=16
+        )(x, x)
+        x = tf.keras.layers.Add()([x, attention])
+        x = tf.keras.layers.LayerNormalization()(x)
+        
+        # Classification head
+        x = tf.keras.layers.Dense(32, activation='tanh')(x)
+        x = tf.keras.layers.Dropout(0.2)(x)
+        outputs = tf.keras.layers.Dense(1, activation='sigmoid')(x)
+        
+        self.preference_model = tf.keras.Model(inputs=inputs, outputs=outputs)
+        self.preference_model.compile(
             optimizer='adam',
             loss='binary_crossentropy',
             metrics=['accuracy']
         )
-        return model
+        
+        return self.preference_model
     
     @tf.function
-    def optimize_latent(self, initial_z, steps=100):
-        """Gradient-based latent optimization"""
-        z = tf.Variable(initial_z)
-        optimizer = tf.keras.optimizers.Adam(0.01)
+    def parallel_optimization(self, n_starts=10, n_steps=1000):
+        """
+        Optimize multiple starting points in parallel
+        Leverages TensorFlow's vectorization capabilities
+        """
+        # Initialize multiple latent variables
+        z_batch = tf.Variable(tf.random.normal([n_starts, self.latent_dim]))
+        optimizer = tf.keras.optimizers.Adam(learning_rate=0.1)
         
-        for _ in range(steps):
+        for step in range(n_steps):
             with tf.GradientTape() as tape:
-                content = self.generator(z)
-                score = self.preference_model(content)
-                loss = -score  # Maximize
+                # Score all candidates
+                scores = self.preference_model(z_batch)
+                # Maximize scores
+                loss = -tf.reduce_sum(scores)
                 
-            grads = tape.gradient(loss, [z])
-            optimizer.apply_gradients(zip(grads, [z]))
+            gradients = tape.gradient(loss, [z_batch])
+            optimizer.apply_gradients(zip(gradients, [z_batch]))
             
-        return z</code></pre>
+            # Constrain values
+            z_batch.assign(tf.clip_by_value(z_batch, -3.0, 3.0))
+            
+        # Return best result
+        final_scores = self.preference_model(z_batch)
+        best_idx = tf.argmax(final_scores[:, 0])
+        
+        return z_batch[best_idx:best_idx+1], final_scores[best_idx]
+
+# Example usage
+def example_usage():
+    """
+    Demonstrates TensorFlow PLGL implementation
+    """
+    # Create a simple generator for demonstration
+    generator = tf.keras.Sequential([
+        tf.keras.layers.Dense(256, activation='relu', input_shape=(64,)),
+        tf.keras.layers.Dense(512, activation='relu'),
+        tf.keras.layers.Dense(256, activation='tanh')
+    ])
+    
+    # Initialize PLGL
+    latent_dim = 64
+    plgl = PLGLTensorFlow(generator, latent_dim)
+    
+    # Collect preferences
+    print("Collecting preferences...")
+    samples = plgl.collect_preferences(n_samples=100)
+    
+    # Train model
+    print("Training preference model...")
+    history = plgl.train_preference_model(epochs=50)
+    
+    # Find optimal
+    print("Finding optimal content...")
+    optimal_content, optimal_z, score = plgl.find_optimal_latent()
+    print(f"Optimal score: {score:.3f}")
+    
+    # Generate distribution
+    print("Generating high-preference samples...")
+    good_samples, _ = plgl.generate_distribution(n_samples=50)
+    
+    # Active learning
+    print("Selecting uncertain samples...")
+    uncertain = plgl.active_learning_step(n_samples=10)
+    
+    return plgl, optimal_content
+
+if __name__ == "__main__":
+    plgl, optimal = example_usage()</code></pre>
             </div>
 
             <div id="jax" class="tab-content">
                 <pre><code class="language-python">import jax
 import jax.numpy as jnp
-from jax import grad, jit, vmap
+from jax import grad, jit, vmap, random
 import optax
+import flax.linen as nn
+from typing import Callable, Tuple, List
 
 class PLGLJAX:
-    """PLGL implementation in JAX"""
+    """
+    JAX-idiomatic PLGL implementation
     
-    def __init__(self, generator_fn, latent_dim):
+    JAX excels at functional programming and automatic differentiation.
+    This implementation leverages JAX's strengths while maintaining the
+    core PLGL philosophy through functional transformations.
+    """
+    
+    def __init__(self, generator_fn: Callable, latent_dim: int, rng_key: jax.random.PRNGKey):
         self.generator_fn = generator_fn
         self.latent_dim = latent_dim
+        self.rng_key = rng_key
+        self.preference_params = None
+        self.preference_data = {'latents': [], 'ratings': []}
         
-    @jit
-    def preference_loss(self, params, z, target):
-        """Preference model loss"""
-        content = self.generator_fn(z)
-        pred = self.preference_model(params, content)
-        return jnp.mean((pred - target) ** 2)
+    def collect_preferences(self, n_samples: int = 100, 
+                          user_rating_fn: Callable = None) -> List[dict]:
+        """
+        Collect user preferences with JAX random number generation
+        """
+        samples = []
+        key = self.rng_key
+        
+        for i in range(n_samples):
+            # Split key for JAX random
+            key, subkey = random.split(key)
+            z = random.normal(subkey, (1, self.latent_dim))
+            
+            # Generate content
+            content = self.generator_fn(z)
+            
+            # Get user rating
+            if user_rating_fn:
+                rating = user_rating_fn(jax.device_get(content))
+            else:
+                # Simulated rating for demonstration
+                rating = 1 if jnp.linalg.norm(z) < 1.5 else 0
+            
+            self.preference_data['latents'].append(z)
+            self.preference_data['ratings'].append(rating)
+            
+            samples.append({
+                'latent': z,
+                'content': content,
+                'rating': rating
+            })
+            
+        return samples
+    
+    def create_preference_model(self) -> nn.Module:
+        """
+        Define preference model using Flax (JAX's neural network library)
+        Uses bounded activations and regularization for SVM-like behavior
+        """
+        class PreferenceModel(nn.Module):
+            features: Tuple[int, ...] = (64, 32)
+            
+            @nn.compact
+            def __call__(self, x):
+                # First layer with regularization
+                x = nn.Dense(self.features[0])(x)
+                x = nn.tanh(x)  # Bounded activation
+                x = nn.Dropout(0.2, deterministic=False)(x)
+                
+                # Second layer
+                x = nn.Dense(self.features[1])(x)
+                x = nn.tanh(x)
+                
+                # Output layer
+                x = nn.Dense(1)(x)
+                return nn.sigmoid(x)
+                
+        return PreferenceModel()
+    
+    def train_preference_model(self, epochs: int = 100, batch_size: int = 32, 
+                             learning_rate: float = 0.01) -> dict:
+        """
+        Train preference model using JAX's functional approach
+        """
+        if not self.preference_data['latents']:
+            raise ValueError("No preference data collected yet")
+            
+        # Prepare data
+        X = jnp.concatenate(self.preference_data['latents'], axis=0)
+        y = jnp.array(self.preference_data['ratings']).reshape(-1, 1)
+        
+        # Initialize model
+        model = self.create_preference_model()
+        key, subkey = random.split(self.rng_key)
+        params = model.init(subkey, X[:1])
+        
+        # Define loss function
+        def loss_fn(params, x_batch, y_batch, key):
+            # Apply model with dropout
+            logits = model.apply(params, x_batch, rngs={'dropout': key})
+            # Binary cross-entropy loss
+            loss = -jnp.mean(
+                y_batch * jnp.log(logits + 1e-7) + 
+                (1 - y_batch) * jnp.log(1 - logits + 1e-7)
+            )
+            # Add L2 regularization
+            l2_loss = sum(jnp.sum(p**2) for p in jax.tree_leaves(params))
+            return loss + 0.01 * l2_loss
+        
+        # Create optimizer
+        optimizer = optax.adam(learning_rate)
+        opt_state = optimizer.init(params)
+        
+        # Training step
+        @jit
+        def train_step(params, opt_state, x_batch, y_batch, key):
+            loss, grads = jax.value_and_grad(loss_fn)(params, x_batch, y_batch, key)
+            updates, opt_state = optimizer.update(grads, opt_state)
+            params = optax.apply_updates(params, updates)
+            return params, opt_state, loss
+        
+        # Training loop
+        n_batches = len(X) // batch_size
+        for epoch in range(epochs):
+            # Shuffle data
+            key, subkey = random.split(key)
+            perm = random.permutation(subkey, len(X))
+            X_shuffled = X[perm]
+            y_shuffled = y[perm]
+            
+            total_loss = 0
+            for i in range(n_batches):
+                start_idx = i * batch_size
+                end_idx = start_idx + batch_size
+                
+                x_batch = X_shuffled[start_idx:end_idx]
+                y_batch = y_shuffled[start_idx:end_idx]
+                
+                key, subkey = random.split(key)
+                params, opt_state, loss = train_step(
+                    params, opt_state, x_batch, y_batch, subkey
+                )
+                total_loss += loss
+                
+            if (epoch + 1) % 20 == 0:
+                avg_loss = total_loss / n_batches
+                print(f"Epoch {epoch+1}/{epochs}, Loss: {avg_loss:.4f}")
+                
+        self.preference_params = params
+        self.preference_model = model
+        return params
     
     @jit
-    def optimize_latent(self, preference_params, initial_z):
-        """Optimize in latent space"""
-        def score_fn(z):
-            content = self.generator_fn(z)
-            return -self.preference_model(preference_params, content)
-        
-        grad_fn = grad(score_fn)
-        optimizer = optax.adam(0.01)
-        opt_state = optimizer.init(initial_z)
-        
-        def step(z, opt_state):
-            grads = grad_fn(z)
-            updates, opt_state = optimizer.update(grads, opt_state)
-            z = optax.apply_updates(z, updates)
-            return z, opt_state
-        
-        # Run optimization
-        z = initial_z
-        for _ in range(100):
-            z, opt_state = step(z, opt_state)
+    def preference_score(self, params, model, z):
+        """JIT-compiled preference scoring"""
+        return model.apply(params, z, rngs={'dropout': None})
+    
+    def find_optimal_latent(self, n_starts: int = 10, n_steps: int = 1000, 
+                          learning_rate: float = 0.1) -> Tuple[jnp.ndarray, jnp.ndarray, float]:
+        """
+        Find optimal latent using JAX's gradient-based optimization
+        """
+        if self.preference_params is None:
+            raise ValueError("Train preference model first")
             
-        return z</code></pre>
+        # Define objective function
+        @jit
+        def objective(z):
+            score = self.preference_score(self.preference_params, self.preference_model, z)
+            return -score[0, 0]  # Minimize negative score
+        
+        # Gradient of objective
+        grad_fn = jit(grad(objective))
+        
+        best_z = None
+        best_score = -float('inf')
+        key = self.rng_key
+        
+        for _ in range(n_starts):
+            # Random initialization
+            key, subkey = random.split(key)
+            z = random.normal(subkey, (1, self.latent_dim))
+            
+            # Optimization using optax
+            optimizer = optax.adam(learning_rate)
+            opt_state = optimizer.init(z)
+            
+            @jit
+            def step(z, opt_state):
+                grads = grad_fn(z)
+                updates, opt_state = optimizer.update(grads, opt_state)
+                z = optax.apply_updates(z, updates)
+                # Constrain to reasonable range
+                z = jnp.clip(z, -3.0, 3.0)
+                return z, opt_state
+            
+            # Run optimization
+            for _ in range(n_steps):
+                z, opt_state = step(z, opt_state)
+                
+            # Evaluate final score
+            score = -objective(z)
+            if score > best_score:
+                best_score = score
+                best_z = z
+                
+        # Generate optimal content
+        optimal_content = self.generator_fn(best_z)
+        
+        return optimal_content, best_z, best_score
+    
+    def generate_distribution(self, n_samples: int = 100, threshold: float = 0.7, 
+                            temperature: float = 1.0) -> Tuple[List[jnp.ndarray], List[jnp.ndarray]]:
+        """
+        Generate samples from high-preference regions using JAX's vectorization
+        """
+        if self.preference_params is None:
+            raise ValueError("Train preference model first")
+            
+        accepted_samples = []
+        accepted_latents = []
+        key = self.rng_key
+        
+        # Vectorized scoring function
+        score_batch = vmap(lambda z: self.preference_score(
+            self.preference_params, self.preference_model, z.reshape(1, -1)
+        ))
+        
+        while len(accepted_samples) < n_samples:
+            # Generate batch
+            batch_size = min(1000, (n_samples - len(accepted_samples)) * 10)
+            key, subkey = random.split(key)
+            z_batch = random.normal(subkey, (batch_size, self.latent_dim)) * temperature
+            
+            # Score batch efficiently
+            scores = score_batch(z_batch).squeeze()
+            
+            # Find high-scoring samples
+            good_indices = jnp.where(scores > threshold)[0]
+            
+            # Generate content for good samples
+            for idx in good_indices:
+                if len(accepted_samples) >= n_samples:
+                    break
+                    
+                z = z_batch[idx:idx+1]
+                content = self.generator_fn(z)
+                accepted_samples.append(content)
+                accepted_latents.append(z)
+                
+        return accepted_samples, accepted_latents
+    
+    def active_learning_step(self, n_samples: int = 10, pool_size: int = 1000) -> List[dict]:
+        """
+        Select uncertain samples using JAX's functional transformations
+        """
+        if self.preference_params is None:
+            raise ValueError("Train preference model first")
+            
+        # Generate candidate pool
+        key, subkey = random.split(self.rng_key)
+        z_pool = random.normal(subkey, (pool_size, self.latent_dim))
+        
+        # Vectorized scoring
+        score_batch = vmap(lambda z: self.preference_score(
+            self.preference_params, self.preference_model, z.reshape(1, -1)
+        ))
+        scores = score_batch(z_pool).squeeze()
+        
+        # Calculate uncertainty (entropy)
+        entropy = -scores * jnp.log(scores + 1e-7) - (1-scores) * jnp.log(1-scores + 1e-7)
+        
+        # Select most uncertain
+        top_indices = jnp.argsort(-entropy)[:n_samples]
+        
+        selected_samples = []
+        for idx in top_indices:
+            z = z_pool[idx:idx+1]
+            content = self.generator_fn(z)
+            selected_samples.append({
+                'latent': z,
+                'content': content,
+                'uncertainty': entropy[idx]
+            })
+            
+        return selected_samples
+
+# Advanced JAX features
+class AdvancedPLGLJAX(PLGLJAX):
+    """
+    Enhanced version leveraging advanced JAX features
+    """
+    
+    @jit
+    def parallel_optimization(self, n_starts: int = 10, n_steps: int = 1000) -> Tuple[jnp.ndarray, float]:
+        """
+        Optimize multiple starting points in parallel using vmap
+        """
+        if self.preference_params is None:
+            raise ValueError("Train preference model first")
+            
+        # Initialize multiple starting points
+        key, subkey = random.split(self.rng_key)
+        z_init = random.normal(subkey, (n_starts, self.latent_dim))
+        
+        # Define single optimization trajectory
+        def optimize_single(z0):
+            # Objective for this trajectory
+            def objective(z):
+                score = self.preference_score(self.preference_params, self.preference_model, z.reshape(1, -1))
+                return -score[0, 0]
+            
+            # Gradient
+            grad_fn = grad(objective)
+            
+            # Optimization loop
+            z = z0
+            optimizer = optax.adam(0.1)
+            opt_state = optimizer.init(z)
+            
+            for _ in range(n_steps):
+                grads = grad_fn(z)
+                updates, opt_state = optimizer.update(grads, opt_state)
+                z = optax.apply_updates(z, updates)
+                z = jnp.clip(z, -3.0, 3.0)
+                
+            return z, -objective(z)
+        
+        # Vectorize over starting points
+        optimize_batch = vmap(optimize_single)
+        final_z, final_scores = optimize_batch(z_init)
+        
+        # Select best result
+        best_idx = jnp.argmax(final_scores)
+        return final_z[best_idx], final_scores[best_idx]
+
+# Example usage
+def example_usage():
+    """
+    Demonstrates JAX PLGL implementation
+    """
+    # Simple generator for demonstration
+    def generator_fn(z):
+        # Simple linear transformation
+        W = jax.random.normal(jax.random.PRNGKey(42), (z.shape[-1], 256))
+        return jnp.tanh(z @ W)
+    
+    # Initialize
+    latent_dim = 64
+    rng_key = jax.random.PRNGKey(0)
+    plgl = PLGLJAX(generator_fn, latent_dim, rng_key)
+    
+    # Collect preferences
+    print("Collecting preferences...")
+    samples = plgl.collect_preferences(n_samples=100)
+    
+    # Train model
+    print("Training preference model...")
+    params = plgl.train_preference_model(epochs=50)
+    
+    # Find optimal
+    print("Finding optimal content...")
+    optimal_content, optimal_z, score = plgl.find_optimal_latent()
+    print(f"Optimal score: {score:.3f}")
+    
+    # Generate distribution
+    print("Generating high-preference samples...")
+    good_samples, _ = plgl.generate_distribution(n_samples=50)
+    
+    # Active learning
+    print("Selecting uncertain samples...")
+    uncertain = plgl.active_learning_step(n_samples=10)
+    
+    return plgl, optimal_content
+
+if __name__ == "__main__":
+    plgl, optimal = example_usage()</code></pre>
             </div>
 
-            <div id="numpy-original" class="tab-content">
+            <div id="numpy-original" class="tab-content active">
                 <pre><code class="language-python">"""
 Original PLGL Implementation (2018-2019)
 SkinDeep.ai Inc - Historical Reference
