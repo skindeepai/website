@@ -154,8 +154,9 @@
             <img class="shot" src="images/skindeep-app-2019.png" alt="The 2019 SkinDeep.ai app: a generated face with reject and star rating buttons, and a training progress ring showing 60%" loading="lazy">
             <div>
                 <p>You rated faces — every one of them generated, none of them real people. The progress ring
-                tracked how well your model fit; after roughly twenty ratings, the backend trained your personal
-                classifier and decoded your ideal. The whole system was built and run by one person:</p>
+                counted toward the next reveal: every 20th rating, the backend trained your personal classifier,
+                ran it in reverse, and generated your current best match — then you chose to keep going, and it
+                sharpened. The whole system was built and run by one person:</p>
                 <ul class="arch-list">
                     <li><b>App</b> NativeScript + Angular, Android and iOS — served faces, captured swipes</li>
                     <li><b>API</b> PHP + MySQL — recorded ratings; past ~20 likes, queued a generation job</li>

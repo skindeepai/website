@@ -359,13 +359,15 @@
 
     const el = (id) => document.getElementById(id);
     const POS_COLOR = '#4F46E5', NEG_COLOR = '#D97706';
+    const REVEAL_EVERY = 20;           // the 2019 app's loop: an ideal every 20th rating
+    const RING_C = 100.53;             // 2 * pi * r16
 
     const state = {};
     for (const key of Object.keys(DOMAINS)) {
         state[key] = {
             model: makeModel(DOMAINS[key].dims.length),
             rand: mulberry32(Date.now() % 2147483647 + (key === 'art' ? 991 : 0)),
-            queue: [], current: null, seen: 0, history: [], active: true, msLog: []
+            queue: [], current: null, seen: 0, history: [], active: true, msLog: [], prevReveal: null
         };
     }
     let domainKey = 'faces';
@@ -406,6 +408,50 @@
             chip.style.display = 'none';
         }
         el('undo-btn').disabled = s.history.length === 0;
+
+        // Progress ring toward the next reveal, like the 2019 app's.
+        const n = s.model.data.length;
+        const p = (n % REVEAL_EVERY) / REVEAL_EVERY;
+        el('ring-fg').style.strokeDashoffset = (RING_C * (1 - p)).toFixed(1);
+        el('ring-label').textContent = Math.round(p * 100) + '%';
+    }
+
+    function revealOpen() { return el('reveal-overlay').classList.contains('open'); }
+
+    function showReveal() {
+        const s = S();
+        const n = s.model.data.length;
+        const z = idealZ(s.model, 0.75);
+        const cur = D().render(z);
+        el('reveal-art').innerHTML = cur;
+        el('reveal-title').textContent = 'Rating #' + n + ' — your current ideal, generated';
+        el('reveal-score').textContent = fmtPct(predict(s.model, z), 2);
+        const cmp = el('reveal-compare');
+        if (s.prevReveal && s.prevReveal.n !== n) {
+            cmp.style.display = 'flex';
+            cmp.innerHTML =
+                '<figure><div>' + s.prevReveal.svg + '</div><figcaption>at #' + s.prevReveal.n + '</figcaption></figure>' +
+                '<span class="rc-arrow">→</span>' +
+                '<figure><div>' + cur + '</div><figcaption>now</figcaption></figure>';
+        } else {
+            cmp.style.display = 'none';
+            cmp.innerHTML = '';
+        }
+        s.prevReveal = { svg: cur, n };
+        el('reveal-note').textContent =
+            (likes(s) === 0 || passes(s) === 0)
+                ? 'You have only rated one way so far — mixing 👍 and 👎 gives a much sharper ideal.'
+                : 'Reverse classification, solved from your ' + n + ' ratings — not picked from a pool. It sharpens as you keep going.';
+        el('reveal-overlay').classList.add('open');
+        el('reveal-keep').focus();
+    }
+
+    function closeReveal(goBreakdown) {
+        el('reveal-overlay').classList.remove('open');
+        if (goBreakdown) {
+            const sec = document.getElementById('generate');
+            if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 
     function renderStats() {
@@ -524,6 +570,9 @@
         }
         flashCard(y);
         refreshAll();
+        if (s.model.data.length > 0 && s.model.data.length % REVEAL_EVERY === 0) {
+            showReveal();
+        }
     }
 
     function skip() {
@@ -565,7 +614,7 @@
         state[key] = {
             model: makeModel(DOMAINS[key].dims.length),
             rand: mulberry32((Date.now() * 13) % 2147483647),
-            queue: [], current: null, seen: 0, history: [], active: el('active-toggle').checked, msLog: []
+            queue: [], current: null, seen: 0, history: [], active: el('active-toggle').checked, msLog: [], prevReveal: null
         };
         scoreSamples = null;
         refreshAll();
@@ -587,13 +636,65 @@
         });
         document.querySelectorAll('[data-domain]').forEach((b) =>
             b.addEventListener('click', () => setDomain(b.dataset.domain)));
+        el('reveal-keep').addEventListener('click', () => closeReveal(false));
+        el('reveal-more').addEventListener('click', () => closeReveal(true));
+        el('reveal-overlay').addEventListener('click', (e) => {
+            if (e.target === el('reveal-overlay')) closeReveal(false);
+        });
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (revealOpen()) {
+                if (['Escape', 'Enter', ' ', 'ArrowRight', 'ArrowLeft'].includes(e.key)) {
+                    e.preventDefault();
+                    closeReveal(false);
+                }
+                return;
+            }
             if (e.key === 'ArrowRight') { e.preventDefault(); rate(1); }
             else if (e.key === 'ArrowLeft') { e.preventDefault(); rate(0); }
             else if (e.key.toLowerCase() === 'u') undo();
             else if (e.key.toLowerCase() === 's') skip();
         });
+
+        // Drag-to-swipe on the card, like the app.
+        const card = el('card');
+        let drag = null;
+        card.addEventListener('pointerdown', (e) => {
+            if (revealOpen()) return;
+            drag = { x0: e.clientX, y0: e.clientY, dx: 0 };
+            card.setPointerCapture(e.pointerId);
+            card.style.transition = 'none';
+        });
+        card.addEventListener('pointermove', (e) => {
+            if (!drag) return;
+            drag.dx = e.clientX - drag.x0;
+            card.style.transform = 'translateX(' + drag.dx + 'px) rotate(' + drag.dx / 18 + 'deg)';
+            card.style.opacity = String(Math.max(0.55, 1 - Math.abs(drag.dx) / 500));
+        });
+        const endDrag = (e) => {
+            if (!drag) return;
+            const dx = drag.dx;
+            drag = null;
+            if (Math.abs(dx) > 90) {
+                const dir = dx > 0 ? 1 : 0;
+                card.style.transition = 'transform 0.18s ease-in, opacity 0.18s';
+                card.style.transform = 'translateX(' + (dx > 0 ? 480 : -480) + 'px) rotate(' + dx / 10 + 'deg)';
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.transition = 'none';
+                    card.style.transform = 'none';
+                    card.style.opacity = '1';
+                    rate(dir);
+                }, 160);
+            } else {
+                card.style.transition = 'transform 0.2s, opacity 0.2s';
+                card.style.transform = 'none';
+                card.style.opacity = '1';
+            }
+        };
+        card.addEventListener('pointerup', endDrag);
+        card.addEventListener('pointercancel', endDrag);
+
         refreshAll();
     });
 })();

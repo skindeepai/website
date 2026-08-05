@@ -307,6 +307,7 @@
             <p class="section-subtitle">Not a video. Not a mockup. A logistic classifier, retrained on every rating you make.</p>
             <ul class="demo-bullets" style="text-align: left;">
                 <li>No server — nothing you rate leaves the page</li>
+                <li>Every 20th rating, your current ideal is generated — the original app's loop, progress ring and all</li>
                 <li>The model's weights are shown live, with human-readable labels</li>
                 <li>Reverse classification, scoring, and minimal-change transforms, all interactive</li>
                 <li>An active-sampling toggle, so you can feel why boring training decks kill preference learning</li>
@@ -355,9 +356,9 @@
                 <div>
                     <p class="record-tag">"Perfection is just a few swipes away"</p>
                     <p>The original SkinDeep.ai app: a mobile client served StyleGAN-generated faces, each swipe
-                    labeled a 512-dimensional latent vector, and after about twenty ratings a GPU worker trained
-                    your personal classifier, ran it in reverse, and decoded the face you'd find most attractive —
-                    a person who doesn't exist.</p>
+                    labeled a 512-dimensional latent vector, and a progress ring counted toward every 20th rating —
+                    when a GPU worker trained your personal classifier, ran it in reverse, and decoded the face
+                    you'd find most attractive. A person who doesn't exist. Then you kept swiping, and it sharpened.</p>
                     <p style="color: var(--text-secondary);">The app, the API, the GPU engine, the patent filing,
                     the demo videos, and an audio overview are all preserved and public.</p>
                     <p style="margin-top: 1.5rem;"><a href="history.html" class="btn btn-secondary">Browse the record</a></p>
