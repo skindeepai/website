@@ -85,11 +85,12 @@
             `C ${cx + rx} ${cy + ry * 0.6} ${cx + rx * cheekW} ${chinY} ${cx} ${chinY} ` +
             `C ${cx - rx * cheekW} ${chinY} ${cx - rx} ${cy + ry * 0.6} ${cx - rx} ${cy} Z`;
 
-        // Back hair: rounded sheet behind the head, bottom edge scalloped by curl.
+        // Back hair: rounded sheet behind the head, bottom edge scalloped by
+        // curl. Capped above the card edge so the scallops always resolve.
         let backHair = '';
         if (hairLen > 0.12) {
-            const hw = rx + 10, top = cy - ry * 0.95;
-            const bot = cy + ry * 0.25 + hairLen * (ry * 0.75 + 58);
+            const hw = rx + 10;
+            const bot = Math.min(cy + ry * 0.25 + hairLen * (ry * 0.75 + 58), 206);
             const amp = 4 + curl * 9, waves = 5;
             let bottomEdge = '';
             for (let i = 0; i <= waves; i++) {
@@ -100,8 +101,14 @@
             backHair = `<path d="M ${cx - hw} ${cy + 6} A ${hw} ${ry} 0 0 1 ${cx + hw} ${cy + 6} L ${cx + hw} ${bot} ${bottomEdge}Z" fill="${hairCol}"/>`;
         }
 
+        // Neck and shoulders ground the head; long hair falls behind them.
+        const shirt = '#6D82A8', shirtEdge = '#5A6E93';
+        const neckTop = chinY - 16;
+        const neck = `<path d="M ${cx - 9.5} ${neckTop} L ${cx - 9.5} ${chinY + 8} Q ${cx} ${chinY + 13} ${cx + 9.5} ${chinY + 8} L ${cx + 9.5} ${neckTop} Z" fill="${skin}" stroke="${skinEdge}" stroke-width="1"/>`;
+        const shoulders = `<path d="M ${cx - 64} 228 L ${cx - 62} 222 Q ${cx - 56} ${chinY + 15} ${cx - 15} ${chinY + 7} L ${cx + 15} ${chinY + 7} Q ${cx + 56} ${chinY + 15} ${cx + 62} 222 L ${cx + 64} 228 Z" fill="${shirt}" stroke="${shirtEdge}" stroke-width="1"/>`;
+
         // Front hair: cap over the skull with a fringe line; recedes when short.
-        const fringeY = cy - ry * lerp(0.72, 0.34, Math.min(1, hairLen * 1.6));
+        const fringeY = cy - ry * lerp(0.72, 0.46, Math.min(1, hairLen * 1.6));
         const capTop = cy - ry * 0.98;
         const wig = 3 + curl * 6;
         const frontHair = hairLen < 0.04 ? '' :
@@ -150,7 +157,7 @@
 
         return `<svg viewBox="0 0 200 224" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Generated cartoon face">` +
             `<rect width="200" height="224" rx="10" fill="#EEF2F7"/>` +
-            backHair + ears +
+            backHair + shoulders + neck + ears +
             `<path d="${head}" fill="${skin}" stroke="${skinEdge}" stroke-width="1.4"/>` +
             blush + freckles + eye(-1) + eye(1) + brow(-1) + brow(1) + nose + mouth +
             frontHair + buzz + glasses +
@@ -457,7 +464,7 @@
     function renderStats() {
         const s = S();
         el('stat-n').textContent = s.model.data.length;
-        el('stat-likes').textContent = likes(s) + ' 👍 · ' + passes(s) + ' 👎';
+        el('stat-likes').textContent = likes(s) + '👍 ' + passes(s) + '👎';
         if (s.msLog.length) {
             const sorted = s.msLog.slice(-9).sort((a, b) => a - b);
             el('stat-ms').textContent = fmtMs(sorted[Math.floor(sorted.length / 2)]) + ' ms';
