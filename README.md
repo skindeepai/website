@@ -1,10 +1,14 @@
-# SkinDeep.ai - PLGL Technology
+# SkinDeep.ai — Latent Preference Learning
 
-This repository contains the PLGL (Preference Learning in Generative Latent Spaces) technology developed by SkinDeep.ai Inc.
+The website for [skindeep.ai](https://skindeep.ai): latent preference learning, published in 2025 under the working name PLGL (Preference Learning in Generative Latent Spaces).
 
 ## Overview
 
-PLGL is a revolutionary approach to personalized AI content generation that learns user preferences through simple ratings rather than complex prompts. Originally developed in 2018-2019, this technology enables any generative model with a latent space to create personalized content.
+Rate a few generated examples; a tiny classifier learns your taste on the latent vectors behind them — in about a millisecond — then runs backwards to generate what you'd score highest. Built in 2018–2019 against StyleGAN, patented, then open-sourced. It works with any generative model that has a latent space.
+
+- **[Live demo](https://skindeep.ai/demo.html)** — the full loop, in your browser, no server
+- **[Landscape](https://skindeep.ai/landscape.html)** — who has independently reinvented which pieces since 2019, with sources, and what still doesn't exist
+- **[History](https://skindeep.ai/history.html)** — the 2018–19 record: app, patent, videos, code
 
 ## Key Features
 
@@ -50,4 +54,4 @@ PLGL technology is released under the MIT License. See LICENSE file for details.
 
 ---
 
-*Developed by SkinDeep.ai Inc - Pioneering preference learning in generative AI since 2018*
+*Developed by SkinDeep.ai Inc — preference learning in generative latent spaces since 2018*

@@ -96,8 +96,12 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.3rem;
     align-items: center;
+}
+
+@media (max-width: 1150px) {
+    .logo-subtitle { display: none; }
 }
 
 .nav-menu a {
@@ -237,6 +241,7 @@ body {
 .stat h3 {
     font-size: 2rem;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .stat p {
@@ -621,7 +626,7 @@ code {
 .cta-section .btn-outline {
     border-color: white;
     color: white;
-	background-color: var(----secondary-color);
+    background-color: var(--secondary-color);
 }
 
 /* Footer */
@@ -696,7 +701,7 @@ code {
 
 .patent-note {
     background: #F0F9FF;
-    border-left: 4px solid var(--primary-color);
+    border: 1px solid #E2E8F0;
     padding: 1rem 1.5rem;
     margin-top: 2rem;
     border-radius: 0.5rem;
@@ -1285,17 +1290,17 @@ code {
 
 .info-box {
     background: #EFF6FF;
-    border-left: 4px solid #3B82F6;
+    border: 1px solid #E2E8F0;
 }
 
 .warning-box {
     background: #FEF3C7;
-    border-left: 4px solid #F59E0B;
+    border: 1px solid #E2E8F0;
 }
 
 .concept-box {
     background: #F0F9FF;
-    border-left: 4px solid #06B6D4;
+    border: 1px solid #E2E8F0;
 }
 
 .info-box h4, .warning-box h4, .concept-box h4 {
