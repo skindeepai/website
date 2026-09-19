@@ -1,0 +1,39 @@
+{
+  "experiment_ids": [
+    "C01",
+    "C02"
+  ],
+  "status": "reproduction pilot",
+  "model": "microsoft/GUI-Actor-2B-Qwen2-VL",
+  "revision": "8f87b366d004425a9823502553e2097c71116ece",
+  "torch": "2.6.0+cpu",
+  "transformers": "4.50.0.dev0",
+  "hardware": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "threads": 8,
+  "dtype": "float32",
+  "fixture_hash": "3cd47819845d2508eeef3c556e0b65a92619a33b3598e3c2e1f3af2743192d35",
+  "target_count": 6,
+  "hits": 5,
+  "absent_targets": 2,
+  "timing_ms": {
+    "direct": {
+      "p50": 35555.05185000948,
+      "p95": 61151.9987950247,
+      "samples": 8
+    },
+    "with_vocabulary": {
+      "p50": 35870.78179998207,
+      "p95": 59070.47222496767,
+      "samples": 8
+    }
+  },
+  "limitations": [
+    "Eight fixtures from one locally authored interface at two viewports; not a GUI benchmark.",
+    "Pretrained GUI-Actor pointer weights; no new head was trained. Custom shortened prompt and capped image resolution.",
+    "Always chooses a visual patch; absent targets cannot be rejected. Patch probability is not calibrated correctness.",
+    "Both paths use the same pointer head. The paired vocabulary projection only isolates output-head overhead; it is not a text/JSON baseline.",
+    "CPU batch one, warm model. Timings exclude preprocessing/loading; eight samples are too few for stable tail latency.",
+    "All transformer layers run. Coordinate early exit and end-to-end task execution are not tested."
+  ],
+  "execution_notes": "Local static-site browser checks ran concurrently during portions of this pilot. Timings were not collected on an otherwise idle system."
+}

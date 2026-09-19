@@ -1,11 +1,7 @@
-"""
-PLGL Private Dating Example
-
-Revolutionary privacy-preserving dating system where users never share actual photos.
-Instead, they train on AI-generated faces to learn preferences, then match based on
-latent space compatibility.
-
-Key innovation: Match people without exposing personal photos!
+"""Illustrative domain sketch with mocked components, not a validated application.
+See experiments/README.md for runnable validated mechanics and research.html
+for the data and evaluation required before making domain claims.
+Encodings and arbitrary noise do not establish privacy or anonymity.
 """
 
 import torch
@@ -26,7 +22,7 @@ class DatingProfile:
     interests: List[str]
     
     def anonymize_latent(self) -> torch.Tensor:
-        """Add privacy-preserving noise to latent representation"""
+        """Add illustrative noise; no differential-privacy or anonymity guarantee."""
         noise = torch.randn_like(self.latent_representation) * 0.1
         return self.latent_representation + noise
 
@@ -336,6 +332,6 @@ if __name__ == "__main__":
     for key, value in stats.items():
         print(f"  - {key}: {value}")
     
-    print("\n✅ Complete privacy maintained throughout!")
+    print("Privacy properties have not been established by this sketch.")
     print("Real photos never stored or transmitted through the system.")
     print("All matching happens in secure latent space.")

@@ -1,0 +1,122 @@
+"""Publish the experiment register and scoped results from local JSON artifacts."""
+import json, re, statistics
+from html import escape as e
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+
+def read(name): return json.loads((ROOT/name).read_text(encoding='utf-8'))
+def table(headers, rows):
+    return '<div class="table-scroll" tabindex="0" role="region" aria-label="Results table"><table><thead><tr>'+''.join('<th scope="col">'+e(v)+'</th>' for v in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+e(str(v))+'</td>' for v in row)+'</tr>' for row in rows)+'</tbody></table></div>'
+def paragraph(text): return '<p>'+e(text)+'</p>'
+def pct(x): return f'{100*x:.1f}%'
+
+def main():
+    pages=read('content/pages.json');protocol=(ROOT/'EXPERIMENTS.md').read_text(encoding='utf-8')
+    studies={};groups={'P':'preferences','D':'decisions','C':'coordinates','X':'combined'}
+    for directory in ['synthetic','qwen-decisions','coordinates']:
+        path=ROOT/'results'/directory/'result.json'
+        if path.exists():
+            data=read(path);ids=data.get('experiment_ids',data.get('experiments',[]))
+            for identifier in ids:studies[identifier]=directory
+    entries=[]
+    for match in re.finditer(r'^### ([PDCX]\d\d) [^\w\n]+ ([^\n]+)\n(.*?)(?=^### |^## |\Z)',protocol,re.M|re.S):
+        identifier,title,body=match.groups();title=re.sub(r' \[.*?\]','',title)
+        fields=dict(re.findall(r'\*\*(.+?):\*\* (.*?)(?=\n\n|\Z)',body,re.S))
+        status='Partial pilot' if identifier in studies else 'Planned'
+        if identifier=='P01':status='Numerical checks passed'
+        if identifier=='D03':status='Pilot: quality gate missed'
+        next_step={
+            'P01':'Maintain solver, small-batch, and browser regression checks.',
+            'P02':'Add nonlinear/noisy utilities and independently rated human samples.',
+            'P03':'Test the exact browser 5/4/3 policy and ratings-to-quality learning curves; current pilot uses a 2/2/2 mixture.',
+            'P04':'Extend beyond quadratic synthetic features to learned modes and human judgments.',
+            'P05':'Match generator budgets and collect blinded human ratings.',
+            'P06':'Measure perceived change and protected-feature preservation on real outputs.',
+            'P07':'Test recurring contexts and retention across separate user sessions.',
+            'P08':'Select a licensed generator and independent evaluation dataset.',
+            'P09':'Provide two compatible generator datasets and hold out users.',
+            'P10':'Evaluate learned constraints under shift; the toy analytic constraint is not a safety result.',
+            'P11':'Define threat model, consent, and attack evaluation data.',
+            'P12':'Select a licensed audio generator and recruit listeners.',
+            'P13':'Build a consented feed study with exposure and session metrics.',
+            'P14':'Specify consent, mutual utility, and privacy threat model before collecting people data.',
+            'P15':'Select a scientific domain and independent feasibility evaluator.',
+            'D01':'Train a comparable output-token baseline; add JSON and end-to-end timings.',
+            'D02':'Repeat across seeds and genuinely different rule families.',
+            'D03':'Use a disjoint gate-training/calibration split and evaluate risk versus coverage; first gate loses accuracy.',
+            'D04':'Add unseen rule grammars, contradictions, long context and missing information.',
+            'D05':'Add cold, tokenization, throughput, memory and fallback measurements.',
+            'D06':'Compare two-model escalation with in-model continuation, including transfer cost.',
+            'D07':'Provide a supported accelerator runtime; installed Torch is CPU-only.',
+            'D08':'Add instruction-grounded image/video fixtures and reviewer labels.',
+            'C01':'Train/compare direct regression, patch selection and constrained coordinate tokens on grouped data.',
+            'C02':'Add independent apps and a no-target classifier; two screenshots cannot establish robustness.',
+            'C03':'Train intermediate pointer heads only after grounding and abstention work.',
+            'C04':'Build a resettable task environment and score completed tasks, not just points.',
+            'X01':'Collect consented user-specific labels and protect task constraints.',
+            'X02':'Repeat pinned runs on a second model/runtime and measure maintenance costs.'}[identifier]
+        entries.append({'id':identifier,'title':title,'track':groups[identifier[0]],'status':status,'fields':fields,'result':studies.get(identifier),'next':next_step})
+    assert len(entries)==29,len(entries)
+    (ROOT/'content/experiments.json').write_text(json.dumps(entries,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    labels=read('content/research-labels.json')
+    body='<p>Pick a topic, then open a question to see its test and current status.</p><div class="research-controls"><label>Topic <select id="research-filter"><option value="all">All topics</option><option value="preferences">Preferences</option><option value="decisions">Decisions and early stopping</option><option value="coordinates">Click targets</option><option value="combined">Putting it together</option></select></label><label>Search <input id="research-search" type="search" placeholder="Find a question"></label></div><p id="research-count" role="status">29 experiments shown</p>'
+    track_titles={'preferences':'Learning preferences','decisions':'Decisions and early stopping','coordinates':'Finding click targets','combined':'Putting it together'}
+    current_track=None
+    for row in entries:
+        if row['track'] != current_track:
+            if current_track is not None: body+='</section>'
+            current_track=row['track']
+            body+=f'<section class="research-group" aria-labelledby="track-{current_track}"><h2 id="track-{current_track}">{track_titles[current_track]}</h2>'
+        status='Tested briefly' if row['result'] else 'To test'
+        if row['id']=='P01':status='Checks passed'
+        if row['id']=='D03':status='Needs improvement'
+        body+=f'<details class="experiment" id="{row["id"]}" data-track="{row["track"]}"><summary>{e(labels[row["id"]])}<small>{row["id"]} / {status}</small></summary><p class="small">Technical question: {e(row["title"])}</p>'+paragraph(row['fields'].get('Hypothesis',''))+'<p><strong>Next:</strong> '+e(row['next'])+'</p>'+''.join('<p><strong>'+e(key)+':</strong> '+e(value)+'</p>' for key,value in row['fields'].items() if key!='Hypothesis')
+        if row['result']:body+='<a href="@/results/'+row['result']+'/result.json">Run artifact (JSON)</a>'
+        body+='</details>'
+    body+='</section><p><a href="@/results.html">Results so far</a> · <a href="@/EXPERIMENTS.md">Full technical protocol</a></p>'
+    pages['research.html']['body']=body;pages['research.html']['status']='Ongoing work'
+    body='<div class="note warning"><p><strong>Exploratory results, not deployment claims.</strong> These runs establish working mechanisms and expose failure cases. They do not validate arbitrary policies, human preferences or general GUI control.</p></div>'
+    synthetic=read('results/synthetic/result.json');records=synthetic['records'];math=synthetic['math']
+    body+='<section class="paper" id="preferences"><h2>Preference learning: mechanics pass, assumptions matter</h2>'+paragraph(f'The browser solver passes {math["browser_fixtures"]} fixtures. On {math["random_cases"]} random bounded edits, its largest squared-distance difference from independent SciPy optimization was {math["max_squared_distance_gap_vs_scipy"]:.2g} (tolerance 1e-7). This verifies latent geometry, not perceptual minimality.')
+    rows=[]
+    def average(exp,metric,**filters):
+        vals=[r[metric] for r in records if r['experiment']==exp and all(r.get(k)==v for k,v in filters.items())]
+        return statistics.mean(vals),min(vals),max(vals)
+    for n in [20,50,100]:
+        a,lo,hi=average('P02','accuracy',n=n);rows.append([f'Linear utility, {n} ratings',pct(a),f'{pct(lo)}–{pct(hi)}'])
+    for head in ['linear','quadratic']:
+        a,lo,hi=average('P04','balanced_accuracy',head=head);rows.append([f'Disconnected utility: {head} head (balanced accuracy)',pct(a),f'{pct(lo)}–{pct(hi)}'])
+    body+=table(['Synthetic test','Mean, five seeds','Observed seed range'],rows)
+    body+='<p>Seed ranges are descriptive, not confidence intervals. The disconnected-utility test uses a different label function from the linear test.</p>'
+    rows=[]
+    for policy in ['random','uncertainty','mixed']:
+        a,lo,hi=average('P03','accuracy',policy=policy);rows.append([policy,pct(a),f'{pct(lo)}–{pct(hi)}'])
+    body+=table(['Sampling at 80 labels','Held-out accuracy','Observed seed range'],rows)+'<p>This pilot uses a 2/2/2 mixed batch with 240 candidates. It does not evaluate the browser’s 5/4/3 policy or prove label savings.</p>'
+    rows=[]
+    for method in ['box-optimum','truncated','reranked','random']:
+        a,_,_=average('P05','oracle_utility',method=method);p,_,_=average('P05','predicted',method=method);rows.append([method,pct(p),f'{a:.3f}'])
+    body+=table(['Misspecified-model choice','Predicted score','True synthetic utility (higher is better)'],rows)+'<p>The maximum learned score is not the maximum true utility. These methods also use different candidate/generation budgets, so this is a failure illustration, not a fair efficiency benchmark.</p><p><a href="@/results/synthetic/result.json">All synthetic results</a> · <a href="@/results/synthetic/math-fixtures.json">Numerical fixtures</a></p></section>'
+    q=read('results/qwen-decisions/result.json');times=q['timing_ms'];full=next(h['test_accuracy'] for h in q['heads'] if h['depth']==24)
+    body+='<section class="paper" id="decisions"><h2>Qwen: early exit works, the quality gate fails</h2>'+paragraph(f'Frozen Qwen2.5-0.5B-Instruct, 80 training / 32 calibration / 48 test examples. Rules vary by topic and ALLOW/BLOCK action; grammar is shared. Heads were trained at layers 6, 12, 18 and 24. This is a small synthetic policy task.')
+    body+=table(['Output path','Test accuracy','Warm CPU p50','Warm CPU p95'],[['Constrained A/B/C token (zero-shot)',pct(q['token_accuracy']['test']),f'{times["minimal_token"]["p50"]:.1f} ms',f'{times["minimal_token"]["p95"]:.1f} ms'],['Trained full-depth head',pct(full),f'{times["direct_head"]["p50"]:.1f} ms',f'{times["direct_head"]["p95"]:.1f} ms'],['Trained adaptive head',pct(q['adaptive_accuracy']),f'{times["adaptive_head"]["p50"]:.1f} ms',f'{times["adaptive_head"]["p95"]:.1f} ms']])
+    body+=paragraph(f'All 48 adaptive requests exited after layer 6; hooks verified the remaining 18 layers did not execute. Accuracy fell by {100*(full-q["adaptive_accuracy"]):.2f} percentage points against the trained final head, exceeding the proposed one-point tolerance. The small calibration set did not protect test quality.')
+    body+='<p>The token baseline is zero-shot while the heads receive labels; its low accuracy is not evidence that heads inherently outperform tokens. A comparably trained token baseline is still needed. Layer 12 and 18 probes reached 48/48 on this fixture set, but choosing either after seeing test results requires a new held-out test.</p><p>Times include transformer/head execution and adaptive hooks, but exclude tokenization, loading and service overhead. CPU float32, eight threads, one seed. No equal-quality speedup, JSON speedup or rare-error guarantee is established.</p><p><a href="@/results/qwen-decisions/result.json">Run configuration and metrics</a> · <a href="@/results/qwen-decisions/predictions.json">Every test prediction</a> · <a href="@/results/qwen-decisions/fixtures.json">Train/calibration/test fixtures</a></p></section>'
+    if (ROOT/'results/coordinates/result.json').exists():
+        c=read('results/coordinates/result.json')
+        body+='<section class="paper" id="coordinates"><h2>Coordinates without text decoding</h2>'+paragraph(f'Reproduced the pretrained GUI-Actor 2B pointer path on our own interface at desktop and mobile sizes. It hit {c["hits"]} of {c["target_count"]} labeled target boxes. Two absent-target prompts still received points: this head has no no-target class.')
+        body+=table(['Path','Warm CPU p50','Samples'],[[k,f'{v["p50"]:.1f} ms',str(v['samples'])] for k,v in c['timing_ms'].items()])
+        body+='<p>Both paths use the same pointer head and produced matching probabilities. “With vocabulary” adds one vocabulary projection; it is not JSON decoding or a trained coordinate-token baseline. This isolates a small piece of output overhead. All vision and transformer layers still run.</p><p>Eight prompts from two screenshots are a smoke test, not a general grounding benchmark. This uses published Microsoft weights, a shortened prompt, capped resolution, CPU float32 and eight threads. Patch confidence is uncalibrated. No live clicks were executed.</p><p><a href="https://github.com/microsoft/GUI-Actor">Upstream GUI-Actor</a> · <a href="@/results/coordinates/result.json">Run artifact</a> · <a href="@/results/coordinates/predictions.json">Predictions and boxes</a> · <a href="@/coordinate-lab.html">Annotate a target</a></p></section>'
+    body+='<section class="paper"><h2>What happens next</h2><p>Broaden the data before broadening the claim. The next priority is a reliable decision exit gate and a coordinate head that can reject missing targets, followed by fair token baselines and full input-to-result timings.</p><p><a href="@/research.html">Open experiments and prerequisites</a> · <a href="@/docs/claims.md">Claim ledger</a> · <a href="@/getting-started.html">Reproduce the pilots</a></p></section>'
+    full_details=body
+    count=q['split_sizes']['test'];full_correct=round(full*count);early_correct=round(q['adaptive_accuracy']*count)
+    body='<section class="result-summary"><h2>Preference learning</h2>'+paragraph(f'{math["browser_fixtures"]} calculation checks passed. The model can learn simple made-up preferences, but we have not yet shown that people prefer its suggestions.')+'</section>'
+    body+='<section class="result-summary"><h2>Stopping early</h2><p>Faster, but more mistakes in this first test.</p>'+table(['Method','Correct answers','Typical time'],[['Use the full model',f'{full_correct} of {count}',f'{times["direct_head"]["p50"]:.0f} ms'],['Stop early',f'{early_correct} of {count}',f'{times["adaptive_head"]["p50"]:.0f} ms']])+'<p class="small">One small, made-up message task on this CPU. These times do not include loading the model or preparing the input.</p></section>'
+    if (ROOT/'results/coordinates/result.json').exists():
+        marks=''.join('<span class="'+('hit' if i<c['hits'] else 'miss')+'" aria-hidden="true">'+('✓' if i<c['hits'] else '×')+'</span>' for i in range(c['target_count']))
+        body+='<section class="result-summary"><h2>Finding where to click</h2><div class="hit-row" role="img" aria-label="'+str(c['hits'])+' of '+str(c['target_count'])+' targets found">'+marks+'</div>'+paragraph(f'{c["hits"]} of {c["target_count"]} visible targets found on two example screens. But when a target was missing, the model still guessed a point.')+'<p><a href="@/coordinate-lab.html">See the recorded clicks</a></p></section>'
+    body+='<details id="full-results"><summary>Test setup, measurements and limitations</summary>'+full_details+'</details><p><a href="@/research.html">Questions still to test</a> · <a href="@/getting-started.html">Run the experiments</a></p>'
+    pages['results.html']['body']=body;pages['results.html']['status']='Early results'
+    (ROOT/'content/pages.json').write_text(json.dumps(pages,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print('Refreshed 29 experiments and measured result summaries.')
+
+if __name__=='__main__':main()

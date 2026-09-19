@@ -1,0 +1,968 @@
+{
+  "train": [
+    {
+      "prompt": "Rule: If the topic is music, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "music",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bicycles",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is football, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss football.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "football",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bicycles",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "painting",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is books, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "books",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is music, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss music.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "music",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss tickets.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "tickets",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is football, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss football.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "football",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is football, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "football",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bicycles",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss bicycles.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "bicycles",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "apples",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "weather",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss coffee.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "coffee",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "tickets",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss bicycles.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "bicycles",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "gardens",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is books, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss books.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "books",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "tickets",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "painting",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss coffee.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "coffee",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is music, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss music.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "music",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "apples",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss gardens.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "gardens",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss coffee.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "coffee",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is music, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "music",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss weather.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "weather",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss painting.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "painting",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "weather",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss painting.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "painting",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "tickets",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is music, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss music.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "music",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss bicycles.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "bicycles",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is books, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss books.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "books",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "weather",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "tickets",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is books, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "books",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "coffee",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss weather.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "weather",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss weather.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "weather",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss painting.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "painting",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "gardens",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is music, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss music.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "music",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss tickets.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "tickets",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss apples.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "apples",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is books, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "books",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "coffee",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is books, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss books.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "books",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "apples",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "apples",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss apples.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "apples",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss painting.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "painting",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss weather.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "weather",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss apples.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "apples",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "gardens",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "coffee",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is football, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "football",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "painting",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bicycles",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bicycles, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss bicycles.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "bicycles",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss tickets.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "tickets",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss gardens.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "gardens",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is weather, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "weather",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is apples, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss apples.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "apples",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "coffee",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is music, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "music",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is painting, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "painting",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is football, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss football.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "football",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is coffee, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss coffee.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "coffee",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is football, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss football.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "football",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss gardens.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "gardens",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is football, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "football",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is music, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "music",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is tickets, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss tickets.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "tickets",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is books, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss books.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "books",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is football, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "football",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "gardens",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is books, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "books",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is gardens, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss gardens.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "gardens",
+      "contextual": true
+    }
+  ],
+  "calibration": [
+    {
+      "prompt": "Rule: If the topic is travel, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "travel",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss hockey.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "hockey",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss photography.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "photography",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "hockey",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "oranges",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss oranges.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "oranges",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss photography.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "photography",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "photography",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "photography",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss hockey.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "hockey",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss photography.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "photography",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss oranges.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "oranges",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "photography",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "travel",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss hockey.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "hockey",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "oranges",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "hockey",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "travel",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss travel.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "travel",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "oranges",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss oranges.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "oranges",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "travel",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss photography.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "photography",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss travel.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "travel",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss travel.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "travel",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is travel, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss travel.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "travel",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "hockey",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss oranges.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "oranges",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is oranges, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "oranges",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "hockey",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is hockey, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss hockey.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "hockey",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is photography, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "photography",
+      "contextual": false
+    }
+  ],
+  "test": [
+    {
+      "prompt": "Rule: If the topic is peaches, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "peaches",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss theatre.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "theatre",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "ceramics",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "astronomy",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "peaches",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "rowing",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss ceramics.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "ceramics",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss astronomy.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "astronomy",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss theatre.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "theatre",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "astronomy",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "ceramics",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss peaches.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "peaches",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss ceramics.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "ceramics",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "astronomy",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss astronomy.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "astronomy",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss bread.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "bread",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss theatre.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "theatre",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss ceramics.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "ceramics",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bread",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss bread.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "bread",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "astronomy",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss astronomy.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "astronomy",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss ceramics.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "ceramics",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bread",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is astronomy, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss astronomy.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "astronomy",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "theatre",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss peaches.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "peaches",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "rowing",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "rowing",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss rowing.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "rowing",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss peaches.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "peaches",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "theatre",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "rowing",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss rowing.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "rowing",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "ceramics",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss rowing.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "rowing",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "peaches",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss bread.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "bread",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is rowing, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss rowing.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "rowing",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is ceramics, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "ceramics",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "peaches",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss bread.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "bread",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss theatre.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 0,
+      "group": "theatre",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return ALLOW. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "theatre",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bread",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is peaches, return BLOCK. Otherwise return IGNORE.\nPrevious message: Please discuss peaches.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 1,
+      "group": "peaches",
+      "contextual": true
+    },
+    {
+      "prompt": "Rule: If the topic is bread, return BLOCK. Otherwise return IGNORE.\nPrevious message: No previous message.\nCurrent message: Please discuss unrelated.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "bread",
+      "contextual": false
+    },
+    {
+      "prompt": "Rule: If the topic is theatre, return ALLOW. Otherwise return IGNORE.\nPrevious message: Please discuss unrelated.\nCurrent message: Same topic as the previous message.\nReturn exactly one code: A=ALLOW, B=BLOCK, C=IGNORE.",
+      "label": 2,
+      "group": "theatre",
+      "contextual": true
+    }
+  ]
+}

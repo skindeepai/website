@@ -1,0 +1,26 @@
+{
+  "note": "SHA-256 of original source before archive link/banner adjustments",
+  "files": {
+    "about.html": "16942893accd39352cb7a7c81975b9e51f1c02e44ebee913981adf52d07841ce",
+    "active-learning-strategies.html": "9107c8319c97b6db4d768eec0922075a9a9e008d8d91cb56df04a7e87859789f",
+    "demo.html": "997222293e6d86fe845c9dd8e9bb2eb8d3c99e87227542466b69315ef88e81a8",
+    "future-explorations.html": "ae60d9707f741e8c0480705c2296a5e1af6a9ea0c3c9cc0f72532092b4f5f4a5",
+    "getting-started.html": "aaf62a4fae36bca363cb05e8a7f97d9e499e4d8e6ce1d00b38d3700c6e91a545",
+    "history.html": "b5941e3d72925eda1bb7f23d67019182e93ead1c7e867c4f5f88b8c66c9f6ad0",
+    "how-it-works.html": "8d4c0f770cc94ba2c6b878e0a2282feb90368b13325f984c36f012324ac89c32",
+    "index.html": "26dfe7376b063e3a603c5e34301cfc2a04915bb0fde879d8c3e76a027d3a9230",
+    "investment-response.html": "11a933e315b1751ce841d6f71cf6b87cb36d1165ae2693774d1478cc76865f82",
+    "landscape.html": "dc825710469eeb0c6b6428de24fd87e46db5e94222fb33a6fc5a2b57af67f017",
+    "multi-modal-preferences-deep-dive.html": "808b05f6f1029bfd834deb944d7824a9558063dc7df4187f8d03c1c7ace11855",
+    "roadmap.html": "49d8f04536f41df239e1a6c12864ff884b0c3dd3d47ee22859d940794184ad24",
+    "sitemap.html": "9064f442f524e81ba994e90d5d0d3b1233c0e9b710ae58d7aaff72735d639951",
+    "vc-analysis.html": "03e5cb94ea072eb09042ed6777a9bfe882b8ae72faec6e60b5c6d05c027b15de",
+    "whitepaper.html": "a99cd0713b97c4af70cb494d75a7981caa7aa75df52c4d1082050791539d0974",
+    "examples/art.html": "cc4f5e15571a67a6576d4289422216a42606ab9c8c665c49adca9a00fee7eb85",
+    "examples/dating.html": "fda1bf4f7978b4b562136beeea7e607a1124b0e526e9e2880a8d6b9274dd360c",
+    "examples/index.html": "b3f6fb87fd8379113eca3c2b56e768bebe18c0ec7a958d7eb5593dbf49367266",
+    "examples/music.html": "078ce81556cedb70111fad99456b2d2e713d80a2702f456dc2a58e508b4a5d54",
+    "examples/science.html": "5c875453d9a4b03f0aec90e09b3d3532adec280d57be101ed585cd9a32b64d91",
+    "examples/social-media.html": "158d5470d29874bbacbb7f8ba02c252201dc697381ea6805941c37840bace7d0"
+  }
+}

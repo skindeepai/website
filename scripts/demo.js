@@ -10,12 +10,14 @@
     // nearby outputs — the decoder must be continuous, like a GAN's).
     // ---------------------------------------------------------------
     function mulberry32(seed) {
-        return function () {
+        const next = function () {
             seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
             let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
             t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
             return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
         };
+        next.state = () => seed >>> 0;
+        return next;
     }
 
     function lerp(a, b, t) { return a + (b - a) * t; }
@@ -237,49 +239,7 @@
     // The model: logistic regression on the latent vector.
     // Exactly the "single dense layer + sigmoid" from the 2019 patent.
     // ---------------------------------------------------------------
-    function sigmoid(x) { return 1 / (1 + Math.exp(-x)); }
-
-    function makeModel(d) {
-        return { d, w: new Float64Array(d), b: 0, data: [], lastMs: 0, acc: 0 };
-    }
-
-    function logit(m, z) {
-        let s = m.b;
-        for (let i = 0; i < m.d; i++) s += m.w[i] * z[i];
-        return s;
-    }
-    function predict(m, z) { return sigmoid(logit(m, z)); }
-
-    function train(m) {
-        const t0 = performance.now();
-        const n = m.data.length;
-        if (n === 0) return;
-        const lr = 0.5, l2 = 0.02, epochs = 260;
-        const gw = new Float64Array(m.d);
-        for (let e = 0; e < epochs; e++) {
-            gw.fill(0);
-            let gb = 0;
-            for (let k = 0; k < n; k++) {
-                const { z, y } = m.data[k];
-                const err = sigmoid(logit(m, z)) - y;
-                for (let i = 0; i < m.d; i++) gw[i] += err * z[i];
-                gb += err;
-            }
-            const inv = lr / n;
-            for (let i = 0; i < m.d; i++) m.w[i] -= inv * gw[i] + lr * l2 * m.w[i];
-            m.b -= inv * gb;
-        }
-        let correct = 0;
-        for (let k = 0; k < n; k++) correct += (predict(m, m.data[k].z) > 0.5) === (m.data[k].y === 1) ? 1 : 0;
-        m.acc = correct / n;
-        m.lastMs = performance.now() - t0;
-    }
-
-    function randZ(d, rand) {
-        const z = new Float64Array(d);
-        for (let i = 0; i < d; i++) z[i] = rand() * 2 - 1;
-        return z;
-    }
+    const { sigmoid, makeModel, logit, predict, train, randZ, idealZ, transform } = window.PreferenceCore;
 
     // Active learning: sample a pool, keep a deliberate mix of
     // predicted-likes, uncertain cases, and pure exploration.
@@ -305,23 +265,16 @@
         };
         take(byScore.slice(0, 46), 5);              // likely likes — keeps it fun
         take(byUncert, 4);                          // most informative
-        take(pool.sort(() => rand() - 0.5), 3);     // exploration
+        for (let i = pool.length - 1; i > 0; i--) {
+            const j = Math.floor(rand() * (i + 1));
+            [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        take(pool, 3);     // exploration
         for (let i = picked.length - 1; i > 0; i--) {
             const j = Math.floor(rand() * (i + 1));
             [picked[i], picked[j]] = [picked[j], picked[i]];
         }
         return picked;
-    }
-
-    // Reverse classification: for a linear model the exact optimum on the
-    // [-1,1] box is sign(w), scaled by a "realism" factor (truncation).
-    function idealZ(m, t) {
-        const z = new Float64Array(m.d);
-        const wmax = Math.max(...Array.from(m.w, Math.abs), 1e-9);
-        for (let i = 0; i < m.d; i++) {
-            z[i] = Math.abs(m.w[i]) < 0.03 * wmax ? 0 : t * Math.sign(m.w[i]);
-        }
-        return z;
     }
 
     function nearIdeals(m, t, rand, count) {
@@ -337,24 +290,6 @@
         return out;
     }
 
-    // Minimal-change transform: smallest ||dz|| reaching a target logit.
-    // Closed form for a linear model: dz = ((L*-L0)/||w||^2) * w.
-    function transform(m, zRef, targetP) {
-        const L0 = logit(m, zRef);
-        const Lt = Math.log(targetP / (1 - targetP));
-        let ww = 0;
-        for (let i = 0; i < m.d; i++) ww += m.w[i] * m.w[i];
-        if (ww < 1e-9) return { z: zRef.slice(), moved: [] };
-        const k = (Lt - L0) / ww;
-        const z = new Float64Array(m.d);
-        const moved = [];
-        for (let i = 0; i < m.d; i++) {
-            z[i] = clamp(zRef[i] + k * m.w[i], -1, 1);
-            moved.push({ i, dz: z[i] - zRef[i] });
-        }
-        moved.sort((a, b) => Math.abs(b.dz) - Math.abs(a.dz));
-        return { z, moved: moved.filter((mv) => Math.abs(mv.dz) > 0.06).slice(0, 4) };
-    }
 
     // ---------------------------------------------------------------
     // UI wiring
@@ -365,7 +300,7 @@
     };
 
     const el = (id) => document.getElementById(id);
-    const POS_COLOR = '#4F46E5', NEG_COLOR = '#D97706';
+    const POS_COLOR = '#4F46E5', NEG_COLOR = '#a45409';
     const REVEAL_EVERY = 20;           // the 2019 app's loop: an ideal every 20th rating
     const RING_C = 100.53;             // 2 * pi * r16
 
@@ -373,8 +308,8 @@
     for (const key of Object.keys(DOMAINS)) {
         state[key] = {
             model: makeModel(DOMAINS[key].dims.length),
-            rand: mulberry32(Date.now() % 2147483647 + (key === 'art' ? 991 : 0)),
-            queue: [], current: null, seen: 0, history: [], active: true, msLog: [], prevReveal: null
+            seed: 17, rand: mulberry32(17 + (key === 'art' ? 991 : 0)),
+            queue: [], current: null, seen: 0, history: [], active: true, msLog: [], prevReveal: null, evaluation: []
         };
     }
     let domainKey = 'faces';
@@ -385,8 +320,11 @@
     function ensureCard() {
         const s = S();
         if (!s.current) {
-            if (s.queue.length === 0) s.queue = nextBatch(s.model, s.active, s.rand);
-            s.current = s.queue.shift();
+            if (el('evaluation-toggle').checked) s.current = randZ(s.model.d, s.rand);
+            else {
+                if (s.queue.length === 0) s.queue = nextBatch(s.model, s.active, s.rand);
+                s.current = s.queue.shift();
+            }
         }
     }
 
@@ -408,7 +346,7 @@
         el('card-art').innerHTML = D().render(s.current);
         el('card-num').textContent = '#' + (s.seen + 1);
         const chip = el('card-pred');
-        if (s.model.data.length >= 8) {
+        if (s.model.data.length >= 8 && !el('evaluation-toggle').checked) {
             chip.style.display = 'inline-flex';
             chip.textContent = 'model guess ' + Math.round(predict(s.model, s.current) * 100) + '%';
         } else {
@@ -421,9 +359,12 @@
         const p = (n % REVEAL_EVERY) / REVEAL_EVERY;
         el('ring-fg').style.strokeDashoffset = (RING_C * (1 - p)).toFixed(1);
         el('ring-label').textContent = Math.round(p * 100) + '%';
+        el('rating-progress').textContent = n + ' ratings. Next suggestion at ' + (Math.floor(n / REVEAL_EVERY) + 1) * REVEAL_EVERY + '.';
     }
 
     function revealOpen() { return el('reveal-overlay').classList.contains('open'); }
+    let revealReturnFocus = null;
+    let revealBackground = [];
 
     function showReveal() {
         const s = S();
@@ -431,7 +372,7 @@
         const z = idealZ(s.model, 0.75);
         const cur = D().render(z);
         el('reveal-art').innerHTML = cur;
-        el('reveal-title').textContent = 'Rating #' + n + ' — your current ideal, generated';
+        el('reveal-title').textContent = 'Rating #' + n + ' — your predicted favorite, generated';
         el('reveal-score').textContent = fmtPct(predict(s.model, z), 2);
         const cmp = el('reveal-compare');
         if (s.prevReveal && s.prevReveal.n !== n) {
@@ -448,21 +389,36 @@
         el('reveal-note').textContent =
             (likes(s) === 0 || passes(s) === 0)
                 ? 'You have only rated one way so far — mixing 👍 and 👎 gives a much sharper ideal.'
-                : 'Reverse classification, solved from your ' + n + ' ratings — not picked from a pool. It sharpens as you keep going.';
+                : 'Reverse classification, solved from your ' + n + ' ratings — not picked from a pool. Check blind evaluation to see whether it improves.';
+        revealReturnFocus = document.activeElement;
+        revealBackground = Array.from(document.querySelectorAll('.lab-header, .lab-sidebar, .skip-link, .lab-main > :not(#reveal-overlay)'))
+            .map(node => ({ node, inert: node.inert }));
+        revealBackground.forEach(({ node }) => { node.inert = true; });
         el('reveal-overlay').classList.add('open');
         el('reveal-keep').focus();
     }
 
     function closeReveal(goBreakdown) {
         el('reveal-overlay').classList.remove('open');
+        revealBackground.forEach(({ node, inert }) => { node.inert = inert; });
+        revealBackground = [];
+        (revealReturnFocus || el('like-btn')).focus({ preventScroll: true });
         if (goBreakdown) {
             const sec = document.getElementById('generate');
-            if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (sec) {
+                sec.open = true;
+                sec.querySelector('summary').focus({ preventScroll: true });
+                sec.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+            }
         }
     }
 
     function renderStats() {
         const s = S();
+        const evaluation = s.evaluation;
+        el('evaluation-summary').textContent = evaluation.length
+            ? 'Blind evaluation: ' + evaluation.length + ' ratings; ' + Math.round(100 * evaluation.filter(row => (row.p > 0.5) === (row.y === 1)).length / evaluation.length) + '% accuracy. Small sessions are exploratory.'
+            : 'No blind evaluation ratings for the current model.';
         el('stat-n').textContent = s.model.data.length;
         el('stat-likes').textContent = likes(s) + '👍 ' + passes(s) + '👎';
         if (s.msLog.length) {
@@ -487,13 +443,14 @@
             html +=
                 `<div class="wrow" title="weight ${w.toFixed(3)}">` +
                 `<span class="wlabel">${dims[i].label}</span>` +
-                `<span class="wtrack"><span class="wzero"></span>` +
+                `<span class="wtrack" aria-hidden="true"><span class="wzero"></span>` +
                 `<span class="wbar ${side}" style="width:${pct}%;background:${col};"></span></span>` +
+                `<span class="wvalue">${w > 0 ? '+' : ''}${w.toFixed(2)}</span>` +
                 `</div>`;
         }
         el('weights').innerHTML = html;
         el('weights-note').textContent =
-            'These ' + (dims.length + 1) + ' numbers are the entire model — that is why it retrains in about a millisecond.';
+            'The model stores ' + (dims.length + 1) + ' learned numbers. The bars show which drawing settings affect its predictions.';
     }
 
     function renderSections() {
@@ -505,6 +462,7 @@
         if (s.model.data.length < 10) need.push('at least ' + (10 - s.model.data.length) + ' more total');
         document.querySelectorAll('.locked-section').forEach((sec) => {
             sec.classList.toggle('is-locked', !ok);
+            sec.querySelector('.op-body').hidden = !ok;
         });
         document.querySelectorAll('.lock-msg').forEach((msg) => {
             msg.textContent = ok ? '' : 'Locked — rate a mix first (' + need.join(', ') + ').';
@@ -522,7 +480,7 @@
         const zStar = idealZ(s.model, t);
         el('ideal-art').innerHTML = D().render(zStar);
         el('ideal-score').textContent = fmtPct(predict(s.model, zStar), 2);
-        const near = nearIdeals(s.model, t, s.rand, 6);
+        const near = nearIdeals(s.model, t, mulberry32(s.seed + s.model.data.length), 6);
         el('near-grid').innerHTML = near.map((z) =>
             `<figure class="mini"><div class="mini-art">${D().render(z)}</div>` +
             `<figcaption>${fmtPct(predict(s.model, z), 1)}</figcaption></figure>`).join('');
@@ -533,7 +491,7 @@
         const s = S();
         if (!scoreSamples || resample || scoreSamples.d !== s.model.d) {
             scoreSamples = { d: s.model.d, zs: [] };
-            for (let i = 0; i < 8; i++) scoreSamples.zs.push(randZ(s.model.d, s.rand));
+            for (let i = 0; i < 8; i++) scoreSamples.zs.push(randZ(s.model.d, mulberry32(s.seed + i * 31 + (resample ? s.seen : 0))));
         }
         el('score-grid').innerHTML = scoreSamples.zs.map((z) => {
             const p = Math.round(predict(s.model, z) * 100);
@@ -553,8 +511,9 @@
         el('tf-after').innerHTML = D().render(res.z);
         el('tf-before-score').textContent = Math.round(before * 100) + '%';
         el('tf-after-score').textContent = Math.round(predict(s.model, res.z) * 100) + '%';
-        el('tf-changes').innerHTML = res.moved.length === 0 ? '<li>No change needed.</li>' :
-            res.moved.map((mv) =>
+        el('transform-status').textContent = res.status === 'unreachable' ? 'Target is outside the attainable range. Showing its maximum: ' + fmtPct(res.maximum, 1) + '.' : res.status === 'already-met' ? 'The original already meets the target; no change needed.' : 'Target reached within the latent bounds. L2 distance: ' + res.distance.toFixed(3) + '.';
+        el('tf-changes').innerHTML = res.moved.length === 0 ? '<li>No coordinates changed.</li>' :
+            res.moved.slice(0, 6).map((mv) =>
                 `<li>${mv.dz > 0 ? '<span class="up">▲</span>' : '<span class="down">▼</span>'} ${D().dims[mv.i].label}</li>`).join('');
     }
 
@@ -565,8 +524,14 @@
     function rate(y) {
         const s = S();
         ensureCard();
+        if (el('evaluation-toggle').checked) {
+            const row = { z: Array.from(s.current), y, p: predict(s.model, s.current) };
+            s.evaluation.push(row); s.history.push({ ...row, kind: 'evaluation' });
+            s.seen++; s.current = null; refreshAll(); return;
+        }
         s.model.data.push({ z: s.current, y });
-        s.history.push({ z: s.current, y });
+        s.history.push({ z: s.current, y, kind: 'training' });
+        s.evaluation = []; s.history = s.history.filter(row => row.kind !== 'evaluation');
         train(s.model);
         s.msLog.push(s.model.lastMs);
         s.seen++;
@@ -594,8 +559,10 @@
         if (!last) return;
         // Ratings and history are pushed in lockstep, so the last data
         // entry is always the rating being undone.
-        s.model.data.pop();
-        train(s.model);
+        if (last.kind === 'evaluation') s.evaluation.pop();
+        else { s.model.data.pop(); train(s.model); s.evaluation = []; s.history = s.history.filter(row => row.kind !== 'evaluation'); s.msLog.pop(); }
+        s.queue = [];
+        s.prevReveal = null;
         s.current = last.z; s.seen = Math.max(0, s.seen - 1);
         refreshAll();
     }
@@ -610,25 +577,69 @@
     function setDomain(key) {
         domainKey = key;
         document.querySelectorAll('[data-domain]').forEach((b) =>
-            b.classList.toggle('active', b.dataset.domain === key));
+            (b.classList.toggle('active', b.dataset.domain === key), b.setAttribute('aria-pressed', String(b.dataset.domain === key))));
         el('active-toggle').checked = S().active;
+        el('session-seed').value = S().seed;
         scoreSamples = null;
         refreshAll();
     }
 
     function resetDomain() {
         const key = domainKey;
+        const seed = Number(el('session-seed').value);
+        if (!Number.isInteger(seed) || seed < 0 || seed > 4294967295 || el('session-seed').value === '') {
+            el('session-status').textContent = 'Choose an integer seed from 0 to 4294967295.'; return;
+        }
         state[key] = {
             model: makeModel(DOMAINS[key].dims.length),
-            rand: mulberry32((Date.now() * 13) % 2147483647),
-            queue: [], current: null, seen: 0, history: [], active: el('active-toggle').checked, msLog: [], prevReveal: null
+            seed, rand: mulberry32(seed + (key === 'art' ? 991 : 0)),
+            queue: [], current: null, seen: 0, history: [], active: el('active-toggle').checked, msLog: [], prevReveal: null, evaluation: []
         };
         scoreSamples = null;
+        el('session-status').textContent = 'Current domain reset from seed ' + seed + '.';
         refreshAll();
+    }
+
+    function exportSession() {
+        const s = S();
+        const payload = { version: 1, domain: domainKey, seed: s.seed, randomState: s.rand.state(), active: s.active, evaluationMode: el('evaluation-toggle').checked,
+            ratings: s.model.data.map(row => ({ z: Array.from(row.z), y: row.y })), evaluation: s.evaluation,
+            current: Array.from(s.current), queue: s.queue.map(z => Array.from(z)), seen: s.seen };
+        const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }));
+        const link = document.createElement('a'); link.href = url; link.download = 'skindeep-session.json'; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    async function importSession(file) {
+        if (!file) return;
+        try {
+            if (file.size > 2000000) throw new Error('Session is too large.');
+            const data = JSON.parse(await file.text());
+            if (data.version !== 1 || !Object.prototype.hasOwnProperty.call(DOMAINS, data.domain)) throw new Error('Unsupported session.');
+            const d = DOMAINS[data.domain].dims.length;
+            const validZ = z => Array.isArray(z) && z.length === d && z.every(v => Number.isFinite(v) && Math.abs(v) <= 1);
+            if (!Array.isArray(data.ratings) || data.ratings.length > 5000 || !data.ratings.every(row => validZ(row.z) && (row.y === 0 || row.y === 1)) ||
+                !validZ(data.current) || !Array.isArray(data.queue) || data.queue.length > 12 || !data.queue.every(validZ) ||
+                !Number.isInteger(data.seed) || data.seed < 0 || data.seed > 4294967295 || !Number.isInteger(data.randomState) || data.randomState < 0 || data.randomState > 4294967295 ||
+                !Number.isInteger(data.seen) || data.seen < 0 || typeof data.active !== 'boolean') throw new Error('Invalid session data.');
+            const m = makeModel(d); m.data = data.ratings; train(m);
+            state[data.domain] = { model: m, seed: data.seed, rand: mulberry32(data.randomState), active: data.active,
+                queue: data.queue, current: data.current, seen: data.seen, msLog: [], prevReveal: null, evaluation: [],
+                history: data.ratings.map(row => ({ ...row, kind: 'training' })) };
+            // Evaluation results are recomputed locally rather than trusted from an imported file.
+            if (Array.isArray(data.evaluation) && data.evaluation.length <= 5000 && data.evaluation.every(row => validZ(row.z) && (row.y === 0 || row.y === 1))) {
+                state[data.domain].evaluation = data.evaluation.map(row => ({ z: row.z, y: row.y, p: predict(m, row.z) }));
+                state[data.domain].history.push(...state[data.domain].evaluation.map(row => ({ ...row, kind: 'evaluation' })));
+            }
+            el('evaluation-toggle').checked = data.evaluationMode === true;
+            setDomain(data.domain); el('session-status').textContent = 'Session imported locally. Model recomputed from ratings.';
+        } catch (error) { el('session-status').textContent = 'Could not import: ' + error.message; }
     }
 
     // ---- events ----
     document.addEventListener('DOMContentLoaded', () => {
+        el('export-session').addEventListener('click', exportSession);
+        el('import-session').addEventListener('change', event => importSession(event.target.files[0]));
+        el('evaluation-toggle').addEventListener('change', () => { S().current = null; S().queue = []; refreshAll(); });
         el('like-btn').addEventListener('click', () => rate(1));
         el('pass-btn').addEventListener('click', () => rate(0));
         el('skip-btn').addEventListener('click', skip);
@@ -649,14 +660,22 @@
             if (e.target === el('reveal-overlay')) closeReveal(false);
         });
         document.addEventListener('keydown', (e) => {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (revealOpen()) {
-                if (['Escape', 'Enter', ' ', 'ArrowRight', 'ArrowLeft'].includes(e.key)) {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    (document.activeElement === el('reveal-keep') ? el('reveal-more') : el('reveal-keep')).focus();
+                    return;
+                }
+                if (e.key === 'Escape') {
                     e.preventDefault();
                     closeReveal(false);
                 }
                 return;
             }
+            // Single-key shortcuts only operate while the rating component has focus.
+            if (e.ctrlKey || e.altKey || e.metaKey || e.isComposing || e.target.isContentEditable ||
+                ['INPUT', 'TEXTAREA', 'SELECT', 'SUMMARY'].includes(e.target.tagName) ||
+                !e.target.closest('#card, .rate-row')) return;
             if (e.key === 'ArrowRight') { e.preventDefault(); rate(1); }
             else if (e.key === 'ArrowLeft') { e.preventDefault(); rate(0); }
             else if (e.key.toLowerCase() === 'u') undo();
@@ -667,7 +686,7 @@
         const card = el('card');
         let drag = null;
         card.addEventListener('pointerdown', (e) => {
-            if (revealOpen()) return;
+            if (revealOpen() || !e.isPrimary || e.button !== 0) return;
             drag = { x0: e.clientX, y0: e.clientY, dx: 0 };
             card.setPointerCapture(e.pointerId);
             card.style.transition = 'none';
@@ -682,7 +701,7 @@
             if (!drag) return;
             const dx = drag.dx;
             drag = null;
-            if (Math.abs(dx) > 90) {
+            if (e.type !== 'pointercancel' && Math.abs(dx) > 90) {
                 const dir = dx > 0 ? 1 : 0;
                 card.style.transition = 'transform 0.18s ease-in, opacity 0.18s';
                 card.style.transform = 'translateX(' + (dx > 0 ? 480 : -480) + 'px) rotate(' + dx / 10 + 'deg)';
@@ -702,6 +721,6 @@
         card.addEventListener('pointerup', endDrag);
         card.addEventListener('pointercancel', endDrag);
 
-        refreshAll();
+        setDomain(domainKey);
     });
 })();

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "desktop-new",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Create a new experiment",
+    "box": {
+      "x": 24,
+      "y": 204.4375,
+      "width": 176.0625,
+      "height": 51
+    }
+  },
+  {
+    "id": "desktop-results",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "View the results of the preference pilot",
+    "box": {
+      "x": 49,
+      "y": 470.25,
+      "width": 142.71875,
+      "height": 51
+    }
+  },
+  {
+    "id": "desktop-archive",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Archive the project",
+    "box": {
+      "x": 203.71875,
+      "y": 470.25,
+      "width": 165.0625,
+      "height": 51
+    }
+  },
+  {
+    "id": "desktop-absent",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Click the Delete account button",
+    "box": null
+  },
+  {
+    "id": "mobile-new",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Create a new experiment",
+    "box": {
+      "x": 24,
+      "y": 207.078125,
+      "width": 176.0625,
+      "height": 51
+    }
+  },
+  {
+    "id": "mobile-results",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "View the results of the preference pilot",
+    "box": {
+      "x": 49,
+      "y": 526.890625,
+      "width": 142.71875,
+      "height": 51
+    }
+  },
+  {
+    "id": "mobile-archive",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Archive the project",
+    "box": {
+      "x": 49,
+      "y": 589.890625,
+      "width": 165.0625,
+      "height": 51
+    }
+  },
+  {
+    "id": "mobile-absent",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Click the Delete account button",
+    "box": null
+  }
+]

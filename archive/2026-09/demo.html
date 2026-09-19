@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo — Train a Taste Model in Your Browser | SkinDeep.ai</title>
+    <meta name="description" content="A working latent preference learning loop, entirely in your browser: rate generated samples, watch a real classifier retrain in about a millisecond, then run it backwards to generate your ideal.">
+    <link rel="canonical" href="https://skindeep.ai/demo.html">
+    <meta property="og:title" content="Train a taste model in your browser — SkinDeep.ai demo">
+    <meta property="og:description" content="Rate generated samples. A real classifier retrains in about a millisecond, then runs backwards to generate your ideal. No server, no uploads.">
+    <meta property="og:image" content="https://skindeep.ai/images/og-image.png">
+    <meta property="og:url" content="https://skindeep.ai/demo.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="../../favicon-simple.svg">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .demo-hero {
+            padding: 7.5rem 2rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .demo-hero h1 { font-size: 2.4rem; margin-bottom: 0.75rem; }
+        .demo-hero p.lead {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 46rem;
+            margin: 0 auto;
+        }
+        .demo-wrap { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem 4rem; }
+
+        .domain-bar {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.75rem; margin: 1.5rem 0 2rem; flex-wrap: wrap;
+        }
+        .domain-btn {
+            padding: 0.6rem 1.4rem; border-radius: 2rem; font-weight: 600;
+            border: 1px solid #CBD5E1; background: white; cursor: pointer;
+            font-size: 0.95rem; color: var(--text-primary);
+        }
+        .domain-btn.active { background: var(--primary-color); border-color: var(--primary-color); color: white; }
+        .reset-link {
+            border: none; background: none; color: var(--text-secondary);
+            cursor: pointer; font-size: 0.9rem; text-decoration: underline;
+        }
+
+        .trainer {
+            display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 2.5rem;
+            align-items: start;
+        }
+        .card-col { text-align: center; overflow: hidden; padding: 4px; }
+        #card {
+            touch-action: pan-y;
+            background: white; border: 1px solid #E2E8F0; border-radius: 1rem;
+            padding: 0.9rem; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            position: relative; transition: box-shadow 0.15s;
+        }
+        #card.flash-like { box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.55); }
+        #card.flash-pass { box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.55); }
+        #card-art svg { width: 100%; height: auto; display: block; }
+        .card-chips {
+            position: absolute; top: 1.2rem; left: 1.2rem; right: 1.2rem;
+            display: flex; justify-content: space-between; pointer-events: none;
+        }
+        .chip {
+            background: rgba(15, 23, 42, 0.72); color: white; border-radius: 2rem;
+            font-size: 0.75rem; padding: 0.2rem 0.65rem; display: inline-flex;
+        }
+        .ring-wrap {
+            position: absolute; bottom: 1.4rem; right: 1.4rem; width: 46px; height: 46px;
+            pointer-events: none;
+        }
+        .ring-wrap svg { width: 46px; height: 46px; display: block; }
+        .ring-bg { fill: rgba(255,255,255,0.85); stroke: #E2E8F0; stroke-width: 3.5; }
+        #ring-fg { fill: none; stroke: #4F46E5; stroke-width: 3.5; stroke-linecap: round; transition: stroke-dashoffset 0.25s; }
+        #ring-label {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            font-size: 0.62rem; font-weight: 700; color: #1E293B;
+        }
+        .reveal-hint { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem; }
+
+        #reveal-overlay {
+            position: fixed; inset: 0; background: rgba(15, 23, 42, 0.58);
+            display: none; align-items: center; justify-content: center;
+            z-index: 1200; padding: 1rem;
+        }
+        #reveal-overlay.open { display: flex; }
+        .reveal-card {
+            max-height: calc(100vh - 2rem); max-height: calc(100dvh - 2rem); overflow-y: auto;
+            background: white; border-radius: 1.25rem; max-width: 400px; width: 100%;
+            padding: 1.5rem 1.6rem 1.3rem; text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            animation: revealpop 0.28s ease-out;
+        }
+        @keyframes revealpop { from { transform: scale(0.9); opacity: 0; } }
+        .reveal-card h3 { margin: 0 0 0.9rem; font-size: 1.15rem; }
+        .reveal-art { border-radius: 0.9rem; overflow: hidden; border: 1px solid #E2E8F0; }
+        .reveal-art svg { width: 100%; height: auto; display: block; }
+        .reveal-score { margin: 0.7rem 0 0.2rem; font-size: 0.95rem; color: var(--text-secondary); }
+        .reveal-score strong { color: var(--text-primary); }
+        .reveal-note { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem; }
+        .reveal-actions { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+        .reveal-actions .btn { padding: 0.55rem 1.2rem; font-size: 0.95rem; }
+        #reveal-compare figure { margin: 0; width: 72px; }
+        #reveal-compare figure div { border: 1px solid #E2E8F0; border-radius: 0.5rem; overflow: hidden; }
+        #reveal-compare svg { width: 100%; height: auto; display: block; }
+        #reveal-compare figcaption { font-size: 0.68rem; color: var(--text-secondary); text-align: center; margin-top: 2px; }
+        #reveal-compare .rc-arrow { color: var(--primary-color); font-size: 1.1rem; }
+
+        .rate-row {
+            display: flex; justify-content: center; align-items: center;
+            gap: 1rem; margin-top: 1.1rem;
+        }
+        .rate-btn {
+            width: 64px; height: 64px; border-radius: 50%; font-size: 1.6rem;
+            cursor: pointer; background: white; transition: transform 0.1s;
+        }
+        .rate-btn:active { transform: scale(0.92); }
+        #pass-btn { border: 2px solid #D97706; }
+        #like-btn { border: 2px solid #4F46E5; }
+        .small-btn {
+            border: 1px solid #CBD5E1; background: white; border-radius: 0.5rem;
+            padding: 0.35rem 0.8rem; font-size: 0.85rem; cursor: pointer; color: var(--text-secondary);
+        }
+        .small-btn:disabled { opacity: 0.4; cursor: default; }
+        .keys-hint { color: #94A3B8; font-size: 0.8rem; margin-top: 0.7rem; }
+
+        .al-box {
+            margin-top: 1.4rem; text-align: left; background: #F8FAFC;
+            border: 1px solid #E2E8F0; border-radius: 0.75rem; padding: 1rem 1.1rem;
+        }
+        .al-box label { display: flex; gap: 0.6rem; align-items: center; font-weight: 600; cursor: pointer; }
+        .al-box input { width: 18px; height: 18px; accent-color: var(--primary-color); }
+        .al-box p { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.4rem; }
+
+        .model-col h2 { margin-top: 0; font-size: 1.35rem; }
+        .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1rem 0 1.5rem; }
+        .stile {
+            background: white; border: 1px solid #E2E8F0; border-radius: 0.75rem;
+            padding: 0.7rem 0.9rem;
+        }
+        .stile .v { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+        #stat-likes { font-size: 1.05rem; }
+        .stile .l { font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+
+        .wchart {
+            background: white; border: 1px solid #E2E8F0; border-radius: 0.75rem;
+            padding: 1rem 1.1rem;
+        }
+        .wchart .whead {
+            display: flex; justify-content: space-between; font-size: 0.72rem;
+            color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+        .wrow { display: grid; grid-template-columns: minmax(0, 128px) minmax(0, 1fr); align-items: center; gap: 0.6rem; margin: 3px 0; }
+        .wlabel { font-size: 0.8rem; color: var(--text-primary); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .wtrack { position: relative; height: 12px; background: #F1F5F9; border-radius: 4px; }
+        .wzero { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: #CBD5E1; }
+        .wbar { position: absolute; top: 2px; bottom: 2px; border-radius: 4px; min-width: 1px; }
+        .wbar.pos { left: 50%; }
+        .wbar.neg { right: 50%; }
+        #weights-note { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.8rem; }
+
+        .op-section { margin-top: 3.5rem; }
+        .op-section h2 { font-size: 1.55rem; }
+        .op-section > p.op-lead { color: var(--text-secondary); max-width: 46rem; }
+        .locked-section.is-locked .op-body { opacity: 0.25; pointer-events: none; filter: grayscale(0.6); }
+        .lock-msg { color: #B45309; font-weight: 600; font-size: 0.9rem; min-height: 1.2rem; }
+
+        .ideal-wrap { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; margin-top: 1rem; }
+        .ideal-card { background: white; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 0.8rem; }
+        .ideal-card svg { width: 100%; height: auto; display: block; }
+        .ideal-caption { text-align: center; margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+        .ideal-caption strong { color: var(--text-primary); }
+        .slider-row { display: flex; align-items: center; gap: 0.8rem; margin: 0.8rem 0 1.2rem; }
+        .slider-row input[type="range"] { flex: 1; min-width: 0; accent-color: var(--primary-color); }
+        .slider-row .sl { font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap; }
+
+        .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 110px), 1fr)); gap: 0.8rem; }
+        .mini { margin: 0; }
+        .mini-art { border: 1px solid #E2E8F0; border-radius: 0.6rem; overflow: hidden; background: white; }
+        .mini-art svg { width: 100%; height: auto; display: block; }
+        .mini figcaption { font-size: 0.78rem; color: var(--text-secondary); text-align: center; margin-top: 0.25rem; }
+        .scorebar { display: block; height: 4px; background: #F1F5F9; border-radius: 2px; margin-bottom: 3px; overflow: hidden; }
+        .scorebar span { display: block; height: 100%; background: #4F46E5; border-radius: 2px; }
+
+        .tf-wrap { display: grid; grid-template-columns: 220px auto 220px 1fr; gap: 1.5rem; align-items: center; margin-top: 1rem; }
+        .tf-card { background: white; border: 1px solid #E2E8F0; border-radius: 0.8rem; padding: 0.6rem; }
+        .tf-card svg { width: 100%; height: auto; display: block; }
+        .tf-card figcaption { text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.3rem; }
+        .tf-arrow { font-size: 1.8rem; color: var(--primary-color); text-align: center; }
+        .tf-side h3 { margin-top: 0; font-size: 1.05rem; }
+        #tf-changes { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+        #tf-changes li { padding: 0.2rem 0; font-size: 0.92rem; }
+        #tf-changes .up { color: #4F46E5; }
+        #tf-changes .down { color: #D97706; }
+
+        .honesty {
+            margin-top: 4rem; background: #F8FAFC; border: 1px solid #E2E8F0;
+            border-radius: 1rem; padding: 1.6rem 1.8rem;
+        }
+        .honesty h2 { margin-top: 0; font-size: 1.2rem; }
+        .honesty p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.7rem; }
+        .honesty a { color: var(--primary-color); }
+
+        @media (max-width: 900px) {
+            .trainer { grid-template-columns: 1fr; }
+            .card-col { width: 100%; max-width: 380px; margin: 0 auto; }
+            .ideal-wrap { grid-template-columns: 1fr; }
+            .ideal-card { max-width: 300px; margin: 0 auto; }
+            .tf-wrap { grid-template-columns: 1fr 1fr; }
+            .tf-arrow { display: none; }
+            .tf-side { grid-column: 1 / -1; }
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .demo-hero h1 { font-size: 1.8rem; }
+        }
+        @media (max-width: 600px) {
+            .demo-hero { padding: 6rem 1rem 1rem; }
+            .demo-wrap { padding: 1rem 1rem 3rem; }
+            .tf-wrap { gap: 0.75rem; }
+            .honesty { padding: 1.25rem; }
+            .slider-row { flex-wrap: wrap; }
+            .slider-row input[type="range"] { flex-basis: 100%; }
+            .reveal-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body><div style="padding:90px 20px 20px;background:#fff3d9;color:#513400;position:relative;z-index:2">Archived pre-lab page. Claims and forecasts may be superseded. <a href="../../index.html">Current research lab</a></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="../../index.html" style="text-decoration:none;"><div class="logo">SkinDeep.ai</div></a>
+                <span class="logo-subtitle">latent preference learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../demo.html" style="color: var(--primary-color);">Demo</a></li>
+                <li><a href="../../how-it-works.html">How It Works</a></li>
+                <li><a href="../../landscape.html">Landscape</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../demo.html">Demo</a></li>
+            <li><a href="../../how-it-works.html">How It Works</a></li>
+            <li><a href="../../landscape.html">Landscape</a></li>
+            <li><a href="../../history.html">History</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+        </ul>
+    </div>
+
+    <header class="demo-hero">
+        <h1>Train a taste model. Right now.</h1>
+        <p class="lead">Everything on this page runs in your browser — nothing is uploaded, there is no server.
+        Rate the samples below and a real logistic classifier retrains after every single rating.
+        Once it knows you a little, it runs <em>backwards</em> to generate what you'd score highest.</p>
+    </header>
+
+    <main class="demo-wrap">
+        <div class="domain-bar" role="tablist" aria-label="Demo domain">
+            <button class="domain-btn active" data-domain="faces">🙂 Faces</button>
+            <button class="domain-btn" data-domain="art">🎨 Abstract art</button>
+            <button class="reset-link" id="reset-btn">reset this model</button>
+        </div>
+
+        <section class="trainer">
+            <div class="card-col">
+                <div id="card">
+                    <div id="card-art" aria-live="polite"></div>
+                    <div class="card-chips">
+                        <span class="chip" id="card-num">#1</span>
+                        <span class="chip" id="card-pred" style="display:none;"></span>
+                    </div>
+                    <div class="ring-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40">
+                            <circle class="ring-bg" cx="20" cy="20" r="16"></circle>
+                            <circle id="ring-fg" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="100.53" transform="rotate(-90 20 20)"></circle>
+                        </svg>
+                        <span id="ring-label">0%</span>
+                    </div>
+                </div>
+                <div class="rate-row">
+                    <button class="rate-btn" id="pass-btn" aria-label="Pass — rate this sample down">👎</button>
+                    <button class="small-btn" id="skip-btn" aria-label="Skip without rating">skip</button>
+                    <button class="small-btn" id="undo-btn" aria-label="Undo last rating" disabled>undo</button>
+                    <button class="rate-btn" id="like-btn" aria-label="Like — rate this sample up">👍</button>
+                </div>
+                <p class="keys-hint">keyboard: ← pass · → like · S skip · U undo</p>
+                <p class="reveal-hint">The ring is the loop from the 2019 app: every <strong>20th rating</strong>,
+                your current ideal is generated. Keep going after each reveal — it sharpens.</p>
+
+                <div class="al-box">
+                    <label><input type="checkbox" id="active-toggle" checked>
+                        Active sampling</label>
+                    <p>When on, the next cards are drawn against your current model — a deliberate mix of
+                    predicted likes, uncertain cases, and pure exploration. Turn it off for uniform random
+                    sampling and feel how much duller (and slower to learn) the deck gets. The 2019 patent
+                    calls this out directly: bored users stop training.</p>
+                </div>
+            </div>
+
+            <div class="model-col">
+                <h2>The model, live</h2>
+                <div class="stat-row">
+                    <div class="stile"><div class="v" id="stat-n">0</div><div class="l">Ratings</div></div>
+                    <div class="stile"><div class="v" id="stat-likes">0 👍 · 0 👎</div><div class="l">Split</div></div>
+                    <div class="stile"><div class="v" id="stat-ms">—</div><div class="l">Retrain time</div></div>
+                    <div class="stile"><div class="v" id="stat-acc">—</div><div class="l">Fit on your ratings</div></div>
+                </div>
+                <div class="wchart">
+                    <div class="whead"><span>◀ dislikes</span><span>learned taste weights</span><span>likes ▶</span></div>
+                    <div id="weights"></div>
+                </div>
+                <p id="weights-note"></p>
+            </div>
+        </section>
+
+        <section class="op-section locked-section" id="generate">
+            <h2>1 · Reverse classification — generate your ideal</h2>
+            <p class="op-lead">Instead of asking "how would you score this sample?", we solve for the latent
+            point your classifier would score highest, and decode <em>that</em>. With a linear model this is
+            exact math, not search.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="ideal-wrap">
+                    <div>
+                        <div class="ideal-card"><div id="ideal-art"></div></div>
+                        <p class="ideal-caption">scores <strong id="ideal-score">—</strong> on your model</p>
+                    </div>
+                    <div>
+                        <div class="slider-row">
+                            <span class="sl">realistic</span>
+                            <input type="range" id="realism" min="0.35" max="1" step="0.05" value="0.75" aria-label="Realism versus extremity">
+                            <span class="sl">extreme</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                            The slider is the truncation trick: a 100% optimum sits at the edge of the latent box and
+                            can look caricatured; pulling toward the middle trades a fraction of a percent of score
+                            for plausibility. And because "ideal" isn't unique, relaxing the target by a couple of
+                            logits yields endless <em>distinct</em> near-ideals — the patent's 99%-vs-100% point:</p>
+                        <div class="mini-grid" id="near-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="op-section locked-section" id="score">
+            <h2>2 · Forward pass — score anything</h2>
+            <p class="op-lead">The same model runs forward to score samples it has never seen — that's
+            matching and ranking. In the dating design, two people's models score each other's <em>encoded</em>
+            photos, so matching happens without anyone's photos being browsed.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="mini-grid" id="score-grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 96px), 1fr));"></div>
+                <p style="margin-top: 0.9rem;"><button class="small-btn" id="resample-btn">deal 8 new samples</button></p>
+            </div>
+        </section>
+
+        <section class="op-section locked-section" id="transform">
+            <h2>3 · Minimal-change transform</h2>
+            <p class="op-lead">Take an average sample and apply the <em>smallest</em> latent change that reaches a
+            target score — the makeup-recommendation use case: what little would have to change, and in which
+            direction? Closed-form for a linear model.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="tf-wrap">
+                    <figure class="tf-card"><div id="tf-before"></div><figcaption>before · <span id="tf-before-score">—</span></figcaption></figure>
+                    <div class="tf-arrow">→</div>
+                    <figure class="tf-card"><div id="tf-after"></div><figcaption>after · <span id="tf-after-score">—</span></figcaption></figure>
+                    <div class="tf-side">
+                        <h3>Target score: <span id="target-label">90%</span></h3>
+                        <div class="slider-row" style="max-width: 260px;">
+                            <input type="range" id="target-score" min="0.55" max="0.95" step="0.05" value="0.9" aria-label="Target score">
+                        </div>
+                        <h3>What changed</h3>
+                        <ul id="tf-changes"><li>—</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="honesty">
+            <h2>What's real here, and what's a stand-in</h2>
+            <p><strong>Real:</strong> the classifier (logistic regression — the patent's "single dense layer with
+            sigmoid"), the per-rating retraining with honestly measured times, the active-sampling strategy,
+            reverse classification, and the minimal-change transform. This is the actual loop, end to end.</p>
+            <p><strong>Stand-in:</strong> the decoder. These faces and compositions come from a hand-built
+            parametric renderer with 12–16 interpretable dimensions, so you can see the weights make sense.
+            The 2019 app ran the identical loop against StyleGAN's 512-dimensional latent space, where dimensions
+            are learned rather than labeled — see the <a href="../../history.html">original demo videos</a>, the
+            <a href="../../ProvisionalPatent.txt" target="_blank">provisional patent</a>, and the
+            <a href="https://github.com/skindeepai/core" target="_blank">open-sourced engine</a>.</p>
+            <p><strong>Also real:</strong> the point. A taste model this small trains in about a millisecond on
+            a phone, which is what makes per-user personalization of generative models economically boring — in
+            the good way.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../demo.html">Live demo</a></li>
+                        <li><a href="../../how-it-works.html">How it works</a></li>
+                        <li><a href="../../landscape.html">Who's building this now</a></li>
+                        <li><a href="../../history.html">The 2018–19 record</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="../../getting-started.html">Getting started</a></li>
+                        <li><a href="../../whitepaper.html">Whitepaper (2025)</a></li>
+                        <li><a href="../../examples">Worked examples</a></li>
+                        <li><a href="https://github.com/skindeepai/core">Core engine (MIT)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>The record</h4>
+                    <ul>
+                        <li><a href="../../ProvisionalPatent.txt" target="_blank">Provisional patent (2019)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=M4oQLev_Sk8" target="_blank">Original app demo video</a></li>
+                        <li><a href="https://github.com/skindeepai/skindeep-mobile" target="_blank">Legacy mobile app code</a></li>
+                        <li><a href="../../podcast.mp3" target="_blank">Audio overview</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../../about.html">About SkinDeep.ai Inc</a></li>
+                        <li><a href="mailto:contact@skindeep.ai">contact@skindeep.ai</a></li>
+                        <li><a href="https://github.com/skindeepai">github.com/skindeepai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2019–2026 SkinDeep.ai Inc · Code released under the MIT License</p>
+                <p style="font-size: 0.875rem; color: #6B7280; margin-top: 0.5rem;">Published in 2025 under the working name PLGL — same method, plainer words now.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="reveal-overlay" role="dialog" aria-modal="true" aria-labelledby="reveal-title">
+        <div class="reveal-card">
+            <h3 id="reveal-title">Your current ideal, generated</h3>
+            <div class="reveal-art" id="reveal-art"></div>
+            <div id="reveal-compare" style="display:none; align-items:center; justify-content:center; gap:0.6rem; margin-top:0.7rem;"></div>
+            <p class="reveal-score">scores <strong id="reveal-score">—</strong> on your model right now</p>
+            <p class="reveal-note" id="reveal-note"></p>
+            <div class="reveal-actions">
+                <button class="btn btn-primary" id="reveal-keep">Keep training</button>
+                <button class="btn btn-outline" id="reveal-more">See the full breakdown</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "pages": 28,
+  "widths": [
+    320,
+    375,
+    390,
+    768,
+    900,
+    1024,
+    1440
+  ],
+  "pageViewportChecks": 196,
+  "browser": "151.0.7922.34",
+  "checks": [
+    "document width",
+    "mobile navigation and Escape",
+    "research filtering",
+    "training and undo",
+    "seed reset",
+    "blind evaluation isolation",
+    "session export/import and rejection",
+    "reveal keyboard loop",
+    "domain isolation",
+    "normalized coordinate annotation and keyboard"
+  ],
+  "limitations": [
+    "Headless Chromium, CSS viewports; not physical iOS/Android or Safari verification.",
+    "No assistive-technology or real-device performance audit."
+  ]
+}

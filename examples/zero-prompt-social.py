@@ -1,10 +1,6 @@
-"""
-PLGL Zero-Prompt Social Media
-
-Like TikTok's algorithm but for AI-generated content.
-No prompting needed - just swipe to train, then enjoy infinite personalized content.
-
-Key innovation: Removes the friction of prompting from generative AI!
+"""Illustrative domain sketch with mocked components, not a validated application.
+See experiments/README.md for runnable validated mechanics and research.html
+for the data and evaluation required before making domain claims.
 """
 
 import torch

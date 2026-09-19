@@ -1,0 +1,616 @@
+{
+  "status": "synthetic pilot",
+  "experiments": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P10"
+  ],
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "environment": {
+    "python": "3.13.2",
+    "numpy": "2.2.4",
+    "threads": 1
+  },
+  "math": {
+    "random_cases": 80,
+    "browser_fixtures": 83,
+    "max_squared_distance_gap_vs_scipy": 1.580957587066223e-13,
+    "tolerance": 1e-07,
+    "solver": "SciPy SLSQP"
+  },
+  "training_ms": {
+    "p50": 6.270499958191067,
+    "p95": 9.216429985826835,
+    "scope": "Python CPU, 4 dimensions, 20/50/100 labels; 260 epochs; no rendering"
+  },
+  "records": [
+    {
+      "experiment": "P02",
+      "seed": 11,
+      "n": 20,
+      "accuracy": 0.8506666666666667,
+      "brier": 0.10557914401432317,
+      "majority_accuracy": 0.5066666666666667
+    },
+    {
+      "experiment": "P02",
+      "seed": 11,
+      "n": 50,
+      "accuracy": 0.9566666666666667,
+      "brier": 0.0673240225564453,
+      "majority_accuracy": 0.5066666666666667
+    },
+    {
+      "experiment": "P02",
+      "seed": 11,
+      "n": 100,
+      "accuracy": 0.9553333333333334,
+      "brier": 0.06951327948468666,
+      "majority_accuracy": 0.5066666666666667
+    },
+    {
+      "experiment": "P04",
+      "seed": 11,
+      "head": "linear",
+      "balanced_accuracy": 0.5173998827770252,
+      "positive_recall": 0.07061503416856492,
+      "specificity": 0.9641847313854854
+    },
+    {
+      "experiment": "P04",
+      "seed": 11,
+      "head": "quadratic",
+      "balanced_accuracy": 0.8622275800325906,
+      "positive_recall": 0.7630979498861048,
+      "specificity": 0.9613572101790764
+    },
+    {
+      "experiment": "P03",
+      "seed": 11,
+      "policy": "random",
+      "ratings": 80,
+      "accuracy": 0.966
+    },
+    {
+      "experiment": "P03",
+      "seed": 11,
+      "policy": "uncertainty",
+      "ratings": 80,
+      "accuracy": 0.974
+    },
+    {
+      "experiment": "P03",
+      "seed": 11,
+      "policy": "mixed",
+      "ratings": 80,
+      "accuracy": 0.9866666666666667
+    },
+    {
+      "experiment": "P07",
+      "seed": 11,
+      "policy": "static",
+      "new_context_accuracy": 0.04133333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 11,
+      "policy": "all-history",
+      "new_context_accuracy": 0.11266666666666666
+    },
+    {
+      "experiment": "P07",
+      "seed": 11,
+      "policy": "recent-window",
+      "new_context_accuracy": 0.9506666666666667
+    },
+    {
+      "experiment": "P05",
+      "seed": 11,
+      "method": "box-optimum",
+      "predicted": 0.7225860199152927,
+      "oracle_utility": -3.0
+    },
+    {
+      "experiment": "P05",
+      "seed": 11,
+      "method": "truncated",
+      "predicted": 0.43852011480227987,
+      "oracle_utility": -0.6
+    },
+    {
+      "experiment": "P05",
+      "seed": 11,
+      "method": "reranked",
+      "predicted": 0.6768652116169925,
+      "oracle_utility": -2.4727406223287023
+    },
+    {
+      "experiment": "P05",
+      "seed": 11,
+      "method": "random",
+      "predicted": 0.27688435303755365,
+      "oracle_utility": -0.7814362112269223
+    },
+    {
+      "experiment": "P10",
+      "seed": 11,
+      "unconstrained_violation": false,
+      "constrained_violation": false,
+      "note": "Known toy half-space only; not a safety guarantee."
+    },
+    {
+      "experiment": "P02",
+      "seed": 23,
+      "n": 20,
+      "accuracy": 0.8446666666666667,
+      "brier": 0.10927855492108136,
+      "majority_accuracy": 0.512
+    },
+    {
+      "experiment": "P02",
+      "seed": 23,
+      "n": 50,
+      "accuracy": 0.978,
+      "brier": 0.07549665752873219,
+      "majority_accuracy": 0.512
+    },
+    {
+      "experiment": "P02",
+      "seed": 23,
+      "n": 100,
+      "accuracy": 0.976,
+      "brier": 0.07394603280749838,
+      "majority_accuracy": 0.512
+    },
+    {
+      "experiment": "P04",
+      "seed": 23,
+      "head": "linear",
+      "balanced_accuracy": 0.49953488372093025,
+      "positive_recall": 0.0,
+      "specificity": 0.9990697674418605
+    },
+    {
+      "experiment": "P04",
+      "seed": 23,
+      "head": "quadratic",
+      "balanced_accuracy": 0.8469767441860465,
+      "positive_recall": 0.72,
+      "specificity": 0.9739534883720931
+    },
+    {
+      "experiment": "P03",
+      "seed": 23,
+      "policy": "random",
+      "ratings": 80,
+      "accuracy": 0.9326666666666666
+    },
+    {
+      "experiment": "P03",
+      "seed": 23,
+      "policy": "uncertainty",
+      "ratings": 80,
+      "accuracy": 0.9773333333333334
+    },
+    {
+      "experiment": "P03",
+      "seed": 23,
+      "policy": "mixed",
+      "ratings": 80,
+      "accuracy": 0.9753333333333334
+    },
+    {
+      "experiment": "P07",
+      "seed": 23,
+      "policy": "static",
+      "new_context_accuracy": 0.064
+    },
+    {
+      "experiment": "P07",
+      "seed": 23,
+      "policy": "all-history",
+      "new_context_accuracy": 0.28733333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 23,
+      "policy": "recent-window",
+      "new_context_accuracy": 0.8646666666666667
+    },
+    {
+      "experiment": "P05",
+      "seed": 23,
+      "method": "box-optimum",
+      "predicted": 0.9706874701731446,
+      "oracle_utility": -3.0
+    },
+    {
+      "experiment": "P05",
+      "seed": 23,
+      "method": "truncated",
+      "predicted": 0.7942701676415069,
+      "oracle_utility": -0.6
+    },
+    {
+      "experiment": "P05",
+      "seed": 23,
+      "method": "reranked",
+      "predicted": 0.9370857061012435,
+      "oracle_utility": -1.4235589618445033
+    },
+    {
+      "experiment": "P05",
+      "seed": 23,
+      "method": "random",
+      "predicted": 0.16645855317485542,
+      "oracle_utility": -0.8371828038335768
+    },
+    {
+      "experiment": "P10",
+      "seed": 23,
+      "unconstrained_violation": false,
+      "constrained_violation": false,
+      "note": "Known toy half-space only; not a safety guarantee."
+    },
+    {
+      "experiment": "P02",
+      "seed": 37,
+      "n": 20,
+      "accuracy": 0.882,
+      "brier": 0.09577254537728758,
+      "majority_accuracy": 0.5113333333333333
+    },
+    {
+      "experiment": "P02",
+      "seed": 37,
+      "n": 50,
+      "accuracy": 0.94,
+      "brier": 0.07653982847294412,
+      "majority_accuracy": 0.5113333333333333
+    },
+    {
+      "experiment": "P02",
+      "seed": 37,
+      "n": 100,
+      "accuracy": 0.968,
+      "brier": 0.07265089144968408,
+      "majority_accuracy": 0.5113333333333333
+    },
+    {
+      "experiment": "P04",
+      "seed": 37,
+      "head": "linear",
+      "balanced_accuracy": 0.5009920634920635,
+      "positive_recall": 0.004761904761904762,
+      "specificity": 0.9972222222222222
+    },
+    {
+      "experiment": "P04",
+      "seed": 37,
+      "head": "quadratic",
+      "balanced_accuracy": 0.8546296296296296,
+      "positive_recall": 0.7666666666666667,
+      "specificity": 0.9425925925925925
+    },
+    {
+      "experiment": "P03",
+      "seed": 37,
+      "policy": "random",
+      "ratings": 80,
+      "accuracy": 0.9273333333333333
+    },
+    {
+      "experiment": "P03",
+      "seed": 37,
+      "policy": "uncertainty",
+      "ratings": 80,
+      "accuracy": 0.9893333333333333
+    },
+    {
+      "experiment": "P03",
+      "seed": 37,
+      "policy": "mixed",
+      "ratings": 80,
+      "accuracy": 0.982
+    },
+    {
+      "experiment": "P07",
+      "seed": 37,
+      "policy": "static",
+      "new_context_accuracy": 0.038
+    },
+    {
+      "experiment": "P07",
+      "seed": 37,
+      "policy": "all-history",
+      "new_context_accuracy": 0.23533333333333334
+    },
+    {
+      "experiment": "P07",
+      "seed": 37,
+      "policy": "recent-window",
+      "new_context_accuracy": 0.9353333333333333
+    },
+    {
+      "experiment": "P05",
+      "seed": 37,
+      "method": "box-optimum",
+      "predicted": 0.7770672304533962,
+      "oracle_utility": -3.0
+    },
+    {
+      "experiment": "P05",
+      "seed": 37,
+      "method": "truncated",
+      "predicted": 0.5417974270913973,
+      "oracle_utility": -0.6
+    },
+    {
+      "experiment": "P05",
+      "seed": 37,
+      "method": "reranked",
+      "predicted": 0.7086725706030349,
+      "oracle_utility": -1.6379104888373517
+    },
+    {
+      "experiment": "P05",
+      "seed": 37,
+      "method": "random",
+      "predicted": 0.17655377879143536,
+      "oracle_utility": -2.019913767967958
+    },
+    {
+      "experiment": "P10",
+      "seed": 37,
+      "unconstrained_violation": false,
+      "constrained_violation": false,
+      "note": "Known toy half-space only; not a safety guarantee."
+    },
+    {
+      "experiment": "P02",
+      "seed": 53,
+      "n": 20,
+      "accuracy": 0.8326666666666667,
+      "brier": 0.11585181060395283,
+      "majority_accuracy": 0.504
+    },
+    {
+      "experiment": "P02",
+      "seed": 53,
+      "n": 50,
+      "accuracy": 0.9253333333333333,
+      "brier": 0.07736424072081768,
+      "majority_accuracy": 0.504
+    },
+    {
+      "experiment": "P02",
+      "seed": 53,
+      "n": 100,
+      "accuracy": 0.9253333333333333,
+      "brier": 0.07663930874037773,
+      "majority_accuracy": 0.504
+    },
+    {
+      "experiment": "P04",
+      "seed": 53,
+      "head": "linear",
+      "balanced_accuracy": 0.5,
+      "positive_recall": 0.0,
+      "specificity": 1.0
+    },
+    {
+      "experiment": "P04",
+      "seed": 53,
+      "head": "quadratic",
+      "balanced_accuracy": 0.8423877987506789,
+      "positive_recall": 0.7075892857142857,
+      "specificity": 0.9771863117870723
+    },
+    {
+      "experiment": "P03",
+      "seed": 53,
+      "policy": "random",
+      "ratings": 80,
+      "accuracy": 0.954
+    },
+    {
+      "experiment": "P03",
+      "seed": 53,
+      "policy": "uncertainty",
+      "ratings": 80,
+      "accuracy": 0.99
+    },
+    {
+      "experiment": "P03",
+      "seed": 53,
+      "policy": "mixed",
+      "ratings": 80,
+      "accuracy": 0.9893333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 53,
+      "policy": "static",
+      "new_context_accuracy": 0.054
+    },
+    {
+      "experiment": "P07",
+      "seed": 53,
+      "policy": "all-history",
+      "new_context_accuracy": 0.10333333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 53,
+      "policy": "recent-window",
+      "new_context_accuracy": 0.9386666666666666
+    },
+    {
+      "experiment": "P05",
+      "seed": 53,
+      "method": "box-optimum",
+      "predicted": 0.730961789036571,
+      "oracle_utility": -3.0
+    },
+    {
+      "experiment": "P05",
+      "seed": 53,
+      "method": "truncated",
+      "predicted": 0.4983763413445133,
+      "oracle_utility": -0.6
+    },
+    {
+      "experiment": "P05",
+      "seed": 53,
+      "method": "reranked",
+      "predicted": 0.6417651060368004,
+      "oracle_utility": -0.8249642995707703
+    },
+    {
+      "experiment": "P05",
+      "seed": 53,
+      "method": "random",
+      "predicted": 0.22119303678416397,
+      "oracle_utility": -1.3324199611680367
+    },
+    {
+      "experiment": "P10",
+      "seed": 53,
+      "unconstrained_violation": false,
+      "constrained_violation": false,
+      "note": "Known toy half-space only; not a safety guarantee."
+    },
+    {
+      "experiment": "P02",
+      "seed": 71,
+      "n": 20,
+      "accuracy": 0.8526666666666667,
+      "brier": 0.10375860433531095,
+      "majority_accuracy": 0.5073333333333334
+    },
+    {
+      "experiment": "P02",
+      "seed": 71,
+      "n": 50,
+      "accuracy": 0.9366666666666666,
+      "brier": 0.07667475224893816,
+      "majority_accuracy": 0.5073333333333334
+    },
+    {
+      "experiment": "P02",
+      "seed": 71,
+      "n": 100,
+      "accuracy": 0.958,
+      "brier": 0.07512783603106017,
+      "majority_accuracy": 0.5073333333333334
+    },
+    {
+      "experiment": "P04",
+      "seed": 71,
+      "head": "linear",
+      "balanced_accuracy": 0.49858623939679547,
+      "positive_recall": 0.0,
+      "specificity": 0.9971724787935909
+    },
+    {
+      "experiment": "P04",
+      "seed": 71,
+      "head": "quadratic",
+      "balanced_accuracy": 0.8693361014558407,
+      "positive_recall": 0.7744874715261959,
+      "specificity": 0.9641847313854854
+    },
+    {
+      "experiment": "P03",
+      "seed": 71,
+      "policy": "random",
+      "ratings": 80,
+      "accuracy": 0.906
+    },
+    {
+      "experiment": "P03",
+      "seed": 71,
+      "policy": "uncertainty",
+      "ratings": 80,
+      "accuracy": 0.988
+    },
+    {
+      "experiment": "P03",
+      "seed": 71,
+      "policy": "mixed",
+      "ratings": 80,
+      "accuracy": 0.9766666666666667
+    },
+    {
+      "experiment": "P07",
+      "seed": 71,
+      "policy": "static",
+      "new_context_accuracy": 0.04933333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 71,
+      "policy": "all-history",
+      "new_context_accuracy": 0.11533333333333333
+    },
+    {
+      "experiment": "P07",
+      "seed": 71,
+      "policy": "recent-window",
+      "new_context_accuracy": 0.9253333333333333
+    },
+    {
+      "experiment": "P05",
+      "seed": 71,
+      "method": "box-optimum",
+      "predicted": 0.7432712708864777,
+      "oracle_utility": -3.0
+    },
+    {
+      "experiment": "P05",
+      "seed": 71,
+      "method": "truncated",
+      "predicted": 0.4672667050718142,
+      "oracle_utility": -0.6
+    },
+    {
+      "experiment": "P05",
+      "seed": 71,
+      "method": "reranked",
+      "predicted": 0.5521877767340678,
+      "oracle_utility": -0.8463124717815451
+    },
+    {
+      "experiment": "P05",
+      "seed": 71,
+      "method": "random",
+      "predicted": 0.21901939315726324,
+      "oracle_utility": -1.05883138410471
+    },
+    {
+      "experiment": "P10",
+      "seed": 71,
+      "unconstrained_violation": false,
+      "constrained_violation": false,
+      "note": "Known toy half-space only; not a safety guarantee."
+    }
+  ],
+  "limitations": [
+    "Synthetic utilities and five seeds; no human evidence or real generator.",
+    "P03 final quality at a fixed budget; not user satisfaction or a proof of sample savings.",
+    "P04 quadratic features are a specified nonlinear baseline, not a trained generative model.",
+    "P06 establishes numerical distance in a box, not perceptual minimality.",
+    "P10 tests a known analytic constraint, not learned safety under distribution shift."
+  ]
+}

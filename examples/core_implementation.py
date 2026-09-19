@@ -2,8 +2,9 @@
 PLGL (Preference Learning in Generative Latent Spaces)
 Core Implementation Example
 
-This is a complete, working implementation of the PLGL framework
-that can be adapted for any generative model with a latent space.
+Illustrative neural implementation. Uses simulated ratings and a mock generator.
+Adaptation requires a differentiable, compatible generator/encoder and validation.
+For the tested bounded linear model, see experiments/preference.py.
 
 Originally pioneered in SkinDeep.ai (2018-2019)
 Open sourced for community benefit
@@ -55,7 +56,7 @@ class PreferenceModel(nn.Module):
             layers.extend([
                 nn.Linear(prev_dim, hidden_dim),
                 nn.ReLU(),
-                nn.BatchNorm1d(hidden_dim),
+                nn.LayerNorm(hidden_dim),
                 nn.Dropout(0.2)
             ])
             prev_dim = hidden_dim
@@ -170,12 +171,14 @@ class PLGLCore:
             raise ValueError("Need at least 10 samples to train preference model")
         
         # Prepare data
-        X = torch.cat([s.content for s in samples])
+        if not 0 < validation_split < 1 or epochs < 1 or batch_size < 1:
+            raise ValueError("Use 0 < validation_split < 1, positive epochs and batch_size")
+        X = torch.cat([s.content for s in samples]).detach().to(self.device)
         y = torch.tensor([s.rating for s in samples], device=self.device)
         
         # Train/validation split
-        n_train = int(len(samples) * (1 - validation_split))
-        indices = torch.randperm(len(samples))
+        n_train = max(1, min(len(samples) - 1, int(len(samples) * (1 - validation_split))))
+        indices = torch.randperm(len(samples), device=self.device)
         
         train_indices = indices[:n_train]
         val_indices = indices[n_train:]
@@ -203,22 +206,22 @@ class PLGLCore:
                 batch_y = y_train[i:i+batch_size]
                 
                 optimizer.zero_grad()
-                pred = self.preference_model(batch_X).squeeze()
+                pred = self.preference_model(batch_X).squeeze(-1)
                 loss = criterion(pred, batch_y)
                 loss.backward()
                 optimizer.step()
                 
-                train_loss += loss.item()
+                train_loss += loss.item() * len(batch_X)
             
             # Validate
             self.preference_model.eval()
             with torch.no_grad():
-                val_pred = self.preference_model(X_val).squeeze()
+                val_pred = self.preference_model(X_val).squeeze(-1)
                 val_loss = criterion(val_pred, y_val).item()
             
             self.training_history.append({
                 'epoch': epoch,
-                'train_loss': train_loss / (len(X_train) // batch_size),
+                'train_loss': train_loss / len(X_train),
                 'val_loss': val_loss
             })
             
@@ -245,7 +248,7 @@ class PLGLCore:
         if initial_z is None:
             z = self.sample_latent(1)
         else:
-            z = initial_z.clone()
+            z = initial_z.detach().clone().to(self.device)
         
         z.requires_grad_(True)
         optimizer = torch.optim.SGD([z], lr=learning_rate, momentum=momentum)
@@ -261,7 +264,7 @@ class PLGLCore:
             score = self.preference_model(features)
             
             # Maximize score (minimize negative score)
-            loss = -score
+            loss = -score.mean()
             loss.backward()
             optimizer.step()
             
@@ -281,7 +284,8 @@ class PLGLCore:
         n_samples: int = 20,
         optimization_steps: int = 500,
         diversity_weight: float = 0.3,
-        min_score_threshold: float = 0.7
+        min_score_threshold: float = 0.7,
+        max_attempts: int = 200
     ) -> List[torch.Tensor]:
         """
         Generate a diverse distribution of high-preference samples
@@ -290,7 +294,9 @@ class PLGLCore:
         """
         samples = []
         
-        while len(samples) < n_samples:
+        attempts = 0
+        while len(samples) < n_samples and attempts < max_attempts:
+            attempts += 1
             # Start from random point
             z_init = self.sample_latent(1)
             
@@ -316,6 +322,8 @@ class PLGLCore:
                 else:
                     samples.append(z_opt)
         
+        if len(samples) < n_samples:
+            raise RuntimeError(f"Found {len(samples)}/{n_samples} acceptable samples after {attempts} attempts")
         return samples
     
     def _diverse_sampling(self, n_samples: int) -> torch.Tensor:
@@ -333,7 +341,7 @@ class PLGLCore:
                 min_distances.append(min(distances))
             
             # Select furthest candidate
-            best_idx = np.argmax(min_distances)
+            best_idx = int(torch.stack(min_distances).argmax().item())
             samples.append(candidates[best_idx:best_idx+1])
         
         return torch.cat(samples)
@@ -368,7 +376,7 @@ class PLGLCore:
         # For now, simulate with a random preference function
         
         # Example: prefer certain feature patterns
-        score = torch.sigmoid(features.mean() + 0.1 * torch.randn(1)).item()
+        score = torch.sigmoid(features.mean() + 0.1 * torch.randn(1, device=features.device)).item()
         return score
 
 
@@ -410,7 +418,8 @@ if __name__ == "__main__":
     plgl = PLGLCore(
         generator=generator,
         latent_dim=100,
-        feature_dim=128
+        feature_dim=128,
+        device="cpu"
     )
     
     # Collect preferences
@@ -431,4 +440,4 @@ if __name__ == "__main__":
     distribution = plgl.generate_distribution(n_samples=10)
     
     print(f"\nGenerated {len(distribution)} high-preference samples!")
-    print("Ready for deployment in your application.")
+    print("Mock demonstration complete; real integrations require independent validation.")

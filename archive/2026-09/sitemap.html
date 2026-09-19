@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLGL Site Map - Navigate All Resources</title>
+    <meta name="description" content="Complete site map for PLGL resources. Navigate technical documentation, implementation guides, demos, and research papers in one place.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon-simple.svg">
+    <link rel="alternate icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 80px;
+        }
+        
+        .sitemap-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+        
+        .sitemap-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .sitemap-section {
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .sitemap-section:hover {
+            border-color: #6366F1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sitemap-section h2 {
+            color: #1F2937;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-description {
+            color: #6B7280;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .page-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .page-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .page-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #6366F1;
+            font-weight: bold;
+        }
+        
+        .page-list a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .page-list a:hover {
+            color: #6366F1;
+            text-decoration: underline;
+        }
+        
+        .page-status {
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        
+        .status-live {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .status-new {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+        
+        .status-beta {
+            background: #E0E7FF;
+            color: #3730A3;
+        }
+        
+        .quick-links {
+            background: #F8FAFC;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .quick-links h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .quick-links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .quick-link {
+            background: white;
+            border: 2px solid #E5E7EB;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .quick-link:hover {
+            border-color: #6366F1;
+            color: #6366F1;
+            transform: translateY(-2px);
+        }
+        
+        .connection-diagram {
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .connection-diagram h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body><div style="padding:90px 20px 20px;background:#fff3d9;color:#513400;position:relative;z-index:2">Archived pre-lab page. Claims and forecasts may be superseded. <a href="../../index.html">Current research lab</a></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="../../index.html" style="text-decoration:none;"><div class="logo">SkinDeep.ai</div></a>
+                <span class="logo-subtitle">latent preference learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../demo.html">Demo</a></li>
+                <li><a href="../../how-it-works.html">How It Works</a></li>
+                <li><a href="../../landscape.html">Landscape</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../demo.html">Demo</a></li>
+            <li><a href="../../how-it-works.html">How It Works</a></li>
+            <li><a href="../../landscape.html">Landscape</a></li>
+            <li><a href="../../history.html">History</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+        </ul>
+    </div>
+
+    <div class="sitemap-container">
+        <div class="sitemap-header">
+            <h1>SkinDeep.ai — Site Map</h1>
+            <p style="color: #6B7280; font-size: 1.1rem;">Navigate all resources, documentation, and examples</p>
+        </div>
+
+        <div class="quick-links">
+            <h3>Quick Navigation</h3>
+            <p style="color: #6B7280; margin-bottom: 1rem;">Jump to the most important resources</p>
+            <div class="quick-links-grid">
+                <a href="../../index.html" class="quick-link">🏠 Home</a>
+                <a href="../../demo.html" class="quick-link">🎛️ Live Demo</a>
+                <a href="../../landscape.html" class="quick-link">🗺️ Landscape</a>
+                <a href="../../history.html" class="quick-link">📜 History</a>
+                <a href="../../whitepaper.html" class="quick-link">📄 Whitepaper</a>
+                <a href="../../getting-started.html" class="quick-link">💻 Get Started</a>
+            </div>
+        </div>
+
+        <div class="sitemap-grid">
+            <div class="sitemap-section">
+                <div class="section-icon">📚</div>
+                <h2>Core Documentation</h2>
+                <p class="section-description">Essential reading to understand PLGL technology</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="../../index.html">Homepage</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../demo.html">Live In-Browser Demo</a>
+                        <span class="page-status status-new">New</span>
+                    </li>
+                    <li>
+                        <a href="../../how-it-works.html">How It Works</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../landscape.html">The Landscape — who's building this now</a>
+                        <span class="page-status status-new">New</span>
+                    </li>
+                    <li>
+                        <a href="../../history.html">History — the 2018–19 record</a>
+                        <span class="page-status status-new">New</span>
+                    </li>
+                    <li>
+                        <a href="../../whitepaper.html">Technical Whitepaper (2025)</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../about.html">About SkinDeep.ai</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <div class="section-icon">📦</div>
+                <h2>Archive (2025)</h2>
+                <p class="section-description">Kept for the record; no longer maintained</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="../../roadmap.html">Roadmap (2025)</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archived</span>
+                    </li>
+                    <li>
+                        <a href="../../future-explorations.html">Future Explorations</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archived</span>
+                    </li>
+                    <li>
+                        <a href="../../vc-analysis.html">VC Analysis</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archived</span>
+                    </li>
+                    <li>
+                        <a href="../../investment-response.html">Investment Response</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archived</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <div class="section-icon">🛠️</div>
+                <h2>Implementation</h2>
+                <p class="section-description">Build with PLGL technology</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="../../getting-started.html">Getting Started Guide</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/skindeepai">GitHub Repository</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/index.html">Code Examples</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <div class="section-icon">🎯</div>
+                <h2>Deep Dives</h2>
+                <p class="section-description">Technical explorations of specific topics</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="../../multi-modal-preferences-deep-dive.html">Multi-Modal Preferences</a>
+                        <span class="page-status status-new">New</span>
+                    </li>
+                    <li>
+                        <a href="../../future-explorations.html#active-passive-learning">Active vs Passive Learning</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../active-learning-strategies.html">Active Learning Strategies</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <div class="section-icon">🎨</div>
+                <h2>Examples & Demos</h2>
+                <p class="section-description">See PLGL in action across domains</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="../../examples/index.html">Examples Hub</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/music.html">Music Generation</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/art.html">Art Creation</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/science.html">Scientific Discovery</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/social-media.html">Social Media</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="../../examples/dating.html">Dating Apps</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section">
+                <div class="section-icon">🔗</div>
+                <h2>External Resources</h2>
+                <p class="section-description">Additional PLGL resources</p>
+                <ul class="page-list">
+                    <li>
+                        <a href="https://github.com/skindeepai/core">Core Engine (MIT)</a>
+                        <span class="page-status status-live">Live</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/skindeepai/skindeep-mobile">Legacy Mobile App (2019)</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archive</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/skindeepai/skindeep-server">Legacy Server (2019)</a>
+                        <span class="page-status" style="background:#F1F5F9;color:#64748B;">Archive</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="connection-diagram">
+            <h3>Page Connection Flow</h3>
+            <p style="color: #6B7280; margin-bottom: 2rem;">Recommended reading paths through the documentation</p>
+            
+            <div style="background: #F8FAFC; padding: 2rem; border-radius: 0.5rem;">
+                <p style="font-weight: 600; margin-bottom: 1rem;">🎯 For Beginners:</p>
+                <p style="color: #6B7280;">
+                    <a href="../../index.html">Home</a> → 
+                    <a href="../../how-it-works.html">How It Works</a> → 
+                    <a href="../../examples/index.html">Examples</a> → 
+                    <a href="../../getting-started.html">Get Started</a>
+                </p>
+            </div>
+            
+            <div style="background: #F8FAFC; padding: 2rem; border-radius: 0.5rem; margin-top: 1rem;">
+                <p style="font-weight: 600; margin-bottom: 1rem;">🔬 For Technical Users:</p>
+                <p style="color: #6B7280;">
+                    <a href="../../demo.html">Demo</a> →
+                    <a href="../../whitepaper.html">Whitepaper</a> →
+                    <a href="../../multi-modal-preferences-deep-dive.html">Deep Dives</a> →
+                    <a href="../../getting-started.html">Implementation</a>
+                </p>
+            </div>
+
+            <div style="background: #F8FAFC; padding: 2rem; border-radius: 0.5rem; margin-top: 1rem;">
+                <p style="font-weight: 600; margin-bottom: 1rem;">📈 For the Curious:</p>
+                <p style="color: #6B7280;">
+                    <a href="../../index.html">Home</a> →
+                    <a href="../../demo.html">Demo</a> →
+                    <a href="../../landscape.html">Landscape</a> →
+                    <a href="../../history.html">History</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #E5E7EB;">
+        <p style="text-align: center; color: #6B7280;">
+            © 2019–2026 SkinDeep.ai Inc. | Latent preference learning, MIT licensed<br>
+            <a href="../../index.html">Home</a> |
+            <a href="../../demo.html">Demo</a> |
+            <a href="../../landscape.html">Landscape</a> |
+            <a href="../../whitepaper.html">Whitepaper</a> |
+            <a href="../../getting-started.html">Get Started</a>
+        </p>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

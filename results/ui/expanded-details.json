@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "pages": 28,
+  "widths": [
+    320,
+    1440
+  ],
+  "expanded_page_checks": 56,
+  "results_deep_link_opens_details": true,
+  "scope": "All current-page details expanded; no document-width overflow in Chromium."
+}

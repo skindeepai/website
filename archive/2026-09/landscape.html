@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Landscape — Who's Building Preference-Learned Generation | SkinDeep.ai</title>
+    <meta name="description" content="Since the 2019 SkinDeep.ai filing, latent preference learning has been independently reinvented in pieces: Helsinki's brain-computer interface study (2021), Midjourney personalization (2024), the personalized-reward-modeling research field (2025–), and generative feeds. With sources — and a list of what still doesn't exist.">
+    <link rel="canonical" href="https://skindeep.ai/landscape.html">
+    <meta property="og:title" content="Who's building preference-learned generation — the landscape, with sources">
+    <meta property="og:description" content="Independent reinventions of the 2019 loop, dated and sourced: Helsinki 2021, Midjourney 2024, personalized reward modeling 2025–, generative feeds — and what still doesn't exist.">
+    <meta property="og:image" content="https://skindeep.ai/images/og-image.png">
+    <meta property="og:url" content="https://skindeep.ai/landscape.html">
+    <meta property="og:type" content="article">
+    <link rel="icon" type="image/svg+xml" href="../../favicon-simple.svg">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .lsp-hero {
+            padding: 7.5rem 2rem 2rem; max-width: 860px; margin: 0 auto;
+        }
+        .lsp-hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+        .lsp-hero .asof {
+            display: inline-block; background: #F1F5F9; border: 1px solid #E2E8F0;
+            border-radius: 2rem; padding: 0.25rem 0.9rem; font-size: 0.85rem;
+            color: var(--text-secondary); margin-bottom: 1.2rem;
+        }
+        .lsp-hero p { color: var(--text-secondary); font-size: 1.1rem; }
+        .lsp-wrap { max-width: 860px; margin: 0 auto; padding: 1rem 2rem 4rem; }
+        .entry {
+            background: white; border: 1px solid #E2E8F0; border-radius: 1rem;
+            padding: 1.6rem 1.8rem; margin-bottom: 1.4rem;
+        }
+        .entry .head { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+        .entry .yr {
+            font-weight: 700; color: white; background: var(--primary-color);
+            border-radius: 0.5rem; padding: 0.15rem 0.6rem; font-size: 0.9rem;
+        }
+        .entry h3 { margin: 0; font-size: 1.2rem; }
+        .entry p { color: var(--text-primary); margin-top: 0.8rem; }
+        .entry .delta { color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.6rem; }
+        .entry .delta strong { color: var(--text-primary); }
+        .entry .src { margin-top: 0.8rem; font-size: 0.85rem; }
+        .entry .src a { color: var(--primary-color); text-decoration: none; margin-right: 1rem; }
+        .gap-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .gap-list li {
+            background: white; border: 1px solid #E2E8F0; border-radius: 0.75rem;
+            padding: 1rem 1.3rem; margin-bottom: 0.8rem;
+        }
+        .gap-list strong { display: block; margin-bottom: 0.2rem; }
+        .gap-list span { color: var(--text-secondary); font-size: 0.95rem; }
+        .lsp-note {
+            background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 1rem;
+            padding: 1.4rem 1.6rem; margin: 2.5rem 0; color: var(--text-secondary);
+        }
+        h2.lsp-h2 { font-size: 1.6rem; margin-top: 3rem; }
+        @media (max-width: 700px) { .lsp-hero h1 { font-size: 1.8rem; } }
+        @media (max-width: 600px) {
+            .lsp-hero { padding: 6rem 1rem 1.5rem; }
+            .lsp-wrap { padding: 1rem 1rem 3rem; }
+            .entry { padding: 1.25rem; }
+        }
+    </style>
+</head>
+<body><div style="padding:90px 20px 20px;background:#fff3d9;color:#513400;position:relative;z-index:2">Archived pre-lab page. Claims and forecasts may be superseded. <a href="../../index.html">Current research lab</a></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="../../index.html" style="text-decoration:none;"><div class="logo">SkinDeep.ai</div></a>
+                <span class="logo-subtitle">latent preference learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../demo.html">Demo</a></li>
+                <li><a href="../../how-it-works.html">How It Works</a></li>
+                <li><a href="../../landscape.html" style="color: var(--primary-color);">Landscape</a></li>
+                <li><a href="../../history.html">History</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../demo.html">Demo</a></li>
+            <li><a href="../../how-it-works.html">How It Works</a></li>
+            <li><a href="../../landscape.html">Landscape</a></li>
+            <li><a href="../../history.html">History</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="https://github.com/skindeepai" class="github-link">GitHub</a></li>
+        </ul>
+    </div>
+
+    <header class="lsp-hero">
+        <span class="asof">Compiled August 2026 · corrections welcome — <a href="https://github.com/skindeepai/website/issues" style="color: var(--primary-color);">open an issue</a></span>
+        <h1>Who's building this now</h1>
+        <p>The 2019 filing described one loop: label generated samples, train a personal classifier on their
+        latent vectors, then run it forward to score and backward to generate. Since then the pieces of that
+        loop have been reinvented independently, again and again — none of the work below cites the original,
+        and that's the point. Independent convergence is the strongest evidence an idea is real. Here is the
+        record, dated and sourced, followed by what still doesn't exist.</p>
+    </header>
+
+    <main class="lsp-wrap">
+        <h2 class="lsp-h2" style="margin-top: 1rem;">Independent reinventions</h2>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2018→</span><h3>Stitch Fix — Style Shuffle &amp; "Latent Style"</h3></div>
+            <p>A thumbs-up/down rating game feeding a latent style space — billions of ratings, millions per day —
+            used to personalize clothing recommendations at industrial scale.</p>
+            <p class="delta"><strong>Same:</strong> swipe-labeling into a latent preference space, contemporaneous with the
+            SkinDeep.ai work. <strong>Different:</strong> ranks a real inventory; doesn't generate, and doesn't invert.</p>
+            <div class="src"><a href="https://newsroom.stitchfix.com/blog/10-billion-interactions-and-counting-on-style-shuffle-the-data-powering-your-personalized-shopping-experience/" target="_blank">Stitch Fix newsroom</a>
+            <a href="https://qz.com/quartzy/1603872/how-stitch-fixs-style-shuffle-learns-your-style" target="_blank">Quartz (2019)</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2021</span><h3>University of Helsinki &amp; Copenhagen — generative brain-computer interface</h3></div>
+            <p>Thirty participants viewed GAN-generated faces while EEG recorded their responses. A classifier
+            trained on those brain reactions steered latent-space optimization to generate faces each person
+            would find attractive — validated at roughly 80% in double-blind evaluation. Published in
+            <em>IEEE Transactions on Affective Computing</em>.</p>
+            <p class="delta"><strong>Same:</strong> the exact mechanism, end to end — generated faces, latent classifier,
+            optimization, decode. The 2019 filing even names brain interfaces as a future rating device.
+            <strong>Different:</strong> a lab study, not a product; EEG instead of swipes.</p>
+            <div class="src"><a href="https://researchportal.helsinki.fi/en/publications/brain-computer-interface-for-generating-personally-attractive-ima-2/" target="_blank">University of Helsinki</a>
+            <a href="https://www.sciencedaily.com/releases/2021/03/210305080138.htm" target="_blank">ScienceDaily</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">~2021→</span><h3>Iris Dating — "Attraction DNA"</h3></div>
+            <p>Onboarding asks users to rate faces; a model learns their visual type and surfaces candidates
+            predicted to be <em>mutually</em> attracted. Over a million users.</p>
+            <p class="delta"><strong>Same:</strong> rate-to-train attraction models used for two-way matching — the
+            filing's dating application. <strong>Different:</strong> operates on real photos in a centralized service;
+            no generative latent space, no privacy-by-encoding.</p>
+            <div class="src"><a href="https://www.irisdating.com/ai-dating-app" target="_blank">irisdating.com</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2024</span><h3>Midjourney — model personalization</h3></div>
+            <p>Users rank image pairs (about 200 to start); Midjourney builds a personal preference model applied
+            at generation with a strength dial — and profiles are shareable, so others can generate with your
+            taste model.</p>
+            <p class="delta"><strong>Same:</strong> rate examples → personal model → personalized generation, in the
+            mainstream. Shareable models echo the filing's group/other-person classifiers. <strong>Different:</strong>
+            steers the generation process rather than solving for your optimum; needs hundreds of ratings,
+            processed server-side, not milliseconds on device.</p>
+            <div class="src"><a href="https://www.geeky-gadgets.com/midjourney-personalization-feature/" target="_blank">Overview</a>
+            <a href="https://torybarber.com/personalization-midjourney/" target="_blank">How the ranking works</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2024</span><h3>ViPer (ECCV 2024) — individual visual preference learning</h3></div>
+            <p>Infers a user's liked and disliked visual attributes from a handful of commented ratings, then
+            conditions a text-to-image model on that profile. Its user studies report the personalized outputs
+            winning overwhelmingly.</p>
+            <p class="delta"><strong>Same:</strong> per-user preference profiles driving generation, academically
+            formalized. <strong>Different:</strong> preferences extracted through a language model into conditioning
+            space, not a classifier over the generator's latent space.</p>
+            <div class="src"><a href="https://arxiv.org/abs/2407.17365" target="_blank">arXiv:2407.17365</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2025–</span><h3>"Personalized reward modeling" becomes a research field</h3></div>
+            <p>Per-user reward models for generative AI now have benchmarks, workshops, and a naming convention:
+            PersonalLLM (ICLR 2025), personalized reward modeling for text-to-image, per-user preference
+            benchmarks, and studies of how personalized reward models should be selected and aligned.</p>
+            <p class="delta"><strong>Same:</strong> the classifier half of the 2019 filing — small preference models per
+            person, used to steer big generative models. <strong>Different:</strong> mostly aggregate-then-adapt
+            architectures; inversion to the optimum is still rare.</p>
+            <div class="src"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/file/a730abbcd6cf4a371ca9545db5922442-Paper-Conference.pdf" target="_blank">PersonalLLM (ICLR 2025)</a>
+            <a href="https://www.researchgate.net/publication/397983326_Personalized_Reward_Modeling_for_Text-to-Image_Generation" target="_blank">Personalized RM for T2I</a>
+            <a href="https://arxiv.org/html/2512.23067" target="_blank">RM selection for personalized alignment</a></div>
+        </div>
+
+        <div class="entry">
+            <div class="head"><span class="yr">2025–26</span><h3>Generative feeds — OpenAI Sora app, Meta Vibes</h3></div>
+            <p>Feeds of AI-generated video tuned by engagement: OpenAI's Sora app launched September 2025 (and was
+            discontinued in March 2026); Meta's Vibes feed continues, with Meta reporting strong retention and
+            weighing a standalone app. Zero prompting required — you swipe, the feed adapts.</p>
+            <p class="delta"><strong>Same:</strong> the filing's zero-prompt content feed — generated media selected by
+            learned preference. <strong>Different:</strong> they <em>rank</em> a pool of generations with engagement signals;
+            they don't yet train an explicit per-user model and steer generation with it.</p>
+            <div class="src"><a href="https://builtin.com/articles/openai-sora-meta-vibes-tiktok" target="_blank">Built In</a>
+            <a href="https://www.pymnts.com/meta/2026/meta-challenges-sora-with-standalone-vibes-app" target="_blank">PYMNTS (2026)</a></div>
+        </div>
+
+        <div class="lsp-note">
+            <strong>A note on the aggregate version.</strong> The generic shape — learn a reward model from human
+            feedback, then optimize generation against it — became the industry's central alignment recipe (RLHF
+            and its descendants) starting around 2022. That work personalizes one model to <em>humanity on
+            average</em>. The 2019 filing's bet was the per-person version: a model so small it retrains in
+            milliseconds, one per user. The industry took the expensive centralized path first; the cheap
+            personal path is what the entries above are slowly converging back toward.
+        </div>
+
+        <h2 class="lsp-h2">What still doesn't exist</h2>
+        <p style="color: var(--text-secondary); max-width: 44rem;">As of this writing, no mainstream product ships:</p>
+        <ul class="gap-list">
+            <li><strong>True reverse classification</strong><span>Solving for the latent point a user's model scores
+            highest and decoding it. Products steer or re-rank; the lab work (Helsinki) inverted, but nothing in
+            production does. <a href="../../demo.html#generate" style="color: var(--primary-color);">The demo does it live.</a></span></li>
+            <li><strong>Millisecond, on-device personalization</strong><span>A per-user model retrained after every
+            single rating, locally, with nothing uploaded. Current personalization needs hundreds of ratings and
+            a server round-trip.</span></li>
+            <li><strong>Private mutual matching on encodings</strong><span>Two people's models scoring each other's
+            <em>encoded</em> photos so matching never requires exposing images to browsing. No dating platform does
+            this.</span></li>
+            <li><strong>Minimal-change transformation commerce</strong><span>"The smallest change that most raises the
+            score" as a product — makeup, styling, staging, design. The math is closed-form; nobody ships it.</span></li>
+            <li><strong>The taste model as portable infrastructure</strong><span>One tiny preference model per person,
+            usable across generators and domains — faces to music to rooms — instead of one platform-locked
+            profile per app.</span></li>
+        </ul>
+
+        <p style="color: var(--text-secondary); max-width: 46rem;">Why the gap persists: aggregate preference tuning fits how the industry already ships one big model to
+        everyone, while per-user models are a product-architecture change — storage, cold-start, and interface
+        questions more than research questions. Those are exactly the questions the
+        <a href="../../history.html" style="color: var(--primary-color);">2019 system</a> answered at small scale, and the
+        <a href="../../whitepaper.html" style="color: var(--primary-color);">whitepaper</a> and
+        <a href="https://github.com/skindeepai/core" style="color: var(--primary-color);">code</a> answer in the open today.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../demo.html">Live demo</a></li>
+                        <li><a href="../../how-it-works.html">How it works</a></li>
+                        <li><a href="../../landscape.html">Who's building this now</a></li>
+                        <li><a href="../../history.html">The 2018–19 record</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="../../getting-started.html">Getting started</a></li>
+                        <li><a href="../../whitepaper.html">Whitepaper (2025)</a></li>
+                        <li><a href="../../examples">Worked examples</a></li>
+                        <li><a href="https://github.com/skindeepai/core">Core engine (MIT)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>The record</h4>
+                    <ul>
+                        <li><a href="../../ProvisionalPatent.txt" target="_blank">Provisional patent (2019)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=M4oQLev_Sk8" target="_blank">Original app demo video</a></li>
+                        <li><a href="https://github.com/skindeepai/skindeep-mobile" target="_blank">Legacy mobile app code</a></li>
+                        <li><a href="../../podcast.mp3" target="_blank">Audio overview</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../../about.html">About SkinDeep.ai Inc</a></li>
+                        <li><a href="mailto:contact@skindeep.ai">contact@skindeep.ai</a></li>
+                        <li><a href="https://github.com/skindeepai">github.com/skindeepai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2019–2026 SkinDeep.ai Inc · Code released under the MIT License</p>
+                <p style="font-size: 0.875rem; color: #6B7280; margin-top: 0.5rem;">Published in 2025 under the working name PLGL — same method, plainer words now.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

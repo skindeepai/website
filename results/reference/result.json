@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "scope": "CPU mock generator; small-batch and bounded-loop regressions, no domain validation",
+  "threads": 1,
+  "cases": [
+    {
+      "samples": 10,
+      "batch_size": 32,
+      "epochs": 2,
+      "finite_loss": true,
+      "bounded_sampling": true
+    },
+    {
+      "samples": 11,
+      "batch_size": 7,
+      "epochs": 2,
+      "finite_loss": true,
+      "bounded_sampling": true
+    },
+    {
+      "samples": 41,
+      "batch_size": 8,
+      "epochs": 2,
+      "finite_loss": true,
+      "bounded_sampling": true
+    }
+  ]
+}

@@ -1,9 +1,6 @@
-"""
-PLGL Music Generation Example
-
-This example shows how to apply PLGL to music generation using a VAE-based
-music model. Users rate generated melodies, and PLGL learns their musical
-preferences to generate personalized compositions.
+"""Illustrative domain sketch with mocked components, not a validated application.
+See experiments/README.md for runnable validated mechanics and research.html
+for the data and evaluation required before making domain claims.
 """
 
 import torch

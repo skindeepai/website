@@ -1,0 +1,122 @@
+<p class="small">Your drawings and ratings stay on this device.</p><div class="demo-wrap">
+        <div class="domain-bar" role="group" aria-label="Demo domain">
+            <button class="domain-btn active" data-domain="faces">🙂 Faces</button>
+            <button class="domain-btn" data-domain="art">🎨 Abstract art</button>
+            <button class="reset-link" id="reset-btn">reset this model</button>
+        </div>
+
+        <section class="trainer">
+            <div class="card-col">
+                <div id="card" tabindex="0" role="group" aria-label="Drawing to rate" aria-describedby="rating-keys">
+                    <div id="card-art" aria-live="polite"></div>
+                    <div class="card-chips">
+                        <span class="chip" id="card-num">#1</span>
+                        <span class="chip" id="card-pred" style="display:none;"></span>
+                    </div>
+                    <div class="ring-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40">
+                            <circle class="ring-bg" cx="20" cy="20" r="16"></circle>
+                            <circle id="ring-fg" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="100.53" transform="rotate(-90 20 20)"></circle>
+                        </svg>
+                        <span id="ring-label">0%</span>
+                    </div>
+                </div>
+                <div class="rate-row">
+                    <button class="rate-btn" id="pass-btn" aria-label="Pass — rate this sample down">Pass</button>
+                    <button class="small-btn" id="skip-btn" aria-label="Skip without rating">skip</button>
+                    <button class="small-btn" id="undo-btn" aria-label="Undo last rating" disabled>undo</button>
+                    <button class="rate-btn" id="like-btn" aria-label="Like — rate this sample up">Like</button>
+                </div>
+                <p class="keys-hint" id="rating-keys">With the drawing focused: ← pass · → like · S skip · U undo</p>
+                <p class="reveal-hint" id="rating-progress" role="status">Every 20 ratings, the model shows a suggestion.</p>
+
+                <details class="al-box"><summary>How examples are chosen</summary>
+                    <label><input type="checkbox" id="active-toggle" checked> Mix familiar and uncertain examples</label>
+                    <p>Turn this off to choose examples at random.</p></details>
+            </div>
+
+            <details class="session-settings"><summary>Session tools and evaluation</summary><div class="session-tools"><label>Seed <input id="session-seed" type="number" min="0" max="4294967295" value="17"></label><button id="export-session" class="small-btn">Export session</button><label class="small-btn">Import session <input id="import-session" type="file" accept="application/json,.json"></label><label><input id="evaluation-toggle" type="checkbox"> Test predictions without teaching</label><p id="session-status" class="session-status" role="status">Use reset to start the current domain from this seed. Everything stays on this device.</p><p id="evaluation-summary" class="session-status"></p></div></details>
+<details class="model-col"><summary>What the model has learned</summary>
+                <div class="stat-row">
+                    <div class="stile"><div class="v" id="stat-n">0</div><div class="l">Ratings</div></div>
+                    <div class="stile"><div class="v" id="stat-likes">0 👍 · 0 👎</div><div class="l">Split</div></div>
+                    <div class="stile"><div class="v" id="stat-ms">—</div><div class="l">Retrain time</div></div>
+                    <div class="stile"><div class="v" id="stat-acc">—</div><div class="l">Training fit</div></div>
+                </div>
+                <div class="wchart">
+                    <div class="whead"><span>◀ dislikes</span><span>learned taste weights</span><span>likes ▶</span></div>
+                    <div id="weights"></div>
+                </div>
+                <p id="weights-note"></p>
+            </details>
+        </section>
+
+        <details class="op-section locked-section" id="generate">
+            <summary>See a suggested drawing</summary>
+            <p class="op-lead">The model uses what it has learned to suggest a new drawing.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="ideal-wrap">
+                    <div>
+                        <div class="ideal-card"><div id="ideal-art"></div></div>
+                        <p class="ideal-caption">scores <strong id="ideal-score">—</strong> on your model</p>
+                    </div>
+                    <div>
+                        <div class="slider-row">
+                            <span class="sl">smaller bounds</span>
+                            <input type="range" id="realism" min="0.35" max="1" step="0.05" value="0.75" aria-label="Latent box scale">
+                            <span class="sl">full bounds</span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                            The slider controls how far the drawing can change. Nearby examples show other possibilities; a higher score does not guarantee you will prefer them.</p>
+                        <div class="mini-grid" id="near-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="op-section locked-section" id="score">
+            <summary>Compare new drawings</summary>
+            <p class="op-lead">These are guesses about what you might like. Your own rating is the real test.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="mini-grid" id="score-grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 96px), 1fr));"></div>
+                <p style="margin-top: 0.9rem;"><button class="small-btn" id="resample-btn">deal 8 new samples</button></p>
+            </div>
+        </details>
+
+        <details class="op-section locked-section" id="transform">
+            <summary>Adjust a drawing</summary>
+            <p class="op-lead">Change a drawing toward a higher predicted score. Some target scores cannot be reached.</p>
+            <p class="lock-msg"></p>
+            <div class="op-body">
+                <div class="tf-wrap">
+                    <figure class="tf-card"><div id="tf-before"></div><figcaption>before · <span id="tf-before-score">—</span></figcaption></figure>
+                    <div class="tf-arrow">→</div>
+                    <figure class="tf-card"><div id="tf-after"></div><figcaption>after · <span id="tf-after-score">—</span></figcaption></figure>
+                    <div class="tf-side">
+                        <h3>Target score: <span id="target-label">90%</span></h3>
+                        <div class="slider-row" style="max-width: 260px;">
+                            <input type="range" id="target-score" min="0.55" max="0.95" step="0.05" value="0.9" aria-label="Target score">
+                        </div>
+                        <p id="transform-status" role="status"></p><h3>What changed</h3>
+                        <ul id="tf-changes"><li>—</li></ul>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="honesty"><summary>What this demo can and cannot show</summary><p>This is a small model learning the settings behind simple drawings. It does not run a trained image generator.</p><p>Training fit measures ratings the model has already seen. The evaluation option checks new examples without teaching from them. Scores are predictions, not guarantees.</p><p><a href="results.html">Test results</a> and <a href="how-it-works.html">how it works</a>.</p></details>
+    </div>    <div id="reveal-overlay" role="dialog" aria-modal="true" aria-labelledby="reveal-title">
+        <div class="reveal-card">
+            <h3 id="reveal-title">Your predicted favorite, generated</h3>
+            <div class="reveal-art" id="reveal-art"></div>
+            <div id="reveal-compare" style="display:none; align-items:center; justify-content:center; gap:0.6rem; margin-top:0.7rem;"></div>
+            <p class="reveal-score">scores <strong id="reveal-score">—</strong> on your model right now</p>
+            <p class="reveal-note" id="reveal-note"></p>
+            <div class="reveal-actions">
+                <button class="btn btn-primary" id="reveal-keep">Keep training</button>
+                <button class="btn btn-outline" id="reveal-more">See the full breakdown</button>
+            </div>
+        </div>
+    </div>

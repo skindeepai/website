@@ -1,0 +1,86 @@
+{
+  "experiment_ids": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05"
+  ],
+  "status": "pilot",
+  "scope": "Synthetic keyword/topic policies; no human moderation validation; CPU batch one. Three-code constrained vocabulary baseline. Timing excludes tokenization and model loading, includes transformer/head and hooks. No JSON latency claim.",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "torch": "2.6.0+cpu",
+  "transformers": "4.50.0.dev0",
+  "hardware": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "threads": 8,
+  "seed": 17,
+  "load_seconds": 1.6557584999827668,
+  "split_sizes": {
+    "train": 80,
+    "calibration": 32,
+    "test": 48
+  },
+  "data_hash": "274d907c2e8f6ad533390f1f6b2227390306945bcc1d631fc017fc23618a2184",
+  "heads": [
+    {
+      "depth": 6,
+      "test_accuracy": 0.9166666865348816,
+      "temperature": 0.5,
+      "exit_threshold": 0.5,
+      "calibration_samples": 32
+    },
+    {
+      "depth": 12,
+      "test_accuracy": 1.0,
+      "temperature": 0.5,
+      "exit_threshold": 0.5,
+      "calibration_samples": 32
+    },
+    {
+      "depth": 18,
+      "test_accuracy": 1.0,
+      "temperature": 0.5,
+      "exit_threshold": 0.5,
+      "calibration_samples": 32
+    },
+    {
+      "depth": 24,
+      "test_accuracy": 0.9791666865348816,
+      "temperature": 0.5,
+      "exit_threshold": 0.5,
+      "calibration_samples": 32
+    }
+  ],
+  "token_accuracy": {
+    "train": 0.25,
+    "calibration": 0.25,
+    "test": 0.25
+  },
+  "adaptive_accuracy": 0.9166666666666666,
+  "early_fraction": 1.0,
+  "mean_depth": 6.0,
+  "timing_ms": {
+    "minimal_token": {
+      "p50": 357.84670000430197,
+      "p95": 414.0640800120309,
+      "samples": 48
+    },
+    "direct_head": {
+      "p50": 308.97259997436777,
+      "p95": 348.2788099645404,
+      "samples": 48
+    },
+    "adaptive_head": {
+      "p50": 79.51450001564808,
+      "p95": 90.38398002157919,
+      "samples": 48
+    }
+  },
+  "limitations": [
+    "One model, seed and small synthetic split. Calibration thresholds are exploratory; no rare-error guarantees.",
+    "Rules differ by held-out topic words; rule grammar is shared. This does not establish arbitrary instruction generalization.",
+    "Intermediate-state extraction used full depth for probing. Only the timed hook path skipped layers.",
+    "No throughput, energy, GPU/NPU, or persistent-cache benchmark."
+  ]
+}

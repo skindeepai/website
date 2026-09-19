@@ -1,24 +1,46 @@
 // Main JavaScript for PLGL Website
 
 // Mobile Menu Functions
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuToggle && mobileMenu) {
+    menuToggle.setAttribute('aria-controls', 'mobileMenu');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    mobileMenu.addEventListener('click', function(event) {
+        if (event.target.closest('a')) closeMobileMenu();
+    });
+}
+
 function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.toggle('active');
+    if (!mobileMenu || !menuToggle) return;
+    const open = mobileMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 }
 
 function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
+    if (!mobileMenu || !menuToggle) return;
     mobileMenu.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
 }
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    
-    if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-        mobileMenu.classList.remove('active');
+    if (mobileMenu && menuToggle && !mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeMobileMenu();
     }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+        menuToggle.focus();
+    }
+});
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 900) closeMobileMenu();
 });
 
 // Tab functionality
@@ -41,11 +63,12 @@ function showTab(tabName) {
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const id = this.getAttribute('href').slice(1);
+        const target = id ? document.getElementById(decodeURIComponent(id)) : null;
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
-                behavior: 'smooth',
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                 block: 'start'
             });
         }
@@ -83,6 +106,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all sections
 document.querySelectorAll('.section').forEach(section => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'all 0.6s ease-out';
@@ -104,13 +128,17 @@ document.querySelectorAll('pre').forEach(pre => {
     wrapper.appendChild(button);
     
     button.addEventListener('click', () => {
-        const code = pre.querySelector('code').textContent;
+        const code = (pre.querySelector('code') || pre).textContent;
+        if (!navigator.clipboard) {
+            button.textContent = 'Select text to copy';
+            return;
+        }
         navigator.clipboard.writeText(code).then(() => {
             button.textContent = 'Copied!';
             setTimeout(() => {
                 button.textContent = 'Copy';
             }, 2000);
-        });
+        }).catch(() => { button.textContent = 'Select text to copy'; });
     });
 });
 

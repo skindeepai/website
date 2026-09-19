@@ -43,3 +43,6 @@ logs/
 
 # Claude
 .claude/
+# Locally trained heads and model caches (regenerate from pinned scripts)
+results/**/*.pt
+experiments/.cache/

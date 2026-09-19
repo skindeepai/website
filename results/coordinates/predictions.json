@@ -1,0 +1,240 @@
+[
+  {
+    "id": "desktop-new",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Create a new experiment",
+    "box": {
+      "x": 24,
+      "y": 204.4375,
+      "width": 176.0625,
+      "height": 51
+    },
+    "x": 0.013888888888888888,
+    "y": 0.28846153846153844,
+    "patch_probability": 0.052913445979356766,
+    "hit": false,
+    "no_target_supported": false,
+    "patch_grid": [
+      36,
+      26
+    ],
+    "timing_ms": {
+      "direct": 58308.45060001593,
+      "with_vocabulary": 58371.69589998666
+    },
+    "components_ms": {
+      "vision_ms": 48833.0879000132,
+      "transformer_ms": 9371.708500024397,
+      "pointer_ms": 103.63239998696372
+    }
+  },
+  {
+    "id": "desktop-results",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "View the results of the preference pilot",
+    "box": {
+      "x": 49,
+      "y": 470.25,
+      "width": 142.71875,
+      "height": 51
+    },
+    "x": 0.125,
+    "y": 0.6730769230769231,
+    "patch_probability": 0.08102636784315109,
+    "hit": true,
+    "no_target_supported": false,
+    "patch_grid": [
+      36,
+      26
+    ],
+    "timing_ms": {
+      "with_vocabulary": 58356.89190000994,
+      "direct": 62144.48900002753
+    },
+    "components_ms": {
+      "vision_ms": 52060.17080001766,
+      "transformer_ms": 9981.715000001714,
+      "pointer_ms": 102.58380003506318
+    }
+  },
+  {
+    "id": "desktop-archive",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Archive the project",
+    "box": {
+      "x": 203.71875,
+      "y": 470.25,
+      "width": 165.0625,
+      "height": 51
+    },
+    "x": 0.2638888888888889,
+    "y": 0.6730769230769231,
+    "patch_probability": 0.07195546478033066,
+    "hit": true,
+    "no_target_supported": false,
+    "patch_grid": [
+      36,
+      26
+    ],
+    "timing_ms": {
+      "direct": 59308.80270001944,
+      "with_vocabulary": 59446.736399957445
+    },
+    "components_ms": {
+      "vision_ms": 49013.552999997046,
+      "transformer_ms": 10189.41019999329,
+      "pointer_ms": 105.82339996472001
+    }
+  },
+  {
+    "id": "desktop-absent",
+    "image": "experiments/fixtures/desktop.png",
+    "width": 1000,
+    "height": 720,
+    "instruction": "Click the Delete account button",
+    "box": null,
+    "x": 0.9583333333333334,
+    "y": 0.057692307692307696,
+    "patch_probability": 0.012678731232881546,
+    "hit": null,
+    "no_target_supported": false,
+    "patch_grid": [
+      36,
+      26
+    ],
+    "timing_ms": {
+      "with_vocabulary": 57641.93839998916,
+      "direct": 56263.26560002053
+    },
+    "components_ms": {
+      "vision_ms": 46929.69839996658,
+      "transformer_ms": 9231.185399985407,
+      "pointer_ms": 102.22400003112853
+    }
+  },
+  {
+    "id": "mobile-new",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Create a new experiment",
+    "box": {
+      "x": 24,
+      "y": 207.078125,
+      "width": 176.0625,
+      "height": 51
+    },
+    "x": 0.32142857142857145,
+    "y": 0.30357142857142855,
+    "patch_probability": 0.052310843020677567,
+    "hit": true,
+    "no_target_supported": false,
+    "patch_grid": [
+      14,
+      28
+    ],
+    "timing_ms": {
+      "direct": 14392.088799970224,
+      "with_vocabulary": 14060.839499987196
+    },
+    "components_ms": {
+      "vision_ms": 10275.745599996299,
+      "transformer_ms": 4077.1484000142664,
+      "pointer_ms": 39.17840000940487
+    }
+  },
+  {
+    "id": "mobile-results",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "View the results of the preference pilot",
+    "box": {
+      "x": 49,
+      "y": 526.890625,
+      "width": 142.71875,
+      "height": 51
+    },
+    "x": 0.32142857142857145,
+    "y": 0.6964285714285714,
+    "patch_probability": 0.09045879542827606,
+    "hit": true,
+    "no_target_supported": false,
+    "patch_grid": [
+      14,
+      28
+    ],
+    "timing_ms": {
+      "with_vocabulary": 13994.195999985095,
+      "direct": 14070.542999950703
+    },
+    "components_ms": {
+      "vision_ms": 9875.279600033537,
+      "transformer_ms": 4156.347100040875,
+      "pointer_ms": 38.9007999910973
+    }
+  },
+  {
+    "id": "mobile-archive",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Archive the project",
+    "box": {
+      "x": 49,
+      "y": 589.890625,
+      "width": 165.0625,
+      "height": 51
+    },
+    "x": 0.25,
+    "y": 0.8035714285714286,
+    "patch_probability": 0.08724988251924515,
+    "hit": true,
+    "no_target_supported": false,
+    "patch_grid": [
+      14,
+      28
+    ],
+    "timing_ms": {
+      "direct": 14019.070799986366,
+      "with_vocabulary": 14056.501500017475
+    },
+    "components_ms": {
+      "vision_ms": 9904.68580002198,
+      "transformer_ms": 4074.9702000175603,
+      "pointer_ms": 39.39920000266284
+    }
+  },
+  {
+    "id": "mobile-absent",
+    "image": "experiments/fixtures/mobile.png",
+    "width": 390,
+    "height": 780,
+    "instruction": "Click the Delete account button",
+    "box": null,
+    "x": 0.9642857142857143,
+    "y": 0.017857142857142856,
+    "patch_probability": 0.017863934859633446,
+    "hit": null,
+    "no_target_supported": false,
+    "patch_grid": [
+      14,
+      28
+    ],
+    "timing_ms": {
+      "with_vocabulary": 14099.62519997498,
+      "direct": 14846.838099998422
+    },
+    "components_ms": {
+      "vision_ms": 10410.409599950071,
+      "transformer_ms": 4392.79399998486,
+      "pointer_ms": 43.61659998539835
+    }
+  }
+]

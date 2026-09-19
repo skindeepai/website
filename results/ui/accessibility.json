@@ -1,0 +1,2100 @@
+{
+  "date": "2026-09-19T18:24:05.097Z",
+  "browser": "151.0.7922.34",
+  "axeVersion": "4.13.0",
+  "pages": 28,
+  "checks": [
+    {
+      "page": "index.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "preferences.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "preferences.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "preferences.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "decisions.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".decision-example > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decisions.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".decision-example > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".diagram"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decisions.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "coordinates.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinates.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".diagram"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinates.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "adaptive.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "adaptive.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "adaptive.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "about.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "about.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "history.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "history.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "history.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "landscape.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "landscape.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "landscape.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "getting-started.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "getting-started.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "getting-started.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "roadmap.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "roadmap.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "roadmap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "investment-response.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "investment-response.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "investment-response.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/art.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/art.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/art.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/music.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/music.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/music.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/science.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/science.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/science.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "examples/index.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/index.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "examples/index.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "demo.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".lab-menu > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#card-num"
+            ],
+            [
+              "#ring-label"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".lab-menu > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#card-num"
+            ],
+            [
+              "#ring-label"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "research.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "research.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "research.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "sitemap.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "sitemap.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "sitemap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "index.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "index.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "preferences.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "preferences.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "preferences.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "how-it-works.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "decisions.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".decision-example > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decisions.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".decision-example > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".diagram"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decisions.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "coordinates.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "coordinates.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".diagram"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinates.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "adaptive.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "adaptive.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "adaptive.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "about.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "about.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "history.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "history.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "history.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "whitepaper.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "active-learning-strategies.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "multi-modal-preferences-deep-dive.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "landscape.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "landscape.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "landscape.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "getting-started.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "getting-started.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "getting-started.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "future-explorations.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "roadmap.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "roadmap.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "roadmap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "vc-analysis.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "investment-response.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "investment-response.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "investment-response.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/art.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/art.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/art.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/music.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/music.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/music.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/social-media.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/dating.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/science.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/science.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/science.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "examples/index.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/index.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "examples/index.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "demo.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "#card-num"
+            ],
+            [
+              "#ring-label"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "#card-num"
+            ],
+            [
+              "#ring-label"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "coordinate-lab.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "research.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "research.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "research.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "sitemap.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "sitemap.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "sitemap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "demo.html",
+      "state": "trained and expanded",
+      "width": 390,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".lab-menu > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#card-num"
+            ],
+            [
+              "#card-pred"
+            ],
+            [
+              "#ring-label"
+            ],
+            [
+              "li:nth-child(1) > .down"
+            ],
+            [
+              ".up"
+            ],
+            [
+              "li:nth-child(3) > .down"
+            ],
+            [
+              "li:nth-child(4) > .down"
+            ],
+            [
+              "li:nth-child(5) > .down"
+            ],
+            [
+              "li:nth-child(6) > .down"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "suggestion dialog",
+      "width": 390,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".reveal-score"
+            ],
+            [
+              "#reveal-note"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "demo.html",
+      "state": "trained with enlarged text and spacing",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".lab-menu > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#card-num"
+            ],
+            [
+              "#card-pred"
+            ],
+            [
+              "#ring-label"
+            ],
+            [
+              "li:nth-child(1) > .down"
+            ],
+            [
+              "li:nth-child(2) > .down"
+            ],
+            [
+              "li:nth-child(3) > .down"
+            ],
+            [
+              "li:nth-child(4) > .up"
+            ],
+            [
+              "li:nth-child(5) > .up"
+            ],
+            [
+              "li:nth-child(6) > .up"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "adaptive.html",
+      "state": "mobile navigation open",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "contrastPairs": [
+    {
+      "name": "body",
+      "foreground": "#182438",
+      "background": "#f4f7fb",
+      "ratio": 14.5
+    },
+    {
+      "name": "secondary text",
+      "foreground": "#43536a",
+      "background": "#f4f7fb",
+      "ratio": 7.28
+    },
+    {
+      "name": "used blocks",
+      "foreground": "#315d8e",
+      "background": "#ffffff",
+      "ratio": 6.8
+    },
+    {
+      "name": "skipped outlines",
+      "foreground": "#596b80",
+      "background": "#ffffff",
+      "ratio": 5.47
+    },
+    {
+      "name": "control borders",
+      "foreground": "#718198",
+      "background": "#ffffff",
+      "ratio": 3.97
+    },
+    {
+      "name": "focus ring",
+      "foreground": "#204bb8",
+      "background": "#f4f7fb",
+      "ratio": 7.08
+    },
+    {
+      "name": "menu glyph",
+      "foreground": "#182438",
+      "background": "#ffffff",
+      "ratio": 15.58
+    },
+    {
+      "name": "diagram arrows",
+      "foreground": "#182438",
+      "background": "#eaf0fc",
+      "ratio": 13.62
+    },
+    {
+      "name": "hit marks",
+      "foreground": "#37694a",
+      "background": "#e3eee7",
+      "ratio": 5.38
+    },
+    {
+      "name": "miss marks",
+      "foreground": "#914f3d",
+      "background": "#f6e8e2",
+      "ratio": 5.18
+    },
+    {
+      "name": "card chips worst-case white underlay",
+      "foreground": "#ffffff",
+      "background": "#525864",
+      "ratio": 7.15
+    },
+    {
+      "name": "ring label worst-case black underlay",
+      "foreground": "#1e293b",
+      "background": "#d9d9d9",
+      "ratio": 10.36
+    }
+  ],
+  "forcedColors": "Filled solid outlines and empty dashed outlines remain distinct.",
+  "limitations": [
+    "Automated checks do not establish WCAG conformance.",
+    "Screen reader, physical devices, and Safari have not been tested.",
+    "Archived historical pages are outside this current-site audit.",
+    "Axe flags decorative glyphs and overlays for manual contrast review; palette and worst-case composited colors are recorded separately."
+  ]
+}
