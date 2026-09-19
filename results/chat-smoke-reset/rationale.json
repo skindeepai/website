@@ -1,0 +1,7 @@
+{
+  "recorded_utc": "2026-09-19T22:49:08.448609+00:00",
+  "trigger": "Independent reviewer found initial heads fit383-384/384 traininglabels; adapterloss may be nearly saturated.",
+  "change": "Additional exploratory joint-loss variant initializes heads with5steps instead of200, then same32adapterbatches. Retain all original failed runs.",
+  "selection": "Same fixedtune32 checkpoint16/32 selection; reused100 remains exploratory. This is a post-observation design improvement, not preregistered independent validation.",
+  "limits": "Shorter head warmup tests one suggested repair; no claim of converged full task adaptation."
+}

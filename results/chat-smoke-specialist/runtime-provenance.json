@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-09-19T23:01:24.335062+00:00",
+  "attestation": "Post-run source snapshot and hashes, recorded after completed timing and independent trace audit. Not prospective attestation. Runtime source unchanged during measured run. Fit source was modified after training and was not prospectively hash-sealed; this snapshot is not claimed as the exact original fit implementation.",
+  "sha256": {
+    "runtime-implementation.py": "f2376b431492679d8b75e6b9893db80725be1ab41be66d86f37cdc63bf6a67c2",
+    "timing-protocol.json": "5a0b467c907a4ba6a5572314ebdc687fcb1134b544e8a87dd4ef8b0bcbf1dde8",
+    "timings.json": "119f9915082da61e864b0c156d364f95ee639d8cf271cc4dc072fa8c054de0c6",
+    "benchmark.json": "1f02c3f8db92043282264177e0b6968aab614fde976c6440d5a2e81649b43406",
+    "specialist.npz": "a0f9678dbf06fda6e7185616ba4e5144267c8cdbc6463052fb61f2a58b2e9274"
+  }
+}

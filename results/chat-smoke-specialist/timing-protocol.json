@@ -1,0 +1,9 @@
+{
+  "reason": "User authorized 50/100-sample smoke tests; reduce timing burden before any timing outcomes.",
+  "replaces": "Original three full-corpus timing passes",
+  "repetitions": 1,
+  "n": 100,
+  "order": "Interleave three paths per message, rotating first path by message index; 100 messages gives positions 34/33/33.",
+  "warmup": "One unrecorded call per path on first evaluation item; no cold start or loading estimate.",
+  "measurement": "Sum measured request durations, including tokenizer, both actual models when fallback occurs, classifier readout, trace instrumentation. No repeated-run uncertainty estimate."
+}

@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "pages": 28,
+  "pages": 41,
   "widths": [
     320,
     375,
@@ -10,7 +10,7 @@
     1024,
     1440
   ],
-  "pageViewportChecks": 196,
+  "pageViewportChecks": 287,
   "browser": "151.0.7922.34",
   "checks": [
     "document width",

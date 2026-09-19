@@ -40,7 +40,7 @@
                     <button class="rate-btn" id="like-btn" aria-label="Like — rate this sample up">Like</button>
                 </div>
                 <p class="keys-hint" id="rating-keys">With the drawing focused: ← pass · → like · S skip · U undo</p>
-                <p class="reveal-hint" id="rating-progress" role="status">Every 20 ratings, the model shows a suggestion.</p>
+                <p class="reveal-hint" id="rating-progress" role="status">Rate a mix of likes and passes to reveal suggestions.</p>
 
                 <details class="al-box"><summary>How examples are chosen</summary>
                     <label><input type="checkbox" id="active-toggle" checked> Mix familiar and uncertain examples</label>
@@ -63,10 +63,10 @@
             </details>
         </section>
 
-        <details class="op-section locked-section" id="generate">
+        <details class="op-section locked-section" hidden id="generate">
             <summary>See a suggested drawing</summary>
-            <p class="op-lead">The model uses what it has learned to suggest a new drawing.</p>
-            <p class="lock-msg"></p>
+
+
             <div class="op-body">
                 <div class="ideal-wrap">
                     <div>
@@ -87,20 +87,20 @@
             </div>
         </details>
 
-        <details class="op-section locked-section" id="score">
+        <details class="op-section locked-section" hidden id="score">
             <summary>Compare new drawings</summary>
             <p class="op-lead">These are guesses about what you might like. Your own rating is the real test.</p>
-            <p class="lock-msg"></p>
+
             <div class="op-body">
                 <div class="mini-grid" id="score-grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 96px), 1fr));"></div>
                 <p style="margin-top: 0.9rem;"><button class="small-btn" id="resample-btn">deal 8 new samples</button></p>
             </div>
         </details>
 
-        <details class="op-section locked-section" id="transform">
+        <details class="op-section locked-section" hidden id="transform">
             <summary>Adjust a drawing</summary>
             <p class="op-lead">Change a drawing toward a higher predicted score. Some target scores cannot be reached.</p>
-            <p class="lock-msg"></p>
+
             <div class="op-body">
                 <div class="tf-wrap">
                     <figure class="tf-card"><div id="tf-before"></div><figcaption>before · <span id="tf-before-score">—</span></figcaption></figure>
@@ -118,7 +118,7 @@
             </div>
         </details>
 
-        <details class="honesty"><summary>What this demo can and cannot show</summary><p>This is a small model learning the settings behind simple drawings. It does not run a trained image generator.</p><p>Training fit measures ratings the model has already seen. The evaluation option checks new examples without teaching from them. Scores are predictions, not guarantees.</p><p><a href="results.html">Test results</a> and <a href="how-it-works.html">how it works</a>.</p></details>
+        <details class="honesty"><summary>What this demo can and cannot show</summary><p>This is a small model learning the settings behind simple drawings. It does not run a trained image generator.</p><p>Training fit measures ratings the model has already seen. The evaluation option checks new examples without teaching from them. Scores are predictions, not guarantees.</p><p><a href="preference-results.html">Preference results</a> and <a href="how-it-works.html">how it works</a>.</p></details>
     </div>    <div id="reveal-overlay" role="dialog" aria-modal="true" aria-labelledby="reveal-title">
         <div class="reveal-card">
             <h3 id="reveal-title">Your predicted favorite, generated</h3>

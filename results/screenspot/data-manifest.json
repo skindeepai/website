@@ -1,0 +1,502 @@
+{
+  "dataset": "bevaya/ScreenSpot (formerly rootsautomation/ScreenSpot)",
+  "revision": "0be08781e2e188582f6131625ae1598d443b4d5d",
+  "authors": "Cheng et al., SeeClick, 2024",
+  "license": "Apache-2.0 dataset card; screenshots retain depicted third-party content",
+  "selection": "Three per platform family and element type, deterministic shuffled sample before inference; no outcome selection.",
+  "population": 1272,
+  "groups": {
+    "('windows', 'icon')": 64,
+    "('windows', 'text')": 98,
+    "('macos', 'text')": 96,
+    "('macos', 'icon')": 76,
+    "('ios', 'icon')": 107,
+    "('ios', 'text')": 148,
+    "('android', 'text')": 125,
+    "('android', 'icon')": 122,
+    "('web', 'text')": 230,
+    "('web', 'icon')": 206
+  },
+  "samples": [
+    {
+      "row_index": 695,
+      "file_name": "mobile_53e09f46-876e-4552-9037-ae4ef338dad3.png",
+      "bbox": [
+        0.0787037037037037,
+        0.04791666666666667,
+        0.18888888888888888,
+        0.09291666666666666
+      ],
+      "instruction": "search",
+      "data_type": "icon",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7ea67055161ac3e65baeef6e20815b01c71bb60c75123b47fb6383206a11e440"
+    },
+    {
+      "row_index": 524,
+      "file_name": "mobile_2b80c9bf-0040-492e-8dca-d81cc9042b5a.png",
+      "bbox": [
+        0.8277777777777777,
+        0.6475,
+        0.9712962962962963,
+        0.6883333333333334
+      ],
+      "instruction": "fold input method",
+      "data_type": "icon",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b3ec2c39309771c1602c536f808cca0e7c0c4f6e32c1773150ea9afad61b13b3"
+    },
+    {
+      "row_index": 716,
+      "file_name": "mobile_b7323848-f2e7-492c-95aa-e33e731ff196.png",
+      "bbox": [
+        0.700925925925926,
+        0.04958333333333333,
+        0.8175925925925925,
+        0.08875
+      ],
+      "instruction": "scan qr code",
+      "data_type": "icon",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "fd0fd5d79bd8d787cee4e6c2b800dbf738614eba18f4c1c0403c995e17ef4021"
+    },
+    {
+      "row_index": 784,
+      "file_name": "mobile_bce7a892-9cb2-432a-b678-2429d4f51d3d.png",
+      "bbox": [
+        0.7638888888888888,
+        0.23625,
+        0.9574074074074074,
+        0.2841666666666667
+      ],
+      "instruction": "install app",
+      "data_type": "text",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "934db5089725c433367b902719bdd611de567794262c79191d09bf78c329545d"
+    },
+    {
+      "row_index": 792,
+      "file_name": "mobile_31f8a5c2-e28a-488c-bb28-a31c823c9c83.png",
+      "bbox": [
+        0.45,
+        0.17583333333333334,
+        0.9611111111111111,
+        0.3279166666666667
+      ],
+      "instruction": "open cleaner",
+      "data_type": "text",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "fb97144893b5f1da459d6c48aaac7001ecf698d05c7eea29236a175faf61472f"
+    },
+    {
+      "row_index": 566,
+      "file_name": "mobile_9aa2c4bf-aa52-43ed-ac30-f22798c14668.png",
+      "bbox": [
+        0.7481481481481481,
+        0.24416666666666667,
+        0.9629629629629629,
+        0.3475
+      ],
+      "instruction": "open github app",
+      "data_type": "text",
+      "data_source": "android",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d4291fa52c07349433f5707b04b21fde92bdc987ab65bf9de56ebc7dc8fc6bd5"
+    },
+    {
+      "row_index": 340,
+      "file_name": "mobile_6949b916-64c8-431f-8842-a29a9a557641.png",
+      "bbox": [
+        0.7343220338983051,
+        0.1402439024390244,
+        0.7745762711864407,
+        0.20121951219512196
+      ],
+      "instruction": "close the translation",
+      "data_type": "icon",
+      "data_source": "ios",
+      "width": 2360,
+      "height": 1640,
+      "sha256": "41d879095bce6b5f19019a0b2d80412e267a99f3a6897a5ce14abb9eeb25b3f0"
+    },
+    {
+      "row_index": 611,
+      "file_name": "mobile_740f217d-27e9-43af-951c-b76e18252300.png",
+      "bbox": [
+        0.06228813559322034,
+        0.03902439024390244,
+        0.10254237288135593,
+        0.09085365853658536
+      ],
+      "instruction": "search history",
+      "data_type": "icon",
+      "data_source": "ios",
+      "width": 2360,
+      "height": 1640,
+      "sha256": "2b9c00f7dac91ad52f301ba31e8cd4f607c8db9fff08097c3cf7de4f6b6255a5"
+    },
+    {
+      "row_index": 818,
+      "file_name": "mobile_b550b4ed-79ce-446a-a1c3-a164b314bfe8.png",
+      "bbox": [
+        0.8504273504273504,
+        0.11374407582938388,
+        0.9615384615384616,
+        0.15758293838862558
+      ],
+      "instruction": "view my account",
+      "data_type": "icon",
+      "data_source": "ios",
+      "width": 1170,
+      "height": 2532,
+      "sha256": "4dfcb68408c0241141f1381f6f230de3b009789e2099cf7fd2b0068901de1a64"
+    },
+    {
+      "row_index": 827,
+      "file_name": "mobile_e550d5f2-308d-4027-ad04-8c2ba9e8d2d1.png",
+      "bbox": [
+        0.07094017094017094,
+        0.40086887835703,
+        0.935042735042735,
+        0.4656398104265403
+      ],
+      "instruction": "play the opening the channel (mixed)",
+      "data_type": "text",
+      "data_source": "ios",
+      "width": 1170,
+      "height": 2532,
+      "sha256": "007596bb7d5c9895d54494629bd05051bdaa5c912291407ffe3f7a1870b1de01"
+    },
+    {
+      "row_index": 356,
+      "file_name": "mobile_4b1df148-c6ac-452a-b55d-f8e6c6dee059.png",
+      "bbox": [
+        0.326271186440678,
+        0.18536585365853658,
+        0.4076271186440678,
+        0.35304878048780486
+      ],
+      "instruction": "open result file",
+      "data_type": "text",
+      "data_source": "ios",
+      "width": 2360,
+      "height": 1640,
+      "sha256": "d22467d2e69ad3c92eff77baccf1d258fcb803ad64747520f4ea0392120db099"
+    },
+    {
+      "row_index": 343,
+      "file_name": "mobile_a1366f87-f1f1-402c-911a-d239eb60eac8.png",
+      "bbox": [
+        0.3495762711864407,
+        0.04390243902439024,
+        0.7088983050847457,
+        0.09085365853658536
+      ],
+      "instruction": "search bar",
+      "data_type": "text",
+      "data_source": "ios",
+      "width": 2360,
+      "height": 1640,
+      "sha256": "c8010d6c5f0dc410aed2b273bcd68f449c11729ebab05ec9544ec53928ea8ed2"
+    },
+    {
+      "row_index": 300,
+      "file_name": "pc_ac718327-53b2-49c1-8707-d12220913fc1.png",
+      "bbox": [
+        0.6343478260869565,
+        0.03647798742138365,
+        0.6582608695652173,
+        0.06729559748427673
+      ],
+      "instruction": "run the code",
+      "data_type": "icon",
+      "data_source": "macos",
+      "width": 2300,
+      "height": 1590,
+      "sha256": "c4af42d0c0e5780000b14d446a747781186c1c49343f97b17f4a1cee2a9e4890"
+    },
+    {
+      "row_index": 322,
+      "file_name": "pc_857c0a8b-5f0f-4d6a-966f-789b594622c9.png",
+      "bbox": [
+        0.37550744248985113,
+        0.013975155279503106,
+        0.428958051420839,
+        0.06599378881987578
+      ],
+      "instruction": "terminate this process",
+      "data_type": "icon",
+      "data_source": "macos",
+      "width": 1478,
+      "height": 1288,
+      "sha256": "334045c9de5fea05f1c2df469d9e12e9feac3ed6e3fa920ee09e0f28aaa55895"
+    },
+    {
+      "row_index": 250,
+      "file_name": "pc_63a274e4-38e1-4a50-a102-33b31aee3a62.png",
+      "bbox": [
+        0.9070796460176991,
+        0.11134453781512606,
+        0.9761061946902655,
+        0.17016806722689076
+      ],
+      "instruction": "add a recipient",
+      "data_type": "icon",
+      "data_source": "macos",
+      "width": 1130,
+      "height": 952,
+      "sha256": "c0d3a1cef0573e116522594bafbafb8886246866d900f20878255d0cbc03ea83"
+    },
+    {
+      "row_index": 298,
+      "file_name": "pc_38236247-66f3-4ad3-aeb0-bc4783335a46.png",
+      "bbox": [
+        0.3393782383419689,
+        0.8366619115549215,
+        0.6658031088082902,
+        0.8801711840228246
+      ],
+      "instruction": "sign in",
+      "data_type": "text",
+      "data_source": "macos",
+      "width": 1158,
+      "height": 1402,
+      "sha256": "9d805fb7fa5b1a151f4a2d8c584b5157059d3a4d06120b662dd6779240e2be42"
+    },
+    {
+      "row_index": 304,
+      "file_name": "pc_7656e3c5-00b1-4be7-9103-9890b837342f.png",
+      "bbox": [
+        0.0,
+        0.3028571428571429,
+        0.2594444444444444,
+        0.33714285714285713
+      ],
+      "instruction": "check python interpreter",
+      "data_type": "text",
+      "data_source": "macos",
+      "width": 1800,
+      "height": 1400,
+      "sha256": "3764ee58b7261812e3252710a6ee60f67edbf9a5214df7517abf84977376af10"
+    },
+    {
+      "row_index": 308,
+      "file_name": "pc_155db9b3-fe88-41cb-81d1-d51f37ba5970.png",
+      "bbox": [
+        0.28801331853496115,
+        0.0994277539341917,
+        0.5099889012208657,
+        0.148068669527897
+      ],
+      "instruction": "cancel showing plots in tool windows",
+      "data_type": "text",
+      "data_source": "macos",
+      "width": 1802,
+      "height": 1398,
+      "sha256": "859f4e69bdd1ec34cb30a36954901e3aa3c3f0b897cfca8ee599e7b18d90f57d"
+    },
+    {
+      "row_index": 987,
+      "file_name": "web_3acb3026-cbd7-4e41-8fb7-2b8a2e7e4fcb.png",
+      "bbox": [
+        0.965625,
+        0.15486111111111112,
+        0.9921875,
+        0.20208333333333334
+      ],
+      "instruction": "close shopping cart",
+      "data_type": "icon",
+      "data_source": "shop",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "6ae704d3f9a097c1ba3e7279fe88e319323b0c84d7687b7e946c3b20c406bb1f"
+    },
+    {
+      "row_index": 1254,
+      "file_name": "web_8c185a73-f24a-4548-851f-eae8962b2649.png",
+      "bbox": [
+        0.079296875,
+        0.8569444444444444,
+        0.154296875,
+        0.99375
+      ],
+      "instruction": "check the second image",
+      "data_type": "icon",
+      "data_source": "shop",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "02ebc973203f95c67d2bb4c0db43e2631ad38110dbc7e44a67ee6b2a1bc3cc4e"
+    },
+    {
+      "row_index": 1110,
+      "file_name": "web_fa131c38-3d94-4e5a-ba3a-269724d93a30.png",
+      "bbox": [
+        0.8953125,
+        0.7298611111111111,
+        0.909375,
+        0.7548611111111111
+      ],
+      "instruction": "close the location labels on the map",
+      "data_type": "icon",
+      "data_source": "tool",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "f832274506145a74255b32c1056b9e22848eaa090b338d63bafc7db253aa484c"
+    },
+    {
+      "row_index": 969,
+      "file_name": "web_db995728-d16b-46cb-9621-22e8d8e5596f.png",
+      "bbox": [
+        0.595703125,
+        0.9041666666666667,
+        0.685546875,
+        0.9395833333333333
+      ],
+      "instruction": "add the first product to wish list",
+      "data_type": "text",
+      "data_source": "shop",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "e4d68bef3de901f7ce08b38610805d0a3d1df28bf9695ecfb047c9655c2b3b66"
+    },
+    {
+      "row_index": 1158,
+      "file_name": "web_6f93090a-81f6-489e-bb35-1a2838b18c01.png",
+      "bbox": [
+        0.7578125,
+        0.08055555555555556,
+        0.9265625,
+        0.12777777777777777
+      ],
+      "instruction": "input word to search in wikidata",
+      "data_type": "text",
+      "data_source": "tool",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "8b17396888b452be5db25b4c2505b53713485ca94c9dc56da278214f968fc443"
+    },
+    {
+      "row_index": 1240,
+      "file_name": "web_8998df3c-ece5-4f78-9f34-8b6ef91b1ddb.png",
+      "bbox": [
+        0.672265625,
+        0.6965277777777777,
+        0.76875,
+        0.7451388888888889
+      ],
+      "instruction": "add the cocowhip light to cart",
+      "data_type": "text",
+      "data_source": "shop",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "f767d47dedb5fb07332acd47fb6948fb7b44d3c60594a85e1a98bb84f1e07ee5"
+    },
+    {
+      "row_index": 1,
+      "file_name": "pc_5e09e8e9-7ef6-44be-ad54-aeaeac151897.png",
+      "bbox": [
+        0.8697916666666666,
+        0.0,
+        0.9072916666666667,
+        0.05555555555555555
+      ],
+      "instruction": "minimize this window",
+      "data_type": "icon",
+      "data_source": "windows",
+      "width": 960,
+      "height": 540,
+      "sha256": "29efacf5d4ddf2ffc62af157a585bd5341d298b785f2518a85c0e93b5a88d4d0"
+    },
+    {
+      "row_index": 0,
+      "file_name": "pc_ede36f9b-1154-4f76-b7f8-c15d7d3f9b6e.png",
+      "bbox": [
+        0.9479166666666666,
+        0.14444444444444443,
+        0.99375,
+        0.2074074074074074
+      ],
+      "instruction": "close",
+      "data_type": "icon",
+      "data_source": "windows",
+      "width": 960,
+      "height": 540,
+      "sha256": "9b313894d70c16c3ce09adb404fac1bd32334fc50bf761014bf0fe44761def1c"
+    },
+    {
+      "row_index": 20,
+      "file_name": "pc_870d6da1-bc85-4e74-a1bd-ef6f975c2146.png",
+      "bbox": [
+        0.890625,
+        0.9166666666666666,
+        0.9697916666666667,
+        1.0
+      ],
+      "instruction": "date and time",
+      "data_type": "icon",
+      "data_source": "windows",
+      "width": 960,
+      "height": 540,
+      "sha256": "fb4a327f9011bee34f27a8d8373c1325479b3a48588589ed160967ba9ed055aa"
+    },
+    {
+      "row_index": 102,
+      "file_name": "pc_16d04f01-66a7-45df-a189-66c29fa935d7.png",
+      "bbox": [
+        0.334375,
+        0.8925925925925926,
+        0.4947916666666667,
+        0.9611111111111111
+      ],
+      "instruction": "open files",
+      "data_type": "text",
+      "data_source": "windows",
+      "width": 960,
+      "height": 540,
+      "sha256": "fe7878239c3afd84310a2121997a548557d38873c0e34149d7c4baf6fac62f33"
+    },
+    {
+      "row_index": 132,
+      "file_name": "pc_b34a8be5-2b1f-40fa-b348-41aac2bfb952.png",
+      "bbox": [
+        0.15391014975041598,
+        0.46203208556149733,
+        0.3086522462562396,
+        0.5176470588235295
+      ],
+      "instruction": "check the detail of uv index",
+      "data_type": "text",
+      "data_source": "windows",
+      "width": 1202,
+      "height": 935,
+      "sha256": "54551c9746bf71c75fd61dc5d9c175fb47b5c778c953555b47f3543847e3b2f9"
+    },
+    {
+      "row_index": 85,
+      "file_name": "pc_6dfaf0c7-a3e5-4e71-8431-5eeb9fb8e493.png",
+      "bbox": [
+        0.5489583333333333,
+        0.45,
+        0.9260416666666667,
+        0.5166666666666667
+      ],
+      "instruction": "see more information",
+      "data_type": "text",
+      "data_source": "windows",
+      "width": 960,
+      "height": 540,
+      "sha256": "b9e27a048b52a65acbe6b0566405a0ffc88854ddeb36bbd589063c2f6437f649"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "model": "microsoft/GUI-Actor-2B-Qwen2-VL",
+  "revision": "8f87b366d004425a9823502553e2097c71116ece",
+  "dataset_revision": "0be08781e2e188582f6131625ae1598d443b4d5d",
+  "samples": 30,
+  "hits": {
+    "max_patch": 16,
+    "connected_region": 25
+  },
+  "by_type": {
+    "text": {
+      "max_patch": 9,
+      "connected_region": 13
+    },
+    "icon": {
+      "max_patch": 7,
+      "connected_region": 12
+    }
+  },
+  "threads_used": [
+    4,
+    8
+  ],
+  "max_visual_tokens": 576,
+  "transformer_layers": 28,
+  "decoding_tokens": 0,
+  "upstream_reference": "microsoft/GUI-Actor@d98d1bbd01862f9112114b83b032f492c365a173",
+  "limitations": [
+    "Small stratified public benchmark sample, not the full leaderboard; possible unknown training overlap.",
+    "Frozen published pointer head, no new coordinate classifier training; no missing-target examples or abstention.",
+    "All 28 transformer blocks execute; no coordinate early exit.",
+    "Both readouts share one model pass. This is a localization comparison, not a text-versus-coordinate speed claim.",
+    "CPU elapsed times are diagnostic only; concurrent feature extraction and first-run effects may influence them."
+  ]
+}

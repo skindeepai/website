@@ -33,7 +33,7 @@ python -m pip install -r experiments/requirements.txt
 python experiments/run_synthetic.py
 ```
 
-Browser checks: `node scripts/test_browser.cjs`. Use Playwright/Chromium in a separate tooling environment, or set `PLAYWRIGHT_MODULE` to an existing playwright-core module. The script tests 28 pages at seven widths with a two-renderer cap. See [experiments/README.md](experiments/README.md) for model downloads and runtime limits.
+Browser checks: `node scripts/test_browser.cjs`. Use Playwright/Chromium in a separate tooling environment, or set `PLAYWRIGHT_MODULE` to an existing playwright-core module. The script tests 30 pages at seven widths with a two-renderer cap. See [experiments/README.md](experiments/README.md) for model downloads and runtime limits.
 
 Accessibility and enlarged-text checks: `node scripts/audit_accessibility.cjs` against the local preview. Set `AXE_CORE_PATH` to a separate axe-core installation. See the [accessibility review](docs/accessibility.md) for coverage, findings, and reproduction commands.
 
@@ -45,3 +45,41 @@ The first Qwen pilot demonstrates real layer skipping but **fails the proposed q
 - [Original app](https://github.com/skindeepai/skindeep-mobile) and [server](https://github.com/skindeepai/skindeep-server).
 - Code: MIT, see [LICENSE](LICENSE). Downloaded models have their own licenses.
 - Steve Seguin / [skindeep.ai](https://skindeep.ai) / contact@skindeep.ai.
+
+## Public-data research follow-up
+
+- [BANKING77 layer and gate comparison](docs/banking77-results.md): all 3,080 official test queries, three head seeds, a lexical control, and counted runtime exits.
+- [Conservative gate on fresh queries](docs/conservative-exits.md): 742 calibration / 741 test queries; the preset guard still narrowly fails.
+- [ScreenSpot comparison](docs/screenspot-results.md): 30 predetermined public screenshots, single-patch versus connected-region points.
+- [How the classifier works](docs/early-exit.md) and [coordinate processor correction](docs/coordinate-correction.md).
+- `browser-benchmark.html`: optional actual Qwen inference in the browser; compares output formats, not early exit.
+
+## Evidence after adversarial review
+
+- [Original review](docs/adversarial-review.md), [independent reassessment](docs/adversarial-followup.md), and [acceptance requirements](docs/evidence-acceptance.md).
+- [Separate implementation replay](docs/reproduction.md): portable trained weights, fresh model execution and a published dependency release.
+- [Second dataset](docs/clinc-results.md) and [explicit UNKNOWN output](docs/clinc-unknown.md): both calibration gates fail; unfamiliar requests remain a weakness.
+- [Changing-rule stress test](docs/changing-rules.md): full depth gets both opposite rules correct on only 14 of 100 pairs.
+- [Matched one-token output control](docs/matched-output.md): identical supervised readout, no established timing advantage for enum output alone.
+
+These results improve the evidence record; they do not establish reliable general decision-making. The approved shared UI and styling are unchanged.
+
+## Practical workloads
+
+- [600 real chat messages](docs/chat600-results.md): trained full-depth and layer-12 classifiers, matched one-token output, an untouched Qwen control, and actual complete-workload timing. The shortcut misses more toxic messages and fails calibration; it is a fixed-depth rule, not adaptive readiness.
+- [Independent chat audit](docs/chat600-review.md): source labels, decision changes, confidence bounds and limitations.
+- [Maze experiment](docs/maze-actions.md) and [recorded replay](maze-benchmark.html): four action outputs and ten held-out episodes. Both learned policies reach zero goals; BFS reaches ten. Recorded moves are visible without downloading a model.
+
+These are a real-message archive and synthetic mazes, respectively. Neither is a live moderation or real-world navigation validation. Source chat text remains in the ignored research cache.
+
+## Small exploratory follow-ups
+
+[Method comparison](docs/chat-smoke-results.md) covers neural heads, asymmetric thresholds and agreement, learned gates, a tiny specialist/cascade, task adaptation, intermediate losses, distillation and physical truncation. The learned gate used different stopping layers per message and reduced measured request time by 33.8% in one 100-message pass. These reused, balanced examples do not validate equal-quality deployment. [Separate adversarial review](docs/chat-smoke-review.md) retains regressions and new toxic misses.
+
+[Maze follow-ups](docs/maze-smoke.md) and a [coordinate rejection diagnostic](docs/coordinate-abstention-smoke.md) are recorded separately. The original studies and approved UI remain intact.
+
+## Reading the results
+
+The [results index](results.html) now opens focused pages for [preferences](preference-results.html), [decision methods](decision-results.html), [click targets](coordinate-results.html), and [mazes](maze-results.html). Decision methods lead to fixed-depth, adaptive-checker, cascade, and training comparisons. Dataset links, sample sizes, actual layers and block savings sit beside the findings; detailed protocols remain one click deeper. The previous combined report is preserved in [the reference page](results-record.html).
+
+`python scripts/refresh_research.py` refreshes measurements and calls `scripts/organize_results.py`; then run `python scripts/build_site.py`. The focused-page diagrams use scoped `results.css` and local HTML/SVG, with no new runtime dependency.

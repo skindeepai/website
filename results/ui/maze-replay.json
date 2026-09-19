@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "recordings": 30,
+  "checkedMoves": 459,
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "browser": "151.0.7922.34",
+  "checks": [
+    "all recorded moves, depths and agent positions",
+    "blocked moves stay visible",
+    "episode outcomes",
+    "previous/next limits",
+    "play and pause",
+    "mobile and desktop width",
+    "network failure"
+  ],
+  "limitations": [
+    "Saved-record replay only; this does not test model inference.",
+    "Headless Chromium, not physical mobile devices or assistive technology."
+  ]
+}

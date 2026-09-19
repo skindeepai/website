@@ -51,13 +51,15 @@ const axe=process.env.AXE_CORE_PATH || require.resolve('axe-core/axe.min.js');
   await audit('adaptive.html','mobile navigation open',320);
   await page.keyboard.press('Escape');
   await page.emulateMedia({forcedColors:'active'});
-  const forcedColors=await page.locator('.processing-steps i').evaluateAll(nodes=>nodes.map(n=>({border:getComputedStyle(n).borderStyle,fill:getComputedStyle(n).backgroundColor})));
-  if(forcedColors.slice(0,6).some(n=>n.border!=='solid')||forcedColors.slice(6).some(n=>n.border!=='dashed'))throw Error('Early-stop distinction lost in forced colors');
+  const layerImage=page.locator('img[src$="qwen-early-exit.svg"]');
+  if(!(await layerImage.getAttribute('alt')).includes('layers 13 to 24'))throw Error('Missing layer-count image description');
+  const diagram=fs.readFileSync(path.join(root,'images/qwen-early-exit.svg'),'utf8');
+  if(!diagram.includes('stroke-dasharray')||!diagram.includes('12 layers skipped'))throw Error('Missing non-color layer distinction');
   await page.screenshot({path:path.join(root,'results/ui/adaptive-forced-colors.png'),fullPage:true});
   await page.emulateMedia({forcedColors:'none'});
   function luminance(hex){const rgb=hex.match(/[\da-f]{2}/gi).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];}
   const contrastPairs=[['body','#182438','#f4f7fb'],['secondary text','#43536a','#f4f7fb'],['used blocks','#315d8e','#ffffff'],['skipped outlines','#596b80','#ffffff'],['control borders','#718198','#ffffff'],['focus ring','#204bb8','#f4f7fb'],['menu glyph','#182438','#ffffff'],['diagram arrows','#182438','#eaf0fc'],['hit marks','#37694a','#e3eee7'],['miss marks','#914f3d','#f6e8e2'],['card chips worst-case white underlay','#ffffff','#525864'],['ring label worst-case black underlay','#1e293b','#d9d9d9']].map(([name,foreground,background])=>({name,foreground,background,ratio:Number(((Math.max(luminance(foreground),luminance(background))+.05)/(Math.min(luminance(foreground),luminance(background))+.05)).toFixed(2))}));
-  const report={date:new Date().toISOString(),browser:await browser.version(),axeVersion:await page.evaluate(()=>axe.version),pages:pages.length,checks,contrastPairs,forcedColors:'Filled solid outlines and empty dashed outlines remain distinct.',limitations:['Automated checks do not establish WCAG conformance.','Screen reader, physical devices, and Safari have not been tested.','Archived historical pages are outside this current-site audit.','Axe flags decorative glyphs and overlays for manual contrast review; palette and worst-case composited colors are recorded separately.']};
+  const report={date:new Date().toISOString(),browser:await browser.version(),axeVersion:await page.evaluate(()=>axe.version),pages:pages.length,checks,contrastPairs,forcedColors:'Layer SVG has filled/outlined blocks, explicit counts and alt text; forced-colors screenshot retained for visual review.',limitations:['Automated checks do not establish WCAG conformance.','Screen reader, physical devices, and Safari have not been tested.','Archived historical pages are outside this current-site audit.','Axe flags decorative glyphs and overlays for manual contrast review; palette and worst-case composited colors are recorded separately.']};
   const target=process.env.AUDIT_OUTPUT || path.join(root,'results/ui/accessibility.json');
   fs.writeFileSync(target,JSON.stringify(report,null,2)+'\n');
   const failures=checks.filter(c=>c.overflow||c.violations?.length);

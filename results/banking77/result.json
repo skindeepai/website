@@ -1,0 +1,471 @@
+{
+  "status": "completed",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "hidden_size": 896,
+  "layers": 24,
+  "classes": 77,
+  "dataset": "BANKING77",
+  "dataset_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "feature_fingerprint": "3e79d389e63b32a1a2028bdd898db023e956d89df12f1c3a06d537cfd496fcbc",
+  "prompt": "Read this customer support request and identify its banking intent.\nRequest: {text}\nIntent:",
+  "split_sizes": {
+    "train": 2464,
+    "tune": 611,
+    "calibration": 601,
+    "test": 3080
+  },
+  "threads": 8,
+  "batch_size": 8,
+  "torch": "2.6.0+cpu",
+  "transformers": "4.50.0.dev0",
+  "hardware": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "feature_extraction_seconds_this_run": 0.05669080000370741,
+  "runs": [
+    {
+      "seed": 17,
+      "heads": [
+        {
+          "depth": 6,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.664484441280365,
+          "test_accuracy": 0.6655844449996948
+        },
+        {
+          "depth": 12,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.7004910111427307,
+          "test_accuracy": 0.6905844211578369
+        },
+        {
+          "depth": 18,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.6955810189247131,
+          "test_accuracy": 0.7097402811050415
+        },
+        {
+          "depth": 24,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.8412438631057739,
+          "test_accuracy": 0.8282467722892761
+        }
+      ],
+      "selected_policy": {
+        "threshold": 0.7,
+        "agreement": true,
+        "minimum": 6,
+        "tune": {
+          "accuracy": 0.8396071791648865,
+          "correct": 513,
+          "count": 611,
+          "accuracy_ci95": [
+            0.8084006475265082,
+            0.8665699465256835
+          ],
+          "mean_depth": 18.608837127685547,
+          "blocks_skipped_fraction": 0.22463174164295197,
+          "exit_counts": {
+            "12": 241,
+            "24": 303,
+            "18": 67
+          },
+          "harmful_exits": 7,
+          "corrected_full_errors": 6,
+          "accuracy_delta_vs_full": -0.001636661239899695,
+          "harm_rate_upper95": 0.020998430709438774
+        }
+      },
+      "calibration": {
+        "accuracy": 0.8136439323425293,
+        "correct": 489,
+        "count": 601,
+        "accuracy_ci95": [
+          0.7805549392642509,
+          0.8427487488418582
+        ],
+        "mean_depth": 18.64891815185547,
+        "blocks_skipped_fraction": 0.22296172380447388,
+        "exit_counts": {
+          "24": 307,
+          "12": 242,
+          "18": 52
+        },
+        "harmful_exits": 7,
+        "corrected_full_errors": 9,
+        "accuracy_delta_vs_full": 0.003327786922454834,
+        "harm_rate_upper95": 0.02134559649601762
+      },
+      "calibration_guard_passed": false,
+      "fixed_depth_selected_on_tune": 24,
+      "fixed_depth_test": {
+        "accuracy": 0.8282467722892761,
+        "correct": 2551,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8145195995901958,
+          0.8411561004846718
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      },
+      "candidate_test": {
+        "accuracy": 0.8285714387893677,
+        "correct": 2552,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8148538350294146,
+          0.8414704067863779
+        ],
+        "mean_depth": 18.323375701904297,
+        "blocks_skipped_fraction": 0.23652596771717072,
+        "exit_counts": {
+          "12": 1300,
+          "24": 1466,
+          "18": 314
+        },
+        "harmful_exits": 33,
+        "corrected_full_errors": 34,
+        "accuracy_delta_vs_full": 0.0003246753185521811,
+        "harm_rate_upper95": 0.014224172714735228
+      },
+      "deployed_test": {
+        "accuracy": 0.8282467722892761,
+        "correct": 2551,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8145195995901958,
+          0.8411561004846718
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      }
+    },
+    {
+      "seed": 29,
+      "heads": [
+        {
+          "depth": 6,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.6628478169441223,
+          "test_accuracy": 0.666883111000061
+        },
+        {
+          "depth": 12,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.7037643194198608,
+          "test_accuracy": 0.6889610290527344
+        },
+        {
+          "depth": 18,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.6906710267066956,
+          "test_accuracy": 0.7097402811050415
+        },
+        {
+          "depth": 24,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.8396071791648865,
+          "test_accuracy": 0.8282467722892761
+        }
+      ],
+      "selected_policy": {
+        "threshold": 0.7,
+        "agreement": true,
+        "minimum": 6,
+        "tune": {
+          "accuracy": 0.8346972465515137,
+          "correct": 510,
+          "count": 611,
+          "accuracy_ci95": [
+            0.803170061322483,
+            0.8620419217313635
+          ],
+          "mean_depth": 18.569557189941406,
+          "blocks_skipped_fraction": 0.22626841068267822,
+          "exit_counts": {
+            "12": 239,
+            "24": 297,
+            "18": 75
+          },
+          "harmful_exits": 7,
+          "corrected_full_errors": 4,
+          "accuracy_delta_vs_full": -0.004909983836114407,
+          "harm_rate_upper95": 0.020998430709438774
+        }
+      },
+      "calibration": {
+        "accuracy": 0.8169717192649841,
+        "correct": 491,
+        "count": 601,
+        "accuracy_ci95": [
+          0.7840752736914127,
+          0.8458417161452652
+        ],
+        "mean_depth": 18.599000930786133,
+        "blocks_skipped_fraction": 0.22504158318042755,
+        "exit_counts": {
+          "24": 302,
+          "12": 242,
+          "18": 57
+        },
+        "harmful_exits": 6,
+        "corrected_full_errors": 8,
+        "accuracy_delta_vs_full": 0.003327786922454834,
+        "harm_rate_upper95": 0.019188821651641038
+      },
+      "calibration_guard_passed": false,
+      "fixed_depth_selected_on_tune": 24,
+      "fixed_depth_test": {
+        "accuracy": 0.8282467722892761,
+        "correct": 2551,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8145195995901958,
+          0.8411561004846718
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      },
+      "candidate_test": {
+        "accuracy": 0.8275973796844482,
+        "correct": 2549,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8138511805432238,
+          0.8405274360497943
+        ],
+        "mean_depth": 18.25519561767578,
+        "blocks_skipped_fraction": 0.23936688899993896,
+        "exit_counts": {
+          "12": 1313,
+          "24": 1444,
+          "18": 323
+        },
+        "harmful_exits": 33,
+        "corrected_full_errors": 31,
+        "accuracy_delta_vs_full": -0.0006493506371043622,
+        "harm_rate_upper95": 0.014224172714735228
+      },
+      "deployed_test": {
+        "accuracy": 0.8282467722892761,
+        "correct": 2551,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8145195995901958,
+          0.8411561004846718
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      }
+    },
+    {
+      "seed": 43,
+      "heads": [
+        {
+          "depth": 6,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.6775777339935303,
+          "test_accuracy": 0.6675324440002441
+        },
+        {
+          "depth": 12,
+          "parameters": 69069,
+          "temperature": 1.5,
+          "tune_accuracy": 0.6988543272018433,
+          "test_accuracy": 0.6892856955528259
+        },
+        {
+          "depth": 18,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.6955810189247131,
+          "test_accuracy": 0.7139610648155212
+        },
+        {
+          "depth": 24,
+          "parameters": 69069,
+          "temperature": 2.0,
+          "tune_accuracy": 0.8314238786697388,
+          "test_accuracy": 0.8279221057891846
+        }
+      ],
+      "selected_policy": {
+        "threshold": 0.7,
+        "agreement": true,
+        "minimum": 6,
+        "tune": {
+          "accuracy": 0.8314238786697388,
+          "correct": 508,
+          "count": 611,
+          "accuracy_ci95": [
+            0.7996881176714025,
+            0.8590181247168808
+          ],
+          "mean_depth": 18.648117065429688,
+          "blocks_skipped_fraction": 0.2229950875043869,
+          "exit_counts": {
+            "12": 237,
+            "24": 303,
+            "18": 71
+          },
+          "harmful_exits": 6,
+          "corrected_full_errors": 6,
+          "accuracy_delta_vs_full": 0.0,
+          "harm_rate_upper95": 0.018876661197361696
+        }
+      },
+      "calibration": {
+        "accuracy": 0.821963369846344,
+        "correct": 494,
+        "count": 601,
+        "accuracy_ci95": [
+          0.7893628651001039,
+          0.8504740773324273
+        ],
+        "mean_depth": 18.728784561157227,
+        "blocks_skipped_fraction": 0.21963393688201904,
+        "exit_counts": {
+          "24": 310,
+          "12": 237,
+          "18": 54
+        },
+        "harmful_exits": 5,
+        "corrected_full_errors": 9,
+        "accuracy_delta_vs_full": 0.006655573844909668,
+        "harm_rate_upper95": 0.01699156046485219
+      },
+      "calibration_guard_passed": false,
+      "fixed_depth_selected_on_tune": 24,
+      "fixed_depth_test": {
+        "accuracy": 0.8279221057891846,
+        "correct": 2550,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8141853814410269,
+          0.8408417768929162
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      },
+      "candidate_test": {
+        "accuracy": 0.8259740471839905,
+        "correct": 2544,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8121804334834557,
+          0.8389554744049392
+        ],
+        "mean_depth": 18.292207717895508,
+        "blocks_skipped_fraction": 0.2378246784210205,
+        "exit_counts": {
+          "12": 1302,
+          "24": 1452,
+          "18": 326
+        },
+        "harmful_exits": 38,
+        "corrected_full_errors": 32,
+        "accuracy_delta_vs_full": -0.0019480519695207477,
+        "harm_rate_upper95": 0.01606418025757544
+      },
+      "deployed_test": {
+        "accuracy": 0.8279221057891846,
+        "correct": 2550,
+        "count": 3080,
+        "accuracy_ci95": [
+          0.8141853814410269,
+          0.8408417768929162
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 3080
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0008778083210188686
+      }
+    }
+  ],
+  "timing": {
+    "full_head": {
+      "model_ms": {
+        "mean": 246.15463593757644,
+        "p50": 240.50045001786202,
+        "p95": 291.04677499854
+      },
+      "end_to_end_ms": {
+        "mean": 246.75296927095283,
+        "p50": 241.08390000765212,
+        "p95": 291.6588250198401
+      }
+    },
+    "candidate_early_exit": {
+      "model_ms": {
+        "mean": 183.29025937267338,
+        "p50": 177.8234999801498,
+        "p95": 276.072914985707
+      },
+      "end_to_end_ms": {
+        "mean": 183.88193645751016,
+        "p50": 178.3489500230644,
+        "p95": 276.6301199764711
+      }
+    }
+  },
+  "timing_rows": 384,
+  "timing_seed": 17,
+  "limitations": [
+    "Frozen specialist classifiers; does not establish arbitrary changing-rule instruction following.",
+    "Public benchmark may overlap unknown pretraining data; no contamination-free claim.",
+    "Only 32 training queries per intent; all 3080 official test queries evaluated.",
+    "Three classifier initialization seeds share one data split and frozen backbone.",
+    "Policy chosen on tune and independently guarded on calibration; timing shows candidate even if guard rejects it.",
+    "CPU warm batch-one timing includes tokenization, excludes loading/downloads. Full-depth features are not early-exit timing.",
+    "Frozen heads compared with each other; no claim of superiority to an equally trained text decoder."
+  ]
+}

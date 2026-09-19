@@ -42,7 +42,7 @@ python experiments/qwen_decisions.py --threads 8
 python experiments/coordinates.py --threads 8
 ```
 
-Run model pilots sequentially. Cap aggregate work at half the machine's logical processors, counting all builds/pools. The coordinate pilot can take many minutes on CPU and needs memory for a 2B float32 model. It caps visual tokens at 576, unlike higher-resolution upstream evaluations.
+Run model pilots sequentially. Cap aggregate work at half the machine's logical processors, counting all builds/pools. The coordinate pilot can take many minutes on CPU and needs memory for a 2B float32 model. The original processor cap was not applied as intended: actual grids were 936 desktop / 392 mobile patches. See [the correction](../docs/coordinate-correction.md). The new ScreenSpot harness explicitly caps and checks 576 patches.
 
 ### Decision pilot
 
@@ -60,6 +60,48 @@ The adapter reproduces [GUI-Actor](https://github.com/microsoft/GUI-Actor)'s pub
 node experiments/capture_fixtures.cjs
 ```
 
+## Public-data follow-up and browser check
+
+The approved site styling stays unchanged; new evidence is linked from the existing technical sections.
+
+```sh
+python experiments/banking77.py --threads 8 --batch-size 8 --timing-samples 96
+python experiments/screenspot.py --threads 4
+python experiments/test_research.py
+python scripts/refresh_evidence.py
+```
+
+BANKING77 downloads three pinned PolyAI files, fits four frozen-Qwen readouts with three initialization seeds, and evaluates all 3,080 official test queries. The manifest records exact split IDs and overlaps. Feature extraction can run for many minutes on CPU; it is cached in `experiments/.cache/`. The actual runtime check still executes Qwen and counts blocks. See [the protocol](../docs/banking77-protocol.md).
+
+ScreenSpot downloads a predetermined public sample and enforces its image-patch cap in the processor field actually used by this runtime. Original source screenshots remain local. See [the protocol](../docs/screenspot-protocol.md) and [the earlier cap correction](../docs/coordinate-correction.md). Its durations are diagnostic; do not compare concurrent runs as isolated speed benchmarks. For the final BANKING77 timing record, stop other launched model benchmarks first and rerun from cached features.
+
+The lexical control uses scikit-learn 1.8.0, joblib 1.5.3 and threadpoolctl 3.6.0. Install these into an isolated environment, or into the ignored `experiments/.cache/tooling` directory with `pip --target`; `banking77_lexical.py` supports that location. It uses one thread and exactly the same training IDs.
+
+`browser-benchmark.html` downloads a pinned ONNX Qwen model only when started. It runs through Transformers.js 3.8.1 in a single-threaded WebAssembly worker. It compares ordinary one-letter and JSON generation; it does **not** run the trained heads or skip layers. The first real-browser output record is `results/ui/browser-qwen.json`, including failures. Stop terminates the worker. No result is uploaded.
+
+## Adversarial-review follow-ups
+
+The independent implementation in `reproduce_early_exit.py` loads portable numeric heads and executes Qwen again; it does not import the original runner or its feature cache. It passed with the original runtime and with an isolated published Transformers 4.50.3 release. See [the replay record](../docs/reproduction.md). `requirements-replay.txt` pins the core obtainable packages; it is not a full transitive lockfile or a claim that a clean environment was tested.
+
+Additional prospective experiments preserve failures and keep their protocols separate:
+
+```sh
+python experiments/clinc_validation.py --prepare
+python experiments/clinc_unknown.py --prepare
+python experiments/clinc_validation.py
+python experiments/clinc_unknown.py
+python experiments/changing_rules.py --prepare
+python experiments/changing_rules.py
+python experiments/matched_output.py
+python scripts/refresh_validation.py
+```
+
+The recorded UNKNOWN variant's `--prepare` was run before the first CLINC result existed. Its existing protocol is checked on replay. For new experiments, preserve that sequence: prepare both CLINC protocols before running the baseline. Do not replace a failed protocol or result to make the record appear stronger.
+
+Download `data/data_full.json` and `data/domains.json` from `https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/` into `experiments/.cache/clinc/` before these commands. `clinc_validation.py --prepare` verifies their SHA-256 values against constants before using them. Keep the upstream CC BY 3.0 attribution; generated changing-rule prompts are an authored adaptation. Portable CLINC NPZ arrays use `{depth}_weight`, `{depth}_bias`, `{depth}_mean`, `{depth}_std` and, where applicable, `{depth}_temperature`. Load with `allow_pickle=False`.
+
+Run the matched-output timing **after other model work finishes**. It controls only output format using identical trained readout rows; equivalent predictions follow by construction. It is not a comparison to an independently trained conversational model or ordinary unrestricted generation.
+
 ## Refresh the local record
 
 ```sh
@@ -71,3 +113,27 @@ python scripts/record_provenance.py
 ```
 
 Browser tooling can use an existing module through `PLAYWRIGHT_MODULE`. Provenance records finalized source/artifact hashes, git base and dirty-diff identity; it is not immutable pre-registration. Chromium viewport checks are not real-device validation. None of these commands deploys.
+
+## Practical decision workloads
+
+See [the 600-message protocol](../docs/chat600-protocol.md) and [results](../docs/chat600-results.md) for pinned ToxicChat source files, partition IDs, trained heads, failed quality gates and full-workload timings. `chat600.py --prepare`, `--fit` and `--benchmark` are separate stages; the sealed protocol rejects unrecorded source changes. Use the documented published Transformers replay environment. The benchmark uses eight CPU threads and should run after other model work has ended. Do not treat cached hidden-state extraction as early-exit timing.
+
+[Exact reproduction commands](../docs/chat600-reproduce.md) cover the dataset downloads, isolated dependencies and all stages. Run them in a separate copy: fitting and timing overwrite their corresponding result files.
+
+`maze_actions.py --prepare` followed by `maze_actions.py` runs the [maze experiment](../docs/maze-actions.md), capped at four CPU threads. It records failed moves, illegal actions, reached goals and executed blocks. The [browser replay](../maze-benchmark.html) reads saved artifacts and does no inference.
+
+After model timing finishes, `node scripts/test_maze.cjs` checks every recorded replay step and its controls against the local preview. It uses the same separate Playwright tooling as the other browser checks.
+
+Both studies retain negative results. New training or gate selection needs a new output directory, protocol and untouched evaluation set; do not overwrite these runs to improve their reported scores.
+
+## Bounded exploratory comparisons
+
+The [small comparison](../docs/chat-smoke-results.md) uses `chat_smoke_common.py` to select already inspected messages, explicitly as development exploration. This exception does not turn reused data into a fresh validation set. Scripts and result directories are separate from the earlier runs. Every launched model process is capped at four CPU threads; timing runs are isolated from training.
+
+- `chat_smoke_heads.py`: frozen linear/neural readouts, asymmetric thresholds, agreement, learned error/benefit gates and REVIEW. `chat_smoke_heads_runtime.py` executes the selected gate with real layer stopping.
+- `chat_smoke_specialist.py`: tiny BERT and escalation to Qwen; `--benchmark` times all executed fallback work.
+- `chat_smoke_adaptation.py --variant full|joint|distill|fixed12`: separate 32-step adapter recipes. Run full first because distillation uses its teacher. `chat_smoke_adaptation_runtime.py --variant ...` checks portable weights with actual 50-message execution.
+- `chat_smoke_adaptation_reset.py --variant joint`: separately recorded five-step head-warm-up repair, preserving the original failures.
+- `maze_smoke.py` and `coordinate_abstention_smoke.py`: structured-action training and a retrospective coordinate-confidence diagnostic.
+
+The adapters use the isolated published replay dependencies under `experiments/.cache/replay-runtime`, as recorded in source. Read each protocol before reproducing in a separate copy; commands can overwrite corresponding outputs. The `full|joint|distill|fixed12` notation lists alternatives, not a literal shell argument. `python scripts/refresh_smoke.py` rebuilds the reports from completed artifacts. No raw chat text is published.

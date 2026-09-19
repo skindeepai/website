@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-19T18:24:05.097Z",
+  "date": "2026-09-19T23:23:13.502Z",
   "browser": "151.0.7922.34",
   "axeVersion": "4.13.0",
-  "pages": 28,
+  "pages": 41,
   "checks": [
     {
       "page": "index.html",
@@ -1079,22 +1079,7 @@
           "id": "color-contrast",
           "targets": [
             [
-              "button > span[aria-hidden=\"true\"]"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(1)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(2)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(3)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(4)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+              "span[aria-hidden=\"true\"]"
             ]
           ]
         }
@@ -1111,22 +1096,7 @@
           "id": "color-contrast",
           "targets": [
             [
-              "button > span[aria-hidden=\"true\"]"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(1)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(2)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(3)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(4)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+              "span[aria-hidden=\"true\"]"
             ]
           ]
         }
@@ -1174,6 +1144,576 @@
     },
     {
       "page": "sitemap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        },
+        {
+          "id": "th-has-data-cells",
+          "targets": [
+            [
+              "table"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ],
+            [
+              "text[x=\"210\"]"
+            ],
+            [
+              "text[x=\"30\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ],
+            [
+              "text[x=\"210\"]"
+            ],
+            [
+              "text[x=\"30\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "results-record.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results-record.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results-record.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "decision-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decision-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decision-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "depth-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "depth-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "depth-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "training-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "training-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "training-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "chat-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "chat-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button > span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "chat-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "maze-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "preference-results.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "preference-results.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "preference-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "decision-checks.html",
+      "state": "initial",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decision-checks.html",
+      "state": "expanded",
+      "width": 320,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "decision-checks.html",
       "state": "expanded with enlarged text and spacing",
       "width": 320,
       "overflow": false
@@ -1810,28 +2350,7 @@
       "width": 1440,
       "overflow": false,
       "violations": [],
-      "manualReview": [
-        {
-          "id": "color-contrast",
-          "targets": [
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(1)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(2)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(3)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(4)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(5)"
-            ]
-          ]
-        }
-      ]
+      "manualReview": []
     },
     {
       "page": "results.html",
@@ -1839,28 +2358,7 @@
       "width": 1440,
       "overflow": false,
       "violations": [],
-      "manualReview": [
-        {
-          "id": "color-contrast",
-          "targets": [
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(1)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(2)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(3)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(4)"
-            ],
-            [
-              ".hit[aria-hidden=\"true\"]:nth-child(5)"
-            ]
-          ]
-        }
-      ]
+      "manualReview": []
     },
     {
       "page": "results.html",
@@ -1886,6 +2384,367 @@
     },
     {
       "page": "sitemap.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "th-has-data-cells",
+          "targets": [
+            [
+              "table"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "browser-benchmark.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "text[x=\"210\"]"
+            ],
+            [
+              "text[x=\"30\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "text[x=\"210\"]"
+            ],
+            [
+              "text[x=\"30\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "maze-benchmark.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "results-record.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results-record.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(1)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(2)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(3)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(4)"
+            ],
+            [
+              ".hit[aria-hidden=\"true\"]:nth-child(5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": "results-record.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "decision-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "decision-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "decision-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "depth-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "depth-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "depth-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "early-exit-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "cascade-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "training-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "training-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "training-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "chat-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "chat-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "chat-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "coordinate-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "maze-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "maze-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "maze-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "preference-results.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "preference-results.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "preference-results.html",
+      "state": "expanded with enlarged text and spacing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "decision-checks.html",
+      "state": "initial",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "decision-checks.html",
+      "state": "expanded",
+      "width": 1440,
+      "overflow": false,
+      "violations": [],
+      "manualReview": []
+    },
+    {
+      "page": "decision-checks.html",
       "state": "expanded with enlarged text and spacing",
       "width": 1440,
       "overflow": false
@@ -2090,7 +2949,7 @@
       "ratio": 10.36
     }
   ],
-  "forcedColors": "Filled solid outlines and empty dashed outlines remain distinct.",
+  "forcedColors": "Layer SVG has filled/outlined blocks, explicit counts and alt text; forced-colors screenshot retained for visual review.",
   "limitations": [
     "Automated checks do not establish WCAG conformance.",
     "Screen reader, physical devices, and Safari have not been tested.",

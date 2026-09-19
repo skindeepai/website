@@ -1,0 +1,92 @@
+[
+  {
+    "dataset": "banking77",
+    "group": 17,
+    "verified": {
+      "count": 3080,
+      "correct": 2552,
+      "harmful_exits": 33,
+      "corrected_full_errors": 34,
+      "mean_depth": 18.323376623376625,
+      "exit_counts": {
+        "12": 1300,
+        "24": 1466,
+        "18": 314
+      },
+      "early_answers": 1614,
+      "wrong_early_answers": 86
+    }
+  },
+  {
+    "dataset": "banking77",
+    "group": 29,
+    "verified": {
+      "count": 3080,
+      "correct": 2549,
+      "harmful_exits": 33,
+      "corrected_full_errors": 31,
+      "mean_depth": 18.255194805194805,
+      "exit_counts": {
+        "12": 1313,
+        "24": 1444,
+        "18": 323
+      },
+      "early_answers": 1636,
+      "wrong_early_answers": 93
+    }
+  },
+  {
+    "dataset": "banking77",
+    "group": 43,
+    "verified": {
+      "count": 3080,
+      "correct": 2544,
+      "harmful_exits": 38,
+      "corrected_full_errors": 32,
+      "mean_depth": 18.292207792207794,
+      "exit_counts": {
+        "12": 1302,
+        "24": 1452,
+        "18": 326
+      },
+      "early_answers": 1628,
+      "wrong_early_answers": 92
+    }
+  },
+  {
+    "dataset": "banking77-conservative",
+    "group": "calibration",
+    "verified": {
+      "count": 742,
+      "correct": 611,
+      "harmful_exits": 3,
+      "corrected_full_errors": 1,
+      "mean_depth": 22.3099730458221,
+      "exit_counts": {
+        "24": 614,
+        "12": 81,
+        "18": 47
+      },
+      "early_answers": 128,
+      "wrong_early_answers": 4
+    }
+  },
+  {
+    "dataset": "banking77-conservative",
+    "group": "test",
+    "verified": {
+      "count": 741,
+      "correct": 615,
+      "harmful_exits": 0,
+      "corrected_full_errors": 2,
+      "mean_depth": 22.153846153846153,
+      "exit_counts": {
+        "24": 608,
+        "18": 38,
+        "12": 95
+      },
+      "early_answers": 133,
+      "wrong_early_answers": 4
+    }
+  }
+]

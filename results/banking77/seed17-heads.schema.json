@@ -1,0 +1,159 @@
+{
+  "format": "NumPy NPZ; numeric arrays only; load using allow_pickle=False",
+  "seed": 17,
+  "layers": [
+    6,
+    12,
+    18,
+    24
+  ],
+  "hidden_width": 896,
+  "labels": 77,
+  "arrays": {
+    "layer_6_weight": {
+      "shape": [
+        77,
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_6_bias": {
+      "shape": [
+        77
+      ],
+      "dtype": "float32"
+    },
+    "layer_6_mean": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_6_std": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_6_temperature": {
+      "shape": [],
+      "dtype": "float64"
+    },
+    "layer_12_weight": {
+      "shape": [
+        77,
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_12_bias": {
+      "shape": [
+        77
+      ],
+      "dtype": "float32"
+    },
+    "layer_12_mean": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_12_std": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_12_temperature": {
+      "shape": [],
+      "dtype": "float64"
+    },
+    "layer_18_weight": {
+      "shape": [
+        77,
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_18_bias": {
+      "shape": [
+        77
+      ],
+      "dtype": "float32"
+    },
+    "layer_18_mean": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_18_std": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_18_temperature": {
+      "shape": [],
+      "dtype": "float64"
+    },
+    "layer_24_weight": {
+      "shape": [
+        77,
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_24_bias": {
+      "shape": [
+        77
+      ],
+      "dtype": "float32"
+    },
+    "layer_24_mean": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_24_std": {
+      "shape": [
+        896
+      ],
+      "dtype": "float32"
+    },
+    "layer_24_temperature": {
+      "shape": [],
+      "dtype": "float64"
+    }
+  },
+  "formula": "softmax(((hidden - mean) / std) @ weight.T + bias, divided by temperature)",
+  "readout": "Final prompt token, after each block; layer 24 uses final RMS-normalized model output.",
+  "category_order": "data-manifest.json categories, zero indexed",
+  "category_manifest_sha256": "47cff903de4853f14d8f1d17d1950be84beafecca8d76a954d4d121dc0f7d4db",
+  "npz_sha256": "604be1252fd55c0b302af2ad4e769b5f76ee005db6c8f8bce9a0378d36483418",
+  "trusted_local_source_sha256": "c2cb67588afd693226444f46d5b83a9cfc7e9dd8ed1c36832b7e47dc71f2a835",
+  "roundtrip": [
+    {
+      "depth": 6,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 12,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 18,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 24,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    }
+  ],
+  "scope": "Exact serialization of existing seed-17 heads, not new training or validation."
+}

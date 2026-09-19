@@ -1,0 +1,49 @@
+{
+  "completed_utc": "2026-09-19T20:44:50.543748+00:00",
+  "status": "passed",
+  "queries": 24,
+  "forward_passes": 48,
+  "all_predictions_and_depths_match": true,
+  "early_exit_counts": {
+    "12": 8,
+    "24": 16
+  },
+  "all_execution_traces_contiguous": true,
+  "portable_head_roundtrip": [
+    {
+      "depth": 6,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 12,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 18,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 24,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    }
+  ],
+  "artifact_summary_checks_passed": 5,
+  "hashes": {
+    "protocol.json": "9e8e7c02eb8d3e4ba38329a3df1510cd13da17b5ef1e00efef4c61d150b40bde",
+    "predictions.json": "4f29d32debd11084f504e24c9c68b32b510442d5aac54db387f897a2d6c9ec55",
+    "artifact-checks.json": "7ded84e32b65bbe72d02da1cbd22a2c565e3f4fe443fe0263f730f9b89d2c447",
+    "environment.json": "4addaa8cae5d3e5d21250894e3896a3fb8447988b488f5ce8696cadb630482e4"
+  },
+  "verdict": "A separate implementation reproduced saved outputs and genuine conditional block execution on 24 predetermined examples.",
+  "limits": [
+    "Reviewer shares the same machine, model, source dataset and trained heads; not external independent replication.",
+    "These are previously evaluated examples, not new evidence of out-of-distribution accuracy or guard acceptance.",
+    "Only 24 queries are rerun. Original full-dataset execution was not independently repeated.",
+    "Diagnostic durations overlap other work, lack a timing design, and must not support a speed claim.",
+    "Portable arrays and checksums improve inspection, not model quality or statistical reliability."
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "seed": 17,
+  "protocol_hash": "a19b4dc8a3cfc36579770e96314fc8db2796ee1f255c1427f241ffbc63958cfc",
+  "policy": {
+    "threshold": 0.95,
+    "agreement": false,
+    "minimum": 12,
+    "tune": {
+      "accuracy": 0.8412438631057739,
+      "correct": 514,
+      "count": 611,
+      "accuracy_ci95": [
+        0.8101462712946663,
+        0.8680771930903068
+      ],
+      "mean_depth": 22.212766647338867,
+      "blocks_skipped_fraction": 0.07446808367967606,
+      "exit_counts": {
+        "12": 73,
+        "24": 502,
+        "18": 36
+      },
+      "harmful_exits": 0,
+      "corrected_full_errors": 0,
+      "accuracy_delta_vs_full": 0.0,
+      "harm_rate_upper95": 0.00440931796294488
+    }
+  },
+  "results": {
+    "calibration": {
+      "full": {
+        "accuracy": 0.8261455297470093,
+        "correct": 613,
+        "count": 742,
+        "accuracy_ci95": [
+          0.7972147865004096,
+          0.851716568360998
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 742
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.003633682163374467
+      },
+      "candidate": {
+        "accuracy": 0.8234501481056213,
+        "correct": 611,
+        "count": 742,
+        "accuracy_ci95": [
+          0.7943691266862873,
+          0.8491991591266788
+        ],
+        "mean_depth": 22.309972763061523,
+        "blocks_skipped_fraction": 0.07041779160499573,
+        "exit_counts": {
+          "24": 614,
+          "12": 81,
+          "18": 47
+        },
+        "harmful_exits": 3,
+        "corrected_full_errors": 1,
+        "accuracy_delta_vs_full": -0.002695417730137706,
+        "harm_rate_upper95": 0.010073725372882557
+      }
+    },
+    "test": {
+      "full": {
+        "accuracy": 0.827260434627533,
+        "correct": 613,
+        "count": 741,
+        "accuracy_ci95": [
+          0.7983719533550888,
+          0.8527732028767867
+        ],
+        "mean_depth": 24.0,
+        "blocks_skipped_fraction": 0.0,
+        "exit_counts": {
+          "24": 741
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 0,
+        "accuracy_delta_vs_full": 0.0,
+        "harm_rate_upper95": 0.0036385680753359497
+      },
+      "candidate": {
+        "accuracy": 0.829959511756897,
+        "correct": 615,
+        "count": 741,
+        "accuracy_ci95": [
+          0.8012249135466069,
+          0.8552905120150157
+        ],
+        "mean_depth": 22.153846740722656,
+        "blocks_skipped_fraction": 0.07692307978868484,
+        "exit_counts": {
+          "24": 608,
+          "18": 38,
+          "12": 95
+        },
+        "harmful_exits": 0,
+        "corrected_full_errors": 2,
+        "accuracy_delta_vs_full": 0.00269905524328351,
+        "harm_rate_upper95": 0.0036385680753359497
+      }
+    }
+  },
+  "guard_passed": false,
+  "timing": {
+    "full_head": {
+      "model_ms": {
+        "mean": 243.5325619780997,
+        "p50": 241.11715002800338,
+        "p95": 272.77760997531004
+      },
+      "end_to_end_ms": {
+        "mean": 244.13225468742894,
+        "p50": 241.66700002388097,
+        "p95": 273.60594499332365
+      }
+    },
+    "candidate_early_exit": {
+      "model_ms": {
+        "mean": 230.53467135074848,
+        "p50": 239.3080000183545,
+        "p95": 276.02156498178374
+      },
+      "end_to_end_ms": {
+        "mean": 231.12433228804244,
+        "p50": 239.95310001191683,
+        "p95": 276.56686500413343
+      }
+    }
+  },
+  "limitations": [
+    "Gate design changed after seeing first official-test results. Fresh reserves are disjoint from that run, but still the same public dataset.",
+    "Small original training classes may have no unused reserve; exact per-split class coverage is recorded.",
+    "One trained-head seed; no new backbone/head training. Depth metrics use cached full passes; only the optional timed runtime actually skips blocks.",
+    "Unknown pretraining or paraphrase overlap remains. Calibration is not a production safety guarantee."
+  ]
+}

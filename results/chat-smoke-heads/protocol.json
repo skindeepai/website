@@ -1,0 +1,16 @@
+{
+  "type": "Exploratory reuse, not confirmatory evaluation",
+  "shared_protocol_sha256": "3140f19a3634343d06b249e8f52b6f80e03b7469636056f0a7c747b735f2dc64",
+  "script_sha256": "b26a3f8e80909d15d95a667c305c86bd51c3239ee5b48b24df2bf18b952cda9c",
+  "split_sizes": {
+    "train": 384,
+    "tune": 128,
+    "calibration": 128,
+    "evaluation": 100
+  },
+  "training": "Train-only standardized heads. Linear 300 steps lr .01; MLP64 GELU dropout .25 200 steps lr .002. AdamW weight_decay .1, inverse-frequency class weights. Seed109.",
+  "calibration": "Temperature grid fit on tune; the same split trains logistic error/benefit gates. This reuse may overfit development; threshold selection and evaluation are disjoint.",
+  "selection": "Select minimum mean depth with <=1% added errors and zero additional toxic misses on calibration. Independent harms, no net-error cancellation. No inferential confidence guarantee.",
+  "review": "Full-depth abstention thresholds select covered accuracy >=95% and coverage >=20%; if none, REVIEW all. Reviewed cases never counted as correct.",
+  "execution": "Two CPU threads; cached hidden states. Report projected blocks only, no latency claim; thresholds/gate overhead and real stopped forwards unmeasured."
+}

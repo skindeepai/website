@@ -3,6 +3,10 @@
 Architecture and pretrained weights: https://github.com/microsoft/GUI-Actor
 This small, original inference adapter uses the published pointer architecture.
 Fixtures are our own screenshots, not a benchmark. Prompt differs from upstream.
+
+Historical reproduction: this runtime did not apply the legacy max_pixels option
+to the saved processor size mapping. Actual grids are retained in predictions.
+Use screenspot.py for the corrected, explicitly asserted visual-token cap.
 """
 import os
 os.environ.setdefault('OMP_NUM_THREADS','8')
@@ -88,7 +92,7 @@ def main():
             traces.append({**row,'x':x,'y':y,'patch_probability':float(p.max()),'hit':hit,'no_target_supported':False,'patch_grid':[width,height],'timing_ms':timings,'components_ms':parts['direct']})
             print(f'{row["id"]}: ({x:.3f}, {y:.3f}) hit={hit}; {timings}',flush=True)
     target=[r for r in traces if r['box'] is not None]
-    payload={'experiment_ids':['C01','C02'],'status':'reproduction pilot','model':MODEL,'revision':REVISION,'torch':torch.__version__,'transformers':__import__('transformers').__version__,'hardware':platform.processor(),'threads':threads,'dtype':'float32','fixture_hash':hashlib.sha256(json.dumps(fixtures,sort_keys=True).encode()).hexdigest(),'target_count':len(target),'hits':sum(r['hit'] for r in target),'absent_targets':len(traces)-len(target),'timing_ms':{k:{'p50':float(np.median([r['timing_ms'][k] for r in traces])),'p95':float(np.percentile([r['timing_ms'][k] for r in traces],95)),'samples':len(traces)} for k in ['direct','with_vocabulary']},'limitations':['Eight fixtures from one locally authored interface at two viewports; not a GUI benchmark.','Pretrained GUI-Actor pointer weights; no new head was trained. Custom shortened prompt and capped image resolution.','Always chooses a visual patch; absent targets cannot be rejected. Patch probability is not calibrated correctness.','Both paths use the same pointer head. The paired vocabulary projection only isolates output-head overhead; it is not a text/JSON baseline.','CPU batch one, warm model. Timings exclude preprocessing/loading; eight samples are too few for stable tail latency.','All transformer layers run. Coordinate early exit and end-to-end task execution are not tested.']}
+    payload={'experiment_ids':['C01','C02'],'status':'reproduction pilot','model':MODEL,'revision':REVISION,'torch':torch.__version__,'transformers':__import__('transformers').__version__,'hardware':platform.processor(),'threads':threads,'dtype':'float32','fixture_hash':hashlib.sha256(json.dumps(fixtures,sort_keys=True).encode()).hexdigest(),'target_count':len(target),'hits':sum(r['hit'] for r in target),'absent_targets':len(traces)-len(target),'timing_ms':{k:{'p50':float(np.median([r['timing_ms'][k] for r in traces])),'p95':float(np.percentile([r['timing_ms'][k] for r in traces],95)),'samples':len(traces)} for k in ['direct','with_vocabulary']},'limitations':['Eight fixtures from one locally authored interface at two viewports; not a GUI benchmark.','Pretrained GUI-Actor pointer weights; no new head was trained. Custom shortened prompt. Historical processor configuration did not enforce the intended 576-patch cap; actual grids are recorded in predictions.','Always chooses a visual patch; absent targets cannot be rejected. Patch probability is not calibrated correctness.','Both paths use the same pointer head. The paired vocabulary projection only isolates output-head overhead; it is not a text/JSON baseline.','CPU batch one, warm model. Timings exclude preprocessing/loading; eight samples are too few for stable tail latency.','All transformer layers run. Coordinate early exit and end-to-end task execution are not tested.']}
     out=ROOT/'results/coordinates';out.mkdir(parents=True,exist_ok=True)
     (out/'result.json').write_text(json.dumps(payload,indent=2),encoding='utf-8')
     (out/'predictions.json').write_text(json.dumps(traces,indent=2),encoding='utf-8')

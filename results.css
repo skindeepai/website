@@ -1,0 +1,15 @@
+/* Scoped to the focused research pages; the lab navigation and theme stay intact. */
+.method-figure{margin:20px 0 24px;padding:16px;max-width:620px;border:1px solid var(--line);border-radius:6px;background:white}
+.method-figure figcaption{font-size:.875rem;color:var(--muted);line-height:1.5;margin-top:12px}
+.method-flow{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:0}
+.method-flow li{position:relative;align-content:center;margin:0;padding:10px;border:1px solid #718198;border-radius:4px;background:#f4f7fb;font-size:.9rem;line-height:1.5;text-align:center}
+.method-flow li+li::before{content:'→';position:absolute;left:-21px;top:calc(50% - 12px);color:#263b57}
+.study-sample{font-size:.9rem;color:var(--muted);max-width:730px;padding-left:12px;border-left:2px solid #718198}
+.layer-row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:.9rem;margin:0 0 16px}
+.layer-row:last-of-type{margin-bottom:0}.layer-row>span:first-child{grid-column:1}.layer-row>strong{grid-column:2;grid-row:auto;font-size:.85rem;font-weight:500}
+.layer-row .processing-steps{grid-column:1/-1;grid-row:auto;order:3}.layer-row .processing-steps i{height:17px}
+.rating-example{display:flex;gap:40px;justify-content:center}.rating-example>div{display:grid;justify-items:center;font-size:.9rem}.rating-example strong{margin-top:4px}.rating-example span{color:var(--muted)}
+.table-scroll table{overflow-wrap:normal;word-break:normal}.table-scroll th,.table-scroll td{padding:.7rem .65rem}.table-scroll td{white-space:nowrap}
+.maze-example{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center;max-width:340px}.maze-example>strong{text-align:center;font-size:.75rem}.mini-maze{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}.maze-cell{aspect-ratio:1;display:grid;place-items:center;border:1px solid #718198;font-size:.85rem}.maze-cell.wall{background:#263b57;color:white}.maze-cell.player{background:#d9e7fa;color:#182438;font-weight:bold}.maze-cell.goal{border:2px solid #263b57;font-weight:bold}
+@media(max-width:520px){.method-flow{grid-template-columns:1fr;gap:22px}.method-flow li+li::before{content:'↓';top:-23px;left:calc(50% - 6px)}.method-figure{padding:12px}.layer-row{gap:6px}.layer-row>strong{grid-column:1/-1}.rating-example{gap:28px}}
+@media(forced-colors:active){.method-flow li,.method-figure{border-color:CanvasText}}

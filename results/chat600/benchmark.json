@@ -1,0 +1,53 @@
+{
+  "completed_utc": "2026-09-19T22:15:59.925119+00:00",
+  "paths": {
+    "trained_full_enum": {
+      "total_seconds_each_pass": [
+        228.9262157000485,
+        239.73369099997217,
+        237.21910530002788
+      ],
+      "median_total_seconds": 237.21910530002788,
+      "mean_message_ms": 392.1110708332465,
+      "p95_message_ms": 900.0384150014723
+    },
+    "trained_full_token": {
+      "total_seconds_each_pass": [
+        235.34446479997132,
+        230.6526187999989,
+        231.83530019997852
+      ],
+      "median_total_seconds": 231.83530019997852,
+      "mean_message_ms": 387.6439253330722,
+      "p95_message_ms": 904.3086050020065
+    },
+    "early_candidate": {
+      "total_seconds_each_pass": [
+        117.04067209997447,
+        114.30735250003636,
+        121.23031800001627
+      ],
+      "median_total_seconds": 117.04067209997447,
+      "mean_message_ms": 195.83260649931617,
+      "p95_message_ms": 461.5422000206308
+    },
+    "zero_shot_lm_token": {
+      "total_seconds_each_pass": [
+        234.47752800001763,
+        230.31634109996958,
+        236.79661150003085
+      ],
+      "median_total_seconds": 234.47752800001763,
+      "mean_message_ms": 389.7304118898076,
+      "p95_message_ms": 915.7407750113634
+    }
+  },
+  "relative_mean_saving_vs_trained_token": 0.49481316821603105,
+  "paired_query_bootstrap95": [
+    0.49321374510838734,
+    0.496470636873515
+  ],
+  "guard_passed": false,
+  "actual_forward_passes": 7200,
+  "limits": "Warm single-machine sequential workload; three passes in one process, not independent hardware replication. Full/earlytrained rows equallysupervised; zero-shotLMnottrained on task. No batching or streamingqueue measurement."
+}

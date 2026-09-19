@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
+<title id="title">Where the 600-message Qwen test stopped</title><desc id="desc">The message passes through layers 1 to 12 of Qwen. A linear classifier reads 896 internal numbers and returns SAFE or BLOCK. Layers 13 to 24 are skipped. The selected rule stops every message at layer 12; it does not detect readiness per message.</desc>
+<g font-family="system-ui,sans-serif" font-size="15" fill="#182438">
+<text x="0" y="18" font-weight="600">Qwen 0.5B · 24 transformer layers</text>
+<rect x="0" y="34" width="78" height="36" rx="4" fill="#315d8e"/>
+<text x="39" y="57" text-anchor="middle" fill="white">1–6</text>
+<rect x="94" y="34" width="78" height="36" rx="4" fill="#315d8e"/>
+<g fill="white" stroke="#596b80" stroke-dasharray="4 3"><rect x="188" y="34" width="78" height="36" rx="4"/><rect x="282" y="34" width="78" height="36" rx="4"/></g>
+<text x="133" y="57" text-anchor="middle" fill="white">7–12</text><text x="227" y="57" text-anchor="middle">13–18</text><text x="321" y="57" text-anchor="middle">19–24</text>
+<text x="274" y="93" text-anchor="middle" fill="#43536a">12 layers skipped</text>
+<path d="M133 70v32m-5-6 5 6 5-6" fill="none" stroke="#315d8e" stroke-width="2"/>
+<rect x="0" y="110" width="360" height="34" rx="4" fill="#edf2f8" stroke="#718198"/>
+<text x="180" y="132" text-anchor="middle">896 numbers → classifier → SAFE/BLOCK</text>
+<text x="0" y="169" fill="#43536a">This test always stopped at layer 12.</text>
+</g></svg>

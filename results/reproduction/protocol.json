@@ -1,0 +1,47 @@
+{
+  "scope": "Same-machine, separate-agent implementation replay. No original experiment imports or feature caches.",
+  "selection": "First 24 official test IDs sorted by SHA256 of reviewer-replay-v1: plus the ID; no outcome-dependent selection.",
+  "ids": [
+    "test:1985",
+    "test:2616",
+    "test:2383",
+    "test:790",
+    "test:722",
+    "test:2500",
+    "test:317",
+    "test:869",
+    "test:2547",
+    "test:2487",
+    "test:2806",
+    "test:2275",
+    "test:2546",
+    "test:2359",
+    "test:633",
+    "test:2843",
+    "test:413",
+    "test:883",
+    "test:2134",
+    "test:2289",
+    "test:2927",
+    "test:530",
+    "test:1039",
+    "test:1894"
+  ],
+  "policy": {
+    "threshold": 0.7,
+    "agreement": true,
+    "minimum": 6
+  },
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "threads_max": 4,
+  "implementation_sha256": "b0a42b94bad3bbbafbe86d096123f188abf82d25daeef8dc5b14d73dc47993c4",
+  "heads_sha256": "604be1252fd55c0b302af2ad4e769b5f76ee005db6c8f8bce9a0378d36483418",
+  "references_sha256": {
+    "predictions.json": "fb854ba3c770fa912e2c4ec8e0e70bb2cfe5d2c34c14726b306c0d376281cefd",
+    "result.json": "2908d75ee0f5b9589c3f4dfd5a176418eb0a947d0f0905ea00c3887a0eef13ec",
+    "data-manifest.json": "47cff903de4853f14d8f1d17d1950be84beafecca8d76a954d4d121dc0f7d4db"
+  },
+  "written_before_replay_utc": "2026-09-19T20:44:26.990573+00:00",
+  "limitations": "Local protocol is overwritten by rerunning this script; not immutable external preregistration."
+}

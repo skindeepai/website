@@ -32,9 +32,8 @@ const server=http.createServer((req,res)=>{
         await page.locator('#research-filter').selectOption('coordinates');assert.equal(await page.locator('.experiment:visible').count(),4);
         await page.locator('#research-search').fill('early exits');assert.equal(await page.locator('.experiment:visible').count(),1);
         await page.goto(origin+'/demo.html');const initial=await page.locator('#card-art').innerHTML();
-        await page.locator('#generate > summary').click();
-        assert(!(await page.locator('#realism').isVisible()),'Locked controls must not be reachable');
-        await page.locator('#generate > summary').click();
+        assert(!(await page.locator('#generate').isVisible()),'Suggestion sections wait for useful ratings');
+        assert(!(await page.locator('#realism').isVisible()),'Unready controls must not be reachable');
         await page.locator('.lab-header .wordmark').focus();await page.keyboard.press('s');
         assert.equal(await page.locator('#card-art').innerHTML(),initial,'Rating shortcuts must stay inside the rating component');
         await page.locator('#card').focus();await page.keyboard.press('ArrowRight');
@@ -43,6 +42,7 @@ const server=http.createServer((req,res)=>{
         await page.locator('#like-btn').click();await page.locator('#undo-btn').click();assert.equal(await page.locator('#stat-n').textContent(),'0');
         assert(await page.locator('#undo-btn').isDisabled());await page.locator('#reset-btn').click();assert.equal(await page.locator('#card-art').innerHTML(),initial);
         for(let i=0;i<12;i++)await page.locator(i%2?'#like-btn':'#pass-btn').click();
+        assert(await page.locator('#generate').isVisible(),'Suggestions appear when the existing training requirement is met');
         assert.equal(await page.locator('#stat-n').textContent(),'12');assert((await page.locator('#transform-status').textContent()).length>10);
         await page.locator('#transform > summary').click();
         for(const width of [320,390,768,1024,1440]){

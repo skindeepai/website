@@ -1,0 +1,28 @@
+{
+  "n": 100,
+  "repetitions": 1,
+  "actual_calls": 300,
+  "totals": [
+    {
+      "path": "specialist",
+      "repetition": 0,
+      "seconds": 0.30979009973816574
+    },
+    {
+      "path": "cascade",
+      "repetition": 0,
+      "seconds": 32.45808210008545
+    },
+    {
+      "path": "full_qwen_reference",
+      "repetition": 0,
+      "seconds": 64.75267980014905
+    }
+  ],
+  "total_seconds": {
+    "specialist": 0.30979009973816574,
+    "cascade": 32.45808210008545,
+    "full_qwen_reference": 64.75267980014905
+  },
+  "note": "Exploratory same-machine timing. Totals sum measured per-request durations, not one whole-corpus wall timer. Single interleaved pass; no repeated-run uncertainty estimate. Loading/training excluded; actual fallback work included."
+}

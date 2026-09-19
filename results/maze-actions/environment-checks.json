@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "Shortest-path tie accepts both moves",
+    "No boundary wrap",
+    "Wall collision stays in place",
+    "Required detour",
+    "BFS distances agree with independent all-pairs relaxation"
+  ]
+}

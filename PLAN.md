@@ -1,14 +1,16 @@
 # SkinDeep documentation, demonstrations, and validation plan
 
-Updated 2026-09-19. Status: site implementation and first local pilots completed; broader research protocols remain open.
+Updated 2026-09-19. Status: approved site checkpoint pushed as 3881aff; public-data follow-ups added locally. Preserve the approved UI, styling and navigation. New research belongs in linked reference notes, with concise measured updates on existing pages.
 
-Implemented: research-lab sidebar and 28 current pages; preserved 21 historical pages; corrected bounded math and small-batch example; seeded browser sessions, blind evaluation and annotation workbench; 29-entry research register; measured synthetic, Qwen decision and pretrained GUI-Actor coordinate pilots. Results and limitations are in `results.html` and `results/`.
+The follow-up covers BANKING77 (3,080 official test queries, three head seeds), a stricter gate on 742 fresh calibration / 741 fresh test queries, 30 public ScreenSpot examples, and an actual optional browser Qwen output-format benchmark. Adversarial-review work adds separate implementation replays, a published dependency release, a 30-intent CLINC subset with out-of-scope evaluation, a 31-output UNKNOWN variant, changing-rule pairs, and a matched one-token control. All tested early-exit calibration gates still fail. The changing-rule test also fails its preset criterion. See the measured reports in README.md and docs/evidence-acceptance.md.
+
+Implemented: research-lab sidebar and 29 current pages; preserved 21 historical pages; corrected bounded math and small-batch example; seeded browser sessions, blind evaluation and annotation workbench; 29-entry research register; measured synthetic, Qwen decision and pretrained GUI-Actor coordinate pilots. Results and limitations are in `results.html` and `results/`.
 
 The Qwen exit gate missed the proposed quality tolerance. Coordinate reproduction has no absent-target rejection. Human studies, real generators, model transfer, accelerator/cascade comparisons and domain applications require further work and are not marked complete.
 
 The immediate goal is to make the existing work accurate and reproducible. The next goal is to test whether small task heads attached to pretrained representations can deliver useful preferences, decisions, and coordinates with less computation.
 
-This plan covers the current static HTML/CSS/JavaScript site, its Python examples, and separate model experiments. It preserves the historical record and existing URLs. The responsive-layout changes already in the working tree are separate completed work; they do not establish the scientific claims below. The subsequent implementation trained small Qwen readout heads locally and ran a pretrained coordinate model. No deployment, account changes or publication was performed.
+This plan covers the current static HTML/CSS/JavaScript site, its Python examples, and separate model experiments. It preserves the historical record and existing URLs. The responsive-layout changes already in the working tree are separate completed work; they do not establish the scientific claims below. The subsequent implementation trained small Qwen readout heads locally and ran a pretrained coordinate model. The approved site checkpoint was committed and pushed at Steve's request. These follow-up experiments remain local; no hosting or account changes were performed.
 
 ## 1. Product and research framing
 
@@ -55,7 +57,7 @@ These findings come from the local source, not model benchmarks:
 - The multimodal-preferences page attributes multiple preference modes to randomized search through a single linear-plus-sigmoid classifier. Over a convex box, that classifier cannot represent disconnected high-preference regions; variation along an acceptable-score set is a different property.
 - Some pages contain numerical performance/efficiency claims without a reproducible experiment attached. Historical filing language and current legal-status language are inconsistent; reconcile them with the records instead of inferring status.
 
-Additional suspected example-code issues should be reproduced before being described as confirmed runtime failures. None of the new model architectures has been implemented in this repository.
+Additional suspected example-code issues should be reproduced before being described as confirmed runtime failures. That was the initial inventory; the current implementations and their measured limits are linked above.
 
 ## 4. Documentation rules
 
@@ -162,3 +164,27 @@ A documentation phase is complete when terminology, provenance, links, examples,
 Work directly on the existing branch unless Steve requests another. Preserve unrelated edits. Explicitly limit launched CPU workers to at most half the available logical processors across concurrent work. Do not access Cloudflare, deploy, purchase compute, or send/recruit participants as part of this plan. Those actions are not needed for the initial local validation.
 
 The detailed experiments, comparison methods, and decision gates are in [EXPERIMENTS.md](EXPERIMENTS.md).
+
+## Practical workload findings and the next iteration
+
+The requested workload tests are implemented: [600 real archived chat messages](docs/chat600-results.md) and [closed-loop maze actions](docs/maze-actions.md). The separate [chat review](docs/chat600-review.md) checks the evidence. Shared styling remains unchanged; the maze is a clearly labeled recorded replay.
+
+The current chat candidate always exits at layer 12. It gets 519/600 labels right versus 522/600 at full depth, while missed toxic messages rise from 19 to 26. Both calibration variants reject it, and the full-depth model misses its own quality minimums. The maze policies both reach 0/10 goals. These are completed negative results, not a passing validation phase.
+
+The next study should address those specific failures in this order:
+
+1. **Improve the task model first.** On development data, compare the current frozen linear readout with a small nonlinear readout and task adaptation of the representation. Retain the cheap lexical baseline and an equally supervised one-token output. Select using toxic recall and false blocks together; overall accuracy alone can reward always returning SAFE.
+2. **Train an error predictor, separately from the answer classifier.** Use out-of-fold development predictions to label when an intermediate answer is wrong, when it adds a toxic miss, and when more layers correct it. Give the gate intermediate representations and checkpoint changes available at that depth. Evaluate fixed layers 6/12/18 alongside it; a constant-depth policy must not be described as readiness detection.
+3. **Permit a useful third result.** Add REVIEW as a control decision, not a new source toxicity label. Measure error among automatic decisions, review load, toxic recall and processing time including fallback. Review cannot silently count as a correct SAFE/BLOCK answer.
+4. **Register fresh evaluation before selection.** Existing 600-message outcomes are now development knowledge. Keep them as a named regression set, then seal new disjoint calibration and test IDs from unused source rows, including effective-input deduplication after clipping. Fix quality tolerances and gate-selection rules before inference. Retain full-message and clipped-input results separately.
+5. **Measure the accepted policy.** Only after quality passes, repeat isolated full-workload timing, balance every path across order positions, and report every complete pass. Include the rejected-candidate result too. A second runtime or machine is a separate replication, not something a query bootstrap substitutes for.
+
+For mazes, first establish successful full-depth goal completion on new layouts. A legal-action mask may be a separately named system variant, but cannot be silently applied to the recorded model-only failures. Continue reporting collisions, loops, reached goals and a shortest-path reference. Larger games or visual observations should wait until the simple action task works.
+
+These follow-ups are a plan, not experiments claimed to have run. No target score of 10 overrides a failed criterion, and no evaluated dataset is recycled as an untouched test.
+
+## Exploration completed on smaller samples
+
+At Steve's request, the next ideas were tried with 100 previously inspected balanced messages and 50-message adapter timing samples. This is a deliberately smaller exploration phase before fresh confirmation. [All outcomes](docs/chat-smoke-results.md) and the [adversarial review](docs/chat-smoke-review.md) include negative results, matched initialization controls and the separately recorded shorter-warm-up repair. Earlier untouched-data requirements still apply to validation; these reused samples cannot satisfy them.
+
+The learned gate is the clearest follow-up candidate: different messages stop at blocks 6, 12, 18 or 24, with 33.8% measured time saving in one paired run. Distillation improved the final-layer score but did not improve early-layer accuracy. Next freeze a small candidate set, then evaluate unused messages, new toxic misses, false blocks and repeated isolated runtime. Do not continue selecting on the same 100 examples.

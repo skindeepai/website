@@ -1,0 +1,6170 @@
+{
+  "original_states_unmasked": {
+    "calibration": [
+      {
+        "id": "calibration:0:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:10",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:1:3",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:1:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:7",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:2",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:2:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:3",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:7",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:12",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:4:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:10",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:5:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:2",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:1",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:2",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:5",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:2",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:3",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:9:10",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:9:7",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:9:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:0",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:10:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:1",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:11:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:14",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:0",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:14:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ],
+    "test": [
+      {
+        "id": "test:0:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:9",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:1:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:1:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:2",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:1",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:4",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:13",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:11",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:3",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:3:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:1",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:7",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:5:4",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:5:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:6:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:6:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:13",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:11",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:7:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:15",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:4",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:9:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:10:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:4",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:10:15",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:10:7",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:10:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:7",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:10",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:11:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:12:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:12:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:7",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:13:1",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:13:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:13:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:10",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:7",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:15:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:15:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ]
+  },
+  "original_states_masked": {
+    "calibration": [
+      {
+        "id": "calibration:0:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:7",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:3",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:7",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:2",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:1",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:2",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:5",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:2",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:7",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:14",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ],
+    "test": [
+      {
+        "id": "test:0:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:1:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:2",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:4",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:13",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:11",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:3:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:4",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:5:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:13",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:11",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:15",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:6",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:10:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:7",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:10:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:7",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:10",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:9",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:10",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ]
+  },
+  "all_train_goal_pairs_unmasked": {
+    "calibration": [
+      {
+        "id": "calibration:0:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:14",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:11",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:1",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:2",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:5",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:7",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:9:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:0",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "calibration:10:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      }
+    ],
+    "test": [
+      {
+        "id": "test:0:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:9",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:9",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:3:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:1",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:4:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:14",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:11",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:7:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:15",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:4",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:10",
+        "prediction": 2,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:11:15",
+        "prediction": 3,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:12:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:12:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:9",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:13:8",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:12",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:11",
+        "prediction": 0,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:14:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": false
+      },
+      {
+        "id": "test:15:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ]
+  },
+  "all_train_goal_pairs_masked": {
+    "calibration": [
+      {
+        "id": "calibration:0:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:1:14",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:2:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:3:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:4:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:5:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:6:11",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:1",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:10",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:2",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "calibration:7:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:5",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:8:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:10",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:9:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:5",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:10:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:11:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:13:7",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:14:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "calibration:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      }
+    ],
+    "test": [
+      {
+        "id": "test:0:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:9",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:0:13",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:9",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:1:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:2:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:13",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:9",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:3",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:3:1",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:4:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:4:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:4",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:5:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:14",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:10",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:6:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:11",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:8",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:7:15",
+        "prediction": 0,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:7:6",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:11",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:13",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:6",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:8:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:2",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:14",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:6",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:9:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:6",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:4",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:15",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:10:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:0",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:5",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:11:4",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:6",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:10",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:11:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:4",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:12:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:12:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:1",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:9",
+        "prediction": 2,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:8",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:7",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:2",
+        "prediction": 2,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:13:12",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:13:3",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:11",
+        "prediction": 3,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:0",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:12",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:9",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:5",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:14:10",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:7",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:8",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:10",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:15",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:5",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:9",
+        "prediction": 1,
+        "optimal": false,
+        "legal": true
+      },
+      {
+        "id": "test:15:12",
+        "prediction": 1,
+        "optimal": true,
+        "legal": true
+      },
+      {
+        "id": "test:15:14",
+        "prediction": 0,
+        "optimal": true,
+        "legal": true
+      }
+    ]
+  }
+}

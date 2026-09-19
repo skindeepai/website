@@ -1,0 +1,1018 @@
+{
+  "protocol_sha256": "beb4ff4ef18415fb7858a8015c4ec5b120517213590e4290134a14510093265b",
+  "inputs": {
+    "variant": "fixed12",
+    "training_protocol_sha256": "2ce30a86aa4bf4748aca76d0fddfe924a382cc8e3f0cc33db819733441c0b7d5",
+    "weights_sha256": "0646a3259b229566b85c07ec725efd453fc82fcc54112e59e4ea6dffacc82b11",
+    "result_sha256": "c804fd8a50570c31ac6875a6b5ea28163359cd86feaefcc53ac1e2eefb893cb5"
+  },
+  "n": 50,
+  "retained_blocks": 12,
+  "executed_readout_depth": 12,
+  "seconds": 16.73182249988895,
+  "correct": 31,
+  "toxic": 24,
+  "parity_passed": true,
+  "records": [
+    {
+      "id": "test:1227",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.16060860001016408
+    },
+    {
+      "id": "test:151",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.18382839998230338
+    },
+    {
+      "id": "test:937",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.4126080999849364
+    },
+    {
+      "id": "test:276",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.24267979996511713
+    },
+    {
+      "id": "test:4767",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.8830941000487655
+    },
+    {
+      "id": "test:4411",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.20558359997812659
+    },
+    {
+      "id": "test:390",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.214834000042174
+    },
+    {
+      "id": "test:556",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.20741949998773634
+    },
+    {
+      "id": "test:1277",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.3185980999842286
+    },
+    {
+      "id": "test:143",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.29446419997839257
+    },
+    {
+      "id": "test:3970",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.8029108999762684
+    },
+    {
+      "id": "test:1298",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.22575400001369417
+    },
+    {
+      "id": "test:3994",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.20387929998105392
+    },
+    {
+      "id": "test:4858",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.5181564000085928
+    },
+    {
+      "id": "test:5064",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2287101999972947
+    },
+    {
+      "id": "test:4506",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.1896466999896802
+    },
+    {
+      "id": "test:444",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.6941411000443622
+    },
+    {
+      "id": "test:1008",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2337415000074543
+    },
+    {
+      "id": "test:1166",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.7726865999866277
+    },
+    {
+      "id": "test:96",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.867139500041958
+    },
+    {
+      "id": "test:84",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.25950649997685105
+    },
+    {
+      "id": "test:4520",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.251529999950435
+    },
+    {
+      "id": "test:4407",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2871154999593273
+    },
+    {
+      "id": "test:4512",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.22240589995635673
+    },
+    {
+      "id": "test:3767",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.25282259995583445
+    },
+    {
+      "id": "test:1027",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2564131999970414
+    },
+    {
+      "id": "test:4107",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2075100999791175
+    },
+    {
+      "id": "test:1060",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.366452099988237
+    },
+    {
+      "id": "test:74",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.42273729998851195
+    },
+    {
+      "id": "test:931",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.7494164999807253
+    },
+    {
+      "id": "test:4",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.25113389996113256
+    },
+    {
+      "id": "test:2",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.20979489997262135
+    },
+    {
+      "id": "test:4989",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21139430004404858
+    },
+    {
+      "id": "test:651",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2965304999961518
+    },
+    {
+      "id": "test:254",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.22060330002568662
+    },
+    {
+      "id": "test:1186",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.3064110000268556
+    },
+    {
+      "id": "test:1055",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21434810000937432
+    },
+    {
+      "id": "test:4956",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.20010550000006333
+    },
+    {
+      "id": "test:206",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.23928629996953532
+    },
+    {
+      "id": "test:677",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2355524000013247
+    },
+    {
+      "id": "test:142",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.6969217999721877
+    },
+    {
+      "id": "test:961",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.5994579000398517
+    },
+    {
+      "id": "test:3949",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.23879570001736283
+    },
+    {
+      "id": "test:960",
+      "label": 1,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.32207260001450777
+    },
+    {
+      "id": "test:1312",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.22365010000066832
+    },
+    {
+      "id": "test:282",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21335470001213253
+    },
+    {
+      "id": "test:485",
+      "label": 0,
+      "prediction": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2650842000148259
+    },
+    {
+      "id": "test:4582",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21604180004214868
+    },
+    {
+      "id": "test:3929",
+      "label": 0,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21835700003430247
+    },
+    {
+      "id": "test:5076",
+      "label": 1,
+      "prediction": 0,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.21653219999279827
+    }
+  ]
+}

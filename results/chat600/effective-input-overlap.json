@@ -1,0 +1,43 @@
+{
+  "method": "Exact rendered-message hash after declared256-token clipping. Diagnostic sensitivity check; original600 workload unchanged.",
+  "cross_split": {
+    "train/tune": [],
+    "train/calibration": [
+      {
+        "left_ids": [
+          "train:169"
+        ],
+        "right_ids": [
+          "train:295"
+        ]
+      },
+      {
+        "left_ids": [
+          "train:148"
+        ],
+        "right_ids": [
+          "train:230"
+        ]
+      }
+    ],
+    "train/test": [],
+    "tune/calibration": [
+      {
+        "left_ids": [
+          "train:1056"
+        ],
+        "right_ids": [
+          "train:4146"
+        ]
+      }
+    ],
+    "tune/test": [],
+    "calibration/test": []
+  },
+  "within_split_duplicate_groups": {
+    "train": [],
+    "tune": [],
+    "calibration": [],
+    "test": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "queries": 600,
+  "accuracy_delta": -0.005,
+  "paired_query_bootstrap95": [
+    -0.03666666666666667,
+    0.028333333333333332
+  ],
+  "scope": "Describes this fixed human-annotated sample and its labels; does not include annotation uncertainty or user/session clustering."
+}

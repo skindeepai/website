@@ -1,0 +1,7402 @@
+[
+  {
+    "id": "train:1319",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09513949602842331,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:88",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8705008029937744,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:816",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.7791158556938171,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4596",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08667244762182236,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:332",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.017555272206664085,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4894",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.021102415397763252,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1203",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8871457576751709,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4876",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009706082753837109,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3724",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02442002110183239,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:150",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9657896161079407,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1216",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.4753094017505646,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1077",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006905832793563604,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1154",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.3103148341178894,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1261",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.342621773481369,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:553",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8392553925514221,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:89",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.88654625415802,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:145",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.963856041431427,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4635",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.057671282440423965,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3946",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.38261473178863525,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:644",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008192774839699268,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:141",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5037220120429993,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4164",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.017317427322268486,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3911",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007152974605560303,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:172",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7036712169647217,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:188",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8894517421722412,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4007",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06160656735301018,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:461",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.00808465015143156,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:547",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.060760125517845154,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:847",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.017260942608118057,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:902",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02128930576145649,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:301",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9698493480682373,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4382",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007862666621804237,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4929",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.07632917910814285,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4866",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006019597873091698,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:546",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.4413299858570099,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4211",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04221763461828232,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:354",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.967923104763031,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3989",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.867280900478363,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:2520",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8748742341995239,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4221",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08550797402858734,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4503",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008491471409797668,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4240",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.4025897979736328,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4765",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7635083198547363,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1382",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.10190152376890182,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4795",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9367489814758301,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:250",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9372567534446716,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:912",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8472912907600403,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4302",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.18931713700294495,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:789",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9616560935974121,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:826",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009432978928089142,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4818",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.6644753813743591,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:201",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9661494493484497,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:523",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.4386292099952698,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4812",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04404350742697716,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:493",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9906045794487,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:543",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9652167558670044,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1282",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.824490487575531,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4722",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005302860401570797,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:212",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7765234112739563,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4052",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004273060243576765,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1323",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0074641224928200245,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:371",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.842683732509613,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4959",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04188544675707817,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:907",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06996791809797287,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4009",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.935645580291748,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3849",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.010591589845716953,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:474",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5892096757888794,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:5007",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0076477560214698315,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1170",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9044550657272339,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:911",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004881633445620537,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4456",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9783709049224854,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:960",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006639665458351374,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1221",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.11282728612422943,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4659",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.015874698758125305,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:952",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03720473870635033,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3962",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.003801870858296752,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:331",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9573500156402588,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4563",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006360176485031843,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:64",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.030538467690348625,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1018",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007698254194110632,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4949",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009614082053303719,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:35",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8999335169792175,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:492",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008967616595327854,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:386",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04252825677394867,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:706",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.012520047836005688,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4647",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.12674647569656372,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3985",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.010767122730612755,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1129",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008984035812318325,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:440",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.038599129766225815,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:978",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7228063344955444,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:5079",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0508294478058815,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4192",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0036647843662649393,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4513",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09320271760225296,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3921",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03623262420296669,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4826",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01895853504538536,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:488",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03774573653936386,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:142",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9775058031082153,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:246",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7481659650802612,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3930",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.11254113167524338,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4985",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.26560118794441223,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1173",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.029233884066343307,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4245",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03392377123236656,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3750",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.021236035972833633,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:755",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.10523823648691177,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4998",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01150977611541748,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:96",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.945884108543396,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:536",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08857715129852295,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1017",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9518718719482422,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4307",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.045562420040369034,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5014",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.979243814945221,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:197",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8925368189811707,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4545",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.5312813520431519,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4748",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9325991272926331,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4461",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.6594672203063965,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4260",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9178903102874756,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:982",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.026974061504006386,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:2",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8156269192695618,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1153",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0602264478802681,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:260",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7334256172180176,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4953",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8937397003173828,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:308",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.975959837436676,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4509",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.016189727932214737,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:552",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.030756935477256775,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:504",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009476032108068466,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4483",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007012227084487677,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4194",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02039230614900589,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1401",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0726669505238533,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:184",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007976961322128773,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4057",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008349847048521042,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4319",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05561288818717003,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4341",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.015363998711109161,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:835",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9865590333938599,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4856",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02887834794819355,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3904",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.042268190532922745,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:223",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9421772360801697,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3877",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.22691205143928528,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4544",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02835588902235031,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1097",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.206883043050766,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4030",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007190699689090252,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:27",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.11377251893281937,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:136",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.565484344959259,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:5054",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.011709763668477535,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4942",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01087325718253851,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:282",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.056373823434114456,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:216",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9268047213554382,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1298",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.5968329906463623,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4591",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06932610273361206,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:319",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009547892957925797,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1092",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7742766737937927,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:638",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.012033739127218723,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:2467",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02831939421594143,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3871",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.41037794947624207,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4833",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.6369039416313171,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4376",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06515397131443024,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4989",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0241482425481081,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:487",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09918608516454697,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:950",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03870074823498726,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1051",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.00266480166465044,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:85",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.0411270447075367,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4900",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005418847315013409,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:144",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.9738913178443909,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1278",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009544111788272858,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4329",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0028934222646057606,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:412",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03974010795354843,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:596",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.34114640951156616,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:315",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8150171637535095,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4421",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.017990414053201675,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:13",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.020155206322669983,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5075",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.8171537518501282,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4642",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04182293266057968,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4458",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.023278607055544853,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4916",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.002401359612122178,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:921",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8321835398674011,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4857",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.018225274980068207,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1208",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03128505498170853,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4598",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01139845047146082,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:700",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.10248474031686783,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1366",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9119370579719543,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4824",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008678775280714035,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3814",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005749183241277933,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4727",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9440439939498901,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:754",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02669847011566162,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:438",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9807995557785034,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:284",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9134798645973206,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4862",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9452285170555115,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4721",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08057007193565369,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:961",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02552212029695511,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:784",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05360402166843414,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:445",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0582292340695858,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1125",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09095244109630585,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4473",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0065359510481357574,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:42",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.956683874130249,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4519",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009466628544032574,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:509",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.014286250807344913,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4669",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.022882383316755295,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5043",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.13374489545822144,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4839",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.16158217191696167,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:90",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.39724352955818176,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:106",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.852400004863739,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1378",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.6861799359321594,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4846",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.2642711400985718,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1080",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08059190958738327,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1113",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.030248157680034637,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1085",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004554414190351963,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1035",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04077082499861717,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4783",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04697660356760025,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4170",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.023369677364826202,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3857",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008590941317379475,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:169",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9135475158691406,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4067",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007225166540592909,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:696",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.30725955963134766,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3786",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9871384501457214,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:765",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008664723485708237,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1033",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.17240822315216064,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1271",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005974363069981337,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3727",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.021860335022211075,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4178",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.025685416534543037,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4625",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.056069497019052505,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:292",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5106271505355835,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4449",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8410104513168335,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:38",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03731287270784378,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:582",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9592930674552917,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:745",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008817407302558422,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:321",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9885433912277222,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:791",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5010627508163452,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:636",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.1470639556646347,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4138",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03799852356314659,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:304",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9410672187805176,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:215",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9274622201919556,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:420",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5736862421035767,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4034",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8848147988319397,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1248",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.10340533405542374,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:936",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.42086324095726013,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:757",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.023839855566620827,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3812",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005878894589841366,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:343",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.964500367641449,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:293",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8556650280952454,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4403",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.050693292170763016,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:327",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.901535153388977,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4359",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02221365086734295,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:12",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.3579370677471161,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4911",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.010631225071847439,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:152",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9570476412773132,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1334",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.19857783615589142,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3842",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.1228247880935669,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:14",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9311510920524597,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4179",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.2956898510456085,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:881",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007674723397940397,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4228",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.42842787504196167,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4455",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8822099566459656,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:323",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9396005272865295,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:665",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.23564709722995758,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:262",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.24409934878349304,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1273",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8040719628334045,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1004",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.025286057963967323,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:116",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.6189242601394653,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4868",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01568356156349182,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5078",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.2757212221622467,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:399",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.015849212184548378,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:774",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05423060804605484,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3790",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006637861020863056,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3889",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.7897325754165649,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3734",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.020909477025270462,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4823",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9610969424247742,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1168",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8915513157844543,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:710",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9385817050933838,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1078",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.45212066173553467,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:30",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.36576205492019653,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4174",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.9251489639282227,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:459",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7100006937980652,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9064996242523193,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:451",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05449194088578224,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1055",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.629921019077301,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1163",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.07146808505058289,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4803",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7855558395385742,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4950",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03196456655859947,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:253",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9493433833122253,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:199",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9787876009941101,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1249",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05538492277264595,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1193",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.006657060701400042,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:993",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004885994363576174,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4419",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.030077097937464714,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:271",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9020325541496277,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:669",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04030042514204979,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3707",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02611423283815384,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1089",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.003488459624350071,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3999",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.7791783213615417,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1188",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0065543935634195805,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4726",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05705327168107033,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:522",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.032742541283369064,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4967",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.07576283067464828,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4622",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.7482425570487976,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:678",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.046689242124557495,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:148",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9038602709770203,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:409",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9858350157737732,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:5002",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01573530025780201,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4556",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.12510356307029724,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1362",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.019551614299416542,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1332",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8053296804428101,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1119",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05768078193068504,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4568",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04584323987364769,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:934",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01558900997042656,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:259",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9523431658744812,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3808",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02214064449071884,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:265",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9588655829429626,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4768",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5674326419830322,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:276",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8626262545585632,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4285",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.005640026181936264,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4306",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.04187946766614914,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4068",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008330466225743294,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:627",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.14876329898834229,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:110",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7367992401123047,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:932",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0844435840845108,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1123",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9834886193275452,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4051",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0023922021500766277,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:306",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9715367555618286,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:314",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.407101035118103,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3829",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.7793647050857544,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3953",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9663975238800049,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:104",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9742705821990967,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1214",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.028797881677746773,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1106",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9372094869613647,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4575",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.19926151633262634,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:359",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.002611113479360938,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1240",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009294047951698303,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:962",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.032370951026678085,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1322",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9377688765525818,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4011",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08907780796289444,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:351",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.24556946754455566,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1340",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09483873099088669,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1235",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.2626166343688965,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4267",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004643177147954702,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:975",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9125065803527832,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3914",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.1766582578420639,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:158",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9091441631317139,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:598",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02768724039196968,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:296",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.889370858669281,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4244",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.8460636734962463,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:629",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.10322580486536026,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:622",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.016022823750972748,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1152",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.008737743832170963,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:50",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.760594367980957,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:5006",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9868617653846741,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4119",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06838690489530563,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1247",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.08887513726949692,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5021",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9891113638877869,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1000",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.004920539446175098,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:258",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.05579744651913643,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4973",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.010108884423971176,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4745",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.022633720189332962,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:466",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06480138748884201,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3833",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09335553646087646,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4431",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.0158220287412405,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:526",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.016591504216194153,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:612",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009575584903359413,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:80",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.770494818687439,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1405",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.07409761846065521,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4720",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.036137934774160385,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4533",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02520427480340004,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4836",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.9244611859321594,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:202",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9662615060806274,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4037",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05383067578077316,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:607",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.1901763379573822,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:824",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.46593448519706726,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:166",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.020883671939373016,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4733",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.01395854540169239,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:244",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.5393993258476257,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4640",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.03384549915790558,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4690",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.12489134818315506,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4401",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.06331949681043625,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1272",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.1777365654706955,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3900",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.027113335207104683,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4233",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.02983209677040577,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:844",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9385809898376465,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:334",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9809861779212952,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:984",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.09733647853136063,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4183",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.007893174886703491,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4324",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.13369542360305786,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4515",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.07006626576185226,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3906",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.009859506040811539,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4485",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.11940548568964005,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:974",
+    "split": "train",
+    "label": 1,
+    "block_probability": 0.9432868957519531,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3865",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.2553471028804779,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:873",
+    "split": "train",
+    "label": 0,
+    "block_probability": 0.05458779260516167,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3992",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.37091314792633057,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4982",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.14364710450172424,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4101",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.10264409333467484,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1049",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.17039483785629272,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:119",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.633735716342926,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:277",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.03486369922757149,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4551",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.09536067396402359,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:776",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.42015567421913147,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3747",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.014209781773388386,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4709",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9715963006019592,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:219",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9750043749809265,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:300",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.3243328928947449,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3880",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.32280054688453674,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4968",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.02876695618033409,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4508",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.06988783925771713,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:290",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9248962998390198,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3736",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.3990711569786072,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:235",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9871858954429626,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:753",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.029055532068014145,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4852",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.1267300397157669,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:37",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.03279033303260803,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:234",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9040163159370422,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1027",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.47988733649253845,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4386",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.0338238961994648,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5039",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.09937675297260284,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:545",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.01900237612426281,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4931",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.0093770120292902,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1384",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8878748416900635,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1191",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.05635907128453255,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1100",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8802127838134766,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4602",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.3536294400691986,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:593",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9806046485900879,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4512",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8909899592399597,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:721",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.6755396127700806,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:181",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9711242318153381,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4012",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.7378592491149902,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4817",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8054256439208984,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4080",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.06607231497764587,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:423",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.031381506472826004,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4548",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.0863213911652565,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:222",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.33614781498908997,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:646",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.0169279295951128,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3855",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.46099188923835754,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:289",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.3334837257862091,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:786",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.1327032595872879,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4198",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.15095756947994232,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3908",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.18329483270645142,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:179",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8814806342124939,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4972",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.1780174970626831,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1386",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8914417624473572,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:114",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.04121602699160576,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:28",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8294557929039001,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1095",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.18107551336288452,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4264",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.007073929533362389,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1351",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8822283148765564,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4205",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9088378548622131,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:705",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.11903892457485199,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:237",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.05017866939306259,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:380",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.04956477880477905,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:24",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9926702976226807,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4106",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8768186569213867,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:976",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.5079823136329651,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:240",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.20494960248470306,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:159",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.1829667091369629,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4162",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9918903112411499,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:330",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.4983547627925873,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:446",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.11529285460710526,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:882",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9189481139183044,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3745",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.02451559528708458,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:39",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.06370113044977188,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:736",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.9533886313438416,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1326",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.014337919652462006,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1407",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.05080978199839592,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:183",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.027205953374505043,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1325",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.05551248416304588,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4339",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.07571236789226532,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3822",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.04694506153464317,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:257",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.10346793383359909,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4886",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.013975546695291996,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5067",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.06796432286500931,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3923",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.17745718359947205,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:767",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.25740110874176025,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:79",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.6305098533630371,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:121",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.46814391016960144,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1285",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.837701678276062,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4464",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.1680976152420044,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4140",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.1922345608472824,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:862",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8619945049285889,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:309",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.032737378031015396,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1024",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.20115286111831665,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:232",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.767879068851471,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1255",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.004929384682327509,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:987",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.01682763732969761,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3956",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.84824538230896,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:680",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.5652405023574829,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4330",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.022436248138546944,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:49",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.2932187616825104,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:298",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.01694570668041706,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4889",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.026153795421123505,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4415",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.4393599331378937,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4561",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.5924298763275146,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:268",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.4707867205142975,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:316",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.5511568188667297,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:437",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8899239301681519,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1059",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.019729003310203552,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5069",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.5442023873329163,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:621",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.023381326347589493,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:23",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8789381980895996,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3960",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.06469790637493134,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:400",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9323797821998596,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:224",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9583123326301575,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1353",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.027688242495059967,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4435",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.7859737873077393,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:43",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.639560878276825,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:54",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9859127402305603,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4346",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.04637725651264191,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4986",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.10657383501529694,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:909",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.37726280093193054,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4615",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.33529606461524963,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:333",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9683258533477783,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4742",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.008633188903331757,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4617",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.8025906682014465,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4542",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.7665827870368958,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:17",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.13984107971191406,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4731",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.14091718196868896,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1142",
+    "split": "tune",
+    "label": 0,
+    "block_probability": 0.29905474185943604,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3081",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.9745017886161804,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4413",
+    "split": "tune",
+    "label": 1,
+    "block_probability": 0.7707271575927734,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4567",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8834248185157776,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:11",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7545627355575562,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1330",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7295730113983154,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1412",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.018243741244077682,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:254",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8758875727653503,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4289",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.05667760968208313,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:87",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7166340947151184,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4703",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.882432222366333,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:211",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.942504346370697,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3807",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.010428745299577713,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:935",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.11779380589723587,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:406",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.036178331822156906,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:347",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.07827689498662949,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:413",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.9308169484138489,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4507",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.046414557844400406,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:221",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.04765095189213753,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4997",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.05657780170440674,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1182",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.012850208207964897,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:214",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.7896198034286499,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:195",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.777777910232544,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:672",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.014019021764397621,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4801",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.7002596259117126,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:990",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.6842973232269287,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:3805",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.0216737762093544,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:372",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.005714170169085264,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:358",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.02562887594103813,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:132",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.5753397345542908,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:287",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.022692536935210228,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:996",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.07067858427762985,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:151",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9910278916358948,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4392",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.6125394105911255,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1022",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.012534198351204395,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1003",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.6260795593261719,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:759",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8585429191589355,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4201",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.16819922626018524,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4061",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.032093845307826996,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1347",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.952094554901123,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4222",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.045883599668741226,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:768",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9004420042037964,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:269",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7372159957885742,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:500",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.06578527390956879,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1246",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7853718996047974,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:797",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9908763766288757,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1029",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.32765302062034607,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:29",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.896450936794281,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:639",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9846075177192688,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:2575",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8737143278121948,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1175",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.039763305336236954,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:93",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9884081482887268,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:98",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.07611586153507233,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:95",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.21641679108142853,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:71",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9186500310897827,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4151",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8132843971252441,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:893",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.020728783681988716,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:68",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9564967751502991,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:47",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.953482985496521,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:927",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.08121608197689056,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5009",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.03764969855546951,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4280",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.048027873039245605,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:135",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.03547562658786774,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:134",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8251184225082397,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:20",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.23660996556282043,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1313",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.04195939004421234,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:61",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.3690909743309021,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1365",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9941347241401672,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4304",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.004820247180759907,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:153",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9674908518791199,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4252",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.03314604237675667,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:725",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.03162432461977005,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:120",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.02393190748989582,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:266",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8671016097068787,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3994",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.054282139986753464,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:190",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8209128379821777,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1179",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.1371571123600006,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4874",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.014064373448491096,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4272",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.28138306736946106,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:160",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.07621380686759949,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4443",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9036340117454529,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:73",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.0849999412894249,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:473",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.028282886371016502,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1231",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8196313381195068,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4356",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.2563997805118561,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1260",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.13578082621097565,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4969",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.004899269435554743,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4219",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.0271410271525383,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:118",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.13430464267730713,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4002",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.1578357219696045,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1082",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.23422035574913025,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:62",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9295670986175537,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4075",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.05191897973418236,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4981",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.14538675546646118,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:671",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.006906104274094105,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:335",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9264495372772217,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:848",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.014675391837954521,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:286",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7253090143203735,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:5035",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.3012794256210327,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4204",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.6745091080665588,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:859",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.060154709964990616,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4897",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.03522719442844391,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4268",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.6071522831916809,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:3853",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7435116767883301,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:312",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9625601768493652,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4390",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.007846655324101448,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:841",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.062403980642557144,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:233",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.6160038113594055,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4229",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.1422835886478424,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:2562",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8196125030517578,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:97",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.4682091474533081,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:1300",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.040589362382888794,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4284",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.004415492992848158,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4134",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.14307408034801483,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:517",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.6257573962211609,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:99",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.359213262796402,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:874",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7802253365516663,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:45",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9739792943000793,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:25",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.4359329044818878,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4486",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.009244129061698914,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4923",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.02575071156024933,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:1111",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.8564035296440125,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:494",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.11283665150403976,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:322",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.9869043231010437,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:777",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.12495077401399612,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:273",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.7424649596214294,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:4750",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.00336921657435596,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4935",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.4154025912284851,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "train:586",
+    "split": "calibration",
+    "label": 0,
+    "block_probability": 0.22810445725917816,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:21",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.036715950816869736,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "train:4223",
+    "split": "calibration",
+    "label": 1,
+    "block_probability": 0.917289137840271,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1227",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.6539737582206726,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:151",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8963421583175659,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:937",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.24147741496562958,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:276",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9530670046806335,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4767",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.30542290210723877,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4411",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.01086454838514328,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:390",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.008327930234372616,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:556",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9718070030212402,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1277",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.2342420369386673,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:143",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.19958598911762238,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:3970",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.837200939655304,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1298",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.1245722621679306,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3994",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.8529595136642456,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4858",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.42977282404899597,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:5064",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.15053266286849976,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4506",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.19283558428287506,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:444",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9041240215301514,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1008",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.7203807830810547,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1166",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.926193356513977,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:96",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8620885014533997,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:84",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.25478118658065796,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4520",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.0085309948772192,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4407",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.027959970757365227,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4512",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.0743669718503952,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3767",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.01747581735253334,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1027",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.06579490005970001,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4107",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.24809496104717255,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1060",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.26749590039253235,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:74",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.7597847580909729,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:931",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.29193976521492004,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.010593129321932793,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:2",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.5396930575370789,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4989",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.005850621033459902,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:651",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.31656038761138916,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:254",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.01390331331640482,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1186",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.3004814684391022,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1055",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9585692286491394,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4956",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.1290089190006256,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:206",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.028449486941099167,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:677",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.6915022134780884,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:142",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9428460597991943,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:961",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8741032481193542,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3949",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.1078776940703392,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:960",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.7982742786407471,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1312",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.12322438508272171,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:282",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.21611818671226501,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:485",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.07553086429834366,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4582",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.07164249569177628,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:3929",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.014822384342551231,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:5076",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.029985422268509865,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:482",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.019136052578687668,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4160",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.07990477234125137,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4838",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.017203310504555702,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:5006",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.1718619465827942,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:179",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9884828925132751,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1219",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.1418353170156479,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:178",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.6518415808677673,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:656",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.7825374603271484,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:908",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.02203352563083172,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:90",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.24487127363681793,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1134",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.31818222999572754,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4070",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.008954214863479137,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:547",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.004101898055523634,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1048",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.2110530585050583,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:14",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.1431637555360794,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3814",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9782853126525879,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1289",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8762519359588623,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:930",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.08511115610599518,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4036",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.004319084342569113,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:133",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9391292929649353,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4153",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8807333111763,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:77",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.24315929412841797,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4481",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9648134112358093,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1299",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.01584421470761299,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1100",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.014115052297711372,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:85",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.003696073777973652,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:3801",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.007847790606319904,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:329",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9208400845527649,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:54",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.7470617890357971,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:848",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.6070349216461182,
+    "specialist": 1,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1056",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8721535205841064,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:457",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.16594895720481873,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3779",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.0238938108086586,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:169",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.47499510645866394,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:770",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.020743053406476974,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4692",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.13128802180290222,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1479",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.021600870415568352,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4443",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.9521142244338989,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:1326",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.03510959818959236,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:4442",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.00622980622574687,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:868",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.04643792659044266,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:3897",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8363757729530334,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:196",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.10700452327728271,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:60",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.24824820458889008,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:3797",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.03431018441915512,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:5056",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.01743350550532341,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": false,
+    "full_qwen_reference": 0
+  },
+  {
+    "id": "test:1076",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.8905306458473206,
+    "specialist": 1,
+    "cascade": 1,
+    "fallback": false,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:4034",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.09467385709285736,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:170",
+    "split": "evaluation",
+    "label": 1,
+    "block_probability": 0.11235657334327698,
+    "specialist": 0,
+    "cascade": 1,
+    "fallback": true,
+    "full_qwen_reference": 1
+  },
+  {
+    "id": "test:448",
+    "split": "evaluation",
+    "label": 0,
+    "block_probability": 0.062296848744153976,
+    "specialist": 0,
+    "cascade": 0,
+    "fallback": true,
+    "full_qwen_reference": 0
+  }
+]

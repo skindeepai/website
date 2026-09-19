@@ -1,0 +1,29 @@
+{
+  "calibration_queries": 797,
+  "toxic": 103,
+  "excluded_ids": [
+    "train:230",
+    "train:295",
+    "train:4146"
+  ],
+  "added_errors": 57,
+  "additional_missed_toxic": 7,
+  "early_count": 797,
+  "full_correct": 684,
+  "full_toxic_caught": 67,
+  "upper95": {
+    "added_errors": 0.08837455843105553,
+    "additional_missed_toxic": 0.12385892856268334
+  },
+  "checks": {
+    "added_errors": false,
+    "additional_missed_toxic": false,
+    "coverage": true,
+    "baseline_accuracy": false,
+    "baseline_toxic_recall": false
+  },
+  "clean_guard_passed": false,
+  "original_guard_passed": false,
+  "accepted": false,
+  "method": "Additional requirement recorded before fitting outcomes: same policy and limits, original guard must also pass. All600testmessages retained."
+}

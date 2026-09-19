@@ -1,0 +1,14 @@
+{
+  "scope": "Retrospective exploratory reanalysis of eight already inspected local outputs. No new model inference or learned presence head.",
+  "source_sha256": "a8d8c6f3bd237fc04596a6955e6c52a96de8d2e2b45ee3e7176ce0fbcf734a7d",
+  "fold": "Leave one screenshot out; choose threshold only on other screenshot, then evaluate held-out screenshot; reverse.",
+  "candidate_thresholds": "0, 1.01, and midpoints between sorted distinct confidence values on training screenshot only.",
+  "selection": "Maximize balanced present/absent classification accuracy on training screenshot; tie chooses smallest threshold. Accept coordinate when peak patch probability >= threshold.",
+  "target": "Whether requested target exists, distinct from whether coordinate is correct.",
+  "limitations": [
+    "Only one authored UI at desktop/mobile sizes; same instructions and absent target recur across folds. Not independent task/generalization evidence.",
+    "One absent example per fold; no reliable error-rate estimate.",
+    "Peak patch probabilities depend on the patch grid and are not calibrated presence or correctness probabilities.",
+    "Saved ScreenSpot outputs have present targets only; rejection analysis cannot validate absent-target detection."
+  ]
+}

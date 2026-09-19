@@ -1,0 +1,12 @@
+{
+  "recorded_utc": "2026-09-19T21:30:58.654238+00:00",
+  "reason": "Clipping made three source-distinct calibration messages identical to development inputs.",
+  "excluded_calibration_ids": [
+    "train:230",
+    "train:295",
+    "train:4146"
+  ],
+  "additional_acceptance_requirement": "Original guard AND same frozen policy, originalbounds/floors recomputed after excluding these calibration IDs. No retraining, reselection or test exclusion.",
+  "original_protocol_preserved": true,
+  "test_cross_partition_effective_duplicates": 0
+}

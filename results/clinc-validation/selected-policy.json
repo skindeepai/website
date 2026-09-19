@@ -1,0 +1,26 @@
+{
+  "threshold": 0.95,
+  "agreement": true,
+  "minimum": 6,
+  "tune": {
+    "n": 300,
+    "correct": 288,
+    "full_correct": 289,
+    "early_count": 213,
+    "early_wrong": 3,
+    "harmful": 1,
+    "corrected": 0,
+    "mean_depth": 16.260000228881836,
+    "blocks_skipped": 0.32249999046325684,
+    "early_error_upper95": 0.035997721854490725,
+    "harm_upper95": 0.01571455489158399,
+    "early_coverage": 0.71,
+    "exit_counts": {
+      "6": 0,
+      "12": 174,
+      "18": 39,
+      "24": 87
+    }
+  },
+  "oos_tune_acceptance": 0.03999999910593033
+}

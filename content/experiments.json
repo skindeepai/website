@@ -217,7 +217,7 @@
       "Gate/artifact": "Meet the registered quality margin and report actual timing. Returning a tensor/enum is a format result; any speed benefit must be measured independently. Maintain the original generative path for controlled comparisons."
     },
     "result": "qwen-decisions",
-    "next": "Train a comparable output-token baseline; add JSON and end-to-end timings."
+    "next": "Matched trained enum/token controls are recorded. Repeat accepted-quality comparisons across runtimes before claiming an output-format speed advantage."
   },
   {
     "id": "D02",
@@ -231,7 +231,7 @@
       "Gate/artifact": "Publish depth-quality curves. Stop the early-exit track if no earlier head is useful. Full-state collection is a probe experiment, not an inference speedup. Depends on D01."
     },
     "result": "qwen-decisions",
-    "next": "Repeat across seeds and genuinely different rule families."
+    "next": "The paired changing-rule test failed: train and validate instruction-aware readouts on new query groups before claiming dynamic decisions."
   },
   {
     "id": "D03",
@@ -245,7 +245,7 @@
       "Gate/artifact": "Thresholds selected on calibration data satisfy registered test limits at useful coverage. A high softmax value or two agreeing heads is not proof of correctness. Depends on D02."
     },
     "result": "qwen-decisions",
-    "next": "Use a disjoint gate-training/calibration split and evaluate risk versus coverage; first gate loses accuracy."
+    "next": "The larger studies failed calibration. A smaller reused-message follow-up now has a learned gate with different exit depths and measured runtime savings. Freeze promising candidates and confirm quality on untouched data."
   },
   {
     "id": "D04",
@@ -273,7 +273,7 @@
       "Gate/artifact": "Meet registered quality and latency gates with actual skipped work. Fewer layers with worse wall time is a negative performance result. Depends on D03/D04."
     },
     "result": "qwen-decisions",
-    "next": "Add cold, tokenization, throughput, memory and fallback measurements."
+    "next": "The chat workload includes tokenization and all 600 decisions. Add cold starts, batching, memory and measured fallback after quality passes."
   },
   {
     "id": "D06",
@@ -287,7 +287,7 @@
       "Gate/artifact": "End-to-end advantage at matched quality; an adapter is retained only if it beats the ordinary cascade including its training and transfer costs. No “95% savings” claim from parameter counts. Depends on D01/D04/D05."
     },
     "result": null,
-    "next": "Compare two-model escalation with in-model continuation, including transfer cost."
+    "next": "The small specialist/Qwen cascade now has measured fallback costs, but adds a toxic miss in exploration. Compare with in-model continuation on fresh data under matched quality limits."
   },
   {
     "id": "D07",
@@ -342,7 +342,7 @@
       "Measure/gate": "Target hit rate and wrong-click/abstention rates by slice, position-mapping error, and calibration. An average coordinate between two valid targets counts as a miss if it is not itself valid. Choose a valid point inside a selected region. Depends on C01."
     },
     "result": "coordinates",
-    "next": "Add independent apps and a no-target classifier; two screenshots cannot establish robustness."
+    "next": "Expand the 30-example ScreenSpot sample and add no-target rejection; the connected-region readout improved this small sample."
   },
   {
     "id": "C03",

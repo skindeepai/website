@@ -1,0 +1,12 @@
+{
+  "scope": "Exploratory follow-up on previously inspected procedural 4x4 mazes, not real-world navigation.",
+  "parent_sha256": "9d5efb9fd05bb4e7e07bc27f35d594597b5e6c60eb67fd271fc0cf398d9ca657",
+  "script_sha256": "db00187e69012907f2ae6fc89a0dd2ef95ee1f4e32a07b05961b8b95ee0850ad",
+  "train": "Only original32train wall layouts. Compare original256labeledstates with all4992reachable agent/goal pairs from these same layouts.",
+  "architecture": "48onehot wall/agent/goal inputs ->128GELU->128GELU->4logits. AdamW lr.002 weight_decay.01; seed913;600steps, random minibatch256; soft targets uniformly cover all shortest-path ties.",
+  "selection": "Checkpoints100,300,600 ranked by unmasked goal success on16tune layouts with farthest starts, then tune128state optimal accuracy; ties earliest checkpoint. No evaluation selection.",
+  "evaluation": "Report both unmasked and explicitly legal-masked selected model on old128calibrationstates,128teststates and10reusedepisodes;20moves. Same weights for masked and unmasked.",
+  "mask": "Uses visible walls and grid boundaries only; forbids illegal actions. No BFS/distances/path history available to learned prediction. Mask does not prevent legal loops.",
+  "comparison": "Historical frozenQwen rawASCII results retained as context, not matched architecture/representation/training. Qwen mask untested because saved peraction logits unavailable.",
+  "timing": "No model speed claims; two CPU threads. Goal outcomes and legality only."
+}

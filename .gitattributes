@@ -1,0 +1,11 @@
+# Preserve the exact source bytes checked by the sealed chat protocol.
+experiments/chat600.py text eol=lf
+# Smoke protocols also record exact source bytes.
+experiments/*smoke*.py text eol=lf
+experiments/chat_smoke_adaptation.py text eol=crlf
+experiments/chat_smoke_adaptation_reset.py text eol=crlf
+experiments/chat_smoke_reset_baseline.py text eol=crlf
+results/chat-smoke-adaptation/initial-implementation.py text eol=lf
+results/chat-smoke-adaptation/implementation.py text eol=crlf
+results/chat-smoke-reset/implementation.py text eol=crlf
+results/chat-smoke-specialist/runtime-implementation.py text eol=lf

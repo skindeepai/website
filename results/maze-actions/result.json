@@ -1,0 +1,224 @@
+{
+  "protocol_sha256": "9d5efb9fd05bb4e7e07bc27f35d594597b5e6c60eb67fd271fc0cf398d9ca657",
+  "policy": {
+    "threshold": 0.7,
+    "agreement": false,
+    "minimum": 6,
+    "tune": {
+      "n": 128,
+      "optimal_correct": 97,
+      "legal_actions": 109,
+      "full_optimal_correct": 91,
+      "early_count": 32,
+      "early_wrong": 3,
+      "early_illegal": 0,
+      "added_errors": 0,
+      "mean_depth": 19.921875,
+      "exit_counts": {
+        "12": 7,
+        "6": 24,
+        "24": 96,
+        "18": 1
+      },
+      "blocks_skipped": 0.169921875,
+      "wrong_early_upper95": 0.22481610858922574,
+      "illegal_early_upper95": 0.08936819898626476,
+      "added_error_upper95": 0.023132405251746743
+    }
+  },
+  "candidate_count": 5,
+  "fixed_heads": {
+    "6": {
+      "n": 128,
+      "optimal_correct": 77,
+      "legal_actions": 106,
+      "full_optimal_correct": 83,
+      "early_count": 128,
+      "early_wrong": 51,
+      "early_illegal": 22,
+      "added_errors": 25,
+      "mean_depth": 6,
+      "exit_counts": {
+        "6": 128
+      },
+      "blocks_skipped": 0.75,
+      "wrong_early_upper95": 0.47475055751330275,
+      "illegal_early_upper95": 0.23624283963455928,
+      "added_error_upper95": 0.2619749750309524
+    },
+    "12": {
+      "n": 128,
+      "optimal_correct": 94,
+      "legal_actions": 112,
+      "full_optimal_correct": 83,
+      "early_count": 128,
+      "early_wrong": 34,
+      "early_illegal": 16,
+      "added_errors": 14,
+      "mean_depth": 12,
+      "exit_counts": {
+        "12": 128
+      },
+      "blocks_skipped": 0.5,
+      "wrong_early_upper95": 0.3374582122182552,
+      "illegal_early_upper95": 0.18364647789977587,
+      "added_error_upper95": 0.165692953699207
+    },
+    "18": {
+      "n": 128,
+      "optimal_correct": 87,
+      "legal_actions": 106,
+      "full_optimal_correct": 83,
+      "early_count": 128,
+      "early_wrong": 41,
+      "early_illegal": 22,
+      "added_errors": 11,
+      "mean_depth": 18,
+      "exit_counts": {
+        "18": 128
+      },
+      "blocks_skipped": 0.25,
+      "wrong_early_upper95": 0.394727346349531,
+      "illegal_early_upper95": 0.23624283963455928,
+      "added_error_upper95": 0.1382367231937822
+    },
+    "24": {
+      "n": 128,
+      "optimal_correct": 83,
+      "legal_actions": 110,
+      "full_optimal_correct": 83,
+      "early_count": 0,
+      "early_wrong": 0,
+      "early_illegal": 0,
+      "added_errors": 0,
+      "mean_depth": 24,
+      "exit_counts": {
+        "24": 128
+      },
+      "blocks_skipped": 0.0,
+      "wrong_early_upper95": 1.0,
+      "illegal_early_upper95": 1.0,
+      "added_error_upper95": 0.023132405251746743
+    }
+  },
+  "states": {
+    "calibration": {
+      "n": 128,
+      "optimal_correct": 85,
+      "legal_actions": 114,
+      "full_optimal_correct": 82,
+      "early_count": 42,
+      "early_wrong": 12,
+      "early_illegal": 5,
+      "added_errors": 6,
+      "mean_depth": 19.265625,
+      "exit_counts": {
+        "24": 86,
+        "18": 10,
+        "6": 27,
+        "12": 5
+      },
+      "blocks_skipped": 0.197265625,
+      "wrong_early_upper95": 0.4214290285324821,
+      "illegal_early_upper95": 0.23415651712012955,
+      "added_error_upper95": 0.09041721092497314
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 87,
+      "legal_actions": 112,
+      "full_optimal_correct": 83,
+      "early_count": 43,
+      "early_wrong": 8,
+      "early_illegal": 1,
+      "added_errors": 2,
+      "mean_depth": 18.984375,
+      "exit_counts": {
+        "24": 85,
+        "6": 29,
+        "12": 6,
+        "18": 8
+      },
+      "blocks_skipped": 0.208984375,
+      "wrong_early_upper95": 0.3107276162045383,
+      "illegal_early_upper95": 0.10563408261589402,
+      "added_error_upper95": 0.048366992992766165
+    }
+  },
+  "guard_checks": {
+    "absolute_early_error": false,
+    "added_error": false,
+    "illegal_early": false,
+    "coverage": true
+  },
+  "guard_passed": false,
+  "episode_summary": {
+    "full": {
+      "episodes": 10,
+      "goals_reached": 0,
+      "actions": 200,
+      "legal_actions": 85,
+      "successful_path_ratios": []
+    },
+    "candidate": {
+      "episodes": 10,
+      "goals_reached": 0,
+      "actions": 200,
+      "legal_actions": 85,
+      "successful_path_ratios": []
+    },
+    "bfs": {
+      "episodes": 10,
+      "goals_reached": 10,
+      "actions": 59,
+      "legal_actions": 59,
+      "successful_path_ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "diagnostic_state_timing": {
+    "full": {
+      "n": 128,
+      "mean_ms": 759.870054687326,
+      "p50_ms": 755.0636999949347
+    },
+    "candidate": {
+      "n": 128,
+      "mean_ms": 596.9714929678958,
+      "p50_ms": 730.2524000115227
+    },
+    "bfs": {
+      "n": 128,
+      "mean_ms": 0.04673984494729666,
+      "p50_ms": 0.04379998426884413
+    }
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.0.dev0",
+    "threads": 4,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "completed_utc": "2026-09-19T21:32:08.178628+00:00"
+  },
+  "limitations": [
+    "State examples cluster within mazes; generalization unit is the entire held-out maze.",
+    "ASCII navigation can be poor for this small frozen model and limited head training.",
+    "A deterministic fully observed maze is naturally solved by BFS; an LLM must justify additional cost.",
+    "One model run; no threshold adjustment after calibration or test results.",
+    "All timings diagnostic because concurrent CPU workloads were allowed.",
+    "State-level confidence bounds ignore within-maze dependence and must not be interpreted as deployment guarantees.",
+    "If calibration fails, candidate traces are exploratory; accepted guarded policy would use full depth."
+  ]
+}

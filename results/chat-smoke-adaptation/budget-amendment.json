@@ -1,0 +1,7 @@
+{
+  "recorded_utc": "2026-09-19T22:35:32.058207+00:00",
+  "reason": "User permits fast exploration. Initial96-step attempt interrupted after8steps before candidate checkpoints or evaluation; preserve original protocol/source.",
+  "change": "All four variants now32steps,batch4,checkpoint16/32; tune32 balanced, development64 balanced, evaluation stays100. Initial heads still fit common384. Adapter sees128 message presentations selected by fixed shuffled length batches.",
+  "initial_attempt": "No completed candidate result or evaluation. Step8 loss only is not a quality result.",
+  "scope": "Training-budget smoke, not convergence or method upper bound."
+}

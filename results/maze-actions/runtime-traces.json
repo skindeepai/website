@@ -1,0 +1,10816 @@
+[
+  {
+    "id": "test:0:7",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 788.5882999980822
+  },
+  {
+    "id": "test:0:7",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.33633872866630554
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6879880428314209
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.5449167490005493
+      }
+    ],
+    "diagnostic_input_to_action_ms": 744.1713999724016
+  },
+  {
+    "id": "test:0:7",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03589998232200742
+  },
+  {
+    "id": "test:0:10",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6584859490394592
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.3319344222545624
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.49830442667007446
+      }
+    ],
+    "diagnostic_input_to_action_ms": 732.4975999654271
+  },
+  {
+    "id": "test:0:10",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 778.0572999618016
+  },
+  {
+    "id": "test:0:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.045599997974932194
+  },
+  {
+    "id": "test:0:12",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 774.8388999607414
+  },
+  {
+    "id": "test:0:12",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.7940421104431152
+      }
+    ],
+    "diagnostic_input_to_action_ms": 201.16620004409924
+  },
+  {
+    "id": "test:0:12",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04549999721348286
+  },
+  {
+    "id": "test:0:9",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.7379112243652344
+      }
+    ],
+    "diagnostic_input_to_action_ms": 196.4540999615565
+  },
+  {
+    "id": "test:0:9",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 791.5936000063084
+  },
+  {
+    "id": "test:0:9",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04279997665435076
+  },
+  {
+    "id": "test:0:11",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 770.2517000143416
+  },
+  {
+    "id": "test:0:11",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.48025912046432495
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4513230621814728
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.405593603849411
+      }
+    ],
+    "diagnostic_input_to_action_ms": 755.6375000276603
+  },
+  {
+    "id": "test:0:11",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.041899969801306725
+  },
+  {
+    "id": "test:0:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.6669116020202637
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.7758923768997192
+      }
+    ],
+    "diagnostic_input_to_action_ms": 349.26839999388903
+  },
+  {
+    "id": "test:0:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 810.7760000275448
+  },
+  {
+    "id": "test:0:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03679998917505145
+  },
+  {
+    "id": "test:0:6",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 758.5558999562636
+  },
+  {
+    "id": "test:0:6",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.7320435047149658
+      }
+    ],
+    "diagnostic_input_to_action_ms": 191.22720003360882
+  },
+  {
+    "id": "test:0:6",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.14670001110062003
+  },
+  {
+    "id": "test:0:13",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.7030232548713684
+      }
+    ],
+    "diagnostic_input_to_action_ms": 184.2729999916628
+  },
+  {
+    "id": "test:0:13",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 793.3255999814719
+  },
+  {
+    "id": "test:0:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03460003063082695
+  },
+  {
+    "id": "test:1:4",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 757.8879000502639
+  },
+  {
+    "id": "test:1:4",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.45280972123146057
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.5303848385810852
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.5116905570030212
+      }
+    ],
+    "diagnostic_input_to_action_ms": 796.5019999537617
+  },
+  {
+    "id": "test:1:4",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05029997555539012
+  },
+  {
+    "id": "test:1:10",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.3518134653568268
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.3544960916042328
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.42842867970466614
+      }
+    ],
+    "diagnostic_input_to_action_ms": 767.7764000254683
+  },
+  {
+    "id": "test:1:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 822.9882000014186
+  },
+  {
+    "id": "test:1:10",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04179996903985739
+  },
+  {
+    "id": "test:1:9",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 804.5039999997243
+  },
+  {
+    "id": "test:1:9",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.377191960811615
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.33147379755973816
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.4147813618183136
+      }
+    ],
+    "diagnostic_input_to_action_ms": 771.1097000283189
+  },
+  {
+    "id": "test:1:9",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04640000406652689
+  },
+  {
+    "id": "test:1:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.490823358297348
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.5632402300834656
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.4092938005924225
+      }
+    ],
+    "diagnostic_input_to_action_ms": 786.5753000369295
+  },
+  {
+    "id": "test:1:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 792.0001000165939
+  },
+  {
+    "id": "test:1:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04460004856809974
+  },
+  {
+    "id": "test:1:11",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 754.0455000125803
+  },
+  {
+    "id": "test:1:11",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.4786754846572876
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.5549238920211792
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.42719870805740356
+      }
+    ],
+    "diagnostic_input_to_action_ms": 765.4044000082649
+  },
+  {
+    "id": "test:1:11",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.052200048230588436
+  },
+  {
+    "id": "test:1:12",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.5860824584960938
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.5198000073432922
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.664401650428772
+      }
+    ],
+    "diagnostic_input_to_action_ms": 776.5523999696597
+  },
+  {
+    "id": "test:1:12",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 776.4962000073865
+  },
+  {
+    "id": "test:1:12",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04239997360855341
+  },
+  {
+    "id": "test:1:2",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 760.1153000141494
+  },
+  {
+    "id": "test:1:2",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.43888071179389954
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.5481244921684265
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.3452150821685791
+      }
+    ],
+    "diagnostic_input_to_action_ms": 790.6001000083052
+  },
+  {
+    "id": "test:1:2",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04740001168102026
+  },
+  {
+    "id": "test:1:0",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.39045363664627075
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.399360716342926
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.5226588845252991
+      }
+    ],
+    "diagnostic_input_to_action_ms": 781.34190000128
+  },
+  {
+    "id": "test:1:0",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 756.0382999945432
+  },
+  {
+    "id": "test:1:0",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.046900007873773575
+  },
+  {
+    "id": "test:2:1",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 792.2185000497848
+  },
+  {
+    "id": "test:2:1",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.3890647292137146
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.31971850991249084
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.38753947615623474
+      }
+    ],
+    "diagnostic_input_to_action_ms": 754.2279999470338
+  },
+  {
+    "id": "test:2:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03980001201853156
+  },
+  {
+    "id": "test:2:2",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.7567771673202515
+      }
+    ],
+    "diagnostic_input_to_action_ms": 186.6565000382252
+  },
+  {
+    "id": "test:2:2",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 769.9349999893457
+  },
+  {
+    "id": "test:2:2",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.041700026486068964
+  },
+  {
+    "id": "test:2:11",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 825.3917000256479
+  },
+  {
+    "id": "test:2:11",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5856435894966125
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.3353442847728729
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5500344634056091
+      }
+    ],
+    "diagnostic_input_to_action_ms": 786.4295999752358
+  },
+  {
+    "id": "test:2:11",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05670002428814769
+  },
+  {
+    "id": "test:2:10",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.42440372705459595
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.33332720398902893
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5494893789291382
+      }
+    ],
+    "diagnostic_input_to_action_ms": 780.5873000179417
+  },
+  {
+    "id": "test:2:10",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 823.3907999820076
+  },
+  {
+    "id": "test:2:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03450002986937761
+  },
+  {
+    "id": "test:2:8",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 795.9549000370316
+  },
+  {
+    "id": "test:2:8",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5961098074913025
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.424870103597641
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.49045369029045105
+      }
+    ],
+    "diagnostic_input_to_action_ms": 791.5409000124782
+  },
+  {
+    "id": "test:2:8",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05030003376305103
+  },
+  {
+    "id": "test:2:5",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.424710214138031
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.37734454870224
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.5978627800941467
+      }
+    ],
+    "diagnostic_input_to_action_ms": 729.7755000181496
+  },
+  {
+    "id": "test:2:5",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 743.6339999549091
+  },
+  {
+    "id": "test:2:5",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.045599997974932194
+  },
+  {
+    "id": "test:2:13",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 800.920799956657
+  },
+  {
+    "id": "test:2:13",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.8466475009918213
+      }
+    ],
+    "diagnostic_input_to_action_ms": 178.57019999064505
+  },
+  {
+    "id": "test:2:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04529999569058418
+  },
+  {
+    "id": "test:2:4",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.3646942973136902
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.4792989492416382
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.5978854298591614
+      }
+    ],
+    "diagnostic_input_to_action_ms": 812.3745000339113
+  },
+  {
+    "id": "test:2:4",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 726.4180000056513
+  },
+  {
+    "id": "test:2:4",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05500001134350896
+  },
+  {
+    "id": "test:3:13",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 792.6560000050813
+  },
+  {
+    "id": "test:3:13",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.5913640856742859
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.545139729976654
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.38625532388687134
+      }
+    ],
+    "diagnostic_input_to_action_ms": 752.13390000863
+  },
+  {
+    "id": "test:3:13",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04930002614855766
+  },
+  {
+    "id": "test:3:4",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.8532321453094482
+      }
+    ],
+    "diagnostic_input_to_action_ms": 187.07990000257269
+  },
+  {
+    "id": "test:3:4",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 825.7786000031047
+  },
+  {
+    "id": "test:3:4",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05010003224015236
+  },
+  {
+    "id": "test:3:11",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 870.0237000011839
+  },
+  {
+    "id": "test:3:11",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.45753660798072815
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6065486073493958
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.3904242217540741
+      }
+    ],
+    "diagnostic_input_to_action_ms": 768.5740999877453
+  },
+  {
+    "id": "test:3:11",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03489997470751405
+  },
+  {
+    "id": "test:3:9",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6042644381523132
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4110984206199646
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.40060240030288696
+      }
+    ],
+    "diagnostic_input_to_action_ms": 741.1933999974281
+  },
+  {
+    "id": "test:3:9",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 789.6873999852687
+  },
+  {
+    "id": "test:3:9",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03950000973418355
+  },
+  {
+    "id": "test:3:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 754.7476000036113
+  },
+  {
+    "id": "test:3:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5044690370559692
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.7672497034072876
+      }
+    ],
+    "diagnostic_input_to_action_ms": 373.8916000002064
+  },
+  {
+    "id": "test:3:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04349998198449612
+  },
+  {
+    "id": "test:3:3",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5068463683128357
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.7217828631401062
+      }
+    ],
+    "diagnostic_input_to_action_ms": 382.8772999695502
+  },
+  {
+    "id": "test:3:3",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 766.7264000046998
+  },
+  {
+    "id": "test:3:3",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0399000127799809
+  },
+  {
+    "id": "test:3:10",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 808.888699975796
+  },
+  {
+    "id": "test:3:10",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.4913274347782135
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.7445695400238037
+      }
+    ],
+    "diagnostic_input_to_action_ms": 380.69380004890263
+  },
+  {
+    "id": "test:3:10",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.06019999273121357
+  },
+  {
+    "id": "test:3:1",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.49388355016708374
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6144309043884277
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.3048674464225769
+      }
+    ],
+    "diagnostic_input_to_action_ms": 791.0923999734223
+  },
+  {
+    "id": "test:3:1",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 780.7407000218518
+  },
+  {
+    "id": "test:3:1",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04020001506432891
+  },
+  {
+    "id": "test:4:7",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 779.2206999729387
+  },
+  {
+    "id": "test:4:7",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.4662237763404846
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5100964307785034
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4111641049385071
+      }
+    ],
+    "diagnostic_input_to_action_ms": 840.7007000059821
+  },
+  {
+    "id": "test:4:7",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0420999713242054
+  },
+  {
+    "id": "test:4:13",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.7567435503005981
+      }
+    ],
+    "diagnostic_input_to_action_ms": 201.80559996515512
+  },
+  {
+    "id": "test:4:13",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 761.8489000014961
+  },
+  {
+    "id": "test:4:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04499999340623617
+  },
+  {
+    "id": "test:4:9",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 779.8593000043184
+  },
+  {
+    "id": "test:4:9",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6692260503768921
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.4962153732776642
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4466755986213684
+      }
+    ],
+    "diagnostic_input_to_action_ms": 779.9730999977328
+  },
+  {
+    "id": "test:4:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05859998054802418
+  },
+  {
+    "id": "test:4:3",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.4564597010612488
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.4915612041950226
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.8608554005622864
+      }
+    ],
+    "diagnostic_input_to_action_ms": 557.3387000476941
+  },
+  {
+    "id": "test:4:3",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 751.3609000016004
+  },
+  {
+    "id": "test:4:3",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04409998655319214
+  },
+  {
+    "id": "test:4:5",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 829.0585000067949
+  },
+  {
+    "id": "test:4:5",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.38443511724472046
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4829489588737488
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.3636603355407715
+      }
+    ],
+    "diagnostic_input_to_action_ms": 805.5611000163481
+  },
+  {
+    "id": "test:4:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0445000478066504
+  },
+  {
+    "id": "test:4:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.6217819452285767
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.520959734916687
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.43499234318733215
+      }
+    ],
+    "diagnostic_input_to_action_ms": 809.4739000080153
+  },
+  {
+    "id": "test:4:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 841.1093999748118
+  },
+  {
+    "id": "test:4:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.044199987314641476
+  },
+  {
+    "id": "test:4:8",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 812.1817000210285
+  },
+  {
+    "id": "test:4:8",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.8072333931922913
+      }
+    ],
+    "diagnostic_input_to_action_ms": 204.744299990125
+  },
+  {
+    "id": "test:4:8",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04669994814321399
+  },
+  {
+    "id": "test:4:10",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.4794560968875885
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.3735473155975342
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.37788480520248413
+      }
+    ],
+    "diagnostic_input_to_action_ms": 765.5415000044741
+  },
+  {
+    "id": "test:4:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 796.093400043901
+  },
+  {
+    "id": "test:4:10",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04390004323795438
+  },
+  {
+    "id": "test:5:4",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 822.4968999857083
+  },
+  {
+    "id": "test:5:4",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.7942498326301575
+      }
+    ],
+    "diagnostic_input_to_action_ms": 215.5728999641724
+  },
+  {
+    "id": "test:5:4",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05199998850002885
+  },
+  {
+    "id": "test:5:11",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6215565204620361
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.5455549359321594
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.49327707290649414
+      }
+    ],
+    "diagnostic_input_to_action_ms": 806.8720999872312
+  },
+  {
+    "id": "test:5:11",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 772.7387999766506
+  },
+  {
+    "id": "test:5:11",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.046200002543628216
+  },
+  {
+    "id": "test:5:14",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 702.7602000162005
+  },
+  {
+    "id": "test:5:14",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.39497095346450806
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.5168570876121521
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.7237245440483093
+      }
+    ],
+    "diagnostic_input_to_action_ms": 453.09299998916686
+  },
+  {
+    "id": "test:5:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04549999721348286
+  },
+  {
+    "id": "test:5:7",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.49629709124565125
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.40604063868522644
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.3976002633571625
+      }
+    ],
+    "diagnostic_input_to_action_ms": 727.3598000174388
+  },
+  {
+    "id": "test:5:7",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 714.0630999929272
+  },
+  {
+    "id": "test:5:7",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.037699996028095484
+  },
+  {
+    "id": "test:5:9",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 729.9178999965079
+  },
+  {
+    "id": "test:5:9",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.6068682074546814
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.3737049102783203
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5120694637298584
+      }
+    ],
+    "diagnostic_input_to_action_ms": 739.2402999685146
+  },
+  {
+    "id": "test:5:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0523999915458262
+  },
+  {
+    "id": "test:5:13",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5781097412109375
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4381479024887085
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.6894554495811462
+      }
+    ],
+    "diagnostic_input_to_action_ms": 738.6156999855302
+  },
+  {
+    "id": "test:5:13",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 722.7773999911733
+  },
+  {
+    "id": "test:5:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03950000973418355
+  },
+  {
+    "id": "test:5:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 740.1175000122748
+  },
+  {
+    "id": "test:5:10",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.7009890079498291
+      }
+    ],
+    "diagnostic_input_to_action_ms": 188.1619999767281
+  },
+  {
+    "id": "test:5:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04870002157986164
+  },
+  {
+    "id": "test:5:8",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.6750332117080688
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.3293021321296692
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.49540039896965027
+      }
+    ],
+    "diagnostic_input_to_action_ms": 723.3529000077397
+  },
+  {
+    "id": "test:5:8",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 749.0585999912582
+  },
+  {
+    "id": "test:5:8",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04060001811012626
+  },
+  {
+    "id": "test:6:0",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 755.3797999862581
+  },
+  {
+    "id": "test:6:0",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.40637826919555664
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.43638867139816284
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.40544360876083374
+      }
+    ],
+    "diagnostic_input_to_action_ms": 724.6232000179589
+  },
+  {
+    "id": "test:6:0",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.041300023440271616
+  },
+  {
+    "id": "test:6:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.7648899555206299
+      }
+    ],
+    "diagnostic_input_to_action_ms": 190.97840000176802
+  },
+  {
+    "id": "test:6:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 713.6075000162236
+  },
+  {
+    "id": "test:6:15",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.039899954572319984
+  },
+  {
+    "id": "test:6:4",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 727.5120000122115
+  },
+  {
+    "id": "test:6:4",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.36320599913597107
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.42672979831695557
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.609907865524292
+      }
+    ],
+    "diagnostic_input_to_action_ms": 727.3841999704018
+  },
+  {
+    "id": "test:6:4",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0412999652326107
+  },
+  {
+    "id": "test:6:14",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.7589110136032104
+      }
+    ],
+    "diagnostic_input_to_action_ms": 187.8982000052929
+  },
+  {
+    "id": "test:6:14",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 698.1537999818102
+  },
+  {
+    "id": "test:6:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04900002386420965
+  },
+  {
+    "id": "test:6:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 781.1759000178427
+  },
+  {
+    "id": "test:6:10",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5799972414970398
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.4348236918449402
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.4599781632423401
+      }
+    ],
+    "diagnostic_input_to_action_ms": 762.7298999577761
+  },
+  {
+    "id": "test:6:10",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.033699965570122004
+  },
+  {
+    "id": "test:6:5",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.7051838636398315
+      }
+    ],
+    "diagnostic_input_to_action_ms": 175.10110000148416
+  },
+  {
+    "id": "test:6:5",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 738.8733999687247
+  },
+  {
+    "id": "test:6:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.040700018871575594
+  },
+  {
+    "id": "test:6:1",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 714.0172999934293
+  },
+  {
+    "id": "test:6:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.374620258808136
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.4367818236351013
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.742688000202179
+      }
+    ],
+    "diagnostic_input_to_action_ms": 544.8004999780096
+  },
+  {
+    "id": "test:6:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04050001734867692
+  },
+  {
+    "id": "test:6:13",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5026002526283264
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.3955840468406677
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.6206650137901306
+      }
+    ],
+    "diagnostic_input_to_action_ms": 705.5189999518916
+  },
+  {
+    "id": "test:6:13",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 741.8053000001237
+  },
+  {
+    "id": "test:6:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.034299970138818026
+  },
+  {
+    "id": "test:7:13",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 748.6708999495022
+  },
+  {
+    "id": "test:7:13",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.4070699214935303
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6794073581695557
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.43817034363746643
+      }
+    ],
+    "diagnostic_input_to_action_ms": 727.817100007087
+  },
+  {
+    "id": "test:7:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.042899977415800095
+  },
+  {
+    "id": "test:7:9",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.6244293451309204
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6166646480560303
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.44639328122138977
+      }
+    ],
+    "diagnostic_input_to_action_ms": 764.5329000079073
+  },
+  {
+    "id": "test:7:9",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 734.4153000158258
+  },
+  {
+    "id": "test:7:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05390000296756625
+  },
+  {
+    "id": "test:7:11",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 737.5970999710262
+  },
+  {
+    "id": "test:7:11",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.3343532383441925
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6907031536102295
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4771662652492523
+      }
+    ],
+    "diagnostic_input_to_action_ms": 759.90649999585
+  },
+  {
+    "id": "test:7:11",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0418000272475183
+  },
+  {
+    "id": "test:7:5",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.4706489145755768
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.40412023663520813
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.49640992283821106
+      }
+    ],
+    "diagnostic_input_to_action_ms": 766.9847999932244
+  },
+  {
+    "id": "test:7:5",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 763.9675000100397
+  },
+  {
+    "id": "test:7:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03430002834647894
+  },
+  {
+    "id": "test:7:1",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 722.2811999963596
+  },
+  {
+    "id": "test:7:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.5266094207763672
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.640169084072113
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.7028520703315735
+      }
+    ],
+    "diagnostic_input_to_action_ms": 577.4314000154845
+  },
+  {
+    "id": "test:7:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04060001811012626
+  },
+  {
+    "id": "test:7:8",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.3404848277568817
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.685892641544342
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4276531934738159
+      }
+    ],
+    "diagnostic_input_to_action_ms": 730.7293000048958
+  },
+  {
+    "id": "test:7:8",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 738.2441000081599
+  },
+  {
+    "id": "test:7:8",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04600000102072954
+  },
+  {
+    "id": "test:7:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 715.5996999936178
+  },
+  {
+    "id": "test:7:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.7371646165847778
+      }
+    ],
+    "diagnostic_input_to_action_ms": 181.81909999111667
+  },
+  {
+    "id": "test:7:15",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.042899977415800095
+  },
+  {
+    "id": "test:7:6",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.4060494899749756
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.548158586025238
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4714750051498413
+      }
+    ],
+    "diagnostic_input_to_action_ms": 764.0458999667317
+  },
+  {
+    "id": "test:7:6",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 779.0105000021867
+  },
+  {
+    "id": "test:7:6",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05929998587816954
+  },
+  {
+    "id": "test:8:11",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 774.9378999578767
+  },
+  {
+    "id": "test:8:11",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.9009108543395996
+      }
+    ],
+    "diagnostic_input_to_action_ms": 202.22990005277097
+  },
+  {
+    "id": "test:8:11",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.042300031054764986
+  },
+  {
+    "id": "test:8:9",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5958005785942078
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.4833439886569977
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.49045196175575256
+      }
+    ],
+    "diagnostic_input_to_action_ms": 753.6736000329256
+  },
+  {
+    "id": "test:8:9",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 732.9489000258036
+  },
+  {
+    "id": "test:8:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04229997284710407
+  },
+  {
+    "id": "test:8:13",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 722.4976000143215
+  },
+  {
+    "id": "test:8:13",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.8248069882392883
+      }
+    ],
+    "diagnostic_input_to_action_ms": 183.6757999844849
+  },
+  {
+    "id": "test:8:13",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.10469998233020306
+  },
+  {
+    "id": "test:8:10",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6614628434181213
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.49460095167160034
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.46927815675735474
+      }
+    ],
+    "diagnostic_input_to_action_ms": 761.8446999695152
+  },
+  {
+    "id": "test:8:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 744.1340999794193
+  },
+  {
+    "id": "test:8:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.1487999688833952
+  },
+  {
+    "id": "test:8:5",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 709.5515999826603
+  },
+  {
+    "id": "test:8:5",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.652252733707428
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.45402392745018005
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.3679189085960388
+      }
+    ],
+    "diagnostic_input_to_action_ms": 739.5380000234582
+  },
+  {
+    "id": "test:8:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04509999416768551
+  },
+  {
+    "id": "test:8:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6213310360908508
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4924621284008026
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4713595509529114
+      }
+    ],
+    "diagnostic_input_to_action_ms": 748.7035000231117
+  },
+  {
+    "id": "test:8:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 726.4153000432998
+  },
+  {
+    "id": "test:8:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04420004552230239
+  },
+  {
+    "id": "test:8:6",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 792.212100001052
+  },
+  {
+    "id": "test:8:6",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.7775089740753174
+      }
+    ],
+    "diagnostic_input_to_action_ms": 211.9410999584943
+  },
+  {
+    "id": "test:8:6",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03880000440403819
+  },
+  {
+    "id": "test:8:4",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.3779377043247223
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.6465723514556885
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.46133315563201904
+      }
+    ],
+    "diagnostic_input_to_action_ms": 787.5203000148758
+  },
+  {
+    "id": "test:8:4",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 770.0717999832705
+  },
+  {
+    "id": "test:8:4",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04549999721348286
+  },
+  {
+    "id": "test:9:2",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 698.5774000058882
+  },
+  {
+    "id": "test:9:2",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.7557082772254944
+      }
+    ],
+    "diagnostic_input_to_action_ms": 170.58580002048984
+  },
+  {
+    "id": "test:9:2",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.052499992307275534
+  },
+  {
+    "id": "test:9:14",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.39812400937080383
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.35849255323410034
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5091767907142639
+      }
+    ],
+    "diagnostic_input_to_action_ms": 726.6211999813095
+  },
+  {
+    "id": "test:9:14",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 731.1838999739848
+  },
+  {
+    "id": "test:9:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.047200010158121586
+  },
+  {
+    "id": "test:9:7",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 748.0212000082247
+  },
+  {
+    "id": "test:9:7",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.30952081084251404
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5329196453094482
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.4092544615268707
+      }
+    ],
+    "diagnostic_input_to_action_ms": 742.8398000192828
+  },
+  {
+    "id": "test:9:7",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04769995575770736
+  },
+  {
+    "id": "test:9:4",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.8355122208595276
+      }
+    ],
+    "diagnostic_input_to_action_ms": 190.76620001578704
+  },
+  {
+    "id": "test:9:4",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 709.7855000174604
+  },
+  {
+    "id": "test:9:4",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03960001049563289
+  },
+  {
+    "id": "test:9:5",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 735.860499960836
+  },
+  {
+    "id": "test:9:5",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.8056825399398804
+      }
+    ],
+    "diagnostic_input_to_action_ms": 176.50729999877512
+  },
+  {
+    "id": "test:9:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.045599997974932194
+  },
+  {
+    "id": "test:9:6",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.500642716884613
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4358266294002533
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.41485312581062317
+      }
+    ],
+    "diagnostic_input_to_action_ms": 719.1897999728099
+  },
+  {
+    "id": "test:9:6",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 744.4724999950267
+  },
+  {
+    "id": "test:9:6",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03980001201853156
+  },
+  {
+    "id": "test:9:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 750.8345000096597
+  },
+  {
+    "id": "test:9:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5428760647773743
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.439567893743515
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5454616546630859
+      }
+    ],
+    "diagnostic_input_to_action_ms": 741.8368000071496
+  },
+  {
+    "id": "test:9:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04020001506432891
+  },
+  {
+    "id": "test:9:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.46414604783058167
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.5815173983573914
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.4152182638645172
+      }
+    ],
+    "diagnostic_input_to_action_ms": 724.7351999976672
+  },
+  {
+    "id": "test:9:1",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 711.6506000165828
+  },
+  {
+    "id": "test:9:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04349998198449612
+  },
+  {
+    "id": "test:10:1",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 741.739500022959
+  },
+  {
+    "id": "test:10:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.4927939176559448
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.6415311098098755
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.47645577788352966
+      }
+    ],
+    "diagnostic_input_to_action_ms": 724.8405999853276
+  },
+  {
+    "id": "test:10:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04269997589290142
+  },
+  {
+    "id": "test:10:14",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.49207690358161926
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.6434684991836548
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.43703997135162354
+      }
+    ],
+    "diagnostic_input_to_action_ms": 713.4801999782212
+  },
+  {
+    "id": "test:10:14",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 712.4363000039011
+  },
+  {
+    "id": "test:10:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0447999918833375
+  },
+  {
+    "id": "test:10:6",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 721.10069997143
+  },
+  {
+    "id": "test:10:6",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.503581166267395
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.4677792191505432
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.33429309725761414
+      }
+    ],
+    "diagnostic_input_to_action_ms": 710.8956999727525
+  },
+  {
+    "id": "test:10:6",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.041300023440271616
+  },
+  {
+    "id": "test:10:12",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6512438654899597
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.7466252446174622
+      }
+    ],
+    "diagnostic_input_to_action_ms": 377.2395999985747
+  },
+  {
+    "id": "test:10:12",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 727.9784000129439
+  },
+  {
+    "id": "test:10:12",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04220003029331565
+  },
+  {
+    "id": "test:10:4",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 721.8444000463933
+  },
+  {
+    "id": "test:10:4",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5026817321777344
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4329885244369507
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.5624071955680847
+      }
+    ],
+    "diagnostic_input_to_action_ms": 728.3475999720395
+  },
+  {
+    "id": "test:10:4",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.052099989261478186
+  },
+  {
+    "id": "test:10:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5064541697502136
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5597510933876038
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.47974997758865356
+      }
+    ],
+    "diagnostic_input_to_action_ms": 757.519000035245
+  },
+  {
+    "id": "test:10:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 736.8988000089303
+  },
+  {
+    "id": "test:10:15",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04439998883754015
+  },
+  {
+    "id": "test:10:7",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 744.8313999921083
+  },
+  {
+    "id": "test:10:7",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.46642452478408813
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.49050816893577576
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.3437736928462982
+      }
+    ],
+    "diagnostic_input_to_action_ms": 753.3207999658771
+  },
+  {
+    "id": "test:10:7",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.05440000677481294
+  },
+  {
+    "id": "test:10:8",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.9632290601730347
+      }
+    ],
+    "diagnostic_input_to_action_ms": 187.93280003592372
+  },
+  {
+    "id": "test:10:8",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 742.7806999767199
+  },
+  {
+    "id": "test:10:8",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04650000482797623
+  },
+  {
+    "id": "test:11:7",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 785.1856999914162
+  },
+  {
+    "id": "test:11:7",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.42723920941352844
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.6612827777862549
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.5981558561325073
+      }
+    ],
+    "diagnostic_input_to_action_ms": 732.9748999909498
+  },
+  {
+    "id": "test:11:7",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04730001091957092
+  },
+  {
+    "id": "test:11:0",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.5423579216003418
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.47670453786849976
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.637764036655426
+      }
+    ],
+    "diagnostic_input_to_action_ms": 697.9768000310287
+  },
+  {
+    "id": "test:11:0",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 749.5665999595076
+  },
+  {
+    "id": "test:11:0",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.042899977415800095
+  },
+  {
+    "id": "test:11:5",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 723.9393999916501
+  },
+  {
+    "id": "test:11:5",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5355803370475769
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.32426005601882935
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.4372270405292511
+      }
+    ],
+    "diagnostic_input_to_action_ms": 748.6164000001736
+  },
+  {
+    "id": "test:11:5",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04410004476085305
+  },
+  {
+    "id": "test:11:2",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.5106943845748901
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.4105952978134155
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.7038354873657227
+      }
+    ],
+    "diagnostic_input_to_action_ms": 557.777400012128
+  },
+  {
+    "id": "test:11:2",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 754.5057999668643
+  },
+  {
+    "id": "test:11:2",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.045199994929134846
+  },
+  {
+    "id": "test:11:4",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 762.6319999690168
+  },
+  {
+    "id": "test:11:4",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.5678220391273499
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.3422013819217682
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.6050898432731628
+      }
+    ],
+    "diagnostic_input_to_action_ms": 726.121699961368
+  },
+  {
+    "id": "test:11:4",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04029995761811733
+  },
+  {
+    "id": "test:11:6",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.40649110078811646
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.34103813767433167
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.7535436749458313
+      }
+    ],
+    "diagnostic_input_to_action_ms": 560.1183999679051
+  },
+  {
+    "id": "test:11:6",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 753.4962000208907
+  },
+  {
+    "id": "test:11:6",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03490003291517496
+  },
+  {
+    "id": "test:11:10",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 746.3854000088759
+  },
+  {
+    "id": "test:11:10",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.7450047731399536
+      }
+    ],
+    "diagnostic_input_to_action_ms": 186.7748000076972
+  },
+  {
+    "id": "test:11:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04060001811012626
+  },
+  {
+    "id": "test:11:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.6741445064544678
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5518696904182434
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.385852187871933
+      }
+    ],
+    "diagnostic_input_to_action_ms": 734.4808999914676
+  },
+  {
+    "id": "test:11:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 739.3772999639623
+  },
+  {
+    "id": "test:11:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04280003486201167
+  },
+  {
+    "id": "test:12:3",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 730.3506000316702
+  },
+  {
+    "id": "test:12:3",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.9238533973693848
+      }
+    ],
+    "diagnostic_input_to_action_ms": 183.40980005450547
+  },
+  {
+    "id": "test:12:3",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04810001701116562
+  },
+  {
+    "id": "test:12:4",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.7751184105873108
+      }
+    ],
+    "diagnostic_input_to_action_ms": 173.70240000309423
+  },
+  {
+    "id": "test:12:4",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 720.1896000187844
+  },
+  {
+    "id": "test:12:4",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.07479998748749495
+  },
+  {
+    "id": "test:12:14",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 719.9265999952331
+  },
+  {
+    "id": "test:12:14",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.2764427661895752
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.39902132749557495
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.3949663043022156
+      }
+    ],
+    "diagnostic_input_to_action_ms": 747.6368999923579
+  },
+  {
+    "id": "test:12:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0418000272475183
+  },
+  {
+    "id": "test:12:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.5941446423530579
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.513121485710144
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.5303518176078796
+      }
+    ],
+    "diagnostic_input_to_action_ms": 729.087800020352
+  },
+  {
+    "id": "test:12:1",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 727.3659000056796
+  },
+  {
+    "id": "test:12:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.08780002826824784
+  },
+  {
+    "id": "test:12:8",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 783.0714000156149
+  },
+  {
+    "id": "test:12:8",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.3960540294647217
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4426979422569275
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.524270236492157
+      }
+    ],
+    "diagnostic_input_to_action_ms": 737.1499000000767
+  },
+  {
+    "id": "test:12:8",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04710000939667225
+  },
+  {
+    "id": "test:12:5",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.4177023768424988
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.406587153673172
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.5367974042892456
+      }
+    ],
+    "diagnostic_input_to_action_ms": 675.969299976714
+  },
+  {
+    "id": "test:12:5",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 737.8538999473676
+  },
+  {
+    "id": "test:12:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03559998003765941
+  },
+  {
+    "id": "test:12:9",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 745.0545000028796
+  },
+  {
+    "id": "test:12:9",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.30671945214271545
+      },
+      {
+        "depth": 12,
+        "prediction": 3,
+        "confidence": 0.3346884846687317
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.35422584414482117
+      }
+    ],
+    "diagnostic_input_to_action_ms": 745.8144000265747
+  },
+  {
+    "id": "test:12:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04020001506432891
+  },
+  {
+    "id": "test:12:7",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.6454956531524658
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.6965078711509705
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.7658539414405823
+      }
+    ],
+    "diagnostic_input_to_action_ms": 549.6982999611646
+  },
+  {
+    "id": "test:12:7",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 740.7199000008404
+  },
+  {
+    "id": "test:12:7",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0420999713242054
+  },
+  {
+    "id": "test:13:1",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 768.8194999936968
+  },
+  {
+    "id": "test:13:1",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.46828514337539673
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "confidence": 0.41180741786956787
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.5028131604194641
+      }
+    ],
+    "diagnostic_input_to_action_ms": 769.0289999591187
+  },
+  {
+    "id": "test:13:1",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04880002234131098
+  },
+  {
+    "id": "test:13:9",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.40387603640556335
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5049018263816833
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.39284548163414
+      }
+    ],
+    "diagnostic_input_to_action_ms": 763.858100050129
+  },
+  {
+    "id": "test:13:9",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 720.468699990306
+  },
+  {
+    "id": "test:13:9",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.040000013541430235
+  },
+  {
+    "id": "test:13:8",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 733.1919000134803
+  },
+  {
+    "id": "test:13:8",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.4260280430316925
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5877423286437988
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.5296404361724854
+      }
+    ],
+    "diagnostic_input_to_action_ms": 729.257500031963
+  },
+  {
+    "id": "test:13:8",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0399000127799809
+  },
+  {
+    "id": "test:13:7",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.3124051094055176
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.3052275478839874
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.4153415262699127
+      }
+    ],
+    "diagnostic_input_to_action_ms": 726.0131999501027
+  },
+  {
+    "id": "test:13:7",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 738.2143000140786
+  },
+  {
+    "id": "test:13:7",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.0420999713242054
+  },
+  {
+    "id": "test:13:2",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 772.2774000139907
+  },
+  {
+    "id": "test:13:2",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.6658324599266052
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.6288409233093262
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.7480701208114624
+      }
+    ],
+    "diagnostic_input_to_action_ms": 569.3655000068247
+  },
+  {
+    "id": "test:13:2",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04139996599406004
+  },
+  {
+    "id": "test:13:15",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.4119522273540497
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.41720202565193176
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.48869574069976807
+      }
+    ],
+    "diagnostic_input_to_action_ms": 792.1573999919929
+  },
+  {
+    "id": "test:13:15",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 785.6146999984048
+  },
+  {
+    "id": "test:13:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04179996903985739
+  },
+  {
+    "id": "test:13:12",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 792.0617000199854
+  },
+  {
+    "id": "test:13:12",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.6115805506706238
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6661164164543152
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.4907410740852356
+      }
+    ],
+    "diagnostic_input_to_action_ms": 773.9174000453204
+  },
+  {
+    "id": "test:13:12",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04249997437000275
+  },
+  {
+    "id": "test:13:3",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.68687903881073
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.46253374218940735
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.4984554350376129
+      }
+    ],
+    "diagnostic_input_to_action_ms": 785.7186999754049
+  },
+  {
+    "id": "test:13:3",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 775.3268000087701
+  },
+  {
+    "id": "test:13:3",
+    "path": "bfs",
+    "prediction": 2,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.03290001768618822
+  },
+  {
+    "id": "test:14:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 752.310200012289
+  },
+  {
+    "id": "test:14:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6085253357887268
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4715298116207123
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.47718745470046997
+      }
+    ],
+    "diagnostic_input_to_action_ms": 758.6884000338614
+  },
+  {
+    "id": "test:14:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.06290001329034567
+  },
+  {
+    "id": "test:14:11",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.7835955023765564
+      }
+    ],
+    "diagnostic_input_to_action_ms": 191.74980005482212
+  },
+  {
+    "id": "test:14:11",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 761.6985000204295
+  },
+  {
+    "id": "test:14:11",
+    "path": "bfs",
+    "prediction": 3,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.041199964471161366
+  },
+  {
+    "id": "test:14:14",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 756.0682999901474
+  },
+  {
+    "id": "test:14:14",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.46930089592933655
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.3709295690059662
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.40417301654815674
+      }
+    ],
+    "diagnostic_input_to_action_ms": 784.9670999567024
+  },
+  {
+    "id": "test:14:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04569999873638153
+  },
+  {
+    "id": "test:14:0",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6114480495452881
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.6127089858055115
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.6118307113647461
+      }
+    ],
+    "diagnostic_input_to_action_ms": 868.1471000309102
+  },
+  {
+    "id": "test:14:0",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 794.2714000237174
+  },
+  {
+    "id": "test:14:0",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04169996827840805
+  },
+  {
+    "id": "test:14:12",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 752.4665999808349
+  },
+  {
+    "id": "test:14:12",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.7557380199432373
+      }
+    ],
+    "diagnostic_input_to_action_ms": 200.80170000437647
+  },
+  {
+    "id": "test:14:12",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.034100026823580265
+  },
+  {
+    "id": "test:14:9",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.4707520306110382
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.4628482460975647
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.34596124291419983
+      }
+    ],
+    "diagnostic_input_to_action_ms": 687.4651000252925
+  },
+  {
+    "id": "test:14:9",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 754.5269000111148
+  },
+  {
+    "id": "test:14:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.040700018871575594
+  },
+  {
+    "id": "test:14:5",
+    "path": "full",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 782.3130999458954
+  },
+  {
+    "id": "test:14:5",
+    "path": "candidate",
+    "prediction": 2,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "confidence": 0.41657283902168274
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6155592799186707
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "confidence": 0.3115767538547516
+      }
+    ],
+    "diagnostic_input_to_action_ms": 751.864799996838
+  },
+  {
+    "id": "test:14:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04369998350739479
+  },
+  {
+    "id": "test:14:10",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.6594890356063843
+      },
+      {
+        "depth": 12,
+        "prediction": 2,
+        "confidence": 0.3601926863193512
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.39485594630241394
+      }
+    ],
+    "diagnostic_input_to_action_ms": 780.9054999961518
+  },
+  {
+    "id": "test:14:10",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 758.3329000044614
+  },
+  {
+    "id": "test:14:10",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.032800016924738884
+  },
+  {
+    "id": "test:15:7",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 773.0062000337057
+  },
+  {
+    "id": "test:15:7",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.41311129927635193
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.576249897480011
+      },
+      {
+        "depth": 18,
+        "prediction": 2,
+        "confidence": 0.4047473073005676
+      }
+    ],
+    "diagnostic_input_to_action_ms": 770.9146999986842
+  },
+  {
+    "id": "test:15:7",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04439998883754015
+  },
+  {
+    "id": "test:15:8",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.8828616738319397
+      }
+    ],
+    "diagnostic_input_to_action_ms": 190.3611000161618
+  },
+  {
+    "id": "test:15:8",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 776.6456999816
+  },
+  {
+    "id": "test:15:8",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.06019999273121357
+  },
+  {
+    "id": "test:15:10",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 788.4623000281863
+  },
+  {
+    "id": "test:15:10",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6936332583427429
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4903726577758789
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.43530380725860596
+      }
+    ],
+    "diagnostic_input_to_action_ms": 751.1079999967478
+  },
+  {
+    "id": "test:15:10",
+    "path": "bfs",
+    "prediction": 1,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.040000013541430235
+  },
+  {
+    "id": "test:15:15",
+    "path": "candidate",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 3,
+        "confidence": 0.4030734896659851
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.6556875109672546
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.5024694204330444
+      }
+    ],
+    "diagnostic_input_to_action_ms": 790.4030999634415
+  },
+  {
+    "id": "test:15:15",
+    "path": "full",
+    "prediction": 3,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 736.0662000137381
+  },
+  {
+    "id": "test:15:15",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04509999416768551
+  },
+  {
+    "id": "test:15:5",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 783.2762000034563
+  },
+  {
+    "id": "test:15:5",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 2,
+        "confidence": 0.6840400099754333
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.5134568810462952
+      },
+      {
+        "depth": 18,
+        "prediction": 3,
+        "confidence": 0.3553277552127838
+      }
+    ],
+    "diagnostic_input_to_action_ms": 782.9661999712698
+  },
+  {
+    "id": "test:15:5",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.043899985030293465
+  },
+  {
+    "id": "test:15:9",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.6919876337051392
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.4031653106212616
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "confidence": 0.47537171840667725
+      }
+    ],
+    "diagnostic_input_to_action_ms": 745.8988999715075
+  },
+  {
+    "id": "test:15:9",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 783.8267000042833
+  },
+  {
+    "id": "test:15:9",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04650000482797623
+  },
+  {
+    "id": "test:15:12",
+    "path": "full",
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 796.9421000452712
+  },
+  {
+    "id": "test:15:12",
+    "path": "candidate",
+    "prediction": 1,
+    "depth": 6,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.9001261591911316
+      }
+    ],
+    "diagnostic_input_to_action_ms": 192.73429998429492
+  },
+  {
+    "id": "test:15:12",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04980002995580435
+  },
+  {
+    "id": "test:15:14",
+    "path": "candidate",
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "head_checks": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "confidence": 0.4740763306617737
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "confidence": 0.7041243314743042
+      }
+    ],
+    "diagnostic_input_to_action_ms": 392.99750002101064
+  },
+  {
+    "id": "test:15:14",
+    "path": "full",
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "head_checks": [],
+    "diagnostic_input_to_action_ms": 782.6422000071034
+  },
+  {
+    "id": "test:15:14",
+    "path": "bfs",
+    "prediction": 0,
+    "depth": 0,
+    "executed_layers": [],
+    "diagnostic_input_to_action_ms": 0.04640000406652689
+  }
+]

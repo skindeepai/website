@@ -1,0 +1,84 @@
+{
+  "policy": {
+    "threshold": 0.8,
+    "agreement": false,
+    "minimum": 6,
+    "mean_depth": 8.606249809265137
+  },
+  "splits": {
+    "calibration": {
+      "n": 600,
+      "full_correct": 567,
+      "candidate_correct": 556,
+      "early_count": 555,
+      "early_wrong": 34,
+      "added_errors": 26,
+      "early_unknown": 6,
+      "early_known": 549,
+      "mean_depth": 8.449999809265137,
+      "blocks_skipped": 0.6479166746139526
+    },
+    "test": {
+      "n": 900,
+      "full_correct": 854,
+      "candidate_correct": 840,
+      "early_count": 824,
+      "early_wrong": 46,
+      "added_errors": 35,
+      "early_unknown": 13,
+      "early_known": 811,
+      "mean_depth": 8.506667137145996,
+      "blocks_skipped": 0.6455555558204651
+    },
+    "oos_calibration": {
+      "n": 100,
+      "full_correct": 72,
+      "candidate_correct": 72,
+      "early_count": 79,
+      "early_wrong": 16,
+      "added_errors": 6,
+      "early_unknown": 63,
+      "early_known": 16,
+      "mean_depth": 11.640000343322754,
+      "blocks_skipped": 0.5149999856948853
+    },
+    "oos_test": {
+      "n": 1000,
+      "full_correct": 512,
+      "candidate_correct": 460,
+      "early_count": 649,
+      "early_wrong": 299,
+      "added_errors": 78,
+      "early_unknown": 350,
+      "early_known": 299,
+      "mean_depth": 14.597999572753906,
+      "blocks_skipped": 0.3917500078678131
+    },
+    "unsupported_test": {
+      "n": 120,
+      "full_correct": 21,
+      "candidate_correct": 19,
+      "early_count": 61,
+      "early_wrong": 52,
+      "added_errors": 3,
+      "early_unknown": 9,
+      "early_known": 52,
+      "mean_depth": 16.549999237060547,
+      "blocks_skipped": 0.31041666865348816
+    }
+  },
+  "upper95": {
+    "added_error": 0.06091908904848054,
+    "absolute_early_error": 0.09876301914937885,
+    "unknown_misrouted": 0.23281583500651937,
+    "known_rejected": 0.01964133024229394
+  },
+  "guard_checks": {
+    "added_error": false,
+    "absolute_early_error": false,
+    "unknown_misrouted": false,
+    "known_rejected": true,
+    "coverage": true
+  },
+  "guard_passed": false
+}

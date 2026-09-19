@@ -1,0 +1,28 @@
+{
+  "excluded_ids": [
+    "test:1432",
+    "test:1474",
+    "test:2149",
+    "test:977"
+  ],
+  "runs": [
+    {
+      "seed": 17,
+      "n": 3076,
+      "full_correct": 2547,
+      "candidate_correct": 2548
+    },
+    {
+      "seed": 29,
+      "n": 3076,
+      "full_correct": 2547,
+      "candidate_correct": 2545
+    },
+    {
+      "seed": 43,
+      "n": 3076,
+      "full_correct": 2546,
+      "candidate_correct": 2540
+    }
+  ]
+}

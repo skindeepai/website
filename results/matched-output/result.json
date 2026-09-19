@@ -1,0 +1,24 @@
+{
+  "queries": 3080,
+  "correct": 2551,
+  "all_outputs_identical": true,
+  "timing_queries": 32,
+  "timing": {
+    "enum": {
+      "mean": 286.9448250075948,
+      "p50": 281.3280999835115
+    },
+    "single_token": {
+      "mean": 288.5405187507786,
+      "p50": 284.0929999947548
+    }
+  },
+  "paired_token_minus_enum_ms": {
+    "mean": 1.5956937431838014,
+    "query_bootstrap_ci95": [
+      -2.9366640737862326,
+      6.129287489784474
+    ]
+  },
+  "interpretation": "Equality is an invariant of sharing learned rows, not new accuracy evidence. One constrained output token can implement the same trained classifier. Avoiding a token alone does not establish a useful speedup; early transformer termination is a separate optimization."
+}

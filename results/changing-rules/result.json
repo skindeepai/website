@@ -1,0 +1,42 @@
+{
+  "protocol_sha256": "626829c2d390a3a8f7e2e0e8c9a8c00401191f2ebc63bb2104c6d4de34caaad6",
+  "depths": {
+    "6": {
+      "correct": 100,
+      "n": 200,
+      "pairs": 100,
+      "both_correct": 0,
+      "changed_prediction": 0,
+      "criterion_passed": false
+    },
+    "12": {
+      "correct": 117,
+      "n": 200,
+      "pairs": 100,
+      "both_correct": 20,
+      "changed_prediction": 23,
+      "criterion_passed": false
+    },
+    "18": {
+      "correct": 100,
+      "n": 200,
+      "pairs": 100,
+      "both_correct": 0,
+      "changed_prediction": 0,
+      "criterion_passed": false
+    },
+    "24": {
+      "correct": 107,
+      "n": 200,
+      "pairs": 100,
+      "both_correct": 14,
+      "changed_prediction": 21,
+      "criterion_passed": false
+    }
+  },
+  "limits": [
+    "Public utterances with authored rules, one template shift, no human adjudication of inferred label names.",
+    "No stopping gate selected or latency claim.",
+    "Query groups are held out; arbitrary instruction following remains unvalidated."
+  ]
+}

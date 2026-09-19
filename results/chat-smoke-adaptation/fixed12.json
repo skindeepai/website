@@ -1,0 +1,3677 @@
+{
+  "protocol": {
+    "common_sha256": "3140f19a3634343d06b249e8f52b6f80e03b7469636056f0a7c747b735f2dc64",
+    "script_sha256": "3b503dff691b539f2f4785fba5acc9bb04517715380443d955bb27dfd36f1668",
+    "variant": "fixed12",
+    "seed": 73,
+    "rank": 4,
+    "alpha": 8,
+    "adapter_modules": "q_proj/v_proj in every retained block",
+    "steps": 32,
+    "batch": 4,
+    "lr_adapter": 0.0005,
+    "lr_head": 0.001,
+    "weight_decay": 0.01,
+    "head_initialization": "train384-only frozen-feature linear classifier,200AdamWsteps lr.01 wd.1, inverse-frequencyclassweights",
+    "checkpoints": [
+      16,
+      32
+    ],
+    "subset_ids": {
+      "train": [
+        "train:1319",
+        "train:88",
+        "train:816",
+        "train:4596",
+        "train:332",
+        "train:4894",
+        "train:1203",
+        "train:4876",
+        "train:3724",
+        "train:150",
+        "train:1216",
+        "train:1077",
+        "train:1154",
+        "train:1261",
+        "train:553",
+        "train:89",
+        "train:145",
+        "train:4635",
+        "train:3946",
+        "train:644",
+        "train:141",
+        "train:4164",
+        "train:3911",
+        "train:172",
+        "train:188",
+        "train:4007",
+        "train:461",
+        "train:547",
+        "train:847",
+        "train:902",
+        "train:301",
+        "train:4382",
+        "train:4929",
+        "train:4866",
+        "train:546",
+        "train:4211",
+        "train:354",
+        "train:3989",
+        "train:2520",
+        "train:4221",
+        "train:4503",
+        "train:4240",
+        "train:4765",
+        "train:1382",
+        "train:4795",
+        "train:250",
+        "train:912",
+        "train:4302",
+        "train:789",
+        "train:826",
+        "train:4818",
+        "train:201",
+        "train:523",
+        "train:4812",
+        "train:493",
+        "train:543",
+        "train:1282",
+        "train:4722",
+        "train:212",
+        "train:4052",
+        "train:1323",
+        "train:371",
+        "train:4959",
+        "train:907",
+        "train:4009",
+        "train:3849",
+        "train:474",
+        "train:5007",
+        "train:1170",
+        "train:911",
+        "train:4456",
+        "train:960",
+        "train:1221",
+        "train:4659",
+        "train:952",
+        "train:3962",
+        "train:331",
+        "train:4563",
+        "train:64",
+        "train:1018",
+        "train:4949",
+        "train:35",
+        "train:492",
+        "train:386",
+        "train:706",
+        "train:4647",
+        "train:3985",
+        "train:1129",
+        "train:440",
+        "train:978",
+        "train:5079",
+        "train:4192",
+        "train:4513",
+        "train:3921",
+        "train:4826",
+        "train:488",
+        "train:142",
+        "train:246",
+        "train:3930",
+        "train:4985",
+        "train:1173",
+        "train:4245",
+        "train:3750",
+        "train:755",
+        "train:4998",
+        "train:96",
+        "train:536",
+        "train:1017",
+        "train:4307",
+        "train:5014",
+        "train:197",
+        "train:4545",
+        "train:4748",
+        "train:4461",
+        "train:4260",
+        "train:982",
+        "train:2",
+        "train:1153",
+        "train:260",
+        "train:4953",
+        "train:308",
+        "train:4509",
+        "train:552",
+        "train:504",
+        "train:4483",
+        "train:4194",
+        "train:1401",
+        "train:184",
+        "train:4057",
+        "train:4319",
+        "train:4341",
+        "train:835",
+        "train:4856",
+        "train:3904",
+        "train:223",
+        "train:3877",
+        "train:4544",
+        "train:1097",
+        "train:4030",
+        "train:27",
+        "train:136",
+        "train:5054",
+        "train:4942",
+        "train:282",
+        "train:216",
+        "train:1298",
+        "train:4591",
+        "train:319",
+        "train:1092",
+        "train:638",
+        "train:2467",
+        "train:3871",
+        "train:4833",
+        "train:4376",
+        "train:4989",
+        "train:487",
+        "train:950",
+        "train:1051",
+        "train:85",
+        "train:4900",
+        "train:144",
+        "train:1278",
+        "train:4329",
+        "train:412",
+        "train:596",
+        "train:315",
+        "train:4421",
+        "train:13",
+        "train:5075",
+        "train:4642",
+        "train:4458",
+        "train:4916",
+        "train:921",
+        "train:4857",
+        "train:1208",
+        "train:4598",
+        "train:700",
+        "train:1366",
+        "train:4824",
+        "train:3814",
+        "train:4727",
+        "train:754",
+        "train:438",
+        "train:284",
+        "train:4862",
+        "train:4721",
+        "train:961",
+        "train:784",
+        "train:445",
+        "train:1125",
+        "train:4473",
+        "train:42",
+        "train:4519",
+        "train:509",
+        "train:4669",
+        "train:5043",
+        "train:4839",
+        "train:90",
+        "train:106",
+        "train:1378",
+        "train:4846",
+        "train:1080",
+        "train:1113",
+        "train:1085",
+        "train:1035",
+        "train:4783",
+        "train:4170",
+        "train:3857",
+        "train:169",
+        "train:4067",
+        "train:696",
+        "train:3786",
+        "train:765",
+        "train:1033",
+        "train:1271",
+        "train:3727",
+        "train:4178",
+        "train:4625",
+        "train:292",
+        "train:4449",
+        "train:38",
+        "train:582",
+        "train:745",
+        "train:321",
+        "train:791",
+        "train:636",
+        "train:4138",
+        "train:304",
+        "train:215",
+        "train:420",
+        "train:4034",
+        "train:1248",
+        "train:936",
+        "train:757",
+        "train:3812",
+        "train:343",
+        "train:293",
+        "train:4403",
+        "train:327",
+        "train:4359",
+        "train:12",
+        "train:4911",
+        "train:152",
+        "train:1334",
+        "train:3842",
+        "train:14",
+        "train:4179",
+        "train:881",
+        "train:4228",
+        "train:4455",
+        "train:323",
+        "train:665",
+        "train:262",
+        "train:1273",
+        "train:1004",
+        "train:116",
+        "train:4868",
+        "train:5078",
+        "train:399",
+        "train:774",
+        "train:3790",
+        "train:3889",
+        "train:3734",
+        "train:4823",
+        "train:1168",
+        "train:710",
+        "train:1078",
+        "train:30",
+        "train:4174",
+        "train:459",
+        "train:4",
+        "train:451",
+        "train:1055",
+        "train:1163",
+        "train:4803",
+        "train:4950",
+        "train:253",
+        "train:199",
+        "train:1249",
+        "train:1193",
+        "train:993",
+        "train:4419",
+        "train:271",
+        "train:669",
+        "train:3707",
+        "train:1089",
+        "train:3999",
+        "train:1188",
+        "train:4726",
+        "train:522",
+        "train:4967",
+        "train:4622",
+        "train:678",
+        "train:148",
+        "train:409",
+        "train:5002",
+        "train:4556",
+        "train:1362",
+        "train:1332",
+        "train:1119",
+        "train:4568",
+        "train:934",
+        "train:259",
+        "train:3808",
+        "train:265",
+        "train:4768",
+        "train:276",
+        "train:4285",
+        "train:4306",
+        "train:4068",
+        "train:627",
+        "train:110",
+        "train:932",
+        "train:1123",
+        "train:4051",
+        "train:306",
+        "train:314",
+        "train:3829",
+        "train:3953",
+        "train:104",
+        "train:1214",
+        "train:1106",
+        "train:4575",
+        "train:359",
+        "train:1240",
+        "train:962",
+        "train:1322",
+        "train:4011",
+        "train:351",
+        "train:1340",
+        "train:1235",
+        "train:4267",
+        "train:975",
+        "train:3914",
+        "train:158",
+        "train:598",
+        "train:296",
+        "train:4244",
+        "train:629",
+        "train:622",
+        "train:1152",
+        "train:50",
+        "train:5006",
+        "train:4119",
+        "train:1247",
+        "train:5021",
+        "train:1000",
+        "train:258",
+        "train:4973",
+        "train:4745",
+        "train:466",
+        "train:3833",
+        "train:4431",
+        "train:526",
+        "train:612",
+        "train:80",
+        "train:1405",
+        "train:4720",
+        "train:4533",
+        "train:4836",
+        "train:202",
+        "train:4037",
+        "train:607",
+        "train:824",
+        "train:166",
+        "train:4733",
+        "train:244",
+        "train:4640",
+        "train:4690",
+        "train:4401",
+        "train:1272",
+        "train:3900",
+        "train:4233",
+        "train:844",
+        "train:334",
+        "train:984",
+        "train:4183",
+        "train:4324",
+        "train:4515",
+        "train:3906",
+        "train:4485",
+        "train:974",
+        "train:3865",
+        "train:873"
+      ],
+      "tune": [
+        "train:3992",
+        "train:4982",
+        "train:4101",
+        "train:1049",
+        "train:119",
+        "train:277",
+        "train:4551",
+        "train:776",
+        "train:3747",
+        "train:4709",
+        "train:219",
+        "train:300",
+        "train:3880",
+        "train:4968",
+        "train:4508",
+        "train:290",
+        "train:3736",
+        "train:235",
+        "train:753",
+        "train:4852",
+        "train:37",
+        "train:234",
+        "train:1027",
+        "train:4386",
+        "train:5039",
+        "train:545",
+        "train:4931",
+        "train:1384",
+        "train:1191",
+        "train:1100",
+        "train:4602",
+        "train:593"
+      ],
+      "calibration": [
+        "train:4567",
+        "train:11",
+        "train:1330",
+        "train:1412",
+        "train:254",
+        "train:4289",
+        "train:87",
+        "train:4703",
+        "train:211",
+        "train:3807",
+        "train:935",
+        "train:406",
+        "train:347",
+        "train:413",
+        "train:4507",
+        "train:221",
+        "train:4997",
+        "train:1182",
+        "train:214",
+        "train:195",
+        "train:672",
+        "train:4801",
+        "train:990",
+        "train:3805",
+        "train:372",
+        "train:358",
+        "train:132",
+        "train:287",
+        "train:996",
+        "train:151",
+        "train:4392",
+        "train:1022",
+        "train:1003",
+        "train:759",
+        "train:4201",
+        "train:4061",
+        "train:1347",
+        "train:4222",
+        "train:768",
+        "train:269",
+        "train:500",
+        "train:1246",
+        "train:797",
+        "train:1029",
+        "train:29",
+        "train:639",
+        "train:2575",
+        "train:1175",
+        "train:93",
+        "train:98",
+        "train:95",
+        "train:71",
+        "train:4151",
+        "train:893",
+        "train:68",
+        "train:47",
+        "train:927",
+        "train:5009",
+        "train:4280",
+        "train:135",
+        "train:134",
+        "train:1313",
+        "train:4304",
+        "train:4252"
+      ],
+      "evaluation": [
+        "test:1227",
+        "test:151",
+        "test:937",
+        "test:276",
+        "test:4767",
+        "test:4411",
+        "test:390",
+        "test:556",
+        "test:1277",
+        "test:143",
+        "test:3970",
+        "test:1298",
+        "test:3994",
+        "test:4858",
+        "test:5064",
+        "test:4506",
+        "test:444",
+        "test:1008",
+        "test:1166",
+        "test:96",
+        "test:84",
+        "test:4520",
+        "test:4407",
+        "test:4512",
+        "test:3767",
+        "test:1027",
+        "test:4107",
+        "test:1060",
+        "test:74",
+        "test:931",
+        "test:4",
+        "test:2",
+        "test:4989",
+        "test:651",
+        "test:254",
+        "test:1186",
+        "test:1055",
+        "test:4956",
+        "test:206",
+        "test:677",
+        "test:142",
+        "test:961",
+        "test:3949",
+        "test:960",
+        "test:1312",
+        "test:282",
+        "test:485",
+        "test:4582",
+        "test:3929",
+        "test:5076",
+        "test:482",
+        "test:4160",
+        "test:4838",
+        "test:5006",
+        "test:179",
+        "test:1219",
+        "test:178",
+        "test:656",
+        "test:908",
+        "test:90",
+        "test:1134",
+        "test:4070",
+        "test:547",
+        "test:1048",
+        "test:14",
+        "test:3814",
+        "test:1289",
+        "test:930",
+        "test:4036",
+        "test:133",
+        "test:4153",
+        "test:77",
+        "test:4481",
+        "test:1299",
+        "test:1100",
+        "test:85",
+        "test:3801",
+        "test:329",
+        "test:54",
+        "test:848",
+        "test:1056",
+        "test:457",
+        "test:3779",
+        "test:169",
+        "test:770",
+        "test:4692",
+        "test:1479",
+        "test:4443",
+        "test:1326",
+        "test:4442",
+        "test:868",
+        "test:3897",
+        "test:196",
+        "test:60",
+        "test:3797",
+        "test:5056",
+        "test:1076",
+        "test:4034",
+        "test:170",
+        "test:448"
+      ]
+    },
+    "selection": "Highest tune32 balancedaccuracy at targetdepth24(or12fixed); tie earlier. Other heads are diagnostic, no eval choice.",
+    "distillation": "joint CE on humanlabels plus KL(teacherfulladapter probabilities || eachhead probabilities), T2, 0.5CE+0.5KL*T^2; teacher uses same384labels, no evaluationlabels",
+    "runtime": "publishedTransformers4.50.3 CPUfloat32 eager,4threads; training may overlap other jobs, not a timing claim",
+    "scope": "Exploratory short optimization budget, not a convergence or production-quality test."
+  },
+  "selected_step": 16,
+  "training_history": [
+    {
+      "step": 16,
+      "tune": {
+        "n": 32,
+        "correct": 22,
+        "missed_toxic": 6,
+        "false_block": 4,
+        "toxic_recall": 0.625,
+        "specificity": 0.75,
+        "balanced_accuracy": 0.6875
+      }
+    },
+    {
+      "step": 32,
+      "tune": {
+        "n": 32,
+        "correct": 21,
+        "missed_toxic": 7,
+        "false_block": 4,
+        "toxic_recall": 0.5625,
+        "specificity": 0.75,
+        "balanced_accuracy": 0.65625
+      }
+    }
+  ],
+  "initial_tune": {
+    "6": {
+      "n": 32,
+      "correct": 26,
+      "missed_toxic": 4,
+      "false_block": 2,
+      "toxic_recall": 0.75,
+      "specificity": 0.875,
+      "balanced_accuracy": 0.8125
+    },
+    "12": {
+      "n": 32,
+      "correct": 23,
+      "missed_toxic": 5,
+      "false_block": 4,
+      "toxic_recall": 0.6875,
+      "specificity": 0.75,
+      "balanced_accuracy": 0.71875
+    }
+  },
+  "gradient_checks": {
+    "first_adapter_a": 0.0068055856972932816,
+    "first_adapter_b": 0.13892848789691925,
+    "first_v_adapter_a": 0.28365379571914673,
+    "first_v_adapter_b": 2.422208070755005,
+    "frozen_base_gradients": 0
+  },
+  "retained_blocks": 12,
+  "trainable_adapter_parameters": 135168,
+  "metrics": {
+    "tune": {
+      "6": {
+        "n": 32,
+        "correct": 24,
+        "missed_toxic": 6,
+        "false_block": 2,
+        "toxic_recall": 0.625,
+        "specificity": 0.875,
+        "balanced_accuracy": 0.75
+      },
+      "12": {
+        "n": 32,
+        "correct": 22,
+        "missed_toxic": 6,
+        "false_block": 4,
+        "toxic_recall": 0.625,
+        "specificity": 0.75,
+        "balanced_accuracy": 0.6875
+      }
+    },
+    "calibration": {
+      "6": {
+        "n": 64,
+        "correct": 45,
+        "missed_toxic": 11,
+        "false_block": 8,
+        "toxic_recall": 0.65625,
+        "specificity": 0.75,
+        "balanced_accuracy": 0.703125
+      },
+      "12": {
+        "n": 64,
+        "correct": 43,
+        "missed_toxic": 12,
+        "false_block": 9,
+        "toxic_recall": 0.625,
+        "specificity": 0.71875,
+        "balanced_accuracy": 0.671875
+      }
+    },
+    "evaluation": {
+      "6": {
+        "n": 100,
+        "correct": 66,
+        "missed_toxic": 22,
+        "false_block": 12,
+        "toxic_recall": 0.56,
+        "specificity": 0.76,
+        "balanced_accuracy": 0.66
+      },
+      "12": {
+        "n": 100,
+        "correct": 66,
+        "missed_toxic": 22,
+        "false_block": 12,
+        "toxic_recall": 0.56,
+        "specificity": 0.76,
+        "balanced_accuracy": 0.66
+      }
+    }
+  },
+  "predictions": [
+    {
+      "split": "tune",
+      "id": "train:3992",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9766684174537659
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0003850688226521015
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4982",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0020851525478065014
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00017115045920945704
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4101",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00019777835404966027
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.3569866698380793e-06
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:1049",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00021418038522824645
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9533753991127014
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:119",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.11192524433135986
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999951124191284
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:277",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.07452617585659027
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.003140558721497655
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4551",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 9.655537951402948e-07
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.05899873375892639
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:776",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9982909560203552
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9203016757965088
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:3747",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.002977890893816948
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00013228582974988967
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4709",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.010319597087800503
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.8758725523948669
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:219",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.999985933303833
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999548196792603
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:300",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.21114306151866913
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.8218099474906921
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:3880",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.968812882900238
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999983310699463
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4968",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.000509810633957386
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.1135054592159577e-05
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4508",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.5064505532791372e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.5801317942987225e-07
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:290",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.17005272209644318
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.13483206927776337
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:3736",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999943971633911
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.009521393105387688
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:235",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9953809976577759
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999713897705078
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:753",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0006811236962676048
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.03176369518041611
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4852",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.673833296285011e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00013279022823553532
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:37",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0005957651883363724
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.879142388361288e-07
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:234",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9863016605377197
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999997615814209
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:1027",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9837390184402466
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.11420086771249771
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4386",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0030600721947848797
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 4.099515837907575e-09
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:5039",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9966440200805664
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:545",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.4148655484168557e-06
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9996939897537231
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4931",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 6.579974751730333e-07
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 4.425148691922232e-09
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:1384",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9952828288078308
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9878705143928528
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:1191",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.003884039120748639
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.7268238227406982e-06
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:1100",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8853157162666321
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9874000549316406
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:4602",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0001339165901299566
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00035329791717231274
+        }
+      }
+    },
+    {
+      "split": "tune",
+      "id": "train:593",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9923070073127747
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9841028451919556
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4567",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7794773578643799
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999579191207886
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:11",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9555757641792297
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.4404556155204773
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1330",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9990397095680237
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999998807907104
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1412",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.001002553035505116
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.2903515198559035e-06
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:254",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8835192322731018
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.01873854175209999
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4289",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.332364940433763e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 4.447215928848891e-09
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:87",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7475513219833374
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9955505132675171
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4703",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.05778314173221588
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999997615814209
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:211",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8133694529533386
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999840259552002
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:3807",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0033901084680110216
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.2120750031717762e-07
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:935",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.210234924859833e-06
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.5904213057638117e-07
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:406",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.024616019800305367
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 4.323083828694507e-07
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:347",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0018583108903840184
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0007854799041524529
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:413",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7281807065010071
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0013465513475239277
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4507",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00853588804602623
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0009835697710514069
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:221",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.12871991097927094
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.1365307718515396
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4997",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.799949161413906e-09
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.4394798597550107e-07
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1182",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.008853118866682053
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.396598574705422e-06
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:214",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0016004614299163222
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.755409836769104
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:195",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9828451871871948
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.024338262155652046
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:672",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0008892288897186518
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 6.295261846389621e-05
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4801",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7654058933258057
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.999150276184082
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:990",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8757213950157166
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:3805",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.782704705024287e-10
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.2041920854244381e-05
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:372",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 5.625719836643839e-07
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.037553414879767e-08
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:358",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 4.249336416251026e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.9758006146730622e-06
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:132",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9983274340629578
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:287",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.7003583202022128e-06
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.609194598335307e-05
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:996",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.05433379486203194
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.053238775581121445
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:151",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9834369421005249
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999994039535522
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4392",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999803304672241
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0024620138574391603
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1022",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.2864463719306514e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 3.7149470699660014e-07
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1003",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0011535357916727662
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.031028473749756813
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:759",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.023991694673895836
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00041704371687956154
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4201",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00807762611657381
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00022191135212779045
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4061",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.315085723125776e-08
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.9198107548135113e-09
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1347",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.999862790107727
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9993096590042114
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4222",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 5.109927587909624e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 5.9136734620324205e-08
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:768",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.32563161849975586
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9997220635414124
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:269",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0034568661358207464
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9744424819946289
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:500",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5796234011650085
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.999897837638855
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1246",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.01168585941195488
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999502897262573
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:797",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9998462200164795
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999508857727051
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1029",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9643483757972717
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 5.9728172345785424e-05
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:29",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5675020217895508
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9991488456726074
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:639",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7557345628738403
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.10937245190143585
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:2575",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 4.10720931540709e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.011692309752106667
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1175",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.005545942112803459
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9823873043060303
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:93",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9992745518684387
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999983310699463
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:98",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8366514444351196
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.5575836896896362
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:95",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9985703229904175
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.7994488477706909
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:71",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5330213308334351
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9984768033027649
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4151",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9960338473320007
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999758005142212
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:893",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00022374209947884083
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.027298372238874435
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:68",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999990463256836
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.988710343837738
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:47",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999300241470337
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.999963641166687
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:927",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.019602933898568153
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0008366737747564912
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:5009",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.4476381838321686
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9995774626731873
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4280",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.000355447904439643
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.1773416872529197e-06
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:135",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9519402384757996
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9983166456222534
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:134",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 1.0
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:1313",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00025693612406030297
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 8.857498869474512e-06
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4304",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9713635444641113
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.6869067549705505
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "id": "train:4252",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 9.703817340778187e-07
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 8.027236617635936e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1227",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9202524423599243
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.1006585484428797e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:151",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.99882572889328
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999403953552246
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:937",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9188616871833801
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9396785497665405
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:276",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9893997311592102
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9997641444206238
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4767",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9801257252693176
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999750852584839
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4411",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.6844165151705965e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.2373547178867739e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:390",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 6.131290138000622e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.8056409771816107e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:556",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9967851638793945
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.08172540366649628
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1277",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.01693522371351719
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.883366584777832
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:143",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.108157397946343e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.10815808176994324
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3970",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9970458149909973
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999873638153076
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1298",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.8511631424189545e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0006841873400844634
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3994",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.003410352161154151
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.004407951142638922
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4858",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.02179354429244995
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.17291787266731262
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:5064",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.1241164430975914
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0004746979393530637
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4506",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.3917839527130127
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0007228687754832208
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:444",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 1.0
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9944480657577515
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1008",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.032341811805963516
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.026464242488145828
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1166",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 1.0
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999998807907104
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:96",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9805429577827454
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.43036022782325745
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:84",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9995740056037903
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9948611855506897
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4520",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.7474938431405462e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.1105831276836398e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4407",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 7.526103351640501e-11
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 8.779606105235871e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4512",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.006182346027344465
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.7820602059364319
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3767",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 5.639065658868958e-09
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0005461181863211095
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1027",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.7068115312213195e-06
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 3.845840623739605e-08
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4107",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00018672003352548927
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0015719563234597445
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1060",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.042570240795612335
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.0092029469888075e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:74",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.939949631690979
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.5594052076339722
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:931",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5017092823982239
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9577357172966003
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.452867329120636
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0007925614481791854
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:2",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.20859649777412415
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.6696178317070007
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4989",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.20330563187599182
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 9.511449752608314e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:651",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9052914381027222
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999773502349854
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:254",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.01813790574669838
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.4570128516643308e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1186",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.00902275275439024
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0005595365655608475
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1055",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9849684834480286
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.99992835521698
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4956",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.33583542704582214
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9998553991317749
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:206",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 5.589916781900683e-06
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.8184007188892792e-08
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:677",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.3663029968738556
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9232036471366882
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:142",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9895105361938477
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.6984989643096924
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:961",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 1.0
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999816417694092
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3949",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.1674218917032704e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 3.2953943218672066e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:960",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9998880624771118
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9982535243034363
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1312",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0006187997641973197
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.5378179998369887e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:282",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.07492322474718094
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.38446614146232605
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:485",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.002087189583107829
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9936087131500244
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4582",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5441951751708984
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.10050122439861298
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3929",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.5870529413223267
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0004941995721310377
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:5076",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.27576693892478943
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.251670777797699
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:482",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 2.965907879115548e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.001388469012454152
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4160",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0012304906267672777
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 8.235162454184319e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4838",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.9232522241452443e-09
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.175044417323079e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:5006",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.003395345527678728
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.4534801948684617e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:179",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9770570993423462
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.7819057106971741
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1219",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8940860033035278
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.020489487797021866
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:178",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.6949488520622253
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999998807907104
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:656",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0008377207559533417
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.013642148114740849
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:908",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.025038443505764008
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.27655765414237976
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:90",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.026597322896122932
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.2428710162639618
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1134",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.999998927116394
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9903337359428406
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4070",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 3.2778450986370444e-05
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 8.132135917549022e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:547",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0010696020908653736
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00013687585305888206
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1048",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.8268051743507385
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.8856306672096252
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:14",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0548502542078495
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.034201640635728836
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3814",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9611625671386719
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999909400939941
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1289",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9869704246520996
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9945587515830994
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:930",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.007683520205318928
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.2193990392081466e-12
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4036",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0015547008952125907
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.6534320579353334e-08
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:133",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9900943636894226
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9998694658279419
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4153",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9990523457527161
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9998144507408142
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:77",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.03685441613197327
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0005172221572138369
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4481",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.6827310919761658
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9992959499359131
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1299",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.007454283069819212
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.02230188623070717
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1100",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.006918453611433506
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00010317371197743341
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:85",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0018225134117528796
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0002165477635571733
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3801",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 7.529098365921527e-05
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.7802997827529907
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:329",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.901569664478302
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999504089355469
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:54",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9956988096237183
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.01612694002687931
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:848",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9681065082550049
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9863451719284058
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1056",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999434947967529
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9420990347862244
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:457",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0012733375187963247
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0001286566402995959
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3779",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 9.069880846368505e-09
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.43121878185093e-09
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:169",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.7754262685775757
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999916553497314
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:770",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.021296998485922813
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 4.4151664042146876e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4692",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0002733669534791261
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.014107609167695045
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1479",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.6718758344650269
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.3337540622160304e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4443",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999051094055176
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9991156458854675
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1326",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 1.8341455643167137e-06
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 3.9360296796076e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4442",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0008862658287398517
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.0018250723369419575
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:868",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.02766011282801628
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 1.3748767742072232e-05
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3897",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9944937825202942
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:196",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.009868573397397995
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 5.621691911983362e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:60",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.314743310213089
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.12444989383220673
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:3797",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.0006505249766632915
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 2.217122698766616e-07
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:5056",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.011236478574573994
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 9.894690265355166e-06
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:1076",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9999974966049194
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 1.0
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:4034",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.025355080142617226
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.5088589191436768
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:170",
+      "label": 1,
+      "heads": {
+        "6": {
+          "prediction": 1,
+          "prob_block": 0.9990732669830322
+        },
+        "12": {
+          "prediction": 1,
+          "prob_block": 0.9999892711639404
+        }
+      }
+    },
+    {
+      "split": "evaluation",
+      "id": "test:448",
+      "label": 0,
+      "heads": {
+        "6": {
+          "prediction": 0,
+          "prob_block": 0.05914369598031044
+        },
+        "12": {
+          "prediction": 0,
+          "prob_block": 0.00017542546265758574
+        }
+      }
+    }
+  ],
+  "elapsed_training_and_evaluation_seconds": 210.24850370001514,
+  "note": "Concurrent training elapsed time is diagnostic. All evaluation reused and balanced; no acceptedqualityclaim."
+}

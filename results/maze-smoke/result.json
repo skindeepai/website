@@ -1,0 +1,103 @@
+{
+  "original_states_unmasked": {
+    "calibration": {
+      "n": 128,
+      "optimal_correct": 101,
+      "legal_actions": 117
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 88,
+      "legal_actions": 104
+    },
+    "episodes": {
+      "n": 10,
+      "goals_reached": 0,
+      "actions": 200,
+      "legal_actions": 100
+    }
+  },
+  "original_states_masked": {
+    "calibration": {
+      "n": 128,
+      "optimal_correct": 110,
+      "legal_actions": 128
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 109,
+      "legal_actions": 128
+    },
+    "episodes": {
+      "n": 10,
+      "goals_reached": 2,
+      "actions": 170,
+      "legal_actions": 170
+    }
+  },
+  "all_train_goal_pairs_unmasked": {
+    "calibration": {
+      "n": 128,
+      "optimal_correct": 124,
+      "legal_actions": 126
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 110,
+      "legal_actions": 119
+    },
+    "episodes": {
+      "n": 10,
+      "goals_reached": 5,
+      "actions": 126,
+      "legal_actions": 48
+    }
+  },
+  "all_train_goal_pairs_masked": {
+    "calibration": {
+      "n": 128,
+      "optimal_correct": 126,
+      "legal_actions": 128
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 117,
+      "legal_actions": 128
+    },
+    "episodes": {
+      "n": 10,
+      "goals_reached": 7,
+      "actions": 99,
+      "legal_actions": 99
+    }
+  },
+  "bfs": {
+    "episodes": {
+      "n": 10,
+      "goals_reached": 10,
+      "actions": 59,
+      "legal_actions": 59
+    },
+    "test": {
+      "n": 128,
+      "optimal_correct": 128,
+      "legal_actions": 128
+    }
+  },
+  "historical_qwen_full": {
+    "episodes": {
+      "n": 10,
+      "goals_reached": 0,
+      "actions": 200,
+      "legal_actions": 85
+    }
+  },
+  "historical_qwen_candidate": {
+    "episodes": {
+      "n": 10,
+      "goals_reached": 0,
+      "actions": 200,
+      "legal_actions": 85
+    }
+  }
+}

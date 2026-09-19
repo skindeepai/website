@@ -1,0 +1,9 @@
+{
+  "queries": 96,
+  "mean_latency_reduction": 0.05328227692011034,
+  "paired_bootstrap_ci95": [
+    0.022942837398924998,
+    0.0880784135869509
+  ],
+  "scope": "Resamples query pairs, averaging each query\u2019s two repeats first. Describes this warm CPU run, not other machines or production traffic."
+}

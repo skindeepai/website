@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "name": "maze-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "training-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "early-exit-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "adaptive",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "maze-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "training-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "early-exit-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "adaptive",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "maze-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "training-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "early-exit-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "adaptive",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "browser": "151.0.7922.34",
+  "scope": "Final targeted checks after maze illustration, table formatting, training error counts and duplicate-copy fixes. Automated Chromium checks, not physical devices or WCAG certification."
+}

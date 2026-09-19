@@ -1,0 +1,93 @@
+{
+  "n": 8,
+  "present": 6,
+  "absent": 2,
+  "folds": [
+    {
+      "train_image": "experiments/fixtures/mobile.png",
+      "held_out_image": "experiments/fixtures/desktop.png",
+      "threshold": 0.035087388940155506,
+      "train_presence_balanced_accuracy": 1.0,
+      "held_out_presence_balanced_accuracy": 1.0,
+      "train_grid": [
+        {
+          "threshold": 0.0,
+          "balanced_accuracy": 0.5
+        },
+        {
+          "threshold": 0.035087388940155506,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "threshold": 0.06978036276996136,
+          "balanced_accuracy": 0.8333333333333333
+        },
+        {
+          "threshold": 0.0888543389737606,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        {
+          "threshold": 1.01,
+          "balanced_accuracy": 0.5
+        }
+      ]
+    },
+    {
+      "train_image": "experiments/fixtures/desktop.png",
+      "held_out_image": "experiments/fixtures/mobile.png",
+      "threshold": 0.032796088606119156,
+      "train_presence_balanced_accuracy": 1.0,
+      "held_out_presence_balanced_accuracy": 1.0,
+      "train_grid": [
+        {
+          "threshold": 0.0,
+          "balanced_accuracy": 0.5
+        },
+        {
+          "threshold": 0.032796088606119156,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "threshold": 0.06243445537984371,
+          "balanced_accuracy": 0.8333333333333333
+        },
+        {
+          "threshold": 0.07649091631174088,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        {
+          "threshold": 1.01,
+          "balanced_accuracy": 0.5
+        }
+      ]
+    }
+  ],
+  "correct_absent_rejections": 2,
+  "erroneous_present_rejections": 0,
+  "accepted_wrong_points": 1,
+  "accepted_correct_points": 5,
+  "successful_actions": 7,
+  "present_only_screenspot_rejection_diagnostic": {
+    "source_sha256": "d85633547f0b0086571f65543d11ea4d781c4675d7c5900d6ace76ffb8756906",
+    "n": 30,
+    "absent": 0,
+    "policies": [
+      {
+        "threshold": 0.035087388940155506,
+        "accepted": 30,
+        "erroneously_rejected_present": 0,
+        "rejected_previously_correct_connected_points": 0,
+        "accepted_correct_connected_points": 25,
+        "accepted_wrong_connected_points": 5
+      },
+      {
+        "threshold": 0.032796088606119156,
+        "accepted": 30,
+        "erroneously_rejected_present": 0,
+        "rejected_previously_correct_connected_points": 0,
+        "accepted_correct_connected_points": 25,
+        "accepted_wrong_connected_points": 5
+      }
+    ]
+  }
+}

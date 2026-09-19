@@ -1,0 +1,23 @@
+{
+  "completed_utc": "2026-09-19T22:49:34.847834+00:00",
+  "threads": 4,
+  "script_sha256": "dbc4c04d731f1d70c2d4164911761c7ff422a21bf7e9a9158d30a77e02a03ef2",
+  "actual_timed_forward_passes": 200,
+  "paths": {
+    "full": {
+      "sum_seconds": 63.56379249977181,
+      "mean_ms": 635.6379249977181,
+      "p95_ms": 1682.7326800033916,
+      "correct": 77
+    },
+    "learned": {
+      "sum_seconds": 42.05657809972763,
+      "mean_ms": 420.5657809972763,
+      "p95_ms": 1221.2675200047663,
+      "correct": 79
+    }
+  },
+  "relative_sum_time_saving": 0.338356374820168,
+  "parity": "All 200 predictions, exit depths and contiguous block traces match cached evaluation.",
+  "limits": "Exploratory selection after inspecting reused100 quality. One warmed paired pass on one CPU, alternating path order; no concurrent launched model jobs. Includes tokenization, readout, gate and hook overhead; excludes model loading/training. No independent quality validation or deployment speed guarantee."
+}

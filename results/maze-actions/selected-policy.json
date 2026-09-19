@@ -1,0 +1,26 @@
+{
+  "threshold": 0.7,
+  "agreement": false,
+  "minimum": 6,
+  "tune": {
+    "n": 128,
+    "optimal_correct": 97,
+    "legal_actions": 109,
+    "full_optimal_correct": 91,
+    "early_count": 32,
+    "early_wrong": 3,
+    "early_illegal": 0,
+    "added_errors": 0,
+    "mean_depth": 19.921875,
+    "exit_counts": {
+      "12": 7,
+      "6": 24,
+      "24": 96,
+      "18": 1
+    },
+    "blocks_skipped": 0.169921875,
+    "wrong_early_upper95": 0.22481610858922574,
+    "illegal_early_upper95": 0.08936819898626476,
+    "added_error_upper95": 0.023132405251746743
+  }
+}

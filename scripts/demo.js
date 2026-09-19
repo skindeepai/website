@@ -359,7 +359,7 @@
         const p = (n % REVEAL_EVERY) / REVEAL_EVERY;
         el('ring-fg').style.strokeDashoffset = (RING_C * (1 - p)).toFixed(1);
         el('ring-label').textContent = Math.round(p * 100) + '%';
-        el('rating-progress').textContent = n + ' ratings. Next suggestion at ' + (Math.floor(n / REVEAL_EVERY) + 1) * REVEAL_EVERY + '.';
+        el('rating-progress').textContent = n + ' ratings. ' + (unlocked(s) ? 'Your suggestions are ready below.' : 'Rate a mix of likes and passes to reveal suggestions.');
     }
 
     function revealOpen() { return el('reveal-overlay').classList.contains('open'); }
@@ -456,16 +456,11 @@
     function renderSections() {
         const s = S();
         const ok = unlocked(s);
-        const need = [];
-        if (likes(s) < 3) need.push((3 - likes(s)) + ' more 👍');
-        if (passes(s) < 3) need.push((3 - passes(s)) + ' more 👎');
-        if (s.model.data.length < 10) need.push('at least ' + (10 - s.model.data.length) + ' more total');
         document.querySelectorAll('.locked-section').forEach((sec) => {
+            sec.hidden = !ok;
+            if (!ok) sec.open = false;
             sec.classList.toggle('is-locked', !ok);
             sec.querySelector('.op-body').hidden = !ok;
-        });
-        document.querySelectorAll('.lock-msg').forEach((msg) => {
-            msg.textContent = ok ? '' : 'Locked — rate a mix first (' + need.join(', ') + ').';
         });
         if (ok) {
             renderIdeal();

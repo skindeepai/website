@@ -1,0 +1,62 @@
+{
+  "type": "Exploratory, reused evaluation; not prospective validation",
+  "common_protocol_sha256": "3140f19a3634343d06b249e8f52b6f80e03b7469636056f0a7c747b735f2dc64",
+  "model": "google/bert_uncased_L-2_H-128_A-2",
+  "revision": "30b0a37ccaaa32f332884b96992754e246e48c5f",
+  "license": "Apache-2.0",
+  "model_files": {
+    "config.json": "508e1f01aae55d73355cbdd82609be2f43ba5a0d3428837adbe56cf8391f8b39",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "model.safetensors": "7fb69ad9f6866d8983183c930e33828f326470bf6ad8bbb2ad4ed957a92e9414"
+  },
+  "seed": 771,
+  "epochs": 4,
+  "batch_size": 16,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "architecture": "2 transformer encoder layers, masked mean pooling, linear 128-to-2 head; all parameters trainable",
+  "input": "Same first 256 Qwen user tokens; no instruction template needed by specialist; additional BERT limit 512 WordPieces including special tokens",
+  "selection": "Choose epoch and BLOCK probability threshold with highest tuning balanced accuracy; ties fewer missed toxic then more correct. Tune cascade asymmetric probability thresholds for maximum specialist coverage with zero additional missed toxic and <=1% added errors vs frozen Qwen full reference.",
+  "calibration": "Shared calibration split is development data, not fresh calibration. Here report fixed selected policies without reselection. No claim of strict risk guarantee.",
+  "timing": "Separate --benchmark when other model workloads finish. Actual batch-one tokenization + model + fallback if invoked; 3 passes of evaluation, rotating path order. Includes Qwen bounding tokenization, excludes load/training.",
+  "decision_thresholds": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "safe_thresholds": [
+    0,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "block_thresholds": [
+    0.6,
+    0.7,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    0.98,
+    0.99,
+    0.995,
+    1.01
+  ],
+  "runtime": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.3",
+    "threads": 4
+  }
+}

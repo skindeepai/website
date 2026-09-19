@@ -1,0 +1,9420 @@
+[
+  {
+    "split": "calibration",
+    "id": "calibration:0:5",
+    "maze": "calibration:0",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": "....\n.A.#\n...G\n.##.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6801320910453796
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4830184280872345
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5575696229934692
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.3239227831363678
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:2",
+    "maze": "calibration:0",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "..A.\n...#\n...G\n.##.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5866199135780334
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4693600833415985
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.35943859815597534
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4532047212123871
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:10",
+    "maze": "calibration:0",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "....\n...#\n..AG\n.##.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5342294573783875
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4570165276527405
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.43388330936431885
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.9349243640899658
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:12",
+    "maze": "calibration:0",
+    "position": 12,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "....\n...#\n...G\nA##.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.468468576669693
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5971655249595642
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.7981610298156738
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.8505552411079407
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:8",
+    "maze": "calibration:0",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "....\n...#\nA..G\n.##.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.3476089537143707
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.547494113445282
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4591176211833954
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5813515782356262
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:4",
+    "maze": "calibration:0",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "....\nA..#\n...G\n.##.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4898819327354431
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3499627411365509
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.39007630944252014
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5955619812011719
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:1",
+    "maze": "calibration:0",
+    "position": 1,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": ".A..\n...#\n...G\n.##.",
+    "full_prediction": 1,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7747355699539185
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.34764134883880615
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.40860649943351746
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.793923020362854
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:0:15",
+    "maze": "calibration:0",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "....\n...#\n...G\n.##A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6737146973609924
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5652267336845398
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.7587230801582336
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.7168623208999634
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:10",
+    "maze": "calibration:1",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": ".##.\nG...\n.#A.\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3960053026676178
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4129970669746399
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.47156935930252075
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.3419859707355499
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:3",
+    "maze": "calibration:1",
+    "position": 3,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": ".##A\nG...\n.#..\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7249065041542053
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3988167941570282
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5871844291687012
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5674343705177307
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:6",
+    "maze": "calibration:1",
+    "position": 6,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": ".##.\nG.A.\n.#..\n....",
+    "full_prediction": 2,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.8055498600006104
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7108851075172424
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4125399589538574
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4132973849773407
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:0",
+    "maze": "calibration:1",
+    "position": 0,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "A##.\nG...\n.#..\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5645677447319031
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6488621830940247
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.9310269951820374
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.6953156590461731
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:13",
+    "maze": "calibration:1",
+    "position": 13,
+    "legal": [
+      1,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": ".##.\nG...\n.#..\n.A..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.3836430013179779
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.38186705112457275
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.34099337458610535
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.550011396408081
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:8",
+    "maze": "calibration:1",
+    "position": 8,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": ".##.\nG...\nA#..\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5049417018890381
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7141713500022888
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5891051888465881
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5592462420463562
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:7",
+    "maze": "calibration:1",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": ".##.\nG..A\n.#..\n....",
+    "full_prediction": 2,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.8347159624099731
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7475049495697021
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.6013096570968628
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.36168086528778076
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:1:14",
+    "maze": "calibration:1",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 4,
+    "observation": ".##.\nG...\n.#..\n..A.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4026337265968323
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5350233912467957
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4688819348812103
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.43033239245414734
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:8",
+    "maze": "calibration:2",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "#..#\n....\nA..#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.289775013923645
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.4632698595523834
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4869157671928406
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5786834359169006
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:2",
+    "maze": "calibration:2",
+    "position": 2,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "#.A#\n....\n...#\n...G",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.5998668074607849
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5774297714233398
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5266868472099304
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4977686405181885
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:6",
+    "maze": "calibration:2",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "#..#\n..A.\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4865208566188812
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4467509984970093
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.34318268299102783
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5210427045822144
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:5",
+    "maze": "calibration:2",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "#..#\n.A..\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.37552687525749207
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.4048157334327698
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.37420836091041565
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5370543599128723
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:13",
+    "maze": "calibration:2",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#..#\n....\n...#\n.A.G",
+    "full_prediction": 1,
+    "prediction": 3,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4907233715057373
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7890519499778748
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5101015567779541
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6415107250213623
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:14",
+    "maze": "calibration:2",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#..#\n....\n...#\n..AG",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6415347456932068
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6164287328720093
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.474807471036911
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8102660775184631
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:4",
+    "maze": "calibration:2",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 5,
+    "observation": "#..#\nA...\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5402989387512207
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5227879285812378
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.39248886704444885
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6010485291481018
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:2:9",
+    "maze": "calibration:2",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": "#..#\n....\n.A.#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4902186691761017
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4315587878227234
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.41713234782218933
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5269054174423218
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:4",
+    "maze": "calibration:3",
+    "position": 4,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": ".#..\nA...\n#..G\n...#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6503587365150452
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5855160355567932
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3892500102519989
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5809592008590698
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:9",
+    "maze": "calibration:3",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": ".#..\n....\n#A.G\n...#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.534973680973053
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6981815695762634
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.366616815328598
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3804780840873718
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:3",
+    "maze": "calibration:3",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": ".#.A\n....\n#..G\n...#",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.41575849056243896
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5030827522277832
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.45221182703971863
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.44224563241004944
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:10",
+    "maze": "calibration:3",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": ".#..\n....\n#.AG\n...#",
+    "full_prediction": 1,
+    "prediction": 3,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4297560751438141
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7919914126396179
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3705730736255646
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8516840934753418
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:5",
+    "maze": "calibration:3",
+    "position": 5,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": ".#..\n.A..\n#..G\n...#",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.38021448254585266
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5066978335380554
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.30892691016197205
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.6188186407089233
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:13",
+    "maze": "calibration:3",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": ".#..\n....\n#..G\n.A.#",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5677580833435059
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.47339946031570435
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.43050700426101685
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4220134913921356
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:12",
+    "maze": "calibration:3",
+    "position": 12,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": ".#..\n....\n#..G\nA..#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5560892224311829
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.3705093264579773
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3877728283405304
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.44905057549476624
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:3:7",
+    "maze": "calibration:3",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": ".#..\n...A\n#..G\n...#",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.38791516423225403
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.49932006001472473
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5560653209686279
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.8489941358566284
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:15",
+    "maze": "calibration:4",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#...\n...G\n#...\n..#A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5027846097946167
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6967617869377136
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.7083712816238403
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6504086852073669
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:3",
+    "maze": "calibration:4",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "#..A\n...G\n#...\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.47325244545936584
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4718754291534424
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4207150936126709
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.3309995234012604
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:2",
+    "maze": "calibration:4",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 2,
+    "observation": "#.A.\n...G\n#...\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3814673125743866
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.522909939289093
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5602998733520508
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4343213737010956
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:6",
+    "maze": "calibration:4",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#...\n..AG\n#...\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5150305032730103
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4439859390258789
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.34079694747924805
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5898758172988892
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:1",
+    "maze": "calibration:4",
+    "position": 1,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": "#A..\n...G\n#...\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4015538692474365
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3831574320793152
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3595479726791382
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.33259281516075134
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:11",
+    "maze": "calibration:4",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#...\n...G\n#..A\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5605096220970154
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4886186122894287
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5543091893196106
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6741164326667786
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:12",
+    "maze": "calibration:4",
+    "position": 12,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 5,
+    "observation": "#...\n...G\n#...\nA.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7934066653251648
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.8199295401573181
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5278696417808533
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6027598977088928
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:4:10",
+    "maze": "calibration:4",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "#...\n...G\n#.A.\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5114234089851379
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5107158422470093
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4540400505065918
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5719140768051147
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:4",
+    "maze": "calibration:5",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 5,
+    "observation": "....\nA..#\n.#.#\n...G",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6657771468162537
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3531586825847626
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3353961706161499
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5165280103683472
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:10",
+    "maze": "calibration:5",
+    "position": 10,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "....\n...#\n.#A#\n...G",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3722357749938965
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4466303586959839
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5420544743537903
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5929152965545654
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:3",
+    "maze": "calibration:5",
+    "position": 3,
+    "legal": [
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 5,
+    "observation": "...A\n...#\n.#.#\n...G",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.662132978439331
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7362967133522034
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.6660750508308411
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5438349843025208
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:14",
+    "maze": "calibration:5",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "....\n...#\n.#.#\n..AG",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.49320662021636963
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4484981894493103
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.35478898882865906
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8047215342521667
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:5",
+    "maze": "calibration:5",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "....\n.A.#\n.#.#\n...G",
+    "full_prediction": 2,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7304331064224243
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.45120230317115784
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5365943908691406
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.49437347054481506
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:2",
+    "maze": "calibration:5",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "..A.\n...#\n.#.#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3230275809764862
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.45437511801719666
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.47055667638778687
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.38871529698371887
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:12",
+    "maze": "calibration:5",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "....\n...#\n.#.#\nA..G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8083013296127319
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.554703414440155
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4276534914970398
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.38655886054039
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:5:0",
+    "maze": "calibration:5",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 6,
+    "observation": "A...\n...#\n.#.#\n...G",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6771930456161499
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.40276050567626953
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.44305330514907837
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.6312589049339294
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:13",
+    "maze": "calibration:6",
+    "position": 13,
+    "legal": [
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "...#\n....\n##..\n.AG.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.9574847221374512
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.48120036721229553
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4717661440372467
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.911020040512085
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:15",
+    "maze": "calibration:6",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": "...#\n....\n##..\n..GA",
+    "full_prediction": 3,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8525131940841675
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.54150390625
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.35777318477630615
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.878955066204071
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:10",
+    "maze": "calibration:6",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "...#\n....\n##A.\n..G.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.9318837523460388
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.7888340950012207
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.38956689834594727
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5765146613121033
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:0",
+    "maze": "calibration:6",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 5,
+    "observation": "A..#\n....\n##..\n..G.",
+    "full_prediction": 2,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7500155568122864
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.42963331937789917
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.42737555503845215
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.40937280654907227
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:6",
+    "maze": "calibration:6",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "...#\n..A.\n##..\n..G.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8980658054351807
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3838469386100769
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4502921998500824
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4245988726615906
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:2",
+    "maze": "calibration:6",
+    "position": 2,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "..A#\n....\n##..\n..G.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.39827868342399597
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.38125985860824585
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.640999436378479
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.8450978994369507
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:12",
+    "maze": "calibration:6",
+    "position": 12,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "...#\n....\n##..\nA.G.",
+    "full_prediction": 0,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.9614565968513489
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5335041284561157
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3780393898487091
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5250571966171265
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:6:11",
+    "maze": "calibration:6",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 2,
+    "observation": "...#\n....\n##.A\n..G.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.4029881954193115
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.47742927074432373
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4091242253780365
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.398339182138443
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:15",
+    "maze": "calibration:7",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 5,
+    "observation": "...#\nG#..\n....\n#..A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5965926647186279
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4250413179397583
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.42818427085876465
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.46577712893486023
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:7",
+    "maze": "calibration:7",
+    "position": 7,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 5,
+    "observation": "...#\nG#.A\n....\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4798814058303833
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4703812003135681
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.44446516036987305
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3604038953781128
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:13",
+    "maze": "calibration:7",
+    "position": 13,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "...#\nG#..\n....\n#A..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6361483931541443
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6219687461853027
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.46043524146080017
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3584081530570984
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:1",
+    "maze": "calibration:7",
+    "position": 1,
+    "legal": [
+      1,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": ".A.#\nG#..\n....\n#...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.4982370436191559
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3770478069782257
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.34172844886779785
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5462372303009033
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:10",
+    "maze": "calibration:7",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "...#\nG#..\n..A.\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4969450831413269
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.42713671922683716
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.36223626136779785
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.29410913586616516
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:0",
+    "maze": "calibration:7",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "A..#\nG#..\n....\n#...",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7020291686058044
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6792082190513611
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.67719966173172
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5965969562530518
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:2",
+    "maze": "calibration:7",
+    "position": 2,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "..A#\nG#..\n....\n#...",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6442397236824036
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5826533436775208
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7047380208969116
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.6389693021774292
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:7:6",
+    "maze": "calibration:7",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      2
+    ],
+    "distance": 4,
+    "observation": "...#\nG#A.\n....\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6833139061927795
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4537186920642853
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.3278815746307373
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3477034568786621
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:7",
+    "maze": "calibration:8",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": "G##.\n...A\n....\n.#..",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.8799393773078918
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4347860813140869
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7250783443450928
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.38634803891181946
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:15",
+    "maze": "calibration:8",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 6,
+    "observation": "G##.\n....\n....\n.#.A",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7320478558540344
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6565207839012146
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3577139675617218
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.7580951452255249
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:6",
+    "maze": "calibration:8",
+    "position": 6,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "G##.\n..A.\n....\n.#..",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7869387865066528
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.555120587348938
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7517989277839661
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5587912797927856
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:11",
+    "maze": "calibration:8",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 5,
+    "observation": "G##.\n....\n...A\n.#..",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.9330464005470276
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7077106833457947
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.45858874917030334
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4432518184185028
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:10",
+    "maze": "calibration:8",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 4,
+    "observation": "G##.\n....\n..A.\n.#..",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7744748592376709
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.526192307472229
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5438750982284546
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.7205861806869507
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:8",
+    "maze": "calibration:8",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "G##.\n....\nA...\n.#..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4227340519428253
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5339635014533997
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4819210469722748
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5783137679100037
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:5",
+    "maze": "calibration:8",
+    "position": 5,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "G##.\n.A..\n....\n.#..",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7333903312683105
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.39671802520751953
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.6369706392288208
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4589642584323883
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:8:4",
+    "maze": "calibration:8",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "G##.\nA...\n....\n.#..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.39613646268844604
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.34573015570640564
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5744763612747192
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.46918612718582153
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:5",
+    "maze": "calibration:9",
+    "position": 5,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "##..\n.A..\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5527142286300659
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.48692965507507324
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3330477476119995
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.794623851776123
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:2",
+    "maze": "calibration:9",
+    "position": 2,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "##A.\n....\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5289395451545715
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3886965811252594
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4109562337398529
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8319329023361206
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:8",
+    "maze": "calibration:9",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "##..\n....\nA..#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5300266146659851
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.37724432349205017
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.43184694647789
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7502006888389587
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:6",
+    "maze": "calibration:9",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "##..\n..A.\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.3803831934928894
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.31940311193466187
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.43231022357940674
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5285232067108154
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:3",
+    "maze": "calibration:9",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 5,
+    "observation": "##.A\n....\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 3,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.4312930703163147
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5132049918174744
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.7479016184806824
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4741167724132538
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:10",
+    "maze": "calibration:9",
+    "position": 10,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "##..\n....\n..A#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.658643364906311
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5506460070610046
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.6139446496963501
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.41426774859428406
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:7",
+    "maze": "calibration:9",
+    "position": 7,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": "##..\n...A\n...#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.38030895590782166
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5766844153404236
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4133378863334656
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6075724363327026
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:9:9",
+    "maze": "calibration:9",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": "##..\n....\n.A.#\n...G",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.48875588178634644
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5102849006652832
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.490481436252594
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7718486785888672
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:10",
+    "maze": "calibration:10",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "...#\n#...\nG.A.\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6698393225669861
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5657544136047363
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3731655776500702
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4582424759864807
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:11",
+    "maze": "calibration:10",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "...#\n#...\nG..A\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3979117274284363
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4277791976928711
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.38344135880470276
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.608197808265686
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:1",
+    "maze": "calibration:10",
+    "position": 1,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": ".A.#\n#...\nG...\n#...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6299547553062439
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4938773214817047
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4795278012752533
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.735206127166748
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:6",
+    "maze": "calibration:10",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 3,
+    "observation": "...#\n#.A.\nG...\n#...",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5969202518463135
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6168910264968872
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5428823232650757
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.30034536123275757
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:13",
+    "maze": "calibration:10",
+    "position": 13,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "...#\n#...\nG...\n#A..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6745579838752747
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4454438388347626
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3280242681503296
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.48134487867355347
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:5",
+    "maze": "calibration:10",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "...#\n#A..\nG...\n#...",
+    "full_prediction": 2,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7520726919174194
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.7534193396568298
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5436835885047913
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.48738181591033936
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:0",
+    "maze": "calibration:10",
+    "position": 0,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "A..#\n#...\nG...\n#...",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6340471506118774
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6313736438751221
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.8634908199310303
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5107889175415039
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:10:7",
+    "maze": "calibration:10",
+    "position": 7,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 4,
+    "observation": "...#\n#..A\nG...\n#...",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4741009771823883
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.4568943679332733
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.48860299587249756
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4345236122608185
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:4",
+    "maze": "calibration:11",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "#.G.\nA...\n..#.\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.5461588501930237
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4992223083972931
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5189021825790405
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5045589208602905
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:9",
+    "maze": "calibration:11",
+    "position": 9,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#.G.\n....\n.A#.\n.#..",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.36825793981552124
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.37468528747558594
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4580804407596588
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.4079820215702057
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:6",
+    "maze": "calibration:11",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#.G.\n..A.\n..#.\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.40459734201431274
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.39251410961151123
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5892500281333923
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.3315553665161133
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:12",
+    "maze": "calibration:11",
+    "position": 12,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "#.G.\n....\n..#.\nA#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6620547771453857
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6602924466133118
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.39980074763298035
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3782665729522705
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:15",
+    "maze": "calibration:11",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "#.G.\n....\n..#.\n.#.A",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4060637056827545
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6606435775756836
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.41919782757759094
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.517004668712616
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:5",
+    "maze": "calibration:11",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "#.G.\n.A..\n..#.\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.41292494535446167
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.38796553015708923
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5317466259002686
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.36635226011276245
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:1",
+    "maze": "calibration:11",
+    "position": 1,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#AG.\n....\n..#.\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.47346118092536926
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4246319830417633
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4662621319293976
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.9351223111152649
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:11:7",
+    "maze": "calibration:11",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 2,
+    "observation": "#.G.\n...A\n..#.\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5962766408920288
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.3302023112773895
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5660115480422974
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5395857691764832
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:2",
+    "maze": "calibration:12",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "#.A.\n..G#\n#...\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.5545763373374939
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.4524058699607849
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.43048331141471863
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.6485874056816101
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:11",
+    "maze": "calibration:12",
+    "position": 11,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "#...\n..G#\n#..A\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4681629240512848
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.31080755591392517
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.35836225748062134
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3015090525150299
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:5",
+    "maze": "calibration:12",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#...\n.AG#\n#...\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5899866223335266
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5828039050102234
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.8396976590156555
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.969132125377655
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:14",
+    "maze": "calibration:12",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#...\n..G#\n#...\n..A.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6942573189735413
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3228302299976349
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.3521651029586792
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3955451250076294
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:9",
+    "maze": "calibration:12",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "#...\n..G#\n#A..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4426189064979553
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4547942578792572
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4563329517841339
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4795248806476593
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:15",
+    "maze": "calibration:12",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 3,
+    "observation": "#...\n..G#\n#...\n...A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4258654713630676
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4520004093647003
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4573056995868683
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4701381325721741
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:13",
+    "maze": "calibration:12",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "#...\n..G#\n#...\n.A..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6806755661964417
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.494002103805542
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.41916340589523315
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.46214064955711365
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:12:4",
+    "maze": "calibration:12",
+    "position": 4,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#...\nA.G#\n#...\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.537606954574585
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5985000729560852
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.8375687599182129
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6175189018249512
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:8",
+    "maze": "calibration:13",
+    "position": 8,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "..#.\n#...\nA..G\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.326980322599411
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3615170419216156
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.523809015750885
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5666959881782532
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:9",
+    "maze": "calibration:13",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "..#.\n#...\n.A.G\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5312402248382568
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5486012101173401
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.46142393350601196
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4875119924545288
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:13",
+    "maze": "calibration:13",
+    "position": 13,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "..#.\n#...\n...G\n.A#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7091993093490601
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5119538307189941
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.3313056230545044
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.34639087319374084
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:5",
+    "maze": "calibration:13",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 3,
+    "observation": "..#.\n#A..\n...G\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.42938870191574097
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.40919193625450134
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3873291015625
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5331205129623413
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:3",
+    "maze": "calibration:13",
+    "position": 3,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "..#A\n#...\n...G\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6257004141807556
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.44462502002716064
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5718918442726135
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.7075771689414978
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:12",
+    "maze": "calibration:13",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 4,
+    "observation": "..#.\n#...\n...G\nA.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5086880922317505
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5645869374275208
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4175649583339691
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.33392786979675293
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:10",
+    "maze": "calibration:13",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "..#.\n#...\n..AG\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.40741947293281555
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.49647462368011475
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4775978624820709
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4734058082103729
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:13:7",
+    "maze": "calibration:13",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "..#.\n#..A\n...G\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5469854474067688
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5549859404563904
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.5576101541519165
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.47585350275039673
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:9",
+    "maze": "calibration:14",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": ".##.\n.G..\n.A.#\n....",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.626726508140564
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6959286332130432
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.49931690096855164
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.4064372479915619
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:15",
+    "maze": "calibration:14",
+    "position": 15,
+    "legal": [
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": ".##.\n.G..\n...#\n...A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.8291962146759033
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.8710959553718567
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.3701854348182678
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.48383861780166626
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:0",
+    "maze": "calibration:14",
+    "position": 0,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "A##.\n.G..\n...#\n....",
+    "full_prediction": 0,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5764707326889038
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.36750367283821106
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7891911864280701
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.35956576466560364
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:4",
+    "maze": "calibration:14",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": ".##.\nAG..\n...#\n....",
+    "full_prediction": 1,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7324056625366211
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6082788109779358
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.38568687438964844
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7201065421104431
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:10",
+    "maze": "calibration:14",
+    "position": 10,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 2,
+    "observation": ".##.\n.G..\n..A#\n....",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5920989513397217
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.7071911692619324
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3535034954547882
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5341503024101257
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:6",
+    "maze": "calibration:14",
+    "position": 6,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": ".##.\n.GA.\n...#\n....",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7732372879981995
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6681421995162964
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4216981530189514
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5922389030456543
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:8",
+    "maze": "calibration:14",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": ".##.\n.G..\nA..#\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5394493341445923
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.45544829964637756
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4773942232131958
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5335013270378113
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:14:13",
+    "maze": "calibration:14",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": ".##.\n.G..\n...#\n.A..",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4598720073699951
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5039837956428528
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.38988423347473145
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.358671635389328
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:9",
+    "maze": "calibration:15",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#.#.\n....\n.A.G\n...#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5904593467712402
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5629331469535828
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4359641671180725
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.36479151248931885
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:3",
+    "maze": "calibration:15",
+    "position": 3,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "#.#A\n....\n...G\n...#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.669582188129425
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6512652039527893
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5143824219703674
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.43182843923568726
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:8",
+    "maze": "calibration:15",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "#.#.\n....\nA..G\n...#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6798365712165833
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5566778779029846
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.44199177622795105
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.40699881315231323
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:10",
+    "maze": "calibration:15",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#.#.\n....\n..AG\n...#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6192702651023865
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5261932611465454
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.33979496359825134
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6280462145805359
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:1",
+    "maze": "calibration:15",
+    "position": 1,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "#A#.\n....\n...G\n...#",
+    "full_prediction": 1,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7949843406677246
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4380488395690918
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3828272223472595
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3442098796367645
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:4",
+    "maze": "calibration:15",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "#.#.\nA...\n...G\n...#",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8682213425636292
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6088341474533081
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.41806891560554504
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4443913698196411
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:13",
+    "maze": "calibration:15",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "#.#.\n....\n...G\n.A.#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.667807936668396
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.534214437007904
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4277973473072052
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5215343832969666
+      }
+    }
+  },
+  {
+    "split": "calibration",
+    "id": "calibration:15:12",
+    "maze": "calibration:15",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 4,
+    "observation": "#.#.\n....\n...G\nA..#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4860731065273285
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5449855327606201
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.678177535533905
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6062102317810059
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:7",
+    "maze": "test:0",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "...G\n##.A\n#...\n....",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.33633872866630554
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6879880428314209
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5449167490005493
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.3789960741996765
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:10",
+    "maze": "test:0",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "...G\n##..\n#.A.\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6584441065788269
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3319481909275055
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.49830546975135803
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.37281304597854614
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:12",
+    "maze": "test:0",
+    "position": 12,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 6,
+    "observation": "...G\n##..\n#...\nA...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7940146923065186
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5477439761161804
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7419090270996094
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7632652521133423
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:9",
+    "maze": "test:0",
+    "position": 9,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "...G\n##..\n#A..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7378817796707153
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5088978409767151
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7169753909111023
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7058987021446228
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:11",
+    "maze": "test:0",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "...G\n##..\n#..A\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4802590012550354
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4513230621814728
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.405593603849411
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4854462444782257
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:15",
+    "maze": "test:0",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "...G\n##..\n#...\n...A",
+    "full_prediction": 3,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6669114828109741
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7758923172950745
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3675003945827484
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.3929014801979065
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:6",
+    "maze": "test:0",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "...G\n##A.\n#...\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7320286631584167
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.42317402362823486
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6886709332466125
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5721363425254822
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:0:13",
+    "maze": "test:0",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 5,
+    "observation": "...G\n##..\n#...\n.A..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.7029852271080017
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5127735137939453
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6243327856063843
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7376651167869568
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:4",
+    "maze": "test:1",
+    "position": 4,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "....\nA..#\n#...\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.45280978083610535
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.5303847789764404
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5116905570030212
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.42574542760849
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:10",
+    "maze": "test:1",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "....\n...#\n#.A.\n.G#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.35181349515914917
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3544961214065552
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.42842867970466614
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.28184330463409424
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:9",
+    "maze": "test:1",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "....\n...#\n#A..\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3771919310092926
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.33147382736206055
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4147813618183136
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4308934509754181
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:15",
+    "maze": "test:1",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "....\n...#\n#...\n.G#A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.490823358297348
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5632402300834656
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4092938005924225
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.8487210869789124
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:11",
+    "maze": "test:1",
+    "position": 11,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "....\n...#\n#..A\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4786754846572876
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5549238324165344
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.42719876766204834
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.3697972893714905
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:12",
+    "maze": "test:1",
+    "position": 12,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "....\n...#\n#...\nAG#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5860792994499207
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5198085308074951
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.66440349817276
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.9593701362609863
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:2",
+    "maze": "test:1",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 4,
+    "observation": "..A.\n...#\n#...\n.G#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.43888068199157715
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5481244921684265
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3452150225639343
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.31360238790512085
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:1:0",
+    "maze": "test:1",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 4,
+    "observation": "A...\n...#\n#...\n.G#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.39042946696281433
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3993922173976898
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5226484537124634
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4203149974346161
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:1",
+    "maze": "test:2",
+    "position": 1,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1,
+      2
+    ],
+    "distance": 2,
+    "observation": "#A..\n..G#\n....\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.389068067073822
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.31972211599349976
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3875407576560974
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4568532705307007
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:2",
+    "maze": "test:2",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "#.A.\n..G#\n....\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7567651271820068
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.728437602519989
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.46723684668540955
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.7025784850120544
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:11",
+    "maze": "test:2",
+    "position": 11,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "#...\n..G#\n...A\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5856435894966125
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3353442847728729
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5500345230102539
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6961778998374939
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:10",
+    "maze": "test:2",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#...\n..G#\n..A.\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4244037866592407
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3333272635936737
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5494893789291382
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6118010878562927
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:8",
+    "maze": "test:2",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "#...\n..G#\nA...\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5961098074913025
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.424870103597641
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.49045369029045105
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5267292857170105
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:5",
+    "maze": "test:2",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#...\n.AG#\n....\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.42473724484443665
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3773483335971832
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5978595614433289
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8795605301856995
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:13",
+    "maze": "test:2",
+    "position": 13,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#...\n..G#\n....\n.A#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.8466540575027466
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7440946698188782
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5081523656845093
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4982702136039734
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:2:4",
+    "maze": "test:2",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#...\nA.G#\n....\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.36466002464294434
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.47929754853248596
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5978900790214539
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.42972105741500854
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:13",
+    "maze": "test:3",
+    "position": 13,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": "#.#.\n....\n....\nGA#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5913626551628113
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5451210737228394
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.38625502586364746
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.9979294538497925
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:4",
+    "maze": "test:3",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 2,
+    "observation": "#.#.\nA...\n....\nG.#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8532266616821289
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5102301239967346
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.385259211063385
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5180345177650452
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:11",
+    "maze": "test:3",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": "#.#.\n....\n...A\nG.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.45753660798072815
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6065486669540405
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3904242515563965
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.39622431993484497
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:9",
+    "maze": "test:3",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 2,
+    "observation": "#.#.\n....\n.A..\nG.#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6042307615280151
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.41108787059783936
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4006061851978302
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.41508638858795166
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:15",
+    "maze": "test:3",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "#.#.\n....\n....\nG.#A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.50450199842453
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7672505378723145
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5126622915267944
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5866766571998596
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:3",
+    "maze": "test:3",
+    "position": 3,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 6,
+    "observation": "#.#A\n....\n....\nG.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5068698525428772
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7217673063278198
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.46711525321006775
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.40727499127388
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:10",
+    "maze": "test:3",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "#.#.\n....\n..A.\nG.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4913273751735687
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7445695996284485
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5311862826347351
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5373307466506958
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:3:1",
+    "maze": "test:3",
+    "position": 1,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "#A#.\n....\n....\nG.#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.49388453364372253
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6144083738327026
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.30486223101615906
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.33484959602355957
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:7",
+    "maze": "test:4",
+    "position": 7,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "..G.\n#.#A\n....\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4662237763404846
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5100964307785034
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.41116416454315186
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.4323877692222595
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:13",
+    "maze": "test:4",
+    "position": 13,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "..G.\n#.#.\n....\n.A#.",
+    "full_prediction": 1,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7567388415336609
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7230746746063232
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4464400112628937
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3643414080142975
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:9",
+    "maze": "test:4",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "..G.\n#.#.\n.A..\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6692260503768921
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4962153732776642
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4466755986213684
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4436248242855072
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:3",
+    "maze": "test:4",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": "..GA\n#.#.\n....\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4564953148365021
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4915544092655182
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.8608563542366028
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.9922992587089539
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:5",
+    "maze": "test:4",
+    "position": 5,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "..G.\n#A#.\n....\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3844248354434967
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4829271733760834
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3636552095413208
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.3698500096797943
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:15",
+    "maze": "test:4",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "..G.\n#.#.\n....\n..#A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.621798038482666
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5209406614303589
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.43498605489730835
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3933277428150177
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:8",
+    "maze": "test:4",
+    "position": 8,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "..G.\n#.#.\nA...\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8072428703308105
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5688607692718506
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6112505197525024
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5172311067581177
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:4:10",
+    "maze": "test:4",
+    "position": 10,
+    "legal": [
+      1,
+      3
+    ],
+    "optimal": [
+      1,
+      3
+    ],
+    "distance": 4,
+    "observation": "..G.\n#.#.\n..A.\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4794560968875885
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.3735472857952118
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.37788480520248413
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.7104721069335938
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:4",
+    "maze": "test:5",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "G..#\nA...\n....\n#..#",
+    "full_prediction": 0,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7942342162132263
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.30293580889701843
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.45535460114479065
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.506027102470398
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:11",
+    "maze": "test:5",
+    "position": 11,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 5,
+    "observation": "G..#\n....\n...A\n#..#",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6215565204620361
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5455549359321594
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.49327704310417175
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.6833165884017944
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:14",
+    "maze": "test:5",
+    "position": 14,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 5,
+    "observation": "G..#\n....\n....\n#.A#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3949805498123169
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5168560147285461
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.7237251996994019
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.784768283367157
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:7",
+    "maze": "test:5",
+    "position": 7,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": "G..#\n...A\n....\n#..#",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.49629709124565125
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.40604063868522644
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3976002633571625
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.46284589171409607
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:9",
+    "maze": "test:5",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 3,
+    "observation": "G..#\n....\n.A..\n#..#",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6068220734596252
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.37370017170906067
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5120683908462524
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.49130240082740784
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:13",
+    "maze": "test:5",
+    "position": 13,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "G..#\n....\n....\n#A.#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5781251192092896
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.43811723589897156
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.6894574761390686
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.7626482844352722
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:10",
+    "maze": "test:5",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 4,
+    "observation": "G..#\n....\n..A.\n#..#",
+    "full_prediction": 3,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7009890079498291
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.38427212834358215
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4257601797580719
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.42461785674095154
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:5:8",
+    "maze": "test:5",
+    "position": 8,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "G..#\n....\nA...\n#..#",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6750013828277588
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.329282283782959
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4954000413417816
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5815902948379517
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:0",
+    "maze": "test:6",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "A..G\n..##\n...#\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.40635454654693604
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4363711476325989
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.40544500946998596
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.4503954350948334
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:15",
+    "maze": "test:6",
+    "position": 15,
+    "legal": [
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 7,
+    "observation": "...G\n..##\n...#\n...A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7648899555206299
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5709447264671326
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.44489938020706177
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.6363812685012817
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:4",
+    "maze": "test:6",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 4,
+    "observation": "...G\nA.##\n...#\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.36322665214538574
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4267391264438629
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6099065542221069
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4624021649360657
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:14",
+    "maze": "test:6",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 6,
+    "observation": "...G\n..##\n...#\n..A.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7589111328125
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4455101191997528
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4718349277973175
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.6274974346160889
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:10",
+    "maze": "test:6",
+    "position": 10,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 5,
+    "observation": "...G\n..##\n..A#\n....",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5799972414970398
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4348236918449402
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4599781036376953
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5479953289031982
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:5",
+    "maze": "test:6",
+    "position": 5,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "...G\n.A##\n...#\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7051873207092285
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.480010062456131
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.356044739484787
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5334837436676025
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:1",
+    "maze": "test:6",
+    "position": 1,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": ".A.G\n..##\n...#\n....",
+    "full_prediction": 3,
+    "prediction": 1,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.37462422251701355
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4367937743663788
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7426879405975342
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5213593244552612
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:6:13",
+    "maze": "test:6",
+    "position": 13,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "...G\n..##\n...#\n.A..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5026002526283264
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3955840766429901
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6206649541854858
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5155231952667236
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:13",
+    "maze": "test:7",
+    "position": 13,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "...G\n...#\n..#.\n#A..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4070698320865631
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6794074177742004
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4381703734397888
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5204911231994629
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:9",
+    "maze": "test:7",
+    "position": 9,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "...G\n...#\n.A#.\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6244099736213684
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6166523694992065
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.44639432430267334
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.45768922567367554
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:11",
+    "maze": "test:7",
+    "position": 11,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 8,
+    "observation": "...G\n...#\n..#A\n#...",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.3343532383441925
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6907032132148743
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4771662652492523
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.42685434222221375
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:5",
+    "maze": "test:7",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "...G\n.A.#\n..#.\n#...",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.47064897418022156
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.40412017703056335
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.49640992283821106
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.4102576971054077
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:1",
+    "maze": "test:7",
+    "position": 1,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": ".A.G\n...#\n..#.\n#...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5266032814979553
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.640155553817749
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7028533816337585
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8666232228279114
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:8",
+    "maze": "test:7",
+    "position": 8,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 5,
+    "observation": "...G\n...#\nA.#.\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.34044888615608215
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6858830451965332
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4276481866836548
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6866686344146729
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:15",
+    "maze": "test:7",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 7,
+    "observation": "...G\n...#\n..#.\n#..A",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7371646165847778
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4453265964984894
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4402334690093994
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.46064192056655884
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:7:6",
+    "maze": "test:7",
+    "position": 6,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "...G\n..A#\n..#.\n#...",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.40606415271759033
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5481382012367249
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.47147098183631897
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5002162456512451
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:11",
+    "maze": "test:8",
+    "position": 11,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 4,
+    "observation": "#G.#\n....\n...A\n..#.",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.9009108543395996
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.4689643979072571
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.550150990486145
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.3509010076522827
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:9",
+    "maze": "test:8",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#G.#\n....\n.A..\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5957935452461243
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4833539128303528
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.49044886231422424
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3380609154701233
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:13",
+    "maze": "test:8",
+    "position": 13,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#G.#\n....\n....\n.A#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.8248162269592285
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7622286677360535
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4653261601924896
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.45255473256111145
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:10",
+    "maze": "test:8",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 3,
+    "observation": "#G.#\n....\n..A.\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6614628434181213
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.49460095167160034
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4692782163619995
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.3478795289993286
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:5",
+    "maze": "test:8",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#G.#\n.A..\n....\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6522464752197266
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4540417194366455
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.36791732907295227
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3742901682853699
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:15",
+    "maze": "test:8",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "#G.#\n....\n....\n..#A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6213411092758179
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.49244698882102966
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.47135812044143677
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.39083364605903625
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:6",
+    "maze": "test:8",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 2,
+    "observation": "#G.#\n..A.\n....\n..#.",
+    "full_prediction": 0,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.7775089740753174
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.31097233295440674
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.5336000323295593
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.40571653842926025
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:8:4",
+    "maze": "test:8",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#G.#\nA...\n....\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.37793856859207153
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6465793251991272
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4613367021083832
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7297208905220032
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:2",
+    "maze": "test:9",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#.AG\n....\n##..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.755693256855011
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6343490481376648
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4497050940990448
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.8749854564666748
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:14",
+    "maze": "test:9",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 4,
+    "observation": "#..G\n....\n##..\n..A.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3981240689754486
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3584926724433899
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5091767907142639
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.558352530002594
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:7",
+    "maze": "test:9",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#..G\n...A\n##..\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3095208406448364
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5329196453094482
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4092545211315155
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.47102776169776917
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:4",
+    "maze": "test:9",
+    "position": 4,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "#..G\nA...\n##..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8354979753494263
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.8257740139961243
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.591876208782196
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5768996477127075
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:5",
+    "maze": "test:9",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "#..G\n.A..\n##..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8056615591049194
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6073881387710571
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5196473598480225
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5606840252876282
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:6",
+    "maze": "test:9",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "#..G\n..A.\n##..\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5006427764892578
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4358266294002533
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.41485312581062317
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.31407544016838074
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:15",
+    "maze": "test:9",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#..G\n....\n##..\n...A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5428760647773743
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4395679235458374
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5454616546630859
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.4492530822753906
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:9:1",
+    "maze": "test:9",
+    "position": 1,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#A.G\n....\n##..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.46416187286376953
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5815188884735107
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4152226150035858
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.7603541016578674
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:1",
+    "maze": "test:10",
+    "position": 1,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "#A..\n.#..\n..G#\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.49274951219558716
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6415382027626038
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.47645533084869385
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6321903467178345
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:14",
+    "maze": "test:10",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 1,
+    "observation": "#...\n.#..\n..G#\n..A.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.49207696318626404
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.6434683799743652
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4370400011539459
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.5579909682273865
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:6",
+    "maze": "test:10",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "#...\n.#A.\n..G#\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.5035519599914551
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.4677985608577728
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.33428701758384705
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.40595075488090515
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:12",
+    "maze": "test:10",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "#...\n.#..\n..G#\nA...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6512107849121094
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.746642529964447
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7812089920043945
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6367712020874023
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:4",
+    "maze": "test:10",
+    "position": 4,
+    "legal": [
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "#...\nA#..\n..G#\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.502737820148468
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.43295982480049133
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.562408447265625
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6924799084663391
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:15",
+    "maze": "test:10",
+    "position": 15,
+    "legal": [
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "#...\n.#..\n..G#\n...A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5064541101455688
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5597510933876038
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.47974997758865356
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6342662572860718
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:7",
+    "maze": "test:10",
+    "position": 7,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 2,
+    "observation": "#...\n.#.A\n..G#\n....",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.4664245843887329
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.49050822854042053
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.3437736928462982
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.43247804045677185
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:10:8",
+    "maze": "test:10",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "#...\n.#..\nA.G#\n....",
+    "full_prediction": 0,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.9632290601730347
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.8206366896629333
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6195570230484009
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.684394359588623
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:7",
+    "maze": "test:11",
+    "position": 7,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 6,
+    "observation": "...#\n...A\n.#..\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4272392988204956
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6612827181816101
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5981558561325073
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.31700706481933594
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:0",
+    "maze": "test:11",
+    "position": 0,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 4,
+    "observation": "A..#\n....\n.#..\n.G#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.5423044562339783
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.47673115134239197
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.6377711296081543
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5012780427932739
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:5",
+    "maze": "test:11",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 4,
+    "observation": "...#\n.A..\n.#..\n.G#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5356006622314453
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.32427024841308594
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4372294843196869
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5450442433357239
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:2",
+    "maze": "test:11",
+    "position": 2,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 6,
+    "observation": "..A#\n....\n.#..\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.5106532573699951
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.41062450408935547
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7038372755050659
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.8060058951377869
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:4",
+    "maze": "test:11",
+    "position": 4,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 3,
+    "observation": "...#\nA...\n.#..\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.5678403973579407
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3422391712665558
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.6050950884819031
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.503278911113739
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:6",
+    "maze": "test:11",
+    "position": 6,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 5,
+    "observation": "...#\n..A.\n.#..\n.G#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.40649113059043884
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.34103813767433167
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7535436153411865
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4904758930206299
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:10",
+    "maze": "test:11",
+    "position": 10,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 6,
+    "observation": "...#\n....\n.#A.\n.G#.",
+    "full_prediction": 2,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7450231909751892
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.616924524307251
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.6684515476226807
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5521821975708008
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:11:15",
+    "maze": "test:11",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 8,
+    "observation": "...#\n....\n.#..\n.G#A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6741487979888916
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5518590211868286
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.38585129380226135
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5364684462547302
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:3",
+    "maze": "test:12",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": "#.GA\n..#.\n....\n.#..",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.9238583445549011
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.6650610566139221
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4522034227848053
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.559556782245636
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:4",
+    "maze": "test:12",
+    "position": 4,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 3,
+    "observation": "#.G.\nA.#.\n....\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.7751035690307617
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3737208843231201
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5358484387397766
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.5364428758621216
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:14",
+    "maze": "test:12",
+    "position": 14,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 5,
+    "observation": "#.G.\n..#.\n....\n.#A.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.2764427363872528
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3990213871002197
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3949664235115051
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4218445420265198
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:1",
+    "maze": "test:12",
+    "position": 1,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 1,
+    "observation": "#AG.\n..#.\n....\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.5941761136054993
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.5131125450134277
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.5303452610969543
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.86189204454422
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:8",
+    "maze": "test:12",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 4,
+    "observation": "#.G.\n..#.\nA...\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.3960540294647217
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4426978826522827
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.5242702960968018
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6067115068435669
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:5",
+    "maze": "test:12",
+    "position": 5,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#.G.\n.A#.\n....\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.4176771938800812
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4065626859664917
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5367944836616516
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.4400155246257782
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:9",
+    "maze": "test:12",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#.G.\n..#.\n.A..\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.30671945214271545
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.3346884846687317
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.35422584414482117
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.30612912774086
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:12:7",
+    "maze": "test:12",
+    "position": 7,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#.G.\n..#A\n....\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6454957127571106
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6965079307556152
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.7658539414405823
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.7467421889305115
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:1",
+    "maze": "test:13",
+    "position": 1,
+    "legal": [
+      1,
+      3
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": ".A..\n.#G.\n..#.\n..#.",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.46828514337539673
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.41180750727653503
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.5028132796287537
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.40598106384277344
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:9",
+    "maze": "test:13",
+    "position": 9,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 6,
+    "observation": "....\n.#G.\n.A#.\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4038516879081726
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.504876971244812
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.39284875988960266
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.46475282311439514
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:8",
+    "maze": "test:13",
+    "position": 8,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "....\n.#G.\nA.#.\n..#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.4260118007659912
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5877243876457214
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.5296438932418823
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6895269155502319
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:7",
+    "maze": "test:13",
+    "position": 7,
+    "legal": [
+      0,
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 1,
+    "observation": "....\n.#GA\n..#.\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.3124151825904846
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.30524909496307373
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.4153413772583008
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.9314205050468445
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:2",
+    "maze": "test:13",
+    "position": 2,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      2
+    ],
+    "distance": 1,
+    "observation": "..A.\n.#G.\n..#.\n..#.",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 18,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6658325791358948
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6288409233093262
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.748070240020752
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.744526743888855
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:15",
+    "maze": "test:13",
+    "position": 15,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "....\n.#G.\n..#.\n..#A",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.41194432973861694
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4171764850616455
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4886891841888428
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.6875116229057312
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:12",
+    "maze": "test:13",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 6,
+    "observation": "....\n.#G.\n..#.\nA.#.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.6115577220916748
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6661165952682495
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4907394051551819
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.8188061118125916
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:13:3",
+    "maze": "test:13",
+    "position": 3,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      2,
+      3
+    ],
+    "distance": 2,
+    "observation": "...A\n.#G.\n..#.\n..#.",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.68687903881073
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.46253377199172974
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.4984554350376129
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.47370922565460205
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:15",
+    "maze": "test:14",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0,
+      3
+    ],
+    "distance": 4,
+    "observation": "..G.\n#..#\n....\n.#.A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.608525276184082
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.47152987122535706
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.47718745470046997
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5121827721595764
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:11",
+    "maze": "test:14",
+    "position": 11,
+    "legal": [
+      2,
+      3
+    ],
+    "optimal": [
+      3
+    ],
+    "distance": 3,
+    "observation": "..G.\n#..#\n...A\n.#..",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.783595621585846
+      },
+      "12": {
+        "prediction": 3,
+        "confidence": 0.40395593643188477
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.5197629332542419
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.6363232731819153
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:14",
+    "maze": "test:14",
+    "position": 14,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "..G.\n#..#\n....\n.#A.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4692992568016052
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.3709183633327484
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.4041801691055298
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.38950517773628235
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:0",
+    "maze": "test:14",
+    "position": 0,
+    "legal": [
+      1
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 2,
+    "observation": "A.G.\n#..#\n....\n.#..",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6114499568939209
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.6127153038978577
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.6118297576904297
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.40481820702552795
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:12",
+    "maze": "test:14",
+    "position": 12,
+    "legal": [
+      0
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 5,
+    "observation": "..G.\n#..#\n....\nA#..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.7557348608970642
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.7256098389625549
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.6249924898147583
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.4945191740989685
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:9",
+    "maze": "test:14",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 3,
+    "observation": "..G.\n#..#\n.A..\n.#..",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.47074267268180847
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.4628773629665375
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.3459615707397461
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.39616063237190247
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:5",
+    "maze": "test:14",
+    "position": 5,
+    "legal": [
+      0,
+      1,
+      2
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 2,
+    "observation": "..G.\n#A.#\n....\n.#..",
+    "full_prediction": 2,
+    "prediction": 2,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 0,
+        "confidence": 0.41656848788261414
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.61553555727005
+      },
+      "18": {
+        "prediction": 0,
+        "confidence": 0.31158027052879333
+      },
+      "24": {
+        "prediction": 2,
+        "confidence": 0.3598645329475403
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:14:10",
+    "maze": "test:14",
+    "position": 10,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "..G.\n#..#\n..A.\n.#..",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.6594889163970947
+      },
+      "12": {
+        "prediction": 2,
+        "confidence": 0.3601926565170288
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.39485597610473633
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.733062207698822
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:7",
+    "maze": "test:15",
+    "position": 7,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#.G.\n#.#A\n....\n....",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.41308683156967163
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5762231945991516
+      },
+      "18": {
+        "prediction": 2,
+        "confidence": 0.40474116802215576
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.31207898259162903
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:8",
+    "maze": "test:15",
+    "position": 8,
+    "legal": [
+      1,
+      2
+    ],
+    "optimal": [
+      1
+    ],
+    "distance": 4,
+    "observation": "#.G.\n#.#.\nA...\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.8828443884849548
+      },
+      "12": {
+        "prediction": 1,
+        "confidence": 0.5587617754936218
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.7820011973381042
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6691224575042725
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:10",
+    "maze": "test:15",
+    "position": 10,
+    "legal": [
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      1,
+      3
+    ],
+    "distance": 4,
+    "observation": "#.G.\n#.#.\n..A.\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6936334371566772
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.4903726577758789
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.4353037476539612
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.5506351590156555
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:15",
+    "maze": "test:15",
+    "position": 15,
+    "legal": [
+      0,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 4,
+    "observation": "#.G.\n#.#.\n....\n...A",
+    "full_prediction": 3,
+    "prediction": 3,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 3,
+        "confidence": 0.4030735194683075
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6556874513626099
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.5024694204330444
+      },
+      "24": {
+        "prediction": 3,
+        "confidence": 0.5208716988563538
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:5",
+    "maze": "test:15",
+    "position": 5,
+    "legal": [
+      0,
+      2
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 2,
+    "observation": "#.G.\n#A#.\n....\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 2,
+        "confidence": 0.6840108633041382
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.5134292244911194
+      },
+      "18": {
+        "prediction": 3,
+        "confidence": 0.3553207218647003
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.3831213116645813
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:9",
+    "maze": "test:15",
+    "position": 9,
+    "legal": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "optimal": [
+      0
+    ],
+    "distance": 3,
+    "observation": "#.G.\n#.#.\n.A..\n....",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 24,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.6919766664505005
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.40314340591430664
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.47538313269615173
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6800987720489502
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:12",
+    "maze": "test:15",
+    "position": 12,
+    "legal": [
+      0,
+      1
+    ],
+    "optimal": [
+      0,
+      1
+    ],
+    "distance": 5,
+    "observation": "#.G.\n#.#.\n....\nA...",
+    "full_prediction": 1,
+    "prediction": 1,
+    "depth": 6,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.9001131653785706
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.6099938750267029
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.8365296721458435
+      },
+      "24": {
+        "prediction": 1,
+        "confidence": 0.6062629222869873
+      }
+    }
+  },
+  {
+    "split": "test",
+    "id": "test:15:14",
+    "maze": "test:15",
+    "position": 14,
+    "legal": [
+      0,
+      1,
+      3
+    ],
+    "optimal": [
+      0,
+      1,
+      3
+    ],
+    "distance": 5,
+    "observation": "#.G.\n#.#.\n....\n..A.",
+    "full_prediction": 0,
+    "prediction": 0,
+    "depth": 12,
+    "heads": {
+      "6": {
+        "prediction": 1,
+        "confidence": 0.47407642006874084
+      },
+      "12": {
+        "prediction": 0,
+        "confidence": 0.704124391078949
+      },
+      "18": {
+        "prediction": 1,
+        "confidence": 0.3914802670478821
+      },
+      "24": {
+        "prediction": 0,
+        "confidence": 0.33634820580482483
+      }
+    }
+  }
+]

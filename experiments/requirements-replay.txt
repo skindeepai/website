@@ -1,0 +1,9 @@
+# Published runtime that passed the separate saved-head replay on Windows/Python 3.13.
+# Install in a new virtual environment. This is not a complete transitive lockfile.
+torch==2.6.0
+transformers==4.50.3
+numpy==2.2.4
+scipy==1.15.2
+tokenizers==0.21.1
+huggingface-hub==0.29.3
+safetensors==0.5.3

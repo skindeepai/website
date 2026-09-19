@@ -1,0 +1,1454 @@
+{
+  "original_1400_linear": {
+    "fixed_6": {
+      "note": "Previous larger training set and previously tuned temperatures; context only, not matched training budget.",
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 100,
+          "missed_toxic": 21,
+          "false_block": 7,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.78125,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 21,
+          "corrected_errors": 14,
+          "additional_missed_toxic": 16
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 102,
+          "missed_toxic": 20,
+          "false_block": 6,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.796875,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 12,
+          "corrected_errors": 16,
+          "additional_missed_toxic": 7
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 76,
+          "missed_toxic": 15,
+          "false_block": 9,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7599999904632568,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 100,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 13,
+          "corrected_errors": 11,
+          "additional_missed_toxic": 7
+        }
+      }
+    },
+    "fixed_12": {
+      "note": "Previous larger training set and previously tuned temperatures; context only, not matched training budget.",
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 108,
+          "missed_toxic": 11,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.84375,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 12,
+          "corrected_errors": 13,
+          "additional_missed_toxic": 4
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 104,
+          "missed_toxic": 14,
+          "false_block": 10,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8125,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 10,
+          "corrected_errors": 16,
+          "additional_missed_toxic": 3
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 75,
+          "missed_toxic": 20,
+          "false_block": 5,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.75,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 100,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 11,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 8
+        }
+      }
+    },
+    "fixed_18": {
+      "note": "Previous larger training set and previously tuned temperatures; context only, not matched training budget.",
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 106,
+          "missed_toxic": 12,
+          "false_block": 10,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.828125,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 8,
+          "corrected_errors": 7,
+          "additional_missed_toxic": 2
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 106,
+          "missed_toxic": 16,
+          "false_block": 6,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.828125,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 5,
+          "corrected_errors": 13,
+          "additional_missed_toxic": 2
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 81,
+          "missed_toxic": 15,
+          "false_block": 4,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8100000023841858,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 100,
+            "24": 0
+          },
+          "added_errors": 5,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 4
+        }
+      }
+    },
+    "fixed_24": {
+      "note": "Previous larger training set and previously tuned temperatures; context only, not matched training budget.",
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 107,
+          "missed_toxic": 12,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8359375,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 98,
+          "missed_toxic": 24,
+          "false_block": 6,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.765625,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 78,
+          "missed_toxic": 15,
+          "false_block": 7,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7799999713897705,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 100
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    }
+  },
+  "linear": {
+    "fixed_6": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 97,
+          "missed_toxic": 16,
+          "false_block": 15,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7578125,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 15,
+          "corrected_errors": 12,
+          "additional_missed_toxic": 8
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 91,
+          "missed_toxic": 17,
+          "false_block": 20,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7109375,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 22,
+          "corrected_errors": 12,
+          "additional_missed_toxic": 7
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 69,
+          "missed_toxic": 17,
+          "false_block": 14,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.6899999976158142,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 100,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 16,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 6
+        }
+      }
+    },
+    "fixed_12": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 94,
+          "missed_toxic": 14,
+          "false_block": 20,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.734375,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 17,
+          "corrected_errors": 11,
+          "additional_missed_toxic": 6
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 99,
+          "missed_toxic": 16,
+          "false_block": 13,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7734375,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 18,
+          "corrected_errors": 16,
+          "additional_missed_toxic": 8
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 71,
+          "missed_toxic": 17,
+          "false_block": 12,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7099999785423279,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 100,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 14,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 7
+        }
+      }
+    },
+    "fixed_18": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 104,
+          "missed_toxic": 9,
+          "false_block": 15,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8125,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 8,
+          "corrected_errors": 12,
+          "additional_missed_toxic": 3
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 96,
+          "missed_toxic": 19,
+          "false_block": 13,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.75,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 17,
+          "corrected_errors": 12,
+          "additional_missed_toxic": 8
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 75,
+          "missed_toxic": 15,
+          "false_block": 10,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.75,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 100,
+            "24": 0
+          },
+          "added_errors": 10,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 4
+        }
+      }
+    },
+    "fixed_24": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 100,
+          "missed_toxic": 13,
+          "false_block": 15,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.78125,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 18,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 77,
+          "missed_toxic": 16,
+          "false_block": 7,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7699999809265137,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 100
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "asymmetric": {
+      "policy": {
+        "type": "asymmetric",
+        "safe_threshold": 0.9,
+        "block_threshold": 0.95,
+        "agreement": false
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 102,
+          "missed_toxic": 13,
+          "false_block": 13,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.796875,
+          "mean_depth": 21.609375,
+          "projected_blocks_skipped": 0.099609375,
+          "exit_counts": {
+            "6": 8,
+            "12": 4,
+            "18": 19,
+            "24": 97
+          },
+          "added_errors": 1,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 18,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 21.1875,
+          "projected_blocks_skipped": 0.1171875,
+          "exit_counts": {
+            "6": 9,
+            "12": 7,
+            "18": 19,
+            "24": 93
+          },
+          "added_errors": 1,
+          "corrected_errors": 1,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 78,
+          "missed_toxic": 16,
+          "false_block": 6,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7799999713897705,
+          "mean_depth": 20.8799991607666,
+          "projected_blocks_skipped": 0.12999999523162842,
+          "exit_counts": {
+            "6": 9,
+            "12": 7,
+            "18": 11,
+            "24": 73
+          },
+          "added_errors": 0,
+          "corrected_errors": 1,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "agreement": {
+      "policy": {
+        "type": "agreement",
+        "safe_threshold": 0.9,
+        "block_threshold": 0.95,
+        "agreement": true
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 13,
+          "false_block": 14,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 22.6875,
+          "projected_blocks_skipped": 0.0546875,
+          "exit_counts": {
+            "6": 0,
+            "12": 3,
+            "18": 22,
+            "24": 103
+          },
+          "added_errors": 1,
+          "corrected_errors": 2,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 18,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 22.265625,
+          "projected_blocks_skipped": 0.072265625,
+          "exit_counts": {
+            "6": 0,
+            "12": 8,
+            "18": 21,
+            "24": 99
+          },
+          "added_errors": 1,
+          "corrected_errors": 1,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 77,
+          "missed_toxic": 16,
+          "false_block": 7,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7699999809265137,
+          "mean_depth": 22.079999923706055,
+          "projected_blocks_skipped": 0.07999999821186066,
+          "exit_counts": {
+            "6": 0,
+            "12": 9,
+            "18": 14,
+            "24": 77
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "learned": {
+      "policy": {
+        "type": "learned",
+        "error_limit": 0.1,
+        "benefit_limit": 0.05
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 103,
+          "missed_toxic": 13,
+          "false_block": 12,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8046875,
+          "mean_depth": 22.734375,
+          "projected_blocks_skipped": 0.052734375,
+          "exit_counts": {
+            "6": 0,
+            "12": 11,
+            "18": 5,
+            "24": 112
+          },
+          "added_errors": 0,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 18,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 22.03125,
+          "projected_blocks_skipped": 0.08203125,
+          "exit_counts": {
+            "6": 0,
+            "12": 19,
+            "18": 4,
+            "24": 105
+          },
+          "added_errors": 1,
+          "corrected_errors": 1,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 75,
+          "missed_toxic": 18,
+          "false_block": 7,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.75,
+          "mean_depth": 21.84000015258789,
+          "projected_blocks_skipped": 0.09000000357627869,
+          "exit_counts": {
+            "6": 0,
+            "12": 16,
+            "18": 4,
+            "24": 80
+          },
+          "added_errors": 2,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 2
+        }
+      }
+    },
+    "review": {
+      "policy": {
+        "threshold": 1.01,
+        "eligible_candidate_found": false
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 0,
+          "missed_toxic": 0,
+          "false_block": 0,
+          "toxic": 64,
+          "review": 128,
+          "review_toxic": 64,
+          "coverage": 0.0,
+          "covered_accuracy": null,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 0,
+          "missed_toxic": 0,
+          "false_block": 0,
+          "toxic": 64,
+          "review": 128,
+          "review_toxic": 64,
+          "coverage": 0.0,
+          "covered_accuracy": null,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 0,
+          "missed_toxic": 0,
+          "false_block": 0,
+          "toxic": 50,
+          "review": 100,
+          "review_toxic": 50,
+          "coverage": 0.0,
+          "covered_accuracy": null,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 100
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    }
+  },
+  "mlp": {
+    "fixed_6": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 99,
+          "missed_toxic": 20,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7734375,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 13,
+          "corrected_errors": 11,
+          "additional_missed_toxic": 10
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 20,
+          "false_block": 7,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 128,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 16,
+          "corrected_errors": 9,
+          "additional_missed_toxic": 10
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 75,
+          "missed_toxic": 17,
+          "false_block": 8,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.75,
+          "mean_depth": 6.0,
+          "projected_blocks_skipped": 0.75,
+          "exit_counts": {
+            "6": 100,
+            "12": 0,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 12,
+          "corrected_errors": 10,
+          "additional_missed_toxic": 6
+        }
+      }
+    },
+    "fixed_12": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 103,
+          "missed_toxic": 15,
+          "false_block": 10,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8046875,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 9,
+          "corrected_errors": 11,
+          "additional_missed_toxic": 6
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 98,
+          "missed_toxic": 17,
+          "false_block": 13,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.765625,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 128,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 18,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 7
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 71,
+          "missed_toxic": 20,
+          "false_block": 9,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7099999785423279,
+          "mean_depth": 12.0,
+          "projected_blocks_skipped": 0.5,
+          "exit_counts": {
+            "6": 0,
+            "12": 100,
+            "18": 0,
+            "24": 0
+          },
+          "added_errors": 14,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 8
+        }
+      }
+    },
+    "fixed_18": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 15,
+          "false_block": 12,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 9,
+          "corrected_errors": 9,
+          "additional_missed_toxic": 5
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 17,
+          "false_block": 10,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 128,
+            "24": 0
+          },
+          "added_errors": 12,
+          "corrected_errors": 5,
+          "additional_missed_toxic": 5
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 78,
+          "missed_toxic": 16,
+          "false_block": 6,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7799999713897705,
+          "mean_depth": 18.0,
+          "projected_blocks_skipped": 0.25,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 100,
+            "24": 0
+          },
+          "added_errors": 7,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 3
+        }
+      }
+    },
+    "fixed_24": {
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 101,
+          "missed_toxic": 16,
+          "false_block": 11,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7890625,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 108,
+          "missed_toxic": 16,
+          "false_block": 4,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.84375,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 77,
+          "missed_toxic": 18,
+          "false_block": 5,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7699999809265137,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 100
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "asymmetric": {
+      "policy": {
+        "type": "asymmetric",
+        "safe_threshold": 0.95,
+        "block_threshold": 0.9,
+        "agreement": false
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 104,
+          "missed_toxic": 15,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8125,
+          "mean_depth": 19.078125,
+          "projected_blocks_skipped": 0.205078125,
+          "exit_counts": {
+            "6": 19,
+            "12": 15,
+            "18": 18,
+            "24": 76
+          },
+          "added_errors": 0,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 112,
+          "missed_toxic": 14,
+          "false_block": 2,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.875,
+          "mean_depth": 18.46875,
+          "projected_blocks_skipped": 0.23046875,
+          "exit_counts": {
+            "6": 27,
+            "12": 11,
+            "18": 15,
+            "24": 75
+          },
+          "added_errors": 0,
+          "corrected_errors": 4,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 78,
+          "missed_toxic": 17,
+          "false_block": 5,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7799999713897705,
+          "mean_depth": 19.860000610351562,
+          "projected_blocks_skipped": 0.17249999940395355,
+          "exit_counts": {
+            "6": 12,
+            "12": 12,
+            "18": 9,
+            "24": 67
+          },
+          "added_errors": 0,
+          "corrected_errors": 1,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "agreement": {
+      "policy": {
+        "type": "agreement",
+        "safe_threshold": 0.95,
+        "block_threshold": 0.8,
+        "agreement": true
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 104,
+          "missed_toxic": 13,
+          "false_block": 11,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.8125,
+          "mean_depth": 19.640625,
+          "projected_blocks_skipped": 0.181640625,
+          "exit_counts": {
+            "6": 0,
+            "12": 34,
+            "18": 25,
+            "24": 69
+          },
+          "added_errors": 0,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 110,
+          "missed_toxic": 14,
+          "false_block": 4,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.859375,
+          "mean_depth": 19.3125,
+          "projected_blocks_skipped": 0.1953125,
+          "exit_counts": {
+            "6": 0,
+            "12": 42,
+            "18": 16,
+            "24": 70
+          },
+          "added_errors": 1,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 79,
+          "missed_toxic": 15,
+          "false_block": 6,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7900000214576721,
+          "mean_depth": 20.040000915527344,
+          "projected_blocks_skipped": 0.16500000655651093,
+          "exit_counts": {
+            "6": 0,
+            "12": 26,
+            "18": 14,
+            "24": 60
+          },
+          "added_errors": 1,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "learned": {
+      "policy": {
+        "type": "learned",
+        "error_limit": 0.15,
+        "benefit_limit": 0.1
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 108,
+          "missed_toxic": 11,
+          "false_block": 9,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.84375,
+          "mean_depth": 14.4375,
+          "projected_blocks_skipped": 0.3984375,
+          "exit_counts": {
+            "6": 48,
+            "12": 17,
+            "18": 26,
+            "24": 37
+          },
+          "added_errors": 0,
+          "corrected_errors": 7,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 112,
+          "missed_toxic": 13,
+          "false_block": 3,
+          "toxic": 64,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.875,
+          "mean_depth": 14.4375,
+          "projected_blocks_skipped": 0.3984375,
+          "exit_counts": {
+            "6": 49,
+            "12": 21,
+            "18": 15,
+            "24": 43
+          },
+          "added_errors": 1,
+          "corrected_errors": 5,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 79,
+          "missed_toxic": 15,
+          "false_block": 6,
+          "toxic": 50,
+          "review": 0,
+          "review_toxic": 0,
+          "coverage": 1.0,
+          "covered_accuracy": 0.7900000214576721,
+          "mean_depth": 15.899999618530273,
+          "projected_blocks_skipped": 0.3375000059604645,
+          "exit_counts": {
+            "6": 32,
+            "12": 11,
+            "18": 17,
+            "24": 40
+          },
+          "added_errors": 1,
+          "corrected_errors": 3,
+          "additional_missed_toxic": 0
+        }
+      }
+    },
+    "review": {
+      "policy": {
+        "threshold": 0.8,
+        "eligible_candidate_found": true
+      },
+      "splits": {
+        "tune": {
+          "n": 128,
+          "correct": 72,
+          "missed_toxic": 2,
+          "false_block": 6,
+          "toxic": 64,
+          "review": 48,
+          "review_toxic": 31,
+          "coverage": 0.625,
+          "covered_accuracy": 0.8999999761581421,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "calibration": {
+          "n": 128,
+          "correct": 71,
+          "missed_toxic": 2,
+          "false_block": 1,
+          "toxic": 64,
+          "review": 54,
+          "review_toxic": 32,
+          "coverage": 0.578125,
+          "covered_accuracy": 0.9594594836235046,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 128
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        },
+        "evaluation": {
+          "n": 100,
+          "correct": 56,
+          "missed_toxic": 7,
+          "false_block": 1,
+          "toxic": 50,
+          "review": 36,
+          "review_toxic": 22,
+          "coverage": 0.6399999856948853,
+          "covered_accuracy": 0.875,
+          "mean_depth": 24.0,
+          "projected_blocks_skipped": 0.0,
+          "exit_counts": {
+            "6": 0,
+            "12": 0,
+            "18": 0,
+            "24": 100
+          },
+          "added_errors": 0,
+          "corrected_errors": 0,
+          "additional_missed_toxic": 0
+        }
+      }
+    }
+  }
+}

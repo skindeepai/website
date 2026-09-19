@@ -1,0 +1,898 @@
+[
+  {
+    "id": "test:2283",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 57,
+    "end_to_end_ms": 291.19270003866404
+  },
+  {
+    "id": "test:2283",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 57,
+    "end_to_end_ms": 309.92150004021823
+  },
+  {
+    "id": "test:2283",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 57,
+    "end_to_end_ms": 303.4734000102617
+  },
+  {
+    "id": "test:2283",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 57,
+    "end_to_end_ms": 321.81320001836866
+  },
+  {
+    "id": "test:1343",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 33,
+    "end_to_end_ms": 287.02200000407174
+  },
+  {
+    "id": "test:1343",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 33,
+    "end_to_end_ms": 292.8521000430919
+  },
+  {
+    "id": "test:1343",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 33,
+    "end_to_end_ms": 295.65480002202094
+  },
+  {
+    "id": "test:1343",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 33,
+    "end_to_end_ms": 273.8299999618903
+  },
+  {
+    "id": "test:2144",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 53,
+    "end_to_end_ms": 274.78209999389946
+  },
+  {
+    "id": "test:2144",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 53,
+    "end_to_end_ms": 273.69020000332966
+  },
+  {
+    "id": "test:2144",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 53,
+    "end_to_end_ms": 286.5581000223756
+  },
+  {
+    "id": "test:2144",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 53,
+    "end_to_end_ms": 267.51659996807575
+  },
+  {
+    "id": "test:1710",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 42,
+    "end_to_end_ms": 312.8565999795683
+  },
+  {
+    "id": "test:1710",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 42,
+    "end_to_end_ms": 288.02739997627214
+  },
+  {
+    "id": "test:1710",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 42,
+    "end_to_end_ms": 280.44250002130866
+  },
+  {
+    "id": "test:1710",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 42,
+    "end_to_end_ms": 307.94750002678484
+  },
+  {
+    "id": "test:2565",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 3,
+    "end_to_end_ms": 316.166200034786
+  },
+  {
+    "id": "test:2565",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 3,
+    "end_to_end_ms": 321.3380000088364
+  },
+  {
+    "id": "test:2565",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 3,
+    "end_to_end_ms": 305.1617000019178
+  },
+  {
+    "id": "test:2565",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 3,
+    "end_to_end_ms": 336.74810000229627
+  },
+  {
+    "id": "test:1752",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 54,
+    "end_to_end_ms": 279.84119998291135
+  },
+  {
+    "id": "test:1752",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 54,
+    "end_to_end_ms": 267.8441000171006
+  },
+  {
+    "id": "test:1752",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 54,
+    "end_to_end_ms": 292.0987000106834
+  },
+  {
+    "id": "test:1752",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 54,
+    "end_to_end_ms": 274.9828000087291
+  },
+  {
+    "id": "test:3069",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 76,
+    "end_to_end_ms": 271.4846000308171
+  },
+  {
+    "id": "test:3069",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 76,
+    "end_to_end_ms": 283.3149000070989
+  },
+  {
+    "id": "test:3069",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 76,
+    "end_to_end_ms": 273.4323000186123
+  },
+  {
+    "id": "test:3069",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 76,
+    "end_to_end_ms": 275.17370000714436
+  },
+  {
+    "id": "test:1920",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 48,
+    "end_to_end_ms": 291.7987999971956
+  },
+  {
+    "id": "test:1920",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 48,
+    "end_to_end_ms": 290.6873000320047
+  },
+  {
+    "id": "test:1920",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 48,
+    "end_to_end_ms": 310.0789999589324
+  },
+  {
+    "id": "test:1920",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 48,
+    "end_to_end_ms": 284.3124999781139
+  },
+  {
+    "id": "test:1264",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 31,
+    "end_to_end_ms": 289.4236000138335
+  },
+  {
+    "id": "test:1264",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 31,
+    "end_to_end_ms": 296.0973999579437
+  },
+  {
+    "id": "test:1264",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 31,
+    "end_to_end_ms": 293.7996999826282
+  },
+  {
+    "id": "test:1264",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 31,
+    "end_to_end_ms": 312.82829999690875
+  },
+  {
+    "id": "test:2854",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 71,
+    "end_to_end_ms": 340.5890000285581
+  },
+  {
+    "id": "test:2854",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 71,
+    "end_to_end_ms": 310.7804000028409
+  },
+  {
+    "id": "test:2854",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 71,
+    "end_to_end_ms": 304.25610003294423
+  },
+  {
+    "id": "test:2854",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 71,
+    "end_to_end_ms": 271.4632999850437
+  },
+  {
+    "id": "test:553",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 13,
+    "end_to_end_ms": 277.36549999099225
+  },
+  {
+    "id": "test:553",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 13,
+    "end_to_end_ms": 274.6480000205338
+  },
+  {
+    "id": "test:553",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 13,
+    "end_to_end_ms": 273.09709996916354
+  },
+  {
+    "id": "test:553",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 13,
+    "end_to_end_ms": 282.3002000222914
+  },
+  {
+    "id": "test:756",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 16,
+    "end_to_end_ms": 274.213399970904
+  },
+  {
+    "id": "test:756",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 16,
+    "end_to_end_ms": 281.80180001072586
+  },
+  {
+    "id": "test:756",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 16,
+    "end_to_end_ms": 291.3786999997683
+  },
+  {
+    "id": "test:756",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 16,
+    "end_to_end_ms": 288.4510000003502
+  },
+  {
+    "id": "test:1882",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 47,
+    "end_to_end_ms": 279.0478000533767
+  },
+  {
+    "id": "test:1882",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 47,
+    "end_to_end_ms": 280.5928000016138
+  },
+  {
+    "id": "test:1882",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 47,
+    "end_to_end_ms": 269.43510002456605
+  },
+  {
+    "id": "test:1882",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 47,
+    "end_to_end_ms": 268.64019996719435
+  },
+  {
+    "id": "test:434",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 10,
+    "end_to_end_ms": 283.87350001139566
+  },
+  {
+    "id": "test:434",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 10,
+    "end_to_end_ms": 273.37260002968833
+  },
+  {
+    "id": "test:434",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 10,
+    "end_to_end_ms": 274.70830001402646
+  },
+  {
+    "id": "test:434",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 10,
+    "end_to_end_ms": 298.43070002971217
+  },
+  {
+    "id": "test:613",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 15,
+    "end_to_end_ms": 302.3208000231534
+  },
+  {
+    "id": "test:613",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 15,
+    "end_to_end_ms": 307.0164999808185
+  },
+  {
+    "id": "test:613",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 15,
+    "end_to_end_ms": 273.57219997793436
+  },
+  {
+    "id": "test:613",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 15,
+    "end_to_end_ms": 276.8666000338271
+  },
+  {
+    "id": "test:224",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 5,
+    "end_to_end_ms": 298.2429999974556
+  },
+  {
+    "id": "test:224",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 5,
+    "end_to_end_ms": 277.5295000174083
+  },
+  {
+    "id": "test:224",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 5,
+    "end_to_end_ms": 294.2318000132218
+  },
+  {
+    "id": "test:224",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 5,
+    "end_to_end_ms": 294.2277999827638
+  },
+  {
+    "id": "test:1929",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 48,
+    "end_to_end_ms": 286.56030003912747
+  },
+  {
+    "id": "test:1929",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 48,
+    "end_to_end_ms": 283.0415000207722
+  },
+  {
+    "id": "test:1929",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 48,
+    "end_to_end_ms": 295.46739999204874
+  },
+  {
+    "id": "test:1929",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 48,
+    "end_to_end_ms": 275.3756000311114
+  },
+  {
+    "id": "test:1446",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 36,
+    "end_to_end_ms": 277.6221999665722
+  },
+  {
+    "id": "test:1446",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 36,
+    "end_to_end_ms": 263.0151000339538
+  },
+  {
+    "id": "test:1446",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 36,
+    "end_to_end_ms": 270.81479999469593
+  },
+  {
+    "id": "test:1446",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 36,
+    "end_to_end_ms": 315.69640000816435
+  },
+  {
+    "id": "test:298",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 7,
+    "end_to_end_ms": 304.56139997113496
+  },
+  {
+    "id": "test:298",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 7,
+    "end_to_end_ms": 329.03179997811094
+  },
+  {
+    "id": "test:298",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 7,
+    "end_to_end_ms": 336.8580999667756
+  },
+  {
+    "id": "test:298",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 7,
+    "end_to_end_ms": 308.3705000462942
+  },
+  {
+    "id": "test:680",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 17,
+    "end_to_end_ms": 307.9464999609627
+  },
+  {
+    "id": "test:680",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 17,
+    "end_to_end_ms": 318.65489995107055
+  },
+  {
+    "id": "test:680",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 17,
+    "end_to_end_ms": 382.9977000132203
+  },
+  {
+    "id": "test:680",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 17,
+    "end_to_end_ms": 327.311200031545
+  },
+  {
+    "id": "test:917",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 22,
+    "end_to_end_ms": 302.24200000520796
+  },
+  {
+    "id": "test:917",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 22,
+    "end_to_end_ms": 326.80860004620627
+  },
+  {
+    "id": "test:917",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 22,
+    "end_to_end_ms": 299.6460000285879
+  },
+  {
+    "id": "test:917",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 22,
+    "end_to_end_ms": 282.5936999870464
+  },
+  {
+    "id": "test:2961",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 74,
+    "end_to_end_ms": 304.9818999716081
+  },
+  {
+    "id": "test:2961",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 74,
+    "end_to_end_ms": 299.9680999782868
+  },
+  {
+    "id": "test:2961",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 74,
+    "end_to_end_ms": 277.89409999968484
+  },
+  {
+    "id": "test:2961",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 74,
+    "end_to_end_ms": 287.83230000408366
+  },
+  {
+    "id": "test:2822",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 70,
+    "end_to_end_ms": 269.00490000844
+  },
+  {
+    "id": "test:2822",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 70,
+    "end_to_end_ms": 265.9185000229627
+  },
+  {
+    "id": "test:2822",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 70,
+    "end_to_end_ms": 276.6986000351608
+  },
+  {
+    "id": "test:2822",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 70,
+    "end_to_end_ms": 291.3859999971464
+  },
+  {
+    "id": "test:2455",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 61,
+    "end_to_end_ms": 303.6623999942094
+  },
+  {
+    "id": "test:2455",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 61,
+    "end_to_end_ms": 279.3810999719426
+  },
+  {
+    "id": "test:2455",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 61,
+    "end_to_end_ms": 288.687199994456
+  },
+  {
+    "id": "test:2455",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 61,
+    "end_to_end_ms": 283.04980002576485
+  },
+  {
+    "id": "test:1823",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 45,
+    "end_to_end_ms": 271.9354999717325
+  },
+  {
+    "id": "test:1823",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 45,
+    "end_to_end_ms": 258.95410001976416
+  },
+  {
+    "id": "test:1823",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 45,
+    "end_to_end_ms": 282.57250000024214
+  },
+  {
+    "id": "test:1823",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 45,
+    "end_to_end_ms": 278.6086000269279
+  },
+  {
+    "id": "test:1195",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 29,
+    "end_to_end_ms": 277.8060999698937
+  },
+  {
+    "id": "test:1195",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 29,
+    "end_to_end_ms": 290.87470000376925
+  },
+  {
+    "id": "test:1195",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 29,
+    "end_to_end_ms": 297.2678000223823
+  },
+  {
+    "id": "test:1195",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 29,
+    "end_to_end_ms": 290.88190000038594
+  },
+  {
+    "id": "test:361",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 9,
+    "end_to_end_ms": 267.01449998654425
+  },
+  {
+    "id": "test:361",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 9,
+    "end_to_end_ms": 275.11129999766126
+  },
+  {
+    "id": "test:361",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 9,
+    "end_to_end_ms": 271.28070004982874
+  },
+  {
+    "id": "test:361",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 9,
+    "end_to_end_ms": 271.7001000419259
+  },
+  {
+    "id": "test:693",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 17,
+    "end_to_end_ms": 266.64819999132305
+  },
+  {
+    "id": "test:693",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 17,
+    "end_to_end_ms": 280.85439995629713
+  },
+  {
+    "id": "test:693",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 17,
+    "end_to_end_ms": 271.72970003448427
+  },
+  {
+    "id": "test:693",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 17,
+    "end_to_end_ms": 257.53140001324937
+  },
+  {
+    "id": "test:2292",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 54,
+    "end_to_end_ms": 276.1270999908447
+  },
+  {
+    "id": "test:2292",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 54,
+    "end_to_end_ms": 257.13129999348894
+  },
+  {
+    "id": "test:2292",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 54,
+    "end_to_end_ms": 319.0541000221856
+  },
+  {
+    "id": "test:2292",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 54,
+    "end_to_end_ms": 291.56620003050193
+  },
+  {
+    "id": "test:2604",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 65,
+    "end_to_end_ms": 265.51220001420006
+  },
+  {
+    "id": "test:2604",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 65,
+    "end_to_end_ms": 242.22010001540184
+  },
+  {
+    "id": "test:2604",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 65,
+    "end_to_end_ms": 268.2025999529287
+  },
+  {
+    "id": "test:2604",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 65,
+    "end_to_end_ms": 255.88849995983765
+  },
+  {
+    "id": "test:398",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 9,
+    "end_to_end_ms": 275.9089999599382
+  },
+  {
+    "id": "test:398",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 9,
+    "end_to_end_ms": 269.8152999510057
+  },
+  {
+    "id": "test:398",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 9,
+    "end_to_end_ms": 286.72570001799613
+  },
+  {
+    "id": "test:398",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 9,
+    "end_to_end_ms": 258.28470004489645
+  },
+  {
+    "id": "test:274",
+    "repeat": 0,
+    "path": "single_token",
+    "prediction": 6,
+    "end_to_end_ms": 254.74890001351014
+  },
+  {
+    "id": "test:274",
+    "repeat": 0,
+    "path": "enum",
+    "prediction": 6,
+    "end_to_end_ms": 272.72990002529696
+  },
+  {
+    "id": "test:274",
+    "repeat": 1,
+    "path": "enum",
+    "prediction": 6,
+    "end_to_end_ms": 278.52120000170544
+  },
+  {
+    "id": "test:274",
+    "repeat": 1,
+    "path": "single_token",
+    "prediction": 6,
+    "end_to_end_ms": 268.1258000084199
+  }
+]

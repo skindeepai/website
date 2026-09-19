@@ -1,0 +1,6 @@
+{
+  "variant": "distill",
+  "training_protocol_sha256": "e765c8e3a009df3fa91591202e7b9b3fd7068416a200aa9d07bae149589726bd",
+  "weights_sha256": "2411df7c6a45819b90b755290cbea6488e1abd403374e163194e42304c06f424",
+  "result_sha256": "f106b056fb63ce26d2df33f31ed5c553badc20c81e722bcb946bd0402e1e64f7"
+}

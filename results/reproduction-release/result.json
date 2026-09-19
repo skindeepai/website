@@ -1,0 +1,54 @@
+{
+  "completed_utc": "2026-09-19T20:48:10.316728+00:00",
+  "status": "passed",
+  "queries": 24,
+  "forward_passes": 50,
+  "all_predictions_and_depths_match": true,
+  "targeted_mechanism_queries": 1,
+  "early_exit_counts": {
+    "12": 8,
+    "24": 16
+  },
+  "targeted_exit_counts": {
+    "18": 1
+  },
+  "all_execution_traces_contiguous": true,
+  "portable_head_roundtrip": [
+    {
+      "depth": 6,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 12,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 18,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    },
+    {
+      "depth": 24,
+      "vectors": 8,
+      "logits_bitwise_equal": true
+    }
+  ],
+  "artifact_summary_checks_passed": 5,
+  "hashes": {
+    "protocol.json": "6958c4500fc2becccde760ed83e940fee5067ac8430ef6e101aa4f859c875f50",
+    "predictions.json": "85af257b5c17805faf7ab83f569e6119eb40a231edb8f810e1c13e5e3498c983",
+    "artifact-checks.json": "7ded84e32b65bbe72d02da1cbd22a2c565e3f4fe443fe0263f730f9b89d2c447",
+    "environment.json": "0d3c6ffddbdf3ff209670a3ce9b6f42e772ba58b21c991994771b6096832a436"
+  },
+  "verdict": "A separate implementation reproduced saved outputs and genuine conditional block execution on 24 predetermined examples.",
+  "limits": [
+    "Reviewer shares the same machine, model, source dataset and trained heads; not external independent replication.",
+    "These are previously evaluated examples, not new evidence of out-of-distribution accuracy or guard acceptance.",
+    "Only 24 predetermined queries plus any explicitly targeted mechanism case are rerun. Original full-dataset execution was not independently repeated.",
+    "The optional layer-18 example is selected using a known exit; it tests that code path, not generalization.",
+    "Diagnostic durations overlap other work, lack a timing design, and must not support a speed claim.",
+    "Portable arrays and checksums improve inspection, not model quality or statistical reliability."
+  ]
+}

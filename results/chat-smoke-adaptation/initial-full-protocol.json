@@ -1,0 +1,24 @@
+{
+  "common_sha256": "3140f19a3634343d06b249e8f52b6f80e03b7469636056f0a7c747b735f2dc64",
+  "script_sha256": "b66d602ce0bd22c5ed3fad67b22cbfc714c822d703493db87d538fc4ef7e3dc5",
+  "variant": "full",
+  "seed": 73,
+  "rank": 4,
+  "alpha": 8,
+  "adapter_modules": "q_proj/v_proj in every retained block",
+  "steps": 96,
+  "batch": 4,
+  "lr_adapter": 0.0005,
+  "lr_head": 0.001,
+  "weight_decay": 0.01,
+  "head_initialization": "train384-only frozen-feature linear classifier,200AdamWsteps lr.01 wd.1, inverse-frequencyclassweights",
+  "checkpoints": [
+    32,
+    64,
+    96
+  ],
+  "selection": "Highest tune128 balancedaccuracy at targetdepth24(or12fixed); tie earlier. Other heads are diagnostic, no eval choice.",
+  "distillation": "joint CE on humanlabels plus KL(teacherfulladapter probabilities || eachhead probabilities), T2, 0.5CE+0.5KL*T^2; teacher uses same384labels, no evaluationlabels",
+  "runtime": "publishedTransformers4.50.3 CPUfloat32 eager,4threads; training may overlap other jobs, not a timing claim",
+  "scope": "Exploratory short optimization budget, not a convergence or production-quality test."
+}

@@ -1,0 +1,104 @@
+{
+  "original_states": {
+    "training_states": 256,
+    "selected_step": 600,
+    "checkpoints": [
+      {
+        "step": 100,
+        "loss": 0.5046036243438721,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 97,
+          "legal_actions": 110
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 4,
+          "actions": 261,
+          "legal_actions": 93
+        }
+      },
+      {
+        "step": 300,
+        "loss": 0.26436859369277954,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 101,
+          "legal_actions": 113
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 6,
+          "actions": 231,
+          "legal_actions": 135
+        }
+      },
+      {
+        "step": 600,
+        "loss": 0.3143722414970398,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 103,
+          "legal_actions": 114
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 6,
+          "actions": 229,
+          "legal_actions": 133
+        }
+      }
+    ]
+  },
+  "all_train_goal_pairs": {
+    "training_states": 4992,
+    "selected_step": 600,
+    "checkpoints": [
+      {
+        "step": 100,
+        "loss": 0.6104183197021484,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 111,
+          "legal_actions": 114
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 7,
+          "actions": 216,
+          "legal_actions": 43
+        }
+      },
+      {
+        "step": 300,
+        "loss": 0.4451853930950165,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 121,
+          "legal_actions": 123
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 12,
+          "actions": 138,
+          "legal_actions": 84
+        }
+      },
+      {
+        "step": 600,
+        "loss": 0.2996841073036194,
+        "tune_states": {
+          "n": 128,
+          "optimal_correct": 126,
+          "legal_actions": 126
+        },
+        "tune_episodes": {
+          "n": 16,
+          "goals_reached": 15,
+          "actions": 93,
+          "legal_actions": 93
+        }
+      }
+    ]
+  }
+}
