@@ -59,6 +59,11 @@
     "label": "Compare the methods live",
     "note": "Browser BERT comparisons; the recorded Qwen results remain separate."
   },
+  "output-results.html": {
+    "target": "moderation-benchmark.html",
+    "label": "Compare output formats in the browser",
+    "note": "Related q4 Qwen demo: direct vocabulary scores, one token or JSON. Its direct path still computes the full vocabulary; it does not implement the two-row CPU optimization or the trained classifier below."
+  },
   "depth-results.html": {
     "target": "method-demo.html?method=fixed",
     "label": "Try stopping at a fixed layer",

@@ -2,7 +2,7 @@
   "status": "passed",
   "modeRoundTrips": 12,
   "viewportChecks": 28,
-  "pagesInSitemap": 110,
+  "pagesInSitemap": 111,
   "modelDownloads": 0,
   "checks": [
     "deep links select correct mode",

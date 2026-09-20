@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "views": [
+    {
+      "name": "decision-results.html",
+      "width": 320,
+      "expanded": false
+    },
+    {
+      "name": "decision-results.html",
+      "width": 320,
+      "expanded": true
+    },
+    {
+      "name": "decision-results.html",
+      "width": 390,
+      "expanded": false
+    },
+    {
+      "name": "decision-results.html",
+      "width": 390,
+      "expanded": true
+    },
+    {
+      "name": "decision-results.html",
+      "width": 1440,
+      "expanded": false
+    },
+    {
+      "name": "decision-results.html",
+      "width": 1440,
+      "expanded": true
+    },
+    {
+      "name": "output-results.html",
+      "width": 320,
+      "expanded": false
+    },
+    {
+      "name": "output-results.html",
+      "width": 320,
+      "expanded": true
+    },
+    {
+      "name": "output-results.html",
+      "width": 390,
+      "expanded": false
+    },
+    {
+      "name": "output-results.html",
+      "width": 390,
+      "expanded": true
+    },
+    {
+      "name": "output-results.html",
+      "width": 1440,
+      "expanded": false
+    },
+    {
+      "name": "output-results.html",
+      "width": 1440,
+      "expanded": true
+    },
+    {
+      "name": "depth-results.html",
+      "width": 320,
+      "expanded": false
+    },
+    {
+      "name": "depth-results.html",
+      "width": 320,
+      "expanded": true
+    },
+    {
+      "name": "depth-results.html",
+      "width": 390,
+      "expanded": false
+    },
+    {
+      "name": "depth-results.html",
+      "width": 390,
+      "expanded": true
+    },
+    {
+      "name": "depth-results.html",
+      "width": 1440,
+      "expanded": false
+    },
+    {
+      "name": "depth-results.html",
+      "width": 1440,
+      "expanded": true
+    },
+    {
+      "name": "training-results.html",
+      "width": 320,
+      "expanded": false
+    },
+    {
+      "name": "training-results.html",
+      "width": 320,
+      "expanded": true
+    },
+    {
+      "name": "training-results.html",
+      "width": 390,
+      "expanded": false
+    },
+    {
+      "name": "training-results.html",
+      "width": 390,
+      "expanded": true
+    },
+    {
+      "name": "training-results.html",
+      "width": 1440,
+      "expanded": false
+    },
+    {
+      "name": "training-results.html",
+      "width": 1440,
+      "expanded": true
+    }
+  ],
+  "checks": [
+    "No document overflow with sections collapsed or expanded",
+    "Published output table matches experiment JSON",
+    "Decision comparison to exact results to related demo and back"
+  ],
+  "limits": "Headless Chromium; no model execution or real-device Safari testing."
+}

@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "pagesChecked": 111,
-  "anchorsChecked": 3086,
+  "pagesChecked": 112,
+  "anchorsChecked": 3127,
   "mapViewports": 16,
   "checks": [
     "all static hrefs, zones and disclosure states agree with browser DOM",
@@ -14,7 +14,7 @@
     "responsive explorer"
   ],
   "browser": "151.0.7922.34",
-  "mapSha256": "a98e19286f0020aef6b3ee7c85a6cda6c833561c6a3914d8e6e1273322c90bb1",
+  "mapSha256": "e48a4320f925f0e82eff2de0d4db5135adecc1866f0926492efd657861f63d35",
   "limitations": [
     "Static navigation; not analytics or a user study.",
     "Chromium viewport checks, not physical devices."

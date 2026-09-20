@@ -1,0 +1,72 @@
+{
+  "scope": "New matched linear readouts, reused exploratory data; not independent quality validation.",
+  "methods": {
+    "22": {
+      "correct": 37,
+      "n": 50,
+      "toxic": 25,
+      "missed_toxic": 9,
+      "false_block": 4,
+      "added_errors": 2,
+      "corrected_errors": 3,
+      "additional_missed_toxic": 2,
+      "blocks_skipped": 2,
+      "fraction_blocks_skipped": 0.08333333333333333,
+      "pass_total_seconds": [
+        26.286084000370465,
+        31.040185500169173,
+        29.350496199622285
+      ],
+      "mean_ms_per_message": 577.8451046677461,
+      "time_reduction_vs_full": 0.09824391283860445
+    },
+    "23": {
+      "correct": 36,
+      "n": 50,
+      "toxic": 25,
+      "missed_toxic": 10,
+      "false_block": 4,
+      "added_errors": 1,
+      "corrected_errors": 1,
+      "additional_missed_toxic": 1,
+      "blocks_skipped": 1,
+      "fraction_blocks_skipped": 0.041666666666666664,
+      "pass_total_seconds": [
+        28.089831799909007,
+        33.02815859991824,
+        31.621053499751724
+      ],
+      "mean_ms_per_message": 618.2602926638598,
+      "time_reduction_vs_full": 0.035173997570873916
+    },
+    "24": {
+      "correct": 36,
+      "n": 50,
+      "toxic": 25,
+      "missed_toxic": 9,
+      "false_block": 5,
+      "added_errors": 0,
+      "corrected_errors": 0,
+      "additional_missed_toxic": 0,
+      "blocks_skipped": 0,
+      "fraction_blocks_skipped": 0.0,
+      "pass_total_seconds": [
+        29.082837799971458,
+        34.26606149983127,
+        32.77106809959514
+      ],
+      "mean_ms_per_message": 640.7997826626524,
+      "time_reduction_vs_full": 0.0
+    }
+  },
+  "timed_calls": 450,
+  "all_layer_traces_valid": true,
+  "lm_head_calls": 0,
+  "text_tokens_generated": 0,
+  "limitations": [
+    "Single warmed CPU; head training and loading excluded.",
+    "Previously inspected balanced50; no independent acceptance or no-quality-loss claim.",
+    "Fixed depths, not adaptive readiness detection.",
+    "All three heads trained equally; numbers are not the older MLP comparison."
+  ]
+}

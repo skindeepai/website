@@ -65,6 +65,55 @@ def page(pages, name, title, description, body, parent='decision-results.html', 
     pages[name] = dict(title=title, description=description, status='Research results', styles=['results.css'], body=breadcrumb+body)
 
 
+def update_output_results(pages):
+    output = read('results/chat-output-steps/result.json')
+    methods = {(r['method'], r['allow']): r for r in output['methods']}
+    direct, token = methods['vocabulary2', 'SAFE'], methods['constrained1', 'SAFE']
+    saving = 100 * (1 - direct['mean_ms'] / token['mean_ms'])
+    sample50 = '<p class="study-sample">'+link(TOXIC, 'Dataset: ToxicChat0124')+' · 50 previously inspected messages: 25 toxic and 25 benign. Qwen2.5-0.5B, warm CPU, two timing passes. All 24 layers run.</p>'
+
+    def output_table(items):
+        return table(['Output method', 'Correct / 50', 'Toxic missed / 25', 'Time / message'], [
+            [label, methods[key]['correct'], methods[key]['missed_toxic'], f'{methods[key]["mean_ms"]:.0f} ms']
+            for key, label in items])
+
+    paired = [(('constrained1', 'SAFE'), 'Generate one SAFE/BLOCK token'), (('vocabulary2', 'SAFE'), 'Read just the two label scores')]
+    new = '<section id="output-comparison"><h2>Saving work at the output</h2>'+sample50+output_table(paired)
+    new += f'<p><strong>{saving:.1f}% less time, with identical decisions on these 50 messages.</strong> Read only Qwen’s existing SAFE and BLOCK scores, then return the chosen label. No new training, full-vocabulary calculation or text generation is needed; no transformer layers are skipped.</p>'
+    new += '<p class="small">Both paths still missed 3 toxic messages and blocked 16 benign ones. This improvement is relative to one-token generation. The six classifier methods above already avoid text generation, so their recorded numbers are unchanged.</p>'+refs([('output-results.html', 'Compare classifiers, one token and longer replies')])+'</section>'
+    pages['decision-results.html']['body'] = pages['decision-results.html']['body'].replace('<h2>How each approach works</h2>', new+'<h2>How each approach works</h2>', 1)
+
+    body = sample50+flow(['Qwen processes the input', 'Read two decision scores', 'Return SAFE or BLOCK'], 'A numerical readout returns a label without writing a sentence. Early stopping is a separate choice about how many layers run.')
+    body += '<h2>What changes when we stop generating text?</h2>'+output_table([
+        (('greedy8', 'SAFE'), 'Longer SAFE/BLOCK reply'),
+        *paired,
+        (('classifier', 'SAFE'), 'Trained linear classifier')])
+    body += f'<p>The two-score path took <strong>{saving:.1f}% less time</strong> than forced one-token output and matched every decision. It uses the original model’s two output-weight rows; the trained classifier learns a different two-output readout from 384 labelled examples.</p>'
+    body += '<p>The trained classifier got more messages right overall, but missed more toxic messages. Its extra training also means the accuracy difference cannot be attributed to removing text output alone.</p>'
+    body += '<h2>One token is already the whole word</h2><p>SAFE, OK and BLOCK each occupy one token in this Qwen tokenizer. Their first letter arrives with the rest of that token. The first token comes from processing the input; later generated tokens require more model passes.</p><p>We also tried reading only the first letter of an unrestricted first token. Qwen returned <strong>“Story”</strong> on one toxic message, and the S-prefix rule treated it as SAFE. Constraining the answer to the two allowed labels avoids that particular ambiguity.</p>'
+    body += '<details><summary>First token, longer replies, and different label words</summary>'+output_table([
+        ((method, allow), label+' · '+allow) for allow in ['SAFE', 'OK', 'THIS IS SAFE']
+        for method, label in [('greedy1', 'First token'), ('greedy8', 'Longer reply')]])
+    body += '<p>First-token rows use S, O or T to mean allow, and B to mean block. Unrecognized output blocks. Longer replies allow up to eight tokens, stop normally at the end of a reply, and use the existing tolerant parser.</p><p>SAFE had the same total accuracy after one token but introduced one toxic miss and corrected one false block. OK returned identical actions, while blocking 24 of 25 benign messages. The THIS IS SAFE shortcut does not check what words would have followed “THIS”.</p>'+refs([('docs/chat-output-steps.md', 'All parser outcomes, mistakes and timing boundaries'), ('results/chat-output-steps/comparison.png', 'Open the full accuracy and speed chart')])+'</details>'
+    body += '<details><summary>What was actually executed?</summary><p>The trained linear classifier reads 896 final internal numbers and produces two scores. The two-vocabulary-score path uses only the original SAFE and BLOCK output weights. Neither calls the vocabulary decoder or generates a token. Forced one-token output computes the full vocabulary scores, restricts the choice to SAFE/BLOCK and stops after one token.</p><p>All paths process all 24 layers. All 900 timed calls passed execution-trace checks; each one-token output matched the first token of its corresponding longer reply. Two passes are repeated timings, not 100 independent messages.</p><p>CPU float32, four compute threads, batch size one. Time includes input preparation, model work and conversion of generated tokens to text. Loading, warm-up and offline parsing are excluded. These are exploratory results, not validated moderation performance or browser timings.</p>'+refs([('docs/chat-output-steps.md', 'Test design and reproduction'), ('results/chat-output-steps/protocol.json', 'Exact prompts, models and message IDs'), ('results/chat-output-steps/result.json', 'Results and audit checks'), ('results/chat-output-steps/records.json', 'Every output and timed call')])+'</details>'
+    body += refs([('depth-results.html#late-layers', 'Different shortcut: skip the last one or two layers'), ('training-results.html', 'How the model and classifiers are trained'), ('decision-results.html', 'Compare all decision methods')])
+    page(pages, 'output-results.html', 'A decision without a written reply', 'Compare a trained classifier, direct label scores and stopping after one output token.', body, back=('decisions.html', 'Back to decisions without text'))
+
+    late = read('results/chat-late-exit/result.json')['methods']
+    section = '<section id="late-layers"><h2>Skip only the last one or two layers?</h2><p class="study-sample">Separate follow-up: 50 reused messages, 25 toxic and 25 benign. New linear classifiers trained equally on 384 messages; three paired CPU timing passes.</p>'
+    section += table(['Stop after', 'Correct / 50', 'Blocks skipped', 'Time / message', 'New toxic misses'], [
+        [f'Layer {d}', late[d]['correct'], f'{late[d]["blocks_skipped"]}/24 ({100*late[d]["fraction_blocks_skipped"]:.1f}%)', f'{late[d]["mean_ms_per_message"]:.0f} ms', late[d]['additional_missed_toxic']]
+        for d in ['22', '23', '24']])
+    section += f'<p>Layer 22 took {100*late["22"]["time_reduction_vs_full"]:.1f}% less time and layer 23 took {100*late["23"]["time_reduction_vs_full"]:.1f}% less. Both introduced toxic-message misses that the full-depth classifier avoided. “New toxic misses” compares the same messages with the layer-24 row, not the older 100-message test.</p><p>The classifier reads the internal state after the chosen block; later blocks never run. It does not wait for a word or inspect its first letter. This tests fixed shortcuts, not a detector of when an answer is ready.</p>'+refs([('docs/chat-late-exit.md', 'Training, per-class errors and independent audit'), ('results/chat-late-exit/result.json', 'All late-layer measurements'), ('output-results.html', 'Different shortcut: avoid text generation')])+'</section>'
+    pages['depth-results.html']['body'] += section
+    training = '<section id="classifier-output"><h2>What the training changes</h2><p>These recipes train small weight updates inside Qwen plus a classifier that returns numerical SAFE/BLOCK scores. They do not train the model to spell an answer. The main distillation result still runs all 24 layers; only the explicitly truncated recipe removes the last 12.</p><p>A classifier at an earlier layer can replace the remaining model work with a direct decision, but only if its mistakes are acceptable. Training a better classifier and stopping text generation after one token are separate experiments.</p>'+refs([('output-results.html', 'Classifier versus one-token output: the measured trade-offs'), ('depth-results.html#late-layers', 'What happened when we omitted just the last layers')])+'</section>'
+    pages['training-results.html']['body'] = pages['training-results.html']['body'].replace('<h2>Four short training experiments</h2>', training+'<h2>Four short training experiments</h2>', 1)
+    # The topic page is retained across rebuilds; keep this one contextual link idempotent.
+    import re
+    pages['decisions.html']['body'] = re.sub(r'<section id="output-study-link">.*?</section>', '', pages['decisions.html']['body'], flags=re.S)
+    pages['decisions.html']['body'] += '<section id="output-study-link"><h2>Classify, or stop after one token?</h2><p>A trained classifier returns scores directly. A one-token reply still uses the language output layer. See what each saves and which mistakes changed.</p>'+refs([('output-results.html', 'Compare output methods on the same messages')])+'</section>'
+
+
 def update(pages, legacy=None):
     if legacy is not None or 'results-record.html' not in pages:
         pages['results-record.html'] = dict(title='Earlier combined results', description='The previous report, preserved as a reference. Start with the topic pages for shorter explanations.', status='Reference', body=refs([('results.html', 'Results by topic')])+(legacy or pages['results.html']['body']))
@@ -86,7 +135,7 @@ def update(pages, legacy=None):
 
     distill_time=read('results/chat-smoke-adaptation/distill-runtime.json')
     depth_time=read('results/chat-depth-timing/result.json')['depths']
-    comparison=sample()+'<h2>Speed and accuracy</h2>'+table(['Method','Correct / 100','Time / message'],[
+    comparison=sample()+'<p>All six methods below return numerical classifier decisions. “Full Qwen” means all 24 layers followed by a trained classifier, not a written reply. Early-exit methods also skip later transformer layers; they do not stop halfway through spelling a word.</p><h2>Classifiers and stopping early</h2>'+table(['Method','Correct / 100','Time / message'],[
         ['Full Qwen + classifier',mlp['fixed_24']['splits']['evaluation']['correct'],f'{depth_time["24"]["mean_ms"]:.0f} ms'],
         ['Stop at layer 12',mlp['fixed_12']['splits']['evaluation']['correct'],f'{depth_time["12"]["mean_ms"]:.0f} ms'],
         ['Learned stopping',gate['correct'],f'{runtime["paths"]["learned"]["mean_ms"]:.0f} ms'],
@@ -98,10 +147,11 @@ def update(pages, legacy=None):
     comparison=comparison.replace('<h2>How each approach works</h2>',tiny_model+'<h2>How each approach works</h2>')
     comparison=comparison.replace('Same 100 messages for accuracy; training differs between methods.', 'Same 100 messages for accuracy; training differs between methods. Full Qwen and layer 12 share a new three-pass timing run. The learned gate was timed separately against its own 636 ms full-depth reference; its 34% saving is from that paired run.')
     page(pages,'decision-results.html','Ways to make a decision sooner','Compare the measured speed and accuracy, then open a method for its test results.',comparison+choices([
-        ('depth-results.html','1. Stop at a fixed point','Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth.'),
-        ('early-exit-results.html','2. Check before continuing','A small checker decides whether to return a label or run more layers. Different messages can stop at different points.'),
-        ('cascade-results.html','3. Try a tiny model first','Accept its confident answers. Send the other messages to a larger model.'),
-        ('training-results.html','4. Teach the model differently','Train intermediate answers, learn from another model, or remove later layers.')])+refs([('decision-checks.html','Other datasets and stress tests'),('chat-results.html','Original 600-message comparison'),('browser-benchmark.html','Try output formats in your browser')]),back=('adaptive.html','Back to stopping early'))
+        ('output-results.html','Return scores instead of text','Run all 24 layers, then read two label scores. Compare a trained classifier with one-token and longer replies.'),
+        ('depth-results.html','Stop at a fixed point','Run a chosen number of layers, then let a classifier return the decision. The later layers never execute; new tests also cover layers 22 and 23.'),
+        ('early-exit-results.html','Check before continuing','Classifiers at layers 6, 12 and 18 produce scores. A learned checker decides whether to stop or continue; layer 24 is the fallback.'),
+        ('cascade-results.html','Try a tiny model first','A two-layer BERT classifier tries every message. Uncertain cases go to all 24 Qwen layers and another classifier.'),
+        ('training-results.html','Teach the model differently','Train classifier outputs and small weight updates inside Qwen. The main distilled model still runs all 24 layers and returns numbers.')])+refs([('decision-checks.html','Other datasets and stress tests'),('chat-results.html','Original 600-message comparison'),('moderation-benchmark.html','Try output formats on real messages')]),back=('adaptive.html','Back to stopping early'))
 
     body=sample()+layers([(f'Layer {d} of 24',d,f'{100*(24-d)//24}% skipped') for d in [6,12,18,24]],'Each square is one transformer block. Filled squares run; outlined squares are skipped.')+'<p>A small classifier reads Qwen’s internal numbers at the chosen layer and returns SAFE or BLOCK. It does not write a reply.</p><h2>Earlier is cheaper. Accuracy is uneven.</h2>'
     body+=table(['Stop after','Correct / 100','Toxic missed / 50','Time for 100'],[[f'{label}: layer {d}',mlp[f'fixed_{d}']['splits']['evaluation']['correct'],mlp[f'fixed_{d}']['splits']['evaluation']['missed_toxic'],f'{depth_time[str(d)]["mean_100_message_seconds"]:.2f} s'] for d,label in [(6,'Early'),(12,'Halfway'),(18,'Late'),(24,'Full model')]])
@@ -209,6 +259,7 @@ def update(pages, legacy=None):
     update_faq(pages)
     from refresh_next_research import update as update_next_research
     update_next_research(pages)
+    update_output_results(pages)
     from refresh_demo_links import update as update_demo_links
     update_demo_links(pages)
     from refresh_use_cases import update as update_use_cases

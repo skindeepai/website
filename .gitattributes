@@ -132,3 +132,15 @@ models/search-reranker/NOTICE.md text eol=crlf
 models/search-reranker/special_tokens_map.json text eol=crlf
 models/search-reranker/tokenizer_config.json text eol=crlf
 results/browser-demos/remainder/rerank-worker.js -text
+
+# Preserve the recorded source and artifact bytes for output-step experiments.
+experiments/chat_late_exit.py text eol=lf
+experiments/check_chat_late_exit.py text eol=lf
+experiments/chat_output_steps.py text eol=lf
+experiments/analyze_chat_output_steps.cjs text eol=lf
+experiments/plot_chat_output_steps.py text eol=lf
+results/chat-late-exit/*.py text eol=lf
+results/chat-late-exit/*.json text eol=lf
+results/chat-output-steps/*.py text eol=lf
+results/chat-output-steps/*.json text eol=lf
+results/chat-output-steps/*.svg text eol=lf

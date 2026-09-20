@@ -75,6 +75,7 @@ def update(pages):
     journey('cascade-results.html', 'adaptive.html', ('decision-results.html', 'Compare approaches'), ('cascade-test-results.html', 'Recorded cascade results'))
     journey('cascade-test-results.html', 'adaptive.html', ('cascade-results.html', 'Small model, then larger model'))
     journey('decision-results.html', 'adaptive.html')
+    journey('output-results.html', 'decisions.html', evidence=('docs/chat-output-steps.md', 'Test design, chart and detailed evidence'))
     for name in ['batch-results.html', 'prefix-results.html', 'combined-results.html', 'decision-checks.html', 'redaction-results.html', 'receipt-results.html', 'routing-results.html', 'maze-results.html', 'search-next-results.html']:
         journey(name, 'decisions.html')
     for name in ['coordinate-results.html', 'visual-refusal-results.html']:
@@ -90,7 +91,7 @@ def update(pages):
     journey('point-demo.html', 'coordinates.html', results=('screenshot-demo.html', 'Related vision-model recordings'), evidence=('docs/method-demos.md', 'OCR implementation and checks'), note='This live OCR demo is not the GUI-Actor model in the recordings. No accuracy benchmark has been published for this OCR example.')
     journey('image-action-demo.html', 'coordinates.html', evidence=('docs/action-demo.md', 'Arrow-model tests and evidence'))
     journey('preference-method-demo.html', 'preferences.html', ('active-learning-strategies.html', 'Choose the next example'), results=('multi-modal-preferences-deep-dive.html', 'Learning more than one style'), evidence=('docs/method-demos.md', 'Demo implementation and checks'), note='This small interactive model has no human-preference benchmark. The optional example ratings are synthetic.')
-    journey('moderation-benchmark.html', 'decisions.html', evidence=('docs/browser-moderation.md', 'Method, dataset and limits'), note='Results are measured when you run this demo. It does not reproduce the trained banking classifier or the early-stop studies.')
+    journey('moderation-benchmark.html', 'decisions.html', results=('output-results.html', 'Related CPU output comparison'), evidence=('docs/browser-moderation.md', 'Browser method, dataset and limits'), note='Results are measured when you run this demo. The related CPU study uses different readouts and precision; this browser computes the full vocabulary and does not reproduce its trained classifier or two-row optimization.')
     journey('tiny-decision-demo.html', 'decisions.html', results=('browser-method-results.html#tiny', 'Results for this tiny classifier'), evidence=('docs/decision-export.md', 'Model export and browser checks'))
     journey('browser-benchmark.html', 'decisions.html', results=('moderation-benchmark.html', 'Run the real-message benchmark'), evidence=('scripts/browser-benchmark.js', 'Earlier example source'), note='Earlier timing example: three authored banking requests, not a real-message accuracy benchmark.')
 

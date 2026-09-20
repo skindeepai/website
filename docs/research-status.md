@@ -40,4 +40,6 @@ Completed work includes actual decision timing, model fallback, replay checks, c
 
 ## Additional checks and lessons
 
+**First token versus classifier:** a 50-message, two-pass comparison tested trained readout, two vocabulary scores, constrained one-token output, and first-character/longer-reply parsing for SAFE, OK and THIS IS SAFE. Two vocabulary scores matched constrained one-token decisions with 6.6% less measured time; first-letter parsing misread an actual `Story` response as SAFE. A separate layer-22/23 test saved work but introduced toxic misses. These are reused exploratory samples, not accepted moderation improvements. [Chart, all methods and per-class errors](chat-output-steps.md) · [Late-layer classifier details](chat-late-exit.md).
+
 **Label wording and tolerant parsing:** tested SAFE/OK, alternate output words and defensive parsing. Parsing did not improve decisions over exact parsing with the same blocking fallback; prompt changes were inconsistent across classifiers. No general performance improvement or default change resulted. [100-message replay and evidence](chat-label-suite.md) · [Earlier 50-message wording test](label-wording.md) · [Parser diagnostics](label-parser.md).

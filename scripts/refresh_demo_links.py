@@ -24,6 +24,7 @@ def update(pages):
     links(['decisions.html','chat-results.html','decision-checks.html'],'moderation-benchmark.html','Live demo: compare labels and written replies','Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier.')
     links(['adaptive.html','shared-model-results.html','fresh-message-results.html'],'shared-decision-demo.html','Live demo: compare early stopping and full depth','Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate.')
     links(['decision-results.html'],'method-demo.html','Compare the methods live','Browser BERT comparisons; the recorded Qwen results remain separate.')
+    links(['output-results.html'],'moderation-benchmark.html','Compare output formats in the browser','Related q4 Qwen demo: direct vocabulary scores, one token or JSON. Its direct path still computes the full vocabulary; it does not implement the two-row CPU optimization or the trained classifier below.')
     for mode,names,label,note in [
         ('fixed',['depth-results.html'],'Try stopping at a fixed layer','Live layer-2 versus layer-4 BERT; not a replication of the Qwen depths below.'),
         ('adaptive',['early-exit-results.html','shared-qwen-results.html'],'Try the stop-or-continue check','Live BERT checks layer 2 of 4. The Qwen multi-checkpoint experiment below is separate.'),

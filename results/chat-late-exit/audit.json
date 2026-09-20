@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "timed_calls": 450,
+  "unique_evaluation_messages": 50,
+  "checks": [
+    "Sealed source hashes",
+    "Train-only feature standardization",
+    "Independent NumPy classifier predictions",
+    "All contiguous layer traces",
+    "Identical decisions across timing repeats",
+    "Per-class and added-error counts",
+    "Timing arithmetic"
+  ],
+  "limits": "Artifact and implementation checks, not independent data or hardware replication."
+}

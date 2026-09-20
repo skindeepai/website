@@ -1,6 +1,6 @@
 {
   "scope": "Current local generated site, including uncommitted navigation edits; not a crawl of production.",
-  "git_head": "8195105c2b7ef2faf9c516069d1a16bb32b49cb9",
+  "git_head": "18dbe02371c274b9c36421224a96bd45add1c51a",
   "definitions": {
     "content": "Links inside main, excluding footer; includes closed details and declared mode-specific navigation routes unless marked otherwise. Static anchor counts exclude these additional mode variants.",
     "connection": "Distinct source-to-current-page pair. Self links excluded. Modes/fragments retained per anchor but collapsed for graph reachability.",
@@ -8,18 +8,18 @@
     "limitations": "Static anchors only. No form actions, model downloads or runtime-generated export links. Collapsed means inside a closed details element, not a pixel visibility measurement. Missing return links are candidates for editorial review, not automatically defects."
   },
   "summary": {
-    "pages": 111,
-    "anchors": 3086,
-    "content_page_link_occurrences": 915,
-    "unique_content_connections": 761,
-    "unique_all_connections": 1802,
+    "pages": 112,
+    "anchors": 3127,
+    "content_page_link_occurrences": 928,
+    "unique_content_connections": 773,
+    "unique_all_connections": 1824,
     "missing_from_sitemap": [],
     "link_occurrences_by_zone": {
-      "utility": 111,
-      "header": 111,
-      "sidebar": 1332,
-      "content": 1199,
-      "footer": 333
+      "utility": 112,
+      "header": 112,
+      "sidebar": 1344,
+      "content": 1223,
+      "footer": 336
     },
     "pages_with_repeated_content_destinations": [
       "preferences.html",
@@ -1682,7 +1682,7 @@
     "decisions.html": {
       "title": "Decisions without a written reply",
       "description": "Sometimes an app only needs a label, such as “support” or “spam”.",
-      "sha256": "18def050d4675b1123eeaef100f07f90528ea4c499e5f1039ede8ac1294078da",
+      "sha256": "8abe7337530c1b24556d11ada52bb004fc9a1ed0c6bf368ade198e2c3e48c400",
       "links": [
         {
           "href": "#main",
@@ -2202,6 +2202,17 @@
           "fragment": ""
         },
         {
+          "href": "output-results.html",
+          "label": "Compare output methods on the same messages",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "maze-results.html",
           "label": "Learn to move through a maze",
           "zone": "content",
@@ -2295,7 +2306,8 @@
         "examples/ecg-quality.html",
         "examples/mri-segmentation.html",
         "examples/eeg-sleep.html",
-        "examples/image-safety.html"
+        "examples/image-safety.html",
+        "output-results.html"
       ],
       "outgoing": [
         "batch-results.html",
@@ -2319,6 +2331,7 @@
         "maze-live.html",
         "maze-results.html",
         "moderation-benchmark.html",
+        "output-results.html",
         "prefix-results.html",
         "receipt-results.html",
         "redaction-results.html",
@@ -11268,7 +11281,7 @@
     "sitemap.html": {
       "title": "All pages",
       "description": "Demos, explanations, experiments and the original records.",
-      "sha256": "0425766a336c98cbe20fd84755d3ce3b549364e1b0399e85f160cc9d751dc8fd",
+      "sha256": "a6ff9dd57acef89b628f7639ba9ad13c930c71f41e66159e0ddbd3881ff0167c",
       "links": [
         {
           "href": "#main",
@@ -12118,6 +12131,17 @@
           "fragment": ""
         },
         {
+          "href": "output-results.html",
+          "label": "A decision without a written reply",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "tiny-decision-demo.html",
           "label": "A small model, one decision",
           "zone": "content",
@@ -12768,6 +12792,7 @@
         "method-demo.html",
         "moderation-benchmark.html",
         "multi-modal-preferences-deep-dive.html",
+        "output-results.html",
         "point-demo.html",
         "practical-demo.html",
         "preference-method-demo.html",
@@ -13073,7 +13098,6 @@
       "incoming": [
         "sitemap.html",
         "results-record.html",
-        "decision-results.html",
         "decision-checks.html"
       ],
       "outgoing": [
@@ -13084,20 +13108,21 @@
       "paths": {
         "content": [
           "index.html",
-          "adaptive.html",
-          "decision-results.html",
+          "history.html",
+          "sitemap.html",
           "browser-benchmark.html"
         ],
         "without_sitemap": [
           "index.html",
-          "adaptive.html",
-          "decision-results.html",
+          "research.html",
+          "decision-checks.html",
           "browser-benchmark.html"
         ],
         "visible_content": [
           "index.html",
           "adaptive.html",
           "decision-results.html",
+          "decision-checks.html",
           "browser-benchmark.html"
         ],
         "all_links": [
@@ -14122,7 +14147,7 @@
     "decision-results.html": {
       "title": "Ways to make a decision sooner",
       "description": "Compare the measured speed and accuracy, then open a method for its test results.",
-      "sha256": "9862d88ccd5c014a832d0b4e110c5386085f70a3c2e647ac1764b4818d5cd3ed",
+      "sha256": "9e60652d952e22f14fdfb8694ad569e1ff82997642f22d82f6c03c74ea650925",
       "links": [
         {
           "href": "#main",
@@ -14400,8 +14425,41 @@
           "fragment": ""
         },
         {
+          "href": "https://huggingface.co/datasets/lmsys/toxic-chat",
+          "label": "Dataset: ToxicChat0124",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://huggingface.co/datasets/lmsys/toxic-chat",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "output-results.html",
+          "label": "Compare classifiers, one token and longer replies",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "output-results.html",
+          "label": "Return scores instead of text Run all 24 layers, then read two label scores. Compare a trained classifier with one-token and longer replies.",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "depth-results.html",
-          "label": "1. Stop at a fixed point Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth.",
+          "label": "Stop at a fixed point Run a chosen number of layers, then let a classifier return the decision. The later layers never execute; new tests also cover layers 22 and 23.",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -14412,7 +14470,7 @@
         },
         {
           "href": "early-exit-results.html",
-          "label": "2. Check before continuing A small checker decides whether to return a label or run more layers. Different messages can stop at different points.",
+          "label": "Check before continuing Classifiers at layers 6, 12 and 18 produce scores. A learned checker decides whether to stop or continue; layer 24 is the fallback.",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -14423,7 +14481,7 @@
         },
         {
           "href": "cascade-results.html",
-          "label": "3. Try a tiny model first Accept its confident answers. Send the other messages to a larger model.",
+          "label": "Try a tiny model first A two-layer BERT classifier tries every message. Uncertain cases go to all 24 Qwen layers and another classifier.",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -14434,7 +14492,7 @@
         },
         {
           "href": "training-results.html",
-          "label": "4. Teach the model differently Train intermediate answers, learn from another model, or remove later layers.",
+          "label": "Teach the model differently Train classifier outputs and small weight updates inside Qwen. The main distilled model still runs all 24 layers and returns numbers.",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -14466,13 +14524,13 @@
           "fragment": ""
         },
         {
-          "href": "browser-benchmark.html",
-          "label": "Try output formats in your browser",
+          "href": "moderation-benchmark.html",
+          "label": "Try output formats on real messages",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
           "kind": "page",
-          "target": "browser-benchmark.html",
+          "target": "moderation-benchmark.html",
           "query": "",
           "fragment": ""
         },
@@ -14625,12 +14683,12 @@
         "shared-qwen-results.html",
         "quantization-results.html",
         "fresh-message-results.html",
-        "browser-method-results.html"
+        "browser-method-results.html",
+        "output-results.html"
       ],
       "outgoing": [
         "adaptive.html",
         "batch-results.html",
-        "browser-benchmark.html",
         "browser-method-results.html",
         "cascade-results.html",
         "cascade-test-results.html",
@@ -14641,6 +14699,8 @@
         "early-exit-results.html",
         "fresh-message-results.html",
         "method-demo.html",
+        "moderation-benchmark.html",
+        "output-results.html",
         "prefix-results.html",
         "quantization-results.html",
         "shared-model-results.html",
@@ -14656,7 +14716,7 @@
           "labels": [
             "Full Qwen + classifier",
             "Stop at layer 12",
-            "1. Stop at a fixed point Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth."
+            "Stop at a fixed point Run a chosen number of layers, then let a classifier return the decision. The later layers never execute; new tests also cover layers 22 and 23."
           ]
         },
         {
@@ -14666,7 +14726,7 @@
           "count": 2,
           "labels": [
             "Learned stopping",
-            "2. Check before continuing A small checker decides whether to return a label or run more layers. Different messages can stop at different points."
+            "Check before continuing Classifiers at layers 6, 12 and 18 produce scores. A learned checker decides whether to stop or continue; layer 24 is the fallback."
           ]
         },
         {
@@ -14676,7 +14736,7 @@
           "count": 2,
           "labels": [
             "Tiny model → Qwen",
-            "3. Try a tiny model first Accept its confident answers. Send the other messages to a larger model."
+            "Try a tiny model first A two-layer BERT classifier tries every message. Uncertain cases go to all 24 Qwen layers and another classifier."
           ]
         },
         {
@@ -14686,7 +14746,17 @@
           "count": 2,
           "labels": [
             "With distillation",
-            "4. Teach the model differently Train intermediate answers, learn from another model, or remove later layers."
+            "Teach the model differently Train classifier outputs and small weight updates inside Qwen. The main distilled model still runs all 24 layers and returns numbers."
+          ]
+        },
+        {
+          "target": "output-results.html",
+          "query": "",
+          "fragment": "",
+          "count": 2,
+          "labels": [
+            "Compare classifiers, one token and longer replies",
+            "Return scores instead of text Run all 24 layers, then read two label scores. Compare a trained classifier with one-token and longer replies."
           ]
         }
       ],
@@ -14716,7 +14786,7 @@
     "depth-results.html": {
       "title": "Where should processing stop?",
       "description": "Qwen has 24 transformer layers. Here is what happens when we stop earlier.",
-      "sha256": "82f70292d90e97c66531471697724ba272f1ab676ca99149fa49a000935112c9",
+      "sha256": "39bf92c92e644178e8341e70595ba599bac6742b5722a2d46197da11816791c7",
       "links": [
         {
           "href": "#main",
@@ -14994,6 +15064,39 @@
           "fragment": ""
         },
         {
+          "href": "docs/chat-late-exit.md",
+          "label": "Training, per-class errors and independent audit",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/chat-late-exit.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/chat-late-exit/result.json",
+          "label": "All late-layer measurements",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/chat-late-exit/result.json",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "output-results.html",
+          "label": "Different shortcut: avoid text generation",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "history.html",
           "label": "History",
           "zone": "footer",
@@ -15032,8 +15135,10 @@
         "research.html",
         "sitemap.html",
         "decision-results.html",
+        "training-results.html",
         "method-demo.html",
-        "browser-method-results.html"
+        "browser-method-results.html",
+        "output-results.html"
       ],
       "outgoing": [
         "adaptive.html",
@@ -15041,6 +15146,7 @@
         "decision-results.html",
         "early-exit-results.html",
         "method-demo.html",
+        "output-results.html",
         "results.html"
       ],
       "duplicate_content_links": [
@@ -15828,7 +15934,7 @@
     "training-results.html": {
       "title": "Teach useful answers to appear earlier",
       "description": "Changing the readout is one option. Changing what the model learns is another.",
-      "sha256": "9f7e9ca1e0c394e93765fe48a64fb5807b4a2c3fafa657e9271e274101834d6d",
+      "sha256": "a09611426ddde3a8ec20b702c86a323e16f07da58a8f629f27fd76e2b9e560d1",
       "links": [
         {
           "href": "#main",
@@ -16051,6 +16157,28 @@
           "fragment": ""
         },
         {
+          "href": "output-results.html",
+          "label": "Classifier versus one-token output: the measured trade-offs",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "depth-results.html#late-layers",
+          "label": "What happened when we omitted just the last layers",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "depth-results.html",
+          "query": "",
+          "fragment": "late-layers"
+        },
+        {
           "href": "docs/chat-smoke-adaptation.md",
           "label": "All layers, timings and exact training",
           "zone": "content",
@@ -16122,12 +16250,15 @@
         "sitemap.html",
         "decision-results.html",
         "method-demo.html",
-        "browser-method-results.html"
+        "browser-method-results.html",
+        "output-results.html"
       ],
       "outgoing": [
         "adaptive.html",
         "decision-results.html",
+        "depth-results.html",
         "method-demo.html",
+        "output-results.html",
         "results.html"
       ],
       "duplicate_content_links": [
@@ -18344,7 +18475,7 @@
     "moderation-benchmark.html": {
       "title": "Try 100 real messages",
       "description": "Run Qwen locally and compare accuracy and time.",
-      "sha256": "b6acd2d828f87964f6e36e6f882a5658b7c5f3dbbd08ccf8a4c57e109b367368",
+      "sha256": "b41f67bd155b1c0632abc59d03129305eb4599ea0c75c515a50e8b5380bb4a38",
       "links": [
         {
           "href": "#main",
@@ -18512,8 +18643,19 @@
           "fragment": ""
         },
         {
+          "href": "output-results.html",
+          "label": "Related CPU output comparison",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "docs/browser-moderation.md",
-          "label": "Method, dataset and limits",
+          "label": "Browser method, dataset and limits",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -18628,14 +18770,17 @@
         "research.html",
         "sitemap.html",
         "browser-benchmark.html",
+        "decision-results.html",
         "chat-results.html",
         "decision-checks.html",
         "tiny-decision-demo.html",
         "demo-directory.html",
-        "examples/moderation.html"
+        "examples/moderation.html",
+        "output-results.html"
       ],
       "outgoing": [
-        "decisions.html"
+        "decisions.html",
+        "output-results.html"
       ],
       "duplicate_content_links": [
         {
@@ -40712,6 +40857,382 @@
           "index.html",
           "adaptive.html",
           "examples/image-preferences.html"
+        ]
+      }
+    },
+    "output-results.html": {
+      "title": "A decision without a written reply",
+      "description": "Compare a trained classifier, direct label scores and stopping after one output token.",
+      "sha256": "64b5fe344f206a4eadc043e09e3327df626c64f6c5ab65c4cab553bfed938699",
+      "links": [
+        {
+          "href": "#main",
+          "label": "Skip to content",
+          "zone": "utility",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": "main"
+        },
+        {
+          "href": "index.html",
+          "label": "SkinDeep RESEARCH",
+          "zone": "header",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "index.html",
+          "label": "Overview",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results.html",
+          "label": "Test results",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "preferences.html",
+          "label": "Learning what you like",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "preferences.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without text",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "coordinates.html",
+          "label": "Finding where to click",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "coordinates.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "adaptive.html",
+          "label": "Stopping early",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "demo-directory.html",
+          "label": "Live demos",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "demo-directory.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History & archive",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "about.html",
+          "label": "About",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "about.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "sitemap.html",
+          "label": "All pages",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "sitemap.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/skindeepai",
+          "label": "Source on GitHub ↗",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/skindeepai",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without a written reply",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/chat-output-steps.md",
+          "label": "Test design, chart and detailed evidence",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/chat-output-steps.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "moderation-benchmark.html",
+          "label": "Compare output formats in the browser",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "moderation-benchmark.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://huggingface.co/datasets/lmsys/toxic-chat",
+          "label": "Dataset: ToxicChat0124",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://huggingface.co/datasets/lmsys/toxic-chat",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/chat-output-steps.md",
+          "label": "All parser outcomes, mistakes and timing boundaries",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/chat-output-steps.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/chat-output-steps/comparison.png",
+          "label": "Open the full accuracy and speed chart",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/chat-output-steps/comparison.png",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/chat-output-steps.md",
+          "label": "Test design and reproduction",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/chat-output-steps.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/chat-output-steps/protocol.json",
+          "label": "Exact prompts, models and message IDs",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/chat-output-steps/protocol.json",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/chat-output-steps/result.json",
+          "label": "Results and audit checks",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/chat-output-steps/result.json",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/chat-output-steps/records.json",
+          "label": "Every output and timed call",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/chat-output-steps/records.json",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "depth-results.html#late-layers",
+          "label": "Different shortcut: skip the last one or two layers",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "depth-results.html",
+          "query": "",
+          "fragment": "late-layers"
+        },
+        {
+          "href": "training-results.html",
+          "label": "How the model and classifiers are trained",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "training-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decision-results.html",
+          "label": "Compare all decision methods",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decision-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "mailto:contact@skindeep.ai",
+          "label": "Contact",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "mailto:contact@skindeep.ai",
+          "query": "",
+          "fragment": ""
+        }
+      ],
+      "mode_links": [],
+      "incoming": [
+        "decisions.html",
+        "sitemap.html",
+        "decision-results.html",
+        "depth-results.html",
+        "training-results.html",
+        "moderation-benchmark.html"
+      ],
+      "outgoing": [
+        "decision-results.html",
+        "decisions.html",
+        "depth-results.html",
+        "moderation-benchmark.html",
+        "training-results.html"
+      ],
+      "duplicate_content_links": [],
+      "paths": {
+        "content": [
+          "index.html",
+          "decisions.html",
+          "output-results.html"
+        ],
+        "without_sitemap": [
+          "index.html",
+          "decisions.html",
+          "output-results.html"
+        ],
+        "visible_content": [
+          "index.html",
+          "decisions.html",
+          "output-results.html"
+        ],
+        "all_links": [
+          "index.html",
+          "decisions.html",
+          "output-results.html"
         ]
       }
     }
