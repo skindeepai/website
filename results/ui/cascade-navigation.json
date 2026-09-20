@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "name": "decision-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-test-results",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "decision-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-test-results",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "decision-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "name": "cascade-test-results",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "journey": "Adaptive -> numerical comparison -> cascade explanation -> specific test report -> cascade explanation",
+  "recordedDecisions": 100,
+  "browser": "151.0.7922.34",
+  "limitations": "Headless Chromium, not physical-device or screen-reader verification."
+}

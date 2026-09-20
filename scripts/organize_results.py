@@ -16,8 +16,9 @@ def link(href, label):
     return f'<a href="{href}">{e(label)}</a>'
 
 
-def table(headers, rows):
-    return '<div class="table-scroll"><table><thead><tr>' + ''.join('<th scope="col">'+e(v)+'</th>' for v in headers) + '</tr></thead><tbody>' + ''.join('<tr>'+''.join('<th scope="row">'+e(str(v))+'</th>' if i == 0 else '<td>'+e(str(v))+'</td>' for i, v in enumerate(row))+'</tr>' for row in rows)+'</tbody></table></div>'
+def table(headers, rows, row_links=None):
+    row_links = row_links or {}
+    return '<div class="table-scroll"><table><thead><tr>' + ''.join('<th scope="col">'+e(v)+'</th>' for v in headers) + '</tr></thead><tbody>' + ''.join('<tr>'+''.join('<th scope="row">'+(link('@/'+row_links[v],str(v)) if v in row_links else e(str(v)))+'</th>' if i == 0 else '<td>'+e(str(v))+'</td>' for i, v in enumerate(row))+'</tr>' for row in rows)+'</tbody></table></div>'
 
 
 def refs(items):
@@ -59,8 +60,8 @@ def maze_picture():
     return '<figure class="method-figure"><div class="maze-example" role="img" aria-label="Recorded first move: the player moves down from the top-right cell. P is player, G is goal, and hash marks are walls.">'+boards[0]+'<strong>'+direction+'<br>→</strong>'+boards[1]+'</div><figcaption>First recorded maze, before and after one move. P = player; G = goal; # = wall. This policy reached the goal in '+str(episode['actions'])+' moves on this example.</figcaption></figure>'
 
 
-def page(pages, name, title, description, body, parent='decision-results.html'):
-    breadcrumb = refs([('results.html', 'Test results')]+([(parent, 'Decision methods')] if parent else []))
+def page(pages, name, title, description, body, parent='decision-results.html', back=None):
+    breadcrumb = refs([back]) if back else refs([('results.html', 'Test results')]+([(parent, 'Decision methods')] if parent else []))
     pages[name] = dict(title=title, description=description, status='Research results', styles=['results.css'], body=breadcrumb+body)
 
 
@@ -82,11 +83,21 @@ def update(pages, legacy=None):
         ('coordinates','Finding a place to click',[('coordinate-results.html','Can a model return a point directly?','Screenshot targets, neighbouring image patches and missing buttons.')]),
         ('mazes','Choosing an action',[('maze-results.html','Can a small model finish a maze?','More training examples, legal moves and the failures that remain.')])])+refs([('results-record.html','Earlier combined report'),('docs/claims.md','Evidence and limitations'),('research.html','Open questions')]))
 
-    page(pages,'decision-results.html','Ways to make a decision sooner','The answer can be a label, such as SAFE or BLOCK. We tested several ways to get there.',choices([
+    distill_time=read('results/chat-smoke-adaptation/distill-runtime.json')
+    comparison=sample()+'<h2>Speed and accuracy</h2>'+table(['Method','Correct / 100','Time / message'],[
+        ['Full Qwen',mlp['fixed_24']['splits']['evaluation']['correct'],f'{runtime["paths"]["full"]["mean_ms"]:.0f} ms'],
+        ['Stop at layer 12',mlp['fixed_12']['splits']['evaluation']['correct'],'Not timed'],
+        ['Learned stopping',gate['correct'],f'{runtime["paths"]["learned"]["mean_ms"]:.0f} ms'],
+        ['Tiny model only',specialist['specialist']['correct'],f'{1000*timing["specialist"]/100:.1f} ms'],
+        ['Tiny model → Qwen',specialist['cascade']['correct'],f'{1000*timing["cascade"]/100:.0f} ms'],
+        ['With distillation',adapted['distill']['metrics']['evaluation']['24']['correct'],f'{1000*distill_time["seconds"]/distill_time["n"]:.0f} ms'],
+    ],{'Full Qwen':'depth-results.html','Stop at layer 12':'depth-results.html','Learned stopping':'early-exit-results.html','Tiny model only':'cascade-test-results.html','Tiny model → Qwen':'cascade-results.html','With distillation':'training-results.html'})
+    comparison+='<p>The learned stop reduced time by about 34% against its full-model reference. The tiny-model cascade reduced it by about 50% against its own Qwen reference, but introduced one new toxic-message miss.</p><p class="small">Same 100 messages for accuracy; training differs between methods. Warm CPU time includes input preparation: 50 timed messages for distillation, 100 for the other timed rows. The cascade’s own Qwen reference scores 78/100 at 648 ms.</p><h2>How each approach works</h2>'
+    page(pages,'decision-results.html','Ways to make a decision sooner','Compare the measured speed and accuracy, then open a method for its test results.',comparison+choices([
         ('depth-results.html','1. Stop at a fixed point','Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth.'),
         ('early-exit-results.html','2. Check before continuing','A small checker decides whether to return a label or run more layers. Different messages can stop at different points.'),
         ('cascade-results.html','3. Try a tiny model first','Accept its confident answers. Send the other messages to a larger model.'),
-        ('training-results.html','4. Teach the model differently','Train intermediate answers, learn from another model, or remove later layers.')])+ '<p>These are alternative approaches. A faster result only helps if the mistakes are acceptable.</p>'+refs([('decision-checks.html','Other datasets and stress tests'),('chat-results.html','Original 600-message comparison'),('browser-benchmark.html','Try output formats in your browser')]),parent=None)
+        ('training-results.html','4. Teach the model differently','Train intermediate answers, learn from another model, or remove later layers.')])+refs([('decision-checks.html','Other datasets and stress tests'),('chat-results.html','Original 600-message comparison'),('browser-benchmark.html','Try output formats in your browser')]),back=('adaptive.html','Back to stopping early'))
 
     body=sample()+layers([(f'Layer {d} of 24',d,f'{100*(24-d)//24}% skipped') for d in [6,12,18,24]],'Each square is one transformer block. Filled squares run; outlined squares are skipped.')+'<p>A small classifier reads Qwen’s internal numbers at the chosen layer and returns SAFE or BLOCK. It does not write a reply.</p><h2>Earlier is cheaper. Accuracy is uneven.</h2>'
     body+=table(['Stop after','Correct / 100','Toxic missed / 50'],[[f'{label}: layer {d}',mlp[f'fixed_{d}']['splits']['evaluation']['correct'],mlp[f'fixed_{d}']['splits']['evaluation']['missed_toxic']] for d,label in [(6,'Early'),(12,'Halfway'),(18,'Late'),(24,'Full model')]])
@@ -100,7 +111,15 @@ def update(pages, legacy=None):
     page(pages,'early-exit-results.html','Check whether more layers are needed','Keep processing uncertain messages. Stop earlier on others.',body)
 
     body=sample()+flow(['Tiny BERT reads the message','Confident: return its label','Uncertain: Qwen reads the message'],'The fallback starts from the original message. It does not continue BERT’s internal processing.')+f'<p><strong>51 messages avoided Qwen entirely.</strong> The other {specialist["fallback_count"]} ran both the tiny model and all 24 Qwen layers. There is no early exit inside either model.</p>'+table(['Method','Correct / 100','Time for 100'],[[label,specialist[k]['correct'],f'{timing[k]:.2f} s'] for k,label in [('specialist','Tiny model only'),('cascade','Tiny model, then Qwen if needed'),('full_qwen_reference','Qwen for every message')]])+'<p>The cascade roughly halved time. It missed 14 toxic messages versus Qwen’s 15, but one of those misses was a message Qwen got right.</p><details><summary>Models, confidence and timing</summary><p>The specialist is a trained 4.37-million-parameter, two-layer BERT. The fallback is Qwen2.5-0.5B with a trained label classifier. BERT and Qwen layers are different sizes; their layer counts are not directly comparable.</p><p>Development examples select separate confidence limits for SAFE and BLOCK. BERT learned from 384 messages; the older Qwen fallback classifier learned from 1,400. This is not an equal-training comparison of architectures.</p><p>One warm CPU pass, 100 calls per path, rotating order. Timing includes input preparation and all fallback work. Loading is excluded and both models are already in memory.</p>'+refs([('docs/chat-smoke-specialist.md','Training and evidence'),('results/chat-smoke-specialist/timings.json','Every timed request'),('docs/chat-smoke-review.md','Review')])+'</details>'
-    page(pages,'cascade-results.html','Try a tiny model first','Use the larger model only when the small one is uncertain.',body)
+    body=body.replace('<details><summary>Models, confidence and timing</summary>','<p class="next-links">'+link('@/cascade-test-results.html','See the cascade test results →')+'</p><details><summary>Models, confidence and timing</summary>')
+    page(pages,'cascade-results.html','Try a tiny model first','Use the larger model only when the small one is uncertain.',body,back=('decision-results.html','Back to the decision comparison'))
+
+    predictions=[r for r in read('results/chat-smoke-specialist/predictions.json') if r['split']=='evaluation']
+    timed={r['id']:r for r in read('results/chat-smoke-specialist/timings.json') if r['path']=='cascade'}
+    body=sample()+'<h2>The complete comparison</h2>'+table(['Method','Correct / 100','Toxic missed / 50','Benign blocked / 50','Time for 100'],[[label,specialist[k]['correct'],specialist[k]['missed_toxic'],specialist[k]['false_block'],f'{timing[k]:.2f} s'] for k,label in [('specialist','Tiny model only'),('cascade','Tiny model → Qwen'),('full_qwen_reference','Qwen for every message')]])
+    body+='<p>The cascade corrected three Qwen mistakes and introduced two new ones, including one toxic-message miss. Its higher total accuracy does not remove that trade-off.</p><h2>Which model answered?</h2>'+table(['Route','Messages','Correct'],[[label,len(part),sum(r['cascade']==r['label'] for r in part)] for fallback,label in [(False,'Tiny model alone'),(True,'Tiny model, then Qwen')] for part in [[r for r in predictions if r['fallback']==fallback]]])
+    body+='<p>Every message ran BERT’s two layers. Only the 49 fallback messages ran Qwen’s 24 layers; 51 avoided Qwen entirely.</p><details><summary>Inspect all 100 decisions</summary><p>SAFE and BLOCK follow the dataset’s non-toxic and toxic labels. IDs identify source rows; raw chat text is not republished. Time includes both models when Qwen was needed.</p>'+table(['Message ID','Dataset label','Cascade answer','Answered by','Request time'],[[r['id'],'BLOCK' if r['label'] else 'SAFE','BLOCK' if r['cascade'] else 'SAFE','Qwen' if r['fallback'] else 'Tiny model',f'{1000*timed[r["id"]]["seconds"]:.1f} ms'] for r in predictions])+'</details><details><summary>How this test was run</summary><p>The tiny model trained on 384 messages; the older Qwen classifier trained on 1,400. Separate development examples selected the confidence thresholds. These 100 evaluation messages had already been inspected in earlier work.</p><p>Timing uses one warm CPU pass per method, rotating their order for each message. Input preparation and actual fallback work are included; loading is excluded. This is exploratory evidence, not validated moderation performance.</p></details><h2>Source records</h2>'+refs([('results/chat-smoke/protocol.json','Exact sample IDs'),('results/chat-smoke-specialist/predictions.json','Download all predictions'),('results/chat-smoke-specialist/timings.json','Download timings'),('docs/chat-smoke-specialist.md','Training and reproduction'),('docs/chat-smoke-review.md','Adversarial review')])
+    page(pages,'cascade-test-results.html','Cascade: test results','The recorded decisions, mistakes and processing time for the tiny-model fallback experiment.',body,back=('cascade-results.html','Back to the cascade explanation'))
 
     rows=[]
     for v,label,d in [('full','Train the final answer',24),('joint','Train answers at four depths',24),('distill','Also learn from a teacher model',24),('fixed12','Remove the last 12 layers, then train',12)]:
@@ -149,7 +168,7 @@ def update(pages, legacy=None):
     marker='<details class="plain-details">'
     intro='<p>Later small tests tried different stopping depths, learned confidence checks and a tiny model with Qwen as fallback. '+link('@/decision-results.html','See how the methods compare')+'.</p>'
     pages['adaptive.html']['body']=pages['adaptive.html']['body'].replace(intro,'').replace(marker,intro+marker,1)
-    section='<section id="focused-results"><h2>Results by method</h2><ul class="page-links">'+''.join('<li>'+link('@/'+n,pages[n]['title'])+'</li>' for n in ['preference-results.html','decision-results.html','depth-results.html','early-exit-results.html','cascade-results.html','training-results.html','chat-results.html','decision-checks.html','coordinate-results.html','maze-results.html'])+'</ul></section>'
+    section='<section id="focused-results"><h2>Results by method</h2><ul class="page-links">'+''.join('<li>'+link('@/'+n,pages[n]['title'])+'</li>' for n in ['preference-results.html','decision-results.html','depth-results.html','early-exit-results.html','cascade-results.html','cascade-test-results.html','training-results.html','chat-results.html','decision-checks.html','coordinate-results.html','maze-results.html'])+'</ul></section>'
     site=pages['sitemap.html']['body'];start=site.find('<section id="focused-results">')
     if start>=0:site=site[:start]
     pages['sitemap.html']['body']=site+section
