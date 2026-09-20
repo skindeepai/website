@@ -9,3 +9,5 @@ results/chat-smoke-adaptation/initial-implementation.py text eol=lf
 results/chat-smoke-adaptation/implementation.py text eol=crlf
 results/chat-smoke-reset/implementation.py text eol=crlf
 results/chat-smoke-specialist/runtime-implementation.py text eol=lf
+experiments/preference_sampling.cjs text eol=lf
+experiments/preference_followups.cjs text eol=lf

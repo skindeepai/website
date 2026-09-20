@@ -83,3 +83,9 @@ These are a real-message archive and synthetic mazes, respectively. Neither is a
 The [results index](results.html) now opens focused pages for [preferences](preference-results.html), [decision methods](decision-results.html), [click targets](coordinate-results.html), and [mazes](maze-results.html). Decision methods lead to fixed-depth, adaptive-checker, cascade, and training comparisons. Dataset links, sample sizes, actual layers and block savings sit beside the findings; detailed protocols remain one click deeper. The previous combined report is preserved in [the reference page](results-record.html).
 
 `python scripts/refresh_research.py` refreshes measurements and calls `scripts/organize_results.py`; then run `python scripts/build_site.py`. The focused-page diagrams use scoped `results.css` and local HTML/SVG, with no new runtime dependency.
+
+## Research questions and local follow-ups
+
+[Research FAQ](research.html) replaces the public experiment backlog. [The evidence ledger](docs/research-status.md) retains all 29 protocol IDs, with actual outcomes and explicit untested scope. Its source is `content/research-evidence.json`; FAQ copy is in `content/research-faq.json`. Both standard refresh paths preserve the FAQ and its incoming anchors.
+
+[Preference follow-ups](docs/preference-followups.md) complete four local checks: the actual browser sampler, equal-candidate selection, recurring known contexts, and conflicting explicit constraints. These are synthetic experiments, not completed human or real-generator studies. Regenerate their reports with `python scripts/refresh_preference_followups.py`.

@@ -1,0 +1,42 @@
+{
+  "scope": "P03 exploratory synthetic comparison; no people or image-generator inference.",
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "checkpoints": [
+    12,
+    24,
+    48,
+    72,
+    96
+  ],
+  "policies": [
+    "random",
+    "uncertainty",
+    "browser_mixed"
+  ],
+  "scenarios": [
+    "linear",
+    "noisy_linear",
+    "two_modes"
+  ],
+  "dimensions": 16,
+  "evaluation_per_seed": 100,
+  "training": "Exact browser preference-core.train after every rating; 260 epochs, reset weights, lr0.5, L2 .02.",
+  "sampling": "Exact extracted browser 5/4/3 nextBatch function, 380 candidates, 12 shuffled selections. Queue refreshes after every six ratings as in the UI, so only six of each batch are rated.",
+  "controls": "Random and uncertainty use identical 380-candidate pools per refresh and consume identical RNG counts. All policies receive the same first six examples. All score every candidate; no timing/satisfaction claim.",
+  "labels": "Linear: z0-.6*z1+.3*z2>0. Noisy: same utility with independent 15% training-label flips, evaluation uses clean utility. Two modes: abs(z0)>.55 and abs(z1)<.65.",
+  "selection": "All three methods, scenarios, seeds and five checkpoints reported. No outcome selects configurations.",
+  "metric": "Balanced accuracy on an independent uniform 100-example pool per seed, plus ordinary accuracy and clean oracle utility among rated examples. First sampled checkpoint >=90% balanced accuracy, null if none.",
+  "source_sha256": {
+    "demo": "909ddc829cecbb797562e3b3410886d0d5b84fc60f8129ebe0b8a0b92467d563",
+    "core": "bfa7d92553dfb9668451d52ecac6cfc0321c3171639b6ffc74cdb12695b06a2f",
+    "runner": "33615c96b56111304f84042325349b46dc6280fdec3834ac4a1aab5d354e8f2d",
+    "sampler": "257ac063b34b8f8923e1fd7fbcd139970944c29bfc90c6379348bf218f2ac9af"
+  },
+  "limits": "Five seeds and authored preferences; seed ranges are not confidence intervals. Does not finish human UX/label-efficiency validation."
+}

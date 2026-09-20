@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "state": "enlarged text",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "enlarged text",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "enlarged text",
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "legacyAnchors": 29,
+  "browser": "151.0.7922.34",
+  "limits": "Automated Chromium checks; not assistive-technology or real-device certification."
+}

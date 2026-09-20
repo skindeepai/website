@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "pages": 41,
+  "pages": 42,
   "widths": [
     320,
     375,
@@ -10,12 +10,12 @@
     1024,
     1440
   ],
-  "pageViewportChecks": 287,
+  "pageViewportChecks": 294,
   "browser": "151.0.7922.34",
   "checks": [
     "document width",
     "mobile navigation and Escape",
-    "research filtering",
+    "FAQ deep links",
     "training and undo",
     "seed reset",
     "blind evaluation isolation",

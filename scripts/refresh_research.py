@@ -12,75 +12,16 @@ def pct(x): return f'{100*x:.1f}%'
 
 def main():
     pages=read('content/pages.json');protocol=(ROOT/'EXPERIMENTS.md').read_text(encoding='utf-8')
-    studies={};groups={'P':'preferences','D':'decisions','C':'coordinates','X':'combined'}
-    for directory in ['synthetic','qwen-decisions','coordinates']:
-        path=ROOT/'results'/directory/'result.json'
-        if path.exists():
-            data=read(path);ids=data.get('experiment_ids',data.get('experiments',[]))
-            for identifier in ids:studies[identifier]=directory
+    evidence=read('content/research-evidence.json');groups={'P':'preferences','D':'decisions','C':'coordinates','X':'combined'}
     entries=[]
     for match in re.finditer(r'^### ([PDCX]\d\d) [^\w\n]+ ([^\n]+)\n(.*?)(?=^### |^## |\Z)',protocol,re.M|re.S):
         identifier,title,body=match.groups();title=re.sub(r' \[.*?\]','',title)
         fields=dict(re.findall(r'\*\*(.+?):\*\* (.*?)(?=\n\n|\Z)',body,re.S))
-        status='Partial pilot' if identifier in studies else 'Planned'
-        if identifier=='P01':status='Numerical checks passed'
-        if identifier=='D03':status='Pilot: quality gate missed'
-        next_step={
-            'P01':'Maintain solver, small-batch, and browser regression checks.',
-            'P02':'Add nonlinear/noisy utilities and independently rated human samples.',
-            'P03':'Test the exact browser 5/4/3 policy and ratings-to-quality learning curves; current pilot uses a 2/2/2 mixture.',
-            'P04':'Extend beyond quadratic synthetic features to learned modes and human judgments.',
-            'P05':'Match generator budgets and collect blinded human ratings.',
-            'P06':'Measure perceived change and protected-feature preservation on real outputs.',
-            'P07':'Test recurring contexts and retention across separate user sessions.',
-            'P08':'Select a licensed generator and independent evaluation dataset.',
-            'P09':'Provide two compatible generator datasets and hold out users.',
-            'P10':'Evaluate learned constraints under shift; the toy analytic constraint is not a safety result.',
-            'P11':'Define threat model, consent, and attack evaluation data.',
-            'P12':'Select a licensed audio generator and recruit listeners.',
-            'P13':'Build a consented feed study with exposure and session metrics.',
-            'P14':'Specify consent, mutual utility, and privacy threat model before collecting people data.',
-            'P15':'Select a scientific domain and independent feasibility evaluator.',
-            'D01':'Matched trained enum/token controls are recorded. Repeat accepted-quality comparisons across runtimes before claiming an output-format speed advantage.',
-            'D02':'The paired changing-rule test failed: train and validate instruction-aware readouts on new query groups before claiming dynamic decisions.',
-            'D03':'The larger studies failed calibration. A smaller reused-message follow-up now has a learned gate with different exit depths and measured runtime savings. Freeze promising candidates and confirm quality on untouched data.',
-            'D04':'Add unseen rule grammars, contradictions, long context and missing information.',
-            'D05':'The chat workload includes tokenization and all 600 decisions. Add cold starts, batching, memory and measured fallback after quality passes.',
-            'D06':'The small specialist/Qwen cascade now has measured fallback costs, but adds a toxic miss in exploration. Compare with in-model continuation on fresh data under matched quality limits.',
-            'D07':'Provide a supported accelerator runtime; installed Torch is CPU-only.',
-            'D08':'Add instruction-grounded image/video fixtures and reviewer labels.',
-            'C01':'Train/compare direct regression, patch selection and constrained coordinate tokens on grouped data.',
-            'C02':'Expand the 30-example ScreenSpot sample and add no-target rejection; the connected-region readout improved this small sample.',
-            'C03':'Train intermediate pointer heads only after grounding and abstention work.',
-            'C04':'Build a resettable task environment and score completed tasks, not just points.',
-            'X01':'Collect consented user-specific labels and protect task constraints.',
-            'X02':'Repeat pinned runs on a second model/runtime and measure maintenance costs.'}[identifier]
-        entries.append({'id':identifier,'title':title,'track':groups[identifier[0]],'status':status,'fields':fields,'result':studies.get(identifier),'next':next_step})
+        record=evidence[identifier]
+        entries.append({'id':identifier,'title':title,'track':groups[identifier[0]],'fields':fields,**record})
     assert len(entries)==29,len(entries)
-    (ROOT/'content/experiments.json').write_text(json.dumps(entries,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-    labels=read('content/research-labels.json')
-    body='<p>Pick a topic, then open a question to see its test and current status.</p><div class="research-controls"><label>Topic <select id="research-filter"><option value="all">All topics</option><option value="preferences">Preferences</option><option value="decisions">Decisions and early stopping</option><option value="coordinates">Click targets</option><option value="combined">Putting it together</option></select></label><label>Search <input id="research-search" type="search" placeholder="Find a question"></label></div><p id="research-count" role="status">29 experiments shown</p>'
-    track_titles={'preferences':'Learning preferences','decisions':'Decisions and early stopping','coordinates':'Finding click targets','combined':'Putting it together'}
-    current_track=None
-    for row in entries:
-        if row['track'] != current_track:
-            if current_track is not None: body+='</section>'
-            current_track=row['track']
-            body+=f'<section class="research-group" aria-labelledby="track-{current_track}"><h2 id="track-{current_track}">{track_titles[current_track]}</h2>'
-        status='Tested briefly' if row['result'] else 'To test'
-        if row['id']=='P01':status='Checks passed'
-        if row['id']=='D03':status='Needs improvement'
-        body+=f'<details class="experiment" id="{row["id"]}" data-track="{row["track"]}"><summary>{e(labels[row["id"]])}<small>{row["id"]} / {status}</small></summary><p class="small">Technical question: {e(row["title"])}</p>'+paragraph(row['fields'].get('Hypothesis',''))+'<p><strong>Next:</strong> '+e(row['next'])+'</p>'+''.join('<p><strong>'+e(key)+':</strong> '+e(value)+'</p>' for key,value in row['fields'].items() if key!='Hypothesis')
-        if row['result']:body+='<a href="@/results/'+row['result']+'/result.json">Run artifact (JSON)</a>'
-        body+='</details>'
-    body+='</section><p><a href="@/results.html">Results so far</a> · <a href="@/EXPERIMENTS.md">Full technical protocol</a></p>'
-    if (ROOT/'results/banking77/result.json').exists():
-        body+='<p class="small">New references: <a href="@/docs/banking77-results.md">real banking-query tests</a> · <a href="@/docs/conservative-exits.md">conservative stopping rule</a> · <a href="@/docs/screenspot-results.md">public screenshot tests</a>.</p>'
-    if (ROOT/'results/chat600/result.json').exists():
-        body+='<p class="small">Practical workloads: <a href="@/docs/chat600-results.md">600 real chat messages</a> &middot; <a href="@/maze-benchmark.html">watch the recorded maze test</a> &middot; <a href="@/docs/chat600-review.md">independent claim review</a>.</p>'
-    if (ROOT/'docs/chat-smoke-results.md').exists():
-        body+='<p class="small">Latest exploration: <a href="@/docs/chat-smoke-results.md">eight approaches on 100 messages, plus maze and click-target follow-ups</a> &middot; <a href="@/docs/chat-smoke-review.md">adversarial review</a>.</p>'
-    pages['research.html']['body']=body;pages['research.html']['status']='Ongoing work'
+    (ROOT/'content/experiments.json').write_text(json.dumps(entries,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
+    # Public answers are rendered by refresh_faq through organize_results.
     body='<div class="note warning"><p><strong>Exploratory results, not deployment claims.</strong> These runs establish working mechanisms and expose failure cases. They do not validate arbitrary policies, human preferences or general GUI control.</p></div>'
     synthetic=read('results/synthetic/result.json');records=synthetic['records'];math=synthetic['math']
     body+='<section class="paper" id="preferences"><h2>Preference learning: mechanics pass, assumptions matter</h2>'+paragraph(f'The browser solver passes {math["browser_fixtures"]} fixtures. On {math["random_cases"]} random bounded edits, its largest squared-distance difference from independent SciPy optimization was {math["max_squared_distance_gap_vs_scipy"]:.2g} (tolerance 1e-7). This verifies latent geometry, not perceptual minimality.')
@@ -153,7 +94,7 @@ def main():
     pages['results.html']['body']=body;pages['results.html']['status']='Early results'
     from organize_results import update
     update(pages, legacy=pages['results.html']['body'])
-    (ROOT/'content/pages.json').write_text(json.dumps(pages,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/'content/pages.json').write_text(json.dumps(pages,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Refreshed 29 experiments and measured result summaries.')
 
 if __name__=='__main__':main()

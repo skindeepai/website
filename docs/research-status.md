@@ -1,0 +1,39 @@
+# Research evidence status
+
+The website now answers these questions in the [FAQ](../research.html). This ledger preserves all 29 original protocol IDs and distinguishes completed local checks from broader unfinished studies. A negative result closes the recorded run, not the entire research question.
+
+Completed work includes actual decision timing, model fallback, replay checks, coordinate pilots, maze actions and the new exact sampler / candidate / context / constraint checks. Human studies, privacy attacks, real preference generators, audio/video context, matched accelerator tests and end-to-end GUI tasks have not been completed. They require evidence that these local fixtures do not supply.
+
+| ID | Evidence status | Observed | Still unestablished |
+| --- | --- | --- | --- |
+| P01 | Numerical checks passed | 83 browser fixtures and 80 independent bounded-optimizer cases passed. [Record 1](../results/synthetic/result.json) | This verifies numerical mechanics, not preference quality. |
+| P02 | Synthetic pilot | Simple generated preferences can be learned. [Record 1](../results/synthetic/result.json) | Independent human ratings and broader baselines are absent. |
+| P03 | Synthetic follow-up completed | Exact browser sampling and retraining compared with random and uncertainty selection across five seeds and three rules. [Record 1](../results/preference-sampling/result.json) | No human rating-efficiency, enjoyment or dropout study. |
+| P04 | Synthetic pilot | Quadratic features improved the disconnected-preference fixture. [Record 1](../results/synthetic/result.json) | No human modes, trained mixture or generative-model validation. |
+| P05 | Synthetic follow-up completed | Compared random choice and learned reranking of identical candidate pools; earlier optimization failures preserved. [Record 1](../results/preference-followups/result.json) [Record 2](../results/synthetic/result.json) | Real generated outputs and blinded human judgments remain untested. |
+| P06 | Numerical pilot | Bounded minimal-change solver matches numerical reference. [Record 1](../results/synthetic/result.json) | Latent distance is not validated perceptual distance. |
+| P07 | Synthetic follow-up completed | Alternating supplied A/B contexts and retention checked. [Record 1](../results/preference-followups/result.json) [Record 2](../results/synthetic/result.json) | No inferred moods, recurring real-user sessions or user retention measurement. |
+| P08 | Not tested | No current real preference-generator or generator-transfer study. | Needs compatible licensed generators, image data and independent preferences. |
+| P09 | Not tested | No current real preference-generator or generator-transfer study. | Needs compatible licensed generators, image data and independent preferences. |
+| P10 | Synthetic follow-up completed | Conflict fixtures test a known explicit coordinate constraint. [Record 1](../results/preference-followups/result.json) | No learned constraints under shift or general safety claim. |
+| P11 | Not tested | Browser ratings remain local; no privacy-attack experiment. | Needs a defined attack, suitable data and privacy evaluation. |
+| P12 | Not tested | Music, feeds, mutual preferences and engineering remain proposed applications. | Needs domain data, appropriate models and independent outcomes; human applications need participating users. |
+| P13 | Not tested | Music, feeds, mutual preferences and engineering remain proposed applications. | Needs domain data, appropriate models and independent outcomes; human applications need participating users. |
+| P14 | Not tested | Music, feeds, mutual preferences and engineering remain proposed applications. | Needs domain data, appropriate models and independent outcomes; human applications need participating users. |
+| P15 | Not tested | Music, feeds, mutual preferences and engineering remain proposed applications. | Needs domain data, appropriate models and independent outcomes; human applications need participating users. |
+| D01 | Measured pilot | Direct labels and matched token output tested. [Record 1](../results/matched-output/result.json) [Record 2](../results/chat600/benchmark.json) | No reliable enum-only timing advantage or general output-format superiority. |
+| D02 | Measured pilot | Fixed early, middle, late and full-depth classifiers compared. [Record 1](../results/chat-smoke-heads/result.json) [Record 2](../results/chat600/result.json) | No general layer at which arbitrary answers become ready. |
+| D03 | Measured pilot | Input-dependent exits execute and save time in a reused-message test. [Record 1](../results/chat-smoke-heads/runtime.json) | Freeze candidates and assess quality on genuinely new data; existing reliability gates have not passed. |
+| D04 | Stress test completed | Changing-rule and unfamiliar-input tests expose failures. [Record 1](../results/changing-rules/result.json) [Record 2](../results/clinc-unknown/result.json) | No demonstrated arbitrary instruction following or long-conversation robustness. |
+| D05 | Measured pilot | Actual layer traces and request times measured, including input preparation. [Record 1](../results/chat600/benchmark.json) [Record 2](../results/chat-smoke-heads/runtime.json) | Independent hardware, cold starts, batching and accepted-quality replication remain absent. |
+| D06 | Measured pilot | Tiny-model/Qwen cascade and actual fallback time measured. [Record 1](../results/chat-smoke-specialist/benchmark.json) | One newly missed toxic message remains; no fresh reliability acceptance. |
+| D07 | Not tested | No matched accelerator study or contextual audio/video decision test. | Requires supported hardware/runtime for D07; task data and labels for D08. |
+| D08 | Not tested | No matched accelerator study or contextual audio/video decision test. | Requires supported hardware/runtime for D07; task data and labels for D08. |
+| C01 | Measured pilot | Published pointer head emits coordinates without text generation. [Record 1](../results/coordinates/result.json) [Record 2](../results/screenspot/result.json) | No matched text-coordinate baseline or newly trained regression comparison. |
+| C02 | Measured pilot | 30 public screenshots and an eight-example missing-target diagnostic recorded. [Record 1](../results/screenspot/result.json) [Record 2](../results/coordinate-abstention-smoke/result.json) | General absent-target rejection and larger independent app groups remain unvalidated. |
+| C03 | Not tested | Coordinate model still runs all 28 transformer blocks. | Needs trained intermediate pointer heads and reliable grounding/abstention controls. |
+| C04 | Not tested | Screenshot runs return points without executing GUI actions. Maze actions are a separate task. | Needs resettable GUI tasks and end-to-end completion evaluation. |
+| X01 | Not tested | No experiment combining personal taste and instruction-following actions. | Needs user-specific labels and independently scored task constraints. |
+| X02 | Partial reproduction | Separate implementation and published runtime replayed saved predictions and exits. [Record 1](../results/reproduction/result.json) [Record 2](../results/reproduction-release/result.json) | No second-hardware replication, cross-model transfer or full cost study. |
+
+[Detailed study designs](../EXPERIMENTS.md). The untested items are retained as scope limits, not advertised as forthcoming features or silently marked done.

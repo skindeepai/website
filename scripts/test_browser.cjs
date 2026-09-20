@@ -28,9 +28,10 @@ const server=http.createServer((req,res)=>{
                 }
             }
         }
-        await page.goto(origin+'/research.html');assert.equal(await page.locator('.experiment:visible').count(),29);
-        await page.locator('#research-filter').selectOption('coordinates');assert.equal(await page.locator('.experiment:visible').count(),4);
-        await page.locator('#research-search').fill('early exits');assert.equal(await page.locator('.experiment:visible').count(),1);
+        await page.goto(origin+'/research.html');assert.equal(await page.locator('details.faq').count(),14);
+        assert.equal(await page.locator('#research-filter').count(),0);
+        await page.goto(origin+'/research.html#D03');assert(await page.locator('#D02').evaluate(n=>n.open),'Old research links open the relevant answer');
+        assert(await page.locator('#D02 a[href="early-exit-results.html"]').isVisible());
         await page.goto(origin+'/demo.html');const initial=await page.locator('#card-art').innerHTML();
         assert(!(await page.locator('#generate').isVisible()),'Suggestion sections wait for useful ratings');
         assert(!(await page.locator('#realism').isVisible()),'Unready controls must not be reachable');
@@ -78,7 +79,7 @@ const server=http.createServer((req,res)=>{
         const out=path.join(root,'results/ui');fs.mkdirSync(out,{recursive:true});
         for(const [name,width] of [['desktop',1440],['mobile',390]]){await page.setViewportSize({width,height:1000});await page.goto(origin+'/index.html');await page.screenshot({path:path.join(out,name+'.png'),fullPage:true});}
         assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
-        const result={status:'passed',pages:pages.length,widths:[320,375,390,768,900,1024,1440],pageViewportChecks:views,browser:await browser.version(),checks:['document width','mobile navigation and Escape','research filtering','training and undo','seed reset','blind evaluation isolation','session export/import and rejection','reveal keyboard loop','domain isolation','normalized coordinate annotation and keyboard'],limitations:['Headless Chromium, CSS viewports; not physical iOS/Android or Safari verification.','No assistive-technology or real-device performance audit.']};
+        const result={status:'passed',pages:pages.length,widths:[320,375,390,768,900,1024,1440],pageViewportChecks:views,browser:await browser.version(),checks:['document width','mobile navigation and Escape','FAQ deep links','training and undo','seed reset','blind evaluation isolation','session export/import and rejection','reveal keyboard loop','domain isolation','normalized coordinate annotation and keyboard'],limitations:['Headless Chromium, CSS viewports; not physical iOS/Android or Safari verification.','No assistive-technology or real-device performance audit.']};
         fs.writeFileSync(path.join(out,'result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
     }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

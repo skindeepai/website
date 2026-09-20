@@ -1,0 +1,20 @@
+{
+  "scope": "Synthetic P05/P07/P10 follow-ups, not real generators, people, privacy or learned safety.",
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "dimensions": 4,
+  "P05": "Train64 uniform examples for center utility -||z-[.4,-.2,0,0]||^2, likes ifutility>-1. Generate64 new shared candidates; compare uniformly selected first candidate versus highest preference score. All64 supplied to both; no speed/rendering claim.",
+  "P07": "Known context IDs A/B/A/B,24 ratings per phase, opposite linear preferences z0-.6z1+.3z2>0 versus<0. Compare one all-history model, phase-reset model, and one retained model per supplied context. Retrain after each rating. Same100 held-out uniform points per seed; measure each current phase plus retainedA at end.",
+  "P10": "Train64 examples preferring z0+.4z1>0. Independently require z0<=0. Compare unconstrained box optimum with explicit coordinate cap. This deliberately conflict-inducing fixture tests hardknownconstraint, not learned safety.",
+  "source_sha256": {
+    "runner": "569726b95b78e5d4ed3959a2ccee189e7ef182b6d97cfa2be271f7de242e9420",
+    "core": "bfa7d92553dfb9668451d52ecac6cfc0321c3171639b6ffc74cdb12695b06a2f"
+  },
+  "threads": 1,
+  "limits": "Five fixed seeds, constructed utilities, no independent human or real-generator validation. Report every outcome."
+}

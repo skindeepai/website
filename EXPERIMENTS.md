@@ -1,6 +1,6 @@
 # Validation experiments
 
-Updated 2026-09-19. The protocols below define the broader research agenda. Partial synthetic and model pilots now exist; see [results.html](results.html) and [research.html](research.html) for measured scope and next steps. No partial pilot completes its full protocol. Implementation sequence and page-specific changes are in [PLAN.md](PLAN.md).
+Updated 2026-09-19. The protocols below define the broader research agenda. Partial synthetic and model pilots now exist; see [results](results.html), the [research FAQ](research.html), and the [evidence ledger](docs/research-status.md) for measured scope and remaining gaps. No partial pilot completes its full protocol. Implementation sequence and page-specific changes are in [PLAN.md](PLAN.md).
 
 ## 1. Common protocol
 

@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 NAV = [
-    ('The lab', [('index.html', 'Overview'), ('research.html', 'Continuing research'), ('results.html', 'Test results')]),
+    ('The lab', [('index.html', 'Overview'), ('research.html', 'Research FAQ'), ('results.html', 'Test results')]),
     ('Topics', [('preferences.html', 'Learning what you like'), ('decisions.html', 'Decisions without text'), ('coordinates.html', 'Finding where to click'), ('adaptive.html', 'Stopping early')]),
     ('Explore', [('demo.html', 'Preference demo'), ('coordinate-lab.html', 'Recorded clicks'), ('getting-started.html', 'Try it yourself'), ('history.html', 'History & archive'), ('about.html', 'About')])
 ]
@@ -39,7 +39,7 @@ def build():
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation">{nav}</nav><div class="rail-note"><a href="{url('sitemap.html')}">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
 <main class="lab-main" id="main" tabindex="-1">{topline}
 <h1>{escape(p['title'])}</h1><p class="page-lead">{escape(p['description'])}</p>{body}
-<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="{url('history.html')}">History</a><a href="{url('research.html')}">Research status</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="{url('history.html')}">History</a><a href="{url('research.html')}">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>
 '''
         target = ROOT / name
         target.parent.mkdir(parents=True, exist_ok=True)
