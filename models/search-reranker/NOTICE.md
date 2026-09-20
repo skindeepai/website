@@ -1,0 +1,1 @@
+Unmodified cross-encoder/ms-marco-TinyBERT-L2-v2, revision81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc, Apache-2.0. Local browser export copies the same float32 ONNX file used by results/search-next. See https://huggingface.co/cross-encoder/ms-marco-TinyBERT-L2-v2 .

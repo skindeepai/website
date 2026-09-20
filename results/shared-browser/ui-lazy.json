@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "viewport": 320,
+      "document": 320
+    },
+    {
+      "viewport": 375,
+      "document": 375
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 900,
+      "document": 900
+    },
+    {
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "viewport": 1440,
+      "document": 1440
+    }
+  ],
+  "errors": [],
+  "benchmarkRows": 100,
+  "typedMessageWorked": true,
+  "allParityPassed": true,
+  "emptyInputDownloads": 0,
+  "graphRequests": {
+    "prefix": 1,
+    "suffix": 1,
+    "full": 1
+  },
+  "benchmarkAfterTypedInputSetup": {
+    "adaptiveMs": 4816.699999988079,
+    "controlMs": 338.5,
+    "cumulativeMs": 5155.199999988079,
+    "incrementalMs": 338.5
+  },
+  "sourceSha256": "91da26cee8555fa53057035765e458584ee54f0d7e34d7b13d51308e39f6357a",
+  "workerSha256": "3038204d66bdd7002eb65662dc847898d5b5a93a993edb8ed0c17f601fa77b03",
+  "uiSha256": "69c1815bfbcc130fa106f2eaec2fce47de8cc8e0029b185e308fe5b77d0334c0",
+  "browser": "151.0.7922.34"
+}

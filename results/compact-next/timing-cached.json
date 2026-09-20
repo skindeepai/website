@@ -1,0 +1,58 @@
+{
+  "protocol_sha256": "ebff5f37bc9a8191060d3596b40eab025ce516fc4e01183040bec4c49cabb9f2",
+  "n": 50,
+  "methods": {
+    "original_full": {
+      "totals_seconds": [
+        0.3416179002961144,
+        0.31653099972754717,
+        0.3322053998708725
+      ],
+      "mean_seconds": 0.3301180999648447,
+      "correct": 45,
+      "early_count": 0
+    },
+    "original_confidence": {
+      "totals_seconds": [
+        0.2227905999752693,
+        0.21109610015992075,
+        0.21294609998585656
+      ],
+      "mean_seconds": 0.2156109333736822,
+      "correct": 45,
+      "early_count": 40
+    },
+    "full": {
+      "totals_seconds": [
+        0.3373753000050783,
+        0.33088900020811707,
+        0.33120539993979037
+      ],
+      "mean_seconds": 0.3331565667176619,
+      "correct": 47,
+      "early_count": 0
+    },
+    "confidence": {
+      "totals_seconds": [
+        0.22320180002134293,
+        0.22136170003795996,
+        0.21747330017387867
+      ],
+      "mean_seconds": 0.2206789334110605,
+      "correct": 47,
+      "early_count": 39
+    },
+    "risk": {
+      "totals_seconds": [
+        0.21974969998700544,
+        0.20843700040131807,
+        0.21043049998115748
+      ],
+      "mean_seconds": 0.21287240012316033,
+      "correct": 47,
+      "early_count": 40
+    }
+  },
+  "all_prediction_and_layer_traces_match": true,
+  "all_750_outputs_depths_and_risk_scores_match_parent": true
+}

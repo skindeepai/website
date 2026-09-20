@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "train:4551",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3614788055419922,
+    "hidden_rms_delta": 10.537487030029297,
+    "float_logits": [
+      2.5988452434539795,
+      -2.377594470977783
+    ],
+    "quant_logits": [
+      -8.390016555786133,
+      8.380072593688965
+    ]
+  },
+  {
+    "id": "train:24",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3785722553730011,
+    "hidden_rms_delta": 10.306931495666504,
+    "float_logits": [
+      -1.8638838529586792,
+      2.0371670722961426
+    ],
+    "quant_logits": [
+      -7.6911396980285645,
+      8.326848030090332
+    ]
+  },
+  {
+    "id": "train:457",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5642890334129333,
+    "hidden_rms_delta": 9.043902397155762,
+    "float_logits": [
+      0.45110172033309937,
+      -0.5415820479393005
+    ],
+    "quant_logits": [
+      -9.815568923950195,
+      9.672537803649902
+    ]
+  },
+  {
+    "id": "train:1116",
+    "label": 0,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5580164790153503,
+    "hidden_rms_delta": 8.644477844238281,
+    "float_logits": [
+      2.3865160942077637,
+      -1.865769863128662
+    ],
+    "quant_logits": [
+      -7.445180416107178,
+      7.950774669647217
+    ]
+  },
+  {
+    "id": "train:889",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3193659484386444,
+    "hidden_rms_delta": 11.766077995300293,
+    "float_logits": [
+      0.25102365016937256,
+      0.1228034496307373
+    ],
+    "quant_logits": [
+      -4.666541576385498,
+      4.5833563804626465
+    ]
+  },
+  {
+    "id": "train:380",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.36286041140556335,
+    "hidden_rms_delta": 10.55422592163086,
+    "float_logits": [
+      1.955972671508789,
+      -2.157320022583008
+    ],
+    "quant_logits": [
+      -10.627117156982422,
+      8.712265968322754
+    ]
+  },
+  {
+    "id": "train:3992",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.6163870692253113,
+    "hidden_rms_delta": 8.582623481750488,
+    "float_logits": [
+      0.5291613340377808,
+      -0.4901999831199646
+    ],
+    "quant_logits": [
+      -13.950757026672363,
+      13.39498233795166
+    ]
+  },
+  {
+    "id": "train:1398",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.4800640344619751,
+    "hidden_rms_delta": 10.219125747680664,
+    "float_logits": [
+      -0.13984298706054688,
+      0.4173901081085205
+    ],
+    "quant_logits": [
+      -1.9870010614395142,
+      2.020139694213867
+    ]
+  },
+  {
+    "id": "train:776",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.38955211639404297,
+    "hidden_rms_delta": 10.576274871826172,
+    "float_logits": [
+      -0.756017804145813,
+      1.3937879800796509
+    ],
+    "quant_logits": [
+      -10.49064826965332,
+      9.399354934692383
+    ]
+  },
+  {
+    "id": "train:1386",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5952441096305847,
+    "hidden_rms_delta": 8.787308692932129,
+    "float_logits": [
+      -5.524118423461914,
+      5.06265926361084
+    ],
+    "quant_logits": [
+      -4.1309943199157715,
+      3.207469940185547
+    ]
+  },
+  {
+    "id": "train:37",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.1625068336725235,
+    "hidden_rms_delta": 11.673001289367676,
+    "float_logits": [
+      3.042224407196045,
+      -3.2888197898864746
+    ],
+    "quant_logits": [
+      -10.144815444946289,
+      10.138337135314941
+    ]
+  },
+  {
+    "id": "train:1353",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.4112482964992523,
+    "hidden_rms_delta": 10.363003730773926,
+    "float_logits": [
+      0.8320279717445374,
+      -1.2383453845977783
+    ],
+    "quant_logits": [
+      -9.339734077453613,
+      9.16334056854248
+    ]
+  },
+  {
+    "id": "train:4828",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3148067593574524,
+    "hidden_rms_delta": 10.768006324768066,
+    "float_logits": [
+      2.0471792221069336,
+      -2.506068706512451
+    ],
+    "quant_logits": [
+      -12.097597122192383,
+      11.555098533630371
+    ]
+  },
+  {
+    "id": "train:1384",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.46785375475883484,
+    "hidden_rms_delta": 9.952279090881348,
+    "float_logits": [
+      -0.7342864274978638,
+      0.6191024780273438
+    ],
+    "quant_logits": [
+      -18.707103729248047,
+      17.754545211791992
+    ]
+  },
+  {
+    "id": "train:711",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.17621782422065735,
+    "hidden_rms_delta": 10.704095840454102,
+    "float_logits": [
+      2.832467555999756,
+      -3.37721586227417
+    ],
+    "quant_logits": [
+      -37.34019088745117,
+      38.95783615112305
+    ]
+  },
+  {
+    "id": "train:4741",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.4291077256202698,
+    "hidden_rms_delta": 9.594196319580078,
+    "float_logits": [
+      0.793270468711853,
+      -0.7394163012504578
+    ],
+    "quant_logits": [
+      -19.290637969970703,
+      20.604061126708984
+    ]
+  },
+  {
+    "id": "train:403",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3545019030570984,
+    "hidden_rms_delta": 10.274767875671387,
+    "float_logits": [
+      1.4680626392364502,
+      -1.9616312980651855
+    ],
+    "quant_logits": [
+      -12.813787460327148,
+      12.603804588317871
+    ]
+  },
+  {
+    "id": "train:19",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.2991412580013275,
+    "hidden_rms_delta": 10.848273277282715,
+    "float_logits": [
+      3.629365921020508,
+      -3.9880218505859375
+    ],
+    "quant_logits": [
+      -10.914088249206543,
+      12.227072715759277
+    ]
+  },
+  {
+    "id": "train:976",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.5292198657989502,
+    "hidden_rms_delta": 9.135869026184082,
+    "float_logits": [
+      0.9899624586105347,
+      -1.6156256198883057
+    ],
+    "quant_logits": [
+      -12.680242538452148,
+      13.200352668762207
+    ]
+  },
+  {
+    "id": "train:4203",
+    "label": 0,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3708431124687195,
+    "hidden_rms_delta": 10.683382987976074,
+    "float_logits": [
+      0.5080804824829102,
+      -0.38517433404922485
+    ],
+    "quant_logits": [
+      -5.962308883666992,
+      5.739161014556885
+    ]
+  },
+  {
+    "id": "train:5073",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5278611183166504,
+    "hidden_rms_delta": 9.294392585754395,
+    "float_logits": [
+      3.9662938117980957,
+      -3.937371253967285
+    ],
+    "quant_logits": [
+      -5.678286075592041,
+      5.623277187347412
+    ]
+  },
+  {
+    "id": "train:400",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3737090826034546,
+    "hidden_rms_delta": 10.067463874816895,
+    "float_logits": [
+      -0.21019434928894043,
+      0.5161004066467285
+    ],
+    "quant_logits": [
+      -6.838508129119873,
+      6.005753993988037
+    ]
+  },
+  {
+    "id": "train:234",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.7114714980125427,
+    "hidden_rms_delta": 7.555044174194336,
+    "float_logits": [
+      -10.129310607910156,
+      10.304570198059082
+    ],
+    "quant_logits": [
+      -19.83458709716797,
+      19.697246551513672
+    ]
+  },
+  {
+    "id": "train:183",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.2773073613643646,
+    "hidden_rms_delta": 11.580900192260742,
+    "float_logits": [
+      1.6468241214752197,
+      -1.3320839405059814
+    ],
+    "quant_logits": [
+      -14.114513397216797,
+      14.50650691986084
+    ]
+  },
+  {
+    "id": "train:4413",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.6402280330657959,
+    "hidden_rms_delta": 8.297447204589844,
+    "float_logits": [
+      -1.030873417854309,
+      1.086006760597229
+    ],
+    "quant_logits": [
+      -13.823047637939453,
+      13.699405670166016
+    ]
+  },
+  {
+    "id": "train:585",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.40488478541374207,
+    "hidden_rms_delta": 10.668694496154785,
+    "float_logits": [
+      1.7351319789886475,
+      -1.854520559310913
+    ],
+    "quant_logits": [
+      -13.039196014404297,
+      12.696045875549316
+    ]
+  },
+  {
+    "id": "train:4502",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3114781975746155,
+    "hidden_rms_delta": 10.238537788391113,
+    "float_logits": [
+      -5.008902072906494,
+      3.9158716201782227
+    ],
+    "quant_logits": [
+      -29.94176483154297,
+      31.272592544555664
+    ]
+  },
+  {
+    "id": "train:133",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.6672810316085815,
+    "hidden_rms_delta": 7.88368034362793,
+    "float_logits": [
+      0.670989453792572,
+      -1.0478360652923584
+    ],
+    "quant_logits": [
+      -4.841290473937988,
+      2.5410237312316895
+    ]
+  },
+  {
+    "id": "train:28",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.6770844459533691,
+    "hidden_rms_delta": 8.08691692352295,
+    "float_logits": [
+      -5.734141826629639,
+      4.852656841278076
+    ],
+    "quant_logits": [
+      -8.100866317749023,
+      8.451098442077637
+    ]
+  },
+  {
+    "id": "train:4615",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3258325755596161,
+    "hidden_rms_delta": 11.222517013549805,
+    "float_logits": [
+      -3.3092947006225586,
+      2.0736823081970215
+    ],
+    "quant_logits": [
+      -19.141443252563477,
+      20.05796241760254
+    ]
+  },
+  {
+    "id": "train:388",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.41508451104164124,
+    "hidden_rms_delta": 10.335288047790527,
+    "float_logits": [
+      2.0474390983581543,
+      -2.1013283729553223
+    ],
+    "quant_logits": [
+      -14.018692970275879,
+      14.23420524597168
+    ]
+  },
+  {
+    "id": "train:3736",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.4050748944282532,
+    "hidden_rms_delta": 10.769563674926758,
+    "float_logits": [
+      -2.090219020843506,
+      2.440678596496582
+    ],
+    "quant_logits": [
+      -7.1786017417907715,
+      6.812753200531006
+    ]
+  },
+  {
+    "id": "train:1198",
+    "label": 0,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.5419676303863525,
+    "hidden_rms_delta": 8.516585350036621,
+    "float_logits": [
+      -0.6247991323471069,
+      1.9448493719100952
+    ],
+    "quant_logits": [
+      -18.592674255371094,
+      18.822683334350586
+    ]
+  },
+  {
+    "id": "train:1042",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 0,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.43437591195106506,
+    "hidden_rms_delta": 10.456755638122559,
+    "float_logits": [
+      4.076410293579102,
+      -3.7681732177734375
+    ],
+    "quant_logits": [
+      1.6478396654129028,
+      -1.6922484636306763
+    ]
+  },
+  {
+    "id": "train:330",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.43602827191352844,
+    "hidden_rms_delta": 10.581162452697754,
+    "float_logits": [
+      -3.3998231887817383,
+      3.2104058265686035
+    ],
+    "quant_logits": [
+      -9.267476081848145,
+      8.529382705688477
+    ]
+  },
+  {
+    "id": "train:4512",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3485589921474457,
+    "hidden_rms_delta": 10.600449562072754,
+    "float_logits": [
+      -0.08805882930755615,
+      0.3467433452606201
+    ],
+    "quant_logits": [
+      -23.15721893310547,
+      23.10346031188965
+    ]
+  },
+  {
+    "id": "train:4853",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3303694725036621,
+    "hidden_rms_delta": 10.587942123413086,
+    "float_logits": [
+      0.6862177848815918,
+      -0.8198303580284119
+    ],
+    "quant_logits": [
+      -13.173659324645996,
+      12.043179512023926
+    ]
+  },
+  {
+    "id": "train:257",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.36398422718048096,
+    "hidden_rms_delta": 10.585926055908203,
+    "float_logits": [
+      -1.0361963510513306,
+      1.4500406980514526
+    ],
+    "quant_logits": [
+      -15.080490112304688,
+      15.958344459533691
+    ]
+  },
+  {
+    "id": "train:4185",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.25759488344192505,
+    "hidden_rms_delta": 11.107980728149414,
+    "float_logits": [
+      1.3203792572021484,
+      -0.878510057926178
+    ],
+    "quant_logits": [
+      -11.951345443725586,
+      12.332226753234863
+    ]
+  },
+  {
+    "id": "train:290",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.6399601697921753,
+    "hidden_rms_delta": 8.41296100616455,
+    "float_logits": [
+      -2.7224926948547363,
+      2.6679887771606445
+    ],
+    "quant_logits": [
+      -5.2512383460998535,
+      3.488715648651123
+    ]
+  },
+  {
+    "id": "train:179",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.4654889404773712,
+    "hidden_rms_delta": 9.582148551940918,
+    "float_logits": [
+      -2.2964744567871094,
+      2.343937873840332
+    ],
+    "quant_logits": [
+      -13.495092391967773,
+      13.159628868103027
+    ]
+  },
+  {
+    "id": "train:4256",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.46603360772132874,
+    "hidden_rms_delta": 10.002249717712402,
+    "float_logits": [
+      3.615431785583496,
+      -4.01772928237915
+    ],
+    "quant_logits": [
+      -16.2410831451416,
+      17.047956466674805
+    ]
+  },
+  {
+    "id": "train:3880",
+    "label": 0,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.6639946103096008,
+    "hidden_rms_delta": 7.95486307144165,
+    "float_logits": [
+      0.6945290565490723,
+      -0.5278702974319458
+    ],
+    "quant_logits": [
+      -18.44957733154297,
+      18.97723960876465
+    ]
+  },
+  {
+    "id": "train:159",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.18578992784023285,
+    "hidden_rms_delta": 11.753152847290039,
+    "float_logits": [
+      -0.16345751285552979,
+      0.5029494762420654
+    ],
+    "quant_logits": [
+      -7.47285795211792,
+      6.731888294219971
+    ]
+  },
+  {
+    "id": "train:4617",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.5763471126556396,
+    "hidden_rms_delta": 9.256065368652344,
+    "float_logits": [
+      -2.3017616271972656,
+      2.6134257316589355
+    ],
+    "quant_logits": [
+      -17.749603271484375,
+      19.79490852355957
+    ]
+  },
+  {
+    "id": "train:1399",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.33890390396118164,
+    "hidden_rms_delta": 10.490867614746094,
+    "float_logits": [
+      1.2654401063919067,
+      -2.2294251918792725
+    ],
+    "quant_logits": [
+      -16.49931526184082,
+      17.44407081604004
+    ]
+  },
+  {
+    "id": "train:224",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.48822709918022156,
+    "hidden_rms_delta": 9.639976501464844,
+    "float_logits": [
+      -3.4046554565429688,
+      3.229043483734131
+    ],
+    "quant_logits": [
+      -17.21208953857422,
+      17.198190689086914
+    ]
+  },
+  {
+    "id": "train:4602",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.41298070549964905,
+    "hidden_rms_delta": 10.057421684265137,
+    "float_logits": [
+      0.8108106851577759,
+      -0.47655820846557617
+    ],
+    "quant_logits": [
+      -17.688142776489258,
+      16.90199089050293
+    ]
+  },
+  {
+    "id": "train:119",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.4344249367713928,
+    "hidden_rms_delta": 9.764134407043457,
+    "float_logits": [
+      1.8801381587982178,
+      -1.9068872928619385
+    ],
+    "quant_logits": [
+      -13.370819091796875,
+      14.5871000289917
+    ]
+  },
+  {
+    "id": "train:4464",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.7286486029624939,
+    "hidden_rms_delta": 7.2361955642700195,
+    "float_logits": [
+      -5.630244731903076,
+      3.6589293479919434
+    ],
+    "quant_logits": [
+      -13.26236629486084,
+      12.615348815917969
+    ]
+  },
+  {
+    "id": "train:5016",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.35063356161117554,
+    "hidden_rms_delta": 10.762457847595215,
+    "float_logits": [
+      1.9782785177230835,
+      -1.8782321214675903
+    ],
+    "quant_logits": [
+      -0.5204504728317261,
+      0.9005433320999146
+    ]
+  },
+  {
+    "id": "train:268",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.3792957365512848,
+    "hidden_rms_delta": 10.862083435058594,
+    "float_logits": [
+      -0.5075396299362183,
+      0.9865809679031372
+    ],
+    "quant_logits": [
+      -8.89254379272461,
+      8.772164344787598
+    ]
+  },
+  {
+    "id": "train:390",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3712211847305298,
+    "hidden_rms_delta": 10.232791900634766,
+    "float_logits": [
+      0.121193528175354,
+      0.21772587299346924
+    ],
+    "quant_logits": [
+      -13.338016510009766,
+      13.356340408325195
+    ]
+  },
+  {
+    "id": "train:17",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5323235392570496,
+    "hidden_rms_delta": 8.985883712768555,
+    "float_logits": [
+      -1.5929721593856812,
+      2.039637565612793
+    ],
+    "quant_logits": [
+      -8.575408935546875,
+      8.79020881652832
+    ]
+  },
+  {
+    "id": "train:4435",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.7837808728218079,
+    "hidden_rms_delta": 6.552333831787109,
+    "float_logits": [
+      -7.117722034454346,
+      7.896092891693115
+    ],
+    "quant_logits": [
+      -6.729529857635498,
+      6.527307033538818
+    ]
+  },
+  {
+    "id": "train:4700",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.7392110824584961,
+    "hidden_rms_delta": 7.138319492340088,
+    "float_logits": [
+      5.346726894378662,
+      -5.434087753295898
+    ],
+    "quant_logits": [
+      -5.311299800872803,
+      4.968170642852783
+    ]
+  },
+  {
+    "id": "train:316",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.5381643772125244,
+    "hidden_rms_delta": 8.888898849487305,
+    "float_logits": [
+      -2.6677637100219727,
+      2.2461671829223633
+    ],
+    "quant_logits": [
+      -1.3098832368850708,
+      1.913490891456604
+    ]
+  },
+  {
+    "id": "train:4817",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.3969493806362152,
+    "hidden_rms_delta": 10.247024536132812,
+    "float_logits": [
+      -3.807128429412842,
+      3.649538993835449
+    ],
+    "quant_logits": [
+      -13.899025917053223,
+      14.459086418151855
+    ]
+  },
+  {
+    "id": "train:54",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.39670610427856445,
+    "hidden_rms_delta": 9.47576904296875,
+    "float_logits": [
+      -1.3591967821121216,
+      1.058189034461975
+    ],
+    "quant_logits": [
+      -21.154298782348633,
+      21.945161819458008
+    ]
+  },
+  {
+    "id": "train:277",
+    "label": 1,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.34701886773109436,
+    "hidden_rms_delta": 10.320608139038086,
+    "float_logits": [
+      0.4967467188835144,
+      -0.5216531157493591
+    ],
+    "quant_logits": [
+      -16.457969665527344,
+      16.40945053100586
+    ]
+  },
+  {
+    "id": "train:4517",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.30786705017089844,
+    "hidden_rms_delta": 11.197660446166992,
+    "float_logits": [
+      2.4231534004211426,
+      -2.1828083992004395
+    ],
+    "quant_logits": [
+      -10.206114768981934,
+      10.36536693572998
+    ]
+  },
+  {
+    "id": "train:856",
+    "label": 0,
+    "predictions": {
+      "matched_float": 0,
+      "refit_quant": 1,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 0
+    },
+    "hidden_cosine": 0.43072962760925293,
+    "hidden_rms_delta": 10.311296463012695,
+    "float_logits": [
+      1.3057111501693726,
+      -0.7817946672439575
+    ],
+    "quant_logits": [
+      -10.401592254638672,
+      9.579018592834473
+    ]
+  },
+  {
+    "id": "train:5069",
+    "label": 1,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 1,
+      "original_float": 1,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.5083301663398743,
+    "hidden_rms_delta": 9.351384162902832,
+    "float_logits": [
+      -3.1549229621887207,
+      2.2685561180114746
+    ],
+    "quant_logits": [
+      -14.96352767944336,
+      15.397509574890137
+    ]
+  },
+  {
+    "id": "train:448",
+    "label": 0,
+    "predictions": {
+      "matched_float": 1,
+      "refit_quant": 0,
+      "original_float": 0,
+      "unchanged_head_quant": 1,
+      "threshold_quant": 1
+    },
+    "hidden_cosine": 0.5319435596466064,
+    "hidden_rms_delta": 9.449238777160645,
+    "float_logits": [
+      0.8574874401092529,
+      -0.8704174757003784
+    ],
+    "quant_logits": [
+      -12.505207061767578,
+      12.333617210388184
+    ]
+  }
+]

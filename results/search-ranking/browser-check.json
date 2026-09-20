@@ -1,0 +1,122 @@
+{
+  "scope": "One real query functional/parity check; browser times are diagnostic, not benchmark claims",
+  "query_id": "100",
+  "top5_matches_python": true,
+  "result": {
+    "query": "All hematopoietic stem cells segregate their chromosomes randomly.",
+    "candidates": 5183,
+    "bm25": {
+      "ms": 4.900000035762787,
+      "results": [
+        {
+          "id": "4381486",
+          "title": "Haematopoietic stem cells do not asymmetrically segregate chromosomes or retain BrdU",
+          "text": "Stem cells are proposed to segregate chromosomes asymmetrically during self-renewing divisions so that older (‘immortal’) DNA strands are retained in daughter stem cells whereas newly synthesized strands segregate to differentiating cells. Stem cells are also proposed to retain DNA labels, such as 5-bromo-2-deoxyuridine (BrdU), either because they segregate chromosomes asymmetrically or because they divide slowly. However, the purity of stem cells among BrdU-label-retaining cells has not been documented in any tissue, and the ‘immortal strand hypothesis’ has not been tested in a system with definitive stem cell markers. Here we tested these hypotheses in haematopoietic stem cells (HSCs), which can be highly purified using well characterized markers. We administered BrdU to newborn mice, mice treated with cyclophosphamide and granulocyte colony-stimulating factor, and normal adult mice for 4 to 10 days, followed by 70 days without BrdU. In each case, less than 6% of HSCs retained BrdU and less than 0.5% of all BrdU-retaining haematopoietic cells were HSCs, revealing that BrdU has poor specificity and poor sensitivity as an HSC marker. Sequential administration of 5-chloro-2-deoxyuridine and 5-iodo-2-deoxyuridine indicated that all HSCs segregate their chromosomes randomly. Division of individual HSCs in culture revealed no asymmetric segregation of the label. Thus, HSCs cannot be identified on the basis of BrdU-label retention and do not retain older DNA strands during division, indicating that these are not general properties of stem cells.",
+          "score": 31.858694076538086
+        },
+        {
+          "id": "4398832",
+          "title": "Cyclin A Regulates Kinetochore-Microtubules to Promote Faithful Chromosome Segregation",
+          "text": "The most conspicuous event in the cell cycle is the alignment of chromosomes in metaphase. Chromosome alignment fosters faithful segregation through the formation of bi-oriented attachments of kinetochores to spindle microtubules. Notably, numerous kinetochore-microtubule (k-MT) attachment errors are present in early mitosis (prometaphase), and the persistence of those errors is the leading cause of chromosome mis-segregation in aneuploid human tumour cells that continually mis-segregate whole chromosomes and display chromosomal instability. How robust error correction is achieved in prometaphase to ensure error-free mitosis remains unknown. Here we show that k-MT attachments in prometaphase cells are considerably less stable than in metaphase cells. The switch to more stable k-MT attachments in metaphase requires the proteasome-dependent destruction of cyclin A in prometaphase. Persistent cyclin A expression prevents k-MT stabilization even in cells with aligned chromosomes. By contrast, k-MTs are prematurely stabilized in cyclin-A-deficient cells. Consequently, cells lacking cyclin A display higher rates of chromosome mis-segregation. Thus, the stability of k-MT attachments increases decisively in a coordinated fashion among all chromosomes as cells transit from prometaphase to metaphase. Cyclin A creates a cellular environment that promotes microtubule detachment from kinetochores in prometaphase to ensure efficient error correction and faithful chromosome segregation.",
+          "score": 16.95770835876465
+        },
+        {
+          "id": "2547636",
+          "title": "Human epidermal stem cell function is regulated by circadian oscillations.",
+          "text": "Human skin copes with harmful environmental factors that are circadian in nature, yet how circadian rhythms modulate the function of human epidermal stem cells is mostly unknown. Here we show that in human epidermal stem cells and their differentiated counterparts, core clock genes peak in a successive and phased manner, establishing distinct temporal intervals during the 24 hr day period. Each of these successive clock waves is associated with a peak in the expression of subsets of transcripts that temporally segregate the predisposition of epidermal stem cells to respond to cues that regulate their proliferation or differentiation, such as TGFβ and calcium. Accordingly, circadian arrhythmia profoundly affects stem cell function in culture and in vivo. We hypothesize that this intricate mechanism ensures homeostasis by providing epidermal stem cells with environmentally relevant temporal functional cues during the course of the day and that its perturbation may contribute to aging and carcinogenesis.",
+          "score": 15.83326244354248
+        },
+        {
+          "id": "15728433",
+          "title": "Tightrope act: autophagy in stem cell renewal, differentiation, proliferation, and aging",
+          "text": "Autophagy is a constitutive lysosomal catabolic pathway that degrades damaged organelles and protein aggregates. Stem cells are characterized by self-renewal, pluripotency, and quiescence; their long life span, limited capacity to dilute cellular waste and spent organelles due to quiescence, along with their requirement for remodeling in order to differentiate, all suggest that they require autophagy more than other cell types. Here, we review the current literature on the role of autophagy in embryonic and adult stem cells, including hematopoietic, mesenchymal, and neuronal stem cells, highlighting the diverse and contrasting roles autophagy plays in their biology. Furthermore, we review the few studies on stem cells, lysosomal activity, and autophagy. Novel techniques to detect autophagy in primary cells are required to study autophagy in different stem cell types. These will help to elucidate the importance of autophagy in stem cells during transplantation, a promising therapeutic approach for many diseases.",
+          "score": 15.54921817779541
+        },
+        {
+          "id": "25516011",
+          "title": "Purification and characterization of mouse hematopoietic stem cells.",
+          "text": "Mouse bone marrow hematopoietic stem cells were isolated with the use of a variety of phenotypic markers. These cells can proliferate and differentiate with approximately unit efficiency into myelomonocytic cells, B cells, or T cells. Thirty of these cells are sufficient to save 50 percent of lethally irradiated mice, and to reconstitute all blood cell types in the survivors.",
+          "score": 15.483573913574219
+        }
+      ]
+    },
+    "setup": {
+      "corpusMs": 715.5,
+      "modelMs": 1997.2999999523163
+    },
+    "model": "Xenova/all-MiniLM-L6-v2",
+    "modelRevision": "751bff37182d3f1213fa05d7196b954e230abad9",
+    "minilm": {
+      "ms": 119,
+      "inputTokens": 17,
+      "truncated": false,
+      "results": [
+        {
+          "id": "34982259",
+          "title": "Of lineage and legacy: the development of mammalian hematopoietic stem cells",
+          "text": "The hematopoietic system is one of the first complex tissues to develop in the mammalian conceptus. Of particular interest in the field of developmental hematopoiesis is the origin of adult bone marrow hematopoietic stem cells. Tracing their origin is complicated because blood is a mobile tissue and because hematopoietic cells emerge from many embryonic sites. The origin of the adult mammalian blood system remains a topic of lively discussion and intense research. Interest is also focused on developmental signals that induce the adult hematopoietic stem cell program, as these may prove useful for generating and expanding these clinically important cell populations ex vivo. This review presents a historical overview of and the most recent data on the developmental origins of hematopoiesis.",
+          "score": 0.6155475378036499
+        },
+        {
+          "id": "14550841",
+          "title": "Asymmetric Cell Divisions Sustain Long-Term  Hematopoiesis from Single-sorted Human Fetal Liver Cells ",
+          "text": "Hematopoietic stem cells (HSCs) in adult marrow are believed to be derived from fetal liver precursors. To study cell kinetics involved in long-term hematopoiesis, we studied single-sorted candidate HSCs from fetal liver that were cultured in the presence of a mixture of stimulatory cytokines. After 8–10 d, the number of cells in primary cultures varied from 10,000 cells. Single cells in slow growing colonies were recloned upon reaching a 100–200 cell stage. Strikingly, the number of cells in subclones varied widely again. These results are indicative of asymmetric divisions in primitive hematopoietic cells in which proliferative potential and cell cycle properties are unevenly distributed among daughter cells. The continuous generation of functional heterogeneity among the clonal progeny of HSCs is in support of intrinsic control of stem cell fate and provides a model for the long-term maintenance of hematopoiesis in vitro and in vivo.",
+          "score": 0.6043147444725037
+        },
+        {
+          "id": "4381486",
+          "title": "Haematopoietic stem cells do not asymmetrically segregate chromosomes or retain BrdU",
+          "text": "Stem cells are proposed to segregate chromosomes asymmetrically during self-renewing divisions so that older (‘immortal’) DNA strands are retained in daughter stem cells whereas newly synthesized strands segregate to differentiating cells. Stem cells are also proposed to retain DNA labels, such as 5-bromo-2-deoxyuridine (BrdU), either because they segregate chromosomes asymmetrically or because they divide slowly. However, the purity of stem cells among BrdU-label-retaining cells has not been documented in any tissue, and the ‘immortal strand hypothesis’ has not been tested in a system with definitive stem cell markers. Here we tested these hypotheses in haematopoietic stem cells (HSCs), which can be highly purified using well characterized markers. We administered BrdU to newborn mice, mice treated with cyclophosphamide and granulocyte colony-stimulating factor, and normal adult mice for 4 to 10 days, followed by 70 days without BrdU. In each case, less than 6% of HSCs retained BrdU and less than 0.5% of all BrdU-retaining haematopoietic cells were HSCs, revealing that BrdU has poor specificity and poor sensitivity as an HSC marker. Sequential administration of 5-chloro-2-deoxyuridine and 5-iodo-2-deoxyuridine indicated that all HSCs segregate their chromosomes randomly. Division of individual HSCs in culture revealed no asymmetric segregation of the label. Thus, HSCs cannot be identified on the basis of BrdU-label retention and do not retain older DNA strands during division, indicating that these are not general properties of stem cells.",
+          "score": 0.5925318002700806
+        },
+        {
+          "id": "5415832",
+          "title": "Normal and leukemic stem cell niches: insights and therapeutic opportunities.",
+          "text": "Hematopoietic stem cells (HSCs) rely on instructive cues from the bone marrow (BM) niche to maintain their quiescence and adapt blood production to the organism's needs. Alterations in the BM niche are commonly observed in blood malignancies and directly contribute to the aberrant function of disease-initiating leukemic stem cells (LSCs). Here, we review recent insights into the cellular and molecular determinants of the normal HSC niche and describe how genetic changes in stromal cells and leukemia-induced BM niche remodeling contribute to blood malignancies. Moreover, we discuss how these findings can be applied to non-cell-autonomous therapies targeting the LSC niche.",
+          "score": 0.5887259840965271
+        },
+        {
+          "id": "25516011",
+          "title": "Purification and characterization of mouse hematopoietic stem cells.",
+          "text": "Mouse bone marrow hematopoietic stem cells were isolated with the use of a variety of phenotypic markers. These cells can proliferate and differentiate with approximately unit efficiency into myelomonocytic cells, B cells, or T cells. Thirty of these cells are sufficient to save 50 percent of lethally irradiated mice, and to reconstitute all blood cell types in the survivors.",
+          "score": 0.5814886689186096
+        }
+      ]
+    },
+    "hybrid": {
+      "ms": 126.1000000834465,
+      "results": [
+        {
+          "id": "4381486",
+          "title": "Haematopoietic stem cells do not asymmetrically segregate chromosomes or retain BrdU",
+          "text": "Stem cells are proposed to segregate chromosomes asymmetrically during self-renewing divisions so that older (‘immortal’) DNA strands are retained in daughter stem cells whereas newly synthesized strands segregate to differentiating cells. Stem cells are also proposed to retain DNA labels, such as 5-bromo-2-deoxyuridine (BrdU), either because they segregate chromosomes asymmetrically or because they divide slowly. However, the purity of stem cells among BrdU-label-retaining cells has not been documented in any tissue, and the ‘immortal strand hypothesis’ has not been tested in a system with definitive stem cell markers. Here we tested these hypotheses in haematopoietic stem cells (HSCs), which can be highly purified using well characterized markers. We administered BrdU to newborn mice, mice treated with cyclophosphamide and granulocyte colony-stimulating factor, and normal adult mice for 4 to 10 days, followed by 70 days without BrdU. In each case, less than 6% of HSCs retained BrdU and less than 0.5% of all BrdU-retaining haematopoietic cells were HSCs, revealing that BrdU has poor specificity and poor sensitivity as an HSC marker. Sequential administration of 5-chloro-2-deoxyuridine and 5-iodo-2-deoxyuridine indicated that all HSCs segregate their chromosomes randomly. Division of individual HSCs in culture revealed no asymmetric segregation of the label. Thus, HSCs cannot be identified on the basis of BrdU-label retention and do not retain older DNA strands during division, indicating that these are not general properties of stem cells.",
+          "score": null
+        },
+        {
+          "id": "34982259",
+          "title": "Of lineage and legacy: the development of mammalian hematopoietic stem cells",
+          "text": "The hematopoietic system is one of the first complex tissues to develop in the mammalian conceptus. Of particular interest in the field of developmental hematopoiesis is the origin of adult bone marrow hematopoietic stem cells. Tracing their origin is complicated because blood is a mobile tissue and because hematopoietic cells emerge from many embryonic sites. The origin of the adult mammalian blood system remains a topic of lively discussion and intense research. Interest is also focused on developmental signals that induce the adult hematopoietic stem cell program, as these may prove useful for generating and expanding these clinically important cell populations ex vivo. This review presents a historical overview of and the most recent data on the developmental origins of hematopoiesis.",
+          "score": null
+        },
+        {
+          "id": "25516011",
+          "title": "Purification and characterization of mouse hematopoietic stem cells.",
+          "text": "Mouse bone marrow hematopoietic stem cells were isolated with the use of a variety of phenotypic markers. These cells can proliferate and differentiate with approximately unit efficiency into myelomonocytic cells, B cells, or T cells. Thirty of these cells are sufficient to save 50 percent of lethally irradiated mice, and to reconstitute all blood cell types in the survivors.",
+          "score": null
+        },
+        {
+          "id": "92499",
+          "title": "The journey of developing hematopoietic stem cells.",
+          "text": "Hematopoietic stem cells (HSCs) develop during embryogenesis in a complex process that involves multiple anatomical sites. Once HSC precursors have been specified from mesoderm, they have to mature into functional HSCs and undergo self-renewing divisions to generate a pool of HSCs. During this process, developing HSCs migrate through various embryonic niches, which provide signals for their establishment and the conservation of their self-renewal ability. These processes have to be recapitulated to generate HSCs from embryonic stem cells. Elucidating the interactions between developing HSCs and their niches should facilitate the generation and expansion of HSCs in vitro to exploit their clinical potential.",
+          "score": null
+        },
+        {
+          "id": "22186938",
+          "title": "Human artificial chromosomes containing chromosome 17 alphoid DNA maintain an active centromere in murine cells but are not stable.",
+          "text": "Human artificial chromosomes (HACs) are autonomous molecules that can function and segregate as normal chromosomes in human cells. De novo HACs have successfully been used as gene expression vectors to complement genetic deficiencies in human cultured cells. HACs now offer the possibility of studying the regulation and expression of large genes in a variety of cell types from different tissues and correcting gene deficiencies caused by human inherited diseases. Complementary gene expression studies in mice, especially in mouse models of human genetic diseases, are also important in determining if large human transgenes can be expressed appropriately from artificial chromosomes. Toward this aim we are establishing artificial chromosomes in murine cells as novel gene expression vectors. Initially we transferred HAC vectors into murine cells, but were unable to generate de novo HACs at a reasonable frequency. We then transferred HACs previously established in human HT1080 cells to three different murine cell types by microcell fusion, followed by positive selection. We observed that the HACs in murine cells bound centromere protein C (CENP-C), a marker of active centromeres, and were detected under selection but rapidly lost when selection was removed. These results suggest that the HACs maintain at least a partially functional centromere complex in murine cells, but other factors are required for stability and segregation. Artificial chromosomes containing mouse centromeric sequences may be required for better stability and maintenance in murine cells.",
+          "score": null
+        }
+      ]
+    }
+  }
+}

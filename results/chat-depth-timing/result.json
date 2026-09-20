@@ -1,0 +1,129 @@
+{
+  "started_utc": "2026-09-20T01:53:44.011635+00:00",
+  "completed_utc": "2026-09-20T02:00:45.061020+00:00",
+  "protocol_sha256": "4b6eb7c5b6ae35e8a5cbe1501054656933f692c02954efb374eff0954a40bfe7",
+  "source_sha256": {
+    "experiments/chat_depth_timing.py": "cdf365dc2968681c41c6cfccaebd1b07bed157c8e5ef24145878810f379c131b",
+    "experiments/chat_smoke_common.py": "671f9e9c130eb8cc6621d4f5770fc6241c0c4e60b109658da485ffaab31f387f",
+    "results/chat-smoke/protocol.json": "3140f19a3634343d06b249e8f52b6f80e03b7469636056f0a7c747b735f2dc64",
+    "results/chat600/protocol.json": "1df787e81173a5cebc183ee16cc4af14dfc18b9e9c7d8bdac5a799af79ce9611",
+    "results/chat-smoke-heads/protocol.json": "804abb4cb85f7ee75ac2d2f533af900f943a5b5aabbc6c1bc9d67846d0be82e6",
+    "results/chat-smoke-heads/mlp-heads.npz": "cbb1fe8c183dd1f2f1697a5a40dfc13196019303b8a20aede7224a8fa6c0a127",
+    "results/chat-smoke-heads/predictions.json": "0f279cdda1134cfabb76245b85230f65a9eebb8cd3a45901905f3e6d4e83835f"
+  },
+  "runtime": {
+    "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.3",
+    "numpy": "2.2.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "threads": 4,
+    "interop_threads": 1
+  },
+  "actual_timed_forward_passes": 1200,
+  "depths": {
+    "6": {
+      "unique_messages": 100,
+      "measured_passes": 3,
+      "measured_forwards": 300,
+      "pass_sum_seconds": [
+        13.796543099801056,
+        13.722214199777227,
+        14.022827600070741
+      ],
+      "mean_100_message_seconds": 13.847194966549674,
+      "mean_ms": 138.47194966549674,
+      "median_ms": 106.37280001537874,
+      "p95_ms": 345.54360496986203,
+      "correct": 75,
+      "missed_toxic": 17,
+      "false_block": 8,
+      "added_errors_vs_full": 12,
+      "corrected_errors_vs_full": 10,
+      "additional_missed_toxic_vs_full": 6,
+      "blocks_executed": 6,
+      "blocks_skipped": 18,
+      "fraction_blocks_skipped": 0.75,
+      "relative_time_saving_vs_full": 0.7538645811036582
+    },
+    "12": {
+      "unique_messages": 100,
+      "measured_passes": 3,
+      "measured_forwards": 300,
+      "pass_sum_seconds": [
+        27.61318020062754,
+        28.318811899865977,
+        28.356037799909245
+      ],
+      "mean_100_message_seconds": 28.09600996680092,
+      "mean_ms": 280.9600996680092,
+      "median_ms": 214.67094999388792,
+      "p95_ms": 731.0445349838119,
+      "correct": 71,
+      "missed_toxic": 20,
+      "false_block": 9,
+      "added_errors_vs_full": 14,
+      "corrected_errors_vs_full": 8,
+      "additional_missed_toxic_vs_full": 8,
+      "blocks_executed": 12,
+      "blocks_skipped": 12,
+      "fraction_blocks_skipped": 0.5,
+      "relative_time_saving_vs_full": 0.5005903217799883
+    },
+    "18": {
+      "unique_messages": 100,
+      "measured_passes": 3,
+      "measured_forwards": 300,
+      "pass_sum_seconds": [
+        41.371092499699444,
+        41.36694460042054,
+        42.38549239985878
+      ],
+      "mean_100_message_seconds": 41.707843166659586,
+      "mean_ms": 417.07843166659586,
+      "median_ms": 320.83054998656735,
+      "p95_ms": 1055.3995800175474,
+      "correct": 78,
+      "missed_toxic": 16,
+      "false_block": 6,
+      "added_errors_vs_full": 7,
+      "corrected_errors_vs_full": 8,
+      "additional_missed_toxic_vs_full": 3,
+      "blocks_executed": 18,
+      "blocks_skipped": 6,
+      "fraction_blocks_skipped": 0.25,
+      "relative_time_saving_vs_full": 0.25863848426432434
+    },
+    "24": {
+      "unique_messages": 100,
+      "measured_passes": 3,
+      "measured_forwards": 300,
+      "pass_sum_seconds": [
+        56.81730759993661,
+        56.52393189974828,
+        55.434083799656946
+      ],
+      "mean_100_message_seconds": 56.25844109978061,
+      "mean_ms": 562.5844109978061,
+      "median_ms": 419.25285002798773,
+      "p95_ms": 1517.3048350290628,
+      "correct": 77,
+      "missed_toxic": 18,
+      "false_block": 5,
+      "added_errors_vs_full": 0,
+      "corrected_errors_vs_full": 0,
+      "additional_missed_toxic_vs_full": 0,
+      "blocks_executed": 24,
+      "blocks_skipped": 0,
+      "fraction_blocks_skipped": 0.0,
+      "relative_time_saving_vs_full": 0.0
+    }
+  },
+  "parity": {
+    "all_cached_labels_match": true,
+    "all_contiguous_block_traces_match": true,
+    "max_abs_probability_delta": 7.033348083496094e-06
+  },
+  "limits": "Single-machine warmed CPU measurement. Previously inspected sample and models; no independent acceptance, deployment-prevalence or no-quality-loss claim. Timing excludes process start and model load. Four tracing hooks paths include instrumentation overhead."
+}

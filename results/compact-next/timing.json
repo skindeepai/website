@@ -1,0 +1,57 @@
+{
+  "protocol_sha256": "3b54857c6bb359b9136e330db0cef8bef4c4da3f89d9f6d02074cb8e8264a590",
+  "n": 50,
+  "methods": {
+    "original_full": {
+      "totals_seconds": [
+        0.34227259986801073,
+        0.31479769985890016,
+        0.3289711000979878
+      ],
+      "mean_seconds": 0.3286804666082996,
+      "correct": 45,
+      "early_count": 0
+    },
+    "original_confidence": {
+      "totals_seconds": [
+        0.21873279998544604,
+        0.21616850013379008,
+        0.21746049995999783
+      ],
+      "mean_seconds": 0.21745393335974464,
+      "correct": 45,
+      "early_count": 40
+    },
+    "full": {
+      "totals_seconds": [
+        0.32781149965012446,
+        0.3216007998562418,
+        0.3220602999208495
+      ],
+      "mean_seconds": 0.3238241998090719,
+      "correct": 47,
+      "early_count": 0
+    },
+    "confidence": {
+      "totals_seconds": [
+        0.22007240011589602,
+        0.20540650002658367,
+        0.21249709982657805
+      ],
+      "mean_seconds": 0.21265866665635258,
+      "correct": 47,
+      "early_count": 39
+    },
+    "risk": {
+      "totals_seconds": [
+        0.27119250025134534,
+        0.2631900003179908,
+        0.26723140018293634
+      ],
+      "mean_seconds": 0.2672046335840908,
+      "correct": 47,
+      "early_count": 40
+    }
+  },
+  "all_prediction_and_layer_traces_match": true
+}

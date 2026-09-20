@@ -1,0 +1,79 @@
+{
+  "protocol_sha256": "38dd6a82e417a7f5adaa7977528d72f9c46b56e29869f7dd2c7ac32139caced8",
+  "samples": 50,
+  "present": 25,
+  "absent": 25,
+  "methods": {
+    "max_patch": {
+      "correct_clicks": 3,
+      "wrong_present_clicks": 22,
+      "absent_clicks": 25,
+      "withheld_present": 0,
+      "withheld_correct_present": 0,
+      "refused_absent": 0,
+      "accepted": 50
+    },
+    "connected_region": {
+      "correct_clicks": 8,
+      "wrong_present_clicks": 17,
+      "absent_clicks": 25,
+      "withheld_present": 0,
+      "withheld_correct_present": 0,
+      "refused_absent": 0,
+      "accepted": 50
+    },
+    "peak_gate": {
+      "correct_clicks": 2,
+      "wrong_present_clicks": 2,
+      "absent_clicks": 0,
+      "withheld_present": 21,
+      "withheld_correct_present": 6,
+      "refused_absent": 25,
+      "accepted": 4
+    },
+    "relative_peak_gate": {
+      "correct_clicks": 2,
+      "wrong_present_clicks": 2,
+      "absent_clicks": 0,
+      "withheld_present": 21,
+      "withheld_correct_present": 6,
+      "refused_absent": 25,
+      "accepted": 4
+    }
+  },
+  "crop_study": {
+    "n": 10,
+    "before_correct": 2,
+    "after_correct": 3,
+    "corrected": 1,
+    "lost": 0,
+    "full_screen_total_ms": 476368.8516000402,
+    "additional_crop_ms": 409968.90199987683
+  },
+  "runtime": {
+    "dtype": "float32",
+    "max_visual_tokens": 576,
+    "min_visual_tokens": 256,
+    "language_layers": 28,
+    "generated_text_tokens": 0,
+    "threads_used": [
+      2,
+      4,
+      12
+    ],
+    "thread_amendments": [
+      "runtime-amendment-12threads.json",
+      "runtime-amendment.json"
+    ]
+  },
+  "total_full_screen_ms": 1814088.2590997498,
+  "limitations": [
+    "Balanced50-case public benchmark stress test, not production prevalence or full benchmark.",
+    "Gate fitted on30 old present-only ScreenSpot requests; this tests domain transfer, not trained absence detection.",
+    "UNCERTAIN is an abstention, not a semantic NOT_FOUND claim; review is not a completed action.",
+    "All28 language layers and the vision encoder run; zero generated tokens, zero early-exit savings.",
+    "Model pretraining overlap with public benchmarks cannot be excluded.",
+    "Refined instructions and576-patch budget; not an official leaderboard replication.",
+    "Crop costs a second complete model pass on10 prespecified present cases and may discard instruction context."
+  ]
+}

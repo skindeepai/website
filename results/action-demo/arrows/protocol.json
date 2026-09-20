@@ -1,0 +1,57 @@
+{
+  "scope": "Synthetic visual-instruction classifier. Not real screenshots, GUI understanding, a language model or a maze policy.",
+  "source_sha256": {
+    "experiments/action_demo_arrows.py": "86114e7d7c1c779c9c524f9fd9474ec336f4382f845ad42962c642664be04fea",
+    "scripts/action-demo-core.js": "aca25e8a4ec1a1f52691d6c734cdf5965b843559d065e78096a94fee63a92bb6"
+  },
+  "input": "Only1024 grayscale pixel intensities, normalized as1-gray/255. Seed, direction, style and render geometry never enter the classifier.",
+  "labels": [
+    "UP",
+    "RIGHT",
+    "DOWN",
+    "LEFT"
+  ],
+  "architecture": "1024\u219232ReLU\u21924 linear logits;32932 trained parameters; argmax returns one enum.",
+  "splits": {
+    "train": {
+      "seed_start": 100000,
+      "n": 2400,
+      "style": "filled"
+    },
+    "tune": {
+      "seed_start": 200000,
+      "n": 400,
+      "style": "filled"
+    },
+    "test": {
+      "seed_start": 300000,
+      "n": 400,
+      "style": "filled"
+    },
+    "outline_stress": {
+      "seed_start": 400000,
+      "n": 400,
+      "style": "outline"
+    }
+  },
+  "labels_rule": "Balanced labels index%4. Each card has a distinct render seed. Train/tune/test share the same procedural renderer; onlyoutline_stress has unseen style.",
+  "training": {
+    "torch_seed": 390920,
+    "epochs": 20,
+    "batch_size": 64,
+    "learning_rate": 0.003,
+    "optimizer": "Adam",
+    "threads": 2
+  },
+  "selection": "Highest tune accuracy, then lower tune cross-entropy; first exact tie retained. Never tune on test or outline outputs.",
+  "baseline": "Untrained nearest-pixel template among four canonical centered black solid arrows. Same1024 input intensities, squared distance; no template alignment.",
+  "deployment_parity": "Export weights to JSON; independently execute JS predictor on all800 test/stress images. Require same argmax asTorch and maxabsolute logit difference<0.0005.",
+  "timing": "Three alternating JS classifier/template passes over400 test pixels, warmed each path. Input rasterization and model loading excluded. SingleNodeprocess; diagnostic local numerical-readout timing, not model-vs-LLM or browser speed claim.",
+  "limits": [
+    "Synthetic pixels and shared renderer can be easy and unlike real images.",
+    "Onlyfour directions; no absent-sign or unknown-image class.",
+    "Fresh render seeds are not a fresh real-world dataset.",
+    "Nearest-template baseline is deliberately simple; no comparison with a stronger vision model.",
+    "Outline stress is held out from training and epoch selection; failures retained."
+  ]
+}

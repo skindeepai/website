@@ -1,0 +1,27 @@
+{
+  "raw": {
+    "n": 1900,
+    "correct": 1226,
+    "known_correct": 833,
+    "known": 900,
+    "unsupported_rejected": 393,
+    "unsupported": 1000,
+    "known_rejected": 16
+  },
+  "with_rejection": {
+    "n": 1900,
+    "correct": 1627,
+    "known_correct": 733,
+    "known": 900,
+    "unsupported_rejected": 894,
+    "unsupported": 1000,
+    "known_rejected": 152
+  },
+  "threshold": 0.3,
+  "seconds": 0.022930099978111684,
+  "timing": "One batch, includes TFIDF transform and classifier; concurrent work, no paired Qwen speedup.",
+  "limitations": [
+    "Reused test data.",
+    "UNKNOWN training only80examples; unseen categories and natural inputs need broader validation."
+  ]
+}

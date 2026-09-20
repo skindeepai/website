@@ -1,0 +1,10 @@
+{
+  "reason": "Original quant stage failed before producing outcomes: inference-mode target tensors cannot be saved for cross-entropy backward.",
+  "change": "Clone features and targets outside inference_mode before train-only linear fits; save collected features for reproducibility. No methodological change.",
+  "source_sha256": {
+    "experiments/chat_next_quant_repair.py": "fca5ccd443cb59905f6c7b3ede2bb48c299bf37ad2d71f352eaeb0dc03729693",
+    "experiments/chat_next_methods.py": "5a1dc47d3c03891fd11c5bb3fb2989dc3ba83d67e0428576010174e7b67652b4",
+    "results/chat-next-methods/protocol.json": "637f865b3de5f85761f8fcdb5cac39c1abf3a609e66bafe0c2d8c95f45aa3ab0",
+    "results/chat-next-methods/quant-failure.json": "4b185f8ed1a08b99238fd052c2a585034862e5f46fc27417661284b2a6d3254b"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "repeat": 0,
+    "method": "neural",
+    "ms": 53.807699999999954
+  },
+  {
+    "repeat": 0,
+    "method": "template",
+    "ms": 42.02420000000001
+  },
+  {
+    "repeat": 1,
+    "method": "template",
+    "ms": 41.3279
+  },
+  {
+    "repeat": 1,
+    "method": "neural",
+    "ms": 50.22449999999998
+  },
+  {
+    "repeat": 2,
+    "method": "neural",
+    "ms": 50.117399999999975
+  },
+  {
+    "repeat": 2,
+    "method": "template",
+    "ms": 41.17930000000001
+  }
+]

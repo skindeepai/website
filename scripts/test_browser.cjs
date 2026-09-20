@@ -28,7 +28,7 @@ const server=http.createServer((req,res)=>{
                 }
             }
         }
-        await page.goto(origin+'/research.html');assert.equal(await page.locator('details.faq').count(),14);
+        await page.goto(origin+'/research.html');assert.equal(await page.locator('details.faq').count(),15);
         assert.equal(await page.locator('#research-filter').count(),0);
         await page.goto(origin+'/research.html#D03');assert(await page.locator('#D02').evaluate(n=>n.open),'Old research links open the relevant answer');
         assert(await page.locator('#D02 a[href="early-exit-results.html"]').isVisible());

@@ -1,0 +1,11 @@
+{
+  "n": 50,
+  "totals_seconds": {
+    "full": 31.174620099773165,
+    "joint_ce": 28.329558699857444,
+    "joint_distill": 28.67238709999947
+  },
+  "calls": 150,
+  "quality_sha256": "97f36d3fe84dddf1b6836ce7c2c278d909c590294120b7e6d3a5db676efbba2a",
+  "scope": "Single paired50-message pass; actual one-forward continuation, no repeated lower layers; no independent quality validation."
+}

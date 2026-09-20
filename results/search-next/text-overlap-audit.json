@@ -1,0 +1,80 @@
+{
+  "scope": "Post-hoc sensitivity analysis after a reviewer identified duplicate claim text across official split IDs. No methods or settings changed.",
+  "normalization": "Unicode casefold, split whitespace and rejoin with single spaces. No semantic paraphrase matching.",
+  "primary_queries": 200,
+  "overlaps": [
+    {
+      "id": "870",
+      "partition": "fit",
+      "matches": [
+        "871"
+      ],
+      "text": "Obesity decreases life quality."
+    }
+  ],
+  "excluded_ids": [
+    "870"
+  ],
+  "sensitivity_queries": 199,
+  "sensitivity_metrics": {
+    "bm25": {
+      "hit@1": 0.5276381909547738,
+      "recall@5": 0.7267169179229481,
+      "ndcg@10": 0.6614005773818127,
+      "mrr@10": 0.6287389327590333,
+      "correct_first": 105,
+      "reranked_queries": 0
+    },
+    "minilm": {
+      "hit@1": 0.5276381909547738,
+      "recall@5": 0.7354271356783919,
+      "ndcg@10": 0.6627629347700886,
+      "mrr@10": 0.6215701523490468,
+      "correct_first": 105,
+      "reranked_queries": 0
+    },
+    "fusion": {
+      "hit@1": 0.5979899497487438,
+      "recall@5": 0.7647403685092128,
+      "ndcg@10": 0.7133530068264764,
+      "mrr@10": 0.683813910823961,
+      "correct_first": 119,
+      "reranked_queries": 0
+    },
+    "rerank": {
+      "hit@1": 0.5577889447236181,
+      "recall@5": 0.7337520938023451,
+      "ndcg@10": 0.6630252374546601,
+      "mrr@10": 0.6411701363962671,
+      "correct_first": 111,
+      "reranked_queries": 199
+    },
+    "gated": {
+      "hit@1": 0.5678391959798995,
+      "recall@5": 0.7228643216080402,
+      "ndcg@10": 0.6734712356670988,
+      "mrr@10": 0.6492462311557788,
+      "correct_first": 113,
+      "reranked_queries": 42
+    }
+  },
+  "paired_changes": {
+    "primary": {
+      "fusion_gains_vs_bm25": 15,
+      "fusion_losses_vs_bm25": 1,
+      "two_sided_exact_p": 0.000518798828125,
+      "scope": "Exploratory paired sign test after observing several method results; no multiple-comparison correction or population guarantee."
+    },
+    "text_deduplicated": {
+      "fusion_gains_vs_bm25": 15,
+      "fusion_losses_vs_bm25": 1,
+      "two_sided_exact_p": 0.000518798828125,
+      "scope": "Exploratory paired sign test after observing several method results; no multiple-comparison correction or population guarantee."
+    }
+  },
+  "candidate_recall@20": 0.8380234505862647,
+  "queries_with_relevant_candidate": 171,
+  "predictions_sha256": "d8ac6f91ac1b5113918b517564e470ad8146479f5ca6b059cb5894cecb4af7c6",
+  "script_sha256": "c7a666223f400e48d23f780a1ad2e9760ed03ab28a92c69ac98d9e702816a138",
+  "limits": "IDs are disjoint but text need not be. Does not detect similar claims, shared papers, or model pretraining contamination. Original protocol/200 predictions unchanged. Timing table remains the original 200 queries."
+}

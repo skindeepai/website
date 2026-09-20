@@ -111,33 +111,47 @@
     "status": "Measured pilot",
     "evidence": [
       "results/matched-output/result.json",
-      "results/chat600/benchmark.json"
+      "results/chat600/benchmark.json",
+      "results/ui/moderation-functional.json",
+      "results/decision-export/result.json",
+      "results/decision-export/browser.json",
+      "results/shared-browser/result.json",
+      "results/shared-browser/ui-lazy.json"
     ],
-    "observed": "Direct labels and matched token output tested.",
+    "observed": "Direct labels and a matched trained-token output were tested. The Qwen browser path passed a two-message smoke. A separate two-output BERT export preserved all 100 decisions in actual browser execution. A shared two/four-layer browser model also matches every saved exit; typed input loads only its 44.5 MB adaptive graphs.",
     "remaining": "No reliable enum-only timing advantage or general output-format superiority."
   },
   "D02": {
     "status": "Measured pilot",
     "evidence": [
       "results/chat-smoke-heads/result.json",
-      "results/chat600/result.json"
+      "results/chat600/result.json",
+      "results/chat-depth-timing/result.json"
     ],
-    "observed": "Fixed early, middle, late and full-depth classifiers compared.",
+    "observed": "Fixed early, middle, late and full-depth classifiers compared; all four actual stopping depths timed over three paired passes.",
     "remaining": "No general layer at which arbitrary answers become ready."
   },
   "D03": {
     "status": "Measured pilot",
     "evidence": [
-      "results/chat-smoke-heads/runtime.json"
+      "results/chat-smoke-heads/runtime.json",
+      "results/compact-specialist/result.json",
+      "results/compact-specialist/runtime.json",
+      "results/chat-next-methods/quality.json",
+      "results/chat-next-methods/continuation-timing.json",
+      "results/compact-next/result.json",
+      "results/compact-next/audit.json",
+      "results/compact-next/split-selection-audit.json"
     ],
-    "observed": "Input-dependent exits execute and save time in a reused-message test.",
-    "remaining": "Freeze candidates and assess quality on genuinely new data; existing reliability gates have not passed."
+    "observed": "Actual input-dependent exits execute in Python and the browser. On 500 unused messages, the original shared BERT rule proposes 400 layer-2 exits and preserves all full-depth decisions, projecting 40% fewer blocks. Its model gets 440/500 correct. The selected distilled model gets 451/500 but increases toxic misses from 3 to 5; its learned risk check stops fewer cases than the confidence rule.",
+    "remaining": "Actual reliability beyond this eligible annotated remainder is unproven: only18 toxic cases, with wide rare-error bounds. Full-depth errors remain. No general or deployment-safety acceptance claim."
   },
   "D04": {
     "status": "Stress test completed",
     "evidence": [
       "results/changing-rules/result.json",
-      "results/clinc-unknown/result.json"
+      "results/clinc-unknown/result.json",
+      "results/practical-routing/result.json"
     ],
     "observed": "Changing-rule and unfamiliar-input tests expose failures.",
     "remaining": "No demonstrated arbitrary instruction following or long-conversation robustness."
@@ -146,18 +160,27 @@
     "status": "Measured pilot",
     "evidence": [
       "results/chat600/benchmark.json",
-      "results/chat-smoke-heads/runtime.json"
+      "results/chat-smoke-heads/runtime.json",
+      "results/chat-depth-timing/result.json",
+      "results/chat-batch-timing/result.json",
+      "results/chat-prefix-timing/result.json",
+      "results/chat-next-methods/combined-timing.json",
+      "results/compact-next/timing-cached.json",
+      "results/compact-next/timing-cached-records.json",
+      "results/shared-browser/browser-isolated.json"
     ],
-    "observed": "Actual layer traces and request times measured, including input preparation.",
-    "remaining": "Independent hardware, cold starts, batching and accepted-quality replication remain absent."
+    "observed": "Actual layer traces and request times measured. Fixed-prefix reuse and four-message batches preserved all 100 predictions while reducing own paired workload times by 37.9% and 9.7%; every message still uses all 24 layers. Combined prefix reuse+batch4 reduced its paired50-message workload by42.9%, preserving all decisions; all24 layers execute. Original shared BERT saved 34.7% in three actual CPU passes on the first50 fresh messages, preserving predictions and layer traces; a separate consumed50 browser test saved36.4% with real shared-state continuation. Loading is excluded and separately reported.",
+    "remaining": "Independent hardware, cold starts, live arrival queues and broader quality replication remain untested."
   },
   "D06": {
     "status": "Measured pilot",
     "evidence": [
-      "results/chat-smoke-specialist/benchmark.json"
+      "results/chat-smoke-specialist/benchmark.json",
+      "results/chat-refinement/result.json",
+      "results/chat-refinement/benchmark.json"
     ],
-    "observed": "Tiny-model/Qwen cascade and actual fallback time measured.",
-    "remaining": "One newly missed toxic message remains; no fresh reliability acceptance."
+    "observed": "Original cascade and conservative follow-up tested on 100 unused messages. Strict version preserved decisions but avoided Qwen only twice and saved less than 1% time.",
+    "remaining": "No useful quality-preserving speed improvement established by the conservative follow-up; broader datasets and error-budget validation remain."
   },
   "D07": {
     "status": "Not tested",
@@ -184,10 +207,13 @@
     "status": "Measured pilot",
     "evidence": [
       "results/screenspot/result.json",
-      "results/coordinate-abstention-smoke/result.json"
+      "results/coordinate-abstention-smoke/result.json",
+      "results/action-demo/screenstudy/result.json",
+      "results/visual-next/result.json",
+      "results/visual-next/protocol.json"
     ],
-    "observed": "30 public screenshots and an eight-example missing-target diagnostic recorded.",
-    "remaining": "General absent-target rejection and larger independent app groups remain unvalidated."
+    "observed": "Earlier ScreenSpot region selection found 25/30 present targets. On a fresh OSWorld-G stress test, it found 8/25 present targets. A frozen confidence cutoff withheld all 25 author-labelled infeasible requests, but allowed only 4 present requests: 2 correct and 2 wrong. Predicted-point cropping improved 2/10 to 3/10 with another complete model pass.",
+    "remaining": "Useful click coverage and reliable accepted actions remain unresolved. The new domain test does not establish strict application-family disjointness or literal missing-control detection; infeasible requests can include impossible actions on present controls."
   },
   "C03": {
     "status": "Not tested",

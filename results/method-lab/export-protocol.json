@@ -1,0 +1,9 @@
+{
+  "source_sha256": "84e77ae44d6bbc2892b3dc50848a994a3447667caba2e59b03111fdc6f8d950b",
+  "selected": "distill-9927",
+  "weights_sha256": "56b6b1607ef3a85f1da3b09d089223226ffd587e58deda7c07c40375cd299b09",
+  "fit_sha256": "477d2e48d4b0f6a64f8afb352eb189caa93e3b5bc3607d84796e96dd358709c9",
+  "threads": 2,
+  "scope": "Browser export and consumed100 parity, not fresh research. Quantization of BERT is a new illustrative conversion, not the Qwen diagnostic.",
+  "quantization": "ONNX Runtime dynamic INT8 MatMul weights, per_channel=True, original four-layer BERT full graph. No threshold tuning."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "pages": 5,
+  "widths": [
+    320,
+    375,
+    390,
+    768,
+    900,
+    1024,
+    1440
+  ],
+  "pageViewportChecks": 35,
+  "checks": [
+    "document width",
+    "harder visual results link survives regeneration",
+    "expanded real screenshot width",
+    "no page errors"
+  ],
+  "browser": "151.0.7922.34",
+  "limitations": [
+    "Headless Chromium CSS viewports; no physical Safari/iOS test."
+  ]
+}

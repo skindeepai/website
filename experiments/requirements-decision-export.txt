@@ -1,0 +1,6 @@
+# Direct dependencies for reproducing the trained browser-classifier export.
+# Install in an isolated environment; this is not a complete transitive lockfile.
+-r requirements-chat600.txt
+onnx==1.19.1
+onnxruntime==1.23.2
+sympy==1.13.1

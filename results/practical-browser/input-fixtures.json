@@ -1,0 +1,830 @@
+[
+  {
+    "task": "privacy",
+    "text": "Dr. Alice Morgan met Mr. David Clark.",
+    "probabilities": [
+      0.9130238526025217,
+      0.6174691024859612,
+      0.04808094555670751,
+      0.410908597442124,
+      4.929941300719417e-09,
+      0.9997003573971985,
+      0.9963184460526777,
+      0.7026338690820833,
+      0.27710422116336475,
+      0.07023402686546992
+    ],
+    "features": [
+      {
+        "word": "dr",
+        "prev": "",
+        "next": ".",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "dr",
+        "prefix": "dr"
+      },
+      {
+        "word": ".",
+        "prev": "dr",
+        "next": "alice",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      },
+      {
+        "word": "alice",
+        "prev": ".",
+        "next": "morgan",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ice",
+        "prefix": "ali"
+      },
+      {
+        "word": "morgan",
+        "prev": "alice",
+        "next": "met",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "gan",
+        "prefix": "mor"
+      },
+      {
+        "word": "met",
+        "prev": "morgan",
+        "next": "mr",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "met",
+        "prefix": "met"
+      },
+      {
+        "word": "mr",
+        "prev": "met",
+        "next": ".",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "mr",
+        "prefix": "mr"
+      },
+      {
+        "word": ".",
+        "prev": "mr",
+        "next": "david",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      },
+      {
+        "word": "david",
+        "prev": ".",
+        "next": "clark",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "vid",
+        "prefix": "dav"
+      },
+      {
+        "word": "clark",
+        "prev": "david",
+        "next": ".",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ark",
+        "prefix": "cla"
+      },
+      {
+        "word": ".",
+        "prev": "clark",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      }
+    ]
+  },
+  {
+    "task": "privacy",
+    "text": "John_Smith met ALICE and Marie-Claire.",
+    "probabilities": [
+      0.36544839239721516,
+      1.2226475208349942e-08,
+      1.962619287761279e-06,
+      3.2901769825650537e-09,
+      0.9712741203414205,
+      0.7508588745300221,
+      0.6682461410231464,
+      0.07023402686546992
+    ],
+    "features": [
+      {
+        "word": "john_smith",
+        "prev": "",
+        "next": "met",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ith",
+        "prefix": "joh"
+      },
+      {
+        "word": "met",
+        "prev": "john_smith",
+        "next": "alice",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "met",
+        "prefix": "met"
+      },
+      {
+        "word": "alice",
+        "prev": "met",
+        "next": "and",
+        "title": false,
+        "upper": true,
+        "digit": false,
+        "suffix": "ice",
+        "prefix": "ali"
+      },
+      {
+        "word": "and",
+        "prev": "alice",
+        "next": "marie",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "and",
+        "prefix": "and"
+      },
+      {
+        "word": "marie",
+        "prev": "and",
+        "next": "-",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "rie",
+        "prefix": "mar"
+      },
+      {
+        "word": "-",
+        "prev": "marie",
+        "next": "claire",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "-",
+        "prefix": "-"
+      },
+      {
+        "word": "claire",
+        "prev": "-",
+        "next": ".",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ire",
+        "prefix": "cla"
+      },
+      {
+        "word": ".",
+        "prev": "claire",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      }
+    ]
+  },
+  {
+    "task": "privacy",
+    "text": "?lodie spoke to ?? in 2024.",
+    "probabilities": [
+      6.4084176930146965e-09,
+      7.074803315680785e-09,
+      1.0843742902875136e-08,
+      1.9966686786765265e-09,
+      8.796519776271896e-09,
+      2.5800457719103773e-09,
+      4.9462128913240254e-11,
+      6.70389599319596e-08,
+      0.07023402686546992
+    ],
+    "features": [
+      {
+        "word": "?",
+        "prev": "",
+        "next": "lodie",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "lodie",
+        "prev": "?",
+        "next": "spoke",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "die",
+        "prefix": "lod"
+      },
+      {
+        "word": "spoke",
+        "prev": "lodie",
+        "next": "to",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "oke",
+        "prefix": "spo"
+      },
+      {
+        "word": "to",
+        "prev": "spoke",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "to",
+        "prefix": "to"
+      },
+      {
+        "word": "?",
+        "prev": "to",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "in",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "in",
+        "prev": "?",
+        "next": "2024",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "in",
+        "prefix": "in"
+      },
+      {
+        "word": "2024",
+        "prev": "in",
+        "next": ".",
+        "title": false,
+        "upper": false,
+        "digit": true,
+        "suffix": "024",
+        "prefix": "202"
+      },
+      {
+        "word": ".",
+        "prev": "2024",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      }
+    ]
+  },
+  {
+    "task": "privacy",
+    "text": "Text with ? and ?? and x_y words.",
+    "probabilities": [
+      0.15875863657679032,
+      6.3966927484152955e-09,
+      3.1575701227652616e-07,
+      2.581535524862006e-09,
+      1.793807485716052e-08,
+      6.977904860564375e-08,
+      2.581535529032066e-09,
+      1.7938075243598714e-08,
+      7.231222196502122e-09,
+      0.07023402686546992
+    ],
+    "features": [
+      {
+        "word": "text",
+        "prev": "",
+        "next": "with",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ext",
+        "prefix": "tex"
+      },
+      {
+        "word": "with",
+        "prev": "text",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "ith",
+        "prefix": "wit"
+      },
+      {
+        "word": "?",
+        "prev": "with",
+        "next": "and",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "and",
+        "prev": "?",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "and",
+        "prefix": "and"
+      },
+      {
+        "word": "?",
+        "prev": "and",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "and",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "and",
+        "prev": "?",
+        "next": "x_y",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "and",
+        "prefix": "and"
+      },
+      {
+        "word": "x_y",
+        "prev": "and",
+        "next": "words",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "x_y",
+        "prefix": "x_y"
+      },
+      {
+        "word": "words",
+        "prev": "x_y",
+        "next": ".",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "rds",
+        "prefix": "wor"
+      },
+      {
+        "word": ".",
+        "prev": "words",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": ".",
+        "prefix": "."
+      }
+    ]
+  },
+  {
+    "task": "routing",
+    "text": "How can I change my PIN?",
+    "probabilities": [
+      0.022775860674096142,
+      0.028348195925599746,
+      0.015568624433681998,
+      0.028219452352750467,
+      0.019003748456593157,
+      0.015742208356692655,
+      0.032861245420370215,
+      0.046406441066343986,
+      0.014938705409542999,
+      0.018679550437301594,
+      0.020390412834271135,
+      0.025797459297343228,
+      0.027067109739700928,
+      0.024131829895741266,
+      0.034436728918684184,
+      0.022969130610313783,
+      0.024117384822782167,
+      0.025414347448941794,
+      0.039961568517821656,
+      0.08069624253546143,
+      0.07299500788367408,
+      0.016087088263090386,
+      0.04243062010350319,
+      0.04369563803426353,
+      0.025778612171211884,
+      0.017524045767618526,
+      0.017661684937270286,
+      0.05553429485010601,
+      0.026998283660431596,
+      0.01456554082819187,
+      0.09920293634660403
+    ]
+  },
+  {
+    "task": "routing",
+    "text": "reset reset my pin please",
+    "probabilities": [
+      0.008715210506494502,
+      0.030703339536438192,
+      0.012984764837300301,
+      0.026193541383869087,
+      0.025746529052260513,
+      0.010556557636681983,
+      0.0607340478958903,
+      0.08241555752877944,
+      0.009718185729792307,
+      0.008976573420500573,
+      0.023148594517613353,
+      0.03105025658134519,
+      0.0960725467399219,
+      0.010280828420501417,
+      0.16887679392823418,
+      0.06453146350454612,
+      0.012715289259206595,
+      0.039489910259809705,
+      0.015256804424595647,
+      0.015093455716307798,
+      0.03719569457588505,
+      0.012420891189971741,
+      0.017806741346821676,
+      0.008638607139411033,
+      0.008766398497139043,
+      0.008726642520426372,
+      0.012621529288930601,
+      0.07485040901492848,
+      0.036137910587621926,
+      0.01665421022438742,
+      0.012920714734387518
+    ]
+  },
+  {
+    "task": "routing",
+    "text": "?LODIE ?? account_balance x_y",
+    "probabilities": [
+      0.03233737153927516,
+      0.024019086524060613,
+      0.02424796117490279,
+      0.02615598151331252,
+      0.018027559427945723,
+      0.03051369620925611,
+      0.025825302566070178,
+      0.027961762318914625,
+      0.03255703312800614,
+      0.03518544095523626,
+      0.03142101490040316,
+      0.027559419871968367,
+      0.037964245003411744,
+      0.034779464804235154,
+      0.06102633239018928,
+      0.02671028118973999,
+      0.03490463728139738,
+      0.02322084680691305,
+      0.027211020170161748,
+      0.03585871211717111,
+      0.028905401205153967,
+      0.02423438254961521,
+      0.02057506144698959,
+      0.0303100114267364,
+      0.02336071442582028,
+      0.03405237414545943,
+      0.035072599702250795,
+      0.03523923935673855,
+      0.025317345549523355,
+      0.020220161023909618,
+      0.10522553927523177
+    ]
+  },
+  {
+    "task": "routing",
+    "text": "Build a spaceship for me.",
+    "probabilities": [
+      0.0193795910688464,
+      0.018309057333181264,
+      0.0809157815772624,
+      0.029497310505156582,
+      0.018288727357816923,
+      0.018946046850077253,
+      0.033585255858847377,
+      0.028019025978823626,
+      0.04986022478301683,
+      0.043709486242372204,
+      0.04747501809290881,
+      0.0537602270931593,
+      0.03426748549309156,
+      0.030168531031791217,
+      0.023578231645760995,
+      0.03799251255800946,
+      0.06421573826157033,
+      0.020604424184525922,
+      0.015051940868333717,
+      0.028674411104946517,
+      0.028694094996353003,
+      0.02333393467645456,
+      0.01771165972840415,
+      0.031255103022921255,
+      0.0173625538046309,
+      0.02287044814288972,
+      0.03521691861271231,
+      0.044628133556589185,
+      0.02216194333949148,
+      0.01240702900878139,
+      0.04805915322127327
+    ]
+  },
+  {
+    "task": "receipts",
+    "text": "Milk 3.50\nBread 2.50\nTOTAL 6.00\nCASH 10.00\nCHANGE 4.00",
+    "amounts": [
+      "3.50",
+      "2.50",
+      "6.00",
+      "10.00",
+      "4.00"
+    ],
+    "probabilities": [
+      0.22439989797144422,
+      0.14415583222415168,
+      0.5972468653455448,
+      0.4324353527542192,
+      0.015328718344192223
+    ]
+  },
+  {
+    "task": "receipts",
+    "text": "SUB TOTAL 5.00\nTax 0.50\nTOTAL 5.50",
+    "amounts": [
+      "5.00",
+      "0.50",
+      "5.50"
+    ],
+    "probabilities": [
+      0.7385379000962892,
+      0.035141946578154185,
+      0.41789062311011665
+    ]
+  },
+  {
+    "task": "receipts",
+    "text": "No price available",
+    "amounts": [],
+    "probabilities": []
+  },
+  {
+    "task": "privacy",
+    "text": "1Alice A1B Ab2Cd A__B A?b ? ? ?",
+    "features": [
+      {
+        "word": "1alice",
+        "prev": "",
+        "next": "a1b",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "ice",
+        "prefix": "1al"
+      },
+      {
+        "word": "a1b",
+        "prev": "1alice",
+        "next": "ab2cd",
+        "title": true,
+        "upper": true,
+        "digit": false,
+        "suffix": "a1b",
+        "prefix": "a1b"
+      },
+      {
+        "word": "ab2cd",
+        "prev": "a1b",
+        "next": "a__b",
+        "title": true,
+        "upper": false,
+        "digit": false,
+        "suffix": "2cd",
+        "prefix": "ab2"
+      },
+      {
+        "word": "a__b",
+        "prev": "ab2cd",
+        "next": "a",
+        "title": true,
+        "upper": true,
+        "digit": false,
+        "suffix": "__b",
+        "prefix": "a__"
+      },
+      {
+        "word": "a",
+        "prev": "a__b",
+        "next": "?",
+        "title": true,
+        "upper": true,
+        "digit": false,
+        "suffix": "a",
+        "prefix": "a"
+      },
+      {
+        "word": "?",
+        "prev": "a",
+        "next": "b",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "b",
+        "prev": "?",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "b",
+        "prefix": "b"
+      },
+      {
+        "word": "?",
+        "prev": "b",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      }
+    ],
+    "probabilities": [
+      0.004722174498838207,
+      0.9971586361940229,
+      0.32185410581245655,
+      0.9967762546723701,
+      0.874741990497107,
+      4.538663915124548e-07,
+      6.185908190539007e-11,
+      2.923141823363039e-07,
+      5.833453159770174e-09,
+      2.177467101051149e-09
+    ]
+  },
+  {
+    "task": "privacy",
+    "text": "?ana McDONALD foo_bar ???",
+    "features": [
+      {
+        "word": "?",
+        "prev": "",
+        "next": "ana",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "ana",
+        "prev": "?",
+        "next": "mcdonald",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "ana",
+        "prefix": "ana"
+      },
+      {
+        "word": "mcdonald",
+        "prev": "ana",
+        "next": "foo_bar",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "ald",
+        "prefix": "mcd"
+      },
+      {
+        "word": "foo_bar",
+        "prev": "mcdonald",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "bar",
+        "prefix": "foo"
+      },
+      {
+        "word": "?",
+        "prev": "foo_bar",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "?",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      },
+      {
+        "word": "?",
+        "prev": "?",
+        "next": "",
+        "title": false,
+        "upper": false,
+        "digit": false,
+        "suffix": "?",
+        "prefix": "?"
+      }
+    ],
+    "probabilities": [
+      6.4084176930146965e-09,
+      7.0493969167331325e-09,
+      2.4262092021458473e-08,
+      1.9116896074434897e-09,
+      7.338770967171386e-09,
+      5.833453159770174e-09,
+      2.177467101051149e-09
+    ]
+  }
+]

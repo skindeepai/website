@@ -1,0 +1,1926 @@
+[
+  {
+    "id": "2XIa0KyxIh-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.046875,
+      0.9166666666666666
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4EDJ4LB61U-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.453125,
+      0.19444444444444445
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Cf4yF5Buvk-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.421875,
+      0.8611111111111112
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "l8sf22rM6n-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.5833333333333334,
+      0.75
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "35h7FwTKtF-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.890625,
+      0.4166666666666667
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4vEmVUJ355-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.4166666666666667
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2X4C2ZQ4NN-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.027777777777777776
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "3MwkAVUe4d-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.078125,
+      0.8611111111111112
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "9ICpvdGZBC-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.453125,
+      0.6388888888888888
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "3Fh257K4Pd-5",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.046875,
+      0.19444444444444445
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "o8viNr8L1u-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.234375,
+      0.4722222222222222
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "17VE1HC7Z9-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.453125,
+      0.5277777777777778
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Dd5jH9nufm-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.859375,
+      0.25
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2r2EGLJKi7-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.4722222222222222
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5LWu2cxt31-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.796875,
+      0.1388888888888889
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "1YJ0KGXNKU-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.3611111111111111
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "7MJ46l4hY9-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.390625,
+      0.3055555555555556
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "KBF8QQ7CCW-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.4166666666666667
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1GTGZ3A3V8-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.4166666666666667
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "oAuNhTPDYZ-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.359375,
+      0.4722222222222222
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "clHADy1fZ1-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.4722222222222222
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "kwbF3fkXnk-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.9722222222222222
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0NVmz0b7L0-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.140625,
+      0.4166666666666667
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5Q21KgN00f-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.234375,
+      0.3055555555555556
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IZ1KbKvlLg-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.515625,
+      0.1388888888888889
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "ETqru32Co7-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.609375,
+      0.19444444444444445
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "tR5gErKrt6-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.296875,
+      0.8611111111111112
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "byruBm7Hpm-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.203125,
+      0.4722222222222222
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "1y0CmHiyPQ-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.515625,
+      0.3611111111111111
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "Et7qwxZ9Fq-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.578125,
+      0.6944444444444444
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "B8IYUU0NND-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.046875,
+      0.25
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0uDXBwOIEw-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.546875,
+      0.6388888888888888
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "72Ivc1tZpd-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.453125,
+      0.4166666666666667
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "I8B0XHIW8M-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.859375,
+      0.4166666666666667
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "cIwmHfS5VV-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.828125,
+      0.8055555555555556
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IJOYC65OCU-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.19444444444444445
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "MSC2izlXwX-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.734375,
+      0.4166666666666667
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "LR6S8RBXW2-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.9166666666666666
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "6t8bUw46XQ-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.08333333333333333
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DDWOR3T8WC-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.953125,
+      0.9722222222222222
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "XBQyRfME3f-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.953125,
+      0.4722222222222222
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "CSX8vMhbjY-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.453125,
+      0.25
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "vkfGjTZ2ZI-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.359375,
+      0.6388888888888888
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "bC5RG16JsK-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.640625,
+      0.25
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DEFCEB4U9S-1",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.027777777777777776
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1YgyNsIUQY-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.234375,
+      0.9722222222222222
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DF6iNtXc3T-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.390625,
+      0.5833333333333334
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "T5l1sFEhSy-2",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.078125,
+      0.4166666666666667
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "MZSHLRLER1-3",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.19444444444444445
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "qkByHYi0jR-0",
+    "method": "max_patch",
+    "output": "CLICK",
+    "point": [
+      0.984375,
+      0.4722222222222222
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "2XIa0KyxIh-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.040739286690950394,
+      0.9188867211341858
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4EDJ4LB61U-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.4550163149833679,
+      0.1944444328546524
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Cf4yF5Buvk-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.4335845410823822,
+      0.839637279510498
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "l8sf22rM6n-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.542346179485321,
+      0.698182225227356
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "35h7FwTKtF-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.893964946269989,
+      0.4072909653186798
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4vEmVUJ355-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.018793683499097824,
+      0.32710567116737366
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2X4C2ZQ4NN-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9843749403953552,
+      0.04160140082240105
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "3MwkAVUe4d-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.07948803156614304,
+      0.819168210029602
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "9ICpvdGZBC-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.4917370676994324,
+      0.655971109867096
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "3Fh257K4Pd-5",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.06336525827646255,
+      0.1845819056034088
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "o8viNr8L1u-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.24806438386440277,
+      0.45361796021461487
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "17VE1HC7Z9-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.4634687006473541,
+      0.5527620911598206
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Dd5jH9nufm-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.8635305166244507,
+      0.2724772095680237
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2r2EGLJKi7-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9710341095924377,
+      0.4648304879665375
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5LWu2cxt31-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.8076027035713196,
+      0.1521858125925064
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "1YJ0KGXNKU-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.6790556907653809,
+      0.5025439858436584
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "7MJ46l4hY9-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.4046971797943115,
+      0.3055555522441864
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "KBF8QQ7CCW-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9652253985404968,
+      0.4321916401386261
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1GTGZ3A3V8-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.8865389227867126,
+      0.4042526185512543
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "oAuNhTPDYZ-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.37439897656440735,
+      0.4722221791744232
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "clHADy1fZ1-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9625473022460938,
+      0.4265141785144806
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "kwbF3fkXnk-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9713578224182129,
+      0.945553183555603
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0NVmz0b7L0-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.10918112099170685,
+      0.4420630931854248
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5Q21KgN00f-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.3000144958496094,
+      0.3159918189048767
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IZ1KbKvlLg-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.5001838803291321,
+      0.1388888955116272
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "ETqru32Co7-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.6169597506523132,
+      0.22147062420845032
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "tR5gErKrt6-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.3101104497909546,
+      0.8443633317947388
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "byruBm7Hpm-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.20233647525310516,
+      0.4722221791744232
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "1y0CmHiyPQ-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.5150824189186096,
+      0.3675522804260254
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "Et7qwxZ9Fq-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.6172451376914978,
+      0.7065614461898804
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "B8IYUU0NND-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.1821521818637848,
+      0.1944444477558136
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0uDXBwOIEw-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.42451488971710205,
+      0.6309309005737305
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "72Ivc1tZpd-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.48378878831863403,
+      0.4166666865348816
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "I8B0XHIW8M-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.859375,
+      0.4166666567325592
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "cIwmHfS5VV-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.8237519860267639,
+      0.8318195343017578
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IJOYC65OCU-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.19205370545387268
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "MSC2izlXwX-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.728134274482727,
+      0.43381497263908386
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "LR6S8RBXW2-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9681679606437683,
+      0.5106517672538757
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "6t8bUw46XQ-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.02785569801926613,
+      0.15494385361671448
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DDWOR3T8WC-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9646701216697693,
+      0.9124815464019775
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "XBQyRfME3f-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9457600116729736,
+      0.49170321226119995
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "CSX8vMhbjY-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.44667136669158936,
+      0.33141449093818665
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "vkfGjTZ2ZI-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.3780602514743805,
+      0.6090666055679321
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "bC5RG16JsK-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.6321524977684021,
+      0.26413455605506897
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DEFCEB4U9S-1",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.9552614092826843,
+      0.03505753353238106
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1YgyNsIUQY-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.2233654409646988,
+      0.9722222089767456
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DF6iNtXc3T-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.3726581633090973,
+      0.557948112487793
+    ],
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "T5l1sFEhSy-2",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.09024641662836075,
+      0.43543705344200134
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "MZSHLRLER1-3",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.18409284949302673
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "qkByHYi0jR-0",
+    "method": "connected_region",
+    "output": "CLICK",
+    "point": [
+      0.980369508266449,
+      0.910334050655365
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "2XIa0KyxIh-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4EDJ4LB61U-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Cf4yF5Buvk-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "l8sf22rM6n-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "35h7FwTKtF-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4vEmVUJ355-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2X4C2ZQ4NN-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "3MwkAVUe4d-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "9ICpvdGZBC-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "3Fh257K4Pd-5",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "o8viNr8L1u-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "17VE1HC7Z9-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Dd5jH9nufm-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2r2EGLJKi7-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5LWu2cxt31-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "1YJ0KGXNKU-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "7MJ46l4hY9-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "KBF8QQ7CCW-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1GTGZ3A3V8-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "oAuNhTPDYZ-0",
+    "method": "peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.37439897656440735,
+      0.4722221791744232
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "clHADy1fZ1-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "kwbF3fkXnk-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0NVmz0b7L0-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5Q21KgN00f-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IZ1KbKvlLg-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "ETqru32Co7-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "tR5gErKrt6-1",
+    "method": "peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.3101104497909546,
+      0.8443633317947388
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "byruBm7Hpm-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "1y0CmHiyPQ-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "Et7qwxZ9Fq-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "B8IYUU0NND-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0uDXBwOIEw-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "72Ivc1tZpd-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "I8B0XHIW8M-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "cIwmHfS5VV-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IJOYC65OCU-2",
+    "method": "peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.19205370545387268
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "MSC2izlXwX-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "LR6S8RBXW2-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "6t8bUw46XQ-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DDWOR3T8WC-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "XBQyRfME3f-3",
+    "method": "peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.9457600116729736,
+      0.49170321226119995
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "CSX8vMhbjY-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "vkfGjTZ2ZI-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "bC5RG16JsK-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DEFCEB4U9S-1",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1YgyNsIUQY-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DF6iNtXc3T-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "T5l1sFEhSy-2",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "MZSHLRLER1-3",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "qkByHYi0jR-0",
+    "method": "peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "2XIa0KyxIh-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4EDJ4LB61U-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Cf4yF5Buvk-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "l8sf22rM6n-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "35h7FwTKtF-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "4vEmVUJ355-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2X4C2ZQ4NN-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "3MwkAVUe4d-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "9ICpvdGZBC-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "3Fh257K4Pd-5",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "o8viNr8L1u-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "17VE1HC7Z9-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "Dd5jH9nufm-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "2r2EGLJKi7-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5LWu2cxt31-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "1YJ0KGXNKU-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "7MJ46l4hY9-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "KBF8QQ7CCW-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1GTGZ3A3V8-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "oAuNhTPDYZ-0",
+    "method": "relative_peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.37439897656440735,
+      0.4722221791744232
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "clHADy1fZ1-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "kwbF3fkXnk-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0NVmz0b7L0-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "5Q21KgN00f-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IZ1KbKvlLg-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "ETqru32Co7-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "tR5gErKrt6-1",
+    "method": "relative_peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.3101104497909546,
+      0.8443633317947388
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "byruBm7Hpm-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "1y0CmHiyPQ-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "Et7qwxZ9Fq-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "B8IYUU0NND-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "0uDXBwOIEw-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "72Ivc1tZpd-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "I8B0XHIW8M-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "cIwmHfS5VV-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "IJOYC65OCU-2",
+    "method": "relative_peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.015625,
+      0.19205370545387268
+    ],
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "MSC2izlXwX-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "LR6S8RBXW2-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "6t8bUw46XQ-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DDWOR3T8WC-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "XBQyRfME3f-3",
+    "method": "relative_peak_gate",
+    "output": "CLICK",
+    "point": [
+      0.9457600116729736,
+      0.49170321226119995
+    ],
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "CSX8vMhbjY-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "vkfGjTZ2ZI-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "bC5RG16JsK-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DEFCEB4U9S-1",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "1YgyNsIUQY-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "DF6iNtXc3T-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": false,
+    "point_correct": false
+  },
+  {
+    "id": "T5l1sFEhSy-2",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": true
+  },
+  {
+    "id": "MZSHLRLER1-3",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  },
+  {
+    "id": "qkByHYi0jR-0",
+    "method": "relative_peak_gate",
+    "output": "UNCERTAIN",
+    "point": null,
+    "target_present": true,
+    "point_correct": false
+  }
+]

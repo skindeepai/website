@@ -1,0 +1,7248 @@
+{
+  "kind": "Actual browser shared 2/4-layer BERT, consumed100 parity and paired first50 timing",
+  "model": "Google BERT four-layer jointly trained moderation specialist",
+  "models": {
+    "prefix": {
+      "bytes": 38141179,
+      "sha256": "fd1e451a9a5d50ab624fa006475be9c57ca1c54f87f5dd18bd30410dbb10026c"
+    },
+    "suffix": {
+      "bytes": 6351702,
+      "sha256": "aed3ab7b83505176d07d1001fedee9fc1430e80fc364a3ce9f64abd2e54809e9"
+    },
+    "full": {
+      "bytes": 44506427,
+      "sha256": "5327600a6cb995b5c7c2dcc2e9d458f6e056668123c5acd6299232ed3218db21"
+    }
+  },
+  "gate": {
+    "low": 0.1,
+    "high": 0.8
+  },
+  "threshold": 0.2,
+  "generatedTokens": 0,
+  "setupMs": 5492.5,
+  "correct": 83,
+  "missedToxic": 10,
+  "falseBlocks": 7,
+  "earlyCount": 72,
+  "blocksSkippedFraction": 0.36,
+  "allTokenizersMatch": true,
+  "allPredictionsAndExitsMatch": true,
+  "maxProbabilityDelta": 3.311867481925468e-7,
+  "timing": {
+    "n": 50,
+    "passes": 3,
+    "fullMs": [
+      1481.2000001072884,
+      1313.0000001192093,
+      1454.4999998807907
+    ],
+    "adaptiveMs": [
+      898.1999994516373,
+      807.099999666214,
+      914.8999998569489
+    ],
+    "fullMeanMs": 1416.233333369096,
+    "adaptiveMeanMs": 873.3999996582667,
+    "lessTimeFraction": 0.38329371362801923
+  },
+  "records": [
+    {
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.027138663172997686,
+      "layer2Probability": 0.027138663172997686,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.9519476148209822e-8
+    },
+    {
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.015031633000359323,
+      "layer2Probability": 0.015031633000359323,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.4861919620018416e-9
+    },
+    {
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8827774618971453,
+      "layer2Probability": 0.8827774618971453,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 32,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.903291804860601e-8
+    },
+    {
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.017868457645037382,
+      "layer2Probability": 0.017868457645037382,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.5796635458031894e-9
+    },
+    {
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9823536437856274,
+      "layer2Probability": 0.9823536437856274,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 11.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.3500749558056384e-8
+    },
+    {
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01569250025197111,
+      "layer2Probability": 0.01569250025197111,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.6909398214970395e-8
+    },
+    {
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005851743953911793,
+      "layer2Probability": 0.005851743953911793,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.0485408190894514e-9
+    },
+    {
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": 0.3717143782016839,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 12.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.316950306058274e-7
+    },
+    {
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0018121407736831209,
+      "layer2Probability": 0.0018121407736831209,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.3640888830816766e-9
+    },
+    {
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9711487193416166,
+      "layer2Probability": 0.9711487193416166,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 9.982724202828308e-9
+    },
+    {
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": 0.32119010647364943,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 10.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.0339328798680825e-7
+    },
+    {
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9264591746414115,
+      "layer2Probability": 0.9264591746414115,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.8588263817065354e-8
+    },
+    {
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9306550007773049,
+      "layer2Probability": 0.9306550007773049,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 24.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.816689243483438e-9
+    },
+    {
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9758890909392803,
+      "layer2Probability": 0.9758890909392803,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 18.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.215952698061187e-9
+    },
+    {
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": 0.3794572755869108,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 87.39999997615814,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.1790640231399436e-8
+    },
+    {
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0026495851152875337,
+      "layer2Probability": 0.0026495851152875337,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.958450231292102e-10
+    },
+    {
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004095143399024206,
+      "layer2Probability": 0.004095143399024206,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.89613990236476e-9
+    },
+    {
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9101947039906224,
+      "layer2Probability": 0.9101947039906224,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 53.89999997615814,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 8.994742284329504e-9
+    },
+    {
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00506091184468712,
+      "layer2Probability": 0.00506091184468712,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 53.89999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.1965468962871206e-9
+    },
+    {
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.019108195489244296,
+      "layer2Probability": 0.019108195489244296,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.8191720707655445e-9
+    },
+    {
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": 0.7575612903005694,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.4744042431402704e-8
+    },
+    {
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8388182140594986,
+      "layer2Probability": 0.8388182140594986,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 14.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.1577504005776404e-8
+    },
+    {
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": 0.3680898894161023,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 96.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.168662893517695e-9
+    },
+    {
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010956637743014006,
+      "layer2Probability": 0.010956637743014006,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.54359755080913e-9
+    },
+    {
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": 0.5062264859421995,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 36.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.521800696186354e-8
+    },
+    {
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": 0.11606641328338105,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 10.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.0802438377719454e-10
+    },
+    {
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.020728521968170016,
+      "layer2Probability": 0.020728521968170016,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 47.5,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.668788106121369e-9
+    },
+    {
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.08270089213634993,
+      "layer2Probability": 0.08270089213634993,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.304040206517314e-9
+    },
+    {
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009785044863482606,
+      "layer2Probability": 0.009785044863482606,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.800133574136111e-9
+    },
+    {
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": 0.37331930663973284,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 21.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.154188125773175e-8
+    },
+    {
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": 0.6880197698792915,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 32.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.2127945270279383e-7
+    },
+    {
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9096798887910226,
+      "layer2Probability": 0.9096798887910226,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.04925772806908e-8
+    },
+    {
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": 0.10113153321474212,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.664918479806545e-9
+    },
+    {
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9120599039526232,
+      "layer2Probability": 0.9120599039526232,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 25.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 8.077867263978078e-10
+    },
+    {
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8956946882226567,
+      "layer2Probability": 0.8956946882226567,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.5161285893405818e-8
+    },
+    {
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.011656008240214875,
+      "layer2Probability": 0.011656008240214875,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.23603444335563e-9
+    },
+    {
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": 0.7041603681535717,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.311867481925468e-7
+    },
+    {
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": 0.4751503849152487,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.737360490529973e-8
+    },
+    {
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04055875667714086,
+      "layer2Probability": 0.04055875667714086,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.004634526240004e-9
+    },
+    {
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03464608791214532,
+      "layer2Probability": 0.03464608791214532,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.242648780379167e-9
+    },
+    {
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004938930799095924,
+      "layer2Probability": 0.004938930799095924,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.6649116918335833e-9
+    },
+    {
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01787733417815729,
+      "layer2Probability": 0.01787733417815729,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.1746105744190345e-9
+    },
+    {
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": 0.4792611740567268,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.9928794836587826e-8
+    },
+    {
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9876870662208088,
+      "layer2Probability": 0.9876870662208088,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 18.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.4924574687213976e-8
+    },
+    {
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04726426948724719,
+      "layer2Probability": 0.04726426948724719,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.1354541503149083e-8
+    },
+    {
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": 0.19712074250161274,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 4.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.441061207145381e-8
+    },
+    {
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.05236795810774658,
+      "layer2Probability": 0.05236795810774658,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.501324508630276e-8
+    },
+    {
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": 0.22343228330701656,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 9.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.9885435950661723e-7
+    },
+    {
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9103756598295426,
+      "layer2Probability": 0.9103756598295426,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 52.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.447252038326411e-8
+    },
+    {
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9139963435322795,
+      "layer2Probability": 0.9139963435322795,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 39.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.687980226236732e-9
+    },
+    {
+      "id": "test:4708",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9547471747087625,
+      "layer2Probability": 0.9547471747087625,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 56.5,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.4301200213526784e-8
+    },
+    {
+      "id": "test:697",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04567369722076956,
+      "layer2Probability": 0.2706484316723518,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 19.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 8.416685425005621e-9
+    },
+    {
+      "id": "test:4915",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.45524692922351323,
+      "layer2Probability": 0.6660821326091391,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.1533978022670865e-7
+    },
+    {
+      "id": "test:129",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9738626153514307,
+      "layer2Probability": 0.9738626153514307,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.694582157403147e-8
+    },
+    {
+      "id": "test:1053",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0041494019853305615,
+      "layer2Probability": 0.0041494019853305615,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 9.720790587405825e-10
+    },
+    {
+      "id": "test:268",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.6190497767758476,
+      "layer2Probability": 0.7382034473941345,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 127.59999996423721,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.035015947565171e-8
+    },
+    {
+      "id": "test:980",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9434633149245271,
+      "layer2Probability": 0.9434633149245271,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 27.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.0575961217895724e-8
+    },
+    {
+      "id": "test:240",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.969986661362865,
+      "layer2Probability": 0.969986661362865,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 54.90000003576279,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.541157953649957e-8
+    },
+    {
+      "id": "test:575",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0006066371592339227,
+      "layer2Probability": 0.0006066371592339227,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.1997938410081574e-12
+    },
+    {
+      "id": "test:3734",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.014946973357981643,
+      "layer2Probability": 0.014946973357981643,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.85726924842911e-9
+    },
+    {
+      "id": "test:92",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.46498789207873875,
+      "layer2Probability": 0.615456055994586,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.0745463902006591e-7
+    },
+    {
+      "id": "test:347",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9704235140163631,
+      "layer2Probability": 0.9704235140163631,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 43.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.594995577951067e-9
+    },
+    {
+      "id": "test:5007",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.4455410494810485,
+      "layer2Probability": 0.2338541345506474,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 10,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.4448226920427132e-7
+    },
+    {
+      "id": "test:1152",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.15936896591205463,
+      "layer2Probability": 0.14164756692227906,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 45.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.8566053956200506e-8
+    },
+    {
+      "id": "test:1310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9347793197436733,
+      "layer2Probability": 0.9347793197436733,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 9.296373559841697e-8
+    },
+    {
+      "id": "test:4825",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0019155850137010997,
+      "layer2Probability": 0.0019155850137010997,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.687919431985155e-10
+    },
+    {
+      "id": "test:4175",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8615156257460241,
+      "layer2Probability": 0.6428521706422995,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 14.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.5466439240441332e-8
+    },
+    {
+      "id": "test:3984",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9490859266964592,
+      "layer2Probability": 0.9490859266964592,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.41549812374231e-8
+    },
+    {
+      "id": "test:5015",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0014904318027519632,
+      "layer2Probability": 0.0014904318027519632,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.4784135866485054e-9
+    },
+    {
+      "id": "test:3876",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.048495948235883934,
+      "layer2Probability": 0.048495948235883934,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.109708808177956e-8
+    },
+    {
+      "id": "test:1477",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3352024695621038,
+      "layer2Probability": 0.38044413808892114,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 15.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.536549323505781e-8
+    },
+    {
+      "id": "test:4360",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0007389575648116456,
+      "layer2Probability": 0.0007389575648116456,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.7228959686872714e-11
+    },
+    {
+      "id": "test:1189",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.02269479292769764,
+      "layer2Probability": 0.02269479292769764,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 9.64243743878379e-9
+    },
+    {
+      "id": "test:339",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.003258627289879977,
+      "layer2Probability": 0.003258627289879977,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 8.4747737560259e-10
+    },
+    {
+      "id": "test:1410",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.031157228582052273,
+      "layer2Probability": 0.031157228582052273,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.936935467022343e-9
+    },
+    {
+      "id": "test:128",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.07414509959427298,
+      "layer2Probability": 0.07414509959427298,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.631768761778396e-8
+    },
+    {
+      "id": "test:682",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.032313677337000475,
+      "layer2Probability": 0.032313677337000475,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.2252499952125628e-8
+    },
+    {
+      "id": "test:95",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9386499116168191,
+      "layer2Probability": 0.9386499116168191,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 26.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.880981226332068e-8
+    },
+    {
+      "id": "test:1440",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03750619242955324,
+      "layer2Probability": 0.18824263300538788,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 100.5,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.0682831973196638e-8
+    },
+    {
+      "id": "test:4982",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007599264265819899,
+      "layer2Probability": 0.007599264265819899,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.607794157173272e-9
+    },
+    {
+      "id": "test:175",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9604088460337765,
+      "layer2Probability": 0.9604088460337765,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 18.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.9232934234689765e-8
+    },
+    {
+      "id": "test:5040",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.013205859530984026,
+      "layer2Probability": 0.013205859530984026,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.791298806675835e-10
+    },
+    {
+      "id": "test:1191",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.035006396638990175,
+      "layer2Probability": 0.035006396638990175,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.5910495984882154e-8
+    },
+    {
+      "id": "test:4929",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.886303078904316,
+      "layer2Probability": 0.886303078904316,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.79076651682675e-8
+    },
+    {
+      "id": "test:313",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9790880554770569,
+      "layer2Probability": 0.9790880554770569,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.2531365944923323e-8
+    },
+    {
+      "id": "test:281",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.06502418703322259,
+      "layer2Probability": 0.06502418703322259,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 6.967301520444114e-8
+    },
+    {
+      "id": "test:4594",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0008404907988576553,
+      "layer2Probability": 0.0008404907988576553,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.4708974056115709e-12
+    },
+    {
+      "id": "test:739",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005197861651973004,
+      "layer2Probability": 0.005197861651973004,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.3514320799587476e-9
+    },
+    {
+      "id": "test:1393",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.029530976227109564,
+      "layer2Probability": 0.029530976227109564,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.4658263793618804e-9
+    },
+    {
+      "id": "test:714",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9573570825312637,
+      "layer2Probability": 0.9573570825312637,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.6061723334969145e-8
+    },
+    {
+      "id": "test:1368",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9919046025451919,
+      "layer2Probability": 0.9919046025451919,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 23.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 1.3810704135863716e-8
+    },
+    {
+      "id": "test:4548",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03811795943433926,
+      "layer2Probability": 0.03811795943433926,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 19.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.6738098408973787e-8
+    },
+    {
+      "id": "test:4951",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.027902055210660772,
+      "layer2Probability": 0.11901246312947923,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 6.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.909014864219353e-9
+    },
+    {
+      "id": "test:4944",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.29840751008625294,
+      "layer2Probability": 0.20871159090764843,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 4.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.466907764319686e-8
+    },
+    {
+      "id": "test:312",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0032023014908214354,
+      "layer2Probability": 0.0032023014908214354,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 7.392396473605845e-10
+    },
+    {
+      "id": "test:4493",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.001770484636939248,
+      "layer2Probability": 0.001770484636939248,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 2.0055390204457013e-9
+    },
+    {
+      "id": "test:1232",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.34543018544182824,
+      "layer2Probability": 0.5767727335345201,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 3,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 9.889745244962e-9
+    },
+    {
+      "id": "test:299",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8883623503065087,
+      "layer2Probability": 0.8883623503065087,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 53.30000001192093,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 5.7377817497261674e-8
+    },
+    {
+      "id": "test:650",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03825702802567001,
+      "layer2Probability": 0.1598686744401102,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 38.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 4.558535102866523e-8
+    },
+    {
+      "id": "test:49",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9368643473162994,
+      "layer2Probability": 0.9368643473162994,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 13.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true,
+      "probabilityDelta": 3.0852828958316536e-8
+    }
+  ],
+  "timingRecords": [
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03821793619900488,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.027138663172997686,
+      "layer2Probability": 0.027138663172997686,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.015031633000359323,
+      "layer2Probability": 0.015031633000359323,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009272611804107251,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 10.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.915357459619243,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 64.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8827774618971453,
+      "layer2Probability": 0.8827774618971453,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 44,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.017868457645037382,
+      "layer2Probability": 0.017868457645037382,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0071795291943197665,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9668139502350073,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 12.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9823536437856274,
+      "layer2Probability": 0.9823536437856274,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01569250025197111,
+      "layer2Probability": 0.01569250025197111,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007594353602820158,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007000178165152316,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005851743953911793,
+      "layer2Probability": 0.005851743953911793,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": 0.3717143782016839,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 11.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005225291019754154,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0018121407736831209,
+      "layer2Probability": 0.0018121407736831209,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9711487193416166,
+      "layer2Probability": 0.9711487193416166,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9140972870989421,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": 0.32119010647364943,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 11.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9264591746414115,
+      "layer2Probability": 0.9264591746414115,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8689808653631211,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9803984704307789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 62.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9306550007773049,
+      "layer2Probability": 0.9306550007773049,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 32.90000003576279,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9758890909392803,
+      "layer2Probability": 0.9758890909392803,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 27.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9910231082311419,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 51.39999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 111.10000002384186,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": 0.3794572755869108,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 96.09999996423721,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0026495851152875337,
+      "layer2Probability": 0.0026495851152875337,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0031617952657534754,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 32.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0064285321210138455,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 13.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004095143399024206,
+      "layer2Probability": 0.004095143399024206,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9101947039906224,
+      "layer2Probability": 0.9101947039906224,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 57,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9655217719627643,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 123.90000003576279,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005521557448032065,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 92.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00506091184468712,
+      "layer2Probability": 0.00506091184468712,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 35.200000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.019108195489244296,
+      "layer2Probability": 0.019108195489244296,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03845466818474581,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 29.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": 0.7575612903005694,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 29.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8388182140594986,
+      "layer2Probability": 0.8388182140594986,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 29.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9065320731197508,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 33.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 142.4000000357628,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": 0.3680898894161023,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 102.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010956637743014006,
+      "layer2Probability": 0.010956637743014006,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00913772895171857,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 28.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": 0.5062264859421995,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 30.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": 0.11606641328338105,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 9.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009144312087449221,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 122.80000001192093,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.020728521968170016,
+      "layer2Probability": 0.020728521968170016,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 54.799999952316284,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.08270089213634993,
+      "layer2Probability": 0.08270089213634993,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04068760231953274,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00781324532226298,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009785044863482606,
+      "layer2Probability": 0.009785044863482606,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": 0.37331930663973284,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 18.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": 0.6880197698792915,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9096798887910226,
+      "layer2Probability": 0.9096798887910226,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9455439134623256,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 3.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": 0.10113153321474212,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 4.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9120599039526232,
+      "layer2Probability": 0.9120599039526232,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 26.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9265460088223354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 64.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.7500673937511658,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8956946882226567,
+      "layer2Probability": 0.8956946882226567,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.011656008240214875,
+      "layer2Probability": 0.011656008240214875,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009998455433252156,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": 0.7041603681535717,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": 0.4751503849152487,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 15.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 17.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.06441276575186126,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04055875667714086,
+      "layer2Probability": 0.04055875667714086,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03464608791214532,
+      "layer2Probability": 0.03464608791214532,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 8,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010323323520302213,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0055904259083301485,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 3.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004938930799095924,
+      "layer2Probability": 0.004938930799095924,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 1.9000000357627869,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01787733417815729,
+      "layer2Probability": 0.01787733417815729,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.008536903341030109,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": 0.4792611740567268,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 6.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9876870662208088,
+      "layer2Probability": 0.9876870662208088,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 23.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9775100360725971,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 52,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04936261817816685,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 10.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04726426948724719,
+      "layer2Probability": 0.04726426948724719,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": 0.19712074250161274,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03403556901956195,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.05236795810774658,
+      "layer2Probability": 0.05236795810774658,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": 0.22343228330701656,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 8.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9449130100094179,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 75.20000004768372,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9103756598295426,
+      "layer2Probability": 0.9103756598295426,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 41.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "adaptive",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9139963435322795,
+      "layer2Probability": 0.9139963435322795,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 40.59999996423721,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 0,
+      "path": "full",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9443141249665162,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 79.39999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.027138663172997686,
+      "layer2Probability": 0.027138663172997686,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03821793619900488,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009272611804107251,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 12.200000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.015031633000359323,
+      "layer2Probability": 0.015031633000359323,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8827774618971453,
+      "layer2Probability": 0.8827774618971453,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 26.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.915357459619243,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 63.39999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0071795291943197665,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.017868457645037382,
+      "layer2Probability": 0.017868457645037382,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9823536437856274,
+      "layer2Probability": 0.9823536437856274,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9668139502350073,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 13.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007594353602820158,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 12.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01569250025197111,
+      "layer2Probability": 0.01569250025197111,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005851743953911793,
+      "layer2Probability": 0.005851743953911793,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007000178165152316,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": 0.3717143782016839,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0018121407736831209,
+      "layer2Probability": 0.0018121407736831209,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005225291019754154,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9140972870989421,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 10.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9711487193416166,
+      "layer2Probability": 0.9711487193416166,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": 0.32119010647364943,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 16.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 16.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8689808653631211,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9264591746414115,
+      "layer2Probability": 0.9264591746414115,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9306550007773049,
+      "layer2Probability": 0.9306550007773049,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 29.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9803984704307789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 71.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9910231082311419,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 59.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9758890909392803,
+      "layer2Probability": 0.9758890909392803,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 16.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": 0.3794572755869108,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 90.80000001192093,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 97.40000003576279,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0031617952657534754,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0026495851152875337,
+      "layer2Probability": 0.0026495851152875337,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004095143399024206,
+      "layer2Probability": 0.004095143399024206,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0064285321210138455,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 12,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9655217719627643,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 83.59999996423721,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9101947039906224,
+      "layer2Probability": 0.9101947039906224,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 37.5,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00506091184468712,
+      "layer2Probability": 0.00506091184468712,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 32.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005521557448032065,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 55.40000003576279,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03845466818474581,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.019108195489244296,
+      "layer2Probability": 0.019108195489244296,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": 0.7575612903005694,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 15.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 14.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9065320731197508,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 18.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8388182140594986,
+      "layer2Probability": 0.8388182140594986,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 9,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": 0.3680898894161023,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 88.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 105.90000003576279,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00913772895171857,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010956637743014006,
+      "layer2Probability": 0.010956637743014006,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": 0.5062264859421995,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 45.09999996423721,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 44.10000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": 0.11606641328338105,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 6.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.020728521968170016,
+      "layer2Probability": 0.020728521968170016,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 57.69999998807907,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009144312087449221,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 109.59999996423721,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04068760231953274,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.08270089213634993,
+      "layer2Probability": 0.08270089213634993,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009785044863482606,
+      "layer2Probability": 0.009785044863482606,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 6.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00781324532226298,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 12.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 19.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": 0.37331930663973284,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 24.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": 0.6880197698792915,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 22.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 19.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9455439134623256,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9096798887910226,
+      "layer2Probability": 0.9096798887910226,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": 0.10113153321474212,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9265460088223354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 69.90000003576279,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9120599039526232,
+      "layer2Probability": 0.9120599039526232,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 26.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8956946882226567,
+      "layer2Probability": 0.8956946882226567,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.7500673937511658,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 4.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009998455433252156,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.011656008240214875,
+      "layer2Probability": 0.011656008240214875,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": 0.7041603681535717,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 17.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": 0.4751503849152487,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 17.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04055875667714086,
+      "layer2Probability": 0.04055875667714086,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.06441276575186126,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010323323520302213,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03464608791214532,
+      "layer2Probability": 0.03464608791214532,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004938930799095924,
+      "layer2Probability": 0.004938930799095924,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 1.5999999642372131,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0055904259083301485,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 2.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.008536903341030109,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01787733417815729,
+      "layer2Probability": 0.01787733417815729,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": 0.4792611740567268,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9775100360725971,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 43.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9876870662208088,
+      "layer2Probability": 0.9876870662208088,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 19.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04726426948724719,
+      "layer2Probability": 0.04726426948724719,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04936261817816685,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": 0.19712074250161274,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 4.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.05236795810774658,
+      "layer2Probability": 0.05236795810774658,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03403556901956195,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": 0.22343228330701656,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9103756598295426,
+      "layer2Probability": 0.9103756598295426,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 38,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9449130100094179,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 68.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9443141249665162,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 68.39999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 1,
+      "path": "adaptive",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9139963435322795,
+      "layer2Probability": 0.9139963435322795,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 33.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03821793619900488,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 4.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:3995",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.027138663172997686,
+      "layer2Probability": 0.027138663172997686,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 1.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.015031633000359323,
+      "layer2Probability": 0.015031633000359323,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:875",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009272611804107251,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.200000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.915357459619243,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 39.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4138",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8827774618971453,
+      "layer2Probability": 0.8827774618971453,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 29.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.017868457645037382,
+      "layer2Probability": 0.017868457645037382,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1033",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0071795291943197665,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9668139502350073,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:289",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9823536437856274,
+      "layer2Probability": 0.9823536437856274,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01569250025197111,
+      "layer2Probability": 0.01569250025197111,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:3750",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007594353602820158,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 16.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.007000178165152316,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:387",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005851743953911793,
+      "layer2Probability": 0.005851743953911793,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": 0.3717143782016839,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 17.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:260",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.3532331816671833,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 16.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005225291019754154,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:420",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0018121407736831209,
+      "layer2Probability": 0.0018121407736831209,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.799999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9711487193416166,
+      "layer2Probability": 0.9711487193416166,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:198",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9140972870989421,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 13.399999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:563",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.33275513259479556,
+      "layer2Probability": 0.32119010647364943,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 12.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9264591746414115,
+      "layer2Probability": 0.9264591746414115,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:996",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8689808653631211,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 11.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9803984704307789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 71.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:418",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9306550007773049,
+      "layer2Probability": 0.9306550007773049,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 40.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9758890909392803,
+      "layer2Probability": 0.9758890909392803,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 24.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:907",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9910231082311419,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 48.69999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 133,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:275",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2014227042580582,
+      "layer2Probability": 0.3794572755869108,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 113.39999997615814,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0026495851152875337,
+      "layer2Probability": 0.0026495851152875337,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 7.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:3958",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0031617952657534754,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0064285321210138455,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 17.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:3786",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004095143399024206,
+      "layer2Probability": 0.004095143399024206,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 9.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9101947039906224,
+      "layer2Probability": 0.9101947039906224,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 60.90000003576279,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:310",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9655217719627643,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 114.39999997615814,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.005521557448032065,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 92,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4115",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00506091184468712,
+      "layer2Probability": 0.00506091184468712,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 33.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.019108195489244296,
+      "layer2Probability": 0.019108195489244296,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:664",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03845466818474581,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.100000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 18.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:302",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9338056893727789,
+      "layer2Probability": 0.7575612903005694,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 15,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8388182140594986,
+      "layer2Probability": 0.8388182140594986,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 10.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:127",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9065320731197508,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 23.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 127.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:824",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04229068900440775,
+      "layer2Probability": 0.3680898894161023,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 119.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010956637743014006,
+      "layer2Probability": 0.010956637743014006,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4302",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00913772895171857,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 43.60000002384186,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1294",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.22180887985534967,
+      "layer2Probability": 0.5062264859421995,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 42,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": 0.11606641328338105,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 10.699999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4564",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.023279972682463623,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009144312087449221,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 114.30000001192093,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:5034",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.020728521968170016,
+      "layer2Probability": 0.020728521968170016,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 61.80000001192093,
+      "truncated": true,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.08270089213634993,
+      "layer2Probability": 0.08270089213634993,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4760",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04068760231953274,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.00781324532226298,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 9,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:761",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009785044863482606,
+      "layer2Probability": 0.009785044863482606,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": 0.37331930663973284,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 22.099999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:473",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.21182546213277786,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 39.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 21.299999952316284,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:475",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8635323068339571,
+      "layer2Probability": 0.6880197698792915,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 23.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9096798887910226,
+      "layer2Probability": 0.9096798887910226,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 4.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:152",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9455439134623256,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.900000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.600000023841858,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4717",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03073186048788601,
+      "layer2Probability": 0.10113153321474212,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 5.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9120599039526232,
+      "layer2Probability": 0.9120599039526232,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 21,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:598",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9265460088223354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 44.59999996423721,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.7500673937511658,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1353",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.8956946882226567,
+      "layer2Probability": 0.8956946882226567,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.011656008240214875,
+      "layer2Probability": 0.011656008240214875,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1119",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.009998455433252156,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:205",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.2697394456629985,
+      "layer2Probability": 0.7041603681535717,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": 0.4751503849152487,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 15.400000035762787,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:549",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11551854747384535,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 18.80000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.06441276575186126,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:596",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04055875667714086,
+      "layer2Probability": 0.04055875667714086,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03464608791214532,
+      "layer2Probability": 0.03464608791214532,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 8.199999988079071,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4007",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.010323323520302213,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 15.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.0055904259083301485,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 5.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:5044",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.004938930799095924,
+      "layer2Probability": 0.004938930799095924,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 2.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.01787733417815729,
+      "layer2Probability": 0.01787733417815729,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.700000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:5075",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.008536903341030109,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 7.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1428",
+      "expected": 0,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.42533220853505704,
+      "layer2Probability": 0.4792611740567268,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 7.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9876870662208088,
+      "layer2Probability": 0.9876870662208088,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 25.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:248",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9775100360725971,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 46.09999996423721,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04936261817816685,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 6.899999976158142,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:79",
+      "expected": 1,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.04726426948724719,
+      "layer2Probability": 0.04726426948724719,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.200000047683716,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": 0.19712074250161274,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 3.300000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:1188",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.30523913579336354,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 3.5,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.03403556901956195,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 4,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4518",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.05236795810774658,
+      "layer2Probability": 0.05236795810774658,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 3.800000011920929,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": 0.22343228330701656,
+      "depth": 4,
+      "calls": [
+        "prefix",
+        "suffix"
+      ],
+      "ms": 8.599999964237213,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:4081",
+      "expected": 0,
+      "prediction": 0,
+      "label": "SAFE",
+      "probability": 0.11705357350245368,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 8,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9449130100094179,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 110.30000001192093,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:894",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9103756598295426,
+      "layer2Probability": 0.9103756598295426,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 42.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "adaptive",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9139963435322795,
+      "layer2Probability": 0.9139963435322795,
+      "depth": 2,
+      "calls": [
+        "prefix"
+      ],
+      "ms": 31.19999998807907,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    },
+    {
+      "repeat": 2,
+      "path": "full",
+      "id": "test:113",
+      "expected": 1,
+      "prediction": 1,
+      "label": "BLOCK",
+      "probability": 0.9443141249665162,
+      "layer2Probability": null,
+      "depth": 4,
+      "calls": [
+        "full"
+      ],
+      "ms": 61.89999997615814,
+      "truncated": false,
+      "tokenizerMatch": true,
+      "matchesPython": true
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+  "limitations": [
+    "Consumed balanced sample; not fresh quality validation.",
+    "Paired request timings include tokenization, graph calls, boundary transfer, classifier and cleanup; setup and dataset download excluded.",
+    "One WASM thread, same trained weights; full control uses one unsplit graph.",
+    "Browser timing is device-specific; 100 quality messages differ in count from 50 timed messages."
+  ],
+  "validation": {
+    "sourceSha256": "61fdc8f9ff5485bf9b6c38b670478dca29ad2728ca3a979c232e32d39d8d0949",
+    "workerSha256": "076e0a47e9a075fbd1ecadab0a29e5705d9fe91fe416d7ca721a717937258ce5",
+    "uiSha256": "a081a175545e5a025bc420a4ba832882745259bea711fae55e66f0057bd590e6",
+    "manifestSha256": "af8397338d367c9ec0b915a6e9b5666632ace1d8dba6a24af34558afc73f4a8b",
+    "isolated": false,
+    "threads": 1,
+    "qualityN": 100,
+    "timingN": 50,
+    "passes": 3,
+    "scope": "Runtime parity on consumed100. Three paired counterbalanced timing passes on first50; all graph boundary overhead included. CPU jobs may overlap unless isolated flag was explicitly supplied.",
+    "browserVersion": "151.0.7922.34",
+    "timestamp": "2026-09-20T04:38:10.407Z"
+  }
+}

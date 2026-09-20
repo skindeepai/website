@@ -1,0 +1,45 @@
+{
+  "scope": "Actual Chromium UI,all30 recorded image coordinates,800 synthetic model decisions and local upload;not new model-quality holdout",
+  "checks": [
+    {
+      "page": "screenshot-demo.html",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "screenshot-demo.html",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "screenshot-demo.html",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "image-action-demo.html",
+      "width": 320,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "image-action-demo.html",
+      "width": 390,
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "image-action-demo.html",
+      "width": 1440,
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "coordinate_display_tolerance_percent": 0.001,
+  "synthetic_test_output": "New filled arrows: trained model 393 / 400; simple templates 130 / 400.\n\nUnseen outline style: trained model 349 / 400; simple templates 126 / 400.\n\nYour browser matched the saved model decisions on 800 / 800 cards. These are synthetic images, not real-screen accuracy.",
+  "upload": "Canonical right arrow correctly classified from uploaded PNG canvas pixels",
+  "errors": []
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-20T03:44:03.772774+00:00",
+  "queries": 100,
+  "candidates": 5183,
+  "train_queries": 600,
+  "development_queries": 209,
+  "training_pairs": 20454,
+  "positive_pairs": 671,
+  "selected_C": 0.1,
+  "metrics": {
+    "hit@1": 0.59,
+    "recall@5": 0.7516666666666666,
+    "ndcg@10": 0.7001417445878337,
+    "mrr@10": 0.6664166666666668,
+    "correct_first": 59
+  },
+  "timing": null,
+  "baseline_metrics": {
+    "bm25": {
+      "hit@1": 0.55,
+      "recall@5": 0.7266666666666666,
+      "ndcg@10": 0.6652053009879162,
+      "mrr@10": 0.629718253968254,
+      "correct_first": 55
+    },
+    "minilm": {
+      "hit@1": 0.47,
+      "recall@5": 0.695,
+      "ndcg@10": 0.6193909351872506,
+      "mrr@10": 0.5747857142857142,
+      "correct_first": 47
+    },
+    "hybrid": {
+      "hit@1": 0.54,
+      "recall@5": 0.76,
+      "ndcg@10": 0.6838734762370591,
+      "mrr@10": 0.6412896825396825,
+      "correct_first": 54
+    }
+  },
+  "sklearn_version": "1.8.0",
+  "model_sha256": "e8589d2d6c38b30da75ce45bdfe194e50a60904fcdd5bc60e3eb00537a712ad7",
+  "protocol_sha256": "a20aa7db12c9d48eacf668220030d4094c11635ccce5462530bc9ed0e940d448",
+  "scope": "Exploratory learned fusion after observing the first pilot; same frozen 100 test queries reused."
+}

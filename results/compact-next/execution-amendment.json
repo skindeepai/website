@@ -1,0 +1,9 @@
+{
+  "reason": "Run six independent candidates concurrently to reduce wall time within total16 CPUthreads. Original serial attempt stopped during first candidate, before fresh evaluation. Its selected partial checkpoint retained in ignored cache serial-attempt.",
+  "original_protocol_sha256": "6883bb22bad7de36e6e8240af4f5888944e5a6253381336c18c68e160f930f77",
+  "wrapper_sha256": "e15a2f38c399de5d7a8a5b0569561f71d6154a0bab72e7e009876373abd23dc1",
+  "method_changes": [],
+  "threads_per_candidate": 2,
+  "maximum_candidate_processes": 6,
+  "other_work_budget": 4
+}

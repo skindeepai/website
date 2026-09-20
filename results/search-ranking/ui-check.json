@@ -1,0 +1,60 @@
+{
+  "scope": "Nine real keyword/ready/expanded UI states; no model inference.",
+  "checks": [
+    {
+      "width": 320,
+      "state": "ready",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "state": "keyword",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "ready",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "keyword",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "ready",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "keyword",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

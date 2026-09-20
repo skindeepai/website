@@ -1,0 +1,5 @@
+Original, unmodified OSWorld-G screenshot 2XIa0KyxIh.png.
+Source: https://github.com/xlang-ai/OSWorld-G/blob/daa6bd8e0e629f0917ad2984df930bf0bd967540/benchmark/images/2XIa0KyxIh.png
+Authors: Xie et al., Scaling Computer-Use Grounding via User Interface Decomposition and Synthesis.
+Repository license: Apache-2.0 (LICENSE.OSWorld-G). Depicted third-party application and content rights remain with their owners.
+SHA-256: b3cf632988dd9bc309d8e44a050f90543913d8e9da7cb03636e56c40b2386f64

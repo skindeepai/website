@@ -1,0 +1,217 @@
+{
+  "preferences.html": {
+    "target": "demo.html",
+    "label": "Teach the model your preferences",
+    "note": ""
+  },
+  "how-it-works.html": {
+    "target": "demo.html",
+    "label": "Teach the model your preferences",
+    "note": ""
+  },
+  "preference-results.html": {
+    "target": "demo.html",
+    "label": "Teach the model your preferences",
+    "note": ""
+  },
+  "active-learning-strategies.html": {
+    "target": "preference-method-demo.html",
+    "label": "Compare how examples are chosen",
+    "note": "Live random versus least-certain sampling from your ratings."
+  },
+  "multi-modal-preferences-deep-dive.html": {
+    "target": "preference-method-demo.html",
+    "label": "Teach two different styles",
+    "note": "Live linear versus nonlinear preference learning; this illustrates separated preferences without a generator mixture."
+  },
+  "examples/art.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "examples/music.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "examples/social-media.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "examples/dating.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "examples/science.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "examples/index.html": {
+    "target": "demo.html",
+    "label": "Try the underlying preference-learning loop",
+    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
+  },
+  "decisions.html": {
+    "target": "moderation-benchmark.html",
+    "label": "Run Qwen on real messages",
+    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+  },
+  "chat-results.html": {
+    "target": "moderation-benchmark.html",
+    "label": "Run Qwen on real messages",
+    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+  },
+  "decision-checks.html": {
+    "target": "moderation-benchmark.html",
+    "label": "Run Qwen on real messages",
+    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+  },
+  "adaptive.html": {
+    "target": "shared-decision-demo.html",
+    "label": "Run early stopping on your device",
+    "note": "Live two/four-layer BERT with shared computation."
+  },
+  "shared-model-results.html": {
+    "target": "shared-decision-demo.html",
+    "label": "Run early stopping on your device",
+    "note": "Live two/four-layer BERT with shared computation."
+  },
+  "fresh-message-results.html": {
+    "target": "shared-decision-demo.html",
+    "label": "Run early stopping on your device",
+    "note": "Live two/four-layer BERT with shared computation."
+  },
+  "decision-results.html": {
+    "target": "method-demo.html",
+    "label": "Compare the methods live",
+    "note": "Browser BERT comparisons; the recorded Qwen results remain separate."
+  },
+  "depth-results.html": {
+    "target": "method-demo.html?method=fixed",
+    "label": "Try stopping at a fixed layer",
+    "note": "Live layer-2 versus layer-4 BERT; not a replication of the Qwen depths below."
+  },
+  "early-exit-results.html": {
+    "target": "method-demo.html?method=adaptive",
+    "label": "Try the stop-or-continue check",
+    "note": "Live BERT checks layer 2 of 4. The Qwen multi-checkpoint experiment below is separate."
+  },
+  "shared-qwen-results.html": {
+    "target": "method-demo.html?method=adaptive",
+    "label": "Try the stop-or-continue check",
+    "note": "Live BERT checks layer 2 of 4. The Qwen multi-checkpoint experiment below is separate."
+  },
+  "cascade-results.html": {
+    "target": "method-demo.html?method=cascade",
+    "label": "Run a two-model fallback",
+    "note": "This uses tiny BERT \u2192 larger BERT. It is a new pairing, not the measured tiny \u2192 Qwen cascade."
+  },
+  "cascade-test-results.html": {
+    "target": "method-demo.html?method=cascade",
+    "label": "Run a two-model fallback",
+    "note": "This uses tiny BERT \u2192 larger BERT. It is a new pairing, not the measured tiny \u2192 Qwen cascade."
+  },
+  "training-results.html": {
+    "target": "method-demo.html?method=training",
+    "label": "Compare the trained models",
+    "note": "Runs earlier and updated BERT weights. Training happened offline; this is not browser distillation."
+  },
+  "quantization-results.html": {
+    "target": "method-demo.html?method=quantization",
+    "label": "Compare float32 and INT8",
+    "note": "Live conversion of BERT. The Qwen conversion investigated below is a separate experiment."
+  },
+  "prefix-results.html": {
+    "target": "execution-demo.html?method=prefix",
+    "label": "Run this comparison with Qwen",
+    "note": "Live q4 Qwen with vocabulary scores and a 64-token message limit; it differs from the trained Python benchmark below."
+  },
+  "batch-results.html": {
+    "target": "execution-demo.html?method=batch",
+    "label": "Run this comparison with Qwen",
+    "note": "Live q4 Qwen with vocabulary scores and a 64-token message limit; it differs from the trained Python benchmark below."
+  },
+  "combined-results.html": {
+    "target": "execution-demo.html?method=combined",
+    "label": "Run this comparison with Qwen",
+    "note": "Live q4 Qwen with vocabulary scores and a 64-token message limit; it differs from the trained Python benchmark below."
+  },
+  "routing-results.html": {
+    "target": "practical-demo.html?task=routing",
+    "label": "Route your own request",
+    "note": ""
+  },
+  "redaction-results.html": {
+    "target": "practical-demo.html?task=privacy",
+    "label": "Try the name detector",
+    "note": ""
+  },
+  "receipt-results.html": {
+    "target": "practical-demo.html?task=receipts",
+    "label": "Try a receipt total",
+    "note": ""
+  },
+  "maze-results.html": {
+    "target": "maze-live.html",
+    "label": "Run the trained maze policy",
+    "note": "Live small neural policy; earlier Qwen recordings remain labelled separately."
+  },
+  "maze-benchmark.html": {
+    "target": "maze-live.html",
+    "label": "Run the trained maze policy",
+    "note": "Live small neural policy; earlier Qwen recordings remain labelled separately."
+  },
+  "coordinates.html": {
+    "target": "point-demo.html",
+    "label": "Find a point in your own screenshot",
+    "note": "Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings."
+  },
+  "coordinate-results.html": {
+    "target": "point-demo.html",
+    "label": "Find a point in your own screenshot",
+    "note": "Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings."
+  },
+  "visual-refusal-results.html": {
+    "target": "point-demo.html",
+    "label": "Find a point in your own screenshot",
+    "note": "Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings."
+  },
+  "coordinate-lab.html": {
+    "target": "point-demo.html",
+    "label": "Find a point in your own screenshot",
+    "note": "Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings."
+  },
+  "screenshot-demo.html": {
+    "target": "point-demo.html",
+    "label": "Find a point in your own screenshot",
+    "note": "Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings."
+  },
+  "search-next-results.html": {
+    "target": "rerank-demo.html",
+    "label": "Try the actual reranker",
+    "note": ""
+  },
+  "getting-started.html": {
+    "target": "demo-directory.html",
+    "label": "Choose a live demo",
+    "note": ""
+  },
+  "results.html": {
+    "target": "demo-directory.html",
+    "label": "Choose a live demo",
+    "note": ""
+  },
+  "future-explorations.html": {
+    "target": "demo-directory.html",
+    "label": "Choose a live demo",
+    "note": ""
+  },
+  "roadmap.html": {
+    "target": "demo-directory.html",
+    "label": "Choose a live demo",
+    "note": ""
+  }
+}

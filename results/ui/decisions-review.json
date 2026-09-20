@@ -1,0 +1,20 @@
+{
+  "kind": "Current decisions page visual and navigation checks",
+  "checks": [
+    {
+      "width": 390,
+      "orderToSupport": true,
+      "visibleBenchmarkLink": "Run 100 real moderation messages in your browser",
+      "insideCollapsedDetails": false,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "orderToSupport": true,
+      "visibleBenchmarkLink": "Run 100 real moderation messages in your browser",
+      "insideCollapsedDetails": false,
+      "overflow": false
+    }
+  ],
+  "visuallyReviewed": true
+}

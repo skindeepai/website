@@ -1,0 +1,23 @@
+{
+  "protocol_sha256": "4c0863981defd63e1ec3302865f8ea81f9a640dc48ddf0825a712c998396966f",
+  "qwen": {
+    "n": 500,
+    "correct": 435,
+    "true_block": 13,
+    "missed_toxic": 5,
+    "true_safe": 422,
+    "false_block": 60,
+    "accuracy": 0.87,
+    "balanced_accuracy": 0.7988704472106962
+  },
+  "always_safe": {
+    "n": 500,
+    "correct": 482,
+    "true_block": 0,
+    "missed_toxic": 18,
+    "true_safe": 482,
+    "false_block": 0,
+    "accuracy": 0.964,
+    "balanced_accuracy": 0.5
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "viewport": 320,
+      "document": 320
+    },
+    {
+      "viewport": 375,
+      "document": 375
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 900,
+      "document": 900
+    },
+    {
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "viewport": 1440,
+      "document": 1440
+    }
+  ],
+  "errors": [],
+  "benchmarkRows": 100,
+  "typedMessageWorked": true,
+  "allParityPassed": true,
+  "browser": "151.0.7922.34"
+}

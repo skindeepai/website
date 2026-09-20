@@ -1,0 +1,130 @@
+[
+  {
+    "id": "test:1227",
+    "depth": 6,
+    "label": 0,
+    "prediction": 1,
+    "probabilities": [
+      0.44969800114631653,
+      0.5503020286560059
+    ],
+    "cached_probability_max_abs_delta": 5.960464477539063e-08,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "blocks_skipped": 18,
+    "ms": 107.74209996452555,
+    "input_tokens": 65,
+    "message_was_truncated": false
+  },
+  {
+    "id": "test:1227",
+    "depth": 12,
+    "label": 0,
+    "prediction": 0,
+    "probabilities": [
+      0.9579282402992249,
+      0.04207177460193634
+    ],
+    "cached_probability_max_abs_delta": 2.60770320892334e-08,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "blocks_skipped": 12,
+    "ms": 197.93369999388233,
+    "input_tokens": 65,
+    "message_was_truncated": false
+  },
+  {
+    "id": "test:1227",
+    "depth": 18,
+    "label": 0,
+    "prediction": 0,
+    "probabilities": [
+      0.9683818817138672,
+      0.031618066132068634
+    ],
+    "cached_probability_max_abs_delta": 1.1920928955078125e-07,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "blocks_skipped": 6,
+    "ms": 346.4959000120871,
+    "input_tokens": 65,
+    "message_was_truncated": false
+  },
+  {
+    "id": "test:1227",
+    "depth": 24,
+    "label": 0,
+    "prediction": 0,
+    "probabilities": [
+      0.96885085105896,
+      0.031149182468652725
+    ],
+    "cached_probability_max_abs_delta": 0.0,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "blocks_skipped": 0,
+    "ms": 412.2653999947943,
+    "input_tokens": 65,
+    "message_was_truncated": false
+  }
+]

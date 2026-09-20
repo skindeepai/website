@@ -1,0 +1,9 @@
+{
+  "source_sha256": "c3baf54f9d2c6b57a77f491c75cad55f94b01af4a01a1575a936a2bb21e3dc1c",
+  "worker_sha256": "853053da1569f1bfa23eec2b158a387806900de7f1a309a54e9ed0a7efc071a3",
+  "stage": "Wait for first valid typed-message prediction",
+  "error": "Playwright180000ms timeout; previous invalid-input/no-download assertion passed. Worker status was not captured by first harness.",
+  "result": "No completed benchmark or timing claim.",
+  "diagnosis": "Local setup result variable shadowed setup() function, causing temporal-dead-zone ReferenceError before downloading.",
+  "correction": "Rename local accounting object to setupInfo; no inference algorithm change."
+}

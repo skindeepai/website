@@ -1,0 +1,30 @@
+{
+  "status": "passed with explicitly reported INT8 runtime divergence",
+  "calls": 2400,
+  "nonquantized_predictions_and_routes_match": true,
+  "batch_graph_counts_match": true,
+  "repeat_parity": true,
+  "int8_browser_python_differences": [
+    {
+      "id": "test:1152",
+      "repeat": 0,
+      "browser": 0,
+      "python": 1
+    },
+    {
+      "id": "test:1152",
+      "repeat": 1,
+      "browser": 0,
+      "python": 1
+    }
+  ],
+  "interpretation": "Original test required all CPU/WASM labels identical and stopped at the first INT8 difference. The retained complete browser INT8 outputs match the browser float32 labels on this100, but differ from Python INT8 on one message per pass. Not a lossless quantization guarantee.",
+  "artifact_sha256": {
+    "results/browser-demos/first/method-adaptive.json": "7e98052f9e9d34a1ead041e61a471605ad7fb05d3119fde72525c0a1962165c3",
+    "results/browser-demos/first/method-batch.json": "796d298e9a9c5f05f46b86784061e517dc6e47270b4eb528ff00568fc06c73a7",
+    "results/browser-demos/first/method-cascade.json": "cbb80e49d2984785352a6430e9a296e0d88c05829451e6643542fb30e33d9b19",
+    "results/browser-demos/first/method-fixed.json": "4bb006510bfba45b4faf9175c404ffa00e4e8be624314d5c50b95b84c3ba82e8",
+    "results/browser-demos/first/method-quantization.json": "70e0572a4fddaa9173f5696751d6fea56f969d541af36abb92777130c2be3a13",
+    "results/browser-demos/first/method-training.json": "331023acd84f4cb42a80fdb33ad045932269ba1bfd8b722657a9db2350469ad7"
+  }
+}

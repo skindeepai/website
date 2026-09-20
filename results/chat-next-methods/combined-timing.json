@@ -1,0 +1,40 @@
+{
+  "n": 50,
+  "passes": 2,
+  "paths": {
+    "full_b1": {
+      "seconds": [
+        31.419006799987983,
+        31.552987000031862
+      ],
+      "all_equivalent": true,
+      "mean_seconds": 31.485996900009923
+    },
+    "full_b4": {
+      "seconds": [
+        28.11829209997086,
+        29.59658270003274
+      ],
+      "all_equivalent": true,
+      "mean_seconds": 28.8574374000018
+    },
+    "prefix_b1": {
+      "seconds": [
+        20.58447060000617,
+        20.38396050001029
+      ],
+      "all_equivalent": true,
+      "mean_seconds": 20.48421555000823
+    },
+    "prefix_b4": {
+      "seconds": [
+        17.711120799998753,
+        18.268077399989124
+      ],
+      "all_equivalent": true,
+      "mean_seconds": 17.98959909999394
+    }
+  },
+  "protocol_sha256": "637f865b3de5f85761f8fcdb5cac39c1abf3a609e66bafe0c2d8c95f45aa3ab0",
+  "scope": "Queued50-message execution diagnostic; all preprocessing/cachecopies/prefill included; no layer skipping."
+}

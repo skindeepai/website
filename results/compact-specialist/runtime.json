@@ -1,0 +1,47 @@
+{
+  "n": 50,
+  "passes": 3,
+  "paths": {
+    "full": {
+      "seconds": [
+        0.4818041000980884,
+        0.4701192000648007,
+        0.5224750999477692
+      ],
+      "correct": 41,
+      "exits": {
+        "2": 0,
+        "4": 50
+      },
+      "mean_depth": 4.0
+    },
+    "layer2": {
+      "seconds": [
+        0.2796555999084376,
+        0.26919669995550066,
+        0.2925064999726601
+      ],
+      "correct": 39,
+      "exits": {
+        "2": 50,
+        "4": 0
+      },
+      "mean_depth": 2.0
+    },
+    "adaptive": {
+      "seconds": [
+        0.33173699997132644,
+        0.3296347997384146,
+        0.36957710003480315
+      ],
+      "correct": 41,
+      "exits": {
+        "2": 35,
+        "4": 15
+      },
+      "mean_depth": 2.6
+    }
+  },
+  "all_prediction_and_layer_checks_passed": true,
+  "protocol_sha256": "4dd6bcad7b5de592aba5715b62f47c9315d59d82a9557d763b7c5fcd8546e2ef"
+}

@@ -1,0 +1,19 @@
+{
+  "features": [
+    "bm25_div_query_max",
+    "minilm_cosine",
+    "60_div_60_plus_bm25_rank",
+    "60_div_60_plus_dense_rank",
+    "normalized_bm25_times_cosine"
+  ],
+  "coefficients": [
+    3.851949215171616,
+    1.864364092924375,
+    -2.5572915523807986,
+    0.3333171608075264,
+    4.838636702290173
+  ],
+  "intercept": -2.9286307531618747,
+  "C": 0.1,
+  "ranking_only": true
+}

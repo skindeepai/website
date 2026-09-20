@@ -1,0 +1,1702 @@
+[
+  {
+    "held_out_platform": "android",
+    "method": "peak_gate",
+    "train_ids": [
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566
+    ],
+    "chosen": {
+      "threshold": 0.2901214361190796,
+      "accepted": 5,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.04963619448244572,
+        "accepted": 23,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.059506773948669434,
+        "accepted": 22,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.07572391256690025,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.08998078852891922,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.09875405207276344,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.10262087360024452,
+        "accepted": 18,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.1040717177093029,
+        "accepted": 17,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.11784345284104347,
+        "accepted": 16,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.1374526545405388,
+        "accepted": 15,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.14920221269130707,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.16076844930648804,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.1680217832326889,
+        "accepted": 12,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.16972994059324265,
+        "accepted": 11,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.17540138959884644,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.1976538524031639,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.23428578674793243,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2572691887617111,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.26754559576511383,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2901214361190796,
+        "accepted": 5,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.315558522939682,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3322455883026123,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3517952114343643,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.38466353714466095,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 2,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "android",
+    "method": "relative_peak_gate",
+    "train_ids": [
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566
+    ],
+    "chosen": {
+      "threshold": 165.87591916322708,
+      "accepted": 5,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 27.7962689101696,
+        "accepted": 23,
+        "wrong": 4
+      },
+      {
+        "threshold": 32.381982281804085,
+        "accepted": 22,
+        "wrong": 4
+      },
+      {
+        "threshold": 41.463579908013344,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 51.155529379844666,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 56.14866294711828,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 57.85827507823706,
+        "accepted": 18,
+        "wrong": 3
+      },
+      {
+        "threshold": 59.109623193740845,
+        "accepted": 17,
+        "wrong": 3
+      },
+      {
+        "threshold": 66.51131498813629,
+        "accepted": 16,
+        "wrong": 3
+      },
+      {
+        "threshold": 78.1242243051529,
+        "accepted": 15,
+        "wrong": 3
+      },
+      {
+        "threshold": 85.94047451019287,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 91.85319948196411,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 95.42799615859985,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 97.1613221168518,
+        "accepted": 11,
+        "wrong": 1
+      },
+      {
+        "threshold": 100.21934743970633,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 112.06973431259394,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 132.660250172019,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 144.79583713412285,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 150.80235081911087,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 165.87591916322708,
+        "accepted": 5,
+        "wrong": 0
+      },
+      {
+        "threshold": 181.1115039587021,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 188.00814521312714,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 199.91893339157104,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 221.5661973953247,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 577,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "ios",
+    "method": "peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      340,
+      611,
+      818,
+      827,
+      356,
+      343
+    ],
+    "chosen": {
+      "threshold": 0.2901214361190796,
+      "accepted": 4,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 5
+      },
+      {
+        "threshold": 0.0547813605517149,
+        "accepted": 23,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.06552881374955177,
+        "accepted": 22,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.06669159978628159,
+        "accepted": 21,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.07019898667931557,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.08445586264133453,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.09875405207276344,
+        "accepted": 18,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.10262087360024452,
+        "accepted": 17,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.1040717177093029,
+        "accepted": 16,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.10996563360095024,
+        "accepted": 15,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.11789678409695625,
+        "accepted": 14,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.13216416910290718,
+        "accepted": 13,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.14920221269130707,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.16076844930648804,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.16868285089731216,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.17540138959884644,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.1976538524031639,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.23428578674793243,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2572691887617111,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.26754559576511383,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2901214361190796,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.315558522939682,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3446522504091263,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.38466353714466095,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 2,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "ios",
+    "method": "relative_peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      340,
+      611,
+      818,
+      827,
+      356,
+      343
+    ],
+    "chosen": {
+      "threshold": 165.87591916322708,
+      "accepted": 4,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 5
+      },
+      {
+        "threshold": 30.38691096007824,
+        "accepted": 23,
+        "wrong": 4
+      },
+      {
+        "threshold": 36.07947386801243,
+        "accepted": 22,
+        "wrong": 3
+      },
+      {
+        "threshold": 36.69613569974899,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 38.986283242702484,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 48.06157088279724,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 56.14866294711828,
+        "accepted": 18,
+        "wrong": 3
+      },
+      {
+        "threshold": 57.85827507823706,
+        "accepted": 17,
+        "wrong": 3
+      },
+      {
+        "threshold": 59.109623193740845,
+        "accepted": 16,
+        "wrong": 3
+      },
+      {
+        "threshold": 62.09973621368408,
+        "accepted": 15,
+        "wrong": 3
+      },
+      {
+        "threshold": 66.0221990942955,
+        "accepted": 14,
+        "wrong": 3
+      },
+      {
+        "threshold": 75.1626724600792,
+        "accepted": 13,
+        "wrong": 3
+      },
+      {
+        "threshold": 85.94047451019287,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 92.60262680053711,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 97.1613221168518,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 100.21934743970633,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 112.06973431259394,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 132.660250172019,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 144.79583713412285,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 150.80235081911087,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 165.87591916322708,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 181.1115039587021,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 197.869490981102,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 221.5661973953247,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 577,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "macos",
+    "method": "peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      300,
+      322,
+      250,
+      298,
+      304,
+      308
+    ],
+    "chosen": {
+      "threshold": 0.1680217832326889,
+      "accepted": 8,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.04607356712222099,
+        "accepted": 23,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.04963619448244572,
+        "accepted": 22,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.05834398791193962,
+        "accepted": 21,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.06552881374955177,
+        "accepted": 20,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.0696183629333973,
+        "accepted": 19,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.07865067571401596,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.08998078852891922,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.09875405207276344,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.10262087360024452,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.10941353440284729,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.11789678409695625,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.12577460333704948,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.1374526545405388,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.14920221269130707,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.16076844930648804,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.1680217832326889,
+        "accepted": 8,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.16972994059324265,
+        "accepted": 7,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.19264347106218338,
+        "accepted": 6,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.23428578674793243,
+        "accepted": 5,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.2798450291156769,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.32270148396492004,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3517952114343643,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.38466353714466095,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 2,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "macos",
+    "method": "relative_peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      300,
+      322,
+      250,
+      298,
+      304,
+      308
+    ],
+    "chosen": {
+      "threshold": 97.1613221168518,
+      "accepted": 7,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 3
+      },
+      {
+        "threshold": 25.801197588443756,
+        "accepted": 23,
+        "wrong": 2
+      },
+      {
+        "threshold": 27.7962689101696,
+        "accepted": 22,
+        "wrong": 2
+      },
+      {
+        "threshold": 32.67263323068619,
+        "accepted": 21,
+        "wrong": 2
+      },
+      {
+        "threshold": 36.69613569974899,
+        "accepted": 20,
+        "wrong": 2
+      },
+      {
+        "threshold": 38.986283242702484,
+        "accepted": 19,
+        "wrong": 2
+      },
+      {
+        "threshold": 44.04437839984894,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 51.155529379844666,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 56.88233399391174,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 59.109623193740845,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 62.09973621368408,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 66.0221990942955,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 70.43377786874771,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 78.1242243051529,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 85.94047451019287,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 91.85319948196411,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 95.42799615859985,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 97.1613221168518,
+        "accepted": 7,
+        "wrong": 0
+      },
+      {
+        "threshold": 109.99560762941837,
+        "accepted": 6,
+        "wrong": 0
+      },
+      {
+        "threshold": 133.98158146440983,
+        "accepted": 5,
+        "wrong": 0
+      },
+      {
+        "threshold": 161.19073677062988,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 183.16094636917114,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 199.91893339157104,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 221.5661973953247,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 577,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "web",
+    "method": "peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240
+    ],
+    "chosen": {
+      "threshold": 0.2901214361190796,
+      "accepted": 3,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.04607356712222099,
+        "accepted": 23,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.04963619448244572,
+        "accepted": 22,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.05834398791193962,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.06552881374955177,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.06669159978628159,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.07019898667931557,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.07865067571401596,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.0938476100564003,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.1040717177093029,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.10996563360095024,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.11789678409695625,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.12577460333704948,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.1374526545405388,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.15645554661750793,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.16972994059324265,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.17540138959884644,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.1976538524031639,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.23428578674793243,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2572691887617111,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.26754559576511383,
+        "accepted": 4,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2901214361190796,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.315558522939682,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3322455883026123,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 2,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "web",
+    "method": "relative_peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "test_ids": [
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240
+    ],
+    "chosen": {
+      "threshold": 165.87591916322708,
+      "accepted": 3,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 25.801197588443756,
+        "accepted": 23,
+        "wrong": 3
+      },
+      {
+        "threshold": 27.7962689101696,
+        "accepted": 22,
+        "wrong": 3
+      },
+      {
+        "threshold": 32.381982281804085,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 36.07947386801243,
+        "accepted": 20,
+        "wrong": 2
+      },
+      {
+        "threshold": 36.69613569974899,
+        "accepted": 19,
+        "wrong": 2
+      },
+      {
+        "threshold": 38.986283242702484,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 44.04437839984894,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 52.13147046416998,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 58.375952146947384,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 62.09973621368408,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 66.0221990942955,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 70.43377786874771,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 78.1242243051529,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 88.76584386825562,
+        "accepted": 10,
+        "wrong": 1
+      },
+      {
+        "threshold": 96.41189479827881,
+        "accepted": 9,
+        "wrong": 1
+      },
+      {
+        "threshold": 100.21934743970633,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 112.06973431259394,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 132.660250172019,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 144.79583713412285,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 150.80235081911087,
+        "accepted": 4,
+        "wrong": 1
+      },
+      {
+        "threshold": 165.87591916322708,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 181.1115039587021,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 188.00814521312714,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 577,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "windows",
+    "method": "peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240
+    ],
+    "test_ids": [
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "chosen": {
+      "threshold": 0.29966554045677185,
+      "accepted": 4,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 0.04607356712222099,
+        "accepted": 23,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.04963619448244572,
+        "accepted": 22,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.05834398791193962,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.06552881374955177,
+        "accepted": 20,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.06669159978628159,
+        "accepted": 19,
+        "wrong": 3
+      },
+      {
+        "threshold": 0.07019898667931557,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.07865067571401596,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.08998078852891922,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.09875405207276344,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.10317297279834747,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.10996563360095024,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.11789678409695625,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.12577460333704948,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.14281264692544937,
+        "accepted": 10,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.16076844930648804,
+        "accepted": 9,
+        "wrong": 2
+      },
+      {
+        "threshold": 0.1680217832326889,
+        "accepted": 8,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.17474032193422318,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.2206372544169426,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.26754559576511383,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 0.29966554045677185,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3322455883026123,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.3517952114343643,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 0.38466353714466095,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 2,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  },
+  {
+    "held_out_platform": "windows",
+    "method": "relative_peak_gate",
+    "train_ids": [
+      695,
+      524,
+      716,
+      784,
+      792,
+      566,
+      340,
+      611,
+      818,
+      827,
+      356,
+      343,
+      300,
+      322,
+      250,
+      298,
+      304,
+      308,
+      987,
+      1254,
+      1110,
+      969,
+      1158,
+      1240
+    ],
+    "test_ids": [
+      1,
+      0,
+      20,
+      102,
+      132,
+      85
+    ],
+    "chosen": {
+      "threshold": 170.72311800718307,
+      "accepted": 4,
+      "wrong": 0
+    },
+    "candidates": [
+      {
+        "threshold": 0,
+        "accepted": 24,
+        "wrong": 4
+      },
+      {
+        "threshold": 25.801197588443756,
+        "accepted": 23,
+        "wrong": 3
+      },
+      {
+        "threshold": 27.7962689101696,
+        "accepted": 22,
+        "wrong": 3
+      },
+      {
+        "threshold": 32.381982281804085,
+        "accepted": 21,
+        "wrong": 3
+      },
+      {
+        "threshold": 36.07947386801243,
+        "accepted": 20,
+        "wrong": 2
+      },
+      {
+        "threshold": 36.69613569974899,
+        "accepted": 19,
+        "wrong": 2
+      },
+      {
+        "threshold": 38.986283242702484,
+        "accepted": 18,
+        "wrong": 2
+      },
+      {
+        "threshold": 44.04437839984894,
+        "accepted": 17,
+        "wrong": 2
+      },
+      {
+        "threshold": 51.155529379844666,
+        "accepted": 16,
+        "wrong": 2
+      },
+      {
+        "threshold": 56.14866294711828,
+        "accepted": 15,
+        "wrong": 2
+      },
+      {
+        "threshold": 57.85827507823706,
+        "accepted": 14,
+        "wrong": 2
+      },
+      {
+        "threshold": 61.582059144973755,
+        "accepted": 13,
+        "wrong": 2
+      },
+      {
+        "threshold": 66.0221990942955,
+        "accepted": 12,
+        "wrong": 2
+      },
+      {
+        "threshold": 70.43377786874771,
+        "accepted": 11,
+        "wrong": 2
+      },
+      {
+        "threshold": 81.21157991886139,
+        "accepted": 10,
+        "wrong": 2
+      },
+      {
+        "threshold": 91.85319948196411,
+        "accepted": 9,
+        "wrong": 2
+      },
+      {
+        "threshold": 95.42799615859985,
+        "accepted": 8,
+        "wrong": 2
+      },
+      {
+        "threshold": 99.23544880002737,
+        "accepted": 7,
+        "wrong": 1
+      },
+      {
+        "threshold": 122.88398998230696,
+        "accepted": 6,
+        "wrong": 1
+      },
+      {
+        "threshold": 149.48101952672005,
+        "accepted": 5,
+        "wrong": 1
+      },
+      {
+        "threshold": 170.72311800718307,
+        "accepted": 4,
+        "wrong": 0
+      },
+      {
+        "threshold": 188.00814521312714,
+        "accepted": 3,
+        "wrong": 0
+      },
+      {
+        "threshold": 199.91893339157104,
+        "accepted": 2,
+        "wrong": 0
+      },
+      {
+        "threshold": 221.5661973953247,
+        "accepted": 1,
+        "wrong": 0
+      },
+      {
+        "threshold": 577,
+        "accepted": 0,
+        "wrong": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,1986 @@
+{
+  "mode": "Recorded outputs, not live model inference",
+  "source": "ScreenSpot",
+  "samples": [
+    {
+      "row_index": 695,
+      "file_name": "mobile_53e09f46-876e-4552-9037-ae4ef338dad3.png",
+      "instruction": "search",
+      "data_source": "android",
+      "data_type": "icon",
+      "bbox": [
+        0.0787037037037037,
+        0.04791666666666667,
+        0.18888888888888888,
+        0.09291666666666666
+      ],
+      "points": {
+        "max_patch": [
+          0.15625,
+          0.07142857142857142
+        ],
+        "connected_region": [
+          0.13975000381469727,
+          0.06888577342033386
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.12048611789941788,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 65398.05290004006,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "7ea67055161ac3e65baeef6e20815b01c71bb60c75123b47fb6383206a11e440",
+      "image": "results/action-demo/screenshots/mobile_53e09f46-876e-4552-9037-ae4ef338dad3.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 695,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.12048611789941788,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 695,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 67.47222602367401,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 524,
+      "file_name": "mobile_2b80c9bf-0040-492e-8dca-d81cc9042b5a.png",
+      "instruction": "fold input method",
+      "data_source": "android",
+      "data_type": "icon",
+      "bbox": [
+        0.8277777777777777,
+        0.6475,
+        0.9712962962962963,
+        0.6883333333333334
+      ],
+      "points": {
+        "max_patch": [
+          0.90625,
+          0.6428571428571429
+        ],
+        "connected_region": [
+          0.9141939878463745,
+          0.6570406556129456
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.06611097604036331,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 65758.1548000453,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "b3ec2c39309771c1602c536f808cca0e7c0c4f6e32c1773150ea9afad61b13b3",
+      "image": "results/action-demo/screenshots/mobile_2b80c9bf-0040-492e-8dca-d81cc9042b5a.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 524,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.06611097604036331,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 524,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 37.022146582603455,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 716,
+      "file_name": "mobile_b7323848-f2e7-492c-95aa-e33e731ff196.png",
+      "instruction": "scan qr code",
+      "data_source": "android",
+      "data_type": "icon",
+      "bbox": [
+        0.700925925925926,
+        0.04958333333333333,
+        0.8175925925925925,
+        0.08875
+      ],
+      "points": {
+        "max_patch": [
+          0.71875,
+          0.07142857142857142
+        ],
+        "connected_region": [
+          0.777858555316925,
+          0.06372535973787308
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.11530745029449463,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 63444.6886999649,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "fd0fd5d79bd8d787cee4e6c2b800dbf738614eba18f4c1c0403c995e17ef4021",
+      "image": "results/action-demo/screenshots/mobile_b7323848-f2e7-492c-95aa-e33e731ff196.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 716,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.11530745029449463,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 716,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 64.57217216491699,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 784,
+      "file_name": "mobile_bce7a892-9cb2-432a-b678-2429d4f51d3d.png",
+      "instruction": "install app",
+      "data_source": "android",
+      "data_type": "text",
+      "bbox": [
+        0.7638888888888888,
+        0.23625,
+        0.9574074074074074,
+        0.2841666666666667
+      ],
+      "points": {
+        "max_patch": [
+          0.90625,
+          0.44285714285714284
+        ],
+        "connected_region": [
+          0.8885593414306641,
+          0.4312557578086853
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": false
+      },
+      "peak_probability": 0.04461606964468956,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 66475.0117000076,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "934db5089725c433367b902719bdd611de567794262c79191d09bf78c329545d",
+      "image": "results/action-demo/screenshots/mobile_bce7a892-9cb2-432a-b678-2429d4f51d3d.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 784,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.04461606964468956,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 784,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 24.984999001026154,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 792,
+      "file_name": "mobile_31f8a5c2-e28a-488c-bb28-a31c823c9c83.png",
+      "instruction": "open cleaner",
+      "data_source": "android",
+      "data_type": "text",
+      "bbox": [
+        0.45,
+        0.17583333333333334,
+        0.9611111111111111,
+        0.3279166666666667
+      ],
+      "points": {
+        "max_patch": [
+          0.53125,
+          0.21428571428571427
+        ],
+        "connected_region": [
+          0.6209045648574829,
+          0.20692895352840424
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.06494665145874023,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 67380.79949998064,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "fb97144893b5f1da459d6c48aaac7001ecf698d05c7eea29236a175faf61472f",
+      "image": "results/action-demo/screenshots/mobile_31f8a5c2-e28a-488c-bb28-a31c823c9c83.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 792,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.06494665145874023,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 792,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 36.37012481689453,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 566,
+      "file_name": "mobile_9aa2c4bf-aa52-43ed-ac30-f22798c14668.png",
+      "instruction": "open github app",
+      "data_source": "android",
+      "data_type": "text",
+      "bbox": [
+        0.7481481481481481,
+        0.24416666666666667,
+        0.9629629629629629,
+        0.3475
+      ],
+      "points": {
+        "max_patch": [
+          0.84375,
+          0.24285714285714285
+        ],
+        "connected_region": [
+          0.8562487363815308,
+          0.28993621468544006
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.07312574982643127,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 62652.86390000256,
+      "threads": 4,
+      "width": 1080,
+      "height": 2400,
+      "image_sha256": "d4291fa52c07349433f5707b04b21fde92bdc987ab65bf9de56ebc7dc8fc6bd5",
+      "image": "results/action-demo/screenshots/mobile_9aa2c4bf-aa52-43ed-ac30-f22798c14668.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 566,
+          "platform": "android",
+          "method": "peak_gate",
+          "score": 0.07312574982643127,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 566,
+          "platform": "android",
+          "method": "relative_peak_gate",
+          "score": 40.950419902801514,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 340,
+      "file_name": "mobile_6949b916-64c8-431f-8842-a29a9a557641.png",
+      "instruction": "close the translation",
+      "data_source": "ios",
+      "data_type": "icon",
+      "bbox": [
+        0.7343220338983051,
+        0.1402439024390244,
+        0.7745762711864407,
+        0.20121951219512196
+      ],
+      "points": {
+        "max_patch": [
+          0.7321428571428571,
+          0.175
+        ],
+        "connected_region": [
+          0.7480323910713196,
+          0.17499999701976776
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.33938854932785034,
+      "patch_grid": [
+        28,
+        20
+      ],
+      "elapsed_ms": 60177.964099973906,
+      "threads": 4,
+      "width": 2360,
+      "height": 1640,
+      "image_sha256": "41d879095bce6b5f19019a0b2d80412e267a99f3a6897a5ce14abb9eeb25b3f0",
+      "image": "results/action-demo/screenshots/mobile_6949b916-64c8-431f-8842-a29a9a557641.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 340,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.33938854932785034,
+          "threshold": 0.2901214361190796,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 340,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 190.0575876235962,
+          "threshold": 165.87591916322708,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 611,
+      "file_name": "mobile_740f217d-27e9-43af-951c-b76e18252300.png",
+      "instruction": "search history",
+      "data_source": "ios",
+      "data_type": "icon",
+      "bbox": [
+        0.06228813559322034,
+        0.03902439024390244,
+        0.10254237288135593,
+        0.09085365853658536
+      ],
+      "points": {
+        "max_patch": [
+          0.08928571428571429,
+          0.075
+        ],
+        "connected_region": [
+          0.07847698777914047,
+          0.050941579043865204
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.16906887292861938,
+      "patch_grid": [
+        28,
+        20
+      ],
+      "elapsed_ms": 60031.095700047445,
+      "threads": 4,
+      "width": 2360,
+      "height": 1640,
+      "image_sha256": "2b9c00f7dac91ad52f301ba31e8cd4f607c8db9fff08097c3cf7de4f6b6255a5",
+      "image": "results/action-demo/screenshots/mobile_740f217d-27e9-43af-951c-b76e18252300.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 611,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.16906887292861938,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 611,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 94.67856884002686,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 818,
+      "file_name": "mobile_b550b4ed-79ce-446a-a1c3-a164b314bfe8.png",
+      "instruction": "view my account",
+      "data_source": "ios",
+      "data_type": "icon",
+      "bbox": [
+        0.8504273504273504,
+        0.11374407582938388,
+        0.9615384615384616,
+        0.15758293838862558
+      ],
+      "points": {
+        "max_patch": [
+          0.96875,
+          0.15714285714285714
+        ],
+        "connected_region": [
+          0.9113139510154724,
+          0.13078266382217407
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.1310630887746811,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 60241.55720003182,
+      "threads": 4,
+      "width": 1170,
+      "height": 2532,
+      "image_sha256": "4dfcb68408c0241141f1381f6f230de3b009789e2099cf7fd2b0068901de1a64",
+      "image": "results/action-demo/screenshots/mobile_b550b4ed-79ce-446a-a1c3-a164b314bfe8.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 818,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.1310630887746811,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 818,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 73.39532971382141,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 827,
+      "file_name": "mobile_e550d5f2-308d-4027-ad04-8c2ba9e8d2d1.png",
+      "instruction": "play the opening the channel (mixed)",
+      "data_source": "ios",
+      "data_type": "text",
+      "bbox": [
+        0.07094017094017094,
+        0.40086887835703,
+        0.935042735042735,
+        0.4656398104265403
+      ],
+      "points": {
+        "max_patch": [
+          0.21875,
+          0.4142857142857143
+        ],
+        "connected_region": [
+          0.48556551337242126,
+          0.42718321084976196
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.047531064599752426,
+      "patch_grid": [
+        16,
+        35
+      ],
+      "elapsed_ms": 59820.92749996809,
+      "threads": 4,
+      "width": 1170,
+      "height": 2532,
+      "image_sha256": "007596bb7d5c9895d54494629bd05051bdaa5c912291407ffe3f7a1870b1de01",
+      "image": "results/action-demo/screenshots/mobile_e550d5f2-308d-4027-ad04-8c2ba9e8d2d1.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 827,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.047531064599752426,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 827,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 26.61739617586136,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 356,
+      "file_name": "mobile_4b1df148-c6ac-452a-b55d-f8e6c6dee059.png",
+      "instruction": "open result file",
+      "data_source": "ios",
+      "data_type": "text",
+      "bbox": [
+        0.326271186440678,
+        0.18536585365853658,
+        0.4076271186440678,
+        0.35304878048780486
+      ],
+      "points": {
+        "max_patch": [
+          0.375,
+          0.275
+        ],
+        "connected_region": [
+          0.37170839309692383,
+          0.2952483594417572
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.08417560160160065,
+      "patch_grid": [
+        28,
+        20
+      ],
+      "elapsed_ms": 59149.01709998958,
+      "threads": 4,
+      "width": 2360,
+      "height": 1640,
+      "image_sha256": "d22467d2e69ad3c92eff77baccf1d258fcb803ad64747520f4ea0392120db099",
+      "image": "results/action-demo/screenshots/mobile_4b1df148-c6ac-452a-b55d-f8e6c6dee059.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 356,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.08417560160160065,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 356,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 47.13833689689636,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 343,
+      "file_name": "mobile_a1366f87-f1f1-402c-911a-d239eb60eac8.png",
+      "instruction": "search bar",
+      "data_source": "ios",
+      "data_type": "text",
+      "bbox": [
+        0.3495762711864407,
+        0.04390243902439024,
+        0.7088983050847457,
+        0.09085365853658536
+      ],
+      "points": {
+        "max_patch": [
+          0.625,
+          0.075
+        ],
+        "connected_region": [
+          0.5385425090789795,
+          0.05263509973883629
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.05174132436513901,
+      "patch_grid": [
+        28,
+        20
+      ],
+      "elapsed_ms": 71180.58200000087,
+      "threads": 4,
+      "width": 2360,
+      "height": 1640,
+      "image_sha256": "c8010d6c5f0dc410aed2b273bcd68f449c11729ebab05ec9544ec53928ea8ed2",
+      "image": "results/action-demo/screenshots/mobile_a1366f87-f1f1-402c-911a-d239eb60eac8.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 343,
+          "platform": "ios",
+          "method": "peak_gate",
+          "score": 0.05174132436513901,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 343,
+          "platform": "ios",
+          "method": "relative_peak_gate",
+          "score": 28.975141644477844,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 300,
+      "file_name": "pc_ac718327-53b2-49c1-8707-d12220913fc1.png",
+      "instruction": "run the code",
+      "data_source": "macos",
+      "data_type": "icon",
+      "bbox": [
+        0.6343478260869565,
+        0.03647798742138365,
+        0.6582608695652173,
+        0.06729559748427673
+      ],
+      "points": {
+        "max_patch": [
+          0.6607142857142857,
+          0.07894736842105263
+        ],
+        "connected_region": [
+          0.28418028354644775,
+          0.1315789520740509
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": false
+      },
+      "peak_probability": 0.06727222353219986,
+      "patch_grid": [
+        28,
+        19
+      ],
+      "elapsed_ms": 54011.987300007604,
+      "threads": 4,
+      "width": 2300,
+      "height": 1590,
+      "image_sha256": "c4af42d0c0e5780000b14d446a747781186c1c49343f97b17f4a1cee2a9e4890",
+      "image": "results/action-demo/screenshots/pc_ac718327-53b2-49c1-8707-d12220913fc1.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 300,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.06727222353219986,
+          "threshold": 0.1680217832326889,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 300,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 35.788822919130325,
+          "threshold": 97.1613221168518,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 322,
+      "file_name": "pc_857c0a8b-5f0f-4d6a-966f-789b594622c9.png",
+      "instruction": "terminate this process",
+      "data_source": "macos",
+      "data_type": "icon",
+      "bbox": [
+        0.37550744248985113,
+        0.013975155279503106,
+        0.428958051420839,
+        0.06599378881987578
+      ],
+      "points": {
+        "max_patch": [
+          0.38,
+          0.06818181818181818
+        ],
+        "connected_region": [
+          0.3939096927642822,
+          0.04738471284508705
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.2608627378940582,
+      "patch_grid": [
+        25,
+        22
+      ],
+      "elapsed_ms": 44490.37529999623,
+      "threads": 4,
+      "width": 1478,
+      "height": 1288,
+      "image_sha256": "334045c9de5fea05f1c2df469d9e12e9feac3ed6e3fa920ee09e0f28aaa55895",
+      "image": "results/action-demo/screenshots/pc_857c0a8b-5f0f-4d6a-966f-789b594622c9.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 322,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.2608627378940582,
+          "threshold": 0.1680217832326889,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 322,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 143.47450584173203,
+          "threshold": 97.1613221168518,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 250,
+      "file_name": "pc_63a274e4-38e1-4a50-a102-33b31aee3a62.png",
+      "instruction": "add a recipient",
+      "data_source": "macos",
+      "data_type": "icon",
+      "bbox": [
+        0.9070796460176991,
+        0.11134453781512606,
+        0.9761061946902655,
+        0.17016806722689076
+      ],
+      "points": {
+        "max_patch": [
+          0.9423076923076923,
+          0.1590909090909091
+        ],
+        "connected_region": [
+          0.9423077702522278,
+          0.14221316576004028
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.32510262727737427,
+      "patch_grid": [
+        26,
+        22
+      ],
+      "elapsed_ms": 61960.77659999719,
+      "threads": 4,
+      "width": 1130,
+      "height": 952,
+      "image_sha256": "c0d3a1cef0573e116522594bafbafb8886246866d900f20878255d0cbc03ea83",
+      "image": "results/action-demo/screenshots/pc_63a274e4-38e1-4a50-a102-33b31aee3a62.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 250,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.32510262727737427,
+          "threshold": 0.1680217832326889,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 250,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 185.95870280265808,
+          "threshold": 97.1613221168518,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 298,
+      "file_name": "pc_38236247-66f3-4ad3-aeb0-bc4783335a46.png",
+      "instruction": "sign in",
+      "data_source": "macos",
+      "data_type": "text",
+      "bbox": [
+        0.3393782383419689,
+        0.8366619115549215,
+        0.6658031088082902,
+        0.8801711840228246
+      ],
+      "points": {
+        "max_patch": [
+          0.35714285714285715,
+          0.8653846153846154
+        ],
+        "connected_region": [
+          0.49471938610076904,
+          0.8499518036842346
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.10462381690740585,
+      "patch_grid": [
+        21,
+        26
+      ],
+      "threads": 8,
+      "elapsed_ms": 36050.8955999976,
+      "width": 1158,
+      "height": 1402,
+      "image_sha256": "9d805fb7fa5b1a151f4a2d8c584b5157059d3a4d06120b662dd6779240e2be42",
+      "image": "results/action-demo/screenshots/pc_38236247-66f3-4ad3-aeb0-bc4783335a46.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 298,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.10462381690740585,
+          "threshold": 0.1680217832326889,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 298,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 57.124604031443596,
+          "threshold": 97.1613221168518,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 304,
+      "file_name": "pc_7656e3c5-00b1-4be7-9103-9890b837342f.png",
+      "instruction": "check python interpreter",
+      "data_source": "macos",
+      "data_type": "text",
+      "bbox": [
+        0.0,
+        0.3028571428571429,
+        0.2594444444444444,
+        0.33714285714285713
+      ],
+      "points": {
+        "max_patch": [
+          0.24074074074074073,
+          0.30952380952380953
+        ],
+        "connected_region": [
+          0.24074073135852814,
+          0.3221980035305023
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.18041177093982697,
+      "patch_grid": [
+        27,
+        21
+      ],
+      "threads": 8,
+      "elapsed_ms": 36301.01150000701,
+      "width": 1800,
+      "height": 1400,
+      "image_sha256": "3764ee58b7261812e3252710a6ee60f67edbf9a5214df7517abf84977376af10",
+      "image": "results/action-demo/screenshots/pc_7656e3c5-00b1-4be7-9103-9890b837342f.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 304,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.18041177093982697,
+          "threshold": 0.1680217832326889,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 304,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 102.29347412288189,
+          "threshold": 97.1613221168518,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 308,
+      "file_name": "pc_155db9b3-fe88-41cb-81d1-d51f37ba5970.png",
+      "instruction": "cancel showing plots in tool windows",
+      "data_source": "macos",
+      "data_type": "text",
+      "bbox": [
+        0.28801331853496115,
+        0.0994277539341917,
+        0.5099889012208657,
+        0.148068669527897
+      ],
+      "points": {
+        "max_patch": [
+          0.7592592592592593,
+          0.9761904761904762
+        ],
+        "connected_region": [
+          0.7527546286582947,
+          0.976190447807312
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": false
+      },
+      "peak_probability": 0.27422845363616943,
+      "patch_grid": [
+        27,
+        21
+      ],
+      "threads": 8,
+      "elapsed_ms": 37822.46229995508,
+      "width": 1802,
+      "height": 1398,
+      "image_sha256": "859f4e69bdd1ec34cb30a36954901e3aa3c3f0b897cfca8ee599e7b18d90f57d",
+      "image": "results/action-demo/screenshots/pc_155db9b3-fe88-41cb-81d1-d51f37ba5970.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 308,
+          "platform": "macos",
+          "method": "peak_gate",
+          "score": 0.27422845363616943,
+          "threshold": 0.1680217832326889,
+          "accepted": true,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": true,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 308,
+          "platform": "macos",
+          "method": "relative_peak_gate",
+          "score": 155.48753321170807,
+          "threshold": 97.1613221168518,
+          "accepted": true,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": true,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 987,
+      "file_name": "web_3acb3026-cbd7-4e41-8fb7-2b8a2e7e4fcb.png",
+      "instruction": "close shopping cart",
+      "data_source": "shop",
+      "data_type": "icon",
+      "bbox": [
+        0.965625,
+        0.15486111111111112,
+        0.9921875,
+        0.20208333333333334
+      ],
+      "points": {
+        "max_patch": [
+          0.984375,
+          0.19444444444444445
+        ],
+        "connected_region": [
+          0.9843750596046448,
+          0.17105185985565186
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.4051252007484436,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 36150.27250000276,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "6ae704d3f9a097c1ba3e7279fe88e319323b0c84d7687b7e946c3b20c406bb1f",
+      "image": "results/action-demo/screenshots/web_3acb3026-cbd7-4e41-8fb7-2b8a2e7e4fcb.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 987,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.4051252007484436,
+          "threshold": 0.2901214361190796,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 987,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 233.35211563110352,
+          "threshold": 165.87591916322708,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 1254,
+      "file_name": "web_8c185a73-f24a-4548-851f-eae8962b2649.png",
+      "instruction": "check the second image",
+      "data_source": "shop",
+      "data_type": "icon",
+      "bbox": [
+        0.079296875,
+        0.8569444444444444,
+        0.154296875,
+        0.99375
+      ],
+      "points": {
+        "max_patch": [
+          0.109375,
+          0.9166666666666666
+        ],
+        "connected_region": [
+          0.10380811989307404,
+          0.9227603077888489
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.09578597545623779,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 36700.14130003983,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "02ebc973203f95c67d2bb4c0db43e2631ad38110dbc7e44a67ee6b2a1bc3cc4e",
+      "image": "results/action-demo/screenshots/web_8c185a73-f24a-4548-851f-eae8962b2649.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 1254,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.09578597545623779,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 1254,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 55.17272186279297,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 1110,
+      "file_name": "web_fa131c38-3d94-4e5a-ba3a-269724d93a30.png",
+      "instruction": "close the location labels on the map",
+      "data_source": "tool",
+      "data_type": "icon",
+      "bbox": [
+        0.8953125,
+        0.7298611111111111,
+        0.909375,
+        0.7548611111111111
+      ],
+      "points": {
+        "max_patch": [
+          0.296875,
+          0.4166666666666667
+        ],
+        "connected_region": [
+          0.2825336754322052,
+          0.44513198733329773
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": false
+      },
+      "peak_probability": 0.16697469353675842,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 36034.46910000639,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "f832274506145a74255b32c1056b9e22848eaa090b338d63bafc7db253aa484c",
+      "image": "results/action-demo/screenshots/web_fa131c38-3d94-4e5a-ba3a-269724d93a30.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 1110,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.16697469353675842,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 1110,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 96.17742347717285,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 969,
+      "file_name": "web_db995728-d16b-46cb-9621-22e8d8e5596f.png",
+      "instruction": "add the first product to wish list",
+      "data_source": "shop",
+      "data_type": "text",
+      "bbox": [
+        0.595703125,
+        0.9041666666666667,
+        0.685546875,
+        0.9395833333333333
+      ],
+      "points": {
+        "max_patch": [
+          0.640625,
+          0.9166666666666666
+        ],
+        "connected_region": [
+          0.6394269466400146,
+          0.9166666865348816
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.3642018735408783,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 35697.796699998435,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "e4d68bef3de901f7ce08b38610805d0a3d1df28bf9695ecfb047c9655c2b3b66",
+      "image": "results/action-demo/screenshots/web_db995728-d16b-46cb-9621-22e8d8e5596f.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 969,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.3642018735408783,
+          "threshold": 0.2901214361190796,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 969,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 209.7802791595459,
+          "threshold": 165.87591916322708,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 1158,
+      "file_name": "web_6f93090a-81f6-489e-bb35-1a2838b18c01.png",
+      "instruction": "input word to search in wikidata",
+      "data_source": "tool",
+      "data_type": "text",
+      "bbox": [
+        0.7578125,
+        0.08055555555555556,
+        0.9265625,
+        0.12777777777777777
+      ],
+      "points": {
+        "max_patch": [
+          0.921875,
+          0.1388888888888889
+        ],
+        "connected_region": [
+          0.8620095252990723,
+          0.1092228814959526
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.10172212868928909,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 31559.31189999683,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "8b17396888b452be5db25b4c2505b53713485ca94c9dc56da278214f968fc443",
+      "image": "results/action-demo/screenshots/web_6f93090a-81f6-489e-bb35-1a2838b18c01.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 1158,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.10172212868928909,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 1158,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 58.59194612503052,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 1240,
+      "file_name": "web_8998df3c-ece5-4f78-9f34-8b6ef91b1ddb.png",
+      "instruction": "add the cocowhip light to cart",
+      "data_source": "shop",
+      "data_type": "text",
+      "bbox": [
+        0.672265625,
+        0.6965277777777777,
+        0.76875,
+        0.7451388888888889
+      ],
+      "points": {
+        "max_patch": [
+          0.703125,
+          0.75
+        ],
+        "connected_region": [
+          0.7139682769775391,
+          0.7234683632850647
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.15456220507621765,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 26320.63020003261,
+      "width": 2560,
+      "height": 1440,
+      "image_sha256": "f767d47dedb5fb07332acd47fb6948fb7b44d3c60594a85e1a98bb84f1e07ee5",
+      "image": "results/action-demo/screenshots/web_8998df3c-ece5-4f78-9f34-8b6ef91b1ddb.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 1240,
+          "platform": "web",
+          "method": "peak_gate",
+          "score": 0.15456220507621765,
+          "threshold": 0.2901214361190796,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 1240,
+          "platform": "web",
+          "method": "relative_peak_gate",
+          "score": 89.02783012390137,
+          "threshold": 165.87591916322708,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 1,
+      "file_name": "pc_5e09e8e9-7ef6-44be-ad54-aeaeac151897.png",
+      "instruction": "minimize this window",
+      "data_source": "windows",
+      "data_type": "icon",
+      "bbox": [
+        0.8697916666666666,
+        0.0,
+        0.9072916666666667,
+        0.05555555555555555
+      ],
+      "points": {
+        "max_patch": [
+          0.078125,
+          0.027777777777777776
+        ],
+        "connected_region": [
+          0.06802961230278015,
+          0.02777777798473835
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": false
+      },
+      "peak_probability": 0.14384222030639648,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 26632.41040002322,
+      "width": 960,
+      "height": 540,
+      "image_sha256": "29efacf5d4ddf2ffc62af157a585bd5341d298b785f2518a85c0e93b5a88d4d0",
+      "image": "results/action-demo/screenshots/pc_5e09e8e9-7ef6-44be-ad54-aeaeac151897.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 1,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.14384222030639648,
+          "threshold": 0.29966554045677185,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 1,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 82.85311889648438,
+          "threshold": 170.72311800718307,
+          "accepted": false,
+          "point_correct": false,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 0,
+      "file_name": "pc_ede36f9b-1154-4f76-b7f8-c15d7d3f9b6e.png",
+      "instruction": "close",
+      "data_source": "windows",
+      "data_type": "icon",
+      "bbox": [
+        0.9479166666666666,
+        0.14444444444444443,
+        0.99375,
+        0.2074074074074074
+      ],
+      "points": {
+        "max_patch": [
+          0.984375,
+          0.1388888888888889
+        ],
+        "connected_region": [
+          0.9682355523109436,
+          0.1567578762769699
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.30601441860198975,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 27231.206200027373,
+      "width": 960,
+      "height": 540,
+      "image_sha256": "9b313894d70c16c3ce09adb404fac1bd32334fc50bf761014bf0fe44761def1c",
+      "image": "results/action-demo/screenshots/pc_ede36f9b-1154-4f76-b7f8-c15d7d3f9b6e.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 0,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.30601441860198975,
+          "threshold": 0.29966554045677185,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        },
+        "relative_peak_gate": {
+          "row_index": 0,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 176.2643051147461,
+          "threshold": 170.72311800718307,
+          "accepted": true,
+          "point_correct": true,
+          "correct_click": true,
+          "wrong_click": false,
+          "review": false,
+          "withheld_correct_point": false
+        }
+      }
+    },
+    {
+      "row_index": 20,
+      "file_name": "pc_870d6da1-bc85-4e74-a1bd-ef6f975c2146.png",
+      "instruction": "date and time",
+      "data_source": "windows",
+      "data_type": "icon",
+      "bbox": [
+        0.890625,
+        0.9166666666666666,
+        0.9697916666666667,
+        1.0
+      ],
+      "points": {
+        "max_patch": [
+          0.953125,
+          0.9722222222222222
+        ],
+        "connected_region": [
+          0.931986927986145,
+          0.9565750360488892
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.253675639629364,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 26652.99040003447,
+      "width": 960,
+      "height": 540,
+      "image_sha256": "fb4a327f9011bee34f27a8d8373c1325479b3a48588589ed160967ba9ed055aa",
+      "image": "results/action-demo/screenshots/pc_870d6da1-bc85-4e74-a1bd-ef6f975c2146.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 20,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.253675639629364,
+          "threshold": 0.29966554045677185,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 20,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 146.11716842651367,
+          "threshold": 170.72311800718307,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 102,
+      "file_name": "pc_16d04f01-66a7-45df-a189-66c29fa935d7.png",
+      "instruction": "open files",
+      "data_source": "windows",
+      "data_type": "text",
+      "bbox": [
+        0.334375,
+        0.8925925925925926,
+        0.4947916666666667,
+        0.9611111111111111
+      ],
+      "points": {
+        "max_patch": [
+          0.359375,
+          0.9166666666666666
+        ],
+        "connected_region": [
+          0.40422704815864563,
+          0.9426758885383606
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.10351961851119995,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 28147.14970003115,
+      "width": 960,
+      "height": 540,
+      "image_sha256": "fe7878239c3afd84310a2121997a548557d38873c0e34149d7c4baf6fac62f33",
+      "image": "results/action-demo/screenshots/pc_16d04f01-66a7-45df-a189-66c29fa935d7.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 102,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.10351961851119995,
+          "threshold": 0.29966554045677185,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 102,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 59.62730026245117,
+          "threshold": 170.72311800718307,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 132,
+      "file_name": "pc_b34a8be5-2b1f-40fa-b348-41aac2bfb952.png",
+      "instruction": "check the detail of uv index",
+      "data_source": "windows",
+      "data_type": "text",
+      "bbox": [
+        0.15391014975041598,
+        0.46203208556149733,
+        0.3086522462562396,
+        0.5176470588235295
+      ],
+      "points": {
+        "max_patch": [
+          0.24074074074074073,
+          0.5
+        ],
+        "connected_region": [
+          0.22198131680488586,
+          0.5
+        ]
+      },
+      "hits": {
+        "max_patch": true,
+        "connected_region": true
+      },
+      "peak_probability": 0.21489593386650085,
+      "patch_grid": [
+        27,
+        21
+      ],
+      "threads": 8,
+      "elapsed_ms": 27554.771800001618,
+      "width": 1202,
+      "height": 935,
+      "image_sha256": "54551c9746bf71c75fd61dc5d9c175fb47b5c778c953555b47f3543847e3b2f9",
+      "image": "results/action-demo/screenshots/pc_b34a8be5-2b1f-40fa-b348-41aac2bfb952.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 132,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.21489593386650085,
+          "threshold": 0.29966554045677185,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 132,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 121.84599450230598,
+          "threshold": 170.72311800718307,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    },
+    {
+      "row_index": 85,
+      "file_name": "pc_6dfaf0c7-a3e5-4e71-8431-5eeb9fb8e493.png",
+      "instruction": "see more information",
+      "data_source": "windows",
+      "data_type": "text",
+      "bbox": [
+        0.5489583333333333,
+        0.45,
+        0.9260416666666667,
+        0.5166666666666667
+      ],
+      "points": {
+        "max_patch": [
+          0.578125,
+          0.5277777777777778
+        ],
+        "connected_region": [
+          0.6063547134399414,
+          0.5020191669464111
+        ]
+      },
+      "hits": {
+        "max_patch": false,
+        "connected_region": true
+      },
+      "peak_probability": 0.1703910082578659,
+      "patch_grid": [
+        32,
+        18
+      ],
+      "threads": 8,
+      "elapsed_ms": 25974.61730003124,
+      "width": 960,
+      "height": 540,
+      "image_sha256": "b9e27a048b52a65acbe6b0566405a0ffc88854ddeb36bbd589063c2f6437f649",
+      "image": "results/action-demo/screenshots/pc_6dfaf0c7-a3e5-4e71-8431-5eeb9fb8e493.png",
+      "review_policies": {
+        "peak_gate": {
+          "row_index": 85,
+          "platform": "windows",
+          "method": "peak_gate",
+          "score": 0.1703910082578659,
+          "threshold": 0.29966554045677185,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        },
+        "relative_peak_gate": {
+          "row_index": 85,
+          "platform": "windows",
+          "method": "relative_peak_gate",
+          "score": 98.14522075653076,
+          "threshold": 170.72311800718307,
+          "accepted": false,
+          "point_correct": true,
+          "correct_click": false,
+          "wrong_click": false,
+          "review": true,
+          "withheld_correct_point": true
+        }
+      }
+    }
+  ]
+}

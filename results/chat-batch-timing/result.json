@@ -1,0 +1,146 @@
+{
+  "started_utc": "2026-09-20T02:19:17.781922+00:00",
+  "completed_utc": "2026-09-20T02:28:10.906523+00:00",
+  "protocol_sha256": "09b8ccc7610fef08eb158c3f8d4953a02d2974ebc964437097f7c57885d1b69e",
+  "source_sha256": {
+    "experiments/chat_batch_timing.py": "84dc6332a2389738fd0d611aa0e81991d9bb77e73a9f8804fbb89aedef529a96",
+    "results/chat-refinement/protocol.json": "ed537e15934c7597f19566a72da98de73e9913358d8dfd0c7e371d53aa4b82c9",
+    "results/chat-refinement/predictions.json": "499570a7ff8146a0c5a8106e2b4e650a9e6d93ad45110c47259e6069e561fd6a",
+    "results/chat600/protocol.json": "1df787e81173a5cebc183ee16cc4af14dfc18b9e9c7d8bdac5a799af79ce9611",
+    "results/chat600/heads.npz": "c64e21782eb2796ff590d7f7b82432fbbb8b40b1348c58fd5e0bb5eb15a526f6"
+  },
+  "runtime": {
+    "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.3",
+    "numpy": "2.2.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "threads": 4,
+    "interop_threads": 1
+  },
+  "batch_sizes": {
+    "1": {
+      "all_passes_complete": true,
+      "all_equivalent": true,
+      "pass_seconds": [
+        62.307320999971125,
+        62.48746490001213,
+        58.806325699959416
+      ],
+      "mean_corpus_seconds": 61.20037053331422,
+      "messages_per_second": 1.6339770352463034,
+      "correct_first_pass": 86,
+      "first_pass_n": 100,
+      "label_mismatches_per_pass": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_logit_delta": 0.0,
+      "forward_calls_per_pass": [
+        100,
+        100,
+        100
+      ],
+      "real_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "padded_token_slots_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "layers_per_message": 24,
+      "layers_skipped": 0,
+      "relative_corpus_time_saving": 0.0,
+      "throughput_ratio": 1.0
+    },
+    "4": {
+      "all_passes_complete": true,
+      "all_equivalent": true,
+      "pass_seconds": [
+        56.588563499972224,
+        56.469643100048415,
+        52.79472479998367
+      ],
+      "mean_corpus_seconds": 55.2843104666681,
+      "messages_per_second": 1.8088314597012436,
+      "correct_first_pass": 86,
+      "first_pass_n": 100,
+      "label_mismatches_per_pass": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_logit_delta": 5.924701690673828e-05,
+      "forward_calls_per_pass": [
+        25,
+        25,
+        25
+      ],
+      "real_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "padded_token_slots_per_pass": [
+        12024,
+        12024,
+        12024
+      ],
+      "layers_per_message": 24,
+      "layers_skipped": 0,
+      "relative_corpus_time_saving": 0.09666706288037474,
+      "throughput_ratio": 1.1070115556603173
+    },
+    "8": {
+      "all_passes_complete": true,
+      "all_equivalent": true,
+      "pass_seconds": [
+        55.73551149998093,
+        56.74771560000954,
+        60.61317019996932
+      ],
+      "mean_corpus_seconds": 57.698799099986594,
+      "messages_per_second": 1.733138324537906,
+      "correct_first_pass": 86,
+      "first_pass_n": 100,
+      "label_mismatches_per_pass": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_logit_delta": 3.5881996154785156e-05,
+      "forward_calls_per_pass": [
+        13,
+        13,
+        13
+      ],
+      "real_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "padded_token_slots_per_pass": [
+        12484,
+        12484,
+        12484
+      ],
+      "layers_per_message": 24,
+      "layers_skipped": 0,
+      "relative_corpus_time_saving": 0.0572148730933183,
+      "throughput_ratio": 1.0606870764720724
+    }
+  },
+  "scope": "Queued-message throughput follow-up chosen after inspecting refinement failures. Existing100 reused; execution equivalence diagnostic, not a fresh quality holdout.",
+  "limits": [
+    "Reused previously evaluated balanced100 messages; no independent quality acceptance.",
+    "Queue already available; no arrival-to-response latency or batch-wait claim.",
+    "One CPU and one thread configuration. Memory and hardware affect batch behavior.",
+    "Identical predictions on100 cases do not guarantee universal exact equivalence.",
+    "No600-message timing extrapolation; only100 messages measured."
+  ]
+}

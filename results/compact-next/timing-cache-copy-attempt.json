@@ -1,0 +1,10 @@
+{
+  "status": "failed parity assertion after timing; no result promoted",
+  "source_sha256": "8a09650a9c0fa5ff56592dd925cdcda45699b058d03b13248d6f44633270d536",
+  "assertion": [
+    "risk",
+    "test:3695",
+    "risk"
+  ],
+  "reason": "Redundant ndarray.copy() defaults to C order and may alter floating-point reduction order for stored Fortran-order PCA components. Follow-up keeps stored layout by retaining the directly materialized arrays. Exact prediction, layer and risk parity remains required."
+}

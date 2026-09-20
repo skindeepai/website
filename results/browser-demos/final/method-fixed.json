@@ -1,0 +1,4123 @@
+{
+  "mode": "fixed",
+  "kind": "benchmark",
+  "model": "Task-trained BERT, four layers / 11.1M parameters; cascade adds separate two-layer / 4.37M BERT",
+  "threads": 1,
+  "setupMs": 1790,
+  "passes": 2,
+  "summary": [
+    {
+      "path": "full",
+      "n": 100,
+      "ms": 1816.75,
+      "correct": 83,
+      "missedToxic": 10,
+      "falseBlocks": 7,
+      "changed": 0,
+      "addedErrors": 0,
+      "correctedErrors": 0,
+      "meanBlocks": 4,
+      "prediction": null
+    },
+    {
+      "path": "fixed2",
+      "n": 100,
+      "ms": 1010.7500000298023,
+      "correct": 82,
+      "missedToxic": 9,
+      "falseBlocks": 9,
+      "changed": 5,
+      "addedErrors": 3,
+      "correctedErrors": 2,
+      "meanBlocks": 2,
+      "prediction": null
+    }
+  ],
+  "runs": [
+    {
+      "repeat": 0,
+      "path": "full",
+      "ms": 1860.300000011921,
+      "records": [
+        {
+          "id": "test:3995",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03821793619900488,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:875",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009272611804107251,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4138",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.915357459619243,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1033",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0071795291943197665,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:289",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9668139502350073,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3750",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.007594353602820158,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:387",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.007000178165152316,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:260",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3532331816671833,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:420",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005225291019754154,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:198",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9140972870989421,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:563",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.33275513259479556,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:996",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8689808653631211,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:418",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9803984704307789,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:907",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9910231082311419,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:275",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2014227042580582,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3958",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0031617952657534754,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3786",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0064285321210138455,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9655217719627643,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4115",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005521557448032065,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:664",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03845466818474581,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:302",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9338056893727789,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:127",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9065320731197508,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:824",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04229068900440775,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4302",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00913772895171857,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1294",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.22180887985534967,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4564",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.023279972682463623,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5034",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009144312087449221,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4760",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.04068760231953274,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:761",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00781324532226298,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:473",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.21182546213277786,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:475",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8635323068339571,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:152",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9455439134623256,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4717",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03073186048788601,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:598",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9265460088223354,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1353",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.7500673937511658,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1119",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009998455433252156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:205",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2697394456629985,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:549",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11551854747384535,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:596",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.06441276575186126,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4007",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.010323323520302213,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5044",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0055904259083301485,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5075",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.008536903341030109,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1428",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.42533220853505704,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:248",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9775100360725971,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:79",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04936261817816685,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1188",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.30523913579336354,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4518",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03403556901956195,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4081",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11705357350245368,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:894",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9449130100094179,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:113",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9443141249665162,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4708",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9854397082767681,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:697",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04567369722076956,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4915",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.45524692922351323,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:129",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9799633122960949,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1053",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00887258583414486,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:268",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6190497767758476,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:980",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9436895394797411,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:240",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.966950140796287,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:575",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0033990310832599734,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3734",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.010752616948830156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:92",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.46498789207873875,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:347",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9607403407555258,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5007",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.4455410494810485,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1152",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.15936896591205463,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9724496344614731,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4825",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004989684843574622,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8615156257460241,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3984",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9209650215818156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5015",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005142632863170787,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3876",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.034076615790361,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1477",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.3352024695621038,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4360",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0040338473652434155,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1189",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.032018612264802494,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:339",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006604922169503146,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1410",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.033848140152416654,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:128",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.15735015749743103,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:682",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.014894732625997838,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:95",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9748430674960982,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1440",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.03750619242955324,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4982",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006058130774357504,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9355695521642355,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5040",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.015692767247922564,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1191",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.023467325584251592,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4929",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9021552261777076,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:313",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.974293984749406,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:281",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.05424835270639003,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4594",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006960785486513203,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:739",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009170837886430534,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1393",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.030100664384015426,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:714",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9689991054789567,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1368",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9879441988028556,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4548",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.017145774841958106,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4951",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.027902055210660772,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4944",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.29840751008625294,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:312",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00519425195423028,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4493",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0044190663633334225,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1232",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.34543018544182824,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:299",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8594123293239516,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:650",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.03825702802567001,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:49",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9767656109347391,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        }
+      ],
+      "graphCalls": 100
+    },
+    {
+      "repeat": 0,
+      "path": "fixed2",
+      "ms": 1031.4000000357628,
+      "records": [
+        {
+          "id": "test:3995",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.027138663172997686,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:875",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.015031633000359323,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4138",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.8827774618971453,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1033",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.017868457645037382,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:289",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9823536437856274,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3750",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.01569250025197111,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:387",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005851743953911793,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:260",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3717143782016839,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:420",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0018121407736831209,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:198",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9711487193416166,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:563",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.32119010647364943,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:996",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9264591746414115,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:418",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9306550007773049,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:907",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9758890909392803,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:275",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3794572755869108,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3958",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0026495851152875337,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3786",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004095143399024206,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9101947039906224,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4115",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00506091184468712,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:664",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.019108195489244296,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:302",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7575612903005694,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:127",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8388182140594986,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:824",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3680898894161023,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4302",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.010956637743014006,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1294",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.5062264859421995,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4564",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11606641328338105,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5034",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.020728521968170016,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4760",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.08270089213634993,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:761",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009785044863482606,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:473",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.37331930663973284,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:475",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6880197698792915,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:152",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9096798887910226,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4717",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.10113153321474212,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:598",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9120599039526232,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1353",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.8956946882226567,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1119",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.011656008240214875,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:205",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7041603681535717,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:549",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.4751503849152487,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:596",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04055875667714086,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4007",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03464608791214532,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5044",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004938930799095924,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5075",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.01787733417815729,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1428",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.4792611740567268,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:248",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9876870662208088,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:79",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04726426948724719,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1188",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.19712074250161274,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4518",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.05236795810774658,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4081",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.22343228330701656,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:894",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9103756598295426,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:113",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9139963435322795,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4708",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9547471747087625,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:697",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2706484316723518,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4915",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6660821326091391,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:129",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9738626153514307,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1053",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0041494019853305615,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:268",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7382034473941345,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:980",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9434633149245271,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:240",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.969986661362865,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:575",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0006066371592339227,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3734",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.014946973357981643,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:92",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.615456055994586,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:347",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9704235140163631,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5007",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2338541345506474,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1152",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.14164756692227906,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9347793197436733,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4825",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0019155850137010997,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6428521706422995,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3984",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9490859266964592,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5015",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0014904318027519632,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3876",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.048495948235883934,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1477",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.38044413808892114,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4360",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0007389575648116456,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1189",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.02269479292769764,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:339",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.003258627289879977,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1410",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.031157228582052273,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:128",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.07414509959427298,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:682",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.032313677337000475,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:95",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9386499116168191,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1440",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.18824263300538788,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4982",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.007599264265819899,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9604088460337765,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5040",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.013205859530984026,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1191",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.035006396638990175,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4929",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.886303078904316,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:313",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9790880554770569,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:281",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.06502418703322259,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4594",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0008404907988576553,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:739",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005197861651973004,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1393",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.029530976227109564,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:714",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9573570825312637,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1368",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9919046025451919,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4548",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03811795943433926,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4951",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11901246312947923,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4944",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.20871159090764843,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:312",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0032023014908214354,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4493",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.001770484636939248,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1232",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.5767727335345201,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:299",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8883623503065087,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:650",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.1598686744401102,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:49",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9368643473162994,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        }
+      ],
+      "graphCalls": 100
+    },
+    {
+      "repeat": 1,
+      "path": "fixed2",
+      "ms": 990.1000000238419,
+      "records": [
+        {
+          "id": "test:3995",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.027138663172997686,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:875",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.015031633000359323,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4138",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.8827774618971453,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1033",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.017868457645037382,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:289",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9823536437856274,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3750",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.01569250025197111,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:387",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005851743953911793,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:260",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3717143782016839,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:420",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0018121407736831209,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:198",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9711487193416166,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:563",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.32119010647364943,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:996",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9264591746414115,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:418",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9306550007773049,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:907",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9758890909392803,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:275",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3794572755869108,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3958",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0026495851152875337,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3786",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004095143399024206,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9101947039906224,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4115",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00506091184468712,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:664",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.019108195489244296,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:302",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7575612903005694,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:127",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8388182140594986,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:824",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3680898894161023,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4302",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.010956637743014006,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1294",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.5062264859421995,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4564",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11606641328338105,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5034",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.020728521968170016,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4760",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.08270089213634993,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:761",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009785044863482606,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:473",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.37331930663973284,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:475",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6880197698792915,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:152",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9096798887910226,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4717",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.10113153321474212,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:598",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9120599039526232,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1353",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.8956946882226567,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1119",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.011656008240214875,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:205",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7041603681535717,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:549",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.4751503849152487,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:596",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04055875667714086,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4007",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03464608791214532,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5044",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004938930799095924,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5075",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.01787733417815729,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1428",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.4792611740567268,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:248",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9876870662208088,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:79",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04726426948724719,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1188",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.19712074250161274,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4518",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.05236795810774658,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4081",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.22343228330701656,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:894",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9103756598295426,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:113",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9139963435322795,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4708",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9547471747087625,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:697",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2706484316723518,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4915",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6660821326091391,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:129",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9738626153514307,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1053",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0041494019853305615,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:268",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.7382034473941345,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:980",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9434633149245271,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:240",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.969986661362865,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:575",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0006066371592339227,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3734",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.014946973357981643,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:92",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.615456055994586,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:347",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9704235140163631,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5007",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2338541345506474,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1152",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.14164756692227906,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9347793197436733,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4825",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0019155850137010997,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6428521706422995,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3984",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9490859266964592,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5015",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0014904318027519632,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:3876",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.048495948235883934,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1477",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.38044413808892114,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4360",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0007389575648116456,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1189",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.02269479292769764,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:339",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.003258627289879977,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1410",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.031157228582052273,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:128",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.07414509959427298,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:682",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.032313677337000475,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:95",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9386499116168191,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1440",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.18824263300538788,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4982",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.007599264265819899,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9604088460337765,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:5040",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.013205859530984026,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1191",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.035006396638990175,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4929",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.886303078904316,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:313",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9790880554770569,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:281",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.06502418703322259,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4594",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0008404907988576553,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:739",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005197861651973004,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1393",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.029530976227109564,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:714",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9573570825312637,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1368",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9919046025451919,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4548",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03811795943433926,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4951",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11901246312947923,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4944",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.20871159090764843,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:312",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0032023014908214354,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:4493",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.001770484636939248,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:1232",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.5767727335345201,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:299",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8883623503065087,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:650",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.1598686744401102,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        },
+        {
+          "id": "test:49",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9368643473162994,
+          "blocks": 2,
+          "calls": [
+            "prefix"
+          ]
+        }
+      ],
+      "graphCalls": 100
+    },
+    {
+      "repeat": 1,
+      "path": "full",
+      "ms": 1773.199999988079,
+      "records": [
+        {
+          "id": "test:3995",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03821793619900488,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:875",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009272611804107251,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4138",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.915357459619243,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1033",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0071795291943197665,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:289",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9668139502350073,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3750",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.007594353602820158,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:387",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.007000178165152316,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:260",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.3532331816671833,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:420",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005225291019754154,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:198",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9140972870989421,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:563",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.33275513259479556,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:996",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8689808653631211,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:418",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9803984704307789,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:907",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9910231082311419,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:275",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2014227042580582,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3958",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0031617952657534754,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3786",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0064285321210138455,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9655217719627643,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4115",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005521557448032065,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:664",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03845466818474581,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:302",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9338056893727789,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:127",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9065320731197508,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:824",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04229068900440775,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4302",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00913772895171857,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1294",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.22180887985534967,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4564",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.023279972682463623,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5034",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009144312087449221,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4760",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.04068760231953274,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:761",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00781324532226298,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:473",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.21182546213277786,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:475",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8635323068339571,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:152",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9455439134623256,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4717",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03073186048788601,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:598",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9265460088223354,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1353",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.7500673937511658,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1119",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009998455433252156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:205",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.2697394456629985,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:549",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11551854747384535,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:596",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.06441276575186126,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4007",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.010323323520302213,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5044",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0055904259083301485,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5075",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.008536903341030109,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1428",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.42533220853505704,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:248",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9775100360725971,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:79",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04936261817816685,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1188",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.30523913579336354,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4518",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.03403556901956195,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4081",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.11705357350245368,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:894",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9449130100094179,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:113",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9443141249665162,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4708",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9854397082767681,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:697",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.04567369722076956,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4915",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.45524692922351323,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:129",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9799633122960949,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1053",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00887258583414486,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:268",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.6190497767758476,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:980",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9436895394797411,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:240",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.966950140796287,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:575",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0033990310832599734,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3734",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.010752616948830156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:92",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.46498789207873875,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:347",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9607403407555258,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5007",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.4455410494810485,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1152",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.15936896591205463,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1310",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9724496344614731,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4825",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.004989684843574622,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8615156257460241,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3984",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9209650215818156,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5015",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.005142632863170787,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:3876",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.034076615790361,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1477",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.3352024695621038,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4360",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0040338473652434155,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1189",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.032018612264802494,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:339",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006604922169503146,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1410",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.033848140152416654,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:128",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.15735015749743103,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:682",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.014894732625997838,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:95",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9748430674960982,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1440",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.03750619242955324,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4982",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006058130774357504,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:175",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9355695521642355,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:5040",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.015692767247922564,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1191",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.023467325584251592,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4929",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9021552261777076,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:313",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.974293984749406,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:281",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.05424835270639003,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4594",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.006960785486513203,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:739",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.009170837886430534,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1393",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.030100664384015426,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:714",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9689991054789567,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1368",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9879441988028556,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4548",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.017145774841958106,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4951",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.027902055210660772,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4944",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.29840751008625294,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:312",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.00519425195423028,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:4493",
+          "expected": 0,
+          "prediction": 0,
+          "probability": 0.0044190663633334225,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:1232",
+          "expected": 0,
+          "prediction": 1,
+          "probability": 0.34543018544182824,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:299",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.8594123293239516,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:650",
+          "expected": 1,
+          "prediction": 0,
+          "probability": 0.03825702802567001,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        },
+        {
+          "id": "test:49",
+          "expected": 1,
+          "prediction": 1,
+          "probability": 0.9767656109347391,
+          "blocks": 4,
+          "calls": [
+            "full"
+          ]
+        }
+      ],
+      "graphCalls": 100
+    }
+  ],
+  "manifest": {
+    "prefix": {
+      "bytes": 38141179,
+      "sha256": "fd1e451a9a5d50ab624fa006475be9c57ca1c54f87f5dd18bd30410dbb10026c"
+    },
+    "suffix": {
+      "bytes": 6351702,
+      "sha256": "aed3ab7b83505176d07d1001fedee9fc1430e80fc364a3ce9f64abd2e54809e9"
+    },
+    "full": {
+      "bytes": 44506427,
+      "sha256": "5327600a6cb995b5c7c2dcc2e9d458f6e056668123c5acd6299232ed3218db21"
+    }
+  },
+  "extraModels": {
+    "trained": {
+      "bytes": 44506427,
+      "sha256": "13916589c42ad0a323acc3d23a2cd50fdf9b89b44ffbf16582446fdef56fe9aa",
+      "threshold": 0.4
+    },
+    "int8": {
+      "bytes": 35178341,
+      "sha256": "43a5ca94841f4ee5b39c45d92a1ed1b4979a4153f9511fd405f86a603e4a978a",
+      "threshold": 0.2
+    }
+  },
+  "repeatDecisionAndRouteParity": true,
+  "tinyModel": null,
+  "thresholds": {
+    "full": 0.2,
+    "fixed2": 0.2,
+    "adaptive": {
+      "low": 0.1,
+      "high": 0.8
+    },
+    "cascade": {
+      "low": 0.05,
+      "high": 0.95,
+      "scope": "Illustrative conservative cutoff for the exported tiny model with four-layer BERT fallback; not the published tiny-to-Qwen cascade and not calibrated for this pairing."
+    }
+  },
+  "dataset": {
+    "url": "https://huggingface.co/datasets/lmsys/toxic-chat/resolve/29df8e4dba60e1f4af4b4075c0705c5b313548a8/data/0124/toxic-chat_annotation_test.csv",
+    "sha256": "3c2e49889626f7738dca0a29bface0ba0a0595b2ffdd17f0e02f19df7c3c4c9b"
+  },
+  "limitations": [
+    "Consumed real-message sample, not a fresh accuracy test.",
+    "Timing includes tokenization, inference, checks and output reading. Setup/download/warmup excluded. Two reverse-order passes; device-specific.",
+    "Cascade is a new BERT-to-BERT illustration; fallback repeats input encoding. 2+4 blocks are not equivalent FLOPs because widths differ.",
+    "Training mode runs existing trained weights, not browser training. Quantization mode converts BERT, not the Qwen experiment.",
+    "Only adaptive/fixed modes skip layers inside the four-layer model."
+  ],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+}

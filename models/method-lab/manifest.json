@@ -1,0 +1,1223 @@
+{
+  "models": {
+    "trained": {
+      "bytes": 44506427,
+      "sha256": "13916589c42ad0a323acc3d23a2cd50fdf9b89b44ffbf16582446fdef56fe9aa",
+      "threshold": 0.4
+    },
+    "int8": {
+      "bytes": 35178341,
+      "sha256": "43a5ca94841f4ee5b39c45d92a1ed1b4979a4153f9511fd405f86a603e4a978a",
+      "threshold": 0.2
+    }
+  },
+  "selected": "distill-9927",
+  "fixed2_threshold": 0.2,
+  "cascade": {
+    "low": 0.05,
+    "high": 0.95,
+    "scope": "Illustrative conservative cutoff for the exported tiny model with four-layer BERT fallback; not the published tiny-to-Qwen cascade and not calibrated for this pairing."
+  },
+  "evaluation": [
+    {
+      "id": "test:3995",
+      "label": 0,
+      "trained": {
+        "probability": 0.06729380041360855,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.04999840632081032,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:875",
+      "label": 0,
+      "trained": {
+        "probability": 0.021999718621373177,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.011391903273761272,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4138",
+      "label": 0,
+      "trained": {
+        "probability": 0.9171488285064697,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9195070862770081,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1033",
+      "label": 0,
+      "trained": {
+        "probability": 0.016414936631917953,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.00888846442103386,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:289",
+      "label": 1,
+      "trained": {
+        "probability": 0.9813186526298523,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.96298748254776,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:3750",
+      "label": 1,
+      "trained": {
+        "probability": 0.02144276723265648,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.010603806003928185,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:387",
+      "label": 0,
+      "trained": {
+        "probability": 0.012592240236699581,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.009220977313816547,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:260",
+      "label": 1,
+      "trained": {
+        "probability": 0.5704930424690247,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.39738729596138,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:420",
+      "label": 0,
+      "trained": {
+        "probability": 0.008990286849439144,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.008529252372682095,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:198",
+      "label": 1,
+      "trained": {
+        "probability": 0.8914204835891724,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9117929339408875,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:563",
+      "label": 0,
+      "trained": {
+        "probability": 0.4339642822742462,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.34858983755111694,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:996",
+      "label": 1,
+      "trained": {
+        "probability": 0.9534975290298462,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.8533581495285034,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:418",
+      "label": 1,
+      "trained": {
+        "probability": 0.9881638884544373,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9797825217247009,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:907",
+      "label": 1,
+      "trained": {
+        "probability": 0.9936498999595642,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9891840219497681,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:275",
+      "label": 1,
+      "trained": {
+        "probability": 0.2945183515548706,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.245731920003891,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:3958",
+      "label": 0,
+      "trained": {
+        "probability": 0.005518197547644377,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.005802804138511419,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:3786",
+      "label": 0,
+      "trained": {
+        "probability": 0.014311721548438072,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.010710286907851696,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:310",
+      "label": 1,
+      "trained": {
+        "probability": 0.9699720144271851,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9693706631660461,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4115",
+      "label": 0,
+      "trained": {
+        "probability": 0.010478109121322632,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.006995863746851683,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:664",
+      "label": 0,
+      "trained": {
+        "probability": 0.06428304314613342,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.05348185822367668,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:302",
+      "label": 1,
+      "trained": {
+        "probability": 0.970601499080658,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9249690175056458,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:127",
+      "label": 1,
+      "trained": {
+        "probability": 0.9557399749755859,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9045671224594116,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:824",
+      "label": 1,
+      "trained": {
+        "probability": 0.040518950670957565,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.05585021153092384,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4302",
+      "label": 0,
+      "trained": {
+        "probability": 0.018357980996370316,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.010360615327954292,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1294",
+      "label": 1,
+      "trained": {
+        "probability": 0.2542276084423065,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.25023069977760315,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4564",
+      "label": 0,
+      "trained": {
+        "probability": 0.054365675896406174,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.03346716985106468,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:5034",
+      "label": 0,
+      "trained": {
+        "probability": 0.013504005037248135,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.01547085028141737,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4760",
+      "label": 0,
+      "trained": {
+        "probability": 0.0874912291765213,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.05741005390882492,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:761",
+      "label": 0,
+      "trained": {
+        "probability": 0.02026316151022911,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.010901366360485554,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:473",
+      "label": 0,
+      "trained": {
+        "probability": 0.40267398953437805,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.26699817180633545,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:475",
+      "label": 1,
+      "trained": {
+        "probability": 0.8978009819984436,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.8490014672279358,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:152",
+      "label": 1,
+      "trained": {
+        "probability": 0.9666002988815308,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9449167251586914,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4717",
+      "label": 0,
+      "trained": {
+        "probability": 0.049590758979320526,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.041196659207344055,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:598",
+      "label": 1,
+      "trained": {
+        "probability": 0.9490397572517395,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9148090481758118,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1353",
+      "label": 0,
+      "trained": {
+        "probability": 0.9045599699020386,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.7276380062103271,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1119",
+      "label": 0,
+      "trained": {
+        "probability": 0.02171771600842476,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.013607298955321312,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:205",
+      "label": 1,
+      "trained": {
+        "probability": 0.4602871835231781,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.32191193103790283,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:549",
+      "label": 0,
+      "trained": {
+        "probability": 0.19854651391506195,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.1485232710838318,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:596",
+      "label": 1,
+      "trained": {
+        "probability": 0.1514272838830948,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.08216113597154617,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4007",
+      "label": 0,
+      "trained": {
+        "probability": 0.019333310425281525,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.017354607582092285,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:5044",
+      "label": 0,
+      "trained": {
+        "probability": 0.013769269920885563,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.00838715210556984,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:5075",
+      "label": 0,
+      "trained": {
+        "probability": 0.020041579380631447,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.010446550324559212,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1428",
+      "label": 0,
+      "trained": {
+        "probability": 0.6032299399375916,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.4588184356689453,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:248",
+      "label": 1,
+      "trained": {
+        "probability": 0.9813157320022583,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9734155535697937,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:79",
+      "label": 1,
+      "trained": {
+        "probability": 0.05696806311607361,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.0634564533829689,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1188",
+      "label": 1,
+      "trained": {
+        "probability": 0.4649823307991028,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.41542813181877136,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4518",
+      "label": 0,
+      "trained": {
+        "probability": 0.04720361530780792,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.03728260099887848,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4081",
+      "label": 0,
+      "trained": {
+        "probability": 0.11942360550165176,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.1284932941198349,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:894",
+      "label": 1,
+      "trained": {
+        "probability": 0.9537369012832642,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9422107934951782,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:113",
+      "label": 1,
+      "trained": {
+        "probability": 0.9548327922821045,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9440294504165649,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4708",
+      "label": 1,
+      "trained": {
+        "probability": 0.9857628345489502,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9828822612762451,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:697",
+      "label": 1,
+      "trained": {
+        "probability": 0.10307098180055618,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.0630255937576294,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4915",
+      "label": 1,
+      "trained": {
+        "probability": 0.5008804202079773,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.4542948603630066,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:129",
+      "label": 1,
+      "trained": {
+        "probability": 0.9858860969543457,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9777798652648926,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1053",
+      "label": 0,
+      "trained": {
+        "probability": 0.016412027180194855,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.011466271243989468,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:268",
+      "label": 1,
+      "trained": {
+        "probability": 0.6470463871955872,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.6680383086204529,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:980",
+      "label": 1,
+      "trained": {
+        "probability": 0.9719812273979187,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.946501612663269,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:240",
+      "label": 1,
+      "trained": {
+        "probability": 0.9727697372436523,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9650394320487976,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:575",
+      "label": 0,
+      "trained": {
+        "probability": 0.006287195719778538,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.005867908243089914,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:3734",
+      "label": 1,
+      "trained": {
+        "probability": 0.023154182359576225,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.012573695741593838,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:92",
+      "label": 1,
+      "trained": {
+        "probability": 0.5786846280097961,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.4915977716445923,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:347",
+      "label": 1,
+      "trained": {
+        "probability": 0.9676696062088013,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9602200388908386,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:5007",
+      "label": 1,
+      "trained": {
+        "probability": 0.6852536201477051,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.4844664931297302,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1152",
+      "label": 0,
+      "trained": {
+        "probability": 0.27482539415359497,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.20748691260814667,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1310",
+      "label": 1,
+      "trained": {
+        "probability": 0.9830816388130188,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9718209505081177,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4825",
+      "label": 0,
+      "trained": {
+        "probability": 0.010392344556748867,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.006052718032151461,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4175",
+      "label": 1,
+      "trained": {
+        "probability": 0.8935938477516174,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.8820690512657166,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:3984",
+      "label": 1,
+      "trained": {
+        "probability": 0.9657592177391052,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9088496565818787,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:5015",
+      "label": 0,
+      "trained": {
+        "probability": 0.009456198662519455,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.006128364242613316,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:3876",
+      "label": 0,
+      "trained": {
+        "probability": 0.0680444985628128,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.04925119876861572,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1477",
+      "label": 0,
+      "trained": {
+        "probability": 0.4318449795246124,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.30067452788352966,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4360",
+      "label": 0,
+      "trained": {
+        "probability": 0.006687856279313564,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.0069369166158139706,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1189",
+      "label": 1,
+      "trained": {
+        "probability": 0.0883142277598381,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.04768664762377739,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:339",
+      "label": 0,
+      "trained": {
+        "probability": 0.015400601550936699,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.00842302292585373,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1410",
+      "label": 0,
+      "trained": {
+        "probability": 0.047462258487939835,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.044611476361751556,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:128",
+      "label": 1,
+      "trained": {
+        "probability": 0.28714466094970703,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.18558716773986816,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:682",
+      "label": 0,
+      "trained": {
+        "probability": 0.019664129242300987,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.018128318712115288,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:95",
+      "label": 1,
+      "trained": {
+        "probability": 0.9805623292922974,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9704239964485168,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1440",
+      "label": 1,
+      "trained": {
+        "probability": 0.04089777544140816,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.04488641396164894,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4982",
+      "label": 0,
+      "trained": {
+        "probability": 0.013652096502482891,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.007877377793192863,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:175",
+      "label": 1,
+      "trained": {
+        "probability": 0.9470297694206238,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9400396943092346,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:5040",
+      "label": 0,
+      "trained": {
+        "probability": 0.025586210191249847,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.026689939200878143,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1191",
+      "label": 0,
+      "trained": {
+        "probability": 0.028774444013834,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.026817822828888893,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4929",
+      "label": 1,
+      "trained": {
+        "probability": 0.9375919699668884,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9242696166038513,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:313",
+      "label": 1,
+      "trained": {
+        "probability": 0.9712267518043518,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9694631695747375,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:281",
+      "label": 0,
+      "trained": {
+        "probability": 0.14261922240257263,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.07208380848169327,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4594",
+      "label": 0,
+      "trained": {
+        "probability": 0.012706366367638111,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.01006900891661644,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:739",
+      "label": 0,
+      "trained": {
+        "probability": 0.021499767899513245,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.011849848553538322,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1393",
+      "label": 0,
+      "trained": {
+        "probability": 0.05442322790622711,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.04220185801386833,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:714",
+      "label": 1,
+      "trained": {
+        "probability": 0.9825835824012756,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9672932624816895,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:1368",
+      "label": 1,
+      "trained": {
+        "probability": 0.9915397763252258,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.9860737323760986,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:4548",
+      "label": 0,
+      "trained": {
+        "probability": 0.029150856658816338,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.02448330819606781,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4951",
+      "label": 0,
+      "trained": {
+        "probability": 0.037059374153614044,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.034283287823200226,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4944",
+      "label": 1,
+      "trained": {
+        "probability": 0.3294731676578522,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.35639336705207825,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:312",
+      "label": 0,
+      "trained": {
+        "probability": 0.009945856407284737,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.0063368589617311954,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:4493",
+      "label": 0,
+      "trained": {
+        "probability": 0.009100706316530704,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.007463532965630293,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:1232",
+      "label": 0,
+      "trained": {
+        "probability": 0.3645419478416443,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.46980881690979004,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:299",
+      "label": 1,
+      "trained": {
+        "probability": 0.8347694277763367,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.8799991011619568,
+        "prediction": 1
+      }
+    },
+    {
+      "id": "test:650",
+      "label": 1,
+      "trained": {
+        "probability": 0.07930020242929459,
+        "prediction": 0
+      },
+      "int8": {
+        "probability": 0.060720235109329224,
+        "prediction": 0
+      }
+    },
+    {
+      "id": "test:49",
+      "label": 1,
+      "trained": {
+        "probability": 0.9819884896278381,
+        "prediction": 1
+      },
+      "int8": {
+        "probability": 0.973416805267334,
+        "prediction": 1
+      }
+    }
+  ]
+}

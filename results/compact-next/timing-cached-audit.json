@@ -1,0 +1,45 @@
+{
+  "reviewer": "Internal adversarial search agent; source AST and independent record arithmetic",
+  "timed_execute_ast_identical": true,
+  "records_checked": 750,
+  "all_predictions_labels_depths_and_risks_exactly_match": true,
+  "all_five_timing_aggregates_recomputed": true,
+  "parent_artifacts_unchanged_since_review_start": {
+    "timing-protocol.json": "3b54857c6bb359b9136e330db0cef8bef4c4da3f89d9f6d02074cb8e8264a590",
+    "timing.json": "52a349c5475584f644d2830b68285813622eacb5ccc9e521ff06321dcef030c3",
+    "timing-records.json": "d97d344b38469f16887250750edd01cff0a131a85db3383141342444ad613810"
+  },
+  "same_quality_ids_paths_passes_threads_boundaries_selection": true,
+  "source_sha256": {
+    "original": "235ef40cf22609a08ee3590e54046873fbf35ea4535c431ffa1907c3d8cdb5c6",
+    "cached": "71154ce94a1ca8ca4b6a96ead087e027bf94cd888554560f8e9878566929cddb"
+  },
+  "artifact_sha256": {
+    "timing-cached-protocol.json": "ebff5f37bc9a8191060d3596b40eab025ce516fc4e01183040bec4c49cabb9f2",
+    "timing-cached.json": "b03591bbf3ae8872e5b760d535ec013badbb7ab904cb11b8c12ee2d5baefecb3",
+    "timing-cached-records.json": "0c941dad1865edf0a210112bc4d5dea2f16f530e9c8f334e97333258500fdc22",
+    "timing-cache-copy-attempt.json": "8eb653a90ee3732681d41a50ddc5a0a6ff79ae94b4aae0da4a723e82bcbaf5e8",
+    "timing-cache-copy-attempt.py": "8a09650a9c0fa5ff56592dd925cdcda45699b058d03b13248d6f44633270d536",
+    "timing-cache-copy-attempt-protocol.json": "a894e55ed824d101966c976f1f5820d3c1d2915049e70b34fd67c5d902cc0f16"
+  },
+  "layout_diagnostic": {
+    "original_pca_components_strides": [
+      8,
+      128
+    ],
+    "copy_strides": [
+      2048,
+      8
+    ],
+    "original_fortran_contiguous": true,
+    "default_copy_c_contiguous": true,
+    "values_equal": true,
+    "synthetic_singleton_pca_inputs": 100,
+    "synthetic_singleton_bitwise_differences": 100,
+    "synthetic_max_delta": 2.220446049250313e-15,
+    "interpretation": "Default copy changes storage order and singleton floating-point reduction. Final materialization removes copy and preserves stored order; all recorded final risk scores exactly match.",
+    "synthetic_seed": 71
+  },
+  "limits": "No new model inference. Internal source and artifact review, not external replication. Wall times differ across runs; successful follow-up has its own five-path baseline.",
+  "failed_attempt_source_and_protocol_preserved": true
+}

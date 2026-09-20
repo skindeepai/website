@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "coveredPages": 43,
+  "checks": [
+    "empty input: zero model downloads",
+    "own text: actual inference and no invented accuracy",
+    "download excludes typed text",
+    "real two-message benchmark renders",
+    "populated table at seven widths",
+    "stop discards partial run",
+    "preference ratings, sampler and reset",
+    "every mapped demo link resolves to its declared approach"
+  ],
+  "browser": "151.0.7922.34"
+}

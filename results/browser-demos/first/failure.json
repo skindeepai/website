@@ -1,0 +1,4 @@
+{
+  "error": "quantization test:1152\n\n0 !== 1\n",
+  "stack": "AssertionError [ERR_ASSERTION]: quantization test:1152\n\n0 !== 1\n\n    at C:\\Users\\steve\\Code\\claude\\skindeep\\scripts\\live-demos-test.cjs:13:761"
+}

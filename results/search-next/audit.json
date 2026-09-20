@@ -1,0 +1,57 @@
+{
+  "checks_passed": [
+    "bm25",
+    "minilm",
+    "fusion",
+    "rerank",
+    "gated"
+  ],
+  "predictions": 200,
+  "timed_calls": 3000,
+  "paired_first_result_changes": {
+    "bm25_vs_rerank": {
+      "corrected_first_results": 20,
+      "lost_first_results": 26,
+      "net": -6
+    },
+    "minilm_vs_bm25": {
+      "corrected_first_results": 22,
+      "lost_first_results": 22,
+      "net": 0
+    },
+    "minilm_vs_rerank": {
+      "corrected_first_results": 17,
+      "lost_first_results": 23,
+      "net": -6
+    },
+    "fusion_vs_bm25": {
+      "corrected_first_results": 15,
+      "lost_first_results": 1,
+      "net": 14
+    },
+    "fusion_vs_rerank": {
+      "corrected_first_results": 20,
+      "lost_first_results": 12,
+      "net": 8
+    },
+    "rerank_vs_bm25": {
+      "corrected_first_results": 26,
+      "lost_first_results": 20,
+      "net": 6
+    },
+    "gated_vs_bm25": {
+      "corrected_first_results": 10,
+      "lost_first_results": 2,
+      "net": 8
+    },
+    "gated_vs_rerank": {
+      "corrected_first_results": 18,
+      "lost_first_results": 16,
+      "net": 2
+    }
+  },
+  "candidate_recall@20": 0.8338333333333333,
+  "queries_with_relevant_candidate": 171,
+  "script_sha256": "d806243a8ef2f92931f95ac9a185191b764452c85836a19011312f721cac5a66",
+  "limits": "Recomputes retained records and invariants, not independent inference or new data."
+}

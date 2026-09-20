@@ -1,0 +1,39 @@
+{
+  "protocol_sha256": "aade223bbe5fd20c3aeca5a58c43306b0583c22ec5e038ab5959e3ca596c71de",
+  "methods": {
+    "peak_gate": {
+      "n": 30,
+      "accepted": 8,
+      "correct_clicks": 7,
+      "wrong_clicks": 1,
+      "review": 22,
+      "withheld_correct_points": 18
+    },
+    "relative_peak_gate": {
+      "n": 30,
+      "accepted": 8,
+      "correct_clicks": 7,
+      "wrong_clicks": 1,
+      "review": 22,
+      "withheld_correct_points": 18
+    },
+    "always_click_connected_region": {
+      "n": 30,
+      "accepted": 30,
+      "correct_clicks": 25,
+      "wrong_clicks": 5,
+      "review": 0,
+      "withheld_correct_points": 0
+    }
+  },
+  "model": "microsoft/GUI-Actor-2B-Qwen2-VL",
+  "model_revision": "8f87b366d004425a9823502553e2097c71116ece",
+  "layers": 28,
+  "decoding_tokens": 0,
+  "limits": [
+    "All30 targets are present. This does not validate absent-target detection.",
+    "Only6 held-out examples per platform; no guaranteed error rate.",
+    "Same frozen pointer model and already inspected screenshots; neither new image inference nor latency improvement.",
+    "Peak confidence depends on image/grid; this study retains both predefined policies whether better or worse."
+  ]
+}

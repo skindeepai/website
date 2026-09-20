@@ -1,0 +1,22 @@
+{
+  "n": 100,
+  "correct": 83,
+  "early_count": 72,
+  "all_decisions_and_exits_match": true,
+  "max_logit_delta": 2.592802047729492e-06,
+  "models": {
+    "prefix": {
+      "bytes": 38141179,
+      "sha256": "fd1e451a9a5d50ab624fa006475be9c57ca1c54f87f5dd18bd30410dbb10026c"
+    },
+    "suffix": {
+      "bytes": 6351702,
+      "sha256": "aed3ab7b83505176d07d1001fedee9fc1430e80fc364a3ce9f64abd2e54809e9"
+    },
+    "full": {
+      "bytes": 44506427,
+      "sha256": "5327600a6cb995b5c7c2dcc2e9d458f6e056668123c5acd6299232ed3218db21"
+    }
+  },
+  "protocol_sha256": "08ddfde58120216bedbc25b432ca868de12a121eade9e89a182b096629c96a68"
+}

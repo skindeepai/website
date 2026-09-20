@@ -1,0 +1,12 @@
+{
+  "threshold": 0.3,
+  "dev": {
+    "n": 320,
+    "correct": 260,
+    "known_correct": 242,
+    "known": 300,
+    "unsupported_rejected": 18,
+    "unsupported": 20,
+    "known_rejected": 53
+  }
+}

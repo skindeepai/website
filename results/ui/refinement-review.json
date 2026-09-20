@@ -1,0 +1,197 @@
+{
+  "kind": "Static layout and automated accessibility checks; no inference",
+  "checks": [
+    {
+      "page": "batch-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "batch-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "prefix-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "research.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "limitations": [
+    "Headless Chromium, not real devices or assistive technology."
+  ]
+}

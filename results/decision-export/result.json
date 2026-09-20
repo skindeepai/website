@@ -1,0 +1,20 @@
+{
+  "n": 100,
+  "metrics": {
+    "n": 100,
+    "correct": 82,
+    "true_block": 37,
+    "missed_toxic": 13,
+    "true_safe": 45,
+    "false_block": 5,
+    "accuracy": 0.82,
+    "balanced_accuracy": 0.8200000000000001
+  },
+  "all_predictions_match": true,
+  "max_logit_delta": 3.337860107421875e-06,
+  "model_bytes": 17529794,
+  "model_sha256": "81a3727c718150f0670ff1109902dd7246b438c86eedcdc0109d1a9b82115bb2",
+  "parameter_count": 4369666,
+  "timing": "This export check does not benchmark speed. Browser timing is recorded separately.",
+  "protocol_sha256": "812c0f73dc8c8c37b1a2a37410e94a4e4d2307633d7ac3e7213f9d5c1a57c6ff"
+}

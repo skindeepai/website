@@ -1,0 +1,1 @@
+Base model: google/bert_uncased_L-2_H-128_A-2, Apache-2.0. Trained with ToxicChat0124 (CC BY-NC 4.0); this research artifact is offered for noncommercial research. Model provenance and evaluation: ../../docs/decision-export.md. No production moderation guarantee.

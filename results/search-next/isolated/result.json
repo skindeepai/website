@@ -1,0 +1,57 @@
+{
+  "created": "2026-09-20T05:22:55.862275+00:00",
+  "queries": 50,
+  "metrics": {
+    "bm25": {
+      "mean_ms": 5.965382666715111,
+      "median_ms": 6.201549986144528,
+      "p95_ms": 9.397529988200404,
+      "correct_first": 24,
+      "reranked_queries": 0,
+      "timed_calls": 150
+    },
+    "minilm": {
+      "mean_ms": 5.832259332528338,
+      "median_ms": 5.5097500153351575,
+      "p95_ms": 8.627845026785508,
+      "correct_first": 25,
+      "reranked_queries": 0,
+      "timed_calls": 150
+    },
+    "fusion": {
+      "mean_ms": 12.387175335315987,
+      "median_ms": 12.19370000762865,
+      "p95_ms": 18.01312500319909,
+      "correct_first": 26,
+      "reranked_queries": 0,
+      "timed_calls": 150
+    },
+    "rerank": {
+      "mean_ms": 99.62380266437928,
+      "median_ms": 101.9071999762673,
+      "p95_ms": 112.23582498787435,
+      "correct_first": 25,
+      "reranked_queries": 50,
+      "timed_calls": 150
+    },
+    "gated": {
+      "mean_ms": 23.38239600105832,
+      "median_ms": 6.724699982441962,
+      "p95_ms": 109.24604999891017,
+      "correct_first": 25,
+      "reranked_queries": 9,
+      "timed_calls": 150
+    }
+  },
+  "all_top10_rankings_match": true,
+  "protocol_sha256": "4301a27a0e0ce9691cf3b994e82e9d060977be2d71c3a754562cea2621dfde47",
+  "records_sha256": "e275691288d74a584563ebffce778167be6b55424f42439070627b77800ae670",
+  "script_sha256": "634948460faa83bad79b134bc821b843cae302b80c54ee6519bb85942791b80b",
+  "runtime": {
+    "onnxruntime": "1.23.2",
+    "numpy": "2.2.4",
+    "intra_op": 2,
+    "inter_op": 1
+  },
+  "limits": "Warm timing on one CPU host; operating-system background load is uncontrolled. No new quality validation."
+}

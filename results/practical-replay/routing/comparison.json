@@ -1,0 +1,11 @@
+{
+  "exact_same_outcomes": true,
+  "checks": {
+    "result.json": true,
+    "records.json": true,
+    "selection.json": true
+  },
+  "probability_calls": 2,
+  "numerical_sha256": "60e00d6fdd6933e0c746ba977706283795c8215f6204532bd0188b34baff5719",
+  "scope": "Same source/training/data independently rerun. Timing includes capture instrumentation and is not benchmark evidence."
+}

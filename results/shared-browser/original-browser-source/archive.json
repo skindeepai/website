@@ -1,0 +1,10 @@
+{
+  "scope": "Exact scripts for the original browser functional evidence; archived before lazy full-control loading.",
+  "files": {
+    "refresh_shared_demo.py": "8fc71aeda05be4d4d0ba19c5cd2c7cf52e7de602348403420c12a5db06aebebd",
+    "shared-decision-test.cjs": "61fdc8f9ff5485bf9b6c38b670478dca29ad2728ca3a979c232e32d39d8d0949",
+    "shared-decision-ui-test.cjs": "0959e587cb0d087ca8298e4fbc348aae5ec04aacc6a8c157cd981148c053231f",
+    "shared-decision-worker.js": "076e0a47e9a075fbd1ecadab0a29e5705d9fe91fe416d7ca721a717937258ce5",
+    "shared-decision.js": "a081a175545e5a025bc420a4ba832882745259bea711fae55e66f0057bd590e6"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "source_sha256": "dc1f41d8320bc49f4b30517e24ac9392302b6be9c4cf5d0591614afcd43728c7",
+  "quality_sha256": "7e62c5ea701d30b675ccb26a445b61eda032b471e9df0c3fa386592f25f30721",
+  "prediction_sha256": "1b1582219ec9b1207b1a9100b21ba46d6697581109be7d3d9263290b925e8f18",
+  "method_paths_recomputed": 17,
+  "records": 3500,
+  "all_passed": true
+}

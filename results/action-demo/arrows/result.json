@@ -1,0 +1,83 @@
+{
+  "completed_utc": "2026-09-20T03:38:11.114804+00:00",
+  "protocol_sha256": "38920e34125515757e0206f65d465a25219180eacdea13164f93c80fd4a67e5a",
+  "model_sha256": "c4225d1f4b3a96ff485439c6babf677d42e8b536d1484690aaa35d89bfee8170",
+  "summary": {
+    "test": {
+      "n": 400,
+      "neural_correct": 393,
+      "template_correct": 130,
+      "confusion": [
+        [
+          98,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          99,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          98,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          98
+        ]
+      ]
+    },
+    "outline_stress": {
+      "n": 400,
+      "neural_correct": 349,
+      "template_correct": 126,
+      "confusion": [
+        [
+          85,
+          4,
+          6,
+          5
+        ],
+        [
+          5,
+          88,
+          5,
+          2
+        ],
+        [
+          2,
+          4,
+          88,
+          6
+        ],
+        [
+          5,
+          2,
+          5,
+          88
+        ]
+      ]
+    }
+  },
+  "deployment_parity": true,
+  "max_abs_logit_delta": 1.1210734594868654e-05,
+  "selected_epoch": 19,
+  "parameters": 32932,
+  "threads": 2,
+  "node": "v22.14.0",
+  "torch": "2.6.0+cpu",
+  "limits": [
+    "Synthetic pixels and shared renderer can be easy and unlike real images.",
+    "Onlyfour directions; no absent-sign or unknown-image class.",
+    "Fresh render seeds are not a fresh real-world dataset.",
+    "Nearest-template baseline is deliberately simple; no comparison with a stronger vision model.",
+    "Outline stress is held out from training and epoch selection; failures retained."
+  ]
+}

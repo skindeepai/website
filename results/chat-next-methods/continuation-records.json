@@ -1,0 +1,6658 @@
+[
+  {
+    "id": "test:3995",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.43956999998772517
+  },
+  {
+    "id": "test:3995",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.37367150001227856
+  },
+  {
+    "id": "test:3995",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4348510999698192
+  },
+  {
+    "id": "test:875",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.45213210000656545
+  },
+  {
+    "id": "test:875",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.38079429999925196
+  },
+  {
+    "id": "test:875",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3656050999998115
+  },
+  {
+    "id": "test:4138",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.071910200000275
+  },
+  {
+    "id": "test:4138",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.0441509999800473
+  },
+  {
+    "id": "test:4138",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.8761803999659605
+  },
+  {
+    "id": "test:1033",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.33233569998992607
+  },
+  {
+    "id": "test:1033",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.33127890003379434
+  },
+  {
+    "id": "test:1033",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.41735699999844655
+  },
+  {
+    "id": "test:289",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.34274179994827136
+  },
+  {
+    "id": "test:289",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.3390815999591723
+  },
+  {
+    "id": "test:289",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.47887059999629855
+  },
+  {
+    "id": "test:3750",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 0,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.21648840000852942
+  },
+  {
+    "id": "test:3750",
+    "path": "full",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4122256999835372
+  },
+  {
+    "id": "test:3750",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4616048000170849
+  },
+  {
+    "id": "test:387",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4303908000001684
+  },
+  {
+    "id": "test:387",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.39488919998984784
+  },
+  {
+    "id": "test:387",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3954615999828093
+  },
+  {
+    "id": "test:260",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4908419999992475
+  },
+  {
+    "id": "test:260",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4385703000007197
+  },
+  {
+    "id": "test:260",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.566703199991025
+  },
+  {
+    "id": "test:420",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.39079239999409765
+  },
+  {
+    "id": "test:420",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4103942000074312
+  },
+  {
+    "id": "test:420",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4147025000420399
+  },
+  {
+    "id": "test:198",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4640596999670379
+  },
+  {
+    "id": "test:198",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4102891000220552
+  },
+  {
+    "id": "test:198",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4280099000316113
+  },
+  {
+    "id": "test:563",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4236661000177264
+  },
+  {
+    "id": "test:563",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5378109000157565
+  },
+  {
+    "id": "test:563",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4729794000159018
+  },
+  {
+    "id": "test:996",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4076734999543987
+  },
+  {
+    "id": "test:996",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3897496000281535
+  },
+  {
+    "id": "test:996",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4337062000413425
+  },
+  {
+    "id": "test:418",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.9201788999489509
+  },
+  {
+    "id": "test:418",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.5177849000319839
+  },
+  {
+    "id": "test:418",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.0811754000023939
+  },
+  {
+    "id": "test:907",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.48573979997308925
+  },
+  {
+    "id": "test:907",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.4577419999986887
+  },
+  {
+    "id": "test:907",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.8502971999696456
+  },
+  {
+    "id": "test:275",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.7243138999911025
+  },
+  {
+    "id": "test:275",
+    "path": "full",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.2687233000178821
+  },
+  {
+    "id": "test:275",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.4752970000263304
+  },
+  {
+    "id": "test:3958",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.41976509999949485
+  },
+  {
+    "id": "test:3958",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4028620999888517
+  },
+  {
+    "id": "test:3958",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.47989789996063337
+  },
+  {
+    "id": "test:3786",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4674247999791987
+  },
+  {
+    "id": "test:3786",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4737001999747008
+  },
+  {
+    "id": "test:3786",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.5576597999897785
+  },
+  {
+    "id": "test:310",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.7690022999886423
+  },
+  {
+    "id": "test:310",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.4377510999911465
+  },
+  {
+    "id": "test:310",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.7894770000129938
+  },
+  {
+    "id": "test:4115",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.063612500031013
+  },
+  {
+    "id": "test:4115",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.1108344999956898
+  },
+  {
+    "id": "test:4115",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.7328934000106528
+  },
+  {
+    "id": "test:664",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3828897000057623
+  },
+  {
+    "id": "test:664",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.39893109997501597
+  },
+  {
+    "id": "test:664",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3370196000323631
+  },
+  {
+    "id": "test:302",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 18,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.36294760002056137
+  },
+  {
+    "id": "test:302",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.5660940000088885
+  },
+  {
+    "id": "test:302",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5471158999716863
+  },
+  {
+    "id": "test:127",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.6342288999585435
+  },
+  {
+    "id": "test:127",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.540334899968002
+  },
+  {
+    "id": "test:127",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.6212403000099584
+  },
+  {
+    "id": "test:824",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.4853198999771848
+  },
+  {
+    "id": "test:824",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.4992557999794371
+  },
+  {
+    "id": "test:824",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.3623913999763317
+  },
+  {
+    "id": "test:4302",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4098721999907866
+  },
+  {
+    "id": "test:4302",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4008604999980889
+  },
+  {
+    "id": "test:4302",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.45184779999544844
+  },
+  {
+    "id": "test:1294",
+    "path": "full",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.7609949000179768
+  },
+  {
+    "id": "test:1294",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.641496800002642
+  },
+  {
+    "id": "test:1294",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.6305647999979556
+  },
+  {
+    "id": "test:4564",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3975281000020914
+  },
+  {
+    "id": "test:4564",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3850207000505179
+  },
+  {
+    "id": "test:4564",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4631348999682814
+  },
+  {
+    "id": "test:5034",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.4951727000297979
+  },
+  {
+    "id": "test:5034",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.5649590999819338
+  },
+  {
+    "id": "test:5034",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 1.5013187999720685
+  },
+  {
+    "id": "test:4760",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.46866970002884045
+  },
+  {
+    "id": "test:4760",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.41742060001706704
+  },
+  {
+    "id": "test:4760",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4297157999826595
+  },
+  {
+    "id": "test:761",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3800193999777548
+  },
+  {
+    "id": "test:761",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4547706000157632
+  },
+  {
+    "id": "test:761",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.419491000007838
+  },
+  {
+    "id": "test:473",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.6796765999752097
+  },
+  {
+    "id": "test:473",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.6797888999572024
+  },
+  {
+    "id": "test:473",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.6772747000213712
+  },
+  {
+    "id": "test:475",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.5813062000088394
+  },
+  {
+    "id": "test:475",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5721870000124909
+  },
+  {
+    "id": "test:475",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.58672399999341
+  },
+  {
+    "id": "test:152",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4633930999552831
+  },
+  {
+    "id": "test:152",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.45705560001078993
+  },
+  {
+    "id": "test:152",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.45980539999436587
+  },
+  {
+    "id": "test:4717",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.39733090001391247
+  },
+  {
+    "id": "test:4717",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4235144999693148
+  },
+  {
+    "id": "test:4717",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.38609009998617694
+  },
+  {
+    "id": "test:598",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.0489411000162363
+  },
+  {
+    "id": "test:598",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.9624674000078812
+  },
+  {
+    "id": "test:598",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.9881661000545137
+  },
+  {
+    "id": "test:1353",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.40229790000012144
+  },
+  {
+    "id": "test:1353",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3661983000347391
+  },
+  {
+    "id": "test:1353",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3640327000175603
+  },
+  {
+    "id": "test:1119",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3486778999795206
+  },
+  {
+    "id": "test:1119",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4490102999843657
+  },
+  {
+    "id": "test:1119",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.44463270000414923
+  },
+  {
+    "id": "test:205",
+    "path": "full",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.36304399999789894
+  },
+  {
+    "id": "test:205",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4485341000254266
+  },
+  {
+    "id": "test:205",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.43389660003595054
+  },
+  {
+    "id": "test:549",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5315651999553666
+  },
+  {
+    "id": "test:549",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5112742999917828
+  },
+  {
+    "id": "test:549",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4941248999675736
+  },
+  {
+    "id": "test:596",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.35531680000713095
+  },
+  {
+    "id": "test:596",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3458129999926314
+  },
+  {
+    "id": "test:596",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.36739279999164864
+  },
+  {
+    "id": "test:4007",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.48971910000545904
+  },
+  {
+    "id": "test:4007",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.560726199997589
+  },
+  {
+    "id": "test:4007",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.5536659999634139
+  },
+  {
+    "id": "test:5044",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.40642750001279637
+  },
+  {
+    "id": "test:5044",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3882795999525115
+  },
+  {
+    "id": "test:5044",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.35326260002329946
+  },
+  {
+    "id": "test:5075",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4582053000340238
+  },
+  {
+    "id": "test:5075",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4249116000137292
+  },
+  {
+    "id": "test:5075",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.41829919995507225
+  },
+  {
+    "id": "test:1428",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4294346999959089
+  },
+  {
+    "id": "test:1428",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4000099999830127
+  },
+  {
+    "id": "test:1428",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.45029050001176074
+  },
+  {
+    "id": "test:248",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.9752428999636322
+  },
+  {
+    "id": "test:248",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.7669293000362813
+  },
+  {
+    "id": "test:248",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.8381135999807157
+  },
+  {
+    "id": "test:79",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4703860000008717
+  },
+  {
+    "id": "test:79",
+    "path": "full",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.4840766999986954
+  },
+  {
+    "id": "test:79",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4470374999800697
+  },
+  {
+    "id": "test:1188",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3924516999977641
+  },
+  {
+    "id": "test:1188",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.428916200005915
+  },
+  {
+    "id": "test:1188",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 1,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4132924000150524
+  },
+  {
+    "id": "test:4518",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.43762019998393953
+  },
+  {
+    "id": "test:4518",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.3979671999695711
+  },
+  {
+    "id": "test:4518",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.34792359999846667
+  },
+  {
+    "id": "test:4081",
+    "path": "joint_distill",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.41762700001709163
+  },
+  {
+    "id": "test:4081",
+    "path": "full",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 0.3735439999727532
+  },
+  {
+    "id": "test:4081",
+    "path": "joint_ce",
+    "label": 0,
+    "prediction": 0,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 0,
+        "accepted": false
+      },
+      {
+        "depth": 18,
+        "prediction": 0,
+        "accepted": false
+      }
+    ],
+    "seconds": 0.4158521000063047
+  },
+  {
+    "id": "test:894",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.2870147000066936
+  },
+  {
+    "id": "test:894",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.5471172999823466
+  },
+  {
+    "id": "test:894",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.7527486000326462
+  },
+  {
+    "id": "test:113",
+    "path": "joint_ce",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.63605800003279
+  },
+  {
+    "id": "test:113",
+    "path": "joint_distill",
+    "label": 1,
+    "prediction": 1,
+    "depth": 12,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "checkpoints": [
+      {
+        "depth": 6,
+        "prediction": 1,
+        "accepted": false
+      },
+      {
+        "depth": 12,
+        "prediction": 1,
+        "accepted": true
+      }
+    ],
+    "seconds": 0.6136601999751292
+  },
+  {
+    "id": "test:113",
+    "path": "full",
+    "label": 1,
+    "prediction": 1,
+    "depth": 24,
+    "executed_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "checkpoints": [],
+    "seconds": 1.2419198999996297
+  }
+]

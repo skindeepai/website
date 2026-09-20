@@ -1,0 +1,20 @@
+{
+  "totals_seconds": {
+    "old_bert": [
+      0.3064163001254201,
+      0.3025490997824818,
+      0.27068869984941557
+    ],
+    "new_bert": [
+      0.3086832000990398,
+      0.3052268999745138,
+      0.268393199716229
+    ]
+  },
+  "calls": 600,
+  "n": 100,
+  "protocol_sha256": "4843d04b8874fe35d945d4f6969f89735c306b530119e9611d34b89d07c598d5",
+  "evaluation_predictions_sha256": "499570a7ff8146a0c5a8106e2b4e650a9e6d93ad45110c47259e6069e561fd6a",
+  "parity": "All 600 predictions and two-layer traces match the quality study.",
+  "comparison": "Separate paired timing of tiny models; not paired with the full Qwen timing run."
+}

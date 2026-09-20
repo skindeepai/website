@@ -1,0 +1,70 @@
+{
+  "scope": "Exploratory 100-query ranking pilot over the full fixed 5,183-abstract SciFact corpus, not open-web search.",
+  "date": "2026-09-20T03:37:45.629363+00:00",
+  "queries": 100,
+  "candidates": 5183,
+  "metrics": {
+    "bm25": {
+      "hit@1": 0.55,
+      "recall@5": 0.7266666666666666,
+      "ndcg@10": 0.6652053009879162,
+      "mrr@10": 0.629718253968254,
+      "correct_first": 55,
+      "latency_ms": {
+        "median": 5.030650005210191,
+        "p95": 10.408945023664273,
+        "mean": 5.465583001884322,
+        "repeats": 3,
+        "total_query_runs": 300
+      }
+    },
+    "minilm": {
+      "hit@1": 0.47,
+      "recall@5": 0.695,
+      "ndcg@10": 0.6193909351872506,
+      "mrr@10": 0.5747857142857142,
+      "correct_first": 47,
+      "latency_ms": {
+        "median": 6.840899994131178,
+        "p95": 12.271694975788707,
+        "mean": 7.569865999782148,
+        "repeats": 3,
+        "total_query_runs": 300
+      }
+    },
+    "hybrid": {
+      "hit@1": 0.54,
+      "recall@5": 0.76,
+      "ndcg@10": 0.6838734762370591,
+      "mrr@10": 0.6412896825396825,
+      "correct_first": 54,
+      "latency_ms": {
+        "median": 12.729499983834103,
+        "p95": 22.59832497802563,
+        "mean": 13.534001332397262,
+        "repeats": 3,
+        "total_query_runs": 300
+      }
+    }
+  },
+  "setup_seconds": {
+    "model_load": 0.17302670003846288,
+    "bm25_index": 1.2990863000159152,
+    "document_encoding": 301.1213184000226
+  },
+  "truncated_documents": 3681,
+  "truncated_queries": 0,
+  "runtime": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "onnxruntime": "1.23.2",
+    "numpy": "2.2.4",
+    "intra_op_threads": 2,
+    "inter_op_threads": 1,
+    "execution": "sequential"
+  },
+  "protocol_sha256": "d0926847d47e7d8e78ec5ba38d2022b47d753e62a69332aa966f83c035f7ed32",
+  "script_sha256": "f09ce612a1e69f5d918ef654913e7d0c7654d7aba839f2b8234f79d51343c81d",
+  "manifest_sha256": "86bec49701ccd6662d7f40688b302939baa78bea0934eb38bbb486d64f6afcff"
+}

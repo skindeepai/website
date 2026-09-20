@@ -1,0 +1,447 @@
+{
+  "checks": [
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "tiny-decision-demo.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-model-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "shared-qwen-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "combined-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "redaction-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "receipt-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "page": "routing-results.html",
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "violations": []
+    }
+  ],
+  "unsupportedWorkerGuard": "passed",
+  "scope": "Automated layout/accessibility only; real model execution recorded separately."
+}

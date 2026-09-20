@@ -1,0 +1,12 @@
+{
+  "sourceSha256": "61fdc8f9ff5485bf9b6c38b670478dca29ad2728ca3a979c232e32d39d8d0949",
+  "workerSha256": "076e0a47e9a075fbd1ecadab0a29e5705d9fe91fe416d7ca721a717937258ce5",
+  "uiSha256": "a081a175545e5a025bc420a4ba832882745259bea711fae55e66f0057bd590e6",
+  "manifestSha256": "af8397338d367c9ec0b915a6e9b5666632ace1d8dba6a24af34558afc73f4a8b",
+  "isolated": false,
+  "threads": 1,
+  "qualityN": 100,
+  "timingN": 50,
+  "passes": 3,
+  "scope": "Runtime parity on consumed100. Three paired counterbalanced timing passes on first50; all graph boundary overhead included. CPU jobs may overlap unless isolated flag was explicitly supplied."
+}

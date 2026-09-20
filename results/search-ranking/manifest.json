@@ -1,0 +1,28 @@
+{
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+  "dimensions": 384,
+  "layers": 6,
+  "dtype": "q8",
+  "maxTokens": 256,
+  "count": 5183,
+  "corpusSHA256": "464289d80cd4e38b34fafb1c7e8f0d4ff2edbbc71f5c6c8b8b37eaf1b8168b8e",
+  "embeddingsSHA256": "c3ef2cca3b64e26824d032af6b0928a87cd72b75f4c9e8adb0881d6862c006d3",
+  "corpusBytes": 8150630,
+  "embeddingsBytes": 7961088,
+  "examples": [
+    {
+      "id": "100",
+      "text": "All hematopoietic stem cells segregate their chromosomes randomly."
+    },
+    {
+      "id": "1012",
+      "text": "Radioiodine treatment of non-toxic multinodular goitre reduces thyroid volume."
+    },
+    {
+      "id": "1024",
+      "text": "Recurrent mutations occur frequently within CTCF anchor sites adjacent to oncogenes."
+    }
+  ],
+  "licenseURL": "https://github.com/allenai/scifact/blob/master/LICENSE.md"
+}

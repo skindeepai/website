@@ -1,0 +1,71 @@
+{
+  "started_utc": "2026-09-20T02:30:38.371779+00:00",
+  "completed_utc": "2026-09-20T02:35:34.789704+00:00",
+  "protocol_sha256": "351261dc1f3a3950344728b932fad421f01a06da12d5ed7ffa8e7e2a7994a7ee",
+  "paths": {
+    "full_input": {
+      "all_complete": true,
+      "all_equivalent": true,
+      "pass_seconds": [
+        60.94246769999154,
+        61.16985309997108,
+        60.21254579996457
+      ],
+      "mean_seconds": 60.77495553330906,
+      "correct_first_pass": 86,
+      "first_pass_n": 100,
+      "processed_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "full_input_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "max_logit_delta": 0.0,
+      "layers_skipped_per_message": 0,
+      "relative_time_saving": 0.0
+    },
+    "prefix_reuse": {
+      "all_complete": true,
+      "all_equivalent": true,
+      "pass_seconds": [
+        38.96545039996272,
+        37.472156599978916,
+        36.75261660001706
+      ],
+      "mean_seconds": 37.730074533319566,
+      "correct_first_pass": 86,
+      "first_pass_n": 100,
+      "processed_tokens_per_pass": [
+        6508,
+        6508,
+        6508
+      ],
+      "full_input_tokens_per_pass": [
+        11755,
+        11755,
+        11755
+      ],
+      "max_logit_delta": 2.3126602172851562e-05,
+      "layers_skipped_per_message": 0,
+      "relative_time_saving": 0.37918383975384795
+    }
+  },
+  "runtime": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.3",
+    "threads": 4,
+    "rope_scaling": null
+  },
+  "scope": "Execution equivalence and throughput on the same consumed100; no fresh quality evaluation or model selection.",
+  "limits": [
+    "Fixed prompt, fixed model and fixed device only; changes invalidate a prefix cache.",
+    "All24 layers still process every suffix. Prefix-prefill also executes24 layers; no early exit.",
+    "No user-message KV is shared across requests.",
+    "One CPU, one sequence of three warm passes; no hardware replication.",
+    "Only100 consumed balanced messages; not independent moderation validation or live queue timing."
+  ]
+}

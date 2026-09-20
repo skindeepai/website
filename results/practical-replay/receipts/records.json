@@ -1,0 +1,452 @@
+[
+  {
+    "id": "224",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0023051000316627324
+  },
+  {
+    "id": "164",
+    "candidate_count": 8,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.0010839999886229634
+  },
+  {
+    "id": "234",
+    "candidate_count": 7,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010562000097706914
+  },
+  {
+    "id": "214",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0011681999894790351
+  },
+  {
+    "id": "215",
+    "candidate_count": 22,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.00219409994315356
+  },
+  {
+    "id": "047",
+    "candidate_count": 3,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0005433000042103231
+  },
+  {
+    "id": "063",
+    "candidate_count": 6,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0011688999948091805
+  },
+  {
+    "id": "133",
+    "candidate_count": 15,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": true,
+    "seconds": 0.0018922999734058976
+  },
+  {
+    "id": "135",
+    "candidate_count": 18,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0019724000012502074
+  },
+  {
+    "id": "052",
+    "candidate_count": 10,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.000874500023201108
+  },
+  {
+    "id": "048",
+    "candidate_count": 20,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.0026089000166393816
+  },
+  {
+    "id": "072",
+    "candidate_count": 16,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0024979000445455313
+  },
+  {
+    "id": "095",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.001539900025818497
+  },
+  {
+    "id": "096",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0010667999740689993
+  },
+  {
+    "id": "097",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0011656000278890133
+  },
+  {
+    "id": "153",
+    "candidate_count": 10,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0011252000113017857
+  },
+  {
+    "id": "175",
+    "candidate_count": 7,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0008837999776005745
+  },
+  {
+    "id": "193",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0009241999941878021
+  },
+  {
+    "id": "196",
+    "candidate_count": 8,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0009125000215135515
+  },
+  {
+    "id": "221",
+    "candidate_count": 13,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0014233000110834837
+  },
+  {
+    "id": "222",
+    "candidate_count": 19,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0017568999901413918
+  },
+  {
+    "id": "223",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.001150400028564036
+  },
+  {
+    "id": "007",
+    "candidate_count": 7,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0007284999592229724
+  },
+  {
+    "id": "043",
+    "candidate_count": 7,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.0013367999927140772
+  },
+  {
+    "id": "187",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0018229000270366669
+  },
+  {
+    "id": "083",
+    "candidate_count": 17,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.002626200031954795
+  },
+  {
+    "id": "019",
+    "candidate_count": 7,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0011430999729782343
+  },
+  {
+    "id": "087",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0009253000025637448
+  },
+  {
+    "id": "088",
+    "candidate_count": 10,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010052999714389443
+  },
+  {
+    "id": "102",
+    "candidate_count": 12,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0011113000218756497
+  },
+  {
+    "id": "217",
+    "candidate_count": 9,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010365999769419432
+  },
+  {
+    "id": "012",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.0013276999816298485
+  },
+  {
+    "id": "015",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": false,
+    "seconds": 0.0010447000386193395
+  },
+  {
+    "id": "107",
+    "candidate_count": 16,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0018238999764434993
+  },
+  {
+    "id": "013",
+    "candidate_count": 12,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0018349000019952655
+  },
+  {
+    "id": "169",
+    "candidate_count": 8,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0016275999951176345
+  },
+  {
+    "id": "039",
+    "candidate_count": 10,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0019511000136844814
+  },
+  {
+    "id": "104",
+    "candidate_count": 14,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": true,
+    "seconds": 0.00152009999146685
+  },
+  {
+    "id": "078",
+    "candidate_count": 21,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.0026473000179976225
+  },
+  {
+    "id": "030",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0009426999604329467
+  },
+  {
+    "id": "032",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0009783999994397163
+  },
+  {
+    "id": "033",
+    "candidate_count": 11,
+    "reference_available": false,
+    "gold_present": false,
+    "learned_correct": false,
+    "largest_correct": false,
+    "seconds": 0.000964400009252131
+  },
+  {
+    "id": "035",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010700999991968274
+  },
+  {
+    "id": "036",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010529999854043126
+  },
+  {
+    "id": "044",
+    "candidate_count": 13,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010894000297412276
+  },
+  {
+    "id": "045",
+    "candidate_count": 13,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010661999695003033
+  },
+  {
+    "id": "051",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.001112900034058839
+  },
+  {
+    "id": "053",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0019310999778099358
+  },
+  {
+    "id": "055",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0019406000501476228
+  },
+  {
+    "id": "056",
+    "candidate_count": 11,
+    "reference_available": true,
+    "gold_present": true,
+    "learned_correct": true,
+    "largest_correct": true,
+    "seconds": 0.0010198999661952257
+  }
+]

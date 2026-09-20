@@ -1,0 +1,4 @@
+{
+  "error": "page.evaluate: Error: Cannot convert 101 to a BigInt\n    at w.onmessage (eval at evaluate (:311:30), <anonymous>:1:335)",
+  "stack": "page.evaluate: Error: Cannot convert 101 to a BigInt\n    at w.onmessage (eval at evaluate (:311:30), <anonymous>:1:335)\n    at worker (C:\\Users\\steve\\Code\\claude\\skindeep\\scripts\\live-demos-test.cjs:11:64)\n    at C:\\Users\\steve\\Code\\claude\\skindeep\\scripts\\live-demos-test.cjs:16:153"
+}

@@ -1,0 +1,10 @@
+{
+  "source_sha256": "0a579fb9d59ea2d14104e3af112d561fd78a29a9616be6c9f6b05cf946757d9b",
+  "parent_protocol_sha256": "9d5efb9fd05bb4e7e07bc27f35d594597b5e6c60eb67fd271fc0cf398d9ca657",
+  "weights": {
+    "results/maze-smoke/original_states.npz": "9401d11338af373a559fe47237c869f533d1f469850f33f3fa5386f70774036d",
+    "results/maze-smoke/all_train_goal_pairs.npz": "619b07b73c9163fa7cf8a9bd662cd230f5e23672e0e804763893e9aa976f09ab"
+  },
+  "asset_sha256": "c2a712c8567c05f9ad5e10e524bf59725036fd8ec79266224604f5442ff256f3",
+  "scope": "Same trained policies; runtime parity checked separately. Synthetic maze layouts, not real-world navigation."
+}

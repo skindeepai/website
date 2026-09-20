@@ -1,0 +1,709 @@
+[
+  {
+    "id": "100",
+    "text": "All hematopoietic stem cells segregate their chromosomes randomly.",
+    "relevant": {
+      "4381486": 1
+    }
+  },
+  {
+    "id": "1012",
+    "text": "Radioiodine treatment of non-toxic multinodular goitre reduces thyroid volume.",
+    "relevant": {
+      "9745001": 1
+    }
+  },
+  {
+    "id": "1024",
+    "text": "Recurrent mutations occur frequently within CTCF anchor sites adjacent to oncogenes.",
+    "relevant": {
+      "5373138": 1
+    }
+  },
+  {
+    "id": "1029",
+    "text": "Reduced responsiveness to interleukin-2 in regulatory T cells is associated with greater resistance to autoimmune diseases such as Type 1 Diabetes.",
+    "relevant": {
+      "13923140": 1,
+      "13940200": 1,
+      "11899391": 1
+    }
+  },
+  {
+    "id": "1041",
+    "text": "Replacement of histone H2A with H2A.Z slows gene activation in yeasts by stabilizing +1 nucleosomes.",
+    "relevant": {
+      "25254425": 1,
+      "16626264": 1
+    }
+  },
+  {
+    "id": "1049",
+    "text": "Ribosomopathies have a low degree of cell and tissue specific pathology.",
+    "relevant": {
+      "12486491": 1
+    }
+  },
+  {
+    "id": "1107",
+    "text": "Subcutaneous fat depots undergo extensive browning processes after cold exposure.",
+    "relevant": {
+      "20532591": 1
+    }
+  },
+  {
+    "id": "1110",
+    "text": "Suboptimal nutrition is not predictive of chronic disease",
+    "relevant": {
+      "13770184": 1
+    }
+  },
+  {
+    "id": "1121",
+    "text": "Synaptic activity enhances local release of brain derived neurotrophic factor from postsynaptic dendrites.",
+    "relevant": {
+      "4456756": 1
+    }
+  },
+  {
+    "id": "1146",
+    "text": "Teaching hospitals do not provide better care than non-teaching hospitals.",
+    "relevant": {
+      "13906581": 1
+    }
+  },
+  {
+    "id": "115",
+    "text": "Anthrax spores can be disposed of easily after they are dispersed.",
+    "relevant": {
+      "33872649": 1
+    }
+  },
+  {
+    "id": "1150",
+    "text": "Tetraspanin-3 is a causative factor in the development of acute myelogenous leukemia",
+    "relevant": {
+      "11369420": 1
+    }
+  },
+  {
+    "id": "1163",
+    "text": "The DdrB protein from Deinococcus radiodurans is an alternative SSB.",
+    "relevant": {
+      "15305881": 1
+    }
+  },
+  {
+    "id": "1175",
+    "text": "The PPR MDA5 has two N-terminal CARD domains.",
+    "relevant": {
+      "31272411": 1
+    }
+  },
+  {
+    "id": "1187",
+    "text": "The YAP1 and TEAD complex tanslocates into the nucleus where it interacts with transcription factors and DNA-binding proteins that modulate target gene transcription.",
+    "relevant": {
+      "52873726": 1
+    }
+  },
+  {
+    "id": "1199",
+    "text": "The benefits of colchicine were achieved with effective widespread use of secondary prevention strategies such as high-dose statins.",
+    "relevant": {
+      "16760369": 1
+    }
+  },
+  {
+    "id": "1221",
+    "text": "The genomic aberrations found in matasteses are very similar to those found in the primary tumor.",
+    "relevant": {
+      "19736671": 1
+    }
+  },
+  {
+    "id": "1232",
+    "text": "The minor G allele of FOXO3 is related to more severe symptoms of Crohn's Disease.",
+    "relevant": {
+      "13905670": 1
+    }
+  },
+  {
+    "id": "1241",
+    "text": "The myocardial lineage develops from cardiac progenitors of mesodermal origin.",
+    "relevant": {
+      "4427392": 1
+    }
+  },
+  {
+    "id": "1271",
+    "text": "The severity of cardiac involvement in amyloidosis can be described by the degree of transmurality of late gadolinium enhancement in MRI.",
+    "relevant": {
+      "13768432": 1
+    }
+  },
+  {
+    "id": "1273",
+    "text": "The sliding activity of kinesin-8 protein Kip3 promotes bipolar spindle assembly.",
+    "relevant": {
+      "11041152": 1
+    }
+  },
+  {
+    "id": "128",
+    "text": "Arterioles have a larger lumen diameter than venules.",
+    "relevant": {
+      "8290953": 1
+    }
+  },
+  {
+    "id": "1280",
+    "text": "The ureABIEFGH gene cluster encodes urease maturation proteins : UreD/UreH, UreE, UreF, and UreG.",
+    "relevant": {
+      "4387784": 1
+    }
+  },
+  {
+    "id": "129",
+    "text": "Articles published in open access format are less likely to be cited than traditional journals.",
+    "relevant": {
+      "27768226": 1
+    }
+  },
+  {
+    "id": "1292",
+    "text": "There is no association between HNF4A mutations and diabetes risks.",
+    "relevant": {
+      "56893404": 1
+    }
+  },
+  {
+    "id": "13",
+    "text": "5% of perinatal mortality is due to low birth weight.",
+    "relevant": {
+      "1606628": 1
+    }
+  },
+  {
+    "id": "1303",
+    "text": "Tirasemtiv has no effect on fast-twitch muscle.",
+    "relevant": {
+      "12631697": 1
+    }
+  },
+  {
+    "id": "1332",
+    "text": "Tumor necrosis factor alpha (TNF-α) and interleukin-1 (IL-1) are pro-inflammatory cytokines that inhibit IL-6 and IL-10.",
+    "relevant": {
+      "5304891": 1
+    }
+  },
+  {
+    "id": "1352",
+    "text": "Upregulation of mosGCTL-1 is induced upon infection with West Nile virus.",
+    "relevant": {
+      "12885341": 1
+    }
+  },
+  {
+    "id": "1370",
+    "text": "Vitamin D deficiency is unrelated to birth weight.",
+    "relevant": {
+      "2425364": 1
+    }
+  },
+  {
+    "id": "1385",
+    "text": "cSMAC formation enhances weak ligand signalling.",
+    "relevant": {
+      "306006": 1
+    }
+  },
+  {
+    "id": "1389",
+    "text": "mTORC2 regulates intracellular cysteine levels through xCT inhibition.",
+    "relevant": {
+      "23895668": 1
+    }
+  },
+  {
+    "id": "141",
+    "text": "Auditory entrainment is strengthened when people see congruent visual and auditory information.",
+    "relevant": {
+      "6955746": 1,
+      "14437255": 1
+    }
+  },
+  {
+    "id": "142",
+    "text": "Autologous transplantation of mesenchymal stem cells causes a higher rate of opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.",
+    "relevant": {
+      "10582939": 1
+    }
+  },
+  {
+    "id": "143",
+    "text": "Autologous transplantation of mesenchymal stem cells causes fewer opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.",
+    "relevant": {
+      "10582939": 1
+    }
+  },
+  {
+    "id": "180",
+    "text": "Blocking the interaction between TDP-43 and respiratory complex I proteins ND3 and ND6 leads to increased TDP-43-induced neuronal loss.",
+    "relevant": {
+      "16966326": 1
+    }
+  },
+  {
+    "id": "183",
+    "text": "Bone marrow cells contribute to adult macrophage compartments.",
+    "relevant": {
+      "12827098": 1
+    }
+  },
+  {
+    "id": "185",
+    "text": "Breast cancer development is determined exclusively by genetic factors.",
+    "relevant": {
+      "18340282": 1
+    }
+  },
+  {
+    "id": "208",
+    "text": "CHEK2 is not associated with breast cancer.",
+    "relevant": {
+      "13519661": 1
+    }
+  },
+  {
+    "id": "217",
+    "text": "CX3CR1 on the Th2 cells promotes T cell survival",
+    "relevant": {
+      "21366394": 1
+    }
+  },
+  {
+    "id": "219",
+    "text": "CX3CR1 on the Th2 cells suppresses airway inflammation.",
+    "relevant": {
+      "21366394": 1
+    }
+  },
+  {
+    "id": "238",
+    "text": "Cells undergoing methionine restriction may activate miRNAs.",
+    "relevant": {
+      "2251426": 1
+    }
+  },
+  {
+    "id": "239",
+    "text": "Cellular aging closely links to an older appearance.",
+    "relevant": {
+      "14079881": 1
+    }
+  },
+  {
+    "id": "248",
+    "text": "Chenodeosycholic acid treatment increases whole-body energy expenditure.",
+    "relevant": {
+      "1568684": 1
+    }
+  },
+  {
+    "id": "249",
+    "text": "Chenodeosycholic acid treatment reduces whole-body energy expenditure.",
+    "relevant": {
+      "1568684": 1
+    }
+  },
+  {
+    "id": "295",
+    "text": "Crosstalk between dendritic cells (DCs) and innate lymphoid cells (ILCs) is important in the regulation of intestinal homeostasis.",
+    "relevant": {
+      "20310709": 1
+    }
+  },
+  {
+    "id": "298",
+    "text": "Cytochrome c is released from the mitochondrial intermembrane space to cytosol during apoptosis.",
+    "relevant": {
+      "39381118": 1
+    }
+  },
+  {
+    "id": "300",
+    "text": "Cytosolic proteins bind to iron-responsive elements on mRNAs coding for DMT1. Cytosolic proteins bind to iron-responsive elements on mRNAs coding for proteins involved in iron uptake.",
+    "relevant": {
+      "3553087": 1
+    }
+  },
+  {
+    "id": "324",
+    "text": "Deleting Raptor reduces G-CSF levels.",
+    "relevant": {
+      "2014909": 1
+    }
+  },
+  {
+    "id": "350",
+    "text": "Discrimination between the initiator and elongation tRNAs depends on the translation initiation factor IF3.",
+    "relevant": {
+      "16927286": 1
+    }
+  },
+  {
+    "id": "354",
+    "text": "Downregulation and mislocalization of Scribble prevents cell transformation and mammary tumorigenesis.",
+    "relevant": {
+      "8774475": 1
+    }
+  },
+  {
+    "id": "384",
+    "text": "Epidemiological disease burden from noncommunicable diseases is more prevalent in low economic settings.",
+    "relevant": {
+      "13770184": 1
+    }
+  },
+  {
+    "id": "42",
+    "text": "A high microerythrocyte count raises vulnerability to severe anemia in homozygous alpha (+)- thalassemia trait subjects.",
+    "relevant": {
+      "18174210": 1
+    }
+  },
+  {
+    "id": "436",
+    "text": "Free histones are degraded by a Rad53-dependent mechanism once DNA has been replicated.",
+    "relevant": {
+      "14637235": 1
+    }
+  },
+  {
+    "id": "437",
+    "text": "Functional consequences of genomic alterations due to Myelodysplastic syndrome (MDS) are poorly understood due to the lack of an animal model.",
+    "relevant": {
+      "18399038": 1
+    }
+  },
+  {
+    "id": "49",
+    "text": "ADAR1 binds to Dicer to cleave pre-miRNA.",
+    "relevant": {
+      "5953485": 1
+    }
+  },
+  {
+    "id": "501",
+    "text": "Headaches are not correlated with cognitive impairment.",
+    "relevant": {
+      "17930286": 1
+    }
+  },
+  {
+    "id": "513",
+    "text": "High cardiopulmonary fitness causes increased mortality rate.",
+    "relevant": {
+      "13230773": 1
+    }
+  },
+  {
+    "id": "514",
+    "text": "High dietary calcium intakes are unnecessary for prevention of secondary hyperparathyroidism in subjects with 25(OH)D levels above 75 nmol/liter.",
+    "relevant": {
+      "16256507": 1
+    }
+  },
+  {
+    "id": "517",
+    "text": "High levels of copeptin decrease risk of diabetes.",
+    "relevant": {
+      "15663829": 1
+    }
+  },
+  {
+    "id": "53",
+    "text": "ALDH1 expression is associated with poorer prognosis in breast cancer.",
+    "relevant": {
+      "45638119": 1
+    }
+  },
+  {
+    "id": "539",
+    "text": "Hypoglycemia increases the risk of dementia.",
+    "relevant": {
+      "13282296": 1
+    }
+  },
+  {
+    "id": "540",
+    "text": "Hypothalamic glutamate neurotransmission is crucial to energy balance.",
+    "relevant": {
+      "11886686": 1,
+      "25007443": 1
+    }
+  },
+  {
+    "id": "554",
+    "text": "Immune complex triggered cell death leads to extracellular release of neutrophil protein HMGB1.",
+    "relevant": {
+      "1049501": 1
+    }
+  },
+  {
+    "id": "56",
+    "text": "APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau phosphorylation causing GABA neuron degeneration.",
+    "relevant": {
+      "4709641": 1
+    }
+  },
+  {
+    "id": "569",
+    "text": "In adult tissue, most T cells are memory T cells.",
+    "relevant": {
+      "23460562": 1
+    }
+  },
+  {
+    "id": "577",
+    "text": "In mice, P. chabaudi parasites are able to proliferate faster early in infection when inoculated at lower numbers than when inoculated at high numbers.",
+    "relevant": {
+      "5289038": 1
+    }
+  },
+  {
+    "id": "587",
+    "text": "In transgenic mice harboring green florescent protein under the control of the Sox2 promoter, less than ten percent of the cells with green florescent colocalize with cell proliferation markers.",
+    "relevant": {
+      "16999023": 1
+    }
+  },
+  {
+    "id": "593",
+    "text": "Incidence of heart failure decreased by 10% in women since 1979.",
+    "relevant": {
+      "19675911": 1
+    }
+  },
+  {
+    "id": "598",
+    "text": "Incidence rates of cervical cancer have increased due to nationwide screening programs based primarily on cytology to detect uterine cervical cancer.",
+    "relevant": {
+      "25742130": 1
+    }
+  },
+  {
+    "id": "613",
+    "text": "Increased microtubule acetylation repairs LRRK2 Roc-COR domain mutation induced locomotor deficits.",
+    "relevant": {
+      "9638032": 1
+    }
+  },
+  {
+    "id": "619",
+    "text": "Increased vessel density along with a reduction in fibrosis decreases the efficacy of chemotherapy treatments.",
+    "relevant": {
+      "20888849": 1,
+      "2565138": 1
+    }
+  },
+  {
+    "id": "644",
+    "text": "Insulin increases risk of severe kidney failure.",
+    "relevant": {
+      "13619127": 1
+    }
+  },
+  {
+    "id": "649",
+    "text": "Integrating classroom-based collaborative learning with Web-based collaborative learning leads to subpar class performance",
+    "relevant": {
+      "12789595": 1
+    }
+  },
+  {
+    "id": "674",
+    "text": "LDL cholesterol has no involvement in the development of cardiovascular disease.",
+    "relevant": {
+      "2095573": 1
+    }
+  },
+  {
+    "id": "690",
+    "text": "Less than 10% of the gabonese children with Schimmelpenning-Feuerstein-Mims syndrome (SFM) had a plasma lactate of more than 5mmol/L.",
+    "relevant": {
+      "18750453": 1
+    }
+  },
+  {
+    "id": "692",
+    "text": "Leuko-increased blood increases infectious complications in red blood cell transfusion.",
+    "relevant": {
+      "24088502": 1
+    }
+  },
+  {
+    "id": "702",
+    "text": "Localization of PIN1 in the roots of Arabidopsis does not require VPS9a",
+    "relevant": {
+      "4350400": 1
+    }
+  },
+  {
+    "id": "715",
+    "text": "Low expression of miR7a does represses target genes and exerts a biological function in ovaries.",
+    "relevant": {
+      "18421962": 1
+    }
+  },
+  {
+    "id": "723",
+    "text": "Ly49Q directs the organization of neutrophil migration to inflammation sites by regulating membrane raft functions.",
+    "relevant": {
+      "5531479": 1
+    }
+  },
+  {
+    "id": "727",
+    "text": "Ly6C hi monocytes have a lower inflammatory capacity compared to their Ly6C lo counterparts.",
+    "relevant": {
+      "7521113": 1
+    }
+  },
+  {
+    "id": "756",
+    "text": "Many proteins in human cells can be post-translationally modified at lysine residues via acetylation.",
+    "relevant": {
+      "2831620": 1
+    }
+  },
+  {
+    "id": "770",
+    "text": "Metastatic colorectal cancer treated with a single agent fluoropyrimidines resulted in reduced efficacy and lower quality of life when compared with oxaliplatin-based chemotherapy in elderly patients.",
+    "relevant": {
+      "15476777": 1
+    }
+  },
+  {
+    "id": "781",
+    "text": "Mice that lack Interferon-γ or its receptor exhibit high resistance to experimental autoimmune myocarditis.",
+    "relevant": {
+      "24338780": 1
+    }
+  },
+  {
+    "id": "785",
+    "text": "Microarray results from culture-amplified mixtures of serotypes correlate poorly with microarray results from uncultured mixtures.",
+    "relevant": {
+      "12471115": 1
+    }
+  },
+  {
+    "id": "805",
+    "text": "Monoclonal antibody targeting of N-cadherin inhibits metastasis.",
+    "relevant": {
+      "22180793": 1
+    }
+  },
+  {
+    "id": "814",
+    "text": "Mutations in G-Beta protein GNB2 are present in many cancers, resulting in loss of interaction with G-alpha subunits and concomitant activation of AKT pathway.",
+    "relevant": {
+      "33387953": 1
+    }
+  },
+  {
+    "id": "821",
+    "text": "N-terminal cleavage reduces success identifying transcription start sites.",
+    "relevant": {
+      "8646760": 1
+    }
+  },
+  {
+    "id": "823",
+    "text": "N348I mutations cause resistance to zidovudine (AZT).",
+    "relevant": {
+      "15319019": 1
+    }
+  },
+  {
+    "id": "839",
+    "text": "Nanoparticles can be targeted against specific cell types by incorporating aptamers into lipid nanoparticles.",
+    "relevant": {
+      "1469751": 1
+    }
+  },
+  {
+    "id": "847",
+    "text": "New drugs for tuberculosis often do not penetrate the necrotic portion of a tuberculosis lesion in high concentrations.",
+    "relevant": {
+      "16787954": 1
+    }
+  },
+  {
+    "id": "852",
+    "text": "Non-invasive ventilation use should be decreased if there is inadequate response to conventional treatment.",
+    "relevant": {
+      "13843341": 1
+    }
+  },
+  {
+    "id": "859",
+    "text": "Normal expression of RUNX1 has tumor-promoting effects.",
+    "relevant": {
+      "1982286": 1
+    }
+  },
+  {
+    "id": "882",
+    "text": "Omnivores produce less trimethylamine N-oxide from dietary I-carnitine than vegetarians.",
+    "relevant": {
+      "14803797": 1
+    }
+  },
+  {
+    "id": "887",
+    "text": "Only a minority of cells survive development after differentiation into stress-resistant spores.",
+    "relevant": {
+      "18855191": 1
+    }
+  },
+  {
+    "id": "903",
+    "text": "PD-1 triggering on monocytes reduces IL-10 production by monocytes.",
+    "relevant": {
+      "10648422": 1
+    }
+  },
+  {
+    "id": "94",
+    "text": "Albendazole is used to treat lymphatic filariasis.",
+    "relevant": {
+      "1215116": 1
+    }
+  },
+  {
+    "id": "957",
+    "text": "Podocytes are motile and migrate in the presence of injury.",
+    "relevant": {
+      "123859": 1
+    }
+  },
+  {
+    "id": "967",
+    "text": "Pretreatment with the Arp2/3 inhibitor CK-666 affects lamelliopodia formation.",
+    "relevant": {
+      "2119889": 1,
+      "8997410": 1
+    }
+  },
+  {
+    "id": "975",
+    "text": "Primary pro-inflammatory cytokines induce secondary pro- and anti-inflammatory mediators.",
+    "relevant": {
+      "5304891": 1
+    }
+  }
+]

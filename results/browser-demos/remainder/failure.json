@@ -1,0 +1,4 @@
+{
+  "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    '1156322',\n+   '42240424',\n+   '10086360',\n    '803312',\n-   '42240424',\n    '27049238',\n-   '10086360',\n    '40212412',\n    '3770726',\n    '1346695',\n    '10906636',\n    '12824568'\n",
+  "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    '1156322',\n+   '42240424',\n+   '10086360',\n    '803312',\n-   '42240424',\n    '27049238',\n-   '10086360',\n    '40212412',\n    '3770726',\n    '1346695',\n    '10906636',\n    '12824568'\n\n    at C:\\Users\\steve\\Code\\claude\\skindeep\\scripts\\live-demos-test.cjs:16:257"
+}

@@ -1,0 +1,100 @@
+{
+  "created": "2026-09-20T04:38:01.559478+00:00",
+  "queries": 200,
+  "candidates": 5183,
+  "metrics": {
+    "bm25": {
+      "hit@1": 0.525,
+      "recall@5": 0.7230833333333334,
+      "ndcg@10": 0.6580935744949037,
+      "mrr@10": 0.6255952380952381,
+      "correct_first": 105,
+      "reranked_queries": 0,
+      "latency_ms": {
+        "median": 5.242049985099584,
+        "mean": 5.545134167186916,
+        "p95": 10.339145024772733,
+        "runs": 600
+      }
+    },
+    "minilm": {
+      "hit@1": 0.525,
+      "recall@5": 0.73175,
+      "ndcg@10": 0.659449120096238,
+      "mrr@10": 0.6184623015873015,
+      "correct_first": 105,
+      "reranked_queries": 0,
+      "latency_ms": {
+        "median": 6.97314998251386,
+        "mean": 7.4242164990088595,
+        "p95": 11.471449999953615,
+        "runs": 600
+      }
+    },
+    "fusion": {
+      "hit@1": 0.595,
+      "recall@5": 0.7609166666666667,
+      "ndcg@10": 0.7097862417923441,
+      "mrr@10": 0.6803948412698412,
+      "correct_first": 119,
+      "reranked_queries": 0,
+      "latency_ms": {
+        "median": 13.25899999937974,
+        "mean": 13.858240000651373,
+        "p95": 22.32533996575512,
+        "runs": 600
+      }
+    },
+    "rerank": {
+      "hit@1": 0.555,
+      "recall@5": 0.7300833333333333,
+      "ndcg@10": 0.6597101112673869,
+      "mrr@10": 0.6379642857142858,
+      "correct_first": 111,
+      "reranked_queries": 200,
+      "latency_ms": {
+        "median": 111.59930002759211,
+        "mean": 113.49955433358748,
+        "p95": 140.54282497090753,
+        "runs": 600
+      }
+    },
+    "gated": {
+      "hit@1": 0.565,
+      "recall@5": 0.7192500000000002,
+      "ndcg@10": 0.6701038794887633,
+      "mrr@10": 0.6459999999999999,
+      "correct_first": 113,
+      "reranked_queries": 42,
+      "latency_ms": {
+        "median": 6.577599997399375,
+        "mean": 28.8266239996301,
+        "p95": 123.58121000288519,
+        "runs": 600
+      }
+    }
+  },
+  "gate_threshold": 0.05,
+  "candidate_recall@20": 0.8338333333333332,
+  "queries_with_relevant_candidate": 171,
+  "cross_pairs_truncated": 3394,
+  "cross_pairs": 4000,
+  "setup_seconds": {
+    "model_load": 0.1771745000150986,
+    "index_and_vector_load": 1.009343399957288,
+    "document_encoding": "Reused frozen vectors; creation cost in prior pilot."
+  },
+  "runtime": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "onnxruntime": "1.23.2",
+    "numpy": "2.2.4",
+    "intra_op_threads": 2,
+    "inter_op_threads": 1
+  },
+  "protocol_sha256": "6f952ae5bb7ddb720b786a8a3622e7926c2d5c3c01421564092b38a2a47e63e6",
+  "development_sha256": "0e9c2de9bae0a6b6e78c94823737ef5c8e48295fa98718db0ea3c2f45187f886",
+  "script_sha256": "1d78ff1a7f10a17865d64b6f0350c456017e9f128995423497f6f0e626c9355b",
+  "predictions_sha256": "d8ac6f91ac1b5113918b517564e470ad8146479f5ca6b059cb5894cecb4af7c6",
+  "timings_sha256": "e9244966bc3b76b932e7900785629967498a9bf52b5878d342224b42cbfbfa3d"
+}

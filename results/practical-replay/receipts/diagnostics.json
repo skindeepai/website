@@ -1,0 +1,1018 @@
+[
+  {
+    "id": "224",
+    "candidate_amounts": [
+      2.5,
+      30.0,
+      31.8,
+      0.0,
+      31.8,
+      31.8,
+      0.0,
+      30.0,
+      30.0,
+      1.8,
+      1.8
+    ],
+    "probability_array": "probabilities_0",
+    "chosen": 31.8,
+    "largest": 31.8,
+    "reference": 31.8
+  },
+  {
+    "id": "164",
+    "candidate_amounts": [
+      8.5,
+      1.8,
+      9.8,
+      4.3,
+      4.3,
+      28.7,
+      71.3,
+      1.62
+    ],
+    "probability_array": "probabilities_1",
+    "chosen": 28.7,
+    "largest": 71.3,
+    "reference": 28.7
+  },
+  {
+    "id": "234",
+    "candidate_amounts": [
+      165.0,
+      165.0,
+      0.0,
+      165.0,
+      165.0,
+      155.0,
+      9.34
+    ],
+    "probability_array": "probabilities_2",
+    "chosen": 165.0,
+    "largest": 165.0,
+    "reference": 165.0
+  },
+  {
+    "id": "214",
+    "candidate_amounts": [
+      13.5,
+      0.0,
+      13.5,
+      13.5,
+      0.0,
+      13.5,
+      13.5,
+      12.74,
+      0.76
+    ],
+    "probability_array": "probabilities_3",
+    "chosen": 13.5,
+    "largest": 13.5,
+    "reference": 13.5
+  },
+  {
+    "id": "215",
+    "candidate_amounts": [
+      4.8,
+      0.0,
+      14.4,
+      2.8,
+      2.8,
+      0.0,
+      22.4,
+      1.5,
+      0.0,
+      9.0,
+      10.0,
+      0.0,
+      10.0,
+      4.9,
+      0.0,
+      53.9,
+      109.7,
+      0.0,
+      109.7,
+      109.7,
+      103.49,
+      6.21
+    ],
+    "probability_array": "probabilities_4",
+    "chosen": 109.7,
+    "largest": 109.7,
+    "reference": 109.7
+  },
+  {
+    "id": "047",
+    "candidate_amounts": [
+      149.0,
+      21.0,
+      170.0
+    ],
+    "probability_array": "probabilities_5",
+    "chosen": 170.0,
+    "largest": 170.0,
+    "reference": 170.0
+  },
+  {
+    "id": "063",
+    "candidate_amounts": [
+      39.42,
+      85.54,
+      85.54,
+      85.54,
+      0.0,
+      85.54
+    ],
+    "probability_array": "probabilities_6",
+    "chosen": 85.54,
+    "largest": 85.54,
+    "reference": 85.54
+  },
+  {
+    "id": "133",
+    "candidate_amounts": [
+      78.0,
+      82.68,
+      248.04,
+      248.04,
+      234.0,
+      0.0,
+      14.04,
+      0.01,
+      0.0,
+      234.0,
+      14.04,
+      234.0,
+      14.04,
+      248.05,
+      248.05
+    ],
+    "probability_array": "probabilities_7",
+    "chosen": 234.0,
+    "largest": 248.05,
+    "reference": 248.05
+  },
+  {
+    "id": "135",
+    "candidate_amounts": [
+      44.4,
+      47.06,
+      47.06,
+      49.0,
+      51.94,
+      51.94,
+      99.0,
+      93.4,
+      0.0,
+      5.6,
+      0.0,
+      99.0,
+      100.0,
+      1.0,
+      93.4,
+      5.6,
+      5.6,
+      93.4
+    ],
+    "probability_array": "probabilities_8",
+    "chosen": 100.0,
+    "largest": 100.0,
+    "reference": 99.0
+  },
+  {
+    "id": "052",
+    "candidate_amounts": [
+      10.0,
+      0.0,
+      10.0,
+      10.0,
+      10.0,
+      20.0,
+      20.0,
+      10.0,
+      10.0,
+      0.0
+    ],
+    "probability_array": "probabilities_9",
+    "chosen": 20.0,
+    "largest": 20.0,
+    "reference": 10.0
+  },
+  {
+    "id": "048",
+    "candidate_amounts": [
+      1.0,
+      48.0,
+      50.88,
+      50.88,
+      1.0,
+      47.17,
+      60.0,
+      50.0,
+      100.88,
+      95.17,
+      0.0,
+      5.71,
+      0.02,
+      100.9,
+      101.0,
+      0.1,
+      95.17,
+      5.71,
+      95.17,
+      5.71
+    ],
+    "probability_array": "probabilities_10",
+    "chosen": 100.9,
+    "largest": 101.0,
+    "reference": 100.9
+  },
+  {
+    "id": "072",
+    "candidate_amounts": [
+      9.89,
+      19.78,
+      12.0,
+      1.2,
+      20.9,
+      2.09,
+      49.39,
+      0.01,
+      49.4,
+      50.0,
+      0.6,
+      36.41,
+      2.18,
+      10.8,
+      0.0,
+      3.29
+    ],
+    "probability_array": "probabilities_11",
+    "chosen": 49.39,
+    "largest": 50.0,
+    "reference": 49.4
+  },
+  {
+    "id": "095",
+    "candidate_amounts": [
+      13.69,
+      41.07,
+      9.6,
+      31.47,
+      0.02,
+      31.45,
+      50.0,
+      18.55,
+      29.69,
+      1.78,
+      9.6
+    ],
+    "probability_array": "probabilities_12",
+    "chosen": 31.45,
+    "largest": 50.0,
+    "reference": 31.45
+  },
+  {
+    "id": "096",
+    "candidate_amounts": [
+      3.5,
+      7.0,
+      2.65,
+      9.65,
+      50.0,
+      40.35,
+      9.1,
+      0.55,
+      0.0
+    ],
+    "probability_array": "probabilities_13",
+    "chosen": 50.0,
+    "largest": 50.0,
+    "reference": 9.65
+  },
+  {
+    "id": "097",
+    "candidate_amounts": [
+      13.69,
+      27.38,
+      6.4,
+      20.98,
+      0.02,
+      21.0,
+      50.0,
+      29.0,
+      19.79,
+      1.19,
+      6.4
+    ],
+    "probability_array": "probabilities_14",
+    "chosen": 50.0,
+    "largest": 50.0,
+    "reference": 21.0
+  },
+  {
+    "id": "153",
+    "candidate_amounts": [
+      7.65,
+      6.99,
+      14.64,
+      0.01,
+      14.65,
+      50.0,
+      35.35,
+      13.81,
+      0.83,
+      0.0
+    ],
+    "probability_array": "probabilities_15",
+    "chosen": 50.0,
+    "largest": 50.0,
+    "reference": 14.65
+  },
+  {
+    "id": "175",
+    "candidate_amounts": [
+      1.9,
+      9.9,
+      11.8,
+      11.8,
+      11.13,
+      0.67,
+      0.0
+    ],
+    "probability_array": "probabilities_16",
+    "chosen": 11.8,
+    "largest": 11.8,
+    "reference": 11.8
+  },
+  {
+    "id": "193",
+    "candidate_amounts": [
+      9.75,
+      1.9,
+      2.1,
+      4.0,
+      10.0,
+      6.0,
+      3.77,
+      0.23,
+      0.0
+    ],
+    "probability_array": "probabilities_17",
+    "chosen": 10.0,
+    "largest": 10.0,
+    "reference": 4.0
+  },
+  {
+    "id": "196",
+    "candidate_amounts": [
+      1.15,
+      5.75,
+      5.75,
+      50.0,
+      44.25,
+      5.42,
+      0.33,
+      0.0
+    ],
+    "probability_array": "probabilities_18",
+    "chosen": 50.0,
+    "largest": 50.0,
+    "reference": 5.75
+  },
+  {
+    "id": "221",
+    "candidate_amounts": [
+      7.99,
+      16.9,
+      0.2,
+      15.98,
+      2.98,
+      30.1,
+      40.1,
+      10.0,
+      28.39,
+      0.0,
+      1.71,
+      0.0,
+      2.98
+    ],
+    "probability_array": "probabilities_19",
+    "chosen": 40.1,
+    "largest": 40.1,
+    "reference": 30.1
+  },
+  {
+    "id": "222",
+    "candidate_amounts": [
+      1.15,
+      3.9,
+      2.3,
+      0.24,
+      7.8,
+      0.78,
+      29.9,
+      2.99,
+      5.0,
+      40.99,
+      0.01,
+      41.0,
+      51.0,
+      10.0,
+      33.95,
+      5.0,
+      2.04,
+      0.0,
+      4.01
+    ],
+    "probability_array": "probabilities_20",
+    "chosen": 40.99,
+    "largest": 51.0,
+    "reference": 41.0
+  },
+  {
+    "id": "223",
+    "candidate_amounts": [
+      5.5,
+      11.0,
+      1.1,
+      9.9,
+      20.0,
+      10.1,
+      9.34,
+      0.56,
+      1.1
+    ],
+    "probability_array": "probabilities_21",
+    "chosen": 20.0,
+    "largest": 20.0,
+    "reference": 9.9
+  },
+  {
+    "id": "007",
+    "candidate_amounts": [
+      20.0,
+      20.0,
+      20.0,
+      0.0,
+      20.0,
+      20.0,
+      0.0
+    ],
+    "probability_array": "probabilities_22",
+    "chosen": 20.0,
+    "largest": 20.0,
+    "reference": 20.0
+  },
+  {
+    "id": "043",
+    "candidate_amounts": [
+      95.0,
+      190.0,
+      10.75,
+      190.0,
+      190.0,
+      200.0,
+      10.0
+    ],
+    "probability_array": "probabilities_23",
+    "chosen": 190.0,
+    "largest": 200.0,
+    "reference": 190.0
+  },
+  {
+    "id": "187",
+    "candidate_amounts": [
+      0.2,
+      11.9,
+      11.9,
+      0.01,
+      24.0,
+      30.0,
+      6.0,
+      1.36,
+      22.65
+    ],
+    "probability_array": "probabilities_24",
+    "chosen": 30.0,
+    "largest": 30.0,
+    "reference": 22.65
+  },
+  {
+    "id": "083",
+    "candidate_amounts": [
+      1.0,
+      0.75,
+      1.0,
+      8.0,
+      1.0,
+      6.0,
+      2.0,
+      3.0,
+      5.0,
+      17.75,
+      1.07,
+      0.02,
+      18.8,
+      20.0,
+      1.2,
+      17.75,
+      1.07
+    ],
+    "probability_array": "probabilities_25",
+    "chosen": 18.8,
+    "largest": 20.0,
+    "reference": 18.8
+  },
+  {
+    "id": "019",
+    "candidate_amounts": [
+      35.1,
+      86.0,
+      86.0,
+      86.0,
+      6.0,
+      4.87,
+      86.0
+    ],
+    "probability_array": "probabilities_26",
+    "chosen": 86.0,
+    "largest": 86.0,
+    "reference": 86.0
+  },
+  {
+    "id": "087",
+    "candidate_amounts": [
+      269.0,
+      538.0,
+      538.0,
+      0.0,
+      538.0,
+      538.0,
+      538.0,
+      30.45,
+      507.55
+    ],
+    "probability_array": "probabilities_27",
+    "chosen": 538.0,
+    "largest": 538.0,
+    "reference": 538.0
+  },
+  {
+    "id": "088",
+    "candidate_amounts": [
+      4.9,
+      9.8,
+      90.0,
+      99.8,
+      0.0,
+      99.8,
+      99.8,
+      99.8,
+      5.64,
+      94.16
+    ],
+    "probability_array": "probabilities_28",
+    "chosen": 99.8,
+    "largest": 99.8,
+    "reference": 99.8
+  },
+  {
+    "id": "102",
+    "candidate_amounts": [
+      22.5,
+      36.0,
+      1.0,
+      6.9,
+      13.8,
+      73.3,
+      0.0,
+      73.3,
+      73.3,
+      73.3,
+      4.15,
+      69.15
+    ],
+    "probability_array": "probabilities_29",
+    "chosen": 73.3,
+    "largest": 73.3,
+    "reference": 73.3
+  },
+  {
+    "id": "217",
+    "candidate_amounts": [
+      5.5,
+      22.0,
+      22.0,
+      0.0,
+      22.0,
+      22.0,
+      22.0,
+      1.25,
+      20.75
+    ],
+    "probability_array": "probabilities_30",
+    "chosen": 22.0,
+    "largest": 22.0,
+    "reference": 22.0
+  },
+  {
+    "id": "012",
+    "candidate_amounts": [
+      1.0,
+      15.9,
+      15.9,
+      15.9,
+      15.0,
+      15.9,
+      15.9,
+      50.0,
+      34.1,
+      15.0,
+      0.9
+    ],
+    "probability_array": "probabilities_31",
+    "chosen": 15.9,
+    "largest": 50.0,
+    "reference": 15.9
+  },
+  {
+    "id": "015",
+    "candidate_amounts": [
+      1.0,
+      15.9,
+      15.9,
+      15.9,
+      15.0,
+      15.9,
+      15.9,
+      50.0,
+      34.1,
+      15.0,
+      0.9
+    ],
+    "probability_array": "probabilities_32",
+    "chosen": 15.9,
+    "largest": 50.0,
+    "reference": 15.9
+  },
+  {
+    "id": "107",
+    "candidate_amounts": [
+      22.5,
+      22.5,
+      5.9,
+      5.9,
+      12.9,
+      12.9,
+      41.3,
+      4.13,
+      2.73,
+      48.16,
+      0.01,
+      48.15,
+      50.0,
+      1.85,
+      45.43,
+      2.73
+    ],
+    "probability_array": "probabilities_33",
+    "chosen": 41.3,
+    "largest": 50.0,
+    "reference": 48.15
+  },
+  {
+    "id": "013",
+    "candidate_amounts": [
+      0.0,
+      15.0,
+      15.0,
+      15.0,
+      1.0,
+      1.0,
+      15.0,
+      0.0,
+      15.0,
+      0.0,
+      15.0,
+      0.0
+    ],
+    "probability_array": "probabilities_34",
+    "chosen": 15.0,
+    "largest": 15.0,
+    "reference": 15.0
+  },
+  {
+    "id": "169",
+    "candidate_amounts": [
+      9.9,
+      7.5,
+      3.0,
+      8.9,
+      29.3,
+      1.66,
+      30.3,
+      1.0
+    ],
+    "probability_array": "probabilities_35",
+    "chosen": 30.3,
+    "largest": 30.3,
+    "reference": 29.3
+  },
+  {
+    "id": "039",
+    "candidate_amounts": [
+      95.0,
+      22.0,
+      12.0,
+      50.0,
+      179.0,
+      10.74,
+      0.01,
+      189.75,
+      179.0,
+      10.74
+    ],
+    "probability_array": "probabilities_36",
+    "chosen": 189.75,
+    "largest": 189.75,
+    "reference": 189.75
+  },
+  {
+    "id": "104",
+    "candidate_amounts": [
+      12.95,
+      16.95,
+      29.95,
+      27.95,
+      87.8,
+      8.78,
+      5.81,
+      102.39,
+      0.01,
+      102.4,
+      96.58,
+      5.81,
+      0.0,
+      0.0
+    ],
+    "probability_array": "probabilities_37",
+    "chosen": 87.8,
+    "largest": 102.4,
+    "reference": 102.4
+  },
+  {
+    "id": "078",
+    "candidate_amounts": [
+      20.0,
+      20.0,
+      28.0,
+      28.0,
+      13.0,
+      13.0,
+      15.0,
+      15.0,
+      1.8,
+      7.2,
+      6.5,
+      6.5,
+      0.6,
+      0.6,
+      2.5,
+      2.5,
+      92.8,
+      92.8,
+      100.0,
+      7.2,
+      23.2
+    ],
+    "probability_array": "probabilities_38",
+    "chosen": 100.0,
+    "largest": 100.0,
+    "reference": 92.8
+  },
+  {
+    "id": "030",
+    "candidate_amounts": [
+      5.5,
+      5.5,
+      2.7,
+      2.7,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_39",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": 8.2
+  },
+  {
+    "id": "032",
+    "candidate_amounts": [
+      7.1,
+      7.1,
+      1.1,
+      1.1,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_40",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": 8.2
+  },
+  {
+    "id": "033",
+    "candidate_amounts": [
+      7.1,
+      7.1,
+      1.1,
+      1.1,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_41",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": null
+  },
+  {
+    "id": "035",
+    "candidate_amounts": [
+      7.1,
+      7.1,
+      1.1,
+      1.1,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_42",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": 8.2
+  },
+  {
+    "id": "036",
+    "candidate_amounts": [
+      5.5,
+      5.5,
+      2.7,
+      2.7,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_43",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": 8.2
+  },
+  {
+    "id": "044",
+    "candidate_amounts": [
+      4.4,
+      4.4,
+      0.5,
+      0.5,
+      3.7,
+      3.7,
+      8.6,
+      0.49,
+      8.6,
+      8.6,
+      0.0,
+      8.11,
+      0.49
+    ],
+    "probability_array": "probabilities_44",
+    "chosen": 8.6,
+    "largest": 8.6,
+    "reference": 8.6
+  },
+  {
+    "id": "045",
+    "candidate_amounts": [
+      2.0,
+      2.0,
+      2.7,
+      2.7,
+      1.1,
+      2.2,
+      6.9,
+      0.39,
+      6.9,
+      6.9,
+      0.0,
+      6.51,
+      0.39
+    ],
+    "probability_array": "probabilities_45",
+    "chosen": 6.9,
+    "largest": 6.9,
+    "reference": 6.9
+  },
+  {
+    "id": "051",
+    "candidate_amounts": [
+      7.1,
+      7.1,
+      0.5,
+      0.5,
+      7.6,
+      0.43,
+      7.6,
+      7.6,
+      0.0,
+      7.17,
+      0.43
+    ],
+    "probability_array": "probabilities_46",
+    "chosen": 7.6,
+    "largest": 7.6,
+    "reference": 7.6
+  },
+  {
+    "id": "053",
+    "candidate_amounts": [
+      8.7,
+      8.7,
+      0.5,
+      0.5,
+      9.2,
+      0.52,
+      9.2,
+      9.2,
+      0.0,
+      8.68,
+      0.52
+    ],
+    "probability_array": "probabilities_47",
+    "chosen": 9.2,
+    "largest": 9.2,
+    "reference": 9.2
+  },
+  {
+    "id": "055",
+    "candidate_amounts": [
+      2.7,
+      2.7,
+      5.5,
+      5.5,
+      8.2,
+      0.46,
+      8.2,
+      8.2,
+      0.0,
+      7.74,
+      0.46
+    ],
+    "probability_array": "probabilities_48",
+    "chosen": 8.2,
+    "largest": 8.2,
+    "reference": 8.2
+  },
+  {
+    "id": "056",
+    "candidate_amounts": [
+      1.6,
+      1.6,
+      7.1,
+      7.1,
+      8.7,
+      0.49,
+      8.7,
+      8.7,
+      0.0,
+      8.21,
+      0.49
+    ],
+    "probability_array": "probabilities_49",
+    "chosen": 8.7,
+    "largest": 8.7,
+    "reference": 8.7
+  }
+]

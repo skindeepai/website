@@ -1,0 +1,88 @@
+{
+  "kind": "Layout, accessibility and mocked UI state checks; no model inference",
+  "pageSource": "Current generated moderation-benchmark.html after compact introduction",
+  "checks": [
+    {
+      "width": 320,
+      "state": "initial",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 320,
+      "state": "expanded",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 320,
+      "state": "enlarged",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 390,
+      "state": "initial",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 390,
+      "state": "expanded",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 390,
+      "state": "enlarged",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 1440,
+      "state": "initial",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 1440,
+      "state": "expanded",
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 1440,
+      "state": "enlarged",
+      "overflow": false,
+      "axeViolations": 0
+    }
+  ],
+  "uiStates": [
+    "default100",
+    "run",
+    "partial rows",
+    "stop terminates",
+    "partial JSON download",
+    "three-path complete",
+    "faster and slower ratios with correctness",
+    "no partial ratio",
+    "worker error"
+  ],
+  "runButtonPositions": [
+    {
+      "width": 320,
+      "top": 581.25,
+      "bottom": 625.25
+    },
+    {
+      "width": 390,
+      "top": 554.859375,
+      "bottom": 598.859375
+    },
+    {
+      "width": 1440,
+      "top": 413.40625,
+      "bottom": 457.40625
+    }
+  ]
+}

@@ -1,0 +1,6602 @@
+[
+  {
+    "repetition": 0,
+    "id": "test:3995",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019014000426977873
+  },
+  {
+    "repetition": 0,
+    "id": "test:3995",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001433999976143241
+  },
+  {
+    "repetition": 0,
+    "id": "test:875",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017713999841362238
+  },
+  {
+    "repetition": 0,
+    "id": "test:875",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014770999550819397
+  },
+  {
+    "repetition": 0,
+    "id": "test:4138",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004728500032797456
+  },
+  {
+    "repetition": 0,
+    "id": "test:4138",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038164000143297017
+  },
+  {
+    "repetition": 0,
+    "id": "test:1033",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015694999601691961
+  },
+  {
+    "repetition": 0,
+    "id": "test:1033",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014201999874785542
+  },
+  {
+    "repetition": 0,
+    "id": "test:289",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017938999808393419
+  },
+  {
+    "repetition": 0,
+    "id": "test:289",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001838900032453239
+  },
+  {
+    "repetition": 0,
+    "id": "test:3750",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019978999625891447
+  },
+  {
+    "repetition": 0,
+    "id": "test:3750",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017345999949611723
+  },
+  {
+    "repetition": 0,
+    "id": "test:387",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018238999764434993
+  },
+  {
+    "repetition": 0,
+    "id": "test:387",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001729200012050569
+  },
+  {
+    "repetition": 0,
+    "id": "test:260",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002383099985308945
+  },
+  {
+    "repetition": 0,
+    "id": "test:260",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00211569998646155
+  },
+  {
+    "repetition": 0,
+    "id": "test:420",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001749899995047599
+  },
+  {
+    "repetition": 0,
+    "id": "test:420",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016297000111080706
+  },
+  {
+    "repetition": 0,
+    "id": "test:198",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020259999437257648
+  },
+  {
+    "repetition": 0,
+    "id": "test:198",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018627999816089869
+  },
+  {
+    "repetition": 0,
+    "id": "test:563",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002356200013309717
+  },
+  {
+    "repetition": 0,
+    "id": "test:563",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002105100022163242
+  },
+  {
+    "repetition": 0,
+    "id": "test:996",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00239430001238361
+  },
+  {
+    "repetition": 0,
+    "id": "test:996",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002036099962424487
+  },
+  {
+    "repetition": 0,
+    "id": "test:418",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004656200006138533
+  },
+  {
+    "repetition": 0,
+    "id": "test:418",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038798999739810824
+  },
+  {
+    "repetition": 0,
+    "id": "test:907",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00420919997850433
+  },
+  {
+    "repetition": 0,
+    "id": "test:907",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0039434999926015735
+  },
+  {
+    "repetition": 0,
+    "id": "test:275",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.010642100009135902
+  },
+  {
+    "repetition": 0,
+    "id": "test:275",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008596599975135177
+  },
+  {
+    "repetition": 0,
+    "id": "test:3958",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002558400039561093
+  },
+  {
+    "repetition": 0,
+    "id": "test:3958",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021361999679356813
+  },
+  {
+    "repetition": 0,
+    "id": "test:3786",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0035816000308841467
+  },
+  {
+    "repetition": 0,
+    "id": "test:3786",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002459599985741079
+  },
+  {
+    "repetition": 0,
+    "id": "test:310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00828960002399981
+  },
+  {
+    "repetition": 0,
+    "id": "test:310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0083087999955751
+  },
+  {
+    "repetition": 0,
+    "id": "test:4115",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0051521999994292855
+  },
+  {
+    "repetition": 0,
+    "id": "test:4115",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005400300025939941
+  },
+  {
+    "repetition": 0,
+    "id": "test:664",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0031012999825179577
+  },
+  {
+    "repetition": 0,
+    "id": "test:664",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019133000168949366
+  },
+  {
+    "repetition": 0,
+    "id": "test:302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002849800046533346
+  },
+  {
+    "repetition": 0,
+    "id": "test:302",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022696999949403107
+  },
+  {
+    "repetition": 0,
+    "id": "test:127",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003143700014334172
+  },
+  {
+    "repetition": 0,
+    "id": "test:127",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00299880001693964
+  },
+  {
+    "repetition": 0,
+    "id": "test:824",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007203500019386411
+  },
+  {
+    "repetition": 0,
+    "id": "test:824",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00608650001231581
+  },
+  {
+    "repetition": 0,
+    "id": "test:4302",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021779999951831996
+  },
+  {
+    "repetition": 0,
+    "id": "test:4302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024603999918326735
+  },
+  {
+    "repetition": 0,
+    "id": "test:1294",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038031000294722617
+  },
+  {
+    "repetition": 0,
+    "id": "test:1294",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036287999828346074
+  },
+  {
+    "repetition": 0,
+    "id": "test:4564",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024619000032544136
+  },
+  {
+    "repetition": 0,
+    "id": "test:4564",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001987700001336634
+  },
+  {
+    "repetition": 0,
+    "id": "test:5034",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008796899986919016
+  },
+  {
+    "repetition": 0,
+    "id": "test:5034",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007939599978271872
+  },
+  {
+    "repetition": 0,
+    "id": "test:4760",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025976000470109284
+  },
+  {
+    "repetition": 0,
+    "id": "test:4760",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002920099999755621
+  },
+  {
+    "repetition": 0,
+    "id": "test:761",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002015999983996153
+  },
+  {
+    "repetition": 0,
+    "id": "test:761",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016769999638199806
+  },
+  {
+    "repetition": 0,
+    "id": "test:473",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023816999746486545
+  },
+  {
+    "repetition": 0,
+    "id": "test:473",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0029759000171907246
+  },
+  {
+    "repetition": 0,
+    "id": "test:475",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0032483000541105866
+  },
+  {
+    "repetition": 0,
+    "id": "test:475",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030983000178821385
+  },
+  {
+    "repetition": 0,
+    "id": "test:152",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025596999912522733
+  },
+  {
+    "repetition": 0,
+    "id": "test:152",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002115999988745898
+  },
+  {
+    "repetition": 0,
+    "id": "test:4717",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001969600038137287
+  },
+  {
+    "repetition": 0,
+    "id": "test:4717",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019524000235833228
+  },
+  {
+    "repetition": 0,
+    "id": "test:598",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004387599998153746
+  },
+  {
+    "repetition": 0,
+    "id": "test:598",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003263799997512251
+  },
+  {
+    "repetition": 0,
+    "id": "test:1353",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014996000099927187
+  },
+  {
+    "repetition": 0,
+    "id": "test:1353",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014876999775879085
+  },
+  {
+    "repetition": 0,
+    "id": "test:1119",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016339999856427312
+  },
+  {
+    "repetition": 0,
+    "id": "test:1119",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017665999475866556
+  },
+  {
+    "repetition": 0,
+    "id": "test:205",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016556000337004662
+  },
+  {
+    "repetition": 0,
+    "id": "test:205",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001348600024357438
+  },
+  {
+    "repetition": 0,
+    "id": "test:549",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016265000449493527
+  },
+  {
+    "repetition": 0,
+    "id": "test:549",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015907000051811337
+  },
+  {
+    "repetition": 0,
+    "id": "test:596",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014842000091448426
+  },
+  {
+    "repetition": 0,
+    "id": "test:596",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0013068999978713691
+  },
+  {
+    "repetition": 0,
+    "id": "test:4007",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017852000310085714
+  },
+  {
+    "repetition": 0,
+    "id": "test:4007",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017112999921664596
+  },
+  {
+    "repetition": 0,
+    "id": "test:5044",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014661999884992838
+  },
+  {
+    "repetition": 0,
+    "id": "test:5044",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017213999526575208
+  },
+  {
+    "repetition": 0,
+    "id": "test:5075",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017405000398866832
+  },
+  {
+    "repetition": 0,
+    "id": "test:5075",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018076999695040286
+  },
+  {
+    "repetition": 0,
+    "id": "test:1428",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017092999769374728
+  },
+  {
+    "repetition": 0,
+    "id": "test:1428",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001770000031683594
+  },
+  {
+    "repetition": 0,
+    "id": "test:248",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00427440000930801
+  },
+  {
+    "repetition": 0,
+    "id": "test:248",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003667199984192848
+  },
+  {
+    "repetition": 0,
+    "id": "test:79",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030521000153385103
+  },
+  {
+    "repetition": 0,
+    "id": "test:79",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026619999553076923
+  },
+  {
+    "repetition": 0,
+    "id": "test:1188",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002156200003810227
+  },
+  {
+    "repetition": 0,
+    "id": "test:1188",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018771999748423696
+  },
+  {
+    "repetition": 0,
+    "id": "test:4518",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001964299997780472
+  },
+  {
+    "repetition": 0,
+    "id": "test:4518",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024207999813370407
+  },
+  {
+    "repetition": 0,
+    "id": "test:4081",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023879999644123018
+  },
+  {
+    "repetition": 0,
+    "id": "test:4081",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022983000380918384
+  },
+  {
+    "repetition": 0,
+    "id": "test:894",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006198699993547052
+  },
+  {
+    "repetition": 0,
+    "id": "test:894",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006448600033763796
+  },
+  {
+    "repetition": 0,
+    "id": "test:113",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006622200016863644
+  },
+  {
+    "repetition": 0,
+    "id": "test:113",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006044800044037402
+  },
+  {
+    "repetition": 0,
+    "id": "test:4708",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00949710002169013
+  },
+  {
+    "repetition": 0,
+    "id": "test:4708",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007824800035450608
+  },
+  {
+    "repetition": 0,
+    "id": "test:697",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00397359998896718
+  },
+  {
+    "repetition": 0,
+    "id": "test:697",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026440999936312437
+  },
+  {
+    "repetition": 0,
+    "id": "test:4915",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0028437000000849366
+  },
+  {
+    "repetition": 0,
+    "id": "test:4915",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022282999707385898
+  },
+  {
+    "repetition": 0,
+    "id": "test:129",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001727099996060133
+  },
+  {
+    "repetition": 0,
+    "id": "test:129",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001707600022200495
+  },
+  {
+    "repetition": 0,
+    "id": "test:1053",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020365999662317336
+  },
+  {
+    "repetition": 0,
+    "id": "test:1053",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00277220003772527
+  },
+  {
+    "repetition": 0,
+    "id": "test:268",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006103100022301078
+  },
+  {
+    "repetition": 0,
+    "id": "test:268",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005467000009957701
+  },
+  {
+    "repetition": 0,
+    "id": "test:980",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005770699994172901
+  },
+  {
+    "repetition": 0,
+    "id": "test:980",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004197499947622418
+  },
+  {
+    "repetition": 0,
+    "id": "test:240",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006019499967806041
+  },
+  {
+    "repetition": 0,
+    "id": "test:240",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006707900029141456
+  },
+  {
+    "repetition": 0,
+    "id": "test:575",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021815000218339264
+  },
+  {
+    "repetition": 0,
+    "id": "test:575",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019400999881327152
+  },
+  {
+    "repetition": 0,
+    "id": "test:3734",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017634000396355987
+  },
+  {
+    "repetition": 0,
+    "id": "test:3734",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018912999657914042
+  },
+  {
+    "repetition": 0,
+    "id": "test:92",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018232000293210149
+  },
+  {
+    "repetition": 0,
+    "id": "test:92",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019756999681703746
+  },
+  {
+    "repetition": 0,
+    "id": "test:347",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006415899959392846
+  },
+  {
+    "repetition": 0,
+    "id": "test:347",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005342999997083098
+  },
+  {
+    "repetition": 0,
+    "id": "test:5007",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002298800041899085
+  },
+  {
+    "repetition": 0,
+    "id": "test:5007",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024930000072345138
+  },
+  {
+    "repetition": 0,
+    "id": "test:1152",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005003399972338229
+  },
+  {
+    "repetition": 0,
+    "id": "test:1152",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004041299980599433
+  },
+  {
+    "repetition": 0,
+    "id": "test:1310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022351000225171447
+  },
+  {
+    "repetition": 0,
+    "id": "test:1310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002130799985025078
+  },
+  {
+    "repetition": 0,
+    "id": "test:4825",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002013100020121783
+  },
+  {
+    "repetition": 0,
+    "id": "test:4825",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019761999719776213
+  },
+  {
+    "repetition": 0,
+    "id": "test:4175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003171799995470792
+  },
+  {
+    "repetition": 0,
+    "id": "test:4175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003438800049480051
+  },
+  {
+    "repetition": 0,
+    "id": "test:3984",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021187999518588185
+  },
+  {
+    "repetition": 0,
+    "id": "test:3984",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018548000371083617
+  },
+  {
+    "repetition": 0,
+    "id": "test:5015",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018776999786496162
+  },
+  {
+    "repetition": 0,
+    "id": "test:5015",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018208000110462308
+  },
+  {
+    "repetition": 0,
+    "id": "test:3876",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023577000247314572
+  },
+  {
+    "repetition": 0,
+    "id": "test:3876",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002376899996306747
+  },
+  {
+    "repetition": 0,
+    "id": "test:1477",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025239999522455037
+  },
+  {
+    "repetition": 0,
+    "id": "test:1477",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030601000180467963
+  },
+  {
+    "repetition": 0,
+    "id": "test:4360",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017960999975912273
+  },
+  {
+    "repetition": 0,
+    "id": "test:4360",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016459999606013298
+  },
+  {
+    "repetition": 0,
+    "id": "test:1189",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002779900038149208
+  },
+  {
+    "repetition": 0,
+    "id": "test:1189",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024839999969117343
+  },
+  {
+    "repetition": 0,
+    "id": "test:339",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020932999905198812
+  },
+  {
+    "repetition": 0,
+    "id": "test:339",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023595000384375453
+  },
+  {
+    "repetition": 0,
+    "id": "test:1410",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018772000330500305
+  },
+  {
+    "repetition": 0,
+    "id": "test:1410",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019365000189282
+  },
+  {
+    "repetition": 0,
+    "id": "test:128",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001768800022546202
+  },
+  {
+    "repetition": 0,
+    "id": "test:128",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020689000375568867
+  },
+  {
+    "repetition": 0,
+    "id": "test:682",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016680000117048621
+  },
+  {
+    "repetition": 0,
+    "id": "test:682",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017660000012256205
+  },
+  {
+    "repetition": 0,
+    "id": "test:95",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004945399996358901
+  },
+  {
+    "repetition": 0,
+    "id": "test:95",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003568399988580495
+  },
+  {
+    "repetition": 0,
+    "id": "test:1440",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.009028300002682954
+  },
+  {
+    "repetition": 0,
+    "id": "test:1440",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008577900007367134
+  },
+  {
+    "repetition": 0,
+    "id": "test:4982",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0027407000306993723
+  },
+  {
+    "repetition": 0,
+    "id": "test:4982",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019286000169813633
+  },
+  {
+    "repetition": 0,
+    "id": "test:175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0034546999959275126
+  },
+  {
+    "repetition": 0,
+    "id": "test:175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036731999716721475
+  },
+  {
+    "repetition": 0,
+    "id": "test:5040",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030264999950304627
+  },
+  {
+    "repetition": 0,
+    "id": "test:5040",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020687999785877764
+  },
+  {
+    "repetition": 0,
+    "id": "test:1191",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019903999636881053
+  },
+  {
+    "repetition": 0,
+    "id": "test:1191",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020484000560827553
+  },
+  {
+    "repetition": 0,
+    "id": "test:4929",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001872900000307709
+  },
+  {
+    "repetition": 0,
+    "id": "test:4929",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017155999667011201
+  },
+  {
+    "repetition": 0,
+    "id": "test:313",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021451999782584608
+  },
+  {
+    "repetition": 0,
+    "id": "test:313",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026097999652847648
+  },
+  {
+    "repetition": 0,
+    "id": "test:281",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00265960005344823
+  },
+  {
+    "repetition": 0,
+    "id": "test:281",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020139000262133777
+  },
+  {
+    "repetition": 0,
+    "id": "test:4594",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00176760001340881
+  },
+  {
+    "repetition": 0,
+    "id": "test:4594",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002049400005489588
+  },
+  {
+    "repetition": 0,
+    "id": "test:739",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019502000068314373
+  },
+  {
+    "repetition": 0,
+    "id": "test:739",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018560999887995422
+  },
+  {
+    "repetition": 0,
+    "id": "test:1393",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026060999953188
+  },
+  {
+    "repetition": 0,
+    "id": "test:1393",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019241999834775925
+  },
+  {
+    "repetition": 0,
+    "id": "test:714",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021963000181131065
+  },
+  {
+    "repetition": 0,
+    "id": "test:714",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024978999863378704
+  },
+  {
+    "repetition": 0,
+    "id": "test:1368",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0035639999550767243
+  },
+  {
+    "repetition": 0,
+    "id": "test:1368",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0032677000272087753
+  },
+  {
+    "repetition": 0,
+    "id": "test:4548",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0043471999815665185
+  },
+  {
+    "repetition": 0,
+    "id": "test:4548",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0035947999567724764
+  },
+  {
+    "repetition": 0,
+    "id": "test:4951",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002826399984769523
+  },
+  {
+    "repetition": 0,
+    "id": "test:4951",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020946000004187226
+  },
+  {
+    "repetition": 0,
+    "id": "test:4944",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017247000359930098
+  },
+  {
+    "repetition": 0,
+    "id": "test:4944",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019981000223197043
+  },
+  {
+    "repetition": 0,
+    "id": "test:312",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026511999894864857
+  },
+  {
+    "repetition": 0,
+    "id": "test:312",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024979000445455313
+  },
+  {
+    "repetition": 0,
+    "id": "test:4493",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002391599991824478
+  },
+  {
+    "repetition": 0,
+    "id": "test:4493",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002646900014951825
+  },
+  {
+    "repetition": 0,
+    "id": "test:1232",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016554000321775675
+  },
+  {
+    "repetition": 0,
+    "id": "test:1232",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014384000096470118
+  },
+  {
+    "repetition": 0,
+    "id": "test:299",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.009064999991096556
+  },
+  {
+    "repetition": 0,
+    "id": "test:299",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00812800001585856
+  },
+  {
+    "repetition": 0,
+    "id": "test:650",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00332620000699535
+  },
+  {
+    "repetition": 0,
+    "id": "test:650",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004132699978072196
+  },
+  {
+    "repetition": 0,
+    "id": "test:49",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003280600009020418
+  },
+  {
+    "repetition": 0,
+    "id": "test:49",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002976000017952174
+  },
+  {
+    "repetition": 1,
+    "id": "test:3995",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002131099987309426
+  },
+  {
+    "repetition": 1,
+    "id": "test:3995",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018704000394791365
+  },
+  {
+    "repetition": 1,
+    "id": "test:875",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021915999823249876
+  },
+  {
+    "repetition": 1,
+    "id": "test:875",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020904999691993
+  },
+  {
+    "repetition": 1,
+    "id": "test:4138",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004010999982710928
+  },
+  {
+    "repetition": 1,
+    "id": "test:4138",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004377899982500821
+  },
+  {
+    "repetition": 1,
+    "id": "test:1033",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020826999680139124
+  },
+  {
+    "repetition": 1,
+    "id": "test:1033",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019446000223979354
+  },
+  {
+    "repetition": 1,
+    "id": "test:289",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022413000115193427
+  },
+  {
+    "repetition": 1,
+    "id": "test:289",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00228899996727705
+  },
+  {
+    "repetition": 1,
+    "id": "test:3750",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025627000140957534
+  },
+  {
+    "repetition": 1,
+    "id": "test:3750",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019061999628320336
+  },
+  {
+    "repetition": 1,
+    "id": "test:387",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016490999842062593
+  },
+  {
+    "repetition": 1,
+    "id": "test:387",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001900099974591285
+  },
+  {
+    "repetition": 1,
+    "id": "test:260",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023175000096671283
+  },
+  {
+    "repetition": 1,
+    "id": "test:260",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022065999801270664
+  },
+  {
+    "repetition": 1,
+    "id": "test:420",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025100000202655792
+  },
+  {
+    "repetition": 1,
+    "id": "test:420",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020399000495672226
+  },
+  {
+    "repetition": 1,
+    "id": "test:198",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021443000296130776
+  },
+  {
+    "repetition": 1,
+    "id": "test:198",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020093999919481575
+  },
+  {
+    "repetition": 1,
+    "id": "test:563",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021869000047445297
+  },
+  {
+    "repetition": 1,
+    "id": "test:563",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020428000134415925
+  },
+  {
+    "repetition": 1,
+    "id": "test:996",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020756999729201198
+  },
+  {
+    "repetition": 1,
+    "id": "test:996",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023766999947838485
+  },
+  {
+    "repetition": 1,
+    "id": "test:418",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005240300029981881
+  },
+  {
+    "repetition": 1,
+    "id": "test:418",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004567099967971444
+  },
+  {
+    "repetition": 1,
+    "id": "test:907",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003870899963658303
+  },
+  {
+    "repetition": 1,
+    "id": "test:907",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004392100032418966
+  },
+  {
+    "repetition": 1,
+    "id": "test:275",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008561499998904765
+  },
+  {
+    "repetition": 1,
+    "id": "test:275",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00834000000031665
+  },
+  {
+    "repetition": 1,
+    "id": "test:3958",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0041170999757014215
+  },
+  {
+    "repetition": 1,
+    "id": "test:3958",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002354900003410876
+  },
+  {
+    "repetition": 1,
+    "id": "test:3786",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0027642000350169837
+  },
+  {
+    "repetition": 1,
+    "id": "test:3786",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002420600038021803
+  },
+  {
+    "repetition": 1,
+    "id": "test:310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00925860001007095
+  },
+  {
+    "repetition": 1,
+    "id": "test:310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008247000048868358
+  },
+  {
+    "repetition": 1,
+    "id": "test:4115",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005624999990686774
+  },
+  {
+    "repetition": 1,
+    "id": "test:4115",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005962900002487004
+  },
+  {
+    "repetition": 1,
+    "id": "test:664",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001935900014359504
+  },
+  {
+    "repetition": 1,
+    "id": "test:664",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019745000172406435
+  },
+  {
+    "repetition": 1,
+    "id": "test:302",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023290999815799296
+  },
+  {
+    "repetition": 1,
+    "id": "test:302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002278600004501641
+  },
+  {
+    "repetition": 1,
+    "id": "test:127",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003491500043310225
+  },
+  {
+    "repetition": 1,
+    "id": "test:127",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002905600005760789
+  },
+  {
+    "repetition": 1,
+    "id": "test:824",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006378900026902556
+  },
+  {
+    "repetition": 1,
+    "id": "test:824",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006487199978437275
+  },
+  {
+    "repetition": 1,
+    "id": "test:4302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019929000409319997
+  },
+  {
+    "repetition": 1,
+    "id": "test:4302",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020718000014312565
+  },
+  {
+    "repetition": 1,
+    "id": "test:1294",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003072399995289743
+  },
+  {
+    "repetition": 1,
+    "id": "test:1294",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003666299977339804
+  },
+  {
+    "repetition": 1,
+    "id": "test:4564",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002251099969726056
+  },
+  {
+    "repetition": 1,
+    "id": "test:4564",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002410300017800182
+  },
+  {
+    "repetition": 1,
+    "id": "test:5034",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00864209997234866
+  },
+  {
+    "repetition": 1,
+    "id": "test:5034",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008925699978135526
+  },
+  {
+    "repetition": 1,
+    "id": "test:4760",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025870000245049596
+  },
+  {
+    "repetition": 1,
+    "id": "test:4760",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002372999966610223
+  },
+  {
+    "repetition": 1,
+    "id": "test:761",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002972999995108694
+  },
+  {
+    "repetition": 1,
+    "id": "test:761",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002246999996714294
+  },
+  {
+    "repetition": 1,
+    "id": "test:473",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002224199997726828
+  },
+  {
+    "repetition": 1,
+    "id": "test:473",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022233000490814447
+  },
+  {
+    "repetition": 1,
+    "id": "test:475",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018619000329636037
+  },
+  {
+    "repetition": 1,
+    "id": "test:475",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019304999732412398
+  },
+  {
+    "repetition": 1,
+    "id": "test:152",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019868999952450395
+  },
+  {
+    "repetition": 1,
+    "id": "test:152",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018210000125691295
+  },
+  {
+    "repetition": 1,
+    "id": "test:4717",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002006300026550889
+  },
+  {
+    "repetition": 1,
+    "id": "test:4717",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002222199982497841
+  },
+  {
+    "repetition": 1,
+    "id": "test:598",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004604499961715192
+  },
+  {
+    "repetition": 1,
+    "id": "test:598",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004771800013259053
+  },
+  {
+    "repetition": 1,
+    "id": "test:1353",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019931999850086868
+  },
+  {
+    "repetition": 1,
+    "id": "test:1353",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021043000160716474
+  },
+  {
+    "repetition": 1,
+    "id": "test:1119",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021228999830782413
+  },
+  {
+    "repetition": 1,
+    "id": "test:1119",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002135200018528849
+  },
+  {
+    "repetition": 1,
+    "id": "test:205",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019993999740108848
+  },
+  {
+    "repetition": 1,
+    "id": "test:205",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002527999982703477
+  },
+  {
+    "repetition": 1,
+    "id": "test:549",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002626700035762042
+  },
+  {
+    "repetition": 1,
+    "id": "test:549",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025074000004678965
+  },
+  {
+    "repetition": 1,
+    "id": "test:596",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002056800003629178
+  },
+  {
+    "repetition": 1,
+    "id": "test:596",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018286999547854066
+  },
+  {
+    "repetition": 1,
+    "id": "test:4007",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002397799980826676
+  },
+  {
+    "repetition": 1,
+    "id": "test:4007",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00228760001482442
+  },
+  {
+    "repetition": 1,
+    "id": "test:5044",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017265999922528863
+  },
+  {
+    "repetition": 1,
+    "id": "test:5044",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020090999896638095
+  },
+  {
+    "repetition": 1,
+    "id": "test:5075",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002599800005555153
+  },
+  {
+    "repetition": 1,
+    "id": "test:5075",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024275000323541462
+  },
+  {
+    "repetition": 1,
+    "id": "test:1428",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024438999826088548
+  },
+  {
+    "repetition": 1,
+    "id": "test:1428",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019077000324614346
+  },
+  {
+    "repetition": 1,
+    "id": "test:248",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038784000207670033
+  },
+  {
+    "repetition": 1,
+    "id": "test:248",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004969900008291006
+  },
+  {
+    "repetition": 1,
+    "id": "test:79",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003785100008826703
+  },
+  {
+    "repetition": 1,
+    "id": "test:79",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001915499975439161
+  },
+  {
+    "repetition": 1,
+    "id": "test:1188",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015422999858856201
+  },
+  {
+    "repetition": 1,
+    "id": "test:1188",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018249000422656536
+  },
+  {
+    "repetition": 1,
+    "id": "test:4518",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015791000332683325
+  },
+  {
+    "repetition": 1,
+    "id": "test:4518",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014377000043168664
+  },
+  {
+    "repetition": 1,
+    "id": "test:4081",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0013901999918743968
+  },
+  {
+    "repetition": 1,
+    "id": "test:4081",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014122999855317175
+  },
+  {
+    "repetition": 1,
+    "id": "test:894",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006481299991719425
+  },
+  {
+    "repetition": 1,
+    "id": "test:894",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005831399990711361
+  },
+  {
+    "repetition": 1,
+    "id": "test:113",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0068109999992884696
+  },
+  {
+    "repetition": 1,
+    "id": "test:113",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005692099977750331
+  },
+  {
+    "repetition": 1,
+    "id": "test:4708",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008819699985906482
+  },
+  {
+    "repetition": 1,
+    "id": "test:4708",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007848600042052567
+  },
+  {
+    "repetition": 1,
+    "id": "test:697",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002723100013099611
+  },
+  {
+    "repetition": 1,
+    "id": "test:697",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0027114999829791486
+  },
+  {
+    "repetition": 1,
+    "id": "test:4915",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003099299967288971
+  },
+  {
+    "repetition": 1,
+    "id": "test:4915",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002551900048274547
+  },
+  {
+    "repetition": 1,
+    "id": "test:129",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020883000106550753
+  },
+  {
+    "repetition": 1,
+    "id": "test:129",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001988800009712577
+  },
+  {
+    "repetition": 1,
+    "id": "test:1053",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018844000296667218
+  },
+  {
+    "repetition": 1,
+    "id": "test:1053",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001896300003863871
+  },
+  {
+    "repetition": 1,
+    "id": "test:268",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00632350001251325
+  },
+  {
+    "repetition": 1,
+    "id": "test:268",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005610699998214841
+  },
+  {
+    "repetition": 1,
+    "id": "test:980",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0037112999707460403
+  },
+  {
+    "repetition": 1,
+    "id": "test:980",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038592999917455018
+  },
+  {
+    "repetition": 1,
+    "id": "test:240",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0063100999686867
+  },
+  {
+    "repetition": 1,
+    "id": "test:240",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005678199988324195
+  },
+  {
+    "repetition": 1,
+    "id": "test:575",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002322999993339181
+  },
+  {
+    "repetition": 1,
+    "id": "test:575",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00225349998800084
+  },
+  {
+    "repetition": 1,
+    "id": "test:3734",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002550500037614256
+  },
+  {
+    "repetition": 1,
+    "id": "test:3734",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019730000058189034
+  },
+  {
+    "repetition": 1,
+    "id": "test:92",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018275000038556755
+  },
+  {
+    "repetition": 1,
+    "id": "test:92",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020723000052385032
+  },
+  {
+    "repetition": 1,
+    "id": "test:347",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004959999991115183
+  },
+  {
+    "repetition": 1,
+    "id": "test:347",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005823099985718727
+  },
+  {
+    "repetition": 1,
+    "id": "test:5007",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0027245000237599015
+  },
+  {
+    "repetition": 1,
+    "id": "test:5007",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021217999747022986
+  },
+  {
+    "repetition": 1,
+    "id": "test:1152",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0039860999677330256
+  },
+  {
+    "repetition": 1,
+    "id": "test:1152",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004016200022306293
+  },
+  {
+    "repetition": 1,
+    "id": "test:1310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002236299973446876
+  },
+  {
+    "repetition": 1,
+    "id": "test:1310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022030999534763396
+  },
+  {
+    "repetition": 1,
+    "id": "test:4825",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0028848000220023096
+  },
+  {
+    "repetition": 1,
+    "id": "test:4825",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020270999521017075
+  },
+  {
+    "repetition": 1,
+    "id": "test:4175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002279800013639033
+  },
+  {
+    "repetition": 1,
+    "id": "test:4175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023281999747268856
+  },
+  {
+    "repetition": 1,
+    "id": "test:3984",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020185000030323863
+  },
+  {
+    "repetition": 1,
+    "id": "test:3984",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018560999887995422
+  },
+  {
+    "repetition": 1,
+    "id": "test:5015",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00224609998986125
+  },
+  {
+    "repetition": 1,
+    "id": "test:5015",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00227870000526309
+  },
+  {
+    "repetition": 1,
+    "id": "test:3876",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002308499999344349
+  },
+  {
+    "repetition": 1,
+    "id": "test:3876",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021528000361286104
+  },
+  {
+    "repetition": 1,
+    "id": "test:1477",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022199000231921673
+  },
+  {
+    "repetition": 1,
+    "id": "test:1477",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023757999879308045
+  },
+  {
+    "repetition": 1,
+    "id": "test:4360",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019366000196896493
+  },
+  {
+    "repetition": 1,
+    "id": "test:4360",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017312000272795558
+  },
+  {
+    "repetition": 1,
+    "id": "test:1189",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002566700044553727
+  },
+  {
+    "repetition": 1,
+    "id": "test:1189",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002130800043232739
+  },
+  {
+    "repetition": 1,
+    "id": "test:339",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016685000155121088
+  },
+  {
+    "repetition": 1,
+    "id": "test:339",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016975000035017729
+  },
+  {
+    "repetition": 1,
+    "id": "test:1410",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001936800021212548
+  },
+  {
+    "repetition": 1,
+    "id": "test:1410",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001967799966223538
+  },
+  {
+    "repetition": 1,
+    "id": "test:128",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020721000037156045
+  },
+  {
+    "repetition": 1,
+    "id": "test:128",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018810000037774444
+  },
+  {
+    "repetition": 1,
+    "id": "test:682",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001950400008354336
+  },
+  {
+    "repetition": 1,
+    "id": "test:682",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00211269996361807
+  },
+  {
+    "repetition": 1,
+    "id": "test:95",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003718299965839833
+  },
+  {
+    "repetition": 1,
+    "id": "test:95",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003918800037354231
+  },
+  {
+    "repetition": 1,
+    "id": "test:1440",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00789270002860576
+  },
+  {
+    "repetition": 1,
+    "id": "test:1440",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008088300004601479
+  },
+  {
+    "repetition": 1,
+    "id": "test:4982",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002281899971421808
+  },
+  {
+    "repetition": 1,
+    "id": "test:4982",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017823000089265406
+  },
+  {
+    "repetition": 1,
+    "id": "test:175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003312899963930249
+  },
+  {
+    "repetition": 1,
+    "id": "test:175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030804999987594783
+  },
+  {
+    "repetition": 1,
+    "id": "test:5040",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002058100013528019
+  },
+  {
+    "repetition": 1,
+    "id": "test:5040",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022719999542459846
+  },
+  {
+    "repetition": 1,
+    "id": "test:1191",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001986199989914894
+  },
+  {
+    "repetition": 1,
+    "id": "test:1191",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019844999769702554
+  },
+  {
+    "repetition": 1,
+    "id": "test:4929",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016005999641492963
+  },
+  {
+    "repetition": 1,
+    "id": "test:4929",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017220000154338777
+  },
+  {
+    "repetition": 1,
+    "id": "test:313",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0027620999608188868
+  },
+  {
+    "repetition": 1,
+    "id": "test:313",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002298399980645627
+  },
+  {
+    "repetition": 1,
+    "id": "test:281",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017444000113755465
+  },
+  {
+    "repetition": 1,
+    "id": "test:281",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022251999471336603
+  },
+  {
+    "repetition": 1,
+    "id": "test:4594",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019247999880462885
+  },
+  {
+    "repetition": 1,
+    "id": "test:4594",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018921000300906599
+  },
+  {
+    "repetition": 1,
+    "id": "test:739",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019627000438049436
+  },
+  {
+    "repetition": 1,
+    "id": "test:739",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002093199989758432
+  },
+  {
+    "repetition": 1,
+    "id": "test:1393",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023790999548509717
+  },
+  {
+    "repetition": 1,
+    "id": "test:1393",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002119800017680973
+  },
+  {
+    "repetition": 1,
+    "id": "test:714",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00229049997869879
+  },
+  {
+    "repetition": 1,
+    "id": "test:714",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002579400024842471
+  },
+  {
+    "repetition": 1,
+    "id": "test:1368",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003893899964168668
+  },
+  {
+    "repetition": 1,
+    "id": "test:1368",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0034259000094607472
+  },
+  {
+    "repetition": 1,
+    "id": "test:4548",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038926000124774873
+  },
+  {
+    "repetition": 1,
+    "id": "test:4548",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0042640999890863895
+  },
+  {
+    "repetition": 1,
+    "id": "test:4951",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024287999840453267
+  },
+  {
+    "repetition": 1,
+    "id": "test:4951",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018395999795757234
+  },
+  {
+    "repetition": 1,
+    "id": "test:4944",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017933999770320952
+  },
+  {
+    "repetition": 1,
+    "id": "test:4944",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001815799972973764
+  },
+  {
+    "repetition": 1,
+    "id": "test:312",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026821999927051365
+  },
+  {
+    "repetition": 1,
+    "id": "test:312",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002816300024278462
+  },
+  {
+    "repetition": 1,
+    "id": "test:4493",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002230699989013374
+  },
+  {
+    "repetition": 1,
+    "id": "test:4493",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001882400014437735
+  },
+  {
+    "repetition": 1,
+    "id": "test:1232",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0012714999611489475
+  },
+  {
+    "repetition": 1,
+    "id": "test:1232",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0012886999757029116
+  },
+  {
+    "repetition": 1,
+    "id": "test:299",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006462100020144135
+  },
+  {
+    "repetition": 1,
+    "id": "test:299",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007623899960890412
+  },
+  {
+    "repetition": 1,
+    "id": "test:650",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003433800011407584
+  },
+  {
+    "repetition": 1,
+    "id": "test:650",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003285999991931021
+  },
+  {
+    "repetition": 1,
+    "id": "test:49",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023674999829381704
+  },
+  {
+    "repetition": 1,
+    "id": "test:49",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002521199989132583
+  },
+  {
+    "repetition": 2,
+    "id": "test:3995",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017804999952204525
+  },
+  {
+    "repetition": 2,
+    "id": "test:3995",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0013704000157304108
+  },
+  {
+    "repetition": 2,
+    "id": "test:875",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014882999821566045
+  },
+  {
+    "repetition": 2,
+    "id": "test:875",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014671999961137772
+  },
+  {
+    "repetition": 2,
+    "id": "test:4138",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002965899999253452
+  },
+  {
+    "repetition": 2,
+    "id": "test:4138",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003067099954932928
+  },
+  {
+    "repetition": 2,
+    "id": "test:1033",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015896999975666404
+  },
+  {
+    "repetition": 2,
+    "id": "test:1033",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015469000209122896
+  },
+  {
+    "repetition": 2,
+    "id": "test:289",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018771999748423696
+  },
+  {
+    "repetition": 2,
+    "id": "test:289",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016120999935083091
+  },
+  {
+    "repetition": 2,
+    "id": "test:3750",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015940999728627503
+  },
+  {
+    "repetition": 2,
+    "id": "test:3750",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001498199999332428
+  },
+  {
+    "repetition": 2,
+    "id": "test:387",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0012932000099681318
+  },
+  {
+    "repetition": 2,
+    "id": "test:387",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0012430999777279794
+  },
+  {
+    "repetition": 2,
+    "id": "test:260",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015858000260777771
+  },
+  {
+    "repetition": 2,
+    "id": "test:260",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015169999678619206
+  },
+  {
+    "repetition": 2,
+    "id": "test:420",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014676999999210238
+  },
+  {
+    "repetition": 2,
+    "id": "test:420",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001568900013808161
+  },
+  {
+    "repetition": 2,
+    "id": "test:198",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001492600014898926
+  },
+  {
+    "repetition": 2,
+    "id": "test:198",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0014463000115938485
+  },
+  {
+    "repetition": 2,
+    "id": "test:563",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015626000240445137
+  },
+  {
+    "repetition": 2,
+    "id": "test:563",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015706999693065882
+  },
+  {
+    "repetition": 2,
+    "id": "test:996",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015589999966323376
+  },
+  {
+    "repetition": 2,
+    "id": "test:996",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015378999523818493
+  },
+  {
+    "repetition": 2,
+    "id": "test:418",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0030269999988377094
+  },
+  {
+    "repetition": 2,
+    "id": "test:418",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0032076999777927995
+  },
+  {
+    "repetition": 2,
+    "id": "test:907",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0033517999690957367
+  },
+  {
+    "repetition": 2,
+    "id": "test:907",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004328600014559925
+  },
+  {
+    "repetition": 2,
+    "id": "test:275",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00736210000468418
+  },
+  {
+    "repetition": 2,
+    "id": "test:275",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.007269800000358373
+  },
+  {
+    "repetition": 2,
+    "id": "test:3958",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019281000131741166
+  },
+  {
+    "repetition": 2,
+    "id": "test:3958",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016458999598398805
+  },
+  {
+    "repetition": 2,
+    "id": "test:3786",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016012000269256532
+  },
+  {
+    "repetition": 2,
+    "id": "test:3786",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016022000345401466
+  },
+  {
+    "repetition": 2,
+    "id": "test:310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.006534999993164092
+  },
+  {
+    "repetition": 2,
+    "id": "test:310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005746499984525144
+  },
+  {
+    "repetition": 2,
+    "id": "test:4115",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0035502000246196985
+  },
+  {
+    "repetition": 2,
+    "id": "test:4115",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003442999965045601
+  },
+  {
+    "repetition": 2,
+    "id": "test:664",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015304000116884708
+  },
+  {
+    "repetition": 2,
+    "id": "test:664",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001372800034005195
+  },
+  {
+    "repetition": 2,
+    "id": "test:302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016704999725334346
+  },
+  {
+    "repetition": 2,
+    "id": "test:302",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017778999754227698
+  },
+  {
+    "repetition": 2,
+    "id": "test:127",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020025999983772635
+  },
+  {
+    "repetition": 2,
+    "id": "test:127",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021389999892562628
+  },
+  {
+    "repetition": 2,
+    "id": "test:824",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004689500026870519
+  },
+  {
+    "repetition": 2,
+    "id": "test:824",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005372800049372017
+  },
+  {
+    "repetition": 2,
+    "id": "test:4302",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022431000252254307
+  },
+  {
+    "repetition": 2,
+    "id": "test:4302",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001595200039446354
+  },
+  {
+    "repetition": 2,
+    "id": "test:1294",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002445699996314943
+  },
+  {
+    "repetition": 2,
+    "id": "test:1294",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025594999897293746
+  },
+  {
+    "repetition": 2,
+    "id": "test:4564",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002556600025855005
+  },
+  {
+    "repetition": 2,
+    "id": "test:4564",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017871999880298972
+  },
+  {
+    "repetition": 2,
+    "id": "test:5034",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005578099982813001
+  },
+  {
+    "repetition": 2,
+    "id": "test:5034",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005820100021082908
+  },
+  {
+    "repetition": 2,
+    "id": "test:4760",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002063299994915724
+  },
+  {
+    "repetition": 2,
+    "id": "test:4760",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017728999955579638
+  },
+  {
+    "repetition": 2,
+    "id": "test:761",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015273999888449907
+  },
+  {
+    "repetition": 2,
+    "id": "test:761",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001476599951274693
+  },
+  {
+    "repetition": 2,
+    "id": "test:473",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001812600006815046
+  },
+  {
+    "repetition": 2,
+    "id": "test:473",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019035000004805624
+  },
+  {
+    "repetition": 2,
+    "id": "test:475",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019458999740891159
+  },
+  {
+    "repetition": 2,
+    "id": "test:475",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018679999629966915
+  },
+  {
+    "repetition": 2,
+    "id": "test:152",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002215399988926947
+  },
+  {
+    "repetition": 2,
+    "id": "test:152",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018029999919235706
+  },
+  {
+    "repetition": 2,
+    "id": "test:4717",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018900000141002238
+  },
+  {
+    "repetition": 2,
+    "id": "test:4717",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018279000069014728
+  },
+  {
+    "repetition": 2,
+    "id": "test:598",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004487900005187839
+  },
+  {
+    "repetition": 2,
+    "id": "test:598",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0044318000436760485
+  },
+  {
+    "repetition": 2,
+    "id": "test:1353",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023806000244803727
+  },
+  {
+    "repetition": 2,
+    "id": "test:1353",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001905999961309135
+  },
+  {
+    "repetition": 2,
+    "id": "test:1119",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020377999753691256
+  },
+  {
+    "repetition": 2,
+    "id": "test:1119",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021916000405326486
+  },
+  {
+    "repetition": 2,
+    "id": "test:205",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002040899998974055
+  },
+  {
+    "repetition": 2,
+    "id": "test:205",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020039999508298934
+  },
+  {
+    "repetition": 2,
+    "id": "test:549",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002366199973039329
+  },
+  {
+    "repetition": 2,
+    "id": "test:549",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023259000154212117
+  },
+  {
+    "repetition": 2,
+    "id": "test:596",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018143999623134732
+  },
+  {
+    "repetition": 2,
+    "id": "test:596",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017829000134952366
+  },
+  {
+    "repetition": 2,
+    "id": "test:4007",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022761999862268567
+  },
+  {
+    "repetition": 2,
+    "id": "test:4007",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023221999872475863
+  },
+  {
+    "repetition": 2,
+    "id": "test:5044",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024686999968253076
+  },
+  {
+    "repetition": 2,
+    "id": "test:5044",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001974900020286441
+  },
+  {
+    "repetition": 2,
+    "id": "test:5075",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020626999903470278
+  },
+  {
+    "repetition": 2,
+    "id": "test:5075",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002117800002451986
+  },
+  {
+    "repetition": 2,
+    "id": "test:1428",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018964000046253204
+  },
+  {
+    "repetition": 2,
+    "id": "test:1428",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020755999721586704
+  },
+  {
+    "repetition": 2,
+    "id": "test:248",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003995999984908849
+  },
+  {
+    "repetition": 2,
+    "id": "test:248",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003993699967395514
+  },
+  {
+    "repetition": 2,
+    "id": "test:79",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002688299980945885
+  },
+  {
+    "repetition": 2,
+    "id": "test:79",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00209650001488626
+  },
+  {
+    "repetition": 2,
+    "id": "test:1188",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015448000049218535
+  },
+  {
+    "repetition": 2,
+    "id": "test:1188",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016216000076383352
+  },
+  {
+    "repetition": 2,
+    "id": "test:4518",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015479999710805714
+  },
+  {
+    "repetition": 2,
+    "id": "test:4518",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001502899976912886
+  },
+  {
+    "repetition": 2,
+    "id": "test:4081",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016915000160224736
+  },
+  {
+    "repetition": 2,
+    "id": "test:4081",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021846999879926443
+  },
+  {
+    "repetition": 2,
+    "id": "test:894",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0059621999971568584
+  },
+  {
+    "repetition": 2,
+    "id": "test:894",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00496640003984794
+  },
+  {
+    "repetition": 2,
+    "id": "test:113",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005868799984455109
+  },
+  {
+    "repetition": 2,
+    "id": "test:113",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005738599982578307
+  },
+  {
+    "repetition": 2,
+    "id": "test:4708",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008805799996480346
+  },
+  {
+    "repetition": 2,
+    "id": "test:4708",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008365399960894138
+  },
+  {
+    "repetition": 2,
+    "id": "test:697",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002237599983345717
+  },
+  {
+    "repetition": 2,
+    "id": "test:697",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020714999991469085
+  },
+  {
+    "repetition": 2,
+    "id": "test:4915",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018297000206075609
+  },
+  {
+    "repetition": 2,
+    "id": "test:4915",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018302000244148076
+  },
+  {
+    "repetition": 2,
+    "id": "test:129",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0013562999665737152
+  },
+  {
+    "repetition": 2,
+    "id": "test:129",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015353999915532768
+  },
+  {
+    "repetition": 2,
+    "id": "test:1053",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019371999660506845
+  },
+  {
+    "repetition": 2,
+    "id": "test:1053",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015962999896146357
+  },
+  {
+    "repetition": 2,
+    "id": "test:268",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00400190002983436
+  },
+  {
+    "repetition": 2,
+    "id": "test:268",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004026399983558804
+  },
+  {
+    "repetition": 2,
+    "id": "test:980",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038530000019818544
+  },
+  {
+    "repetition": 2,
+    "id": "test:980",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0035454999888315797
+  },
+  {
+    "repetition": 2,
+    "id": "test:240",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0053116000490263104
+  },
+  {
+    "repetition": 2,
+    "id": "test:240",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.005785899993497878
+  },
+  {
+    "repetition": 2,
+    "id": "test:575",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0026165000163018703
+  },
+  {
+    "repetition": 2,
+    "id": "test:575",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024545000051148236
+  },
+  {
+    "repetition": 2,
+    "id": "test:3734",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002248800010420382
+  },
+  {
+    "repetition": 2,
+    "id": "test:3734",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021754999761469662
+  },
+  {
+    "repetition": 2,
+    "id": "test:92",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002280999964568764
+  },
+  {
+    "repetition": 2,
+    "id": "test:92",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020337000023573637
+  },
+  {
+    "repetition": 2,
+    "id": "test:347",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036669999826699495
+  },
+  {
+    "repetition": 2,
+    "id": "test:347",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004837699991185218
+  },
+  {
+    "repetition": 2,
+    "id": "test:5007",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002267500036396086
+  },
+  {
+    "repetition": 2,
+    "id": "test:5007",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002056799945421517
+  },
+  {
+    "repetition": 2,
+    "id": "test:1152",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003505099972244352
+  },
+  {
+    "repetition": 2,
+    "id": "test:1152",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003570699947886169
+  },
+  {
+    "repetition": 2,
+    "id": "test:1310",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024766999995335937
+  },
+  {
+    "repetition": 2,
+    "id": "test:1310",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00199419999262318
+  },
+  {
+    "repetition": 2,
+    "id": "test:4825",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018437999533489347
+  },
+  {
+    "repetition": 2,
+    "id": "test:4825",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018140999600291252
+  },
+  {
+    "repetition": 2,
+    "id": "test:4175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002503100025933236
+  },
+  {
+    "repetition": 2,
+    "id": "test:4175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002659899997524917
+  },
+  {
+    "repetition": 2,
+    "id": "test:3984",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001865800004452467
+  },
+  {
+    "repetition": 2,
+    "id": "test:3984",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017727999947965145
+  },
+  {
+    "repetition": 2,
+    "id": "test:5015",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023449999862350523
+  },
+  {
+    "repetition": 2,
+    "id": "test:5015",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024238000041805208
+  },
+  {
+    "repetition": 2,
+    "id": "test:3876",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002321799984201789
+  },
+  {
+    "repetition": 2,
+    "id": "test:3876",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002283999987412244
+  },
+  {
+    "repetition": 2,
+    "id": "test:1477",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022060999763198197
+  },
+  {
+    "repetition": 2,
+    "id": "test:1477",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002234900020994246
+  },
+  {
+    "repetition": 2,
+    "id": "test:4360",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016852000262588263
+  },
+  {
+    "repetition": 2,
+    "id": "test:4360",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001621800009161234
+  },
+  {
+    "repetition": 2,
+    "id": "test:1189",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002716599963605404
+  },
+  {
+    "repetition": 2,
+    "id": "test:1189",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023722000187262893
+  },
+  {
+    "repetition": 2,
+    "id": "test:339",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019066999666392803
+  },
+  {
+    "repetition": 2,
+    "id": "test:339",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018972000107169151
+  },
+  {
+    "repetition": 2,
+    "id": "test:1410",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016184000414796174
+  },
+  {
+    "repetition": 2,
+    "id": "test:1410",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019907999667339027
+  },
+  {
+    "repetition": 2,
+    "id": "test:128",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018478999845683575
+  },
+  {
+    "repetition": 2,
+    "id": "test:128",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021424999576993287
+  },
+  {
+    "repetition": 2,
+    "id": "test:682",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0015781000256538391
+  },
+  {
+    "repetition": 2,
+    "id": "test:682",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016863999771885574
+  },
+  {
+    "repetition": 2,
+    "id": "test:95",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.004067300003953278
+  },
+  {
+    "repetition": 2,
+    "id": "test:95",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0038449999992735684
+  },
+  {
+    "repetition": 2,
+    "id": "test:1440",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008348500006832182
+  },
+  {
+    "repetition": 2,
+    "id": "test:1440",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008254799991846085
+  },
+  {
+    "repetition": 2,
+    "id": "test:4982",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0023699000012129545
+  },
+  {
+    "repetition": 2,
+    "id": "test:4982",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018429000047035515
+  },
+  {
+    "repetition": 2,
+    "id": "test:175",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036264999653212726
+  },
+  {
+    "repetition": 2,
+    "id": "test:175",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003446799993980676
+  },
+  {
+    "repetition": 2,
+    "id": "test:5040",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0020407999982126057
+  },
+  {
+    "repetition": 2,
+    "id": "test:5040",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019329999922774732
+  },
+  {
+    "repetition": 2,
+    "id": "test:1191",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018525999621488154
+  },
+  {
+    "repetition": 2,
+    "id": "test:1191",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019258000538684428
+  },
+  {
+    "repetition": 2,
+    "id": "test:4929",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018672000151127577
+  },
+  {
+    "repetition": 2,
+    "id": "test:4929",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019233999773859978
+  },
+  {
+    "repetition": 2,
+    "id": "test:313",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0022403000039048493
+  },
+  {
+    "repetition": 2,
+    "id": "test:313",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002284899994265288
+  },
+  {
+    "repetition": 2,
+    "id": "test:281",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018820000113919377
+  },
+  {
+    "repetition": 2,
+    "id": "test:281",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001944800023920834
+  },
+  {
+    "repetition": 2,
+    "id": "test:4594",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018497000564821064
+  },
+  {
+    "repetition": 2,
+    "id": "test:4594",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001813200011383742
+  },
+  {
+    "repetition": 2,
+    "id": "test:739",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018447000184096396
+  },
+  {
+    "repetition": 2,
+    "id": "test:739",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0018629999831318855
+  },
+  {
+    "repetition": 2,
+    "id": "test:1393",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002461099997162819
+  },
+  {
+    "repetition": 2,
+    "id": "test:1393",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00269210000988096
+  },
+  {
+    "repetition": 2,
+    "id": "test:714",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0028922000201418996
+  },
+  {
+    "repetition": 2,
+    "id": "test:714",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0025266000302508473
+  },
+  {
+    "repetition": 2,
+    "id": "test:1368",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036837999941781163
+  },
+  {
+    "repetition": 2,
+    "id": "test:1368",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003648199955932796
+  },
+  {
+    "repetition": 2,
+    "id": "test:4548",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.00431150000076741
+  },
+  {
+    "repetition": 2,
+    "id": "test:4548",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003645499993581325
+  },
+  {
+    "repetition": 2,
+    "id": "test:4951",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021369000314734876
+  },
+  {
+    "repetition": 2,
+    "id": "test:4951",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.001991499972064048
+  },
+  {
+    "repetition": 2,
+    "id": "test:4944",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002018700004555285
+  },
+  {
+    "repetition": 2,
+    "id": "test:4944",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002114800037816167
+  },
+  {
+    "repetition": 2,
+    "id": "test:312",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.003099700028542429
+  },
+  {
+    "repetition": 2,
+    "id": "test:312",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0024651000276207924
+  },
+  {
+    "repetition": 2,
+    "id": "test:4493",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0021954000112600625
+  },
+  {
+    "repetition": 2,
+    "id": "test:4493",
+    "path": "old_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0019591000163927674
+  },
+  {
+    "repetition": 2,
+    "id": "test:1232",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0017368999542668462
+  },
+  {
+    "repetition": 2,
+    "id": "test:1232",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0016864000353962183
+  },
+  {
+    "repetition": 2,
+    "id": "test:299",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008591999998316169
+  },
+  {
+    "repetition": 2,
+    "id": "test:299",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.008000900037586689
+  },
+  {
+    "repetition": 2,
+    "id": "test:650",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0036995999980717897
+  },
+  {
+    "repetition": 2,
+    "id": "test:650",
+    "path": "new_bert",
+    "prediction": 0,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.0032962000113911927
+  },
+  {
+    "repetition": 2,
+    "id": "test:49",
+    "path": "new_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002915100019890815
+  },
+  {
+    "repetition": 2,
+    "id": "test:49",
+    "path": "old_bert",
+    "prediction": 1,
+    "bert_layers": [
+      1,
+      2
+    ],
+    "seconds": 0.002713699999731034
+  }
+]

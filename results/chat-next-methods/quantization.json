@@ -1,0 +1,62 @@
+{
+  "metrics": {
+    "matched_float": {
+      "n": 64,
+      "correct": 53,
+      "missed_toxic": 6,
+      "false_block": 5,
+      "toxic": 32,
+      "added_errors": 8,
+      "corrected_errors": 7,
+      "additional_missed_toxic": 4
+    },
+    "refit_quant": {
+      "n": 64,
+      "correct": 29,
+      "missed_toxic": 17,
+      "false_block": 18,
+      "toxic": 32,
+      "added_errors": 27,
+      "corrected_errors": 2,
+      "additional_missed_toxic": 13
+    },
+    "original_float": {
+      "n": 64,
+      "correct": 54,
+      "missed_toxic": 6,
+      "false_block": 4,
+      "toxic": 32,
+      "added_errors": 0,
+      "corrected_errors": 0,
+      "additional_missed_toxic": 0
+    },
+    "unchanged_head_quant": {
+      "n": 64,
+      "correct": 33,
+      "missed_toxic": 0,
+      "false_block": 31,
+      "toxic": 32,
+      "added_errors": 27,
+      "corrected_errors": 6,
+      "additional_missed_toxic": 0
+    },
+    "threshold_quant": {
+      "n": 64,
+      "correct": 33,
+      "missed_toxic": 14,
+      "false_block": 17,
+      "toxic": 32,
+      "added_errors": 27,
+      "corrected_errors": 6,
+      "additional_missed_toxic": 14
+    }
+  },
+  "protocol_sha256": "637f865b3de5f85761f8fcdb5cac39c1abf3a609e66bafe0c2d8c95f45aa3ab0",
+  "repair_protocol_sha256": "00aa5b3939ce4536c3cc7a98ecdcfe0f262f5f8ed6a3e892d0d210195a3776c8",
+  "feature_cache_sha256": "91e54dd20c5e6c4454b65737ed995de3c4852fbe51bfd1d682cf260c1ae65c82",
+  "weights_sha256": "854e23684ec71ef9d75bd4a17d2d397de18f388c91b6a347ffd88fbfdf4f5693",
+  "threshold": 22.87088394165039,
+  "mean_hidden_cosine": 0.4469754695892334,
+  "mean_hidden_rms_delta": 9.903366088867188,
+  "scope": "128train/64olddevelopment; no fresh test or timing. Floatcachedbatch8 vs quantactualbatch1. Readout correction is not proof all backbone information is preserved."
+}

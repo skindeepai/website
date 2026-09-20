@@ -1,0 +1,27 @@
+{
+  "reason": "Second runtime-only amendment after the training jobs finished and parent allocated12PyTorchthreads, with at most4threads remaining for concurrent jobs under16total. Samples, gates, prompt, model, dtype, visual-token budget, crop geometry, scoring and saved outcomes are unchanged. Any interrupted incomplete call is rerun from its original input.",
+  "protocol_sha256": "38dd6a82e417a7f5adaa7977528d72f9c46b56e29869f7dd2c7ac32139caced8",
+  "amended_source_sha256": "0f577e1c503fafff39b515f73e2d4da6ec4074bd5d8d4399b2deacd1b94eef9f",
+  "previous_amended_source_sha256": "c8cab364eed115e1cf006a5f2c80cf04e09095ca9f4437576fb2c4fa4451fb7c",
+  "previous_runtime_amendment_sha256": "5fed6c87fdf17cc2eb20b9b4c8c188c5009a0fa9c110b343f1e09f611c7a8297",
+  "completed_ids_before_amendment": [
+    "2XIa0KyxIh-2",
+    "4EDJ4LB61U-0",
+    "Cf4yF5Buvk-2",
+    "l8sf22rM6n-1",
+    "35h7FwTKtF-2",
+    "4vEmVUJ355-1",
+    "2X4C2ZQ4NN-2",
+    "3MwkAVUe4d-2",
+    "9ICpvdGZBC-1",
+    "3Fh257K4Pd-5",
+    "o8viNr8L1u-3",
+    "17VE1HC7Z9-1",
+    "Dd5jH9nufm-2"
+  ],
+  "original_threads": 2,
+  "previous_pytorch_threads": 4,
+  "new_pytorch_threads": 12,
+  "other_thread_caps": 2,
+  "parity_requirement": "Repeat first original saved image with12threads; maxpatchprobabilitydifference<1e-4 and bothnormalizedpointcoordinate differences<1e-5; fail before continuing if violated. Save full repeated output separately. No timing comparison claim."
+}

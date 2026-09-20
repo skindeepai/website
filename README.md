@@ -89,3 +89,46 @@ The [results index](results.html) now opens focused pages for [preferences](pref
 [Research FAQ](research.html) replaces the public experiment backlog. [The evidence ledger](docs/research-status.md) retains all 29 protocol IDs, with actual outcomes and explicit untested scope. Its source is `content/research-evidence.json`; FAQ copy is in `content/research-faq.json`. Both standard refresh paths preserve the FAQ and its incoming anchors.
 
 [Preference follow-ups](docs/preference-followups.md) complete four local checks: the actual browser sampler, equal-candidate selection, recurring known contexts, and conflicting explicit constraints. These are synthetic experiments, not completed human or real-generator studies. Regenerate their reports with `python scripts/refresh_preference_followups.py`.
+
+## Current validation and browser work
+
+- [Exact fixed-depth timing](docs/chat-depth-timing.md): the saved classifiers at layers 6/12/18/24 now have three paired actual-execution passes, with all skipped blocks and prediction parity checked.
+- [Real-message browser benchmark](moderation-benchmark.html): Qwen 0.5B compares direct SAFE/BLOCK scores, one-token output and JSON on up to 100 pinned ToxicChat messages. Both accuracy and time are measured locally; no speedup is assumed. [Implementation and limits](docs/browser-moderation.md).
+- [Five further real datasets](docs/real-world-datasets.md): spam filtering, complaint routing, emotion tags, phishing URLs and smartphone activity. These are sourced proposals, not new performance results.
+
+The decision page leads to direct-output examples and the browser benchmark. Early stopping remains a separate technique. Run `node scripts/moderation-benchmark-test.js` for parser/scoring checks; the actual two-message browser functional smoke and responsive checks are recorded under `results/ui/moderation-*`.
+
+[Fresh-message refinements](docs/chat-refinement.md) test more BERT training, stricter fallback and dynamic int8 Qwen against a locked 100-message holdout. The conservative cascade preserved decisions but saved less than 1% time; int8 failed quality. [Independent audit](docs/chat-refinement-review.md). Reproduce the reports with `python scripts/refresh_chat_refinement.py`; original artifacts are preserved.
+
+[Queued-message batching](batch-results.html) reduced measured workload time by 9.67% with four-message groups and identical predictions on the same 100 messages. Every message still used all 24 layers. [Three-pass details](docs/chat-batch-timing.md). This is throughput for an available queue, not measured live-response latency.
+
+[Fixed-instruction reuse](prefix-results.html) reduced measured time by 37.9% with identical predictions across three runs on these 100 messages. Its 53-token cache contains only fixed instructions and is cloned per request; all 24 layers still process each message. [Cache isolation, timings and numerical checks](docs/chat-prefix-timing.md).
+
+## Live task demos and shared computation
+
+- [Search real papers](search-demo.html): actual local keyword and MiniLM ranking over 5,183 scientific abstracts, with a measured 100-query reference and honest model comparisons.
+- [Screenshot to click](screenshot-demo.html): inspect all 30 real recorded GUI-Actor outputs; these are clearly labeled replays, not live screenshot inference.
+- [Image to action](image-action-demo.html): a live 32,932-parameter model reads pixels and chooses a direction, including a repeatable browser benchmark. Synthetic arrow recognition is separate from real-screen grounding.
+- [Small trained moderation model](tiny-decision-demo.html): an actual 17.5 MB two-output ONNX classifier; all 100 browser decisions matched Python. [Export evidence](docs/decision-export.md).
+- [One model, two exits](shared-model-results.html): jointly trained two/four-layer BERT with shared computation and a calibrated continuation rule. [Full method](docs/compact-specialist.md).
+- [Practical baselines](docs/practical-baselines.md): separate real-data pilots for [name detection](redaction-results.html), [receipt totals](receipt-results.html), and [request routing](routing-results.html). Limits and failures remain visible.
+
+[Next validation](docs/next-validation.md) identifies the fresh tests needed before treating these exploratory gains as reliable improvements.
+
+[Combined instruction reuse and batching](combined-results.html) saved 42.9% of its paired 50-message workload time while preserving all decisions. [Shared Qwen checkpoints](shared-qwen-results.html) implement real continuation without repeating lower layers; the distilled gate scored 87/100 on consumed data, with modest measured savings. [Complete methods and failed int8 repair](docs/chat-next-methods.md). The three practical baselines also passed [independent same-data reproduction](docs/practical-replay.md).
+
+## Fresh validation and a shared browser model
+
+- [Run early stopping locally](shared-decision-demo.html): actual prefix/suffix ONNX graphs share the hidden state. Trying a message loads 44.5 MB; benchmarking loads a separate full-depth control. Network behavior and all 400 parity checks passed.
+- [500 unused moderation messages](fresh-message-results.html): the original gate proposes 400 early exits with all full-depth decisions preserved. Three matched seeds test human labels versus teacher distillation; the selected training change reduces false blocks but increases toxic misses. The learned risk gate does not improve coverage. [Methods and independent audits](docs/compact-next.md).
+- [Search follow-up](search-next-results.html): frozen fusion returns a relevant first result on 119/200 additional queries versus 105 for keywords. A disclosed exact training-query duplicate is removed in a separate 199-query sensitivity check. A small conditional reranker is measured too.
+- [Selective quantization](quantization-results.html): attention-only INT8 conversion is less damaging, but equal correct totals hide changed decisions. Full conversion and per-channel conversion still fail quality in the development diagnostic.
+- [Harder screenshots and infeasible requests](visual-refusal-results.html): 50 fresh benchmark cases expose low useful click coverage. A second crop improves one of ten prespecified cases; withholding an action is not counted as completing a valid request.
+
+Detailed protocols preserve failed attempts and runtime-only amendments. [Validation status and remaining limits](docs/next-validation.md) separates completed evidence from future work. Regenerate pages with `python scripts/refresh_research.py` and `python scripts/build_site.py`.
+
+## Live demos by topic and method
+
+[The demo directory](demo-directory.html) now links real browser implementations of decision methods, Qwen instruction reuse/batching, practical classifiers, search reranking, maze policies, screenshot text locations and preference learning. Forty-three topic/method pages link directly to the relevant demo. Smaller BERT examples, OCR alternatives and recorded GUI-Actor results are explicitly distinguished.
+
+[Implementation and runtime checks](docs/method-demos.md) include actual model calls, export parity, failures found during testing, mobile/desktop checks and dataset limitations. No model-generated accuracy is invented for a user's unlabelled input.

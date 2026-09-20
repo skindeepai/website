@@ -1,0 +1,9 @@
+.live-controls{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0}
+.live-controls label{display:block;max-width:100%}
+.live-controls select,.live-controls input{display:block;max-width:100%;min-height:44px}
+.live-input{display:block;width:100%;box-sizing:border-box;max-width:100%;padding:.6rem;font:inherit}
+.live-controls select,.live-controls input{font:inherit}
+.live-output{overflow-wrap:anywhere}
+.maze-live-board{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:min(100%,320px)}
+.maze-live-board button{min-height:64px;font:inherit;color:#152c45;background:white;border:1px solid #395775}
+.maze-live-board button:disabled{opacity:1;background:#e7edf4;color:#152c45}

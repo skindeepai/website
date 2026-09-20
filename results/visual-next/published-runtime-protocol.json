@@ -1,0 +1,17 @@
+{
+  "purpose": "Repeat the first sealed OSWorld-G request under the obtainable Transformers4.50.3 release after primary inference finishes. Runtime compatibility check only, not a new quality holdout or independent pointer implementation.",
+  "primary_protocol_sha256": "38dd6a82e417a7f5adaa7977528d72f9c46b56e29869f7dd2c7ac32139caced8",
+  "sample_id": "2XIa0KyxIh-2",
+  "reference_sha256": "583872aaed958d9f7b0a37d0f8646f6f5567ae25c7164b50a48d0f1e44f7ca85",
+  "source_sha256": {
+    "experiments/visual_next_replay.py": "accf0f31c1578af8c7a49444ebc0e9d110899de75ccc420555285919dc67cf75",
+    "experiments/coordinates.py": "446e3556b85c613f7f3298db82f290160a360b81d732701532e77b9fde490a08",
+    "experiments/screenspot.py": "df07a472c3cbf3e0813f1ac33ae358b6f4820eefab29bb36d56d0fe541d28b40"
+  },
+  "transformers": "4.50.3",
+  "runtime_wheel_sha256": "6111610a43dec24ef32c3df0632c6b25b07d9711c01d9e1077bdd2ff6b14a38c",
+  "threads": 2,
+  "probability_tolerance": 0.0001,
+  "coordinate_tolerance": 1e-05,
+  "selection": "First request in original50-case sealed order, unchanged after any outcome. Model/data/prompt/576visualtokenbudget/pointerreadout unchanged. No timing claim."
+}

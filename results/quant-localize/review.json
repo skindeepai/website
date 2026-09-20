@@ -1,0 +1,54 @@
+{
+  "reviewer": "Internal adversarial search agent; independent arithmetic and source inspection",
+  "source_sha256": "9d62963bc8d087eefe663b1840a1a094ab9427cad1d582583efb0d8192dc9e2c",
+  "checks": {
+    "all_default": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 20
+    },
+    "attention_only": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 4
+    },
+    "mlp_only": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 20
+    },
+    "first12_only": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 20
+    },
+    "last12_only": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 11
+    },
+    "all_per_channel": {
+      "metrics_recomputed": true,
+      "state_means_recomputed": 25,
+      "changed_decisions": 19
+    }
+  },
+  "prediction_records": 192,
+  "artifact_sha256": {
+    "protocol.json": "33c9cda2b3372d64b0c28229ec7e9f3a4f5650151c4e384e5737e01779ebfbb4",
+    "result.json": "6434ba91d1ff9c90354adeb0309c3552b2545f5cb38104f90e537b535a1dd983",
+    "records.json": "cf48148c1946fd34e480d48c97a1e4d700068e304e484ee3bba4ea97f27a33c7"
+  },
+  "inherited_dependencies_verified": [
+    "experiments/chat_next_methods.py",
+    "results/chat600/protocol.json",
+    "results/chat600/heads.npz"
+  ],
+  "findings": [
+    "Attention-only matches 28/32 correct but changes four decisions: two new errors and two corrections. One new error is a toxic miss.",
+    "State 25 is final normalized output, not a transformer layer. Captured vectors describe only the final input token.",
+    "All paths execute all 24 layers. These development-only outcomes contain no measured speed or storage benefit.",
+    "Selective conversion is a follow-up candidate; matching total accuracy is not preserved decisions or a no-quality-loss guarantee."
+  ],
+  "limits": "Internal reproducible record/provenance audit, not an independent model rerun or external validation."
+}

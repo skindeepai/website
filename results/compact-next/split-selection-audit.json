@@ -1,0 +1,22 @@
+{
+  "source_sha256": "c3f378d1d87821777c46ff35ae733012291fe433ffc3baf21e17c465dc378c30",
+  "protocol_sha256": "6883bb22bad7de36e6e8240af4f5888944e5a6253381336c18c68e160f930f77",
+  "data_hashes_verified": true,
+  "historical_artifacts_verified": 86,
+  "excluded_prior_ids": 4917,
+  "eligible_reproduced": 730,
+  "fresh_ids_reproduced": 500,
+  "exclusion_keys": [
+    "casefold stripped text",
+    "conversation ID",
+    "bounded Qwen token IDs",
+    "bounded BERT token IDs"
+  ],
+  "split_ids_disjoint": true,
+  "checkpoint_and_gate_hashes_verified": 6,
+  "development_selected_candidate": "distill-9927",
+  "all_fresh_labels_match_source": 3500,
+  "original_full_vs_confidence_all_predictions_identical": true,
+  "original_early_count": 400,
+  "limits": "Independent input-token and arithmetic checks, no model inference. Does not detect semantic paraphrases or pretraining contamination. Selected candidate remains development winner, not post-hoc fresh-test winner."
+}

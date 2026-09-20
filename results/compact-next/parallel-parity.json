@@ -1,0 +1,12 @@
+{
+  "scope": "Original interrupted serial run saved CE9927 epoch2; completed parallel run independently selected the same epoch. Byte equality checks this scheduling-only restart, not all seeds or a new quality result.",
+  "files": [
+    "experiments/.cache/compact-next/serial-attempt/ce-9927.pt",
+    "experiments/.cache/compact-next/ce-9927.pt"
+  ],
+  "sha256": [
+    "9810e0878d0a49a9a5aa36977781bc124edfde9c72c8678550e742868c4f6e78",
+    "9810e0878d0a49a9a5aa36977781bc124edfde9c72c8678550e742868c4f6e78"
+  ],
+  "identical_checkpoint_bytes": true
+}

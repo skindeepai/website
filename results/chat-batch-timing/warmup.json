@@ -1,0 +1,317 @@
+[
+  {
+    "batch_size": 1,
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743383884429932,
+          -0.8259466886520386
+        ],
+        "input_tokens": 67,
+        "original_message_tokens": 8,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      }
+    ],
+    "trace": {
+      "ids": [
+        "test:3995"
+      ],
+      "actual_batch_size": 1,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "padded_width": 67,
+      "real_tokens": 67,
+      "padded_token_slots": 67,
+      "batch_seconds": 0.46307290002005175
+    }
+  },
+  {
+    "batch_size": 4,
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743577003479004,
+          -0.8259599208831787
+        ],
+        "input_tokens": 67,
+        "original_message_tokens": 8,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.278925895690918,
+          -2.7609400749206543
+        ],
+        "input_tokens": 70,
+        "original_message_tokens": 11,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:387",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.5245728492736816,
+          -1.1540052890777588
+        ],
+        "input_tokens": 70,
+        "original_message_tokens": 11,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:3750",
+        "label": 1,
+        "prediction": 0,
+        "logits": [
+          0.6285959482192993,
+          0.05840635299682617
+        ],
+        "input_tokens": 76,
+        "original_message_tokens": 17,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      }
+    ],
+    "trace": {
+      "ids": [
+        "test:3995",
+        "test:1033",
+        "test:387",
+        "test:3750"
+      ],
+      "actual_batch_size": 4,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "padded_width": 76,
+      "real_tokens": 283,
+      "padded_token_slots": 304,
+      "batch_seconds": 1.5868798000155948
+    }
+  },
+  {
+    "batch_size": 8,
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743435144424438,
+          -0.8259509801864624
+        ],
+        "input_tokens": 67,
+        "original_message_tokens": 8,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.278931140899658,
+          -2.7609453201293945
+        ],
+        "input_tokens": 70,
+        "original_message_tokens": 11,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:387",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.5245964527130127,
+          -1.154026746749878
+        ],
+        "input_tokens": 70,
+        "original_message_tokens": 11,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:3750",
+        "label": 1,
+        "prediction": 0,
+        "logits": [
+          0.6285954713821411,
+          0.05840432643890381
+        ],
+        "input_tokens": 76,
+        "original_message_tokens": 17,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:875",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.9888451099395752,
+          -1.9481356143951416
+        ],
+        "input_tokens": 77,
+        "original_message_tokens": 18,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:289",
+        "label": 1,
+        "prediction": 1,
+        "logits": [
+          -7.500239849090576,
+          7.953150272369385
+        ],
+        "input_tokens": 85,
+        "original_message_tokens": 26,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:260",
+        "label": 1,
+        "prediction": 1,
+        "logits": [
+          -1.1433755159378052,
+          1.1929422616958618
+        ],
+        "input_tokens": 98,
+        "original_message_tokens": 39,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      },
+      {
+        "id": "test:4138",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.3706072568893433,
+          -1.2237426042556763
+        ],
+        "input_tokens": 202,
+        "original_message_tokens": 143,
+        "truncated": false,
+        "layers_executed": 24,
+        "layers_skipped": 0
+      }
+    ],
+    "trace": {
+      "ids": [
+        "test:3995",
+        "test:1033",
+        "test:387",
+        "test:3750",
+        "test:875",
+        "test:289",
+        "test:260",
+        "test:4138"
+      ],
+      "actual_batch_size": 8,
+      "executed_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "padded_width": 202,
+      "real_tokens": 745,
+      "padded_token_slots": 1616,
+      "batch_seconds": 8.446240999968722
+    }
+  }
+]

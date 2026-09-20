@@ -1,6 +1,8 @@
 # SkinDeep documentation, demonstrations, and validation plan
 
-Updated 2026-09-19. Status: approved site checkpoint pushed as 3881aff; public-data follow-ups added locally. Preserve the approved UI, styling and navigation. New research belongs in linked reference notes, with concise measured updates on existing pages.
+Updated 2026-09-19. Status: further experiments and task demos are local, not pushed. Preserve the approved UI, styling and navigation. New research belongs in linked reference notes, with concise measured updates on existing pages.
+
+Current follow-up: live scientific-document search, a real-screenshot replay, a live synthetic image-to-action model, a deployed tiny two-output moderation classifier, joint two/four-layer specialist training, shared Qwen checkpoint readouts, combined prefix caching/batching and a development-only int8 diagnosis. Practical name-detection, receipt-total and unsupported-request baselines add explicit real-data controls. Completed results and limits are linked from README.md; none should be treated as production acceptance. New accuracy validation must reserve an untouched holdout, since the latest 100-message sample is now consumed.
 
 The follow-up covers BANKING77 (3,080 official test queries, three head seeds), a stricter gate on 742 fresh calibration / 741 fresh test queries, 30 public ScreenSpot examples, and an actual optional browser Qwen output-format benchmark. Adversarial-review work adds separate implementation replays, a published dependency release, a 30-intent CLINC subset with out-of-scope evaluation, a 31-output UNKNOWN variant, changing-rule pairs, and a matched one-token control. All tested early-exit calibration gates still fail. The changing-rule test also fails its preset criterion. See the measured reports in README.md and docs/evidence-acceptance.md.
 
@@ -169,7 +171,7 @@ The detailed experiments, comparison methods, and decision gates are in [EXPERIM
 
 The requested workload tests are implemented: [600 real archived chat messages](docs/chat600-results.md) and [closed-loop maze actions](docs/maze-actions.md). The separate [chat review](docs/chat600-review.md) checks the evidence. Shared styling remains unchanged; the maze is a clearly labeled recorded replay.
 
-The current chat candidate always exits at layer 12. It gets 519/600 labels right versus 522/600 at full depth, while missed toxic messages rise from 19 to 26. Both calibration variants reject it, and the full-depth model misses its own quality minimums. The maze policies both reach 0/10 goals. These are completed negative results, not a passing validation phase.
+The earlier 600-message candidate always exits at layer 12. It gets 519/600 labels right versus 522/600 at full depth, while missed toxic messages rise from 19 to 26. Both calibration variants reject it, and the full-depth model misses its own quality minimums. The maze policies both reach 0/10 goals. These are completed negative results, not a passing validation phase.
 
 The next study should address those specific failures in this order:
 
@@ -187,4 +189,10 @@ These follow-ups are a plan, not experiments claimed to have run. No target scor
 
 At Steve's request, the next ideas were tried with 100 previously inspected balanced messages and 50-message adapter timing samples. This is a deliberately smaller exploration phase before fresh confirmation. [All outcomes](docs/chat-smoke-results.md) and the [adversarial review](docs/chat-smoke-review.md) include negative results, matched initialization controls and the separately recorded shorter-warm-up repair. Earlier untouched-data requirements still apply to validation; these reused samples cannot satisfy them.
 
-The learned gate is the clearest follow-up candidate: different messages stop at blocks 6, 12, 18 or 24, with 33.8% measured time saving in one paired run. Distillation improved the final-layer score but did not improve early-layer accuracy. Next freeze a small candidate set, then evaluate unused messages, new toxic misses, false blocks and repeated isolated runtime. Do not continue selecting on the same 100 examples.
+That exploration made the learned gate a follow-up candidate: different messages stop at blocks 6, 12, 18 or 24, with 33.8% measured time saving in one paired run. Distillation improved the final-layer score but did not improve early-layer accuracy. Those consumed examples are not fresh confirmation.
+
+## Fresh validation and implementation follow-up
+
+The shared four-layer BERT is now exported as genuine browser prefix/suffix graphs. A frozen 500-message test compares the original model, six training candidates, confidence stopping and a learned risk predictor. The original rule preserves all decisions while proposing 40% fewer transformer blocks. The selected new model trades fewer false blocks for more toxic misses, and the learned risk predictor does not improve coverage. The original model remains in the demo. [Complete study and audit](docs/compact-next.md).
+
+The remaining SciFact test IDs validate the frozen search fusion and compare a small conditional reranker, with a separately disclosed text-overlap sensitivity analysis. Selective INT8 experiments locate a less damaging attention-only path but do not establish lossless compression. [Current evidence and remaining limits](docs/next-validation.md) replaces the previous open-ended exploration checklist; genuinely untested practical extensions remain explicitly listed there.

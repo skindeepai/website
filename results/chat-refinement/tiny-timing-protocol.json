@@ -1,0 +1,13 @@
+{
+  "source_sha256": "b85bec1a8e89224b5b3d35498dc9468703a623ae86a55fa56934c0120bb5f4ff",
+  "parent_protocol_sha256": "ed537e15934c7597f19566a72da98de73e9913358d8dfd0c7e371d53aa4b82c9",
+  "fit_sha256": "04238ba6b2f3659e64613d5694020a5792091baeb8963f760d2e9af41158bb70",
+  "paths": [
+    "old_bert",
+    "new_bert"
+  ],
+  "repetitions": 3,
+  "purpose": "Additional timing for BOTH standalone tiny variants, regardless of their fresh quality. No model/threshold selection.",
+  "boundary": "Same raw text, bounding tokenizer, BERT input, two layers, head, softmax and trace hooks as main study; loading/warmup excluded.",
+  "comparison": "Separate paired timing of tiny models; not paired with the full Qwen timing run."
+}

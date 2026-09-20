@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "practicalFixtures": 32,
+  "maxProbabilityDelta": 2.220446049250313e-16,
+  "mazeMoves": 595,
+  "mazeStates": 1024,
+  "fullInputFixtures": 13
+}

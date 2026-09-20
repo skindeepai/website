@@ -1,0 +1,21 @@
+{
+  "n": 100,
+  "trained_onnx_matches_pytorch": true,
+  "models": {
+    "trained": {
+      "bytes": 44506427,
+      "sha256": "13916589c42ad0a323acc3d23a2cd50fdf9b89b44ffbf16582446fdef56fe9aa",
+      "threshold": 0.4
+    },
+    "int8": {
+      "bytes": 35178341,
+      "sha256": "43a5ca94841f4ee5b39c45d92a1ed1b4979a4153f9511fd405f86a603e4a978a",
+      "threshold": 0.2
+    }
+  },
+  "correct": {
+    "trained": 81,
+    "int8": 82
+  },
+  "protocol_sha256": "6d7c3c17d8c6449e7b2ec98c896464ec2fbb9353db99fec7c1720326fa6d0402"
+}

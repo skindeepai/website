@@ -1,0 +1,18 @@
+{
+  "scope": "Actual browser functional and numerical checks, not new quality validation or isolated performance research",
+  "sourceHashes": {
+    "scripts/live-demos-test.cjs": "4b2ec4b5082908df5d069c92881772a44b2c0119c108fdb286d88aa8d61deeb1",
+    "scripts/method-demo-worker.js": "d4f2079bc82c08f281283fe6f76d6b3887e4efb9b346f478b54d574d0561186a",
+    "scripts/shared-decision-worker.js": "3038204d66bdd7002eb65662dc847898d5b5a93a993edb8ed0c17f601fa77b03",
+    "scripts/execution-demo-worker.js": "885fca02e218706f740207d02e3e5793ad8d8700d414223f1dd57e7c0766b417",
+    "scripts/rerank-demo-worker.js": "3f588e3ef6ea02856b75971d86807fb4e35b6aaa795c37c4a9db545ea50f8399",
+    "scripts/practical-demo-core.js": "77d831fb5a653456500aa6a0867d591706afd8a4ce3c1f2013d14b6dcc2923c6",
+    "scripts/maze-live-core.js": "36a9e85fd379cca268aba858413aa65a5486f4355be747274416c5457ed3225c",
+    "scripts/point-demo.js": "c5841cc66e65f193c451f2ec0748de8a1e941d0348f10d9d3bf5670ca5eaa92a",
+    "models/method-lab/manifest.json": "93abba1010cf518d597fa0dfc45728dd52f809146ed7df3adf2ba99aba7a8bc5",
+    "models/shared-moderation/manifest.json": "af8397338d367c9ec0b915a6e9b5666632ace1d8dba6a24af34558afc73f4a8b",
+    "models/moderation-tiny/manifest.json": "1d7b88c344f5ed05b472337b0cbe389cdd57875d62cd23fe967231575315b206"
+  },
+  "createdUTC": "2026-09-20T14:09:26.523Z",
+  "threadsPerModel": 1
+}

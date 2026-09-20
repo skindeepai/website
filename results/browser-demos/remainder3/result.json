@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "methodCalls": 0,
+  "rerankerQueries": 2,
+  "qwenRows": 32,
+  "viewports": 49,
+  "browser": "151.0.7922.34",
+  "sourceSha256": "2b9bafe8848530e57223d79b9b71e1877666b3c60742bad3e34d4572bfab578a"
+}

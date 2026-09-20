@@ -1,0 +1,1 @@
+Base model: google/bert_uncased_L-4_H-256_A-4 revision387825ce42dbb39b87911cdf8e383ee3b25184f8, Apache-2.0. Joint training used ToxicChat0124 (CC BY-NC 4.0); research artifact for noncommercial research. Public evaluation input token IDs are reversible, not anonymized. See ../../docs/shared-browser.md.

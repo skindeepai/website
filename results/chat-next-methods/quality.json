@@ -1,0 +1,141 @@
+{
+  "metrics": {
+    "full": {
+      "n": 100,
+      "correct": 86,
+      "missed_toxic": 9,
+      "false_block": 5,
+      "toxic": 50,
+      "added_errors": 0,
+      "corrected_errors": 0,
+      "additional_missed_toxic": 0
+    },
+    "joint_ce": {
+      "gated": {
+        "n": 100,
+        "correct": 86,
+        "missed_toxic": 9,
+        "false_block": 5,
+        "toxic": 50,
+        "added_errors": 0,
+        "corrected_errors": 0,
+        "additional_missed_toxic": 0,
+        "mean_depth": 22.860000610351562,
+        "exit_counts": {
+          "6": 0,
+          "12": 9,
+          "18": 1,
+          "24": 90
+        },
+        "projected_blocks_skipped": 0.04749999940395355
+      },
+      "fixed": {
+        "6": {
+          "n": 100,
+          "correct": 80,
+          "missed_toxic": 16,
+          "false_block": 4,
+          "toxic": 50,
+          "added_errors": 15,
+          "corrected_errors": 9,
+          "additional_missed_toxic": 11
+        },
+        "12": {
+          "n": 100,
+          "correct": 83,
+          "missed_toxic": 13,
+          "false_block": 4,
+          "toxic": 50,
+          "added_errors": 13,
+          "corrected_errors": 10,
+          "additional_missed_toxic": 9
+        },
+        "18": {
+          "n": 100,
+          "correct": 84,
+          "missed_toxic": 14,
+          "false_block": 2,
+          "toxic": 50,
+          "added_errors": 9,
+          "corrected_errors": 7,
+          "additional_missed_toxic": 7
+        },
+        "24": {
+          "n": 100,
+          "correct": 82,
+          "missed_toxic": 17,
+          "false_block": 1,
+          "toxic": 50,
+          "added_errors": 8,
+          "corrected_errors": 4,
+          "additional_missed_toxic": 8
+        }
+      }
+    },
+    "joint_distill": {
+      "gated": {
+        "n": 100,
+        "correct": 87,
+        "missed_toxic": 9,
+        "false_block": 4,
+        "toxic": 50,
+        "added_errors": 0,
+        "corrected_errors": 1,
+        "additional_missed_toxic": 0,
+        "mean_depth": 22.3799991607666,
+        "exit_counts": {
+          "6": 0,
+          "12": 11,
+          "18": 5,
+          "24": 84
+        },
+        "projected_blocks_skipped": 0.06750000268220901
+      },
+      "fixed": {
+        "6": {
+          "n": 100,
+          "correct": 78,
+          "missed_toxic": 17,
+          "false_block": 5,
+          "toxic": 50,
+          "added_errors": 15,
+          "corrected_errors": 7,
+          "additional_missed_toxic": 11
+        },
+        "12": {
+          "n": 100,
+          "correct": 85,
+          "missed_toxic": 12,
+          "false_block": 3,
+          "toxic": 50,
+          "added_errors": 11,
+          "corrected_errors": 10,
+          "additional_missed_toxic": 8
+        },
+        "18": {
+          "n": 100,
+          "correct": 88,
+          "missed_toxic": 11,
+          "false_block": 1,
+          "toxic": 50,
+          "added_errors": 6,
+          "corrected_errors": 8,
+          "additional_missed_toxic": 5
+        },
+        "24": {
+          "n": 100,
+          "correct": 85,
+          "missed_toxic": 11,
+          "false_block": 4,
+          "toxic": 50,
+          "added_errors": 3,
+          "corrected_errors": 2,
+          "additional_missed_toxic": 2
+        }
+      }
+    }
+  },
+  "fit_sha256": "02940cf2813dc5634c9b05119b0315f4069aae374783043578ef3163fde906bb",
+  "cache_sha256": "792aa84cecc65fcb900f46249edf744fe859b7e8c55aa693ce8dc0b72c2dd9b8",
+  "scope": "Consumed100 diagnostic; gate choices frozen on olddevelopment."
+}

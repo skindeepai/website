@@ -1,0 +1,12 @@
+{
+  "reason": "Runtime-only amendment to reduce CPU wall time after first sample. Parent approved four PyTorch threads within total16-thread cap. The sample IDs, gates, prompt, model, visual-token budget and crop method are unchanged. One interrupted incomplete example has no saved outcome and is rerun. Original source and protocol retained.",
+  "protocol_sha256": "38dd6a82e417a7f5adaa7977528d72f9c46b56e29869f7dd2c7ac32139caced8",
+  "amended_source_sha256": "c8cab364eed115e1cf006a5f2c80cf04e09095ca9f4437576fb2c4fa4451fb7c",
+  "completed_ids_before_amendment": [
+    "2XIa0KyxIh-2"
+  ],
+  "original_threads": 2,
+  "new_pytorch_threads": 4,
+  "other_thread_caps": 2,
+  "parity_requirement": "Re-run first saved image with4threads; maxpatchprobabilitydifference<1e-4 and bothnormalizedpointcoordinate differences<1e-5; fail before continuing if violated. Save full repeated outputs. No timing comparison claim."
+}

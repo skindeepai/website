@@ -1,0 +1,16 @@
+{
+  "python": "3.13.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "logical_processors": 32,
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.50.0.dev0",
+    "numpy": "2.2.4",
+    "Pillow": "12.3.0",
+    "huggingface_hub": "0.29.3",
+    "safetensors": "0.5.3"
+  },
+  "note": "Recorded during evaluation; CPU only. Model/data revisions and runtime-only amendment are separate sealed artifacts.",
+  "transformers_install_source": null
+}

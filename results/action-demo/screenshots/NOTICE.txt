@@ -1,0 +1,18 @@
+ScreenSpot screenshot subset
+
+Dataset: bevaya/ScreenSpot (formerly rootsautomation/ScreenSpot)
+Source: https://huggingface.co/datasets/bevaya/ScreenSpot
+Pinned revision: 0be08781e2e188582f6131625ae1598d443b4d5d
+Authors: Cheng et al., SeeClick, 2024.
+Dataset card license: Apache License 2.0; a copy is included here.
+
+These 30 PNG files are byte-for-byte copies of the preselected public research
+sample in results/screenspot/data-manifest.json. No screenshot pixels were
+altered. Coordinates and target-box overlays are rendered separately by the
+demo. Original source image hashes are retained in gallery.json and the
+original data manifest.
+
+Depicted third-party applications, websites, artwork and marks retain their
+respective rights. The dataset license is not a claim of ownership over that
+underlying content. This subset is presented with the recorded model outputs
+for inspection of the ScreenSpot localization experiment.

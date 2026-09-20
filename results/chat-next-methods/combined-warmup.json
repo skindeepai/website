@@ -1,0 +1,708 @@
+[
+  {
+    "path": "full_b1",
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743383884429932,
+          -0.8259466886520386
+        ],
+        "full_tokens": 67,
+        "suffix_tokens": 67
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.278919219970703,
+          -2.7609305381774902
+        ],
+        "full_tokens": 70,
+        "suffix_tokens": 70
+      },
+      {
+        "id": "test:875",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.9888278245925903,
+          -1.9481176137924194
+        ],
+        "full_tokens": 77,
+        "suffix_tokens": 77
+      },
+      {
+        "id": "test:4138",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.3706074953079224,
+          -1.2237420082092285
+        ],
+        "full_tokens": 202,
+        "suffix_tokens": 202
+      }
+    ],
+    "traces": [
+      {
+        "ids": [
+          "test:3995"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 67,
+        "prefix_tokens": 0,
+        "processed_slots": 67,
+        "real_suffix_lengths": [
+          67
+        ],
+        "last_positions": [
+          66
+        ]
+      },
+      {
+        "ids": [
+          "test:1033"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 70,
+        "prefix_tokens": 0,
+        "processed_slots": 70,
+        "real_suffix_lengths": [
+          70
+        ],
+        "last_positions": [
+          69
+        ]
+      },
+      {
+        "ids": [
+          "test:875"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 77,
+        "prefix_tokens": 0,
+        "processed_slots": 77,
+        "real_suffix_lengths": [
+          77
+        ],
+        "last_positions": [
+          76
+        ]
+      },
+      {
+        "ids": [
+          "test:4138"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 202,
+        "prefix_tokens": 0,
+        "processed_slots": 202,
+        "real_suffix_lengths": [
+          202
+        ],
+        "last_positions": [
+          201
+        ]
+      }
+    ],
+    "complete": true,
+    "processed_positions": 416,
+    "corpus_seconds": 2.180809599987697,
+    "label_mismatches": []
+  },
+  {
+    "path": "full_b4",
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743435144424438,
+          -0.8259509801864624
+        ],
+        "full_tokens": 67,
+        "suffix_tokens": 67
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.278931140899658,
+          -2.7609453201293945
+        ],
+        "full_tokens": 70,
+        "suffix_tokens": 70
+      },
+      {
+        "id": "test:875",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.9888451099395752,
+          -1.9481356143951416
+        ],
+        "full_tokens": 77,
+        "suffix_tokens": 77
+      },
+      {
+        "id": "test:4138",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.3706072568893433,
+          -1.2237426042556763
+        ],
+        "full_tokens": 202,
+        "suffix_tokens": 202
+      }
+    ],
+    "traces": [
+      {
+        "ids": [
+          "test:3995",
+          "test:1033",
+          "test:875",
+          "test:4138"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 4,
+        "suffix_width": 202,
+        "prefix_tokens": 0,
+        "processed_slots": 808,
+        "real_suffix_lengths": [
+          67,
+          70,
+          77,
+          202
+        ],
+        "last_positions": [
+          66,
+          69,
+          76,
+          201
+        ]
+      }
+    ],
+    "complete": true,
+    "processed_positions": 808,
+    "corpus_seconds": 3.691003499960061,
+    "label_mismatches": []
+  },
+  {
+    "path": "prefix_b1",
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.87433922290802,
+          -0.825946569442749
+        ],
+        "full_tokens": 67,
+        "suffix_tokens": 14
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.2789154052734375,
+          -2.7609291076660156
+        ],
+        "full_tokens": 70,
+        "suffix_tokens": 17
+      },
+      {
+        "id": "test:875",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.9888278245925903,
+          -1.9481176137924194
+        ],
+        "full_tokens": 77,
+        "suffix_tokens": 24
+      },
+      {
+        "id": "test:4138",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.3706074953079224,
+          -1.2237420082092285
+        ],
+        "full_tokens": 202,
+        "suffix_tokens": 149
+      }
+    ],
+    "traces": [
+      {
+        "ids": [
+          "test:3995"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 14,
+        "prefix_tokens": 53,
+        "processed_slots": 14,
+        "real_suffix_lengths": [
+          14
+        ],
+        "last_positions": [
+          66
+        ]
+      },
+      {
+        "ids": [
+          "test:1033"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 17,
+        "prefix_tokens": 53,
+        "processed_slots": 17,
+        "real_suffix_lengths": [
+          17
+        ],
+        "last_positions": [
+          69
+        ]
+      },
+      {
+        "ids": [
+          "test:875"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 24,
+        "prefix_tokens": 53,
+        "processed_slots": 24,
+        "real_suffix_lengths": [
+          24
+        ],
+        "last_positions": [
+          76
+        ]
+      },
+      {
+        "ids": [
+          "test:4138"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 1,
+        "suffix_width": 149,
+        "prefix_tokens": 53,
+        "processed_slots": 149,
+        "real_suffix_lengths": [
+          149
+        ],
+        "last_positions": [
+          201
+        ]
+      }
+    ],
+    "complete": true,
+    "prefix_tokens": 53,
+    "prefix_prefill_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "prefix_hash_before": "7846f22fbe86016865c1207b05ccc83994a972a9857b05ad942d4c82f278fed0",
+    "prefix_hash_after": "7846f22fbe86016865c1207b05ccc83994a972a9857b05ad942d4c82f278fed0",
+    "processed_positions": 257,
+    "corpus_seconds": 1.557868400006555,
+    "label_mismatches": []
+  },
+  {
+    "path": "prefix_b4",
+    "records": [
+      {
+        "id": "test:3995",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          0.8743504881858826,
+          -0.8259584307670593
+        ],
+        "full_tokens": 67,
+        "suffix_tokens": 14
+      },
+      {
+        "id": "test:1033",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          3.278909921646118,
+          -2.760922908782959
+        ],
+        "full_tokens": 70,
+        "suffix_tokens": 17
+      },
+      {
+        "id": "test:875",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.9888337850570679,
+          -1.9481253623962402
+        ],
+        "full_tokens": 77,
+        "suffix_tokens": 24
+      },
+      {
+        "id": "test:4138",
+        "label": 0,
+        "prediction": 0,
+        "logits": [
+          1.3706072568893433,
+          -1.2237426042556763
+        ],
+        "full_tokens": 202,
+        "suffix_tokens": 149
+      }
+    ],
+    "traces": [
+      {
+        "ids": [
+          "test:3995",
+          "test:1033",
+          "test:875",
+          "test:4138"
+        ],
+        "executed_layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "batch_size": 4,
+        "suffix_width": 149,
+        "prefix_tokens": 53,
+        "processed_slots": 596,
+        "real_suffix_lengths": [
+          14,
+          17,
+          24,
+          149
+        ],
+        "last_positions": [
+          66,
+          69,
+          76,
+          201
+        ]
+      }
+    ],
+    "complete": true,
+    "prefix_tokens": 53,
+    "prefix_prefill_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "prefix_hash_before": "7846f22fbe86016865c1207b05ccc83994a972a9857b05ad942d4c82f278fed0",
+    "prefix_hash_after": "7846f22fbe86016865c1207b05ccc83994a972a9857b05ad942d4c82f278fed0",
+    "processed_positions": 649,
+    "corpus_seconds": 2.9525519000017084,
+    "label_mismatches": []
+  }
+]

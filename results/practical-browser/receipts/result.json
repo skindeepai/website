@@ -1,0 +1,16 @@
+{
+  "train_receipts": 156,
+  "test_receipts": 50,
+  "scorable_receipts": 49,
+  "missing_reference": 1,
+  "merchant_groups": 122,
+  "learned_correct": 32,
+  "largest_correct": 27,
+  "candidate_ceiling": 49,
+  "timing": "Preparation and classifier recorded during concurrent work; no image/OCR or LLM speed comparison.",
+  "limitations": [
+    "Small derived split, not official leaderboard score.",
+    "Normalized merchant names can miss chain/template relationships.",
+    "Human transcription/boxes, not noisy OCR."
+  ]
+}

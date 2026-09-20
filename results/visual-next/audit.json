@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "samples": 50,
+  "unique_images": 50,
+  "absent_author_labels": 25,
+  "crop_inferences": 10,
+  "method_decisions": 200,
+  "checks": [
+    "image and source hashes",
+    "probability distributions",
+    "independent region readout",
+    "exact layers1through28",
+    "rectangle and independent polygon hits",
+    "gold-independent crop geometry and mapping",
+    "gate decisions and all separate error/coverage totals",
+    "runtime amendment and parity artifact"
+  ],
+  "source_sha256": "f5a7281a799ce51a0a394e2d945234ec1b318f987858508f6d6b72078c4c0988",
+  "artifact_sha256": {
+    "protocol.json": "38dd6a82e417a7f5adaa7977528d72f9c46b56e29869f7dd2c7ac32139caced8",
+    "predictions.json": "d60a5f46ed6668b15cfd4b52d0fa2d41a259b518f943f07d37ef12b6da074f2f",
+    "decisions.json": "7ae25af070987506ddb991dc633354cf853688ca489f8839de885a42db330145",
+    "result.json": "40a0a6763341ff1ded5de35a7725fc7d446c4405c7bad55d572dc13805d202f2"
+  }
+}

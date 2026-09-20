@@ -1,0 +1,28 @@
+{
+  "scope": "Retrospective reanalysis of30 already inspected real ScreenSpot outputs. No new vision inference, training or task-quality holdout.",
+  "source_sha256": {
+    "experiments/action_demo_screenstudy.py": "bdf7d9412052401fced5d45dc09fec51d1e1dad84b6c973a25b92e7735f3b6b8",
+    "results/screenspot/predictions.json": "d85633547f0b0086571f65543d11ea4d781c4675d7c5900d6ace76ffb8756906",
+    "results/screenspot/data-manifest.json": "9818f6af7ccc23494c89dc7e5a4da953547269b7646293782b139f7da9c8a77e",
+    "results/screenspot/result.json": "7a8b9c1202bbe75c2bc61b6d736be0bd07be0113d18cc1261acb5558e678d638"
+  },
+  "methods": [
+    "always_click_connected_region",
+    "peak_gate",
+    "relative_peak_gate"
+  ],
+  "fold": "Leave one platform family out: android,ios,macos,web,windows. Fit cutoff using other24 only; apply to held-out6.",
+  "score": {
+    "peak_gate": "Saved peak patch probability.",
+    "relative_peak_gate": "Saved peak patch probability times number of visual patches; dimensionless score relative to uniform mass, not calibrated correctness."
+  },
+  "candidate_thresholds": "0, midpoints of distinct training scores, and reject-all sentinel2 for peak or577 for relative peak (grids capped576). Accept score>=cutoff.",
+  "selection": "Maximum training coverage with zero accepted incorrect connected-region points. Ties choose smaller cutoff. Reject-all is allowed. No held-out target box enters selection.",
+  "metrics": "Correct and incorrect automatic clicks; requests referred for human review; correctly localized requests withheld. Review is unresolved, not counted correct.",
+  "limits": [
+    "All30 targets are present. This does not validate absent-target detection.",
+    "Only6 held-out examples per platform; no guaranteed error rate.",
+    "Same frozen pointer model and already inspected screenshots; neither new image inference nor latency improvement.",
+    "Peak confidence depends on image/grid; this study retains both predefined policies whether better or worse."
+  ]
+}

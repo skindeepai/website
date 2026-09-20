@@ -1,0 +1,34 @@
+{
+  "totals_seconds": {
+    "float_qwen": [
+      69.98990759940352,
+      69.66701240005204,
+      71.04229490022408
+    ],
+    "int8_qwen": [
+      43.71211270039203,
+      43.335060500132386,
+      44.13213469996117
+    ],
+    "new_cascade": [
+      69.74772080016555,
+      69.31684510008199,
+      70.62637990008807
+    ]
+  },
+  "n": 100,
+  "calls": 900,
+  "protocol_sha256": "ed537e15934c7597f19566a72da98de73e9913358d8dfd0c7e371d53aa4b82c9",
+  "evaluation_sha256": {
+    "result.json": "e6250f1d8aabe587fe681c31a16c95377f7b2968b62b40b678efca3e7d4c4e4c",
+    "predictions.json": "499570a7ff8146a0c5a8106e2b4e650a9e6d93ad45110c47259e6069e561fd6a",
+    "fit.json": "04238ba6b2f3659e64613d5694020a5792091baeb8963f760d2e9af41158bb70"
+  },
+  "parity": "Every actual prediction, routing and contiguous layer trace matches evaluation.",
+  "versions": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.50.3",
+    "quantized_engine": "x86"
+  },
+  "scope": "Three warm paired repetitions on one CPU. Loading excluded; no layer skipping in int8; quality checked separately."
+}

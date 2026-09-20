@@ -1,16 +1,298 @@
 [
-  {"group":"Learning preferences","ids":["P01","P02","P06"],"question":"Can it learn what I like?","answer":"The demo learns patterns in your ratings and uses them to score or adjust drawings. Its calculations and simple made-up preferences have been tested; we have not yet shown that people prefer its suggestions.","links":[["how-it-works.html","How learning works"],["preference-results.html","Preference tests"]]},
-  {"group":"Learning preferences","ids":["P03"],"question":"Does choosing examples carefully save ratings?","answer":"Not consistently in our tests. The demo’s mix of likely likes, uncertain examples and random examples performed worse with noisy ratings than random sampling; selecting uncertain examples did better on the simple test rules.","links":[["docs/preference-followups.md","Actual demo sampler: comparison and learning curves"]]},
-  {"group":"Learning preferences","ids":["P04","P07"],"question":"Can it learn different tastes or changing moods?","answer":"A single linear model struggles with separated tastes. A nonlinear feature model helped in a synthetic test; keeping separate models for explicitly named contexts also helped in a small alternating-context test. Neither demonstrates learning a person’s changing moods.","links":[["multi-modal-preferences-deep-dive.html","More than one taste"],["docs/preference-followups.md","Context and retention tests"]]},
-  {"group":"Learning preferences","ids":["P05"],"question":"Does a higher model score mean a better suggestion?","answer":"No. A model can confidently prefer the wrong thing. We tested selection from the same candidate pool and retained cases where maximizing the score disagrees with the known preference; a person’s new rating is still the real check.","links":[["docs/preference-followups.md","Candidate selection and failure cases"]]},
-  {"group":"Decisions and speed","ids":["D01"],"question":"Does the model need to write an answer?","answer":"No. A small classifier can read its internal numbers and return a label directly. Returning a number instead of one trained token did not, by itself, show a reliable speed advantage.","links":[["decisions.html","Decisions without text"],["docs/matched-output.md","Matched output test"]]},
-  {"group":"Decisions and speed","ids":["D02","D03","D05"],"question":"How early can it stop, and does that save time?","answer":"The learned checker stopped at layers 6, 12, 18 or 24 depending on the message. In a 100-message exploratory run it skipped 33.75% of transformer blocks and used about 34% less time; fresh reliability validation is still missing.","links":[["depth-results.html","Compare early, middle and late layers"],["early-exit-results.html","Actual stopping results"]]},
-  {"group":"Decisions and speed","ids":["D06"],"question":"Would a tiny model with a larger fallback be simpler?","answer":"It is another useful approach. The tiny model handled 51 of 100 messages without Qwen, roughly halving measured time; the cascade also introduced one toxic-message miss that Qwen avoided.","links":[["cascade-results.html","How the cascade works"],["cascade-test-results.html","Its exact test results"]]},
-  {"group":"Decisions and speed","ids":["D04","D08"],"question":"Does it follow changing rules or understand a live conversation?","answer":"Not reliably in the tests so far: opposite rules exposed failures even at full depth. We have not tested these decision classifiers on live conversations with audio or video context.","links":[["decision-checks.html","Rule changes and unfamiliar requests"]]},
-  {"group":"Clicks and actions","ids":["C01","C02","C03"],"question":"Can it return a click location directly?","answer":"Yes. A published pointer model found 25 of 30 targets using all 28 transformer layers. Coordinate early stopping is untested; missing-target rejection has only an eight-example check.","links":[["coordinate-results.html","Click-target results"]]},
-  {"group":"Clicks and actions","ids":["C04"],"question":"Can those decisions finish a task?","answer":"A separate small grid model completed 7 of 10 mazes after more training and a rule against wall moves. That is not a completed GUI task: the screenshot tests return points and do not execute clicks.","links":[["maze-results.html","Maze outcomes"],["coordinate-lab.html","Recorded click locations"]]},
-  {"group":"Scope and limits","ids":["P10","X01"],"question":"Can preferences stay within hard requirements?","answer":"Explicit bounds can prevent a known forbidden edit; new conflict cases check that mechanism. A high preference score is not a safety guarantee, and personalized instruction-following has not been validated.","links":[["docs/preference-followups.md","Constraint-conflict checks"]]},
-  {"group":"Scope and limits","ids":["P11"],"question":"Are the ratings and representations private?","answer":"The browser demo keeps its ratings on your device. That does not prove an encoded image hides private information; we have not run a reconstruction or privacy-attack study.","links":[["demo.html","Local preference demo"]]},
-  {"group":"Scope and limits","ids":["P08","P09","P12","P13","P14","P15"],"question":"Has this been tested on real generators, music or other applications?","answer":"Not in the current experiments. Generator transfer, music, feeds, mutual preferences and engineering designs are proposed applications; validating them needs task data, appropriate models and, where relevant, participating users.","links":[["history.html","Original project and current scope"]]},
-  {"group":"Scope and limits","ids":["D07","X02"],"question":"Will the results hold on another model or device?","answer":"A separate implementation replay reproduced saved decisions and layer stopping, including a published runtime version. We have CPU timings and a full-depth browser demo, but no matched GPU/NPU comparison or evidence that the trained classifiers transfer to another model.","links":[["docs/reproduction.md","Reproduction checks"],["browser-benchmark.html","Try Qwen in the browser"]]}
+  {
+    "group": "Learning preferences",
+    "ids": [
+      "P01",
+      "P02",
+      "P06"
+    ],
+    "question": "Can it learn what I like?",
+    "answer": "The demo learns patterns in your ratings and uses them to score or adjust drawings. Its calculations and simple made-up preferences have been tested; we have not yet shown that people prefer its suggestions.",
+    "links": [
+      [
+        "how-it-works.html",
+        "How learning works"
+      ],
+      [
+        "preference-results.html",
+        "Preference tests"
+      ]
+    ]
+  },
+  {
+    "group": "Learning preferences",
+    "ids": [
+      "P03"
+    ],
+    "question": "Does choosing examples carefully save ratings?",
+    "answer": "Not consistently in our tests. The demo’s mix of likely likes, uncertain examples and random examples performed worse with noisy ratings than random sampling; selecting uncertain examples did better on the simple test rules.",
+    "links": [
+      [
+        "docs/preference-followups.md",
+        "Actual demo sampler: comparison and learning curves"
+      ]
+    ]
+  },
+  {
+    "group": "Learning preferences",
+    "ids": [
+      "P04",
+      "P07"
+    ],
+    "question": "Can it learn different tastes or changing moods?",
+    "answer": "A single linear model struggles with separated tastes. A nonlinear feature model helped in a synthetic test; keeping separate models for explicitly named contexts also helped in a small alternating-context test. Neither demonstrates learning a person’s changing moods.",
+    "links": [
+      [
+        "multi-modal-preferences-deep-dive.html",
+        "More than one taste"
+      ],
+      [
+        "docs/preference-followups.md",
+        "Context and retention tests"
+      ]
+    ]
+  },
+  {
+    "group": "Learning preferences",
+    "ids": [
+      "P05"
+    ],
+    "question": "Does a higher model score mean a better suggestion?",
+    "answer": "No. A model can confidently prefer the wrong thing. We tested selection from the same candidate pool and retained cases where maximizing the score disagrees with the known preference; a person’s new rating is still the real check.",
+    "links": [
+      [
+        "docs/preference-followups.md",
+        "Candidate selection and failure cases"
+      ]
+    ]
+  },
+  {
+    "group": "Decisions and speed",
+    "ids": [
+      "D01"
+    ],
+    "question": "Does the model need to write an answer?",
+    "answer": "No. A small classifier can read its internal numbers and return a label directly. Returning a number instead of one trained token did not, by itself, show a reliable speed advantage.",
+    "links": [
+      [
+        "decisions.html",
+        "Decisions without text"
+      ],
+      [
+        "docs/matched-output.md",
+        "Matched output test"
+      ],
+      [
+        "moderation-benchmark.html",
+        "Try real moderation messages in your browser"
+      ],
+      [
+        "tiny-decision-demo.html",
+        "Try the small trained classifier"
+      ],
+      [
+        "search-demo.html",
+        "Search documents locally"
+      ],
+      [
+        "shared-decision-demo.html",
+        "Compare a real shared model on your device"
+      ]
+    ]
+  },
+  {
+    "group": "Decisions and speed",
+    "ids": [
+      "D02",
+      "D03"
+    ],
+    "question": "How early can it stop, and does that save time?",
+    "answer": "A shared four-layer BERT model can answer after layer 2. On 500 unused messages, its frozen rule preserved every full-depth decision while proposing 400 early exits, or 40% fewer transformer blocks. Actual browser execution also works. Only 18 new test messages were toxic, so rare-error reliability remains uncertain.",
+    "links": [
+      [
+        "fresh-message-results.html",
+        "500-message fresh validation"
+      ],
+      [
+        "shared-decision-demo.html",
+        "Run the shared model yourself"
+      ],
+      [
+        "depth-results.html",
+        "Compare early, middle and late layers"
+      ],
+      [
+        "early-exit-results.html",
+        "Earlier Qwen stopping results"
+      ]
+    ]
+  },
+  {
+    "group": "Decisions and speed",
+    "ids": [
+      "D05"
+    ],
+    "question": "Can it go faster without changing its answers?",
+    "answer": "On 100 tested messages, reusing the fixed instructions cut time by 37.9% with identical decisions. Processing messages in groups of four cut queue time by 9.7%. Both still use all 24 layers; these checks do not establish identical behavior on every possible input.",
+    "links": [
+      [
+        "prefix-results.html",
+        "Reuse the instructions"
+      ],
+      [
+        "batch-results.html",
+        "Process a queue together"
+      ]
+    ]
+  },
+  {
+    "group": "Decisions and speed",
+    "ids": [
+      "D06"
+    ],
+    "question": "Would a tiny model with a larger fallback be simpler?",
+    "answer": "The original pilot roughly halved time, but introduced a toxic-message miss. On 100 new messages, a stricter fallback matched Qwen’s decisions while avoiding Qwen only twice; its measured time saving was less than 1%.",
+    "links": [
+      [
+        "cascade-results.html",
+        "How the cascade works"
+      ],
+      [
+        "cascade-test-results.html",
+        "Its exact test results"
+      ],
+      [
+        "docs/chat-refinement.md",
+        "New messages and stricter fallback"
+      ]
+    ]
+  },
+  {
+    "group": "Decisions and speed",
+    "ids": [
+      "D04",
+      "D08"
+    ],
+    "question": "Does it follow changing rules or understand a live conversation?",
+    "answer": "Not reliably in the tests so far: opposite rules exposed failures even at full depth. We have not tested these decision classifiers on live conversations with audio or video context.",
+    "links": [
+      [
+        "decision-checks.html",
+        "Rule changes and unfamiliar requests"
+      ]
+    ]
+  },
+  {
+    "group": "Clicks and actions",
+    "ids": [
+      "C01",
+      "C02",
+      "C03"
+    ],
+    "question": "Can it return a click location directly?",
+    "answer": "Yes, a pointer model can return a location without writing coordinates as text. It found 25/30 targets in the first study, but only 8/25 on a harder new benchmark. A confidence cutoff withheld all 25 infeasible requests there, while also withholding 21 valid ones and still allowing two wrong clicks.",
+    "links": [
+      [
+        "visual-refusal-results.html",
+        "Harder screenshots and infeasible requests"
+      ],
+      [
+        "coordinate-results.html",
+        "Click-target results"
+      ],
+      [
+        "screenshot-demo.html",
+        "Inspect real screenshot results"
+      ],
+      [
+        "image-action-demo.html",
+        "Run a small image-to-action model"
+      ]
+    ]
+  },
+  {
+    "group": "Clicks and actions",
+    "ids": [
+      "C04"
+    ],
+    "question": "Can those decisions finish a task?",
+    "answer": "A separate small grid model completed 7 of 10 mazes after more training and a rule against wall moves. That is not a completed GUI task: the screenshot tests return points and do not execute clicks.",
+    "links": [
+      [
+        "maze-results.html",
+        "Maze outcomes"
+      ],
+      [
+        "coordinate-lab.html",
+        "Recorded click locations"
+      ]
+    ]
+  },
+  {
+    "group": "Scope and limits",
+    "ids": [
+      "P10",
+      "X01"
+    ],
+    "question": "Can preferences stay within hard requirements?",
+    "answer": "Explicit bounds can prevent a known forbidden edit; new conflict cases check that mechanism. A high preference score is not a safety guarantee, and personalized instruction-following has not been validated.",
+    "links": [
+      [
+        "docs/preference-followups.md",
+        "Constraint-conflict checks"
+      ]
+    ]
+  },
+  {
+    "group": "Scope and limits",
+    "ids": [
+      "P11"
+    ],
+    "question": "Are the ratings and representations private?",
+    "answer": "The browser demo keeps its ratings on your device. That does not prove an encoded image hides private information; we have not run a reconstruction or privacy-attack study.",
+    "links": [
+      [
+        "demo.html",
+        "Local preference demo"
+      ]
+    ]
+  },
+  {
+    "group": "Scope and limits",
+    "ids": [
+      "P08",
+      "P09",
+      "P12",
+      "P13",
+      "P14",
+      "P15"
+    ],
+    "question": "Has this been tested on real generators, music or other applications?",
+    "answer": "Not in the current experiments. Generator transfer, music, feeds, mutual preferences and engineering designs are proposed applications; validating them needs task data, appropriate models and, where relevant, participating users.",
+    "links": [
+      [
+        "history.html",
+        "Original project and current scope"
+      ]
+    ]
+  },
+  {
+    "group": "Scope and limits",
+    "ids": [
+      "D07",
+      "X02"
+    ],
+    "question": "Will the results hold on another model or device?",
+    "answer": "A separate implementation replay reproduced saved decisions and layer stopping, including a published runtime version. We have CPU timings and a full-depth browser demo, but no matched GPU/NPU comparison or evidence that the trained classifiers transfer to another model.",
+    "links": [
+      [
+        "docs/reproduction.md",
+        "Reproduction checks"
+      ],
+      [
+        "moderation-benchmark.html",
+        "Try Qwen on real messages"
+      ]
+    ]
+  }
 ]

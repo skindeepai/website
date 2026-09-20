@@ -1,0 +1,29 @@
+{
+  "scope": "Independent same-data reproduction, not new validation or comparative timing.",
+  "threads": 2,
+  "runner_sha256": "4636dcdb944d8ed84483bed61a93dc2f59b4cb1e190fbc7c042424184e7953b0",
+  "sources": {
+    "privacy": {
+      "path": "results/practical-privacy/implementation.py",
+      "sha256": "d7544260234dc38c1965ebeb6cfe30b1a78c161f94117351e9cd6a3188f7fc02",
+      "original_protocol_sha256": "9e34f996419778a462b0b911811df96873b85104ee0b25d231613ae0d0ea04ce",
+      "original_result_sha256": "899c058dc324112517550fe6fd75b9b32c45bf3c5498722ed6c7cbddf3dd4cb3"
+    },
+    "receipts": {
+      "path": "experiments/practical_baselines.py",
+      "sha256": "bf1b116740ef8354366cf165f1c8dde2eaa1e648c0aff82a7a001ed5549ee6f7",
+      "original_protocol_sha256": "8fca5c2569067ab2632eb5db496533d6a402f0ff079aa3315a143735ab6dbe6e",
+      "original_result_sha256": "4a2a4859a37d3b6d9299d5d08d97f50f73e2b294a3f36d6e4f3580244ff4a97a"
+    },
+    "routing": {
+      "path": "results/practical-routing/implementation.py",
+      "sha256": "d7544260234dc38c1965ebeb6cfe30b1a78c161f94117351e9cd6a3188f7fc02",
+      "original_protocol_sha256": "5f0781978988228ab5d9dd37805f82ec80d82e14eb49a1dd8dd05780e22c6745",
+      "original_result_sha256": "c873453dbe23b63861d01891d5745ef8d5adbb261c667f66f22197633c4cf276"
+    }
+  },
+  "execution": "Compile exact archived/current source under original runner filename for path resolution. Replace only begin output directory and subclass classifiers to copy predict_proba returns after calling original implementation. No parameter or selection changes.",
+  "diagnostics": "Save probability matrices for every call. Privacy adds per-token gold labels; receipts add candidate amounts and selected/reference values; routing retains all class probabilities. No raw input text.",
+  "comparison": "Compare every original outcome after removing seconds fields. Retain any mismatch, never overwrite original artifacts.",
+  "reproducibility_limit": "Receipt liblinear did not set random_state originally; preserve that choice and report any difference rather than silently changing the training recipe."
+}
