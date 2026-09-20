@@ -14,7 +14,7 @@
     "responsive explorer"
   ],
   "browser": "151.0.7922.34",
-  "mapSha256": "355fccc3f80c28443675f4f87a555ed48eb34244bfcef3966a592de26d0bdd05",
+  "mapSha256": "a98e19286f0020aef6b3ee7c85a6cda6c833561c6a3914d8e6e1273322c90bb1",
   "limitations": [
     "Static navigation; not analytics or a user study.",
     "Chromium viewport checks, not physical devices."

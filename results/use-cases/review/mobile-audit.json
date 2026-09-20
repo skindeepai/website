@@ -1,0 +1,6416 @@
+{
+  "pages": 111,
+  "viewStates": 444,
+  "widths": [
+    320,
+    390
+  ],
+  "errors": [],
+  "rows": [
+    {
+      "name": "index.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "index.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preferences.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preferences.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "how-it-works.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "how-it-works.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decisions.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decisions.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinates.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinates.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "adaptive.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "adaptive.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "about.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "about.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "history.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "history.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "whitepaper.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "whitepaper.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "active-learning-strategies.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "active-learning-strategies.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "multi-modal-preferences-deep-dive.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "multi-modal-preferences-deep-dive.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "landscape.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "landscape.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "getting-started.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "getting-started.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "future-explorations.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "future-explorations.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "roadmap.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "roadmap.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "vc-analysis.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "vc-analysis.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "investment-response.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "investment-response.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/art.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/art.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/music.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/music.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/social-media.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/social-media.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/dating.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/dating.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/science.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/science.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/index.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/index.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinate-lab.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinate-lab.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "research.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "research.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "sitemap.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "sitemap.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "browser-benchmark.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 300.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 41.1875
+        }
+      ]
+    },
+    {
+      "name": "browser-benchmark.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 300.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 41.1875
+        }
+      ]
+    },
+    {
+      "name": "maze-benchmark.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "maze-benchmark.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results-record.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.3125
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 67.03125
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 79.984375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.484375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 56.25
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.734375
+        }
+      ]
+    },
+    {
+      "name": "results-record.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.3125
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 67.03125
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 79.984375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.484375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 56.25
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.734375
+        }
+      ]
+    },
+    {
+      "name": "decision-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 81.828125
+        }
+      ]
+    },
+    {
+      "name": "decision-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 81.828125
+        }
+      ]
+    },
+    {
+      "name": "depth-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 291.984375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "depth-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 291.984375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 254,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "early-exit-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 75.546875
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 76.515625
+        }
+      ]
+    },
+    {
+      "name": "early-exit-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 75.546875
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 76.515625
+        }
+      ]
+    },
+    {
+      "name": "cascade-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 78.390625
+        }
+      ]
+    },
+    {
+      "name": "cascade-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 78.390625
+        }
+      ]
+    },
+    {
+      "name": "training-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 296.78125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.515625
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "training-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 296.78125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.515625
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "chat-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.8125
+        }
+      ]
+    },
+    {
+      "name": "chat-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.8125
+        }
+      ]
+    },
+    {
+      "name": "coordinate-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 92.234375
+        }
+      ]
+    },
+    {
+      "name": "coordinate-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 92.234375
+        }
+      ]
+    },
+    {
+      "name": "maze-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 102.65625
+        }
+      ]
+    },
+    {
+      "name": "maze-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 102.65625
+        }
+      ]
+    },
+    {
+      "name": "preference-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decision-checks.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decision-checks.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "cascade-test-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 366.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 337.359375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 420.421875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.515625
+        }
+      ]
+    },
+    {
+      "name": "cascade-test-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 366.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 337.359375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 420.421875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.515625
+        }
+      ]
+    },
+    {
+      "name": "moderation-benchmark.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 403.25,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.671875
+        },
+        {
+          "width": 523.078125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.796875
+        }
+      ]
+    },
+    {
+      "name": "moderation-benchmark.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 403.25,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.671875
+        },
+        {
+          "width": 523.078125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.796875
+        }
+      ]
+    },
+    {
+      "name": "batch-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.734375
+        }
+      ]
+    },
+    {
+      "name": "batch-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.734375
+        }
+      ]
+    },
+    {
+      "name": "prefix-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.84375
+        }
+      ]
+    },
+    {
+      "name": "prefix-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.84375
+        }
+      ]
+    },
+    {
+      "name": "tiny-decision-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "tiny-decision-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "search-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 81.328125
+        }
+      ]
+    },
+    {
+      "name": "search-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 81.328125
+        }
+      ]
+    },
+    {
+      "name": "screenshot-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "screenshot-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "image-action-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "image-action-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "redaction-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 84.265625
+        }
+      ]
+    },
+    {
+      "name": "redaction-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 84.265625
+        }
+      ]
+    },
+    {
+      "name": "receipt-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 102.984375
+        }
+      ]
+    },
+    {
+      "name": "receipt-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 102.984375
+        }
+      ]
+    },
+    {
+      "name": "routing-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 293.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.21875
+        }
+      ]
+    },
+    {
+      "name": "routing-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 293.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.21875
+        }
+      ]
+    },
+    {
+      "name": "shared-model-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 79.109375
+        }
+      ]
+    },
+    {
+      "name": "shared-model-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 79.109375
+        }
+      ]
+    },
+    {
+      "name": "combined-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 73.71875
+        }
+      ]
+    },
+    {
+      "name": "combined-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 73.71875
+        }
+      ]
+    },
+    {
+      "name": "shared-qwen-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.53125
+        }
+      ]
+    },
+    {
+      "name": "shared-qwen-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.53125
+        }
+      ]
+    },
+    {
+      "name": "shared-decision-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 357.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.21875
+        }
+      ]
+    },
+    {
+      "name": "shared-decision-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 357.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.21875
+        }
+      ]
+    },
+    {
+      "name": "search-next-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 82.125
+        }
+      ]
+    },
+    {
+      "name": "search-next-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 82.125
+        }
+      ]
+    },
+    {
+      "name": "quantization-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        }
+      ]
+    },
+    {
+      "name": "quantization-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        }
+      ]
+    },
+    {
+      "name": "fresh-message-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.53125
+        },
+        {
+          "width": 318.53125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 65.8125
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 111.75
+        }
+      ]
+    },
+    {
+      "name": "fresh-message-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.53125
+        },
+        {
+          "width": 318.53125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 65.8125
+        },
+        {
+          "width": 288,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 111.75
+        }
+      ]
+    },
+    {
+      "name": "visual-refusal-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.734375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 501.453125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.4375
+        }
+      ]
+    },
+    {
+      "name": "visual-refusal-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.734375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 501.453125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.4375
+        }
+      ]
+    },
+    {
+      "name": "method-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "method-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "practical-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "practical-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "execution-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 343.484375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 52.65625
+        }
+      ]
+    },
+    {
+      "name": "execution-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 343.484375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 52.65625
+        }
+      ]
+    },
+    {
+      "name": "maze-live.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "maze-live.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "point-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "point-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "rerank-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "rerank-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo-directory.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo-directory.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-method-demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-method-demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "browser-method-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.296875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 343.375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 342.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 362.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 352.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 356.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        }
+      ]
+    },
+    {
+      "name": "browser-method-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.296875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 343.375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 342.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 362.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 352.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 356.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        }
+      ]
+    },
+    {
+      "name": "browser-execution-results.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 326.65625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        }
+      ]
+    },
+    {
+      "name": "browser-execution-results.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 326.65625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        }
+      ]
+    },
+    {
+      "name": "examples/molecules.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/molecules.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/architecture.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/architecture.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/stories.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/stories.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/fashion.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/fashion.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/materials.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/materials.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/games.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/games.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/news.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/news.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/beauty.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/beauty.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/automotive.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/automotive.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/genetics.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/genetics.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/models-3d.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/models-3d.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/recipes.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/recipes.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/video.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/video.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/voice.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/voice.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/education.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/education.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/shopping.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/shopping.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/proteins.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/proteins.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/interfaces.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/interfaces.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/patient-preferences.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/patient-preferences.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/moderation.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/moderation.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/support.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/support.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/redaction.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/redaction.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/receipts.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/receipts.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/search.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/search.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/game-moves.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/game-moves.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/inbox.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/inbox.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/offline-commands.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/offline-commands.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/desktop-actions.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/desktop-actions.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/assistive-pointing.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/assistive-pointing.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ui-testing.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ui-testing.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-annotation.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-annotation.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg-quality.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg-quality.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-segmentation.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-segmentation.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-reconstruction.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-reconstruction.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/eeg-sleep.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/eeg-sleep.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/medical-annotation.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/medical-annotation.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/model-routing.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/model-routing.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/faster-llm.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/faster-llm.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-safety.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-safety.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-preferences.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-preferences.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "index.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "index.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preferences.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preferences.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "how-it-works.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "how-it-works.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decisions.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decisions.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinates.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinates.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "adaptive.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "adaptive.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "about.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "about.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "history.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "history.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "whitepaper.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "whitepaper.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "active-learning-strategies.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "active-learning-strategies.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "multi-modal-preferences-deep-dive.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "multi-modal-preferences-deep-dive.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "landscape.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "landscape.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "getting-started.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "getting-started.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "future-explorations.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "future-explorations.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "roadmap.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "roadmap.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "vc-analysis.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "vc-analysis.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "investment-response.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "investment-response.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/art.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/art.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/music.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/music.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/social-media.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/social-media.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/dating.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/dating.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/science.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/science.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/index.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/index.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinate-lab.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "coordinate-lab.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "research.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "research.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "sitemap.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "sitemap.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "browser-benchmark.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 43.28125
+        }
+      ]
+    },
+    {
+      "name": "browser-benchmark.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 43.28125
+        }
+      ]
+    },
+    {
+      "name": "maze-benchmark.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "maze-benchmark.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "results-record.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.40625
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.640625
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 98.484375
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.75
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.375
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 80.703125
+        }
+      ]
+    },
+    {
+      "name": "results-record.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.40625
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.640625
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 98.484375
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.75
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.375
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 80.703125
+        }
+      ]
+    },
+    {
+      "name": "decision-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 97.109375
+        }
+      ]
+    },
+    {
+      "name": "decision-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 97.109375
+        }
+      ]
+    },
+    {
+      "name": "depth-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.921875
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "depth-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 77.921875
+        },
+        {
+          "width": 316,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.640625
+        }
+      ]
+    },
+    {
+      "name": "early-exit-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.125
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 82.921875
+        }
+      ]
+    },
+    {
+      "name": "early-exit-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.125
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 82.921875
+        }
+      ]
+    },
+    {
+      "name": "cascade-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 88.9375
+        }
+      ]
+    },
+    {
+      "name": "cascade-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 88.9375
+        }
+      ]
+    },
+    {
+      "name": "training-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 78.484375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 63.9375
+        }
+      ]
+    },
+    {
+      "name": "training-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 78.484375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 63.9375
+        }
+      ]
+    },
+    {
+      "name": "chat-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 106.484375
+        }
+      ]
+    },
+    {
+      "name": "chat-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 106.484375
+        }
+      ]
+    },
+    {
+      "name": "coordinate-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 104.78125
+        }
+      ]
+    },
+    {
+      "name": "coordinate-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 104.78125
+        }
+      ]
+    },
+    {
+      "name": "maze-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 115.484375
+        }
+      ]
+    },
+    {
+      "name": "maze-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 115.484375
+        }
+      ]
+    },
+    {
+      "name": "preference-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decision-checks.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "decision-checks.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "cascade-test-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 366.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 420.421875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.515625
+        }
+      ]
+    },
+    {
+      "name": "cascade-test-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 366.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 66.984375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        },
+        {
+          "width": 420.421875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 74.515625
+        }
+      ]
+    },
+    {
+      "name": "moderation-benchmark.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 403.25,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.671875
+        },
+        {
+          "width": 523.078125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.796875
+        }
+      ]
+    },
+    {
+      "name": "moderation-benchmark.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 403.25,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.671875
+        },
+        {
+          "width": 523.078125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.796875
+        }
+      ]
+    },
+    {
+      "name": "batch-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 105.140625
+        }
+      ]
+    },
+    {
+      "name": "batch-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 105.140625
+        }
+      ]
+    },
+    {
+      "name": "prefix-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.75
+        }
+      ]
+    },
+    {
+      "name": "prefix-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.75
+        }
+      ]
+    },
+    {
+      "name": "tiny-decision-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "tiny-decision-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "search-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 95.578125
+        }
+      ]
+    },
+    {
+      "name": "search-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 95.578125
+        }
+      ]
+    },
+    {
+      "name": "screenshot-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "screenshot-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "image-action-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "image-action-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "redaction-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 104.390625
+        }
+      ]
+    },
+    {
+      "name": "redaction-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 104.390625
+        }
+      ]
+    },
+    {
+      "name": "receipt-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 121.59375
+        }
+      ]
+    },
+    {
+      "name": "receipt-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 121.59375
+        }
+      ]
+    },
+    {
+      "name": "routing-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 99.25
+        }
+      ]
+    },
+    {
+      "name": "routing-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 99.25
+        }
+      ]
+    },
+    {
+      "name": "shared-model-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 86.03125
+        }
+      ]
+    },
+    {
+      "name": "shared-model-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 86.03125
+        }
+      ]
+    },
+    {
+      "name": "combined-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.046875
+        }
+      ]
+    },
+    {
+      "name": "combined-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.046875
+        }
+      ]
+    },
+    {
+      "name": "shared-qwen-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.65625
+        }
+      ]
+    },
+    {
+      "name": "shared-qwen-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 85.65625
+        }
+      ]
+    },
+    {
+      "name": "shared-decision-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 357.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.21875
+        }
+      ]
+    },
+    {
+      "name": "shared-decision-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 357.03125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.21875
+        }
+      ]
+    },
+    {
+      "name": "search-next-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.1875
+        }
+      ]
+    },
+    {
+      "name": "search-next-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 91.1875
+        }
+      ]
+    },
+    {
+      "name": "quantization-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        }
+      ]
+    },
+    {
+      "name": "quantization-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 72.484375
+        }
+      ]
+    },
+    {
+      "name": "fresh-message-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.53125
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.734375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 133.84375
+        }
+      ]
+    },
+    {
+      "name": "fresh-message-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 83.53125
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.734375
+        },
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 133.84375
+        }
+      ]
+    },
+    {
+      "name": "visual-refusal-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 73.875
+        },
+        {
+          "width": 501.453125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.4375
+        }
+      ]
+    },
+    {
+      "name": "visual-refusal-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 73.875
+        },
+        {
+          "width": 501.453125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 69.4375
+        }
+      ]
+    },
+    {
+      "name": "method-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "method-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "practical-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "practical-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "execution-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 52.65625
+        }
+      ]
+    },
+    {
+      "name": "execution-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 52.65625
+        }
+      ]
+    },
+    {
+      "name": "maze-live.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "maze-live.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "point-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "point-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "rerank-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "rerank-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo-directory.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "demo-directory.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-method-demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "preference-method-demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "browser-method-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.296875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 343.375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 342.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 362.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 352.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 356.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        }
+      ]
+    },
+    {
+      "name": "browser-method-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 342.296875,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 343.375,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 342.890625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 362.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 352.015625,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        },
+        {
+          "width": 356.328125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.875
+        }
+      ]
+    },
+    {
+      "name": "browser-execution-results.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.625
+        }
+      ]
+    },
+    {
+      "name": "browser-execution-results.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 350,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.625
+        }
+      ]
+    },
+    {
+      "name": "examples/molecules.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/molecules.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/architecture.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/architecture.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/stories.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/stories.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/fashion.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/fashion.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/materials.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/materials.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/games.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/games.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/news.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/news.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/beauty.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/beauty.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/automotive.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/automotive.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/genetics.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/genetics.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/models-3d.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/models-3d.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/recipes.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/recipes.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/video.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/video.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/voice.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/voice.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/education.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/education.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/shopping.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/shopping.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/proteins.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/proteins.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/interfaces.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/interfaces.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/patient-preferences.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/patient-preferences.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/moderation.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/moderation.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/support.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/support.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/redaction.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/redaction.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/receipts.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/receipts.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/search.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/search.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/game-moves.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/game-moves.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/inbox.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/inbox.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/offline-commands.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/offline-commands.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/desktop-actions.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/desktop-actions.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/assistive-pointing.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/assistive-pointing.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ui-testing.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ui-testing.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-annotation.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-annotation.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg-quality.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/ecg-quality.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-segmentation.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-segmentation.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-reconstruction.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/mri-reconstruction.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/eeg-sleep.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/eeg-sleep.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/medical-annotation.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/medical-annotation.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/model-routing.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/model-routing.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/faster-llm.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/faster-llm.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-safety.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-safety.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-preferences.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "examples/image-preferences.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    }
+  ],
+  "limits": "Headless Chromium CSS viewports; expanded details do not unlock gated demos or exercise downloaded models. Small inputs are potential iOS focus-zoom issues, not confirmed Safari failures."
+}

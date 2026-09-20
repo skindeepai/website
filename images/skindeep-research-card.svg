@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f7fb"/>
+  <image x="74" y="65" width="64" height="64" style="image-rendering:pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVQ4jWNgGAU4QZfqxv/I/KXxB1H4F+c/+c+AC3SpbvyPbMDS+IP/kQ24OP/Jf5wGwDTDDIBphhkA04zVgCGqmeJAgxmAzF8af/AnMh+v5lHAAAAxdJhHwgD5XAAAAABJRU5ErkJggg=="/>
+  <g font-family="Segoe UI,Arial,sans-serif" fill="#182438">
+    <text x="150" y="109" font-size="44" font-weight="700">SkinDeep</text>
+    <text x="80" y="247" font-size="55" font-weight="650">Preference learning</text>
+    <text x="80" y="317" font-size="55" font-weight="650">and efficient AI</text>
+    <g font-size="27" fill="#43536a">
+      <text x="80" y="409">Learning preferences</text>
+      <text x="630" y="409">Returning decisions</text>
+      <text x="80" y="464">Finding click locations</text>
+      <text x="630" y="464">Stopping early</text>
+    </g>
+    <text x="80" y="571" font-size="23" fill="#43536a">Research by Steve Seguin</text>
+    <text x="1120" y="571" text-anchor="end" font-size="23" fill="#43536a">skindeep.ai</text>
+  </g>
+</svg>

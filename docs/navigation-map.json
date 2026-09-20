@@ -1,6 +1,6 @@
 {
   "scope": "Current local generated site, including uncommitted navigation edits; not a crawl of production.",
-  "git_head": "1891d7d19c4a34b4b7115bf9f7a3ef8739042e63",
+  "git_head": "8195105c2b7ef2faf9c516069d1a16bb32b49cb9",
   "definitions": {
     "content": "Links inside main, excluding footer; includes closed details and declared mode-specific navigation routes unless marked otherwise. Static anchor counts exclude these additional mode variants.",
     "connection": "Distinct source-to-current-page pair. Self links excluded. Modes/fragments retained per anchor but collapsed for graph reachability.",
@@ -348,7 +348,7 @@
     "index.html": {
       "title": "SkinDeep",
       "description": "Research notes and experiments by Steve Seguin.",
-      "sha256": "13b68412b6204fc65319f7f75c13f0c0d482cb8beb58c4530d15d49b80e56275",
+      "sha256": "1aea19467767cd783f43ef9156f8ba1b653deb2f80dfb2a5713371ec38cd09b6",
       "links": [
         {
           "href": "#main",
@@ -647,7 +647,7 @@
     "preferences.html": {
       "title": "Learning what you like",
       "description": "Show the model a few examples you like and a few you do not.",
-      "sha256": "91f5bf0753a0510528639646cd9f18c78c4f3fb9886ea2ed907cd6ae56b5d741",
+      "sha256": "6b76c70d7e23f7e7b7b87b7d49e117931541e5438d1a37c3b02541788c9d193f",
       "links": [
         {
           "href": "#main",
@@ -860,7 +860,7 @@
         },
         {
           "href": "examples/dating.html",
-          "label": "Mutual visual preferences",
+          "label": "Dating through mutual preferences",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -1336,7 +1336,7 @@
     "how-it-works.html": {
       "title": "How the model learns",
       "description": "Your ratings tell it which details to pay attention to.",
-      "sha256": "847685204f733a7d5aee7ec30037718952a957e43d9019684a6d659c06c6a1f5",
+      "sha256": "feebac7cd05163f8343bf951bbfb48e6a7263aa90227d613658fe310570012f2",
       "links": [
         {
           "href": "#main",
@@ -1682,7 +1682,7 @@
     "decisions.html": {
       "title": "Decisions without a written reply",
       "description": "Sometimes an app only needs a label, such as “support” or “spam”.",
-      "sha256": "80d0a0143438284a58fc6ded5113795d4a9207eef37b86f4f338dde7961ce18e",
+      "sha256": "18def050d4675b1123eeaef100f07f90528ea4c499e5f1039ede8ac1294078da",
       "links": [
         {
           "href": "#main",
@@ -2363,7 +2363,7 @@
     "coordinates.html": {
       "title": "Finding where to click",
       "description": "Give the model a screenshot and an instruction, such as “click Save”.",
-      "sha256": "aa92ff0c023e8525f12c7c5c9e8d73909dd2aee6af3c93ad9738f7cc3295d7ad",
+      "sha256": "c7b2bd7bbb5dc9253c565c418b356b8c4cd16d9351c7ae130fcd6eec84ce8161",
       "links": [
         {
           "href": "#main",
@@ -2863,7 +2863,7 @@
     "adaptive.html": {
       "title": "Stopping early",
       "description": "An easy task may not need every step of a model’s processing.",
-      "sha256": "b715dc837053773c9accaaa911eaa824620d1372f351198856ea97c8aa9f82f5",
+      "sha256": "8a658e83c81d6c542606acf810e96a7c8b95da36cd5ab8f9445efcd55be9fc61",
       "links": [
         {
           "href": "#main",
@@ -3609,7 +3609,7 @@
     "about.html": {
       "title": "About SkinDeep",
       "description": "A research project by Steve Seguin.",
-      "sha256": "19e787f51851cafb9cb10799c460955b9e6c58dc839014fd2318d904fec55a03",
+      "sha256": "486502ba1276aa9e82e98c86e098192cf2d0a0540a23abd522ea9a874cca2b0f",
       "links": [
         {
           "href": "#main",
@@ -3882,7 +3882,7 @@
     "history.html": {
       "title": "History",
       "description": "The original work and how the project has changed.",
-      "sha256": "1223d63d2bb03840010bb042a1a698d0a954154e6201a4e8f1ec5b177de702ec",
+      "sha256": "26cecff909fc9280caec6be1b19fc0b23b16f28b990d4cf40c4e84a054b24638",
       "links": [
         {
           "href": "#main",
@@ -4263,7 +4263,7 @@
     "whitepaper.html": {
       "title": "The original paper",
       "description": "The longer explanation of SkinDeep’s preference-learning approach.",
-      "sha256": "461adfb41e6327afcc06e43ed48eab7d3a7bbc8d4f092d0f926b503106f9da43",
+      "sha256": "c31df06e077eff0c6c6ac35c21453887c9aa7301ed1f528fdd2c78000b31f1a0",
       "links": [
         {
           "href": "#main",
@@ -4573,7 +4573,7 @@
     "active-learning-strategies.html": {
       "title": "Which example should come next?",
       "description": "Some ratings teach the model more than others.",
-      "sha256": "70be6b20d55848557a4094ec2b93543493af8943b9d90f517df44a30377900b2",
+      "sha256": "dc307af9fd3de55e4e2a616b1c1dd7e9c9572f6084ca91dcaa7da15e0a8721bd",
       "links": [
         {
           "href": "#main",
@@ -4858,7 +4858,7 @@
     "multi-modal-preferences-deep-dive.html": {
       "title": "Liking more than one style",
       "description": "You can like two different things without liking everything in between.",
-      "sha256": "e150d69ae22aea698175318d678a747e15299cf0bf5a27806874bb0bb851f10e",
+      "sha256": "49c0416d326a6537a128891e6fa8c6f82e60a3cbecaafe438d984f0750670faf",
       "links": [
         {
           "href": "#main",
@@ -5144,7 +5144,7 @@
     "landscape.html": {
       "title": "Related research",
       "description": "Other work on making models return useful results with less processing.",
-      "sha256": "1803bb2417b7950780b2930b36cf2b63e5611cfd81527cdc6f1528b934cb9ee7",
+      "sha256": "0926abeb180151ae064710e7a1b4e8388da0dbefa5f377cb0cc657fb5ac4b2b9",
       "links": [
         {
           "href": "#main",
@@ -5469,7 +5469,7 @@
     "getting-started.html": {
       "title": "Run the code locally",
       "description": "Run the website and reproduce the research experiments.",
-      "sha256": "eeb1541cba026ce8cfd6efb9f8f8c6679ed024cc32511d74a01d1dd4a56ad7a3",
+      "sha256": "deed24a9ee85dcc770f8989c4df0b69651b8cbb7fcf336a308337aa950e64034",
       "links": [
         {
           "href": "#main",
@@ -5789,7 +5789,7 @@
     "future-explorations.html": {
       "title": "Ideas to explore",
       "description": "Possible uses beyond the first demos.",
-      "sha256": "495b6d805202b8b842080ed2b44c93bcbca07d20020ab118ad18ab5aadf208dc",
+      "sha256": "071fce3bb52797e4c997344ceddeb5ff0d3e733d6af9084d56e3d2ae4d0314f8",
       "links": [
         {
           "href": "#main",
@@ -6052,7 +6052,7 @@
     "roadmap.html": {
       "title": "What comes next",
       "description": "Fix the weak points before trying larger applications.",
-      "sha256": "86338b186ab06942c7b6342e6ee733ec5b5f7fefbae9933e78f22d08ce7c4cec",
+      "sha256": "6e58d8d90761a7abf45afcf6c010fe9079c1820546a5bc345cf57169bfae8228",
       "links": [
         {
           "href": "#main",
@@ -6315,7 +6315,7 @@
     "vc-analysis.html": {
       "title": "Earlier investment analysis",
       "description": "An archived discussion of the project as a business.",
-      "sha256": "5c7566a3b3f353b30a3b40dcc49b051ae521110f74e2954795c8a7b66149300c",
+      "sha256": "bedf241739f4500a889920a58cdb9136be3e9d0483a62b7d3db36eb0dfd74514",
       "links": [
         {
           "href": "#main",
@@ -6566,7 +6566,7 @@
     "investment-response.html": {
       "title": "Earlier investment response",
       "description": "An archived response to the investment discussion.",
-      "sha256": "e0f9079a153a8ce2fb1adb9b446341c5565e264168430251f4d3c00b728b31f1",
+      "sha256": "682c32458ea23225353b885da893a5645536a9dbd05847170e712bac4470a3e2",
       "links": [
         {
           "href": "#main",
@@ -6817,7 +6817,7 @@
     "examples/art.html": {
       "title": "Art and visual design",
       "description": "Choose a direction by rating examples.",
-      "sha256": "591a6c718606afd50dca4136ea88d30985dc29d1def0660abdc1c11370ee8e0b",
+      "sha256": "3f6949a342b1d3be10347e62cc739dd55d9dfbcd216bd9db7dd406ef48c40ea7",
       "links": [
         {
           "href": "#main",
@@ -7136,7 +7136,7 @@
     "examples/music.html": {
       "title": "Music and playlists",
       "description": "Learn what you like to hear next.",
-      "sha256": "eb698e52d975845b5943370ff842589e84320bed0afa1920099916ed7dfe209f",
+      "sha256": "b55b5340cef3214cb2f976d2d18d537845dd2955623bb2df85876ee9dd199a2d",
       "links": [
         {
           "href": "#main",
@@ -7454,7 +7454,7 @@
     "examples/social-media.html": {
       "title": "A feed without repeated prompting",
       "description": "Learn from what people choose to see.",
-      "sha256": "06b1fb87e437659d9a1b480357c50a5dfe5484e148d099391cd62f9a673bc883",
+      "sha256": "9af588c053e3be64ed940c660b6508087390e2a12f5614538119313e390beeb3",
       "links": [
         {
           "href": "#main",
@@ -7770,9 +7770,9 @@
       }
     },
     "examples/dating.html": {
-      "title": "Mutual visual preferences",
-      "description": "Look for interest from both people.",
-      "sha256": "5bee61bd37c7dbbf4681e186c2ffa0061f6b70aae404eec35b81ea233241d1ea",
+      "title": "Dating through mutual preferences",
+      "description": "Rate generated faces. Reveal real profiles only by mutual agreement.",
+      "sha256": "361f9910558151d34e13e0e77196f22e6c6cd03c06d879c9ccace4a81268fbce",
       "links": [
         {
           "href": "#main",
@@ -8090,7 +8090,7 @@
     "examples/science.html": {
       "title": "Engineering with constraints",
       "description": "Keep useful designs within fixed requirements.",
-      "sha256": "64e1c1a31ddb6bd364517be283b8b6a5a0dbed17cdb8d412a980976e25bc2d9e",
+      "sha256": "7bca0e966f385e2c52735e3ac7ea6e7b2386718299c0dd192ed868d34759ad88",
       "links": [
         {
           "href": "#main",
@@ -8409,7 +8409,7 @@
     "examples/index.html": {
       "title": "Use cases",
       "description": "Applications for preference models, direct decisions, spatial outputs and less computation.",
-      "sha256": "248f0af7b9a2d11dbc997805aaecacb9a7b1b5bf070e59688fa6e194f679a20e",
+      "sha256": "dbb135d1705f1d4c3f518a46c2134eae9cb982edc7ba13d557fd5d9a247e6433",
       "links": [
         {
           "href": "#main",
@@ -8809,7 +8809,7 @@
         },
         {
           "href": "../examples/dating.html",
-          "label": "Mutual visual preferences",
+          "label": "Dating through mutual preferences",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
@@ -9567,7 +9567,7 @@
     "demo.html": {
       "title": "Teach it what you like",
       "description": "Tap Like or Pass on the drawings. Then see what it suggests.",
-      "sha256": "c819c9753616867e9b4682161c514c55ab0cb209cdb68ae02c386d1a04bf039d",
+      "sha256": "56622e49f2c15e32326a6858aa9e84e54db1058d280012139c77123ae797ee0a",
       "links": [
         {
           "href": "#main",
@@ -9914,7 +9914,7 @@
     "coordinate-lab.html": {
       "title": "See where the model would click",
       "description": "Choose an example and compare its click with the target.",
-      "sha256": "55b7ff5844cc39df2f339f690fd0dd38d4be5eb1398bfcb8ba46e84cd27c0677",
+      "sha256": "94d3e9ababf8cdd7f172f3a0f832bdf7e880d7a1ff83c584e5432237ee19108f",
       "links": [
         {
           "href": "#main",
@@ -10202,7 +10202,7 @@
     "research.html": {
       "title": "Research FAQ",
       "description": "What the experiments show, how the methods work, and what is still untested.",
-      "sha256": "16f59417a5a86259f51645f4c167a0f9e17d200ac474ff84a98d74f6df6e67da",
+      "sha256": "d4966ef8505912308aad817188148c6497ac8b03a6d2c50f2245cddbf2487af4",
       "links": [
         {
           "href": "#main",
@@ -10861,7 +10861,7 @@
     "results.html": {
       "title": "Test results",
       "description": "Choose a question. Each comparison explains the method, the data and what happened.",
-      "sha256": "639395208b6e667196447789069d6dda2fd057e64baf4c640ab88958e60117e7",
+      "sha256": "c5067fbc4642386193cbac248670678aa981fef44e17565786469bb7969e618e",
       "links": [
         {
           "href": "#main",
@@ -11268,7 +11268,7 @@
     "sitemap.html": {
       "title": "All pages",
       "description": "Demos, explanations, experiments and the original records.",
-      "sha256": "eee1134b14aa572c88e06be8074041626d788d0a594e2a0b1446e9d1440d4e26",
+      "sha256": "0425766a336c98cbe20fd84755d3ce3b549364e1b0399e85f160cc9d751dc8fd",
       "links": [
         {
           "href": "#main",
@@ -11700,6 +11700,17 @@
           "fragment": ""
         },
         {
+          "href": "examples/dating.html",
+          "label": "Dating through mutual preferences",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "examples/dating.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "preference-results.html",
           "label": "Does preference learning work?",
           "zone": "content",
@@ -11850,17 +11861,6 @@
           "hidden": false,
           "kind": "page",
           "target": "examples/music.html",
-          "query": "",
-          "fragment": ""
-        },
-        {
-          "href": "examples/dating.html",
-          "label": "Mutual visual preferences",
-          "zone": "content",
-          "collapsed": false,
-          "hidden": false,
-          "kind": "page",
-          "target": "examples/dating.html",
           "query": "",
           "fragment": ""
         },
@@ -12824,7 +12824,7 @@
     "browser-benchmark.html": {
       "title": "Try Qwen in your browser",
       "description": "Compare a one-letter answer with a short JSON reply on your own device.",
-      "sha256": "eb08bd48986001ddf305f90b6754dbfeeffbaf6405be3408b29a109fa4dba9da",
+      "sha256": "401cffdb6e517534b073f8a6c518da60c0913e9c0d427368149fc084ddd9dcbd",
       "links": [
         {
           "href": "#main",
@@ -13110,7 +13110,7 @@
     "maze-benchmark.html": {
       "title": "Watch the maze test",
       "description": "Inspect recorded moves from the full-depth and early-exit Qwen classifiers.",
-      "sha256": "434712c08ef8fdf4e9500acaff570f000e7410144c41a9977471edca8a4a3e41",
+      "sha256": "216390255d73b4961eab407a01630065b8a1a41d7792a20fa9d463dfa2fceb37",
       "links": [
         {
           "href": "#main",
@@ -13441,7 +13441,7 @@
     "results-record.html": {
       "title": "Earlier combined results",
       "description": "The previous report, preserved as a reference. Start with the topic pages for shorter explanations.",
-      "sha256": "0ccdb3df6662173f7789d4ae084d5063ff03e3add44babaa34e0a4758691fba1",
+      "sha256": "abc73b5c5eb1c14e7ac991ab2ffb5290a937fcef35ba4a5d925eab252c630f7d",
       "links": [
         {
           "href": "#main",
@@ -14122,7 +14122,7 @@
     "decision-results.html": {
       "title": "Ways to make a decision sooner",
       "description": "Compare the measured speed and accuracy, then open a method for its test results.",
-      "sha256": "3102de9e8f472a04f3d39083b9faedbf7534f720e9372a8927373ec490336c2b",
+      "sha256": "9862d88ccd5c014a832d0b4e110c5386085f70a3c2e647ac1764b4818d5cd3ed",
       "links": [
         {
           "href": "#main",
@@ -14716,7 +14716,7 @@
     "depth-results.html": {
       "title": "Where should processing stop?",
       "description": "Qwen has 24 transformer layers. Here is what happens when we stop earlier.",
-      "sha256": "8c3d15d6f414b7f5bf00934c8449839bafa391587c729a6c97866ccf377a8a05",
+      "sha256": "82f70292d90e97c66531471697724ba272f1ab676ca99149fa49a000935112c9",
       "links": [
         {
           "href": "#main",
@@ -15082,7 +15082,7 @@
     "early-exit-results.html": {
       "title": "Check whether more layers are needed",
       "description": "Keep processing uncertain messages. Stop earlier on others.",
-      "sha256": "b3cce6d23b1937ac513f99ea8a17ad27ed9c3da09e844e0fdeb13e9d92b0f23e",
+      "sha256": "89a87240f9560b8c8e8b6601736a7bc9fb9acd67407852e620d82db0f7b465ea",
       "links": [
         {
           "href": "#main",
@@ -15439,7 +15439,7 @@
     "cascade-results.html": {
       "title": "Try a tiny model first",
       "description": "Use the larger model only when the small one is uncertain.",
-      "sha256": "9cf5ab933e3bf1fc05078ccc88e33b59e6301a545caa45f06a41094f113e6c59",
+      "sha256": "21b41842cf1ebc7b4f6fec9abc6dd6c8a402ee428ae7be70a3c7bf7989144b5f",
       "links": [
         {
           "href": "#main",
@@ -15828,7 +15828,7 @@
     "training-results.html": {
       "title": "Teach useful answers to appear earlier",
       "description": "Changing the readout is one option. Changing what the model learns is another.",
-      "sha256": "557253da1a7538df2663ad0d68ec80f4413aebfa9a4d22c04c0c5799b5f8c4fd",
+      "sha256": "9f7e9ca1e0c394e93765fe48a64fb5807b4a2c3fafa657e9271e274101834d6d",
       "links": [
         {
           "href": "#main",
@@ -16171,7 +16171,7 @@
     "chat-results.html": {
       "title": "The original 600-message test",
       "description": "A real-message workload showed both the savings and the extra mistakes.",
-      "sha256": "e2d139d30ba6f2672f72f2269b2b73f0cf1b3070386613731530a6ef5b8846e0",
+      "sha256": "68328aabe86fbf7a14e39810fb96a396e6700ed8e30b686eb3939020db3888ec",
       "links": [
         {
           "href": "#main",
@@ -16526,7 +16526,7 @@
     "coordinate-results.html": {
       "title": "Finding the right point",
       "description": "Return a location directly, then check whether it actually hits the target.",
-      "sha256": "d2ffc0627ba7579aa9311c5160bf95059dc0322cf3c03c518d65a84d3c7984bf",
+      "sha256": "7d32704a9832156832bc945272fb38bbfc3e5f389911b569eb4ce3d7c089645a",
       "links": [
         {
           "href": "#main",
@@ -16883,7 +16883,7 @@
     "maze-results.html": {
       "title": "From a decision to a finished task",
       "description": "A correct-looking move is not enough. The agent needs to reach the goal.",
-      "sha256": "548cca1e8c0daff56f7375563ca656dadee4d90e9e656a6d3431a6887fa74584",
+      "sha256": "cd63756b5f9ed07f4e5f5bd3f0cf50e5eb095b48e89c3dce80812b6d8af68d3e",
       "links": [
         {
           "href": "#main",
@@ -17204,7 +17204,7 @@
     "preference-results.html": {
       "title": "Does preference learning work?",
       "description": "The calculations work. Whether the suggestions are useful still needs a human test.",
-      "sha256": "a9e6ecd413919ff923c75b8a2d2e4036c295b3e9f0b64d4b89f9325ed3845a68",
+      "sha256": "8d808b546046c57fdf357834afa1ddb21425834f781464e99298f8530109e727",
       "links": [
         {
           "href": "#main",
@@ -17607,7 +17607,7 @@
     "decision-checks.html": {
       "title": "Other decision tests",
       "description": "Public data and harder cases show where the shortcuts break.",
-      "sha256": "c021bb9e6a70483b63279d4f6c4cd775c71d0ed5e6005d9fc8b4c01c489d7640",
+      "sha256": "3aa0230aceabf3a089c62098ed604b5641caed9911cd8af9a33d0b9ae47304ad",
       "links": [
         {
           "href": "#main",
@@ -17992,7 +17992,7 @@
     "cascade-test-results.html": {
       "title": "Cascade: test results",
       "description": "The recorded decisions, mistakes and processing time for the tiny-model fallback experiment.",
-      "sha256": "d9250b62674aaa1a03b674a2c442877b9b3426cec7fb96a48aed4ee77035f8e8",
+      "sha256": "c20264a91b425d59cbf1ae094b091b8563b2d3e93b6b7915855e1aca3fce597e",
       "links": [
         {
           "href": "#main",
@@ -18344,7 +18344,7 @@
     "moderation-benchmark.html": {
       "title": "Try 100 real messages",
       "description": "Run Qwen locally and compare accuracy and time.",
-      "sha256": "03895ba20e6f04d66c4ca65750407e442a5cedb61d0e4df1cbd8067c82c68bb7",
+      "sha256": "b6acd2d828f87964f6e36e6f882a5658b7c5f3dbbd08ccf8a4c57e109b367368",
       "links": [
         {
           "href": "#main",
@@ -18675,7 +18675,7 @@
     "batch-results.html": {
       "title": "Process a queue together",
       "description": "A small throughput improvement with the same model and the same decisions.",
-      "sha256": "12e4b1d95c4c3c7fc3d0e1108d5dff1d28b5502dcc6da3f7033c4c34d3003987",
+      "sha256": "bca24a0b2abfe4f4ba0e1a370015da948c37399d7f7a7d705acf18b43b520019",
       "links": [
         {
           "href": "#main",
@@ -18962,7 +18962,7 @@
     "prefix-results.html": {
       "title": "Reuse the instructions",
       "description": "Avoid computing the same fixed instructions for every message.",
-      "sha256": "649d47a7540457c423e9742b529b5303a1eee8f920e4cbafc48aa0d8e0537a5a",
+      "sha256": "4966741a931db9e1408ce99f0206c5549906ef609d7ff340181c8303fcdb9153",
       "links": [
         {
           "href": "#main",
@@ -19247,7 +19247,7 @@
     "tiny-decision-demo.html": {
       "title": "A small model, one decision",
       "description": "Try a trained moderation classifier on your device.",
-      "sha256": "be388f6421bbab1bf89b68ea5b65f6225b650fc0662df975e274e50af265d2d9",
+      "sha256": "39971e055a1d8363b06ef407f1dc57db238a1bad618c24cef1c8b0b2c79ad0f1",
       "links": [
         {
           "href": "#main",
@@ -19576,7 +19576,7 @@
     "search-demo.html": {
       "title": "Search real research",
       "description": "Find papers with keywords or a small model that compares meaning.",
-      "sha256": "7ce039554b6f6523c6adf2c259d80668b0720a638832cfdb98d47fddd8a7e738",
+      "sha256": "7f145f17463d47f5f741f095f3374aaa2d0ef751eaba3095994fd2644c0c592e",
       "links": [
         {
           "href": "#main",
@@ -19982,7 +19982,7 @@
     "screenshot-demo.html": {
       "title": "Where would it click?",
       "description": "Replay a real screenshot and see the point the model chose.",
-      "sha256": "6510196855c0ea562a87a888c4e39b58f673d3c36a2be31146dec7e6bd44d1c3",
+      "sha256": "2518554831c263ec28b7fe364243872f1ef0010f15e74185d499495f2f3d337e",
       "links": [
         {
           "href": "#main",
@@ -20340,7 +20340,7 @@
     "image-action-demo.html": {
       "title": "Read an image. Return an action.",
       "description": "A small trained model looks at the pixels and returns a direction.",
-      "sha256": "4054ff758bc91b10f95fac7c074014c9e692a78f4b2c5eb0139da28a84b344d0",
+      "sha256": "1bba285f38375fa699242dc31cff356a1e49770a7e84b11d694a9cd9e8788cd5",
       "links": [
         {
           "href": "#main",
@@ -20680,7 +20680,7 @@
     "redaction-results.html": {
       "title": "Find names to redact",
       "description": "Return marked text spans instead of rewriting a document.",
-      "sha256": "06851c548fcc70232f809b6615820cad061f5199047e8c500dbf9269efa5c7fb",
+      "sha256": "ac62026961e95b48abbec7aef550102b6eade1712bb6d85fd44ffed956e85be3",
       "links": [
         {
           "href": "#main",
@@ -20964,7 +20964,7 @@
     "receipt-results.html": {
       "title": "Choose the receipt total",
       "description": "Select a value that already appears on the receipt.",
-      "sha256": "5333f9cd163000235c40148eabed00cd3c419deb3e37e90734961f294a39a586",
+      "sha256": "1a0ed1bd01afe91a96637b1bb91fd09832d84fe7a6ad3493faa796bdd34b2826",
       "links": [
         {
           "href": "#main",
@@ -21248,7 +21248,7 @@
     "routing-results.html": {
       "title": "Route or ask for help",
       "description": "Choose a supported action, or return UNKNOWN.",
-      "sha256": "409e4c9fd0d43f4fcb6481bf067480c664dde48b73f4d0a2078789dfab5ce886",
+      "sha256": "3b77174c950d278a744474978acd7967f700f84531829b772ef8c3c92d9665e5",
       "links": [
         {
           "href": "#main",
@@ -21533,7 +21533,7 @@
     "shared-model-results.html": {
       "title": "One model, two chances to answer",
       "description": "Compute the beginning once; continue only when needed.",
-      "sha256": "dd96f3e970352e37eb2c5b5474ca35e0c7f3fea2dfe94869ddc3333316c61556",
+      "sha256": "b285924aafb0c304cf32ea7a8965b32b697771d3c2f908179c97a977700ca08f",
       "links": [
         {
           "href": "#main",
@@ -21856,7 +21856,7 @@
     "combined-results.html": {
       "title": "Reuse instructions and group messages",
       "description": "Test two execution improvements together.",
-      "sha256": "7cdae18fe5c71423cec0ebf2f4040477520c795d45b5a2ea20a31f02a2095af3",
+      "sha256": "ac07c6cb631f38203351862ca1f7c0d6032e01afdf83f826d5dd98d7711df8de",
       "links": [
         {
           "href": "#main",
@@ -22153,7 +22153,7 @@
     "shared-qwen-results.html": {
       "title": "Check Qwen before continuing",
       "description": "Several chances to answer within one model pass.",
-      "sha256": "67ec2769298448c83965de6830d7a0635bfca48d35624774364d5654872191f6",
+      "sha256": "4bde12dc0d71f3852c421807c413159f395f6614c6669355397f08ad36f6a4bc",
       "links": [
         {
           "href": "#main",
@@ -22464,7 +22464,7 @@
     "shared-decision-demo.html": {
       "title": "Stop after two layers, or continue",
       "description": "Run a real shared model on your device and compare it with full-depth processing.",
-      "sha256": "1185e5c8cc2f25366bb6fead5840bd5f6566b8e0010c202917dad18da343daae",
+      "sha256": "42c4d1d08660ab91b22315efa0fdb55fc321bd868e3fb0f600018bffc838cd63",
       "links": [
         {
           "href": "#main",
@@ -22818,7 +22818,7 @@
     "search-next-results.html": {
       "title": "Give search a second check",
       "description": "A small model checks a shortlist; compare quality and processing on fresh queries.",
-      "sha256": "185d85ef8b089b200ef087d1b4cbc705344c2c84b1835b4f5259f85453546b51",
+      "sha256": "2f86cb7e864b90a6b19725f0dcd51c4d6e6db7bf21f0789cb9b49ab3fcd26a4a",
       "links": [
         {
           "href": "#main",
@@ -23136,7 +23136,7 @@
     "quantization-results.html": {
       "title": "Which parts tolerate smaller numbers?",
       "description": "Locate the accuracy loss before attempting another compressed model.",
-      "sha256": "0657e7cfc2774bbe2273c0020511aaaa5dbbbeff410518379fdad04300454c5c",
+      "sha256": "297e602cc6ccd40f7f6b083471b6bcca4d534b53176e0118458a9f32ebd532be",
       "links": [
         {
           "href": "#main",
@@ -23425,7 +23425,7 @@
     "fresh-message-results.html": {
       "title": "Does stopping hold up on new messages?",
       "description": "Stronger training and a learned check tested on 500 unused messages.",
-      "sha256": "205bd5e8608334dd9d5373142bae8e43cdecb2b5aa412401cd05c3685d2ff46d",
+      "sha256": "4cbc14702db5477c7eaf2f633cfb6274312f37aac23a4520e8a376caa7186aaf",
       "links": [
         {
           "href": "#main",
@@ -23735,7 +23735,7 @@
     "visual-refusal-results.html": {
       "title": "Click, or hold the action?",
       "description": "A real-screen test that includes infeasible requests.",
-      "sha256": "9659c52d1e7770705d26b47ed9749ea77a594121b9c8ac4aa37dda99fbefde29",
+      "sha256": "f6e8c1eb8deb40dc44228f6bfbf84f128d2a9962ef3e2c3e80c362baa5269c35",
       "links": [
         {
           "href": "#main",
@@ -24066,7 +24066,7 @@
     "method-demo.html": {
       "title": "Compare ways to decide sooner",
       "description": "Run real classifiers on your text or a public message sample.",
-      "sha256": "e8ab5131cfd8f7ca19671eeee63b5067b3e1ca65bb7a278e9cf0377917e9f244",
+      "sha256": "8795bd2a7e9674a87597183badf30e85de1b7894fa09ab7eb9ca313a11487425",
       "links": [
         {
           "href": "#main",
@@ -24607,7 +24607,7 @@
     "practical-demo.html": {
       "title": "Try a small task classifier",
       "description": "Edit the input and get a direct result from trained weights.",
-      "sha256": "b8e92249da730695152e634500c649c0b0f2d4da98ae78db39930f943c9856bc",
+      "sha256": "7707ce292809aca879a123e86b74cfd2d3fd6597826ede739425132331c873db",
       "links": [
         {
           "href": "#main",
@@ -25042,7 +25042,7 @@
     "execution-demo.html": {
       "title": "Reuse work inside Qwen",
       "description": "Measure instruction caching and batching on your device.",
-      "sha256": "f9297e0bf7808d9b39d36e000a69a63f63ff6342c36e49e61a8ba5e6b027ca25",
+      "sha256": "68975df87a8b444d3dee88c61b4558e99433909fa19e9d9b0e2bd31b5d4ecf42",
       "links": [
         {
           "href": "#main",
@@ -25466,7 +25466,7 @@
     "maze-live.html": {
       "title": "Let a trained model choose the moves",
       "description": "Run the policy, change the walls, and see whether it reaches the goal.",
-      "sha256": "bbe98081824c2c85ef897c189011e80b0deba3d61ea6e88b9b2ba78cab351a61",
+      "sha256": "7c0d149c1db78f8a67af05957dba0916b64d2760f2a923aee7ca54a8bbca1e35",
       "links": [
         {
           "href": "#main",
@@ -25786,7 +25786,7 @@
     "point-demo.html": {
       "title": "Find visible text in a screenshot",
       "description": "Upload an image and get a point back, computed locally.",
-      "sha256": "7e06346d3ab96e893f0106f7442909058129efcfa78ad2d8b0eccbed1547074d",
+      "sha256": "894d9d88de85fd7faec5adff5020b293728e94174b170f6b57dad909edb77694",
       "links": [
         {
           "href": "#main",
@@ -26118,7 +26118,7 @@
     "rerank-demo.html": {
       "title": "Give your search a second check",
       "description": "A two-layer model scores the first 20 keyword matches.",
-      "sha256": "87f0ae3bc8dcdaeb02999ed5338dbbea6b4b3fd536d4061b5a042134d539b424",
+      "sha256": "638ff9459846cd6de2fddc5d74f15f48439a5755e9a49d91cd5df658aca3316a",
       "links": [
         {
           "href": "#main",
@@ -26440,7 +26440,7 @@
     "demo-directory.html": {
       "title": "Run a demo",
       "description": "Choose a task or an approach, then try it yourself.",
-      "sha256": "d94373beeb950ef056fe88bb2ec0b9f7b92a958851608749b62de5907f270112",
+      "sha256": "cc9c48fc6acc6cf7d4c8a7751a712a839835e29c0546782d4c651c53201d83ee",
       "links": [
         {
           "href": "#main",
@@ -26853,7 +26853,7 @@
     "preference-method-demo.html": {
       "title": "Learn more than one favorite style",
       "description": "Compare example selection and simple preference models.",
-      "sha256": "6368c0c1560c1dcc751b62f68c13e7ad904fff5042a6ac7f9433006b62b79819",
+      "sha256": "af2eb37bd8301a3e8a736fdb1053424b77e48e32408f3f260670b7e7339f0314",
       "links": [
         {
           "href": "#main",
@@ -27153,7 +27153,7 @@
     "browser-method-results.html": {
       "title": "Recorded browser comparisons",
       "description": "Saved BERT comparisons and the standalone tiny-classifier check.",
-      "sha256": "f711e0a8b25e414836dba5f0baaa01b0f7dc3d29911373eb97c23792e3271617",
+      "sha256": "1a64f0c75ceaa52f979762d851f3a141985f4783fee05ae9daca5c3ea82a658a",
       "links": [
         {
           "href": "#main",
@@ -27776,7 +27776,7 @@
     "browser-execution-results.html": {
       "title": "Qwen browser execution check",
       "description": "The saved four-message run for caching and batching.",
-      "sha256": "699f53ccacdb224bea7255bc5793956f96b0c4a14083963f2630a7ad970a9b65",
+      "sha256": "2c5bb3951b9da2b30497b01af431f62175329cc8ec21ac20e9de2d85be13092a",
       "links": [
         {
           "href": "#main",
@@ -28116,7 +28116,7 @@
     "examples/molecules.html": {
       "title": "Molecule and drug research",
       "description": "Rank research candidates against a stated goal.",
-      "sha256": "7e3532fb511867b432114409b5f748df2d7d8497423eabbbbe57fc79c0c84f37",
+      "sha256": "32faa5169c0acfcb5ebfdb254cd5e1add8bcffd0e67d6830582a01dd41aaf5a3",
       "links": [
         {
           "href": "#main",
@@ -28424,7 +28424,7 @@
     "examples/architecture.html": {
       "title": "Architecture and interiors",
       "description": "Explore layouts and rooms that fit your taste.",
-      "sha256": "06a8113926baf8389babe04bf20b1daad8a6873248948cb66542293f66e94311",
+      "sha256": "de9c179581c4d1cd285d27cda8a9b530c55b4a3f88d05486d5f55bbfeaba752c",
       "links": [
         {
           "href": "#main",
@@ -28731,7 +28731,7 @@
     "examples/stories.html": {
       "title": "Stories and interactive fiction",
       "description": "Learn which style of story a reader enjoys.",
-      "sha256": "f2dade0d7eba410113dc1735deb285ce39af84035bd2c59271ccee52c7783146",
+      "sha256": "29942919fe10227e3567c32f4720d9ab6cb87e1a5fbbcee84270e9d889b81fde",
       "links": [
         {
           "href": "#main",
@@ -29039,7 +29039,7 @@
     "examples/fashion.html": {
       "title": "Fashion and outfit choices",
       "description": "Find clothes that fit your style.",
-      "sha256": "4d330c0afe2aa4365709788cc3f8af5a0b2d9e467e744d97e813e40250bbdeed",
+      "sha256": "2daf0afe30fff40791efa0263cb2b76ac5c332c3489cae531cd73a9affd1fab7",
       "links": [
         {
           "href": "#main",
@@ -29347,7 +29347,7 @@
     "examples/materials.html": {
       "title": "Material research",
       "description": "Choose candidates under several requirements.",
-      "sha256": "aaf1f8d9cf658cd81b1b8e46c195cd483918fc297cfcfe947ef7214874ebf52a",
+      "sha256": "27851ff4506131872a402ca4336609651cb2f60eab00c299324572b4717957a2",
       "links": [
         {
           "href": "#main",
@@ -29655,7 +29655,7 @@
     "examples/games.html": {
       "title": "Game levels and difficulty",
       "description": "Suggest levels a player wants to play.",
-      "sha256": "a9e53ab68fa3e2b68e6261aca05c69402dff0d6d8882b4d4eed97e8e837b0928",
+      "sha256": "868006d973094e7645283c17c372ea94265d49b40314b1e4469b00f1c4e63aca",
       "links": [
         {
           "href": "#main",
@@ -29976,7 +29976,7 @@
     "examples/news.html": {
       "title": "News and content curation",
       "description": "Find useful articles in a preferred format.",
-      "sha256": "dba647d3f676382a2e12d4f7cfe906ce0df9fd299d99148f5861502d6a1a56c5",
+      "sha256": "6dbf8740d55e16c7c96bff73b2c91e4719f12a49f73732e854ff60b90ada9b3f",
       "links": [
         {
           "href": "#main",
@@ -30284,7 +30284,7 @@
     "examples/beauty.html": {
       "title": "Makeup and appearance previews",
       "description": "Explore a look through small visual changes.",
-      "sha256": "7efc8c0a7deaadb69a83a19b176db5de4474061d179aaaab2054b41ea67445bd",
+      "sha256": "94201e0b51490f701b97c7f708531843e16d9df8a02380c296433c75cfa8784c",
       "links": [
         {
           "href": "#main",
@@ -30591,7 +30591,7 @@
     "examples/automotive.html": {
       "title": "Automotive design",
       "description": "Explore car shapes, colours and cabins.",
-      "sha256": "4b19835a2eef84619019cfe703bfb1ce395fe6f08cd8d820f71771c9c2440f61",
+      "sha256": "47cc5e43d9e3aa7ce2a4fa01e67c4ef6b8e523209631bb5b5894531b753045b7",
       "links": [
         {
           "href": "#main",
@@ -30899,7 +30899,7 @@
     "examples/genetics.html": {
       "title": "Genetics research",
       "description": "Prioritize candidates for an independent test.",
-      "sha256": "e6e26a18fece16b5cd53a5494378634d5f62c4061d5c9f4187e713feeefd8433",
+      "sha256": "322f76575a80e7474ef25f0853a268acaea2388485c1a85557ed0a5636fc9d84",
       "links": [
         {
           "href": "#main",
@@ -31207,7 +31207,7 @@
     "examples/models-3d.html": {
       "title": "3D assets and objects",
       "description": "Choose shapes that fit a project.",
-      "sha256": "c077f01fc27eb518dd239d6fa6f62b2538ab8fc6e0fe548dff7b2e6774163704",
+      "sha256": "685fe05e92b0e8906eef4ef0e40134c79fe9bc4b871099a0b3054895fe6546dc",
       "links": [
         {
           "href": "#main",
@@ -31515,7 +31515,7 @@
     "examples/recipes.html": {
       "title": "Recipes and meal choices",
       "description": "Learn taste within the ingredients you choose.",
-      "sha256": "b6e1a76563b4d13ab23bdba9fb8234fda3f45260934ae16bb80262a349d571ff",
+      "sha256": "2096ef897c0c8837b4944d1752f07f7f9afe5fe4507c802b4c6eb01824c3e5ef",
       "links": [
         {
           "href": "#main",
@@ -31823,7 +31823,7 @@
     "examples/video.html": {
       "title": "Video edits and effects",
       "description": "Learn which cuts and visual styles work.",
-      "sha256": "d5f7d5bd0796166f84d55d1e5bd2635316275a5ffae84d4d46e8bd47cd09e2b5",
+      "sha256": "8156bc20dcd3a12f24fe043801d7a86ad9e5b15af4c659a5e0e1dc4bcb8ffebc",
       "links": [
         {
           "href": "#main",
@@ -32131,7 +32131,7 @@
     "examples/voice.html": {
       "title": "Voice and narration style",
       "description": "Choose a comfortable pace and delivery.",
-      "sha256": "fce0abc93206db55e19690ff67249ddd6bee05e957dc859f7ffdf74a8bf01d90",
+      "sha256": "81683660c37508870cb2112c0dbf6a55f1b32899162e489acdff94c8d7058b1a",
       "links": [
         {
           "href": "#main",
@@ -32439,7 +32439,7 @@
     "examples/education.html": {
       "title": "Learning materials",
       "description": "Find explanations a learner finds useful.",
-      "sha256": "f69279947d4f85075ab8a52f4c41dc25ee392e6a2d08f51936525dff9f95b11c",
+      "sha256": "0897e64eac7ca4c1d801301266717a386864d00fdf7c0efdc09e90bc6333b3f7",
       "links": [
         {
           "href": "#main",
@@ -32747,7 +32747,7 @@
     "examples/shopping.html": {
       "title": "Product recommendations",
       "description": "Rank available products by personal taste.",
-      "sha256": "2fd0bf4c3ed8f69ed9f3ac957a3080cb3b87eaaa5a41198a648582df49e98a63",
+      "sha256": "38e89aec8b2ce8fc31e379029f32145f4b7065948f0512dfe63f099db2edebbf",
       "links": [
         {
           "href": "#main",
@@ -33055,7 +33055,7 @@
     "examples/proteins.html": {
       "title": "Protein research",
       "description": "Score candidates without treating scores as proof.",
-      "sha256": "877e52fc85a9b0c24ae79b42624e242929fb17f774955f2b19f1f86b91f96d03",
+      "sha256": "e91dde63b3e2e15689525f9b00d0f6ec45503cf07184cc50501f2fb9040c8574",
       "links": [
         {
           "href": "#main",
@@ -33363,7 +33363,7 @@
     "examples/interfaces.html": {
       "title": "Interface and layout choices",
       "description": "Learn which layouts someone finds usable.",
-      "sha256": "755b359ee4ee7d309d618504fee14bbb5a77ab2eb6d839e075530446ee99b627",
+      "sha256": "1659cc2937157e67f35650fea627d23abe6cf9c54e50083ee03490d774bce113",
       "links": [
         {
           "href": "#main",
@@ -33671,7 +33671,7 @@
     "examples/patient-preferences.html": {
       "title": "Patient preferences in approved options",
       "description": "Record what matters to a patient.",
-      "sha256": "a9067fc289db67ff8709a2ce1e40e5357a7f3fa291e1d90d7c58dc37e16d8642",
+      "sha256": "05c96dddcb5c9248ae4f344b301a1e416aeb8f37614c642c49a219a235e4ffdb",
       "links": [
         {
           "href": "#main",
@@ -33979,7 +33979,7 @@
     "examples/moderation.html": {
       "title": "Live chat moderation",
       "description": "Return an allow, block or review decision.",
-      "sha256": "c3b22570dc9d95dbe799ce8c94c5d6250791471860b64b69a54d78c562576960",
+      "sha256": "13bdd2ec583e3a5f6836f9fe5d84e71c266a405aabc4e00e647cd2c445354eb4",
       "links": [
         {
           "href": "#main",
@@ -34299,7 +34299,7 @@
     "examples/support.html": {
       "title": "Route customer requests",
       "description": "Send a request to the right queue.",
-      "sha256": "6b50b50e3003bc1dcb39b8c4c3bcd4dac5641e8898e32c2261bd2add15449bf7",
+      "sha256": "b98112c6d5cde3f5fbb5b3f4b7982dd78f6f2db974a91b8b8cce2fb9ec3cff7d",
       "links": [
         {
           "href": "#main",
@@ -34618,7 +34618,7 @@
     "examples/redaction.html": {
       "title": "Find text to redact",
       "description": "Mark spans instead of writing a new document.",
-      "sha256": "4238eb7ebe996b95fff15659ddecdd7a741374a3cbfd0d52460e3b733eac55cf",
+      "sha256": "947ff2f52865a1de0f201a7eeeeb8f986faeb046cf22a4a296b09aa8facd7511",
       "links": [
         {
           "href": "#main",
@@ -34914,7 +34914,7 @@
     "examples/receipts.html": {
       "title": "Choose a receipt total",
       "description": "Return the right amount from a short list.",
-      "sha256": "7a1cc0fc5c69764aeaf968ed99d779f0fc4b7af6f51fffbd48f0a9184a57a229",
+      "sha256": "85191c7500a2dfc9af18652fc31feda7d4816d6bbd8692ec42e272454b47446d",
       "links": [
         {
           "href": "#main",
@@ -35209,7 +35209,7 @@
     "examples/search.html": {
       "title": "Rank search results",
       "description": "Put useful matches near the top.",
-      "sha256": "52f93f29a2f330095fbc1a9e6aff26ea506de17fe689b0f61a16090090c5e516",
+      "sha256": "785a86a5b4ae2c6746e31dc573b8bbd71dafd40667aeddfec34acb7b3544a48d",
       "links": [
         {
           "href": "#main",
@@ -35518,7 +35518,7 @@
     "examples/game-moves.html": {
       "title": "Choose a game move",
       "description": "Return a direction on each turn.",
-      "sha256": "5cc78be2ea9f6ac34248a15cd7ee5cf999e12fa6552e337f459481eaa6af180e",
+      "sha256": "c134df4f73ab766d4709c0ee4f8173eb0c7f9ff540c78a6a2a79d2dc69784a11",
       "links": [
         {
           "href": "#main",
@@ -35840,7 +35840,7 @@
     "examples/inbox.html": {
       "title": "Sort an inbox",
       "description": "Separate receipts, requests and newsletters.",
-      "sha256": "3d1936df1c29c1fa0f9b84c5b157441bfe511dec4fd24102431901352465567e",
+      "sha256": "6f7a073fce0766a4fba599325956a41bb0e582f98ea0b2cad57b11fb31b3acf1",
       "links": [
         {
           "href": "#main",
@@ -36149,7 +36149,7 @@
     "examples/offline-commands.html": {
       "title": "Commands on a small device",
       "description": "Use a short path for familiar commands.",
-      "sha256": "b6caf33d1e5f7a24531acbc9a852f0f12061aa21bd13719153ecde6b8039a6f6",
+      "sha256": "9cd927310213f63e18d3ed568db5558ce38e934a18bc6a102210224a6f5dc8d6",
       "links": [
         {
           "href": "#main",
@@ -36458,7 +36458,7 @@
     "examples/desktop-actions.html": {
       "title": "Point to an app control",
       "description": "Find a button without writing coordinates.",
-      "sha256": "b4c0b005c0c2c0c36408db62b22538ef8357236db7b53ec77931318c24106df7",
+      "sha256": "30ea4bffa390e5b0838eaf8ad6109d97c6c89c806165ef3f28b145f47aa838f7",
       "links": [
         {
           "href": "#main",
@@ -36765,7 +36765,7 @@
     "examples/assistive-pointing.html": {
       "title": "Assistive pointing",
       "description": "Turn a requested control into a location.",
-      "sha256": "0882d909fb422de7cacf07f9991aa2a6922af724b58394344a2600a0b90ce540",
+      "sha256": "104530ffd2fa7ed8866b7deabb82422a919bf4bcfce1b14f8600e67b9e1936ca",
       "links": [
         {
           "href": "#main",
@@ -37060,7 +37060,7 @@
     "examples/ui-testing.html": {
       "title": "Check changing interfaces",
       "description": "Locate a control after a layout changes.",
-      "sha256": "ba6a62c45821836bbcb4a87df800ae49027e47545ac880cd38cd2175f9ff5ee7",
+      "sha256": "c5fce7a1a65db9e68e93b1eb29d0a9ced4d659d2d429a2b78c2924ccd399e6e7",
       "links": [
         {
           "href": "#main",
@@ -37355,7 +37355,7 @@
     "examples/image-annotation.html": {
       "title": "Suggest an image annotation",
       "description": "Mark a starting point for a human editor.",
-      "sha256": "88a168c111531ddffb9326d8b436b499c081b81f5e27586d4e1a3934972c1975",
+      "sha256": "94f864932c6b60a948a6d648c83d574221600ef5492a45483b3768a797dfbd4d",
       "links": [
         {
           "href": "#main",
@@ -37651,7 +37651,7 @@
     "examples/ecg.html": {
       "title": "ECG labels without a written report",
       "description": "Return structured predictions from a heart trace.",
-      "sha256": "870c56f8693db7a499e79d677be09d9857948a5ec17814831d74b90b6d141605",
+      "sha256": "905b0a85cf4c887d9f3f139c7784fa765547f03586e3c99e833f36344817bae9",
       "links": [
         {
           "href": "#main",
@@ -37958,7 +37958,7 @@
     "examples/ecg-quality.html": {
       "title": "Check ECG recording quality",
       "description": "Flag an unusable trace for another recording.",
-      "sha256": "a0fa461f0bd62db72c96473ff88d422ab52a2670c268c4c8901eec3e7ac8a7b2",
+      "sha256": "787e9fc306114d3441333fee82820be53ebd40f32062aebd08fee95dafd9e4f3",
       "links": [
         {
           "href": "#main",
@@ -38254,7 +38254,7 @@
     "examples/mri-segmentation.html": {
       "title": "Mark regions in an MRI",
       "description": "Return a mask that a reviewer can inspect.",
-      "sha256": "ba4426bae96d774ecf3f7c4a5eb4c080f0e1c1c3a141c23a1ae060e946e1f89d",
+      "sha256": "7617453fedea52d29426e4d914f27f95e943e8144f112bb507657c5ad6f3046d",
       "links": [
         {
           "href": "#main",
@@ -38563,7 +38563,7 @@
     "examples/mri-reconstruction.html": {
       "title": "MRI reconstruction with fewer model steps",
       "description": "Study when further reconstruction stops helping.",
-      "sha256": "6c3202894d479a77746d4c807d9ba671013245ed6c64dd76c94518cce9c475a5",
+      "sha256": "d36ecac54b6b5e8493104f443c2c14005e1ac9b24cec0557567386103cc410b6",
       "links": [
         {
           "href": "#main",
@@ -38846,7 +38846,7 @@
     "examples/eeg-sleep.html": {
       "title": "EEG sleep-stage labels",
       "description": "Classify recorded sleep segments directly.",
-      "sha256": "8f5f424a76523bb1b63c0b0132fe09eda54a7f7fbe9d5b6cb2e62aa285a71e1d",
+      "sha256": "024a00d65809642fd9688c880a33934f54174671d590fce56dcc425817d8c192",
       "links": [
         {
           "href": "#main",
@@ -39142,7 +39142,7 @@
     "examples/medical-annotation.html": {
       "title": "Medical-image landmarks and measurements",
       "description": "Suggest editable points for a specialist.",
-      "sha256": "cbbf0d4eb55237d40a2b07a45c0ab770d4b231d879ab6e58bde1d8dbba206142",
+      "sha256": "3072d29683a8dff13b977769bb341cb092c61e061e7c11e117af59c260c2177f",
       "links": [
         {
           "href": "#main",
@@ -39437,7 +39437,7 @@
     "examples/model-routing.html": {
       "title": "Route between small and large models",
       "description": "Use the larger model when it adds value.",
-      "sha256": "4e2dcc9300c11cda3eaa0a4061edcb2c3fb901ab5d34cb852291acc4f48bd27b",
+      "sha256": "a80abaa43aa9334c397ea6b0539fe8fc5b4ae8a0467e282d2deac6e590133cc6",
       "links": [
         {
           "href": "#main",
@@ -39757,7 +39757,7 @@
     "examples/faster-llm.html": {
       "title": "Get an LLM result sooner",
       "description": "Use less model work before returning an answer.",
-      "sha256": "2df84d0faedbcee47573dd337604aaa0c1fb96bde8f235b2d716694820a48f5d",
+      "sha256": "750fb095f2ed392a2772fbf6d11c429f96fd580c4d974ce303c4b8a61906e7b7",
       "links": [
         {
           "href": "#main",
@@ -40064,7 +40064,7 @@
     "examples/image-safety.html": {
       "title": "Stop an unsafe image before it finishes",
       "description": "Check during generation and cancel early.",
-      "sha256": "da611bf65cc7fce78eef3899bb34c7761e137d627b0af2510486e5be530134af",
+      "sha256": "6a2914b2def0f48b046bcf98ec7bd65b401fb5ba2b230c47d8864a66841b5762",
       "links": [
         {
           "href": "#main",
@@ -40373,7 +40373,7 @@
     "examples/image-preferences.html": {
       "title": "Stop an image that misses your taste",
       "description": "Spend rendering time on more promising ideas.",
-      "sha256": "e4365b9925b0b68dea840dee9a36098ba8e707863e3047c64b8359b6992d6b5c",
+      "sha256": "30f1f0d27589afddf9f6824ba3e596a81a7aa5c355b87ae7a3882c8def6a402e",
       "links": [
         {
           "href": "#main",

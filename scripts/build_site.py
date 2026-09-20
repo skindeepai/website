@@ -48,12 +48,28 @@ def build():
         scripts = ''.join('<script src="' + url(s) + '" defer></script>' for s in p.get('scripts', []))
         topline = '<p class="page-status">' + escape(p['status']) + '</p>' if p.get('status') else ''
         header_note = 'Steve Seguin'
+        canonical = 'https://skindeep.ai/' + ('' if name == 'index.html' else name)
+        meta_title = p.get('meta_title', p['title'] + ' — SkinDeep Research')
+        meta_description = p.get('meta_description', p['description'])
+        share_image = 'https://skindeep.ai/images/skindeep-research-card.png'
+        share_alt = 'SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.'
+        structured = ''
+        if name == 'index.html':
+            structured = '<script type="application/ld+json">' + json.dumps({
+                '@context': 'https://schema.org', '@type': 'WebSite', 'name': 'SkinDeep',
+                'url': canonical, 'description': meta_description,
+                'creator': {'@type': 'Person', 'name': 'Steve Seguin'}
+            }, ensure_ascii=False).replace('<', '\u003c') + '</script>'
         html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(p['title'])} — SkinDeep Research</title><meta name="description" content="{escape(p['description'], quote=True)}">
-<link rel="canonical" href="https://skindeep.ai/{'' if name == 'index.html' else name}">
-<link rel="icon" type="image/svg+xml" href="{url('favicon-simple.svg')}">
-<meta property="og:title" content="{escape(p['title'], quote=True)} — SkinDeep Research"><meta property="og:description" content="{escape(p['description'], quote=True)}"><meta property="og:image" content="https://skindeep.ai/images/og-image.png">
+<title>{escape(meta_title)}</title><meta name="description" content="{escape(meta_description, quote=True)}">
+<link rel="canonical" href="{canonical}">
+<link rel="icon" type="image/png" sizes="16x16" href="{url('favicon.png')}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="{canonical}">
+<meta property="og:title" content="{escape(meta_title, quote=True)}"><meta property="og:description" content="{escape(meta_description, quote=True)}">
+<meta property="og:image" content="{share_image}"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{share_alt}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(meta_title, quote=True)}"><meta name="twitter:description" content="{escape(meta_description, quote=True)}"><meta name="twitter:image" content="{share_image}"><meta name="twitter:image:alt" content="{share_alt}">
+{structured}
 {extra_css}<link rel="stylesheet" href="{url('lab.css')}"><script src="{url('scripts/lab.js')}" defer></script>{scripts}
 </head><body class="lab-page {'demo-page' if name == 'demo.html' else 'home-page' if name == 'index.html' else ''}">
 <a class="skip-link" href="#main">Skip to content</a>

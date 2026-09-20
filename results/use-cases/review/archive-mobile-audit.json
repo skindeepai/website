@@ -1,0 +1,1176 @@
+{
+  "pages": 21,
+  "viewStates": 84,
+  "widths": [
+    320,
+    390
+  ],
+  "errors": [],
+  "rows": [
+    {
+      "name": "archive/2026-09/about.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/about.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/active-learning-strategies.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/active-learning-strategies.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/demo.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [
+        {
+          "element": "#reset-btn",
+          "text": "reset this model",
+          "height": 23.046875
+        }
+      ],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/demo.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [
+        {
+          "element": "#reset-btn",
+          "text": "reset this model",
+          "height": 23.046875
+        }
+      ],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/art.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/art.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/dating.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/dating.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/index.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/index.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/music.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/music.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/science.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/science.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/social-media.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/social-media.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/future-explorations.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 188,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.03125
+        },
+        {
+          "width": 232.28125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 44.328125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/future-explorations.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 188,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 55.03125
+        },
+        {
+          "width": 232.28125,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 44.328125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/getting-started.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/getting-started.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/history.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/history.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/how-it-works.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/how-it-works.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/index.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/index.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/investment-response.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/investment-response.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/landscape.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/landscape.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/multi-modal-preferences-deep-dive.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 256,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 49.375
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/multi-modal-preferences-deep-dive.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 256,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 49.375
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/roadmap.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/roadmap.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/sitemap.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/sitemap.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/vc-analysis.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/vc-analysis.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/whitepaper.html",
+      "width": 320,
+      "expanded": false,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 225.34375
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 109.46875
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 245.78125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/whitepaper.html",
+      "width": 320,
+      "expanded": true,
+      "documentWidth": 320,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 225.34375
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 109.46875
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 245.78125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/about.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/about.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/active-learning-strategies.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/active-learning-strategies.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/demo.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [
+        {
+          "element": "#reset-btn",
+          "text": "reset this model",
+          "height": 23.046875
+        }
+      ],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/demo.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [
+        {
+          "element": "#reset-btn",
+          "text": "reset this model",
+          "height": 23.046875
+        }
+      ],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/art.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/art.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/dating.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/dating.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/index.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/index.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/music.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/music.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/science.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/science.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/social-media.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/examples/social-media.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/future-explorations.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 258,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.09375
+        },
+        {
+          "width": 258,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 48.453125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/future-explorations.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 258,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 68.09375
+        },
+        {
+          "width": 258,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 48.453125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/getting-started.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/getting-started.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/history.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/history.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/how-it-works.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/how-it-works.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/index.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/index.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/investment-response.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/investment-response.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/landscape.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/landscape.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/multi-modal-preferences-deep-dive.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 326,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.734375
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/multi-modal-preferences-deep-dive.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 326,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 58.734375
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/roadmap.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/roadmap.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/sitemap.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/sitemap.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/vc-analysis.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/vc-analysis.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": []
+    },
+    {
+      "name": "archive/2026-09/whitepaper.html",
+      "width": 390,
+      "expanded": false,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 225.34375
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 109.46875
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 245.78125
+        }
+      ]
+    },
+    {
+      "name": "archive/2026-09/whitepaper.html",
+      "width": 390,
+      "expanded": true,
+      "documentWidth": 390,
+      "smallText": [],
+      "clippedText": [],
+      "clippedControls": [],
+      "tinyTargets": [],
+      "smallInputs": [],
+      "tables": [
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 225.34375
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 109.46875
+        },
+        {
+          "width": 500,
+          "scrollContainer": "div.table-scroll",
+          "minimumCell": 245.78125
+        }
+      ]
+    }
+  ],
+  "limits": "Headless Chromium CSS viewports; expanded details do not unlock gated demos or exercise downloaded models. Small inputs are potential iOS focus-zoom issues, not confirmed Safari failures."
+}

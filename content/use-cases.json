@@ -9,7 +9,7 @@
     {
       "id": "music", "title": "Music and playlists", "teaser": "Learn what you like to hear next.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
       "steps": ["Rate short clips", "Learn your taste", "Suggest another track"],
-      "scenario": "A listener likes sparse piano and skips busy percussion. A music app could rank existing tracks or suggest new clips with that pattern in mind. Game soundtracks and meditation playlists were also part of the original idea.",
+      "scenario": "A listener likes sparse piano and skips busy percussion. A music app could rank existing tracks or suggest new clips with that pattern in mind. A future version could start from a playlist you already like, then refine its suggestions with new ratings. Game soundtracks and meditation playlists were also original ideas.",
       "mechanism": "A small personal scorer learns from ratings. With a compatible generator, it could score or adjust the internal inputs before rendering a full audio clip. Another option is to represent existing tracks with an audio model and rank those tracks.",
       "check": "Compare blind listener choices against an ordinary playlist, including variety, unwanted repeats and the full cost of making audio. The lab has not validated an audio generator.",
       "legacy": "archive/2026-09/examples/music.html"
@@ -32,9 +32,9 @@
     {
       "id": "architecture", "title": "Architecture and interiors", "teaser": "Explore layouts and rooms that fit your taste.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "original-home",
       "steps": ["Rate rooms or plans", "Keep fixed constraints", "Suggest a new option"],
-      "scenario": "A homeowner could compare room layouts, materials or facade designs while keeping the room size and budget fixed. Residential layouts, commercial facades and urban planning appeared in the original application list.",
+      "scenario": "A homeowner could compare room layouts, materials or facade designs while keeping the room size and budget fixed. Several personal scorers could help a household find options they like together. Residential layouts, commercial facades and urban planning appeared in the original application list.",
       "mechanism": "A design model generates or represents options. A preference scorer ranks them, while independent rules keep dimensions and other requirements fixed. The scorer can guide appearance; it does not certify a building.",
-      "check": "Test whether people prefer the proposed options and whether every design still meets the specified constraints. Start with a room-layout task before making broader architecture claims."
+      "check": "Test whether people prefer the proposed options and whether every design still meets the specified constraints. For shared choices, check each person's satisfaction; a good average can hide one person always losing out. Start with a room-layout task before making broader architecture claims."
     },
     {
       "id": "stories", "title": "Stories and interactive fiction", "teaser": "Learn which style of story a reader enjoys.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
@@ -66,11 +66,11 @@
       "related": [["examples/game-moves.html", "Different task: choose the next move"]]
     },
     {
-      "id": "dating", "title": "Mutual visual preferences", "teaser": "Look for interest from both people.", "topics": ["preferences"], "group": "Personal choices", "origin": "original-home",
-      "steps": ["Rate generated faces", "Score both directions", "Choose whether to connect"],
-      "scenario": "The original dating proposal used ratings of generated faces to learn visual preferences, then considered whether two consenting people might find each other appealing. Each person would still decide whether to connect.",
-      "mechanism": "Each person has a preference scorer. Representations of real photos could be scored in both directions, rather than relying on a single popularity rating. This requires an encoder compatible with the representation used for training.",
-      "check": "Test mutual visual interest and privacy separately. Encoded photos and preference scores can reveal information; they are not automatically private. Visual appeal is not relationship compatibility, and the original face-generation demo was not a validated matching service.",
+      "id": "dating", "title": "Dating through mutual preferences", "teaser": "Rate generated faces. Reveal real profiles only by mutual agreement.", "topics": ["preferences"], "group": "Personal choices", "origin": "original-home",
+      "steps": ["Rate generated faces", "Find possible mutual interest", "Both agree to reveal profiles"],
+      "scenario": "Adults could rate clearly labelled generated faces instead of browsing real people's photos. The service would learn what each person likes, privately look for matching attributes among consenting members, and keep real profiles hidden until both people agree to an introduction.",
+      "mechanism": "Each person's small preference model would score the other member's photo representation. A promising score in both directions suggests a possible match, not consent. A compatible encoder must put real photos into the representation used to learn from generated faces. Members would supply their own photos privately; the service would not search the public web for faces.",
+      "check": "The goal is to avoid a public photo catalog for bots to scrape, with generated faces used only as rating examples, never as member identities. This remains a proposal: test whether synthetic-face preferences transfer to real people and whether both people want the introduction. Private photos and scores still need secure handling; identity checks are separate, and matching alone cannot prevent catfishing or copying a revealed photo. Visual interest does not establish relationship compatibility.",
       "legacy": "archive/2026-09/examples/dating.html"
     },
     {

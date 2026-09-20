@@ -34,7 +34,7 @@ Every named application card now has its own current page. The original generic 
 | Fashion Design | [Fashion and outfit choices](../examples/fashion.html) |
 | Material Science | [Material research](../examples/materials.html) |
 | Game Design | [Game levels and difficulty](../examples/games.html) |
-| Private Dating | [Mutual visual preferences](../examples/dating.html) |
+| Private Dating | [Dating through mutual preferences](../examples/dating.html) |
 | Zero-Prompt Social Media | [A feed without repeated prompting](../examples/social-media.html) |
 | News & Content Curation | [News and content curation](../examples/news.html) |
 | Beauty & Makeup | [Makeup and appearance previews](../examples/beauty.html) |
@@ -42,6 +42,14 @@ Every named application card now has its own current page. The original generic 
 | DNA & Genetics | [Genetics research](../examples/genetics.html) |
 
 The related historical material also supplies recipes, 3D objects, protein research, video, voice, education, shopping, interface design, healthcare preferences and engineering constraints. Each is retained as a separate, bounded proposal. The catalog does not repeat unsupported historical claims of universal compatibility, guaranteed privacy, perfect preferences or specific performance gains.
+
+## Historical value restored in the current wording
+
+The preference introduction now explains learning through examples when taste is hard to describe. How it works clarifies that the drawing renderer stays fixed while the small personal scorer changes. Music retains the proposal to start from existing playlists; architecture adds shared household choices, evaluated for each person. Dating now explains synthetic-face ratings, private scoring of consenting members, and profile reveal only by mutual agreement. Its intended privacy benefits are separated from unproven security and identity-verification claims.
+
+The [adversarial claims review](../results/use-cases/review/historical-value-review.md) records the useful ideas and rejected marketing claims. These additions fit existing pages and links; no new navigation category was needed.
+
+The current favicon is a byte-for-byte copy of `705fa7e:favicon.ico` (25 September 2019), served as `favicon.png` because the original file contains PNG data. The three-stripe pixel artwork is unchanged. Current pages use a new, code-rendered research sharing card, replacing the old card's unsupported ideal-result and universal timing language. Archived pages retain their historical metadata and artwork.
 
 ## How the topics connect
 
