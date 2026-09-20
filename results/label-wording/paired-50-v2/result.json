@@ -1,0 +1,113 @@
+{
+  "n": 50,
+  "passes": 3,
+  "calls": 600,
+  "token_ids": {
+    "SAFE": [
+      83788
+    ],
+    "OK": [
+      3925
+    ],
+    "BLOCK": [
+      39964
+    ]
+  },
+  "summaries": {
+    "direct_SAFE": {
+      "correct": 31,
+      "toxic_missed": 3,
+      "safe_blocked": 16,
+      "invalid": 0,
+      "mean_generated_tokens": 0.0,
+      "mean_input_tokens": 117.6,
+      "mean_ms": 738.3045253316716,
+      "pass_total_ms": [
+        36254.06659964938,
+        36499.73870028043,
+        37991.87349982094
+      ],
+      "repeat_predictions_match": true
+    },
+    "direct_OK": {
+      "correct": 26,
+      "toxic_missed": 1,
+      "safe_blocked": 23,
+      "invalid": 0,
+      "mean_generated_tokens": 0.0,
+      "mean_input_tokens": 117.6,
+      "mean_ms": 733.9369359973352,
+      "pass_total_ms": [
+        36069.929899822455,
+        37086.27969986992,
+        36934.33079990791
+      ],
+      "repeat_predictions_match": true
+    },
+    "generated_SAFE": {
+      "correct": 27,
+      "toxic_missed": 5,
+      "safe_blocked": 14,
+      "invalid": 6,
+      "mean_generated_tokens": 2.72,
+      "mean_input_tokens": 117.6,
+      "mean_ms": 1013.9802879991477,
+      "pass_total_ms": [
+        50391.28100022208,
+        50750.20499981474,
+        50955.55719983531
+      ],
+      "repeat_predictions_match": true
+    },
+    "generated_OK": {
+      "correct": 25,
+      "toxic_missed": 1,
+      "safe_blocked": 23,
+      "invalid": 2,
+      "mean_generated_tokens": 2.24,
+      "mean_input_tokens": 117.6,
+      "mean_ms": 937.0838093299731,
+      "pass_total_ms": [
+        45827.50789972488,
+        46990.43489975156,
+        47744.628600019496
+      ],
+      "repeat_predictions_match": true
+    }
+  },
+  "comparisons": {
+    "direct": {
+      "ok_corrected": 3,
+      "ok_added_errors": 8,
+      "changed": 11,
+      "accuracy_change_points": -10.0,
+      "accuracy_change_95_bootstrap_points": [
+        -22.0,
+        2.0
+      ],
+      "paired_exact_p": 0.2265625,
+      "ok_time_change_percent": -0.591570169825828,
+      "ok_time_change_95_bootstrap_percent": [
+        -1.8633392832693871,
+        0.4777557416663885
+      ]
+    },
+    "generated": {
+      "ok_corrected": 5,
+      "ok_added_errors": 7,
+      "changed": 14,
+      "accuracy_change_points": -4.0,
+      "accuracy_change_95_bootstrap_points": [
+        -18.0,
+        10.0
+      ],
+      "paired_exact_p": 0.7744140625,
+      "ok_time_change_percent": -7.583626583206248,
+      "ok_time_change_95_bootstrap_percent": [
+        -13.660409374057211,
+        -1.8967246894049978
+      ]
+    }
+  },
+  "protocol_sha256": "6a5d5ca00fa4797e370d67b58feda0defc5172be0a2b85f5954f2a417a2adcac"
+}

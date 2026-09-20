@@ -1,0 +1,15 @@
+{
+  "createdUTC": "2026-09-20T16:35:54.420Z",
+  "analysisSourceSha256": "dfc82c948c09d07513a144d329353a2fed33065ed9ec304b7382f05654a78cee",
+  "parserSourceSha256": "5ad43a0d33416cd1c13e9115c2c33609a1591da1ff64b8c3d385baf8e351277e",
+  "sourceRecordsSha256": "f8ff022caab20be974d7f45067fa61bc1e50f2c9aa9d218062b88f239786f521",
+  "sourceResultSha256": "dff22c618f0553092f0071642fd47b7ef4e0d4b3644d24d9aef05badb3d0b64b",
+  "parsers": [
+    "supplied",
+    "exactWithFallback",
+    "enhanced"
+  ],
+  "policy": "Unparsed outputs block. Report parse failure separately from correctness.",
+  "timing": "Separate repeated-string Node microbenchmark; not added to model timers or claimed as fresh end-to-end latency.",
+  "limitation": "One shared set of generated outputs per wording, no parser-specific generation. Reused exploratory data."
+}

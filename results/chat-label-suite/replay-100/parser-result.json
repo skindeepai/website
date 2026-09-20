@@ -1,0 +1,174 @@
+{
+  "numericChecks": 3900,
+  "numericPredictionsChanged": 0,
+  "generatedCalls": 200,
+  "uniqueMessages": 100,
+  "summaries": {
+    "supplied": {
+      "SAFE": {
+        "n": 100,
+        "correct": 56,
+        "parsed": 90,
+        "parsedCorrect": 50,
+        "fallbackBlocked": 10,
+        "fallbackCorrect": 6,
+        "fallbackFalseBlocks": 4,
+        "recoveredInvalid": 1,
+        "recoveredCorrect": 1,
+        "toxicMissed": 5,
+        "safeBlocked": 39,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.000187225,
+        "modelMeanMs": 919.5485659997212
+      },
+      "OK": {
+        "n": 100,
+        "correct": 50,
+        "parsed": 96,
+        "parsedCorrect": 47,
+        "fallbackBlocked": 4,
+        "fallbackCorrect": 3,
+        "fallbackFalseBlocks": 1,
+        "recoveredInvalid": 1,
+        "recoveredCorrect": 1,
+        "toxicMissed": 1,
+        "safeBlocked": 49,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.00018276299999999998,
+        "modelMeanMs": 847.6626150024822
+      }
+    },
+    "exactWithFallback": {
+      "SAFE": {
+        "n": 100,
+        "correct": 56,
+        "parsed": 89,
+        "parsedCorrect": 49,
+        "fallbackBlocked": 11,
+        "fallbackCorrect": 7,
+        "fallbackFalseBlocks": 4,
+        "recoveredInvalid": 0,
+        "recoveredCorrect": 0,
+        "toxicMissed": 5,
+        "safeBlocked": 39,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.0000848,
+        "modelMeanMs": 919.5485659997212
+      },
+      "OK": {
+        "n": 100,
+        "correct": 50,
+        "parsed": 95,
+        "parsedCorrect": 46,
+        "fallbackBlocked": 5,
+        "fallbackCorrect": 4,
+        "fallbackFalseBlocks": 1,
+        "recoveredInvalid": 0,
+        "recoveredCorrect": 0,
+        "toxicMissed": 1,
+        "safeBlocked": 49,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.000086134,
+        "modelMeanMs": 847.6626150024822
+      }
+    },
+    "enhanced": {
+      "SAFE": {
+        "n": 100,
+        "correct": 56,
+        "parsed": 89,
+        "parsedCorrect": 49,
+        "fallbackBlocked": 11,
+        "fallbackCorrect": 7,
+        "fallbackFalseBlocks": 4,
+        "recoveredInvalid": 0,
+        "recoveredCorrect": 0,
+        "toxicMissed": 5,
+        "safeBlocked": 39,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.001015351,
+        "modelMeanMs": 919.5485659997212
+      },
+      "OK": {
+        "n": 100,
+        "correct": 50,
+        "parsed": 96,
+        "parsedCorrect": 47,
+        "fallbackBlocked": 4,
+        "fallbackCorrect": 3,
+        "fallbackFalseBlocks": 1,
+        "recoveredInvalid": 1,
+        "recoveredCorrect": 1,
+        "toxicMissed": 1,
+        "safeBlocked": 49,
+        "changesFromExactFallback": 0,
+        "correctedFromExactFallback": 0,
+        "addedErrorsFromExactFallback": 0,
+        "parserMedianMs": 0.000936764,
+        "modelMeanMs": 847.6626150024822
+      }
+    }
+  },
+  "promptComparisons": {
+    "full": {
+      "changed": 62,
+      "okCorrected": 18,
+      "okAddedErrors": 44,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    },
+    "fixed12": {
+      "changed": 6,
+      "okCorrected": 6,
+      "okAddedErrors": 0,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    },
+    "learned": {
+      "changed": 28,
+      "okCorrected": 10,
+      "okAddedErrors": 18,
+      "changedDepth": 11,
+      "pairedInputLengthsEqual": true
+    },
+    "cascade": {
+      "changed": 27,
+      "okCorrected": 7,
+      "okAddedErrors": 20,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    },
+    "distill": {
+      "changed": 58,
+      "okCorrected": 14,
+      "okAddedErrors": 44,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    },
+    "direct": {
+      "changed": 18,
+      "okCorrected": 5,
+      "okAddedErrors": 13,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    },
+    "generated": {
+      "changed": 22,
+      "okCorrected": 8,
+      "okAddedErrors": 11,
+      "changedDepth": 0,
+      "pairedInputLengthsEqual": true
+    }
+  },
+  "interpretation": "Numeric predictions are already enums. Prompt-word changes are a separate intervention. Successful parsing and default blocking are reported separately."
+}

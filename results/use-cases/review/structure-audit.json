@@ -1,0 +1,36 @@
+{
+  "scope": "Post-review mobile checks; no model inference, clinical validation, or external destination verification.",
+  "viewport": {
+    "width": 390,
+    "height": 900
+  },
+  "checks": [
+    {
+      "page": "decisions.html",
+      "height": 2523,
+      "scrollWidth": 390,
+      "visibleTeasers": 4,
+      "moreInitiallyClosed": true,
+      "disclosureToggle": "passed"
+    },
+    {
+      "page": "preferences.html",
+      "height": 2067,
+      "scrollWidth": 390,
+      "visibleTeasers": 6,
+      "moreInitiallyClosed": true,
+      "disclosureToggle": "passed"
+    },
+    {
+      "page": "examples/ecg.html",
+      "breadcrumbDestination": "examples/index.html#decisions",
+      "roundtrip": "passed"
+    },
+    {
+      "page": "examples/model-routing.html",
+      "breadcrumbDestination": "examples/index.html#adaptive",
+      "roundtrip": "passed"
+    }
+  ],
+  "result": "passed"
+}

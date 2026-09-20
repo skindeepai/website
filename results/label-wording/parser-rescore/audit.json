@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checks": [
+    "parser and analysis source hashes",
+    "separate fallback and parsed accuracy",
+    "confusion-count arithmetic"
+  ],
+  "paired_comparisons": {
+    "supplied": {
+      "ok_corrected": 4,
+      "ok_added_errors": 7,
+      "paired_exact_p": 0.548828125
+    },
+    "exactWithFallback": {
+      "ok_corrected": 4,
+      "ok_added_errors": 7,
+      "paired_exact_p": 0.548828125
+    },
+    "enhanced": {
+      "ok_corrected": 4,
+      "ok_added_errors": 7,
+      "paired_exact_p": 0.548828125
+    }
+  }
+}

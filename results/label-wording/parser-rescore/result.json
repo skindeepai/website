@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "uniqueMessages": 50,
+  "savedModelCalls": 300,
+  "diagnosticCases": 33,
+  "summary": {
+    "supplied": {
+      "SAFE": {
+        "n": 50,
+        "correct": 29,
+        "parsed": 44,
+        "correctAmongParsed": 27,
+        "fallbackBlocked": 6,
+        "fallbackCorrect": 2,
+        "fallbackFalseBlocks": 4,
+        "toxicMissed": 3,
+        "safeBlocked": 18,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 1013.9802879991477,
+        "parserMedianMs": 0.000188972
+      },
+      "OK": {
+        "n": 50,
+        "correct": 26,
+        "parsed": 48,
+        "correctAmongParsed": 25,
+        "fallbackBlocked": 2,
+        "fallbackCorrect": 1,
+        "fallbackFalseBlocks": 1,
+        "toxicMissed": 0,
+        "safeBlocked": 24,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 937.0838093299731,
+        "parserMedianMs": 0.000184386
+      }
+    },
+    "exactWithFallback": {
+      "SAFE": {
+        "n": 50,
+        "correct": 29,
+        "parsed": 44,
+        "correctAmongParsed": 27,
+        "fallbackBlocked": 6,
+        "fallbackCorrect": 2,
+        "fallbackFalseBlocks": 4,
+        "toxicMissed": 3,
+        "safeBlocked": 18,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 1013.9802879991477,
+        "parserMedianMs": 0.000077508
+      },
+      "OK": {
+        "n": 50,
+        "correct": 26,
+        "parsed": 48,
+        "correctAmongParsed": 25,
+        "fallbackBlocked": 2,
+        "fallbackCorrect": 1,
+        "fallbackFalseBlocks": 1,
+        "toxicMissed": 0,
+        "safeBlocked": 24,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 937.0838093299731,
+        "parserMedianMs": 0.00007740999999999999
+      }
+    },
+    "enhanced": {
+      "SAFE": {
+        "n": 50,
+        "correct": 29,
+        "parsed": 44,
+        "correctAmongParsed": 27,
+        "fallbackBlocked": 6,
+        "fallbackCorrect": 2,
+        "fallbackFalseBlocks": 4,
+        "toxicMissed": 3,
+        "safeBlocked": 18,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 1013.9802879991477,
+        "parserMedianMs": 0.00084623
+      },
+      "OK": {
+        "n": 50,
+        "correct": 26,
+        "parsed": 48,
+        "correctAmongParsed": 25,
+        "fallbackBlocked": 2,
+        "fallbackCorrect": 1,
+        "fallbackFalseBlocks": 1,
+        "toxicMissed": 0,
+        "safeBlocked": 24,
+        "recoveredInvalid": 0,
+        "recordedModelMeanMs": 937.0838093299731,
+        "parserMedianMs": 0.00089547
+      }
+    }
+  },
+  "interpretation": "A correct default block on an unparsed toxic message is policy fallback, not a recovered model decision. Same recorded model timings; parser cost measured separately."
+}

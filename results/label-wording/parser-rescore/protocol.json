@@ -1,0 +1,252 @@
+{
+  "createdUTC": "2026-09-20T16:11:27.904Z",
+  "sourceRecordsSha256": "b8b8d14c54f2572923ffda85dfb697645c31794d0847484f1f6728a433d42695",
+  "sourceSummarySha256": "c8da9e6c5a9aa088ca35ce7d728b76342a08c2bda14b888c07fc0da576ef3d3f",
+  "parserSourceSha256": "5ad43a0d33416cd1c13e9115c2c33609a1591da1ff64b8c3d385baf8e351277e",
+  "analysisSourceSha256": "16f06a953c1d594d1cd86bce1ce16c23fdbe49fb12a0c50c152850547f353dd9",
+  "scope": "Post-hoc parsing of unchanged outputs; no model rerun, retraining or new accuracy sample.",
+  "parsers": [
+    "exactWithFallback",
+    "supplied",
+    "enhanced"
+  ],
+  "policy": "Unparsed responses block, including empty output. parseOk remains false.",
+  "diagnostics": [
+    {
+      "output": "OK",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "BLOCK",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": " safe ",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "ALLOW",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "REJECT",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "**SAFE**",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "`BLOCK`",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "\"OK\"",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "SAFE.",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "{\"label\":\"SAFE\"}",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "```json\n{\"label\":\"BLOCK\"}\n```",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "Decision: OK",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "This message is safe.",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "This message is not safe.",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "not OK",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "Do not allow",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "Do not block",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "not unsafe",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "SAFE because it is a greeting",
+      "expected": {
+        "blocked": false,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "BLOCK: threatening language",
+      "expected": {
+        "blocked": true,
+        "parseOk": true
+      }
+    },
+    {
+      "output": "SAFE. Actually BLOCK.",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "BLOCK or OK",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "This contains the word SAFE",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "The message says \"OK\" but is abusive",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "I cannot decide if this is safe",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "not safe, but maybe OK",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "YES",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "NO",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "{\"label\":\"BLOCK\",\"label\":\"OK\"}",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "{\"label\":\"OK\",\"decision\":\"BLOCK\"}",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "Certainly! Here is an introduction",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    },
+    {
+      "output": "OK: maybe unsafe",
+      "expected": {
+        "blocked": true,
+        "parseOk": false
+      }
+    }
+  ],
+  "limitations": [
+    "Outputs were already inspected before parser design. These cases are implementation checks, not generalization evidence.",
+    "Original generated outputs were capped at eight tokens. A later verdict beyond that cap cannot be recovered.",
+    "50 unique messages, three repeats; accuracy counts the first pass only. Parser overhead is timed separately from the saved inference."
+  ]
+}

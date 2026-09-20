@@ -37,3 +37,7 @@ Completed work includes actual decision timing, model fallback, replay checks, c
 | X02 | Partial reproduction | Separate implementation and published runtime replayed saved predictions and exits. [Record 1](../results/reproduction/result.json) [Record 2](../results/reproduction-release/result.json) | No second-hardware replication, cross-model transfer or full cost study. |
 
 [Detailed study designs](../EXPERIMENTS.md). The untested items are retained as scope limits, not advertised as forthcoming features or silently marked done.
+
+## Additional checks and lessons
+
+**Label wording and tolerant parsing:** tested SAFE/OK, alternate output words and defensive parsing. Parsing did not improve decisions over exact parsing with the same blocking fallback; prompt changes were inconsistent across classifiers. No general performance improvement or default change resulted. [100-message replay and evidence](chat-label-suite.md) · [Earlier 50-message wording test](label-wording.md) · [Parser diagnostics](label-parser.md).

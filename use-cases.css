@@ -1,0 +1,12 @@
+/* Only the application teasers and their compact illustrative workflows. */
+.use-case-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;padding:0;margin:12px 0 20px;max-width:780px}
+.use-case-list li{margin:0;padding:12px 0;border-bottom:1px solid var(--line);min-width:0;break-inside:avoid}
+.use-case-list a{display:block;font-weight:600;text-decoration:none;line-height:1.4;padding-block:3px}
+.use-case-list a:hover{text-decoration:underline}
+.use-case-list span{display:block;color:var(--muted);font-size:.9rem;line-height:1.5;margin-top:3px}
+.use-case-group h3{font-size:1rem;letter-spacing:0;margin:24px 0 8px}
+#use-cases{margin-block:28px;scroll-margin-top:100px}
+#use-cases>p{max-width:780px}
+.more-use-cases{max-width:780px}
+.use-case-flow{max-width:620px}
+@media(max-width:600px){.use-case-list{grid-template-columns:minmax(0,1fr)}.use-case-list li{padding-block:10px}}

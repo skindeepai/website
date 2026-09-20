@@ -2,7 +2,7 @@
 
 The findings below describe the **before** snapshot: commit `a915d52` plus the menu cleanup. The [before inventory](../results/navigation-audit/before.json) preserves that state. This is a local audit, not a production crawl.
 
-The approved workflow has now been implemented. The [interactive map](navigation-map.html) and [current inventory](navigation-map.json) show the updated 70-page site, including mode-specific links. Demos now retain their chosen mode, link to the matching study, and provide a route back from that study. The sitemap is complete, and the missing preference, screenshot, maze and task-result connections are repaired. Two focused browser-result pages separate actual browser evidence from related Python/Qwen studies. Wider viewer/search-page mergers remain optional follow-up work.
+The approved workflow has now been implemented. The [interactive map](navigation-map.html) and [current inventory](navigation-map.json) show the current site, including mode-specific links. Demos now retain their chosen mode, link to the matching study, and provide a route back from that study. The sitemap is complete, and the missing preference, screenshot, maze and task-result connections are repaired. Two focused browser-result pages separate actual browser evidence from related Python/Qwen studies. Wider viewer/search-page mergers remain optional follow-up work.
 
 **The main problem is missing context between pages, not an inability to reach them.** A visitor can reach every page, but often has to go back through a general listing to find the relevant experiment, newer evidence, or another version of the same demo.
 

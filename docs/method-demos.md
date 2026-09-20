@@ -1,6 +1,6 @@
 # Live method and task demos
 
-Every topic and measured method has a direct, labelled entry point. [The live demo directory](../demo-directory.html) groups them; [the coverage map](../content/demo-coverage.json) records all 43 page-to-demo links. Historical investment/archive pages are not recast as working products.
+Every topic and measured method has a direct, labelled entry point. [The live demo directory](../demo-directory.html) groups them; [the coverage map](../content/demo-coverage.json) records the labelled page-to-demo links. Proposed use cases link to related demonstrations, with differences stated beside the link; recorded examples are identified separately. Historical investment/archive pages are not recast as working products.
 
 ## What actually runs
 

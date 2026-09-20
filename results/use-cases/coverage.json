@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "use_cases": 46,
+  "topic_case_round_trips": 59,
+  "original_application_cards": 14,
+  "historical_source_commit": "caadd362247dcaf821ab20e8b4d9fe91d21a9766",
+  "historical_source_sha256": "b84042b99c1957ddcd860a6b1126111c120ee65750444983af174672739fcd50",
+  "historical_coverage": [
+    {
+      "title": "Music Generation",
+      "page": "examples/music.html"
+    },
+    {
+      "title": "Art & Design",
+      "page": "examples/art.html"
+    },
+    {
+      "title": "Drug Discovery",
+      "page": "examples/molecules.html"
+    },
+    {
+      "title": "Architecture",
+      "page": "examples/architecture.html"
+    },
+    {
+      "title": "Story Generation",
+      "page": "examples/stories.html"
+    },
+    {
+      "title": "Fashion Design",
+      "page": "examples/fashion.html"
+    },
+    {
+      "title": "Material Science",
+      "page": "examples/materials.html"
+    },
+    {
+      "title": "Game Design",
+      "page": "examples/games.html"
+    },
+    {
+      "title": "Private Dating",
+      "page": "examples/dating.html"
+    },
+    {
+      "title": "Zero-Prompt Social Media",
+      "page": "examples/social-media.html"
+    },
+    {
+      "title": "News & Content Curation",
+      "page": "examples/news.html"
+    },
+    {
+      "title": "Beauty & Makeup",
+      "page": "examples/beauty.html"
+    },
+    {
+      "title": "Automotive Design",
+      "page": "examples/automotive.html"
+    },
+    {
+      "title": "DNA & Genetics",
+      "page": "examples/genetics.html"
+    },
+    {
+      "title": "Your Application",
+      "page": "getting-started.html"
+    }
+  ],
+  "medical_proposals": 7,
+  "mapped_demo_links": 75,
+  "checks": [
+    "Every original application has a dedicated preference page",
+    "Every topic teaser has a matching case and return route",
+    "All case links and local fragments resolve",
+    "Cross-topic cases use a single canonical page",
+    "Medical proposals do not advertise a clinical demo",
+    "Parser experiment remains in research notes"
+  ],
+  "limitations": "Static content and route audit; no application efficacy or medical performance validation."
+}

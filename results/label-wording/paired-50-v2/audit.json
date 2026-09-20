@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "calls": 600,
+  "unique_messages": 50,
+  "label_counts": {
+    "benign": 25,
+    "toxic": 25
+  },
+  "checks": [
+    "source and protocol hashes",
+    "only allowed-label wording differs",
+    "single-token labels",
+    "exact preregistered order and sample IDs",
+    "equal paired input lengths",
+    "no duplicate calls",
+    "predictions agree with logits or raw replies",
+    "timing and accuracy arithmetic"
+  ],
+  "result_sha256": "c8da9e6c5a9aa088ca35ce7d728b76342a08c2bda14b888c07fc0da576ef3d3f"
+}

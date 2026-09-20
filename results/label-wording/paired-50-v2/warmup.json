@@ -1,0 +1,165 @@
+{
+  "load_seconds": 1.0362011000397615,
+  "rows": [
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "SAFE",
+      "mode": "direct",
+      "prediction": 0,
+      "correct": true,
+      "output": "SAFE",
+      "generated_tokens": [],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": [
+        25.365623474121094,
+        22.41136360168457
+      ],
+      "preparation_ms": 11.035499977879226,
+      "inference_and_readout_ms": 471.4338000048883,
+      "total_ms": 482.46929998276755
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "OK",
+      "mode": "direct",
+      "prediction": 0,
+      "correct": true,
+      "output": "OK",
+      "generated_tokens": [],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": [
+        25.562633514404297,
+        25.123546600341797
+      ],
+      "preparation_ms": 0.7846999797038734,
+      "inference_and_readout_ms": 387.1772999991663,
+      "total_ms": 387.96199997887015
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "SAFE",
+      "mode": "generated",
+      "prediction": 0,
+      "correct": true,
+      "output": "SAFE",
+      "generated_tokens": [
+        83788,
+        151645
+      ],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": null,
+      "preparation_ms": 0.5649999948218465,
+      "inference_and_readout_ms": 594.8379000183195,
+      "total_ms": 595.4029000131413
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "OK",
+      "mode": "generated",
+      "prediction": 0,
+      "correct": true,
+      "output": "OK",
+      "generated_tokens": [
+        3925,
+        151645
+      ],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": null,
+      "preparation_ms": 0.590900017414242,
+      "inference_and_readout_ms": 578.8217000081204,
+      "total_ms": 579.4126000255346
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "SAFE",
+      "mode": "direct",
+      "prediction": 0,
+      "correct": true,
+      "output": "SAFE",
+      "generated_tokens": [],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": [
+        25.365623474121094,
+        22.41136360168457
+      ],
+      "preparation_ms": 0.6107999943196774,
+      "inference_and_readout_ms": 455.60200000181794,
+      "total_ms": 456.2127999961376
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "OK",
+      "mode": "direct",
+      "prediction": 0,
+      "correct": true,
+      "output": "OK",
+      "generated_tokens": [],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": [
+        25.562633514404297,
+        25.123546600341797
+      ],
+      "preparation_ms": 0.666600011754781,
+      "inference_and_readout_ms": 448.89850000618026,
+      "total_ms": 449.56510001793504
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "SAFE",
+      "mode": "generated",
+      "prediction": 0,
+      "correct": true,
+      "output": "SAFE",
+      "generated_tokens": [
+        83788,
+        151645
+      ],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": null,
+      "preparation_ms": 0.8617999847047031,
+      "inference_and_readout_ms": 609.485000022687,
+      "total_ms": 610.3468000073917
+    },
+    {
+      "id": "warmup",
+      "expected": 0,
+      "allow": "OK",
+      "mode": "generated",
+      "prediction": 0,
+      "correct": true,
+      "output": "OK",
+      "generated_tokens": [
+        3925,
+        151645
+      ],
+      "input_tokens": 65,
+      "original_message_tokens": 6,
+      "truncated": false,
+      "scores": null,
+      "preparation_ms": 0.6160999764688313,
+      "inference_and_readout_ms": 598.9030000055209,
+      "total_ms": 599.5190999819897
+    }
+  ]
+}

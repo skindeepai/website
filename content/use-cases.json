@@ -1,0 +1,376 @@
+{
+  "topics": {
+    "preferences": {"page": "preferences.html", "title": "Learning what you like", "intro": "Learn from ratings to rank choices, suggest something new, or make a small edit. These are possible applications; the current demo teaches the loop using drawings."},
+    "decisions": {"page": "decisions.html", "title": "Decisions without text", "intro": "When an app needs a category, score or action, a small output head can return it directly. Some cases have narrow prototypes; others are proposals."},
+    "coordinates": {"page": "coordinates.html", "title": "Finding where to click", "intro": "Return a location an app can use. Finding the point and safely carrying out the action are separate tasks."},
+    "adaptive": {"page": "adaptive.html", "title": "Stopping early", "intro": "Choose a smaller model, produce a result with fewer steps, or cancel a generation that is going wrong. These are different ways to save work; each needs its own quality and timing test."}
+  },
+  "cases": [
+    {
+      "id": "music", "title": "Music and playlists", "teaser": "Learn what you like to hear next.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
+      "steps": ["Rate short clips", "Learn your taste", "Suggest another track"],
+      "scenario": "A listener likes sparse piano and skips busy percussion. A music app could rank existing tracks or suggest new clips with that pattern in mind. Game soundtracks and meditation playlists were also part of the original idea.",
+      "mechanism": "A small personal scorer learns from ratings. With a compatible generator, it could score or adjust the internal inputs before rendering a full audio clip. Another option is to represent existing tracks with an audio model and rank those tracks.",
+      "check": "Compare blind listener choices against an ordinary playlist, including variety, unwanted repeats and the full cost of making audio. The lab has not validated an audio generator.",
+      "legacy": "archive/2026-09/examples/music.html"
+    },
+    {
+      "id": "art", "title": "Art and visual design", "teaser": "Choose a direction by rating examples.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
+      "steps": ["Compare designs", "Rate the options", "Suggest a variation"],
+      "scenario": "A designer could choose between poster, logo or portrait variations instead of repeatedly describing a style. The original site also proposed digital-art and NFT collections; the useful task is choosing the artwork, regardless of how it is distributed.",
+      "mechanism": "With a compatible generator, each rated image has known internal inputs. A small scorer learns from those inputs, then selects or adjusts them before rendering the next image. Ranking already-made images is another option, with a different rendering cost.",
+      "check": "Ask people to choose between unseen designs without seeing the predicted scores. Measure preference, variety and edit quality, not just how highly the classifier rates its own suggestions.",
+      "legacy": "archive/2026-09/examples/art.html"
+    },
+    {
+      "id": "molecules", "title": "Molecule and drug research", "teaser": "Rank research candidates against a stated goal.", "topics": ["preferences"], "group": "Research and engineering", "origin": "original-home",
+      "steps": ["Candidate structures", "Score desired properties", "Choose what to test"],
+      "scenario": "A research tool could help shortlist molecular candidates for further evaluation. The older site proposed drug discovery; this remains a research application, not a demonstrated treatment-design system.",
+      "mechanism": "A domain model represents each candidate. A small scorer learns from measured properties or expert comparisons, while separate checks enforce the experiment's constraints.",
+      "check": "Compare selection against conventional search using independently measured outcomes and the same evaluation budget. A high learned score does not establish safety, efficacy or biological activity. No molecular benchmark has been run here."
+    },
+    {
+      "id": "architecture", "title": "Architecture and interiors", "teaser": "Explore layouts and rooms that fit your taste.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "original-home",
+      "steps": ["Rate rooms or plans", "Keep fixed constraints", "Suggest a new option"],
+      "scenario": "A homeowner could compare room layouts, materials or facade designs while keeping the room size and budget fixed. Residential layouts, commercial facades and urban planning appeared in the original application list.",
+      "mechanism": "A design model generates or represents options. A preference scorer ranks them, while independent rules keep dimensions and other requirements fixed. The scorer can guide appearance; it does not certify a building.",
+      "check": "Test whether people prefer the proposed options and whether every design still meets the specified constraints. Start with a room-layout task before making broader architecture claims."
+    },
+    {
+      "id": "stories", "title": "Stories and interactive fiction", "teaser": "Learn which style of story a reader enjoys.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
+      "steps": ["Compare short passages", "Learn reader preferences", "Rank new continuations"],
+      "scenario": "A reading app could learn that someone prefers short mysteries, quiet humour or a particular writing style. An interactive story could offer a few continuations and learn from the reader's choices.",
+      "mechanism": "A language model writes candidate passages. A small preference scorer ranks their representations. This is a ranking approach; it does not assume every language model exposes controls that can be edited into a desired story.",
+      "check": "Use blind reader comparisons on new passages, checking continuity and variety as well as enjoyment. A passage can score well while contradicting the rest of the story."
+    },
+    {
+      "id": "fashion", "title": "Fashion and outfit choices", "teaser": "Find clothes that fit your style.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "original-home",
+      "steps": ["Like or pass on outfits", "Learn style preferences", "Rank available choices"],
+      "scenario": "A shopper could rate a few outfits, then see clothing or custom-design variations closer to their taste. Outfit recommendations, garment design and trend exploration were original proposals.",
+      "mechanism": "A visual model describes each item. A personal scorer ranks options within the chosen size, price and stock limits. A generator could also propose styles, separately from the catalog of things that can actually be bought.",
+      "check": "Measure choices on unseen outfits and distinguish liking a picture from fit, comfort or purchase intent. A personal taste model does not establish population-wide fashion trends."
+    },
+    {
+      "id": "materials", "title": "Material research", "teaser": "Choose candidates under several requirements.", "topics": ["preferences"], "group": "Research and engineering", "origin": "original-home",
+      "steps": ["Candidate materials", "Score the trade-offs", "Test selected candidates"],
+      "scenario": "A researcher might seek a material that balances strength, weight, conductivity or environmental cost. A small model could help choose which candidate deserves the next expensive evaluation.",
+      "mechanism": "A domain model represents the candidates; a trained scorer estimates the chosen properties or learns an expert's trade-offs. Known requirements remain separate constraints.",
+      "check": "Count useful candidates found per evaluation budget, using independent measurements. The lab's toy constraint checks do not validate physical material properties."
+    },
+    {
+      "id": "games", "title": "Game levels and difficulty", "teaser": "Suggest levels a player wants to play.", "topics": ["preferences"], "group": "Creative work", "origin": "original-home",
+      "steps": ["Play a short level", "Rate the experience", "Suggest another layout"],
+      "scenario": "A game could learn whether a player enjoys exploration, tight timing or short puzzles, then choose or generate a suitable level. Difficulty, visual style and rewards can be considered separately.",
+      "mechanism": "A level generator proposes layouts. A small scorer predicts preference from level features, while a separate playability check rejects impossible levels.",
+      "check": "Measure enjoyment and completion on new levels, not just the score assigned to a generated layout. The current maze policy chooses moves; it does not learn player taste or generate preferred levels.",
+      "related": [["examples/game-moves.html", "Different task: choose the next move"]]
+    },
+    {
+      "id": "dating", "title": "Mutual visual preferences", "teaser": "Look for interest from both people.", "topics": ["preferences"], "group": "Personal choices", "origin": "original-home",
+      "steps": ["Rate generated faces", "Score both directions", "Choose whether to connect"],
+      "scenario": "The original dating proposal used ratings of generated faces to learn visual preferences, then considered whether two consenting people might find each other appealing. Each person would still decide whether to connect.",
+      "mechanism": "Each person has a preference scorer. Representations of real photos could be scored in both directions, rather than relying on a single popularity rating. This requires an encoder compatible with the representation used for training.",
+      "check": "Test mutual visual interest and privacy separately. Encoded photos and preference scores can reveal information; they are not automatically private. Visual appeal is not relationship compatibility, and the original face-generation demo was not a validated matching service.",
+      "legacy": "archive/2026-09/examples/dating.html"
+    },
+    {
+      "id": "social-media", "title": "A feed without repeated prompting", "teaser": "Learn from what people choose to see.", "topics": ["preferences"], "group": "Personal choices", "origin": "original-home",
+      "steps": ["See an item", "Like, skip or save", "Choose the next item"],
+      "scenario": "A feed could learn from explicit feedback instead of asking someone to write a new prompt for every image, clip or story. It could rank existing content or help choose among newly generated items.",
+      "mechanism": "A personal scorer can rank existing items. With a compatible generator, it could instead select promising internal inputs before paying to render the next item. The original idea included both approaches; a high predicted rating still needs to be checked against the person's response.",
+      "check": "Measure satisfaction, variety and unwanted repetition. More time spent scrolling is not automatically a better experience, and a skip is not an unambiguous dislike.",
+      "legacy": "archive/2026-09/examples/social-media.html"
+    },
+    {
+      "id": "news", "title": "News and content curation", "teaser": "Find useful articles in a preferred format.", "topics": ["preferences"], "group": "Personal choices", "origin": "original-home",
+      "steps": ["Rate useful articles", "Rank relevant coverage", "Choose format or depth"],
+      "scenario": "A reader could prefer concise local reporting in the morning and detailed analysis later. The original proposal covered interest-based ranking and different ways of presenting headlines or stories.",
+      "mechanism": "A personal scorer ranks article representations. A separate writing model may change length or presentation while retaining the source facts and attribution; a preference score is not a fact check.",
+      "check": "Measure usefulness, factual consistency and breadth of coverage. The system should not alter reported events to make a story more pleasing. No news-personalization study has been run here."
+    },
+    {
+      "id": "beauty", "title": "Makeup and appearance previews", "teaser": "Explore a look through small visual changes.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "original-home",
+      "steps": ["Rate example looks", "Keep the starting photo", "Preview a small edit"],
+      "scenario": "Someone could rate makeup colours or styles, then preview a modest change to their own photo. This was one of the original examples of changing an existing image rather than generating an entirely new one.",
+      "mechanism": "A compatible encoder maps the photo into the generator's internal inputs. The preference scorer helps find a limited change to those inputs before decoding a new preview, with separate checks on unrelated features. Product suggestions would need a separate link to real products.",
+      "check": "Check whether the preview preserves identity and whether the proposed effect is achievable. A higher image score alone does not validate a real-world makeover or product recommendation."
+    },
+    {
+      "id": "automotive", "title": "Automotive design", "teaser": "Explore car shapes, colours and cabins.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "original-home",
+      "steps": ["Compare car concepts", "Learn design preferences", "Suggest a variation"],
+      "scenario": "A customer or designer could compare exterior forms, colours and cabin layouts, then explore nearby alternatives without manually describing every detail.",
+      "mechanism": "A design model supplies candidates. A small scorer learns visual preferences, and separate design constraints preserve dimensions and required features.",
+      "check": "Evaluate preferred appearance and constraint satisfaction independently. A liked rendering says nothing by itself about road safety, aerodynamics or whether a car can be manufactured."
+    },
+    {
+      "id": "genetics", "title": "Genetics research", "teaser": "Prioritize candidates for an independent test.", "topics": ["preferences"], "group": "Research and engineering", "origin": "original-home",
+      "steps": ["Research candidates", "Score a defined objective", "Validate independently"],
+      "scenario": "The original site proposed applying the model-plus-scorer pattern to genetic representations. This is retained as a research possibility, not a claim that personal ratings can reliably design biological traits.",
+      "mechanism": "A domain-specific representation would feed a scorer trained on suitable measured outcomes. Biological validity would require its own evidence, separate from the score used to shortlist candidates.",
+      "check": "Establish a narrowly defined, independently measured research task before evaluating the approach. No genetic-design experiment or biological validation has been performed by this lab."
+    },
+    {
+      "id": "models-3d", "title": "3D assets and objects", "teaser": "Choose shapes that fit a project.", "topics": ["preferences"], "group": "Creative work", "origin": "filing",
+      "steps": ["Compare object shapes", "Rate useful options", "Suggest another asset"],
+      "scenario": "An artist could teach a tool the shape language of a game or product family, then rank chairs, props or other 3D assets for that project.",
+      "mechanism": "A 3D model supplies representations and candidates. The preference scorer ranks style, while separate checks handle dimensions, geometry and the target application's requirements.",
+      "check": "Evaluate whether artists choose the suggestions and can use the exported assets. A good preview image does not establish usable geometry."
+    },
+    {
+      "id": "recipes", "title": "Recipes and meal choices", "teaser": "Learn taste within the ingredients you choose.", "topics": ["preferences"], "group": "Personal choices", "origin": "filing",
+      "steps": ["Rate dishes", "Apply ingredient rules", "Suggest a meal"],
+      "scenario": "A meal planner could learn that someone enjoys quick, savoury dishes and dislikes particular textures, then rank recipes that fit their chosen ingredients and preparation time.",
+      "mechanism": "A recipe representation feeds a personal scorer. Explicit ingredient exclusions remain rules outside the preference score; they should not be traded away for a better predicted rating.",
+      "check": "Test satisfaction with meals people actually prepare, not just appealing recipe descriptions. This is a preference proposal, not nutrition or allergy advice."
+    },
+    {
+      "id": "video", "title": "Video edits and effects", "teaser": "Learn which cuts and visual styles work.", "topics": ["preferences"], "group": "Creative work", "origin": "whitepaper",
+      "steps": ["Compare short edits", "Rate pace and style", "Rank new versions"],
+      "scenario": "A creator could compare short edits, transitions or colour treatments, then use those choices to guide the next set of variations.",
+      "mechanism": "A video model represents candidate clips. A small scorer learns preferences across whole clips rather than judging only a still frame; generation and editing remain separate work.",
+      "check": "Use unseen clips and measure continuity, viewer preference and full rendering cost. No video preference model is running in the drawing demo."
+    },
+    {
+      "id": "voice", "title": "Voice and narration style", "teaser": "Choose a comfortable pace and delivery.", "topics": ["preferences"], "group": "Creative work", "origin": "earlier-explorations",
+      "steps": ["Hear short samples", "Choose a delivery", "Rank new readings"],
+      "scenario": "A listener could compare the pace and delivery of audiobook or podcast samples, then ask for new readings closer to those preferences.",
+      "mechanism": "An audio representation feeds a preference scorer. A speech generator supplies candidate readings; the scorer selects among them or guides supported voice controls.",
+      "check": "Test intelligibility and comfort over longer listening sessions, not just the appeal of a five-second sample. This is a proposed narration task, not a voice-cloning demo."
+    },
+    {
+      "id": "education", "title": "Learning materials", "teaser": "Find explanations a learner finds useful.", "topics": ["preferences"], "group": "Personal choices", "origin": "earlier-explorations",
+      "steps": ["Compare explanations", "Rate clarity", "Suggest the next example"],
+      "scenario": "A learner could prefer a worked example over a long explanation. A teaching tool could learn that preference while choosing between materials covering the same concept.",
+      "mechanism": "A small scorer ranks explanation representations using learner feedback. Checks on correctness and evidence of learning remain separate from the person's style preference.",
+      "check": "Measure understanding on new questions as well as satisfaction. Liking an explanation does not prove that it teaches the subject better."
+    },
+    {
+      "id": "shopping", "title": "Product recommendations", "teaser": "Rank available products by personal taste.", "topics": ["preferences"], "group": "Personal choices", "origin": "earlier-explorations",
+      "steps": ["Rate a few products", "Filter price and stock", "Rank the remaining choices"],
+      "scenario": "A shopper could teach a catalog their taste in furniture or household items, then browse a short list within a chosen budget.",
+      "mechanism": "A product model represents the existing inventory. The small preference scorer ranks real items; no new product has to be generated. Price, availability and required features are separate filters.",
+      "check": "Compare choices against ordinary filters and recommendations, including returns and variety. Preference should be measured on unseen products rather than the examples used to train the scorer."
+    },
+    {
+      "id": "proteins", "title": "Protein research", "teaser": "Score candidates without treating scores as proof.", "topics": ["preferences"], "group": "Research and engineering", "origin": "whitepaper",
+      "steps": ["Candidate representations", "Rank a research objective", "Check measured outcomes"],
+      "scenario": "The earlier whitepaper proposed protein design as another domain for candidate scoring. Here it remains an untested research idea with no biological results claimed.",
+      "mechanism": "A suitable domain model would provide representations. A small head could rank a defined objective, provided relevant training labels and an independent evaluation were available.",
+      "check": "Evaluate against measured outcomes on unseen candidates. Structural plausibility or a learned score is not evidence that a proposed protein performs a desired function."
+    },
+    {
+      "id": "science", "title": "Engineering with constraints", "teaser": "Keep useful designs within fixed requirements.", "topics": ["preferences"], "group": "Research and engineering", "origin": "earlier-examples",
+      "steps": ["Propose a design", "Check requirements", "Rank valid options"],
+      "scenario": "A design team could prefer a particular shape while needing it to fit a fixed space. The tool would show only candidates that satisfy the stated requirements.",
+      "mechanism": "A preference scorer handles subjective choices. An independent constraint check handles feasibility. The generator or optimizer proposes new candidates without treating a high preference score as permission to break a requirement.",
+      "check": "Compare valid solutions found at equal evaluation budgets. The lab has numerical toy checks; it has not demonstrated engineering performance on manufactured products.",
+      "legacy": "archive/2026-09/examples/science.html"
+    },
+    {
+      "id": "interfaces", "title": "Interface and layout choices", "teaser": "Learn which layouts someone finds usable.", "topics": ["preferences"], "group": "Design and everyday choices", "origin": "earlier-explorations",
+      "steps": ["Compare layouts", "Rate the experience", "Suggest a constrained variant"],
+      "scenario": "A design tool could help a team explore page layouts without rewriting a brief for each version. Font size, reading order and essential controls would stay fixed where required.",
+      "mechanism": "Layout representations feed a preference scorer. The tool ranks candidates or adjusts supported controls, while explicit accessibility and layout checks remain independent.",
+      "check": "Test task completion and readability as well as visual preference. A more attractive screenshot is not necessarily an easier interface to use."
+    },
+    {
+      "id": "patient-preferences", "title": "Patient preferences in approved options", "teaser": "Record what matters to a patient.", "topics": ["preferences"], "group": "Research and engineering", "origin": "earlier-explorations", "medical": true,
+      "steps": ["Clinician-approved options", "Patient comparisons", "Review priorities together"],
+      "scenario": "The earlier exploration page mentioned healthcare. A limited interpretation is helping a patient express preferences among options a clinician has already judged appropriate.",
+      "mechanism": "A small scorer could summarize patient comparisons for discussion. It would not determine which treatments are medically suitable or replace clinical judgment.",
+      "check": "This is an untested decision-support proposal. No clinical validation, improved outcomes or treatment recommendation capability is claimed."
+    },
+    {
+      "id": "moderation", "title": "Live chat moderation", "teaser": "Return an allow, block or review decision.", "topics": ["decisions", "adaptive"], "group": "Messages and documents", "origin": "extension", "status": "Related prototype",
+      "steps": ["Chat message", "Small decision head", "Allow, block or review"],
+      "scenario": "A chat application needs a decision for each incoming message, usually without a written explanation. A review route can handle messages that the model cannot classify reliably.",
+      "mechanism": "A trained head reads a text model's internal representation. A separate optimization could try a smaller model first or check an earlier layer, continuing when the stopping rule does not accept the result.",
+      "check": "The lab has ToxicChat experiments and browser demos. They do not establish reliable context-aware live moderation, including abuse split across users or messages. Count missed harmful messages and false blocks separately.",
+      "demo": ["moderation-benchmark.html", "Run the message benchmark"], "demo_note": "The browser demo compares direct vocabulary scores with generated output; the trained-head and stopping studies use different models or weights.",
+      "evidence": [["chat-results.html", "Trained moderation classifier results"], ["fresh-message-results.html", "Early stopping on fresh messages"]]
+    },
+    {
+      "id": "support", "title": "Route customer requests", "teaser": "Send a request to the right queue.", "topics": ["decisions", "adaptive"], "group": "Messages and documents", "origin": "extension", "status": "Related prototype",
+      "steps": ["Where is my order?", "Predict a category", "Send to order support"],
+      "scenario": "A help desk could send billing, delivery and account questions to the right team. If the request does not fit a known category, it can ask for clarification instead of forcing a match.",
+      "mechanism": "A text encoder supplies features and a classifier returns a category ID. Intermediate heads or a small-model fallback could reduce processing for routine requests; those are separate comparisons from removing a written reply.",
+      "check": "Test routing accuracy, unfamiliar requests and the cost of sending a request to the wrong queue. Existing banking-topic tests do not establish that the same classifier works for arbitrary company policies.",
+      "demo": ["practical-demo.html?task=routing", "Try request routing"], "demo_note": "A small task classifier runs locally. Its results are separate from the trained Qwen banking experiment.",
+      "evidence": [["routing-results.html", "Routing and clarification results"], ["docs/banking77-results.md", "Separate banking-topic study"]]
+    },
+    {
+      "id": "redaction", "title": "Find text to redact", "teaser": "Mark spans instead of writing a new document.", "topics": ["decisions"], "group": "Messages and documents", "origin": "extension", "status": "Related prototype",
+      "steps": ["Original message", "Locate name spans", "Review highlighted text"],
+      "scenario": "A support tool could highlight names before a transcript is shared. Returning exact text spans lets the application show what would be removed before changing the document.",
+      "mechanism": "A model assigns labels to tokens or character spans. The application applies redaction using those locations rather than asking a language model to rewrite the entire message.",
+      "check": "Measure missed names and incorrect removals. The current prototype covers names; it is not a complete detector for addresses, account numbers or every kind of personal information.",
+      "demo": ["practical-demo.html?task=privacy", "Try name detection"], "evidence": [["redaction-results.html", "Name-detection results"]]
+    },
+    {
+      "id": "receipts", "title": "Choose a receipt total", "teaser": "Return the right amount from a short list.", "topics": ["decisions"], "group": "Messages and documents", "origin": "extension", "status": "Related prototype",
+      "steps": ["Receipt text", "Score candidate amounts", "Return the chosen total"],
+      "scenario": "An expense tool needs the final amount rather than an essay about the receipt. A classifier could distinguish a total from tax, subtotal or change.",
+      "mechanism": "Text recognition supplies candidate amounts and their context. A small scoring head selects a candidate; the application retains the original number and its location for review.",
+      "check": "Measure exact amount selection on unseen receipt layouts. The current text-based demo does not reproduce a complete photo-to-expense workflow.",
+      "demo": ["practical-demo.html?task=receipts", "Try total selection"], "evidence": [["receipt-results.html", "Receipt-selection results"]]
+    },
+    {
+      "id": "search", "title": "Rank search results", "teaser": "Put useful matches near the top.", "topics": ["decisions", "adaptive"], "group": "Messages and documents", "origin": "extension", "status": "Related prototype",
+      "steps": ["Query and first matches", "Score relevance", "Return a ranked list"],
+      "scenario": "A knowledge base can show useful documents without generating an answer. A second scorer can reorder the first matches when word overlap alone gives a poor ranking.",
+      "mechanism": "A small model reads each query-document pair and returns a relevance score. An adaptive version could reserve a larger scorer for close calls, provided that deciding when to stop costs less than it saves.",
+      "check": "Use held-out relevance judgments, ranking quality and total query time. The current reranker experiment is not evidence that early stopping preserves those rankings.",
+      "demo": ["rerank-demo.html", "Run the reranker"], "evidence": [["search-next-results.html", "Search and reranking results"]]
+    },
+    {
+      "id": "game-moves", "title": "Choose a game move", "teaser": "Return a direction on each turn.", "topics": ["decisions", "adaptive"], "group": "Actions", "origin": "extension", "status": "Related prototype",
+      "steps": ["Current maze state", "Score legal directions", "Move and repeat"],
+      "scenario": "A maze game needs UP, DOWN, LEFT or RIGHT every turn. A learned policy could return the action directly, with the game separately rejecting moves through walls.",
+      "mechanism": "A small network reads the game state and scores actions. A larger policy or extra layers could handle uncertain states, but that must be compared with the cost of the small policy and ordinary pathfinding.",
+      "check": "Measure completed mazes and total decisions, not just one-step accuracy. Our current demo is a small trained maze policy; it is not a Pac-Man agent or a validated adaptive-compute policy.",
+      "demo": ["maze-live.html", "Play with the maze policy"], "evidence": [["maze-results.html", "Maze-policy results"]],
+      "related": [["examples/games.html", "Different task: learn a player's level preferences"]]
+    },
+    {
+      "id": "inbox", "title": "Sort an inbox", "teaser": "Separate receipts, requests and newsletters.", "topics": ["decisions", "adaptive"], "group": "Messages and documents", "origin": "extension",
+      "steps": ["Incoming message", "Predict a folder", "File or ask for review"],
+      "scenario": "An inbox tool could identify receipts, meeting requests and newsletters without drafting a response. An uncertain or unfamiliar message could remain in the main inbox.",
+      "mechanism": "A small classifier returns a folder label from an email representation. Easy messages could use an early exit or a smaller model; a larger model would handle the rest.",
+      "check": "Evaluate on new senders and future mail, including the cost of hiding an important message. No email-routing or phishing-detection benchmark has been run here.",
+      "evidence": [["routing-results.html", "Related request-routing task"], ["cascade-results.html", "How a small-model fallback works"]]
+    },
+    {
+      "id": "offline-commands", "title": "Commands on a small device", "teaser": "Use a short path for familiar commands.", "topics": ["adaptive", "decisions"], "group": "Actions", "origin": "extension",
+      "steps": ["Command text", "Check an early answer", "Act or continue processing"],
+      "scenario": "A local tool may only need a few commands such as pause, next or cancel. It could handle familiar inputs quickly and continue processing when a command is unclear.",
+      "mechanism": "Intermediate classifiers share the early part of one model. A stopping rule chooses whether to accept a command, continue through more layers, or return an unknown-command result.",
+      "check": "Test wrong actions, unknown commands, full latency and device energy. Speech recognition, if used, has a separate cost; a text-command classifier does not eliminate that work.",
+      "demo": ["shared-decision-demo.html", "See a shared model with two exits"], "demo_note": "The related demo uses moderation messages, not device commands. No command or energy benchmark has been run.",
+      "evidence": [["shared-model-results.html", "Shared-model study"]]
+    },
+    {
+      "id": "desktop-actions", "title": "Point to an app control", "teaser": "Find a button without writing coordinates.", "topics": ["coordinates"], "group": "Screens and images", "origin": "extension", "status": "Related prototype",
+      "steps": ["Screenshot + click Save", "Locate the target", "Return a point"],
+      "scenario": "An automation tool could locate Save, Search or another requested control in a screenshot. The surrounding application decides whether and when to perform the click.",
+      "mechanism": "A vision model encodes the screen and instruction. A spatial head selects a region or point directly; a no-target result is needed when the control is absent.",
+      "check": "Test held-out applications, ambiguous controls and missing targets. Our recorded model predictions and live text-matching demo are different implementations, and neither establishes reliable end-to-end automation.",
+      "demo": ["point-demo.html", "Find visible text in your screenshot"], "demo_note": "Live OCR and text matching, not the vision model in the recorded experiment.",
+      "evidence": [["coordinate-results.html", "Recorded vision-model results"], ["visual-refusal-results.html", "Missing targets and harder screens"]]
+    },
+    {
+      "id": "assistive-pointing", "title": "Assistive pointing", "teaser": "Turn a requested control into a location.", "topics": ["coordinates"], "group": "Screens and images", "origin": "extension",
+      "steps": ["Choose a control by name", "Highlight its location", "Confirm the action"],
+      "scenario": "Someone using voice or switch controls could ask for a visible button and confirm the highlighted target. The point output would be one part of an assistive interface.",
+      "mechanism": "A spatial head returns a location for the chosen control. The interface can preview the point and preserve a cancel path; speech input and action confirmation are separate components.",
+      "check": "Measure successful tasks with intended users, including ambiguous and moving targets. There is no assistive-technology user study here; the screenshot demo only illustrates target location.",
+      "demo": ["point-demo.html", "Try the related screenshot locator"], "demo_note": "This is an OCR prototype, not a tested accessibility product.",
+      "evidence": [["visual-refusal-results.html", "Current target-location limitations"]]
+    },
+    {
+      "id": "ui-testing", "title": "Check changing interfaces", "teaser": "Locate a control after a layout changes.", "topics": ["coordinates"], "group": "Screens and images", "origin": "extension",
+      "steps": ["Screenshot of a new layout", "Find the expected control", "Verify the next screen"],
+      "scenario": "A test could ask whether a familiar control is still findable after a responsive layout change. A screenshot locator might help where stable programmatic selectors are unavailable.",
+      "mechanism": "The locator returns a point or no-target result. A test runner performs the action in a controlled environment, then separately checks the expected outcome.",
+      "check": "Compare completed test flows with ordinary selectors. A point inside a button does not prove that the action succeeded or that the interface is accessible.",
+      "demo": ["screenshot-demo.html", "Inspect recorded target predictions"], "demo_note": "Recorded model outputs, not live UI test execution.",
+      "evidence": [["coordinate-results.html", "Screenshot-target study"]]
+    },
+    {
+      "id": "image-annotation", "title": "Suggest an image annotation", "teaser": "Mark a starting point for a human editor.", "topics": ["coordinates"], "group": "Screens and images", "origin": "extension",
+      "steps": ["Image and target description", "Suggest a point or region", "Review and adjust"],
+      "scenario": "An annotation tool could suggest where an object starts, then let a person correct the point or outline. The useful result is editable geometry rather than a sentence describing the picture.",
+      "mechanism": "A vision representation feeds a point, box or mask head suited to the task. A single point is not a substitute for a complete object boundary.",
+      "check": "Measure correction time and final annotation quality, including missing or repeated objects. Our coordinate workbench records manual labels; it does not infer object boundaries.",
+      "demo": ["coordinate-lab.html", "Try manual coordinate annotation"], "demo_note": "A manual labeling tool and recorded examples, not an automatic object annotator.",
+      "evidence": [["coordinate-results.html", "Related point-output experiment"]]
+    },
+    {
+      "id": "ecg", "title": "ECG labels without a written report", "teaser": "Return structured predictions from a heart trace.", "topics": ["decisions", "adaptive"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["Recorded ECG", "Signal model + label head", "Predictions for review"],
+      "scenario": "A research system could read a recorded ECG and return defined rhythm or diagnostic labels for review, without generating a narrative report. More than one label may apply to a recording.",
+      "mechanism": "An ECG encoder supplies signal features to a small, potentially multi-label classifier. An experimental early-exit version could check intermediate layers and continue when uncertain. This would reduce model computation, not shorten the recording needed to observe an event.",
+      "check": "Compare with a conventional ECG classifier at matched quality; structured outputs alone are not a new capability. Use patient-separated PTB-XL cases, then other devices and populations. Report sensitivity by finding, false alarms, uncertain cases and latency. No clinical accuracy or safe stopping rule is established here.",
+      "dataset": "PTB-XL contains annotated 12-lead, 10-second ECG recordings and recommended evaluation splits.",
+      "sources": [["https://physionet.org/content/ptb-xl/1.0.3/", "PTB-XL dataset and evaluation splits"]],
+      "evidence": [["early-exit-results.html", "Related method: intermediate classifiers, tested on text"]]
+    },
+    {
+      "id": "ecg-quality", "title": "Check ECG recording quality", "teaser": "Flag an unusable trace for another recording.", "topics": ["decisions", "adaptive"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["Recorded heart trace", "Check signal quality", "Accept or request review"],
+      "scenario": "A recording tool could flag poor signal quality before someone relies on the trace. This is a different task from deciding whether the heart rhythm is abnormal.",
+      "mechanism": "A small signal classifier returns a quality label. An adaptive model could spend more processing on unclear recordings, or leave the quality decision for review instead of forcing an answer.",
+      "check": "Compare with an ordinary signal-quality classifier, including time spent on exit checks. Test bad recordings accepted and good ones rejected across devices. A quality label is not a normal-heart verdict. This lab has not run an ECG quality experiment.",
+      "dataset": "The PhysioNet 2011 challenge provides an ECG recording-quality task, separate from disease classification.",
+      "sources": [["https://physionet.org/content/challenge-2011/1.0.0/", "PhysioNet ECG-quality challenge"]]
+    },
+    {
+      "id": "mri-segmentation", "title": "Mark regions in an MRI", "teaser": "Return a mask that a reviewer can inspect.", "topics": ["coordinates", "decisions", "adaptive"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["MRI volume", "Predict a region mask", "Review the boundaries"],
+      "scenario": "A medical-image research tool could mark structures or specified findings in a scan for expert review. A region mask is more useful for this task than a written coordinate or a single click point.",
+      "mechanism": "A scan encoder feeds a segmentation head that labels locations across the image volume. Intermediate masks could be compared with the full model to study whether computation can stop earlier; that requires a medical model and its own training.",
+      "check": "Compare with a conventional full-depth segmentation model on patient-separated cases, including timing. Check missed regions, boundary errors and failures across scanners. Overall pixel accuracy can hide a small important finding. No medical segmentation model has been tested here.",
+      "dataset": "BraTS provides a research task for brain-tumor segmentation in multimodal MRI. It does not cover every anatomy or MRI use case.",
+      "sources": [["https://www.med.upenn.edu/cbica/brats2020/tasks.html", "BraTS MRI segmentation task"]]
+    },
+    {
+      "id": "mri-reconstruction", "title": "MRI reconstruction with fewer model steps", "teaser": "Study when further reconstruction stops helping.", "topics": ["adaptive"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["Acquired scan measurements", "Reconstruction checkpoints", "Image + quality checks"],
+      "scenario": "An iterative reconstruction model may refine an MRI image through several stages. A research experiment could ask whether some inputs need fewer model stages while retaining important detail.",
+      "mechanism": "A quality head checks intermediate reconstructions, alongside consistency with the acquired measurements. It decides whether to continue computing. This is a different output task from an ECG label or a preference classifier.",
+      "check": "Compare with a full reconstruction model at matched image quality, including the cost of the stopping checks. Evaluate errors and clinically relevant detail with expert review. Fewer neural-network steps do not by themselves demonstrate a shorter MRI acquisition or safe scanner protocol.",
+      "dataset": "The NYU fastMRI project provides data for studying MRI reconstruction. Dataset access and use follow the project's terms.",
+      "sources": [["https://fastmri.med.nyu.edu/", "NYU fastMRI research project"]]
+    },
+    {
+      "id": "eeg-sleep", "title": "EEG sleep-stage labels", "teaser": "Classify recorded sleep segments directly.", "topics": ["decisions", "adaptive"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["Recorded signal segment", "Predict a sleep stage", "Review the sequence"],
+      "scenario": "A sleep-research pipeline could assign a defined stage to each recorded segment, then show the sequence for review. A language model does not need to write the stage name token by token.",
+      "mechanism": "A signal encoder and classification head return stage scores. Earlier heads or a small-model fallback could be compared while retaining the temporal context needed by the task.",
+      "check": "Compare with a conventional sleep-stage classifier at matched quality. Split by participant and recording, measure mistakes between stages and total time. This is not an insomnia diagnosis or a claim that monitoring can safely omit parts of a recording.",
+      "dataset": "Sleep-EDF Expanded includes sleep recordings and corresponding sleep-stage annotations for research.",
+      "sources": [["https://physionet.org/content/sleep-edfx/1.0.0/", "Sleep-EDF Expanded dataset"]]
+    },
+    {
+      "id": "medical-annotation", "title": "Medical-image landmarks and measurements", "teaser": "Suggest editable points for a specialist.", "topics": ["coordinates"], "group": "Medical signals and scans", "origin": "extension", "medical": true,
+      "steps": ["Scan and defined target", "Suggest landmarks", "Review the measurement"],
+      "scenario": "An image viewer could suggest anatomical landmarks or an initial outline in MRI, CT or ultrasound. A specialist could correct the geometry before using a measurement.",
+      "mechanism": "A modality-specific model returns points, boxes or masks directly. The viewer maps them into image coordinates and physical units using the scan metadata; it does not need to parse an LLM's written coordinates.",
+      "check": "Evaluate localization error, wrong or absent targets, measurement error and correction time on the chosen modality. A screenshot-button locator is not a medical landmark model, and no such model has been tested here.",
+      "related": [["examples/mri-segmentation.html", "Related task: MRI region masks"], ["examples/image-annotation.html", "General image annotation"]]
+    },
+    {
+      "id": "model-routing", "title": "Route between small and large models", "teaser": "Use the larger model when it adds value.", "topics": ["adaptive"], "group": "Language and image generation", "origin": "extension", "status": "Related prototype",
+      "steps": ["Request or small-model result", "Estimate difficulty or risk", "Accept or use a larger model"],
+      "scenario": "An app could send a routine request to a small model and use a larger one for a difficult request. It could also try the small model first, then escalate when a learned check rejects its result.",
+      "mechanism": "A router predicts which model to use, or a confidence checker decides whether to accept a candidate answer. These are different policies. Separate models normally process the input separately; a shared encoder or intermediate handoff needs compatible, trained components.",
+      "check": "Measure useful answers, routing mistakes and total time or cost including fallback. The lab's existing cascade returns moderation labels, not general chat replies, and does not demonstrate interchangeable hidden states between unrelated models.",
+      "demo": ["method-demo.html?method=cascade", "Compare a small-model fallback"], "demo_note": "The browser demo uses BERT classifiers. The recorded Qwen cascade is a separate experiment.",
+      "evidence": [["cascade-results.html", "How the current cascade works"], ["cascade-test-results.html", "Recorded cascade results"], ["shared-model-results.html", "Related option: one model with two exits"]]
+    },
+    {
+      "id": "faster-llm", "title": "Get an LLM result sooner", "teaser": "Use less model work before returning an answer.", "topics": ["adaptive"], "group": "Language and image generation", "origin": "extension",
+      "steps": ["Read the request", "Check a candidate result", "Return it or continue"],
+      "scenario": "A tool request might only need a label or action, while a chat request needs a written answer. Both could benefit from less computation, but they require different stopping methods.",
+      "mechanism": "For a fixed decision, a head can read an intermediate layer and return an enum. For a written answer, an early-exit decoder or a small draft model could propose tokens for a larger model to check. A confident label head alone cannot supply or validate the rest of a conversation.",
+      "check": "Measure time to the first result, time to finish, answer quality and verification overhead. Our layer-exit tests concern classifiers, not a demonstrated faster general-purpose chat model.",
+      "demo": ["shared-decision-demo.html", "Try early exit on a fixed decision"], "demo_note": "This demonstrates classification, not early generation of complete LLM replies.",
+      "evidence": [["early-exit-results.html", "Current classifier stopping results"], ["shared-qwen-results.html", "Qwen checkpoint study"]]
+    },
+    {
+      "id": "image-safety", "title": "Stop an unsafe image before it finishes", "teaser": "Check during generation and cancel early.", "topics": ["adaptive", "decisions"], "group": "Language and image generation", "origin": "extension",
+      "steps": ["Image generation in progress", "Classifier checks a checkpoint", "Cancel or keep generating"],
+      "scenario": "An image service could cancel a generation once an intermediate classifier detects a policy violation, rather than paying for every remaining generation step and the final image decode.",
+      "mechanism": "A trained safety head could read intermediate image-model features, or classify a cheap partial preview. The first route might avoid decoding a preview; the second adds some decoding work. In a diffusion model, checkpoints would be denoising steps, not necessarily the transformer layers used in our text experiments.",
+      "check": "Finish matched generations offline, using the same prompts and seeds, to check what cancelled images would have become. Measure unsafe outputs missed, acceptable images cancelled, useful checkpoint depth and net time after preview/checking costs. Passing an early check does not certify the final image; continuing outputs still need the final check. This experiment has not been run here.",
+      "related": [["examples/image-preferences.html", "Related idea: stop an image that misses your taste"], ["examples/model-routing.html", "Another way to avoid expensive model work"]]
+    },
+    {
+      "id": "image-preferences", "title": "Stop an image that misses your taste", "teaser": "Spend rendering time on more promising ideas.", "topics": ["preferences", "adaptive"], "group": "Language and image generation", "origin": "extension",
+      "steps": ["Learn from your image ratings", "Score a generation in progress", "Continue, cancel or restart"],
+      "scenario": "If a person consistently rejects a certain visual style, a generator could stop a poor candidate before finishing it and spend the remaining budget on another idea. This connects the original personal preference model to adaptive computation.",
+      "mechanism": "A personal scorer would learn how intermediate features relate to the person's final ratings. A separate stopping rule would estimate whether an initially poor candidate is likely to recover. A scorer trained only on finished images may not work on noisy previews.",
+      "check": "Compare finished images people prefer per fixed time or compute budget, counting cancelled images and lost variety. Evaluate rejected candidates too, so good images cancelled early are visible. This is an untested extension of preference learning, not the current drawing demo.",
+      "related": [["examples/image-safety.html", "Different goal: detect unsafe generation"], ["examples/art.html", "Original use: learn visual preferences"]]
+    }
+  ]
+}

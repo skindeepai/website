@@ -87,13 +87,13 @@ def update(pages, legacy=None):
     distill_time=read('results/chat-smoke-adaptation/distill-runtime.json')
     depth_time=read('results/chat-depth-timing/result.json')['depths']
     comparison=sample()+'<h2>Speed and accuracy</h2>'+table(['Method','Correct / 100','Time / message'],[
-        ['Full Qwen',mlp['fixed_24']['splits']['evaluation']['correct'],f'{depth_time["24"]["mean_ms"]:.0f} ms'],
+        ['Full Qwen + classifier',mlp['fixed_24']['splits']['evaluation']['correct'],f'{depth_time["24"]["mean_ms"]:.0f} ms'],
         ['Stop at layer 12',mlp['fixed_12']['splits']['evaluation']['correct'],f'{depth_time["12"]["mean_ms"]:.0f} ms'],
         ['Learned stopping',gate['correct'],f'{runtime["paths"]["learned"]["mean_ms"]:.0f} ms'],
         ['Tiny model only',specialist['specialist']['correct'],f'{1000*timing["specialist"]/100:.1f} ms'],
         ['Tiny model → Qwen',specialist['cascade']['correct'],f'{1000*timing["cascade"]/100:.0f} ms'],
         ['With distillation',adapted['distill']['metrics']['evaluation']['24']['correct'],f'{1000*distill_time["seconds"]/distill_time["n"]:.0f} ms'],
-    ],{'Full Qwen':'depth-results.html','Stop at layer 12':'depth-results.html','Learned stopping':'early-exit-results.html','Tiny model only':'cascade-test-results.html','Tiny model → Qwen':'cascade-results.html','With distillation':'training-results.html'})
+    ],{'Full Qwen + classifier':'depth-results.html','Stop at layer 12':'depth-results.html','Learned stopping':'early-exit-results.html','Tiny model only':'cascade-test-results.html','Tiny model → Qwen':'cascade-results.html','With distillation':'training-results.html'})
     comparison+='<p>The learned stop reduced time by about 34% against its full-model reference. The tiny-model cascade reduced it by about 50% against its own Qwen reference, but introduced one new toxic-message miss.</p><p class="small">Same 100 messages for accuracy; training differs between methods. Warm CPU time includes input preparation: 50 timed messages for distillation, 100 for the other timed rows. The cascade’s own Qwen reference scores 78/100 at 648 ms.</p><h2>How each approach works</h2>'
     comparison=comparison.replace('<h2>How each approach works</h2>',tiny_model+'<h2>How each approach works</h2>')
     comparison=comparison.replace('Same 100 messages for accuracy; training differs between methods.', 'Same 100 messages for accuracy; training differs between methods. Full Qwen and layer 12 share a new three-pass timing run. The learned gate was timed separately against its own 636 ms full-depth reference; its 34% saving is from that paired run.')
@@ -211,6 +211,8 @@ def update(pages, legacy=None):
     update_next_research(pages)
     from refresh_demo_links import update as update_demo_links
     update_demo_links(pages)
+    from refresh_use_cases import update as update_use_cases
+    update_use_cases(pages)
     from refresh_navigation import update as update_navigation
     update_navigation(pages)
 

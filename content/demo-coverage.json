@@ -24,36 +24,6 @@
     "label": "Teach two different styles",
     "note": "Live linear versus nonlinear preference learning; this illustrates separated preferences without a generator mixture."
   },
-  "examples/art.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
-  "examples/music.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
-  "examples/social-media.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
-  "examples/dating.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
-  "examples/science.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
-  "examples/index.html": {
-    "target": "demo.html",
-    "label": "Try the underlying preference-learning loop",
-    "note": "The working example learns from drawings. The application described here is a proposal, not a completed product demo."
-  },
   "decisions.html": {
     "target": "moderation-benchmark.html",
     "label": "Live demo: compare labels and written replies",
@@ -213,5 +183,271 @@
     "target": "demo-directory.html",
     "label": "Choose a live demo",
     "note": ""
+  },
+  "examples/music.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/art.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/molecules.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/architecture.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/stories.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/fashion.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/materials.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/games.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/dating.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/social-media.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/news.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/beauty.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/automotive.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/genetics.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/models-3d.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/recipes.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/video.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/voice.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/education.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/shopping.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/proteins.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/science.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/interfaces.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/patient-preferences.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/moderation.html": {
+    "target": "moderation-benchmark.html",
+    "label": "Run the message benchmark",
+    "note": "The browser demo compares direct vocabulary scores with generated output; the trained-head and stopping studies use different models or weights.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/support.html": {
+    "target": "practical-demo.html?task=routing",
+    "label": "Try request routing",
+    "note": "A small task classifier runs locally. Its results are separate from the trained Qwen banking experiment.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/redaction.html": {
+    "target": "practical-demo.html?task=privacy",
+    "label": "Try name detection",
+    "note": "",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/receipts.html": {
+    "target": "practical-demo.html?task=receipts",
+    "label": "Try total selection",
+    "note": "",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/search.html": {
+    "target": "rerank-demo.html",
+    "label": "Run the reranker",
+    "note": "",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/game-moves.html": {
+    "target": "maze-live.html",
+    "label": "Play with the maze policy",
+    "note": "",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/offline-commands.html": {
+    "target": "shared-decision-demo.html",
+    "label": "See a shared model with two exits",
+    "note": "The related demo uses moderation messages, not device commands. No command or energy benchmark has been run.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/desktop-actions.html": {
+    "target": "point-demo.html",
+    "label": "Find visible text in your screenshot",
+    "note": "Live OCR and text matching, not the vision model in the recorded experiment.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/assistive-pointing.html": {
+    "target": "point-demo.html",
+    "label": "Try the related screenshot locator",
+    "note": "This is an OCR prototype, not a tested accessibility product.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/ui-testing.html": {
+    "target": "screenshot-demo.html",
+    "label": "Inspect recorded target predictions",
+    "note": "Recorded model outputs, not live UI test execution.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "recorded"
+  },
+  "examples/image-annotation.html": {
+    "target": "coordinate-lab.html",
+    "label": "Try manual coordinate annotation",
+    "note": "A manual labeling tool and recorded examples, not an automatic object annotator.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/model-routing.html": {
+    "target": "method-demo.html?method=cascade",
+    "label": "Compare a small-model fallback",
+    "note": "The browser demo uses BERT classifiers. The recorded Qwen cascade is a separate experiment.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/faster-llm.html": {
+    "target": "shared-decision-demo.html",
+    "label": "Try early exit on a fixed decision",
+    "note": "This demonstrates classification, not early generation of complete LLM replies.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
+  },
+  "examples/image-preferences.html": {
+    "target": "demo.html",
+    "label": "Try the drawing-based learning loop",
+    "note": "This demo learns from simple drawings. It does not run the application described above.",
+    "relationship": "Related demonstration; not necessarily this application",
+    "kind": "interactive"
   }
 }

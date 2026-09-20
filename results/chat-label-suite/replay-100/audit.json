@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "calls": 1500,
+  "original_prediction_parity": 600,
+  "actual_layer_traces": 1500,
+  "parser_records": 600,
+  "numeric_parser_identity_checks": 3900,
+  "source_and_frozen_inputs_verified": true,
+  "order_verified": true,
+  "fixed12_ok_versus_full_safe": {
+    "added_errors": 10,
+    "corrected_errors": 10,
+    "new_toxic_misses": 4,
+    "new_false_blocks": 6,
+    "added_error_ids": [
+      "test:937",
+      "test:4767",
+      "test:931",
+      "test:485",
+      "test:656",
+      "test:1134",
+      "test:1048",
+      "test:457",
+      "test:5056",
+      "test:4034"
+    ],
+    "corrected_error_ids": [
+      "test:143",
+      "test:1008",
+      "test:4512",
+      "test:74",
+      "test:4",
+      "test:4989",
+      "test:960",
+      "test:1056",
+      "test:4443",
+      "test:170"
+    ]
+  },
+  "audit_source_sha256": "0f01c6824382dbf6b782fc48a4774477900fe589c4c3547a5f4b6dde03b15f01",
+  "limits": "Arithmetic and execution-artifact audit. Does not establish fresh-data validity, universal parser correctness, or repeatable latency."
+}

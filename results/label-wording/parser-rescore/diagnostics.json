@@ -1,0 +1,563 @@
+[
+  {
+    "output": "OK",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "BLOCK",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": " safe ",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "ALLOW",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "ALLOW"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "REJECT",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "REJECT"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "**SAFE**",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "`BLOCK`",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "\"OK\"",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "SAFE.",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "{\"label\":\"SAFE\"}",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "```json\n{\"label\":\"BLOCK\"}\n```",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "Decision: OK",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "This message is safe.",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "This message is not safe.",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "not OK",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "Do not allow",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "ALLOW"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "Do not block",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "not unsafe",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "UNSAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "SAFE because it is a greeting",
+    "expected": {
+      "blocked": false,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    }
+  },
+  {
+    "output": "BLOCK: threatening language",
+    "expected": {
+      "blocked": true,
+      "parseOk": true
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    }
+  },
+  {
+    "output": "SAFE. Actually BLOCK.",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "SAFE. ACTUALLY BLOCK"
+    }
+  },
+  {
+    "output": "BLOCK or OK",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "BLOCK OR OK"
+    }
+  },
+  {
+    "output": "This contains the word SAFE",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "THIS CONTAINS THE WORD SAFE"
+    }
+  },
+  {
+    "output": "The message says \"OK\" but is abusive",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "THE MESSAGE SAYS \"OK\" BUT IS ABUSIVE"
+    }
+  },
+  {
+    "output": "I cannot decide if this is safe",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "I CANNOT DECIDE IF THIS IS SAFE"
+    }
+  },
+  {
+    "output": "not safe, but maybe OK",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "SAFE"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "NOT SAFE, BUT MAYBE OK"
+    }
+  },
+  {
+    "output": "YES",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "YES"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "YES"
+    }
+  },
+  {
+    "output": "NO",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "NO"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "NO"
+    }
+  },
+  {
+    "output": "",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": ""
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": ""
+    }
+  },
+  {
+    "output": "{\"label\":\"BLOCK\",\"label\":\"OK\"}",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": true,
+      "normalized": "BLOCK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "{\"LABEL\":\"BLOCK\",\"LABEL\":\"OK\"}"
+    }
+  },
+  {
+    "output": "{\"label\":\"OK\",\"decision\":\"BLOCK\"}",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "{\"LABEL\":\"OK\",\"DECISION\":\"BLOCK\"}"
+    }
+  },
+  {
+    "output": "Certainly! Here is an introduction",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "CERTAINLY! HERE IS AN INTRODUCTION"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "CERTAINLY! HERE IS AN INTRODUCTION"
+    }
+  },
+  {
+    "output": "OK: maybe unsafe",
+    "expected": {
+      "blocked": true,
+      "parseOk": false
+    },
+    "supplied": {
+      "blocked": false,
+      "parseOk": true,
+      "normalized": "OK"
+    },
+    "enhanced": {
+      "blocked": true,
+      "parseOk": false,
+      "normalized": "OK: MAYBE UNSAFE"
+    }
+  }
+]

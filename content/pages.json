@@ -10,7 +10,10 @@
     "description": "Show the model a few examples you like and a few you do not.",
     "eyebrow": "APPROACH 01",
     "status": "Demo available",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Teach the model your preferences</a></div></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M14 16h29v26a10 10 0 0 1-10 10h-9a10 10 0 0 1-10-10z\" fill=\"#709cd1\"/><path d=\"M43 22h6c14 0 12 21-6 21\" fill=\"none\" stroke=\"#507aab\" stroke-width=\"5\"/><path d=\"M20 9v-5m10 5v-5\" stroke=\"#a0acb9\" stroke-width=\"2\"/></svg><span>You like<br><strong>blue mugs</strong></span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M14 16h29v26a10 10 0 0 1-10 10h-9a10 10 0 0 1-10-10z\" fill=\"#c98676\"/><path d=\"M43 22h6c14 0 12 21-6 21\" fill=\"none\" stroke=\"#ab6859\" stroke-width=\"5\"/></svg><span>You skip<br><strong>red mugs</strong></span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M12 18h32l-3 27a8 8 0 0 1-8 7H23a8 8 0 0 1-8-7z\" fill=\"#709cd1\"/><path d=\"M44 24h6c12 0 11 18-7 18\" fill=\"none\" stroke=\"#507aab\" stroke-width=\"5\"/><path d=\"M17 29h23\" stroke=\"#dae8f7\" stroke-width=\"4\"/></svg><span>A suggestion:<br><strong>another blue mug</strong></span></div></div><figcaption>Simple illustration: learning a preference for blue mugs.</figcaption></figure><p>The model looks for patterns in your ratings. It can then suggest something new, sort existing choices, or adjust a design toward your taste.</p><p>A suggestion is still a guess. You decide whether it is any good.</p><p class=\"next-links\"><a href=\"@/how-it-works.html\">How it works</a></p><details><summary>About the original project</summary><p>SkinDeep first tried this with generated faces in 2018–19. The current browser demo uses simple drawings so you can see what changes. Real image generators and human preference studies need separate tests.</p><p class=\"next-links\"><a href=\"@/history.html\">History</a> · <a href=\"@/preference-results.html\">Tests</a> · <a href=\"@/docs/method.md\">Mathematics</a></p></details><section id=\"preference-approaches\"><h2>Explore the approaches</h2><p class=\"next-links\"><a href=\"@/how-it-works.html\">Learn from ratings</a> · <a href=\"@/active-learning-strategies.html\">Choose the next example</a> · <a href=\"@/multi-modal-preferences-deep-dive.html\">Learn more than one style</a> · <a href=\"@/preference-results.html\">Recorded results</a></p></section>"
+    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Teach the model your preferences</a></div></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M14 16h29v26a10 10 0 0 1-10 10h-9a10 10 0 0 1-10-10z\" fill=\"#709cd1\"/><path d=\"M43 22h6c14 0 12 21-6 21\" fill=\"none\" stroke=\"#507aab\" stroke-width=\"5\"/><path d=\"M20 9v-5m10 5v-5\" stroke=\"#a0acb9\" stroke-width=\"2\"/></svg><span>You like<br><strong>blue mugs</strong></span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M14 16h29v26a10 10 0 0 1-10 10h-9a10 10 0 0 1-10-10z\" fill=\"#c98676\"/><path d=\"M43 22h6c14 0 12 21-6 21\" fill=\"none\" stroke=\"#ab6859\" stroke-width=\"5\"/></svg><span>You skip<br><strong>red mugs</strong></span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M12 18h32l-3 27a8 8 0 0 1-8 7H23a8 8 0 0 1-8-7z\" fill=\"#709cd1\"/><path d=\"M44 24h6c12 0 11 18-7 18\" fill=\"none\" stroke=\"#507aab\" stroke-width=\"5\"/><path d=\"M17 29h23\" stroke=\"#dae8f7\" stroke-width=\"4\"/></svg><span>A suggestion:<br><strong>another blue mug</strong></span></div></div><figcaption>Simple illustration: learning a preference for blue mugs.</figcaption></figure><p>The model looks for patterns in your ratings. It can then suggest something new, sort existing choices, or adjust a design toward your taste.</p><p>A suggestion is still a guess. You decide whether it is any good.</p><p class=\"next-links\"><a href=\"@/how-it-works.html\">How it works</a></p><section id=\"use-cases\" aria-labelledby=\"use-cases-title\"><h2 id=\"use-cases-title\">Where this could be useful</h2><p>Learn from ratings to rank choices, suggest something new, or make a small edit. These are possible applications; the current demo teaches the loop using drawings.</p><p>With a compatible generator, the small model can score or adjust its internal inputs <strong>before rendering</strong>. It can also rank things that already exist. These are the original generate, score and edit uses of the same learned preferences.</p><ul class=\"use-case-list\"><li><a href=\"@/examples/music.html\">Music and playlists</a><span>Learn what you like to hear next.</span></li><li><a href=\"@/examples/art.html\">Art and visual design</a><span>Choose a direction by rating examples.</span></li><li><a href=\"@/examples/architecture.html\">Architecture and interiors</a><span>Explore layouts and rooms that fit your taste.</span></li><li><a href=\"@/examples/dating.html\">Mutual visual preferences</a><span>Look for interest from both people.</span></li><li><a href=\"@/examples/social-media.html\">A feed without repeated prompting</a><span>Learn from what people choose to see.</span></li><li><a href=\"@/examples/beauty.html\">Makeup and appearance previews</a><span>Explore a look through small visual changes.</span></li></ul><details class=\"more-use-cases\"><summary>More use cases: everyday choices, creative work, science and engineering</summary><div class=\"use-case-group\"><h3>Research and engineering</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/molecules.html\">Molecule and drug research</a><span>Rank research candidates against a stated goal.</span></li><li><a href=\"@/examples/materials.html\">Material research</a><span>Choose candidates under several requirements.</span></li><li><a href=\"@/examples/genetics.html\">Genetics research</a><span>Prioritize candidates for an independent test.</span></li><li><a href=\"@/examples/proteins.html\">Protein research</a><span>Score candidates without treating scores as proof.</span></li><li><a href=\"@/examples/science.html\">Engineering with constraints</a><span>Keep useful designs within fixed requirements.</span></li><li><a href=\"@/examples/patient-preferences.html\">Patient preferences in approved options</a><span>Record what matters to a patient.</span></li></ul></div><div class=\"use-case-group\"><h3>Creative work</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/stories.html\">Stories and interactive fiction</a><span>Learn which style of story a reader enjoys.</span></li><li><a href=\"@/examples/games.html\">Game levels and difficulty</a><span>Suggest levels a player wants to play.</span></li><li><a href=\"@/examples/models-3d.html\">3D assets and objects</a><span>Choose shapes that fit a project.</span></li><li><a href=\"@/examples/video.html\">Video edits and effects</a><span>Learn which cuts and visual styles work.</span></li><li><a href=\"@/examples/voice.html\">Voice and narration style</a><span>Choose a comfortable pace and delivery.</span></li></ul></div><div class=\"use-case-group\"><h3>Design and everyday choices</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/fashion.html\">Fashion and outfit choices</a><span>Find clothes that fit your style.</span></li><li><a href=\"@/examples/automotive.html\">Automotive design</a><span>Explore car shapes, colours and cabins.</span></li><li><a href=\"@/examples/interfaces.html\">Interface and layout choices</a><span>Learn which layouts someone finds usable.</span></li></ul></div><div class=\"use-case-group\"><h3>Personal choices</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/news.html\">News and content curation</a><span>Find useful articles in a preferred format.</span></li><li><a href=\"@/examples/recipes.html\">Recipes and meal choices</a><span>Learn taste within the ingredients you choose.</span></li><li><a href=\"@/examples/education.html\">Learning materials</a><span>Find explanations a learner finds useful.</span></li><li><a href=\"@/examples/shopping.html\">Product recommendations</a><span>Rank available products by personal taste.</span></li></ul></div><div class=\"use-case-group\"><h3>Language and image generation</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/image-preferences.html\">Stop an image that misses your taste</a><span>Spend rendering time on more promising ideas.</span></li></ul></div></details><p class=\"next-links\"><a href=\"@/examples/index.html#preferences\">Browse these use cases</a></p></section><details><summary>About the original project</summary><p>SkinDeep first tried this with generated faces in 2018–19. The current browser demo uses simple drawings so you can see what changes. Real image generators and human preference studies need separate tests.</p><p class=\"next-links\"><a href=\"@/history.html\">History</a> · <a href=\"@/preference-results.html\">Tests</a> · <a href=\"@/docs/method.md\">Mathematics</a></p></details><section id=\"preference-approaches\"><h2>Explore the approaches</h2><p class=\"next-links\"><a href=\"@/how-it-works.html\">Learn from ratings</a> · <a href=\"@/active-learning-strategies.html\">Choose the next example</a> · <a href=\"@/multi-modal-preferences-deep-dive.html\">Learn more than one style</a> · <a href=\"@/preference-results.html\">Recorded results</a></p></section>",
+    "styles": [
+      "use-cases.css"
+    ]
   },
   "how-it-works.html": {
     "title": "How the model learns",
@@ -31,23 +34,32 @@
   "decisions.html": {
     "title": "Decisions without a written reply",
     "description": "Sometimes an app only needs a label, such as “support” or “spam”.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/moderation-benchmark.html\">Live demo: compare labels and written replies</a></div><p class=\"small\">Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier.</p></section><figure class=\"small-example\"><div class=\"decision-example\"><span class=\"sample-message\">Where is my order?</span><span aria-hidden=\"true\">&rarr;</span><span class=\"answer-label\">Support</span></div><figcaption>Illustration: route a message without writing a reply.</figcaption></figure><p>An app may need a category or a yes/no decision. A classifier can return that result directly, without writing a sentence or JSON.</p><p>This changes the output. The model can still use every layer; stopping early is a separate optimization.</p><p class=\"small\"><a href=\"@/moderation-benchmark.html\">Run 100 real moderation messages in your browser</a> · <a href=\"@/maze-benchmark.html\">Watch recorded movement decisions</a></p><h2>Try it on your device</h2><p>The browser benchmark runs Qwen 0.5B on real ToxicChat messages. Compare a direct label decision with a written JSON answer, including mistakes and the time to finish. Both use all 24 layers.</p><details><summary>What the research has shown</summary><p>A separately trained Qwen classifier got 2,551 of 3,080 banking queries right across 77 topics. A word-based classifier got 2,464 right. The browser demo uses Qwen’s existing output scores; it does not reproduce those trained classifiers.</p><p>A separate changing-rule test failed. Following arbitrary instructions remains unproven, and shorter output does not guarantee equal accuracy.</p><p class=\"small\"><a href=\"@/docs/banking77-results.md\">Banking data and results</a> · <a href=\"@/docs/matched-output.md\">Matched one-token comparison</a> · <a href=\"@/docs/changing-rules.md\">Changing-rule test</a> · <a href=\"@/decision-results.html\">Other ways to reduce computation</a></p></details><p class=\"small\"><a href=\"@/docs/real-world-datasets.md\">Five more practical datasets to test</a></p><p class=\"small\"><a href=\"@/batch-results.html\">Processing several messages together</a></p><p class=\"small\"><a href=\"@/prefix-results.html\">Reusing the fixed instructions: measured results</a></p><section id=\"new-practical-demos\"><h2>Try a specific task</h2><ul class=\"page-links\"><li><a href=\"@/tiny-decision-demo.html\">Try the small trained classifier</a></li><li><a href=\"@/shared-decision-demo.html\">Compare early stopping on your device</a></li><li><a href=\"@/search-demo.html\">Search real papers locally</a></li><li><a href=\"@/screenshot-demo.html\">See real screenshot-to-click results</a></li><li><a href=\"@/image-action-demo.html\">Try a live image-to-action model</a></li><li><a href=\"@/redaction-results.html\">Find names to redact</a></li><li><a href=\"@/receipt-results.html\">Choose a receipt total</a></li><li><a href=\"@/routing-results.html\">Route or ask for help</a></li><li><a href=\"@/shared-model-results.html\">One model with a small early exit</a></li></ul></section><section id=\"movement-policy\"><h2>A decision on every step</h2><p class=\"next-links\"><a href=\"@/maze-results.html\">Learn to move through a maze</a> · <a href=\"@/maze-live.html\">Run the policy</a></p></section>",
+    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/moderation-benchmark.html\">Live demo: compare labels and written replies</a></div><p class=\"small\">Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier.</p></section><figure class=\"small-example\"><div class=\"decision-example\"><span class=\"sample-message\">Where is my order?</span><span aria-hidden=\"true\">&rarr;</span><span class=\"answer-label\">Support</span></div><figcaption>Illustration: route a message without writing a reply.</figcaption></figure><p>An app may need a category or a yes/no decision. A classifier can return that result directly, without writing a sentence or JSON.</p><p>This changes the output. The model can still use every layer; stopping early is a separate optimization.</p><p class=\"small\"><a href=\"@/moderation-benchmark.html\">Run 100 real moderation messages in your browser</a> · <a href=\"@/maze-benchmark.html\">Watch recorded movement decisions</a></p><h2>Try it on your device</h2><p>The browser benchmark runs Qwen 0.5B on real ToxicChat messages. Compare a direct label decision with a written JSON answer, including mistakes and the time to finish. Both use all 24 layers.</p><section id=\"use-cases\" aria-labelledby=\"use-cases-title\"><h2 id=\"use-cases-title\">Where this could be useful</h2><p>When an app needs a category, score or action, a small output head can return it directly. Some cases have narrow prototypes; others are proposals.</p><ul class=\"use-case-list\"><li><a href=\"@/examples/moderation.html\">Live chat moderation</a><span>Return an allow, block or review decision.</span></li><li><a href=\"@/examples/support.html\">Route customer requests</a><span>Send a request to the right queue.</span></li><li><a href=\"@/examples/receipts.html\">Choose a receipt total</a><span>Return the right amount from a short list.</span></li><li><a href=\"@/examples/ecg.html\">ECG labels without a written report</a><span>Return structured predictions from a heart trace.</span></li></ul><details class=\"more-use-cases\"><summary>More use cases: search, actions, signals and image checks</summary><div class=\"use-case-group\"><h3>Messages and documents</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/redaction.html\">Find text to redact</a><span>Mark spans instead of writing a new document.</span></li><li><a href=\"@/examples/search.html\">Rank search results</a><span>Put useful matches near the top.</span></li><li><a href=\"@/examples/inbox.html\">Sort an inbox</a><span>Separate receipts, requests and newsletters.</span></li></ul></div><div class=\"use-case-group\"><h3>Actions</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/game-moves.html\">Choose a game move</a><span>Return a direction on each turn.</span></li><li><a href=\"@/examples/offline-commands.html\">Commands on a small device</a><span>Use a short path for familiar commands.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/ecg-quality.html\">Check ECG recording quality</a><span>Flag an unusable trace for another recording.</span></li><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/eeg-sleep.html\">EEG sleep-stage labels</a><span>Classify recorded sleep segments directly.</span></li></ul></div><div class=\"use-case-group\"><h3>Language and image generation</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/image-safety.html\">Stop an unsafe image before it finishes</a><span>Check during generation and cancel early.</span></li></ul></div></details><p class=\"next-links\"><a href=\"@/examples/index.html#decisions\">Browse these use cases</a></p></section><details><summary>What the research has shown</summary><p>A separately trained Qwen classifier got 2,551 of 3,080 banking queries right across 77 topics. A word-based classifier got 2,464 right. The browser demo uses Qwen’s existing output scores; it does not reproduce those trained classifiers.</p><p>A separate changing-rule test failed. Following arbitrary instructions remains unproven, and shorter output does not guarantee equal accuracy.</p><p class=\"small\"><a href=\"@/docs/banking77-results.md\">Banking data and results</a> · <a href=\"@/docs/matched-output.md\">Matched one-token comparison</a> · <a href=\"@/docs/changing-rules.md\">Changing-rule test</a> · <a href=\"@/decision-results.html\">Other ways to reduce computation</a></p></details><p class=\"small\"><a href=\"@/docs/real-world-datasets.md\">Five more practical datasets to test</a></p><p class=\"small\"><a href=\"@/batch-results.html\">Processing several messages together</a></p><p class=\"small\"><a href=\"@/prefix-results.html\">Reusing the fixed instructions: measured results</a></p><section id=\"new-practical-demos\"><h2>Try a specific task</h2><ul class=\"page-links\"><li><a href=\"@/tiny-decision-demo.html\">Try the small trained classifier</a></li><li><a href=\"@/shared-decision-demo.html\">Compare early stopping on your device</a></li><li><a href=\"@/search-demo.html\">Search real papers locally</a></li><li><a href=\"@/screenshot-demo.html\">See real screenshot-to-click results</a></li><li><a href=\"@/image-action-demo.html\">Try a live image-to-action model</a></li><li><a href=\"@/redaction-results.html\">Find names to redact</a></li><li><a href=\"@/receipt-results.html\">Choose a receipt total</a></li><li><a href=\"@/routing-results.html\">Route or ask for help</a></li><li><a href=\"@/shared-model-results.html\">One model with a small early exit</a></li></ul></section><section id=\"movement-policy\"><h2>A decision on every step</h2><p class=\"next-links\"><a href=\"@/maze-results.html\">Learn to move through a maze</a> · <a href=\"@/maze-live.html\">Run the policy</a></p></section>",
     "eyebrow": "APPROACH 02",
-    "status": "Early tests"
+    "status": "Early tests",
+    "styles": [
+      "use-cases.css"
+    ]
   },
   "coordinates.html": {
     "title": "Finding where to click",
     "description": "Give the model a screenshot and an instruction, such as “click Save”.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/point-demo.html\">Find a point in your own screenshot</a></div><p class=\"small\">Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings.</p></section><figure class=\"small-example click-example\"><div class=\"mini-window\" role=\"img\" aria-label=\"A note window with its Save button highlighted by a pointer\"><span class=\"mini-window-title\">My note</span><span class=\"fake-line\"></span><span class=\"fake-line short\"></span><span class=\"mock-save\">Save <svg viewBox=\"0 0 24 28\" aria-hidden=\"true\"><path d=\"M3 2v22l6-6 5 9 4-2-5-8h8z\" fill=\"#253e63\" stroke=\"white\" stroke-width=\"2\"/></svg></span></div><figcaption>The output is a point on the image, ready for the app to use.</figcaption></figure><p>The model can point at a button directly instead of spelling out its position as text. It still needs to understand the screen and what you asked it to do.</p><p>On 30 public screenshots, the model found 25 targets when it combined neighbouring image patches, compared with 16 when choosing a single patch. Recognising when a requested button is missing remains an open problem.</p><p class=\"next-links\"><a href=\"@/coordinate-lab.html\">See the recorded clicks</a> · <a href=\"@/coordinate-results.html\">Test results</a></p><details class=\"plain-details\"><summary>Technical details and sources</summary><p><a href=\"@/docs/coordinate-abstention-smoke.md\">Small follow-up: rejecting missing targets</a>. This diagnostic reuses eight examples; general target-presence detection remains unvalidated.</p><p><a href=\"@/docs/screenspot-results.md\">Public screenshot results and all predicted points</a></p><p><a href=\"@/docs/screenspot-protocol.md\">Public screenshot test protocol</a> · <a href=\"@/docs/coordinate-correction.md\">Implementation review and resolution-cap correction</a></p><section class=\"paper\"><h2>An action head</h2><div class=\"diagram\"><span>Screenshot + task</span>→<span>Vision-language model</span>→<span>Spatial head</span>→<span>Region / x, y</span></div><p>We compare coordinate regression, visual-patch selection, and region selection with a local offset. Multiple valid targets make a single averaged coordinate unreliable; no-target cases need their own output.</p><p>Image encoding and transformer input processing still cost time. One forward pass does not mean one operation.</p></section><section class=\"paper\"><h2>A concrete reference</h2><p>Microsoft’s GUI-Actor adds an attention-based action head to Qwen vision-language backbones. It aligns a task token with visual patches, then derives a point from the selected region. This is related work and a reference implementation, not an invention claimed by this lab.</p><p>Our pilot runs a direct pointer path and a paired pass with one added vocabulary projection. That isolates output-head overhead; it is not a text-coordinate or JSON comparison. A small local UI fixture tests integration and coordinate mapping; broader grounding quality needs held-out applications.</p><p><a href=\"https://github.com/microsoft/GUI-Actor\">GUI-Actor source</a> · <a href=\"https://arxiv.org/abs/2506.03143\">Paper</a> · <a href=\"@/results.html\">Local results</a></p></section><section class=\"paper\"><h2>Build evidence without live account actions</h2><p>The coordinate workbench creates local, explicit target annotations. It does not claim to infer targets from uploaded images. Recorded model predictions can be inspected separately from manual ground truth.</p><div class=\"actions\"><a class=\"button\" href=\"@/coordinate-lab.html\">Open coordinate workbench</a><a class=\"button secondary\" href=\"@/research.html\">C01–C04 protocol</a></div></section></details><section id=\"new-action-demos\"><h2>See it work</h2><p><a href=\"@/screenshot-demo.html\">Explore 30 real screenshots</a> · <a href=\"@/image-action-demo.html\">Run the small image-to-action model</a></p></section><section id=\"visual-fresh-followup\"><p>A harder desktop test found <strong>8 of 25 targets</strong> with the same model. <a href=\"@/visual-refusal-results.html\">See the new test, including infeasible requests</a>.</p></section>",
+    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/point-demo.html\">Find a point in your own screenshot</a></div><p class=\"small\">Live OCR and text matching; a simpler alternative to the GUI-Actor model used in the recordings.</p></section><figure class=\"small-example click-example\"><div class=\"mini-window\" role=\"img\" aria-label=\"A note window with its Save button highlighted by a pointer\"><span class=\"mini-window-title\">My note</span><span class=\"fake-line\"></span><span class=\"fake-line short\"></span><span class=\"mock-save\">Save <svg viewBox=\"0 0 24 28\" aria-hidden=\"true\"><path d=\"M3 2v22l6-6 5 9 4-2-5-8h8z\" fill=\"#253e63\" stroke=\"white\" stroke-width=\"2\"/></svg></span></div><figcaption>The output is a point on the image, ready for the app to use.</figcaption></figure><p>The model can point at a button directly instead of spelling out its position as text. It still needs to understand the screen and what you asked it to do.</p><p>On 30 public screenshots, the model found 25 targets when it combined neighbouring image patches, compared with 16 when choosing a single patch. Recognising when a requested button is missing remains an open problem.</p><p class=\"next-links\"><a href=\"@/coordinate-lab.html\">See the recorded clicks</a> · <a href=\"@/coordinate-results.html\">Test results</a></p><section id=\"use-cases\" aria-labelledby=\"use-cases-title\"><h2 id=\"use-cases-title\">Where this could be useful</h2><p>Return a location an app can use. Finding the point and safely carrying out the action are separate tasks.</p><div class=\"use-case-group\"><h3>Screens and images</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/desktop-actions.html\">Point to an app control</a><span>Find a button without writing coordinates.</span></li><li><a href=\"@/examples/assistive-pointing.html\">Assistive pointing</a><span>Turn a requested control into a location.</span></li><li><a href=\"@/examples/ui-testing.html\">Check changing interfaces</a><span>Locate a control after a layout changes.</span></li><li><a href=\"@/examples/image-annotation.html\">Suggest an image annotation</a><span>Mark a starting point for a human editor.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/medical-annotation.html\">Medical-image landmarks and measurements</a><span>Suggest editable points for a specialist.</span></li></ul></div><p class=\"next-links\"><a href=\"@/examples/index.html#coordinates\">Browse these use cases</a></p></section><details class=\"plain-details\"><summary>Technical details and sources</summary><p><a href=\"@/docs/coordinate-abstention-smoke.md\">Small follow-up: rejecting missing targets</a>. This diagnostic reuses eight examples; general target-presence detection remains unvalidated.</p><p><a href=\"@/docs/screenspot-results.md\">Public screenshot results and all predicted points</a></p><p><a href=\"@/docs/screenspot-protocol.md\">Public screenshot test protocol</a> · <a href=\"@/docs/coordinate-correction.md\">Implementation review and resolution-cap correction</a></p><section class=\"paper\"><h2>An action head</h2><div class=\"diagram\"><span>Screenshot + task</span>→<span>Vision-language model</span>→<span>Spatial head</span>→<span>Region / x, y</span></div><p>We compare coordinate regression, visual-patch selection, and region selection with a local offset. Multiple valid targets make a single averaged coordinate unreliable; no-target cases need their own output.</p><p>Image encoding and transformer input processing still cost time. One forward pass does not mean one operation.</p></section><section class=\"paper\"><h2>A concrete reference</h2><p>Microsoft’s GUI-Actor adds an attention-based action head to Qwen vision-language backbones. It aligns a task token with visual patches, then derives a point from the selected region. This is related work and a reference implementation, not an invention claimed by this lab.</p><p>Our pilot runs a direct pointer path and a paired pass with one added vocabulary projection. That isolates output-head overhead; it is not a text-coordinate or JSON comparison. A small local UI fixture tests integration and coordinate mapping; broader grounding quality needs held-out applications.</p><p><a href=\"https://github.com/microsoft/GUI-Actor\">GUI-Actor source</a> · <a href=\"https://arxiv.org/abs/2506.03143\">Paper</a> · <a href=\"@/results.html\">Local results</a></p></section><section class=\"paper\"><h2>Build evidence without live account actions</h2><p>The coordinate workbench creates local, explicit target annotations. It does not claim to infer targets from uploaded images. Recorded model predictions can be inspected separately from manual ground truth.</p><div class=\"actions\"><a class=\"button\" href=\"@/coordinate-lab.html\">Open coordinate workbench</a><a class=\"button secondary\" href=\"@/research.html\">C01–C04 protocol</a></div></section></details><section id=\"new-action-demos\"><h2>See it work</h2><p><a href=\"@/screenshot-demo.html\">Explore 30 real screenshots</a> · <a href=\"@/image-action-demo.html\">Run the small image-to-action model</a></p></section><section id=\"visual-fresh-followup\"><p>A harder desktop test found <strong>8 of 25 targets</strong> with the same model. <a href=\"@/visual-refusal-results.html\">See the new test, including infeasible requests</a>.</p></section>",
     "eyebrow": "APPROACH 03",
-    "status": "Early tests"
+    "status": "Early tests",
+    "styles": [
+      "use-cases.css"
+    ]
   },
   "adaptive.html": {
     "title": "Stopping early",
     "description": "An easy task may not need every step of a model’s processing.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/shared-decision-demo.html\">Live demo: compare early stopping and full depth</a></div><p class=\"small\">Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate.</p></section><figure class=\"small-example\"><img src=\"@/images/qwen-early-exit.svg\" width=\"360\" height=\"180\" alt=\"Qwen processes layers 1 to 12. A small classifier reads 896 internal numbers and returns SAFE or BLOCK. The 600-message test skipped layers 13 to 24 for every message; this is a fixed-depth shortcut.\"><figcaption>The 600-message test stopped at layer 12 of 24.</figcaption></figure><p>A small classifier reads the numbers inside Qwen and predicts a label. At layers 6, 12 and 18, its confidence score decides whether to stop or continue.</p><p>Our 600-message chat test stopped at layer 12 every time. It missed 26 toxic messages, compared with 19 at full depth, and failed the reliability check. This was a fixed shortcut, not a detector of when an answer was ready.</p><p class=\"next-links\"><a href=\"@/decision-results.html\">Compare the approaches</a> · <a href=\"@/research.html\">Research FAQ</a></p><details class=\"plain-details\"><summary>Technical details and sources</summary><p><a href=\"@/docs/chat-smoke-results.md\">Latest small experiments: learned stopping, model training and measured time</a> &middot; <a href=\"@/docs/chat-smoke-review.md\">Adversarial review</a>. These use 100 previously inspected messages and remain exploratory.</p><p><a href=\"@/docs/chat600-results.md\">600 real chat decisions: results and measured runtime</a> &middot; <a href=\"@/docs/chat600-review.md\">Independent review</a> &middot; <a href=\"@/maze-benchmark.html\">Watch recorded maze decisions</a>.</p><p><a href=\"@/docs/clinc-results.md\">Second-dataset validation</a> &middot; <a href=\"@/docs/clinc-unknown.md\">Testing an unknown-request output</a> &middot; <a href=\"@/docs/evidence-acceptance.md\">Evidence requirements</a>.</p><p><a href=\"@/docs/reproduction.md\">Separate implementation replay and portable classifiers</a> &middot; <a href=\"@/docs/changing-rules.md\">Changing-rule test: the current classifier failed</a> &middot; <a href=\"@/docs/adversarial-followup.md\">Adversarial reassessment</a>.</p><p><a href=\"@/docs/banking77-results.md\">Tests on 3,080 public banking queries</a> | <a href=\"@/docs/conservative-exits.md\">Stricter rule on a fresh reserve</a></p><p><a href=\"@/docs/early-exit.md\">Exactly how the classifier and stopping rule work</a> · <a href=\"@/docs/banking77-protocol.md\">Real-query test protocol</a> · <a href=\"@/results/qwen-decisions/predictions.json\">Original per-query evidence</a></p><section class=\"paper\"><h2>Checkpoints inside the model</h2><p>Task heads at selected layers make candidate predictions. A gate decides whether to return, continue, or escalate. We begin with full-depth outputs, then measure intermediate readouts and actual early stopping.</p><p>Collecting intermediate states after running every layer is useful for training probes, but saves no inference computation. The runtime must skip later blocks. Timings must include the exit checks.</p><p><a href=\"https://arxiv.org/abs/2004.02178\">FastBERT</a>, <a href=\"https://arxiv.org/abs/2207.07061\">CALM</a>, and <a href=\"https://arxiv.org/abs/2404.16710\">LayerSkip</a> provide relevant prior work in different settings.</p></section><section class=\"paper\"><h2>Continuation and handoffs</h2><p>Continuing within one model reuses compatible activations. Two independently trained models do not have interchangeable hidden states; a direct handoff needs an explicitly trained interface and comparison against simply reprocessing the original input.</p><p>CPU, GPU, and NPU placement are measured engineering choices. Copies, model residency, batching, cache repair, and fallback can eliminate theoretical savings. Parameter counts alone do not establish latency or cost.</p></section><section class=\"paper\"><h2>Conditions for a useful shortcut</h2><ul><li>Quality holds at a registered error tolerance.</li><li>Accepted-request coverage is useful; rejecting everything is not success.</li><li>Actual input-to-result time improves, including fallback.</li><li>Changing rules, long context, unfamiliar inputs, and wrong high-confidence predictions remain visible in evaluation.</li></ul><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/results.html\">Measured findings</a></p></section></details><section id=\"shared-model-followup\"><h2>One shared model, two exits</h2><p>A jointly trained four-layer model can answer after two layers, then continue from the same state when needed. <a href=\"@/shared-model-results.html\">See the layer counts, accuracy and actual timing</a>.</p></section><section id=\"latest-validation\"><h2>Later validation</h2><p class=\"next-links\"><a href=\"@/fresh-message-results.html\">500 fresh messages</a> · <a href=\"@/browser-method-results.html#adaptive\">Recorded browser run</a></p></section>",
+    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/shared-decision-demo.html\">Live demo: compare early stopping and full depth</a></div><p class=\"small\">Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate.</p></section><figure class=\"small-example\"><img src=\"@/images/qwen-early-exit.svg\" width=\"360\" height=\"180\" alt=\"Qwen processes layers 1 to 12. A small classifier reads 896 internal numbers and returns SAFE or BLOCK. The 600-message test skipped layers 13 to 24 for every message; this is a fixed-depth shortcut.\"><figcaption>The 600-message test stopped at layer 12 of 24.</figcaption></figure><p>A small classifier reads the numbers inside Qwen and predicts a label. At layers 6, 12 and 18, its confidence score decides whether to stop or continue.</p><p>Our 600-message chat test stopped at layer 12 every time. It missed 26 toxic messages, compared with 19 at full depth, and failed the reliability check. This was a fixed shortcut, not a detector of when an answer was ready.</p><p class=\"next-links\"><a href=\"@/decision-results.html\">Compare the approaches</a> · <a href=\"@/research.html\">Research FAQ</a></p><section id=\"use-cases\" aria-labelledby=\"use-cases-title\"><h2 id=\"use-cases-title\">Where this could be useful</h2><p>Choose a smaller model, produce a result with fewer steps, or cancel a generation that is going wrong. These are different ways to save work; each needs its own quality and timing test.</p><ul class=\"use-case-list\"><li><a href=\"@/examples/model-routing.html\">Route between small and large models</a><span>Use the larger model when it adds value.</span></li><li><a href=\"@/examples/faster-llm.html\">Get an LLM result sooner</a><span>Use less model work before returning an answer.</span></li><li><a href=\"@/examples/image-safety.html\">Stop an unsafe image before it finishes</a><span>Check during generation and cancel early.</span></li><li><a href=\"@/examples/image-preferences.html\">Stop an image that misses your taste</a><span>Spend rendering time on more promising ideas.</span></li></ul><details class=\"more-use-cases\"><summary>More use cases: messages, devices and medical research</summary><div class=\"use-case-group\"><h3>Messages and documents</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/moderation.html\">Live chat moderation</a><span>Return an allow, block or review decision.</span></li><li><a href=\"@/examples/support.html\">Route customer requests</a><span>Send a request to the right queue.</span></li><li><a href=\"@/examples/search.html\">Rank search results</a><span>Put useful matches near the top.</span></li><li><a href=\"@/examples/inbox.html\">Sort an inbox</a><span>Separate receipts, requests and newsletters.</span></li></ul></div><div class=\"use-case-group\"><h3>Actions</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/game-moves.html\">Choose a game move</a><span>Return a direction on each turn.</span></li><li><a href=\"@/examples/offline-commands.html\">Commands on a small device</a><span>Use a short path for familiar commands.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/ecg.html\">ECG labels without a written report</a><span>Return structured predictions from a heart trace.</span></li><li><a href=\"@/examples/ecg-quality.html\">Check ECG recording quality</a><span>Flag an unusable trace for another recording.</span></li><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/mri-reconstruction.html\">MRI reconstruction with fewer model steps</a><span>Study when further reconstruction stops helping.</span></li><li><a href=\"@/examples/eeg-sleep.html\">EEG sleep-stage labels</a><span>Classify recorded sleep segments directly.</span></li></ul></div></details><p class=\"next-links\"><a href=\"@/examples/index.html#adaptive\">Browse these use cases</a></p></section><details class=\"plain-details\"><summary>Technical details and sources</summary><p><a href=\"@/docs/chat-smoke-results.md\">Latest small experiments: learned stopping, model training and measured time</a> &middot; <a href=\"@/docs/chat-smoke-review.md\">Adversarial review</a>. These use 100 previously inspected messages and remain exploratory.</p><p><a href=\"@/docs/chat600-results.md\">600 real chat decisions: results and measured runtime</a> &middot; <a href=\"@/docs/chat600-review.md\">Independent review</a> &middot; <a href=\"@/maze-benchmark.html\">Watch recorded maze decisions</a>.</p><p><a href=\"@/docs/clinc-results.md\">Second-dataset validation</a> &middot; <a href=\"@/docs/clinc-unknown.md\">Testing an unknown-request output</a> &middot; <a href=\"@/docs/evidence-acceptance.md\">Evidence requirements</a>.</p><p><a href=\"@/docs/reproduction.md\">Separate implementation replay and portable classifiers</a> &middot; <a href=\"@/docs/changing-rules.md\">Changing-rule test: the current classifier failed</a> &middot; <a href=\"@/docs/adversarial-followup.md\">Adversarial reassessment</a>.</p><p><a href=\"@/docs/banking77-results.md\">Tests on 3,080 public banking queries</a> | <a href=\"@/docs/conservative-exits.md\">Stricter rule on a fresh reserve</a></p><p><a href=\"@/docs/early-exit.md\">Exactly how the classifier and stopping rule work</a> · <a href=\"@/docs/banking77-protocol.md\">Real-query test protocol</a> · <a href=\"@/results/qwen-decisions/predictions.json\">Original per-query evidence</a></p><section class=\"paper\"><h2>Checkpoints inside the model</h2><p>Task heads at selected layers make candidate predictions. A gate decides whether to return, continue, or escalate. We begin with full-depth outputs, then measure intermediate readouts and actual early stopping.</p><p>Collecting intermediate states after running every layer is useful for training probes, but saves no inference computation. The runtime must skip later blocks. Timings must include the exit checks.</p><p><a href=\"https://arxiv.org/abs/2004.02178\">FastBERT</a>, <a href=\"https://arxiv.org/abs/2207.07061\">CALM</a>, and <a href=\"https://arxiv.org/abs/2404.16710\">LayerSkip</a> provide relevant prior work in different settings.</p></section><section class=\"paper\"><h2>Continuation and handoffs</h2><p>Continuing within one model reuses compatible activations. Two independently trained models do not have interchangeable hidden states; a direct handoff needs an explicitly trained interface and comparison against simply reprocessing the original input.</p><p>CPU, GPU, and NPU placement are measured engineering choices. Copies, model residency, batching, cache repair, and fallback can eliminate theoretical savings. Parameter counts alone do not establish latency or cost.</p></section><section class=\"paper\"><h2>Conditions for a useful shortcut</h2><ul><li>Quality holds at a registered error tolerance.</li><li>Accepted-request coverage is useful; rejecting everything is not success.</li><li>Actual input-to-result time improves, including fallback.</li><li>Changing rules, long context, unfamiliar inputs, and wrong high-confidence predictions remain visible in evaluation.</li></ul><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/results.html\">Measured findings</a></p></section></details><section id=\"shared-model-followup\"><h2>One shared model, two exits</h2><p>A jointly trained four-layer model can answer after two layers, then continue from the same state when needed. <a href=\"@/shared-model-results.html\">See the layer counts, accuracy and actual timing</a>.</p></section><section id=\"latest-validation\"><h2>Later validation</h2><p class=\"next-links\"><a href=\"@/fresh-message-results.html\">500 fresh messages</a> · <a href=\"@/browser-method-results.html#adaptive\">Recorded browser run</a></p></section>",
     "eyebrow": "APPROACH 04",
-    "status": "Early tests"
+    "status": "Early tests",
+    "styles": [
+      "use-cases.css"
+    ]
   },
   "about.html": {
     "title": "About SkinDeep",
@@ -139,46 +151,113 @@
     "status": "Archive"
   },
   "examples/art.html": {
-    "title": "Art and design",
-    "description": "Learn which designs someone prefers.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"9\" y=\"10\" width=\"46\" height=\"43\" rx=\"3\" fill=\"#f2e8d9\" stroke=\"#9a8261\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"23\" r=\"6\" fill=\"#e8c268\"/><path d=\"M10 47l16-18 13 14 8-10 8 14\" fill=\"#80a88b\"/></svg><span>Choose designs</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M32 53L9 30C-4 13 19 2 32 18 45 2 68 13 55 30z\" fill=\"#ba6d73\"/></svg><span>Rate them</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"9\" y=\"10\" width=\"46\" height=\"43\" rx=\"3\" fill=\"#f2e8d9\" stroke=\"#9a8261\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"23\" r=\"6\" fill=\"#e8c268\"/><path d=\"M10 47l16-18 13 14 8-10 8 14\" fill=\"#80a88b\"/></svg><span>Suggest a design</span></div></div><figcaption>Proposed use; this application has not been validated.</figcaption></figure><p>A design tool could learn from a few examples you like, then make or sort new options.</p><p>The test is whether you prefer the new designs, not whether the model gives them a high score.</p><details class=\"plain-details\"><summary>Proposed test and earlier examples</summary><div class=\"note\"><p>Proposed integration. No validated end-to-end art and visual design result is claimed here.</p></div><section class=\"paper\"><h2>Experiment P08</h2><p>Use one accessible generator with a documented latent representation. Compare direct latent fitting, feature-space fitting, and reranking at equal generation budgets.</p><p><strong>Measure:</strong> Blind preference, valid outputs, diversity, and the full generation/training cost.</p><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/archive/2026-09/examples/art.html\">Historical illustrative example</a></p></section><section class=\"paper\"><h2>Before using the old code</h2><p>The archived snippets illustrate an idea and may omit a trained generator, realistic data, or required constraints. They are not production-ready packages. Begin with the <a href=\"@/getting-started.html\">maintained reference</a> and identify the representation that your actual generator exposes.</p></section></details>",
-    "eyebrow": "DOMAIN EXPLORATION",
-    "status": "Idea to test"
+    "title": "Art and visual design",
+    "description": "Choose a direction by rating examples.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare designs</li><li>Rate the options</li><li>Suggest a variation</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A designer could choose between poster, logo or portrait variations instead of repeatedly describing a style. The original site also proposed digital-art and NFT collections; the useful task is choosing the artwork, regardless of how it is distributed.</p><h2>Where the small model fits</h2><p>With a compatible generator, each rated image has known internal inputs. A small scorer learns from those inputs, then selects or adjusts them before rendering the next image. Ranking already-made images is another option, with a different rendering cost.</p><h2>What would need to work</h2><p>Ask people to choose between unseen designs without seeing the predicted scores. Measure preference, variety and edit quality, not just how highly the classifier rates its own suggestions.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><details><summary>Earlier proposal and example code</summary><p>The earlier page is preserved as a historical proposal; its claims are not new validation.</p><p class=\"next-links\"><a href=\"@/archive/2026-09/examples/art.html\">Read the archived example</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
   },
   "examples/music.html": {
-    "title": "Music",
-    "description": "Learn from what someone enjoys listening to.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 42V15l27-6v28\" fill=\"none\" stroke=\"#607a9c\" stroke-width=\"5\"/><ellipse cx=\"16\" cy=\"45\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/><ellipse cx=\"43\" cy=\"40\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/></svg><span>Play a clip</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M32 53L9 30C-4 13 19 2 32 18 45 2 68 13 55 30z\" fill=\"#ba6d73\"/></svg><span>Like or skip</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 42V15l27-6v28\" fill=\"none\" stroke=\"#607a9c\" stroke-width=\"5\"/><ellipse cx=\"16\" cy=\"45\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/><ellipse cx=\"43\" cy=\"40\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/></svg><span>Suggest another</span></div></div><figcaption>Proposed use; this application has not been validated.</figcaption></figure><p>A music tool could use your feedback to choose or generate another clip. It might also learn that you like different kinds of music in different situations.</p><p>We need listener tests with real audio. The drawing demo does not establish that this works for music.</p><details class=\"plain-details\"><summary>Proposed test and earlier examples</summary><div class=\"note\"><p>Proposed integration. No validated end-to-end music result is claimed here.</p></div><section class=\"paper\"><h2>Experiment P12</h2><p>Choose a real controllable music generator. Compare random, reranked, and preference-guided clips with the same duration and production budget.</p><p><strong>Measure:</strong> Blind listener preference, artifacts, diversity, and continuity for playlists.</p><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/archive/2026-09/examples/music.html\">Historical illustrative example</a></p></section><section class=\"paper\"><h2>Before using the old code</h2><p>The archived snippets illustrate an idea and may omit a trained generator, realistic data, or required constraints. They are not production-ready packages. Begin with the <a href=\"@/getting-started.html\">maintained reference</a> and identify the representation that your actual generator exposes.</p></section></details>",
-    "eyebrow": "DOMAIN EXPLORATION",
-    "status": "Idea to test"
+    "title": "Music and playlists",
+    "description": "Learn what you like to hear next.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate short clips</li><li>Learn your taste</li><li>Suggest another track</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A listener likes sparse piano and skips busy percussion. A music app could rank existing tracks or suggest new clips with that pattern in mind. Game soundtracks and meditation playlists were also part of the original idea.</p><h2>Where the small model fits</h2><p>A small personal scorer learns from ratings. With a compatible generator, it could score or adjust the internal inputs before rendering a full audio clip. Another option is to represent existing tracks with an audio model and rank those tracks.</p><h2>What would need to work</h2><p>Compare blind listener choices against an ordinary playlist, including variety, unwanted repeats and the full cost of making audio. The lab has not validated an audio generator.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><details><summary>Earlier proposal and example code</summary><p>The earlier page is preserved as a historical proposal; its claims are not new validation.</p><p class=\"next-links\"><a href=\"@/archive/2026-09/examples/music.html\">Read the archived example</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
   },
   "examples/social-media.html": {
-    "title": "A personal feed",
-    "description": "Use feedback to choose what appears next.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"16\" y=\"4\" width=\"32\" height=\"56\" rx=\"5\" fill=\"#eff2f7\" stroke=\"#607a9c\" stroke-width=\"2\"/><rect x=\"22\" y=\"12\" width=\"20\" height=\"17\" rx=\"2\" fill=\"#9ab8b0\"/><path d=\"M22 36h20M22 43h14\" stroke=\"#8191a8\" stroke-width=\"3\"/></svg><span>See an item</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M32 53L9 30C-4 13 19 2 32 18 45 2 68 13 55 30z\" fill=\"#ba6d73\"/></svg><span>Like or skip</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"16\" y=\"4\" width=\"32\" height=\"56\" rx=\"5\" fill=\"#eff2f7\" stroke=\"#607a9c\" stroke-width=\"2\"/><rect x=\"22\" y=\"12\" width=\"20\" height=\"17\" rx=\"2\" fill=\"#9ab8b0\"/><path d=\"M22 36h20M22 43h14\" stroke=\"#8191a8\" stroke-width=\"3\"/></svg><span>Choose the next</span></div></div><figcaption>Proposed use; this application has not been validated.</figcaption></figure><p>A feed could learn which items you find worthwhile, or use those preferences to guide newly generated content.</p><p>We would measure satisfaction and variety, not just how long someone keeps scrolling.</p><details class=\"plain-details\"><summary>Proposed test and earlier examples</summary><div class=\"note\"><p>Proposed integration. No validated end-to-end generative feeds result is claimed here.</p></div><section class=\"paper\"><h2>Experiment P13</h2><p>Compare ranking an existing candidate pool with personalized generation. Begin offline; a real retention claim needs a consented user study.</p><p><strong>Measure:</strong> Explicit satisfaction, diversity, wasted generation, fatigue, and cost per positively rated item.</p><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/archive/2026-09/examples/social-media.html\">Historical illustrative example</a></p></section><section class=\"paper\"><h2>Before using the old code</h2><p>The archived snippets illustrate an idea and may omit a trained generator, realistic data, or required constraints. They are not production-ready packages. Begin with the <a href=\"@/getting-started.html\">maintained reference</a> and identify the representation that your actual generator exposes.</p></section></details>",
-    "eyebrow": "DOMAIN EXPLORATION",
-    "status": "Idea to test"
+    "title": "A feed without repeated prompting",
+    "description": "Learn from what people choose to see.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>See an item</li><li>Like, skip or save</li><li>Choose the next item</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A feed could learn from explicit feedback instead of asking someone to write a new prompt for every image, clip or story. It could rank existing content or help choose among newly generated items.</p><h2>Where the small model fits</h2><p>A personal scorer can rank existing items. With a compatible generator, it could instead select promising internal inputs before paying to render the next item. The original idea included both approaches; a high predicted rating still needs to be checked against the person&#x27;s response.</p><h2>What would need to work</h2><p>Measure satisfaction, variety and unwanted repetition. More time spent scrolling is not automatically a better experience, and a skip is not an unambiguous dislike.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><details><summary>Earlier proposal and example code</summary><p>The earlier page is preserved as a historical proposal; its claims are not new validation.</p><p class=\"next-links\"><a href=\"@/archive/2026-09/examples/social-media.html\">Read the archived example</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
   },
   "examples/dating.html": {
-    "title": "Mutual preferences",
-    "description": "A match needs interest from both people.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"19\" r=\"12\" fill=\"#829bb7\"/><path d=\"M9 58v-8c0-25 46-25 46 0v8\" fill=\"#829bb7\"/></svg><span>One person likes</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M32 53L9 30C-4 13 19 2 32 18 45 2 68 13 55 30z\" fill=\"#ba6d73\"/></svg><span>Both interested?</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"19\" r=\"12\" fill=\"#829bb7\"/><path d=\"M9 58v-8c0-25 46-25 46 0v8\" fill=\"#829bb7\"/></svg><span>The other likes</span></div></div><figcaption>Proposed use; this application has not been validated.</figcaption></figure><p>One proposed use is to estimate whether two people are likely to find each other visually appealing. Both people would need to agree to take part.</p><p>Visual preference is not relationship compatibility. Encoded photos are not automatically private; that needs separate testing.</p><details class=\"plain-details\"><summary>Proposed test and earlier examples</summary><div class=\"note\"><p>Proposed integration. No validated end-to-end mutual visual matching result is claimed here.</p></div><section class=\"paper\"><h2>Experiment P11 / P14</h2><p>Evaluate two-sided visual preference against one-sided and generic ranking. Define who can access embeddings and query scores before testing privacy.</p><p><strong>Measure:</strong> Mutual visual preference, coverage, reconstruction/identification exposure, and utility lost to protection. This does not measure relationship compatibility.</p><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/archive/2026-09/examples/dating.html\">Historical illustrative example</a></p></section><section class=\"paper\"><h2>Before using the old code</h2><p>The archived snippets illustrate an idea and may omit a trained generator, realistic data, or required constraints. They are not production-ready packages. Begin with the <a href=\"@/getting-started.html\">maintained reference</a> and identify the representation that your actual generator exposes.</p></section></details>",
-    "eyebrow": "DOMAIN EXPLORATION",
-    "status": "Idea to test"
+    "title": "Mutual visual preferences",
+    "description": "Look for interest from both people.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate generated faces</li><li>Score both directions</li><li>Choose whether to connect</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>The original dating proposal used ratings of generated faces to learn visual preferences, then considered whether two consenting people might find each other appealing. Each person would still decide whether to connect.</p><h2>Where the small model fits</h2><p>Each person has a preference scorer. Representations of real photos could be scored in both directions, rather than relying on a single popularity rating. This requires an encoder compatible with the representation used for training.</p><h2>What would need to work</h2><p>Test mutual visual interest and privacy separately. Encoded photos and preference scores can reveal information; they are not automatically private. Visual appeal is not relationship compatibility, and the original face-generation demo was not a validated matching service.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><details><summary>Earlier proposal and example code</summary><p>The earlier page is preserved as a historical proposal; its claims are not new validation.</p><p class=\"next-links\"><a href=\"@/archive/2026-09/examples/dating.html\">Read the archived example</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
   },
   "examples/science.html": {
-    "title": "Design with constraints",
-    "description": "A design needs to work as well as look promising.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><figure class=\"small-example\"><div class=\"example-items\"><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 6h16M27 6v20L10 52c-2 4 0 6 4 6h36c4 0 6-2 4-6L37 26V6\" fill=\"#edf3f6\" stroke=\"#617d91\" stroke-width=\"3\"/><path d=\"M20 42h24l8 13H12z\" fill=\"#7aafaa\"/></svg><span>Propose a design</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"32\" r=\"25\" fill=\"#e4efe8\"/><path d=\"M18 32l10 11 20-24\" fill=\"none\" stroke=\"#3b7553\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Check requirements</span></div><div><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 6h16M27 6v20L10 52c-2 4 0 6 4 6h36c4 0 6-2 4-6L37 26V6\" fill=\"#edf3f6\" stroke=\"#617d91\" stroke-width=\"3\"/><path d=\"M20 42h24l8 13H12z\" fill=\"#7aafaa\"/></svg><span>Keep valid options</span></div></div><figcaption>Proposed use; this application has not been validated.</figcaption></figure><p>A design tool could suggest candidates based on feedback, while a separate check rejects ones that fail known requirements.</p><p>We would start with a small engineering problem. This is not a demonstrated medical or drug-discovery system.</p><details class=\"plain-details\"><summary>Proposed test and earlier examples</summary><div class=\"note\"><p>Proposed integration. No validated end-to-end constrained design result is claimed here.</p></div><section class=\"paper\"><h2>Experiment P15</h2><p>Use a small synthetic engineering problem with independent validity constraints. Compare preference-guided search with conventional optimization at equal evaluation budgets.</p><p><strong>Measure:</strong> Feasible solutions, Pareto regret, labeling effort, and evaluation cost. A toy result is not a drug-discovery outcome.</p><p><a href=\"@/EXPERIMENTS.md\">Technical study protocols</a> · <a href=\"@/archive/2026-09/examples/science.html\">Historical illustrative example</a></p></section><section class=\"paper\"><h2>Before using the old code</h2><p>The archived snippets illustrate an idea and may omit a trained generator, realistic data, or required constraints. They are not production-ready packages. Begin with the <a href=\"@/getting-started.html\">maintained reference</a> and identify the representation that your actual generator exposes.</p></section></details>",
-    "eyebrow": "DOMAIN EXPLORATION",
-    "status": "Idea to test"
+    "title": "Engineering with constraints",
+    "description": "Keep useful designs within fixed requirements.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Propose a design</li><li>Check requirements</li><li>Rank valid options</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A design team could prefer a particular shape while needing it to fit a fixed space. The tool would show only candidates that satisfy the stated requirements.</p><h2>Where the small model fits</h2><p>A preference scorer handles subjective choices. An independent constraint check handles feasibility. The generator or optimizer proposes new candidates without treating a high preference score as permission to break a requirement.</p><h2>What would need to work</h2><p>Compare valid solutions found at equal evaluation budgets. The lab has numerical toy checks; it has not demonstrated engineering performance on manufactured products.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><details><summary>Earlier proposal and example code</summary><p>The earlier page is preserved as a historical proposal; its claims are not new validation.</p><p class=\"next-links\"><a href=\"@/archive/2026-09/examples/science.html\">Read the archived example</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
   },
   "examples/index.html": {
-    "title": "Examples",
-    "description": "Start with the working demo, or browse possible uses.",
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/demo.html\">Try the underlying preference-learning loop</a></div><p class=\"small\">The working example learns from drawings. The application described here is a proposal, not a completed product demo.</p></section><p><a href=\"@/demo.html\">The preference demo</a> works in your browser. The applications below are ideas that still need their own tests.</p><div class=\"topic-links\"><a href=\"@/examples/art.html\"><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"9\" y=\"10\" width=\"46\" height=\"43\" rx=\"3\" fill=\"#f2e8d9\" stroke=\"#9a8261\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"23\" r=\"6\" fill=\"#e8c268\"/><path d=\"M10 47l16-18 13 14 8-10 8 14\" fill=\"#80a88b\"/></svg><span><strong>Art and design</strong>Learn which designs someone prefers.</span></a><a href=\"@/examples/music.html\"><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 42V15l27-6v28\" fill=\"none\" stroke=\"#607a9c\" stroke-width=\"5\"/><ellipse cx=\"16\" cy=\"45\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/><ellipse cx=\"43\" cy=\"40\" rx=\"10\" ry=\"7\" fill=\"#607a9c\"/></svg><span><strong>Music</strong>Learn from what someone enjoys listening to.</span></a><a href=\"@/examples/social-media.html\"><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><rect x=\"16\" y=\"4\" width=\"32\" height=\"56\" rx=\"5\" fill=\"#eff2f7\" stroke=\"#607a9c\" stroke-width=\"2\"/><rect x=\"22\" y=\"12\" width=\"20\" height=\"17\" rx=\"2\" fill=\"#9ab8b0\"/><path d=\"M22 36h20M22 43h14\" stroke=\"#8191a8\" stroke-width=\"3\"/></svg><span><strong>A personal feed</strong>Use feedback to choose what appears next.</span></a><a href=\"@/examples/dating.html\"><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"19\" r=\"12\" fill=\"#829bb7\"/><path d=\"M9 58v-8c0-25 46-25 46 0v8\" fill=\"#829bb7\"/></svg><span><strong>Mutual preferences</strong>A match needs interest from both people.</span></a><a href=\"@/examples/science.html\"><svg class=\"guide-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M24 6h16M27 6v20L10 52c-2 4 0 6 4 6h36c4 0 6-2 4-6L37 26V6\" fill=\"#edf3f6\" stroke=\"#617d91\" stroke-width=\"3\"/><path d=\"M20 42h24l8 13H12z\" fill=\"#7aafaa\"/></svg><span><strong>Design with constraints</strong>A design needs to work as well as look promising.</span></a></div><details class=\"plain-details\"><summary>Code examples and references</summary><section class=\"paper\"><h2>Runnable now</h2><ul><li><a href=\"@/demo.html\">Browser preference demo</a> — a trained classifier with a parametric renderer.</li><li><a href=\"@/experiments/preference.py\">Canonical Python preference reference</a> — CPU, NumPy, bounded optimization.</li><li><a href=\"@/results.html\">Recorded experiments</a> — inspect scope before interpreting the result.</li></ul></section><section class=\"paper\"><h2>Domain proposals</h2><ul><li><a href=\"@/examples/art.html\">Art and visual design</a> — P08</li><li><a href=\"@/examples/music.html\">Music</a> — P12</li><li><a href=\"@/examples/social-media.html\">Generative feeds</a> — P13</li><li><a href=\"@/examples/dating.html\">Mutual visual matching</a> — P11 / P14</li><li><a href=\"@/examples/science.html\">Constrained design</a> — P15</li></ul></section><section class=\"paper\"><h2>Historical code</h2><p><a href=\"@/examples/core_implementation.py\">Feature-space model example</a> · <a href=\"@/examples/music_generation.py\">Music example</a> · <a href=\"@/examples/dating-privacy.py\">Matching example</a> · <a href=\"@/examples/zero-prompt-social.py\">Feed example</a></p><p>These are illustrative integrations with different assumptions. Their headers describe the current limitations.</p></section></details>",
-    "eyebrow": "RESEARCH NOTE",
-    "status": ""
+    "title": "Use cases",
+    "description": "Applications for preference models, direct decisions, spatial outputs and less computation.",
+    "status": "",
+    "styles": [
+      "use-cases.css"
+    ],
+    "body": "<p>Choose a practical application. Each page explains the role of the small model and links to relevant work. An idea is not a completed product; related demos and tests are labelled separately.</p><nav aria-label=\"Use-case topics\"><p class=\"next-links\"><a href=\"@/examples/index.html#preferences\">Learning what you like</a> · <a href=\"@/examples/index.html#decisions\">Decisions without text</a> · <a href=\"@/examples/index.html#coordinates\">Finding where to click</a> · <a href=\"@/examples/index.html#adaptive\">Stopping early</a></p></nav><section id=\"preferences\"><h2>Learning what you like</h2><div class=\"use-case-group\"><h3>Creative work</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/music.html\">Music and playlists</a><span>Learn what you like to hear next.</span></li><li><a href=\"@/examples/art.html\">Art and visual design</a><span>Choose a direction by rating examples.</span></li><li><a href=\"@/examples/stories.html\">Stories and interactive fiction</a><span>Learn which style of story a reader enjoys.</span></li><li><a href=\"@/examples/games.html\">Game levels and difficulty</a><span>Suggest levels a player wants to play.</span></li><li><a href=\"@/examples/models-3d.html\">3D assets and objects</a><span>Choose shapes that fit a project.</span></li><li><a href=\"@/examples/video.html\">Video edits and effects</a><span>Learn which cuts and visual styles work.</span></li><li><a href=\"@/examples/voice.html\">Voice and narration style</a><span>Choose a comfortable pace and delivery.</span></li></ul></div><div class=\"use-case-group\"><h3>Research and engineering</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/molecules.html\">Molecule and drug research</a><span>Rank research candidates against a stated goal.</span></li><li><a href=\"@/examples/materials.html\">Material research</a><span>Choose candidates under several requirements.</span></li><li><a href=\"@/examples/genetics.html\">Genetics research</a><span>Prioritize candidates for an independent test.</span></li><li><a href=\"@/examples/proteins.html\">Protein research</a><span>Score candidates without treating scores as proof.</span></li><li><a href=\"@/examples/science.html\">Engineering with constraints</a><span>Keep useful designs within fixed requirements.</span></li><li><a href=\"@/examples/patient-preferences.html\">Patient preferences in approved options</a><span>Record what matters to a patient.</span></li></ul></div><div class=\"use-case-group\"><h3>Design and everyday choices</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/architecture.html\">Architecture and interiors</a><span>Explore layouts and rooms that fit your taste.</span></li><li><a href=\"@/examples/fashion.html\">Fashion and outfit choices</a><span>Find clothes that fit your style.</span></li><li><a href=\"@/examples/beauty.html\">Makeup and appearance previews</a><span>Explore a look through small visual changes.</span></li><li><a href=\"@/examples/automotive.html\">Automotive design</a><span>Explore car shapes, colours and cabins.</span></li><li><a href=\"@/examples/interfaces.html\">Interface and layout choices</a><span>Learn which layouts someone finds usable.</span></li></ul></div><div class=\"use-case-group\"><h3>Personal choices</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/dating.html\">Mutual visual preferences</a><span>Look for interest from both people.</span></li><li><a href=\"@/examples/social-media.html\">A feed without repeated prompting</a><span>Learn from what people choose to see.</span></li><li><a href=\"@/examples/news.html\">News and content curation</a><span>Find useful articles in a preferred format.</span></li><li><a href=\"@/examples/recipes.html\">Recipes and meal choices</a><span>Learn taste within the ingredients you choose.</span></li><li><a href=\"@/examples/education.html\">Learning materials</a><span>Find explanations a learner finds useful.</span></li><li><a href=\"@/examples/shopping.html\">Product recommendations</a><span>Rank available products by personal taste.</span></li></ul></div><div class=\"use-case-group\"><h3>Language and image generation</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/image-preferences.html\">Stop an image that misses your taste</a><span>Spend rendering time on more promising ideas.</span></li></ul></div></section><section id=\"decisions\"><h2>Decisions without text</h2><div class=\"use-case-group\"><h3>Messages and documents</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/moderation.html\">Live chat moderation</a><span>Return an allow, block or review decision.</span></li><li><a href=\"@/examples/support.html\">Route customer requests</a><span>Send a request to the right queue.</span></li><li><a href=\"@/examples/redaction.html\">Find text to redact</a><span>Mark spans instead of writing a new document.</span></li><li><a href=\"@/examples/receipts.html\">Choose a receipt total</a><span>Return the right amount from a short list.</span></li><li><a href=\"@/examples/search.html\">Rank search results</a><span>Put useful matches near the top.</span></li><li><a href=\"@/examples/inbox.html\">Sort an inbox</a><span>Separate receipts, requests and newsletters.</span></li></ul></div><div class=\"use-case-group\"><h3>Actions</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/game-moves.html\">Choose a game move</a><span>Return a direction on each turn.</span></li><li><a href=\"@/examples/offline-commands.html\">Commands on a small device</a><span>Use a short path for familiar commands.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/ecg.html\">ECG labels without a written report</a><span>Return structured predictions from a heart trace.</span></li><li><a href=\"@/examples/ecg-quality.html\">Check ECG recording quality</a><span>Flag an unusable trace for another recording.</span></li><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/eeg-sleep.html\">EEG sleep-stage labels</a><span>Classify recorded sleep segments directly.</span></li></ul></div><div class=\"use-case-group\"><h3>Language and image generation</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/image-safety.html\">Stop an unsafe image before it finishes</a><span>Check during generation and cancel early.</span></li></ul></div></section><section id=\"coordinates\"><h2>Finding where to click</h2><div class=\"use-case-group\"><h3>Screens and images</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/desktop-actions.html\">Point to an app control</a><span>Find a button without writing coordinates.</span></li><li><a href=\"@/examples/assistive-pointing.html\">Assistive pointing</a><span>Turn a requested control into a location.</span></li><li><a href=\"@/examples/ui-testing.html\">Check changing interfaces</a><span>Locate a control after a layout changes.</span></li><li><a href=\"@/examples/image-annotation.html\">Suggest an image annotation</a><span>Mark a starting point for a human editor.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/medical-annotation.html\">Medical-image landmarks and measurements</a><span>Suggest editable points for a specialist.</span></li></ul></div></section><section id=\"adaptive\"><h2>Stopping early</h2><div class=\"use-case-group\"><h3>Messages and documents</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/moderation.html\">Live chat moderation</a><span>Return an allow, block or review decision.</span></li><li><a href=\"@/examples/support.html\">Route customer requests</a><span>Send a request to the right queue.</span></li><li><a href=\"@/examples/search.html\">Rank search results</a><span>Put useful matches near the top.</span></li><li><a href=\"@/examples/inbox.html\">Sort an inbox</a><span>Separate receipts, requests and newsletters.</span></li></ul></div><div class=\"use-case-group\"><h3>Actions</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/game-moves.html\">Choose a game move</a><span>Return a direction on each turn.</span></li><li><a href=\"@/examples/offline-commands.html\">Commands on a small device</a><span>Use a short path for familiar commands.</span></li></ul></div><div class=\"use-case-group\"><h3>Medical signals and scans</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/ecg.html\">ECG labels without a written report</a><span>Return structured predictions from a heart trace.</span></li><li><a href=\"@/examples/ecg-quality.html\">Check ECG recording quality</a><span>Flag an unusable trace for another recording.</span></li><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a><span>Return a mask that a reviewer can inspect.</span></li><li><a href=\"@/examples/mri-reconstruction.html\">MRI reconstruction with fewer model steps</a><span>Study when further reconstruction stops helping.</span></li><li><a href=\"@/examples/eeg-sleep.html\">EEG sleep-stage labels</a><span>Classify recorded sleep segments directly.</span></li></ul></div><div class=\"use-case-group\"><h3>Language and image generation</h3><ul class=\"use-case-list\"><li><a href=\"@/examples/model-routing.html\">Route between small and large models</a><span>Use the larger model when it adds value.</span></li><li><a href=\"@/examples/faster-llm.html\">Get an LLM result sooner</a><span>Use less model work before returning an answer.</span></li><li><a href=\"@/examples/image-safety.html\">Stop an unsafe image before it finishes</a><span>Check during generation and cancel early.</span></li><li><a href=\"@/examples/image-preferences.html\">Stop an image that misses your taste</a><span>Spend rendering time on more promising ideas.</span></li></ul></div></section><details><summary>Original applications and source history</summary><p>The catalog restores the older SkinDeep application list and adds newer decision, spatial-output and computation examples. Historical proposals are not evidence that all applications were built.</p><p class=\"next-links\"><a href=\"@/docs/use-case-history.md\">Historical versions and coverage</a> · <a href=\"@/history.html\">Original work and archive</a></p></details>"
   },
   "demo.html": {
     "title": "Teach it what you like",
@@ -257,7 +336,7 @@
   "sitemap.html": {
     "title": "All pages",
     "description": "Demos, explanations, experiments and the original records.",
-    "body": "<p>Every current page, including demos and detailed results. Older versions remain under <a href=\"@/history.html\">History and archive</a>.</p><section><h2>The lab and reference pages</h2><ul class=\"page-links\"><li><a href=\"@/examples/social-media.html\">A personal feed</a></li><li><a href=\"@/about.html\">About SkinDeep</a></li><li><a href=\"@/examples/art.html\">Art and design</a></li><li><a href=\"@/decisions.html\">Decisions without a written reply</a></li><li><a href=\"@/examples/science.html\">Design with constraints</a></li><li><a href=\"@/results-record.html\">Earlier combined results</a></li><li><a href=\"@/vc-analysis.html\">Earlier investment analysis</a></li><li><a href=\"@/investment-response.html\">Earlier investment response</a></li><li><a href=\"@/examples/index.html\">Examples</a></li><li><a href=\"@/coordinates.html\">Finding where to click</a></li><li><a href=\"@/history.html\">History</a></li><li><a href=\"@/future-explorations.html\">Ideas to explore</a></li><li><a href=\"@/preferences.html\">Learning what you like</a></li><li><a href=\"@/examples/music.html\">Music</a></li><li><a href=\"@/examples/dating.html\">Mutual preferences</a></li><li><a href=\"@/landscape.html\">Related research</a></li><li><a href=\"@/research.html\">Research FAQ</a></li><li><a href=\"@/demo-directory.html\">Run a demo</a></li><li><a href=\"@/getting-started.html\">Run the code locally</a></li><li><a href=\"@/index.html\">SkinDeep</a></li><li><a href=\"@/adaptive.html\">Stopping early</a></li><li><a href=\"@/results.html\">Test results</a></li><li><a href=\"@/whitepaper.html\">The original paper</a></li><li><a href=\"@/roadmap.html\">What comes next</a></li></ul></section><section><h2>Learning what you like</h2><ul class=\"page-links\"><li><a href=\"@/preference-results.html\">Does preference learning work?</a></li><li><a href=\"@/how-it-works.html\">How the model learns</a></li><li><a href=\"@/preference-method-demo.html\">Learn more than one favorite style</a></li><li><a href=\"@/multi-modal-preferences-deep-dive.html\">Liking more than one style</a></li><li><a href=\"@/demo.html\">Teach it what you like</a></li><li><a href=\"@/active-learning-strategies.html\">Which example should come next?</a></li></ul></section><section><h2>Finding where to click</h2><ul class=\"page-links\"><li><a href=\"@/visual-refusal-results.html\">Click, or hold the action?</a></li><li><a href=\"@/point-demo.html\">Find visible text in a screenshot</a></li><li><a href=\"@/coordinate-results.html\">Finding the right point</a></li><li><a href=\"@/image-action-demo.html\">Read an image. Return an action.</a></li><li><a href=\"@/coordinate-lab.html\">See where the model would click</a></li><li><a href=\"@/screenshot-demo.html\">Where would it click?</a></li></ul></section><section><h2>Decisions without a written reply</h2><ul class=\"page-links\"><li><a href=\"@/tiny-decision-demo.html\">A small model, one decision</a></li><li><a href=\"@/receipt-results.html\">Choose the receipt total</a></li><li><a href=\"@/redaction-results.html\">Find names to redact</a></li><li><a href=\"@/maze-results.html\">From a decision to a finished task</a></li><li><a href=\"@/search-next-results.html\">Give search a second check</a></li><li><a href=\"@/rerank-demo.html\">Give your search a second check</a></li><li><a href=\"@/maze-live.html\">Let a trained model choose the moves</a></li><li><a href=\"@/decision-checks.html\">Other decision tests</a></li><li><a href=\"@/batch-results.html\">Process a queue together</a></li><li><a href=\"@/browser-execution-results.html\">Qwen browser execution check</a></li><li><a href=\"@/combined-results.html\">Reuse instructions and group messages</a></li><li><a href=\"@/prefix-results.html\">Reuse the instructions</a></li><li><a href=\"@/execution-demo.html\">Reuse work inside Qwen</a></li><li><a href=\"@/routing-results.html\">Route or ask for help</a></li><li><a href=\"@/search-demo.html\">Search real research</a></li><li><a href=\"@/moderation-benchmark.html\">Try 100 real messages</a></li><li><a href=\"@/practical-demo.html\">Try a small task classifier</a></li><li><a href=\"@/browser-benchmark.html\">Try Qwen in your browser</a></li><li><a href=\"@/maze-benchmark.html\">Watch the maze test</a></li></ul></section><section><h2>Stopping early</h2><ul class=\"page-links\"><li><a href=\"@/cascade-test-results.html\">Cascade: test results</a></li><li><a href=\"@/shared-qwen-results.html\">Check Qwen before continuing</a></li><li><a href=\"@/early-exit-results.html\">Check whether more layers are needed</a></li><li><a href=\"@/method-demo.html\">Compare ways to decide sooner</a></li><li><a href=\"@/fresh-message-results.html\">Does stopping hold up on new messages?</a></li><li><a href=\"@/shared-model-results.html\">One model, two chances to answer</a></li><li><a href=\"@/browser-method-results.html\">Recorded browser comparisons</a></li><li><a href=\"@/shared-decision-demo.html\">Stop after two layers, or continue</a></li><li><a href=\"@/training-results.html\">Teach useful answers to appear earlier</a></li><li><a href=\"@/chat-results.html\">The original 600-message test</a></li><li><a href=\"@/cascade-results.html\">Try a tiny model first</a></li><li><a href=\"@/decision-results.html\">Ways to make a decision sooner</a></li><li><a href=\"@/depth-results.html\">Where should processing stop?</a></li><li><a href=\"@/quantization-results.html\">Which parts tolerate smaller numbers?</a></li></ul></section>",
+    "body": "<p>Every current page, including demos and detailed results. Older versions remain under <a href=\"@/history.html\">History and archive</a>.</p><section><h2>The lab and reference pages</h2><ul class=\"page-links\"><li><a href=\"@/about.html\">About SkinDeep</a></li><li><a href=\"@/decisions.html\">Decisions without a written reply</a></li><li><a href=\"@/results-record.html\">Earlier combined results</a></li><li><a href=\"@/vc-analysis.html\">Earlier investment analysis</a></li><li><a href=\"@/investment-response.html\">Earlier investment response</a></li><li><a href=\"@/coordinates.html\">Finding where to click</a></li><li><a href=\"@/history.html\">History</a></li><li><a href=\"@/future-explorations.html\">Ideas to explore</a></li><li><a href=\"@/preferences.html\">Learning what you like</a></li><li><a href=\"@/landscape.html\">Related research</a></li><li><a href=\"@/research.html\">Research FAQ</a></li><li><a href=\"@/demo-directory.html\">Run a demo</a></li><li><a href=\"@/getting-started.html\">Run the code locally</a></li><li><a href=\"@/index.html\">SkinDeep</a></li><li><a href=\"@/adaptive.html\">Stopping early</a></li><li><a href=\"@/results.html\">Test results</a></li><li><a href=\"@/whitepaper.html\">The original paper</a></li><li><a href=\"@/examples/index.html\">Use cases</a></li><li><a href=\"@/roadmap.html\">What comes next</a></li></ul></section><section><h2>Learning what you like</h2><ul class=\"page-links\"><li><a href=\"@/examples/models-3d.html\">3D assets and objects</a></li><li><a href=\"@/examples/social-media.html\">A feed without repeated prompting</a></li><li><a href=\"@/examples/architecture.html\">Architecture and interiors</a></li><li><a href=\"@/examples/art.html\">Art and visual design</a></li><li><a href=\"@/examples/automotive.html\">Automotive design</a></li><li><a href=\"@/preference-results.html\">Does preference learning work?</a></li><li><a href=\"@/examples/science.html\">Engineering with constraints</a></li><li><a href=\"@/examples/fashion.html\">Fashion and outfit choices</a></li><li><a href=\"@/examples/games.html\">Game levels and difficulty</a></li><li><a href=\"@/examples/genetics.html\">Genetics research</a></li><li><a href=\"@/how-it-works.html\">How the model learns</a></li><li><a href=\"@/examples/interfaces.html\">Interface and layout choices</a></li><li><a href=\"@/preference-method-demo.html\">Learn more than one favorite style</a></li><li><a href=\"@/examples/education.html\">Learning materials</a></li><li><a href=\"@/multi-modal-preferences-deep-dive.html\">Liking more than one style</a></li><li><a href=\"@/examples/beauty.html\">Makeup and appearance previews</a></li><li><a href=\"@/examples/materials.html\">Material research</a></li><li><a href=\"@/examples/molecules.html\">Molecule and drug research</a></li><li><a href=\"@/examples/music.html\">Music and playlists</a></li><li><a href=\"@/examples/dating.html\">Mutual visual preferences</a></li><li><a href=\"@/examples/news.html\">News and content curation</a></li><li><a href=\"@/examples/patient-preferences.html\">Patient preferences in approved options</a></li><li><a href=\"@/examples/shopping.html\">Product recommendations</a></li><li><a href=\"@/examples/proteins.html\">Protein research</a></li><li><a href=\"@/examples/recipes.html\">Recipes and meal choices</a></li><li><a href=\"@/examples/image-preferences.html\">Stop an image that misses your taste</a></li><li><a href=\"@/examples/stories.html\">Stories and interactive fiction</a></li><li><a href=\"@/demo.html\">Teach it what you like</a></li><li><a href=\"@/examples/video.html\">Video edits and effects</a></li><li><a href=\"@/examples/voice.html\">Voice and narration style</a></li><li><a href=\"@/active-learning-strategies.html\">Which example should come next?</a></li></ul></section><section><h2>Finding where to click</h2><ul class=\"page-links\"><li><a href=\"@/examples/assistive-pointing.html\">Assistive pointing</a></li><li><a href=\"@/examples/ui-testing.html\">Check changing interfaces</a></li><li><a href=\"@/visual-refusal-results.html\">Click, or hold the action?</a></li><li><a href=\"@/point-demo.html\">Find visible text in a screenshot</a></li><li><a href=\"@/coordinate-results.html\">Finding the right point</a></li><li><a href=\"@/examples/mri-segmentation.html\">Mark regions in an MRI</a></li><li><a href=\"@/examples/medical-annotation.html\">Medical-image landmarks and measurements</a></li><li><a href=\"@/examples/desktop-actions.html\">Point to an app control</a></li><li><a href=\"@/image-action-demo.html\">Read an image. Return an action.</a></li><li><a href=\"@/coordinate-lab.html\">See where the model would click</a></li><li><a href=\"@/examples/image-annotation.html\">Suggest an image annotation</a></li><li><a href=\"@/screenshot-demo.html\">Where would it click?</a></li></ul></section><section><h2>Decisions without a written reply</h2><ul class=\"page-links\"><li><a href=\"@/tiny-decision-demo.html\">A small model, one decision</a></li><li><a href=\"@/examples/ecg-quality.html\">Check ECG recording quality</a></li><li><a href=\"@/examples/game-moves.html\">Choose a game move</a></li><li><a href=\"@/examples/receipts.html\">Choose a receipt total</a></li><li><a href=\"@/receipt-results.html\">Choose the receipt total</a></li><li><a href=\"@/examples/ecg.html\">ECG labels without a written report</a></li><li><a href=\"@/examples/eeg-sleep.html\">EEG sleep-stage labels</a></li><li><a href=\"@/redaction-results.html\">Find names to redact</a></li><li><a href=\"@/examples/redaction.html\">Find text to redact</a></li><li><a href=\"@/maze-results.html\">From a decision to a finished task</a></li><li><a href=\"@/search-next-results.html\">Give search a second check</a></li><li><a href=\"@/rerank-demo.html\">Give your search a second check</a></li><li><a href=\"@/maze-live.html\">Let a trained model choose the moves</a></li><li><a href=\"@/examples/moderation.html\">Live chat moderation</a></li><li><a href=\"@/decision-checks.html\">Other decision tests</a></li><li><a href=\"@/batch-results.html\">Process a queue together</a></li><li><a href=\"@/browser-execution-results.html\">Qwen browser execution check</a></li><li><a href=\"@/examples/search.html\">Rank search results</a></li><li><a href=\"@/combined-results.html\">Reuse instructions and group messages</a></li><li><a href=\"@/prefix-results.html\">Reuse the instructions</a></li><li><a href=\"@/execution-demo.html\">Reuse work inside Qwen</a></li><li><a href=\"@/examples/support.html\">Route customer requests</a></li><li><a href=\"@/routing-results.html\">Route or ask for help</a></li><li><a href=\"@/search-demo.html\">Search real research</a></li><li><a href=\"@/examples/inbox.html\">Sort an inbox</a></li><li><a href=\"@/moderation-benchmark.html\">Try 100 real messages</a></li><li><a href=\"@/practical-demo.html\">Try a small task classifier</a></li><li><a href=\"@/browser-benchmark.html\">Try Qwen in your browser</a></li><li><a href=\"@/maze-benchmark.html\">Watch the maze test</a></li></ul></section><section><h2>Stopping early</h2><ul class=\"page-links\"><li><a href=\"@/cascade-test-results.html\">Cascade: test results</a></li><li><a href=\"@/shared-qwen-results.html\">Check Qwen before continuing</a></li><li><a href=\"@/early-exit-results.html\">Check whether more layers are needed</a></li><li><a href=\"@/examples/offline-commands.html\">Commands on a small device</a></li><li><a href=\"@/method-demo.html\">Compare ways to decide sooner</a></li><li><a href=\"@/fresh-message-results.html\">Does stopping hold up on new messages?</a></li><li><a href=\"@/examples/faster-llm.html\">Get an LLM result sooner</a></li><li><a href=\"@/examples/mri-reconstruction.html\">MRI reconstruction with fewer model steps</a></li><li><a href=\"@/shared-model-results.html\">One model, two chances to answer</a></li><li><a href=\"@/browser-method-results.html\">Recorded browser comparisons</a></li><li><a href=\"@/examples/model-routing.html\">Route between small and large models</a></li><li><a href=\"@/shared-decision-demo.html\">Stop after two layers, or continue</a></li><li><a href=\"@/examples/image-safety.html\">Stop an unsafe image before it finishes</a></li><li><a href=\"@/training-results.html\">Teach useful answers to appear earlier</a></li><li><a href=\"@/chat-results.html\">The original 600-message test</a></li><li><a href=\"@/cascade-results.html\">Try a tiny model first</a></li><li><a href=\"@/decision-results.html\">Ways to make a decision sooner</a></li><li><a href=\"@/depth-results.html\">Where should processing stop?</a></li><li><a href=\"@/quantization-results.html\">Which parts tolerate smaller numbers?</a></li></ul></section>",
     "eyebrow": "RESEARCH NOTE",
     "status": ""
   },
@@ -325,7 +404,7 @@
     "styles": [
       "results.css"
     ],
-    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/method-demo.html\">Compare the methods live</a></div><p class=\"small\">Browser BERT comparisons; the recorded Qwen results remain separate.</p></section><p class=\"study-sample\"><a href=\"https://huggingface.co/datasets/lmsys/toxic-chat\">Dataset: ToxicChat0124</a> · 100 previously inspected messages: 50 toxic, 50 benign. A small exploratory test, not live moderation.</p><h2>Speed and accuracy</h2><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Correct / 100</th><th scope=\"col\">Time / message</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"@/depth-results.html\">Full Qwen</a></th><td>77</td><td>563 ms</td></tr><tr><th scope=\"row\"><a href=\"@/depth-results.html\">Stop at layer 12</a></th><td>71</td><td>281 ms</td></tr><tr><th scope=\"row\"><a href=\"@/early-exit-results.html\">Learned stopping</a></th><td>79</td><td>421 ms</td></tr><tr><th scope=\"row\"><a href=\"@/cascade-test-results.html\">Tiny model only</a></th><td>72</td><td>3.1 ms</td></tr><tr><th scope=\"row\"><a href=\"@/cascade-results.html\">Tiny model → Qwen</a></th><td>79</td><td>325 ms</td></tr><tr><th scope=\"row\"><a href=\"@/training-results.html\">With distillation</a></th><td>80</td><td>674 ms</td></tr></tbody></table></div><p>The learned stop reduced time by about 34% against its full-model reference. The tiny-model cascade reduced it by about 50% against its own Qwen reference, but introduced one new toxic-message miss.</p><p class=\"small\">Same 100 messages for accuracy; training differs between methods. Full Qwen and layer 12 share a new three-pass timing run. The learned gate was timed separately against its own 636 ms full-depth reference; its 34% saving is from that paired run. Warm CPU time includes input preparation: 50 timed messages for distillation, 100 for the other timed rows. The cascade’s own Qwen reference scores 78/100 at 648 ms.</p><p><strong>Which tiny model?</strong> Google’s <a href=\"https://huggingface.co/google/bert_uncased_L-2_H-128_A-2\">BERT miniature</a> with two layers and 4.37 million trained parameters. We fine-tuned it on 384 ToxicChat messages to return SAFE or BLOCK directly, without generating text. Uncertain messages go to a separate Qwen2.5-0.5B-Instruct classifier.</p><p class=\"small\"><a href=\"@/docs/chat-smoke-specialist.md\">Architecture, training and model revision</a></p><h2>How each approach works</h2><div class=\"topic-links\"><a href=\"@/depth-results.html\"><span><strong>1. Stop at a fixed point</strong>Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth.</span></a><a href=\"@/early-exit-results.html\"><span><strong>2. Check before continuing</strong>A small checker decides whether to return a label or run more layers. Different messages can stop at different points.</span></a><a href=\"@/cascade-results.html\"><span><strong>3. Try a tiny model first</strong>Accept its confident answers. Send the other messages to a larger model.</span></a><a href=\"@/training-results.html\"><span><strong>4. Teach the model differently</strong>Train intermediate answers, learn from another model, or remove later layers.</span></a></div><p class=\"small\"><a href=\"@/decision-checks.html\">Other datasets and stress tests</a> · <a href=\"@/chat-results.html\">Original 600-message comparison</a> · <a href=\"@/browser-benchmark.html\">Try output formats in your browser</a></p><details><summary>New-message follow-up: more training and int8</summary><p>More training raised tiny BERT from 81 to 82 correct out of 100, but it missed more toxic messages. A stricter fallback preserved Qwen’s decisions with little speed benefit. Int8 Qwen ran faster but fell from 86 to 53 correct. These recipes do not establish a useful quality-preserving improvement.</p><p class=\"small\"><a href=\"@/docs/chat-refinement.md\">All candidates, timing passes and confidence limits</a></p></details><p class=\"small\"><a href=\"@/batch-results.html\">Queue throughput: same answers, fewer separate calls</a></p><p class=\"small\"><a href=\"@/prefix-results.html\">Reusing the fixed instructions: measured results</a></p><section id=\"next-execution-results\"><h2>Further measured tests</h2><ul class=\"page-links\"><li><a href=\"@/shared-model-results.html\">One model, two chances to answer</a></li><li><a href=\"@/shared-qwen-results.html\">Check Qwen before continuing</a></li><li><a href=\"@/combined-results.html\">Reuse instructions and group messages</a></li></ul></section><section id=\"latest-validation\"><h2>Latest checks</h2><p class=\"next-links\"><a href=\"@/fresh-message-results.html\">Fresh-message validation</a> · <a href=\"@/quantization-results.html\">Smaller-number tests</a> · <a href=\"@/browser-method-results.html\">Browser comparisons</a></p></section>",
+    "body": "<section id=\"live-demo-link\"><div class=\"actions\"><a class=\"button\" href=\"@/method-demo.html\">Compare the methods live</a></div><p class=\"small\">Browser BERT comparisons; the recorded Qwen results remain separate.</p></section><p class=\"study-sample\"><a href=\"https://huggingface.co/datasets/lmsys/toxic-chat\">Dataset: ToxicChat0124</a> · 100 previously inspected messages: 50 toxic, 50 benign. A small exploratory test, not live moderation.</p><h2>Speed and accuracy</h2><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Correct / 100</th><th scope=\"col\">Time / message</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"@/depth-results.html\">Full Qwen + classifier</a></th><td>77</td><td>563 ms</td></tr><tr><th scope=\"row\"><a href=\"@/depth-results.html\">Stop at layer 12</a></th><td>71</td><td>281 ms</td></tr><tr><th scope=\"row\"><a href=\"@/early-exit-results.html\">Learned stopping</a></th><td>79</td><td>421 ms</td></tr><tr><th scope=\"row\"><a href=\"@/cascade-test-results.html\">Tiny model only</a></th><td>72</td><td>3.1 ms</td></tr><tr><th scope=\"row\"><a href=\"@/cascade-results.html\">Tiny model → Qwen</a></th><td>79</td><td>325 ms</td></tr><tr><th scope=\"row\"><a href=\"@/training-results.html\">With distillation</a></th><td>80</td><td>674 ms</td></tr></tbody></table></div><p>The learned stop reduced time by about 34% against its full-model reference. The tiny-model cascade reduced it by about 50% against its own Qwen reference, but introduced one new toxic-message miss.</p><p class=\"small\">Same 100 messages for accuracy; training differs between methods. Full Qwen and layer 12 share a new three-pass timing run. The learned gate was timed separately against its own 636 ms full-depth reference; its 34% saving is from that paired run. Warm CPU time includes input preparation: 50 timed messages for distillation, 100 for the other timed rows. The cascade’s own Qwen reference scores 78/100 at 648 ms.</p><p><strong>Which tiny model?</strong> Google’s <a href=\"https://huggingface.co/google/bert_uncased_L-2_H-128_A-2\">BERT miniature</a> with two layers and 4.37 million trained parameters. We fine-tuned it on 384 ToxicChat messages to return SAFE or BLOCK directly, without generating text. Uncertain messages go to a separate Qwen2.5-0.5B-Instruct classifier.</p><p class=\"small\"><a href=\"@/docs/chat-smoke-specialist.md\">Architecture, training and model revision</a></p><h2>How each approach works</h2><div class=\"topic-links\"><a href=\"@/depth-results.html\"><span><strong>1. Stop at a fixed point</strong>Use the first quarter, half or three quarters of Qwen. Compare the mistakes at each depth.</span></a><a href=\"@/early-exit-results.html\"><span><strong>2. Check before continuing</strong>A small checker decides whether to return a label or run more layers. Different messages can stop at different points.</span></a><a href=\"@/cascade-results.html\"><span><strong>3. Try a tiny model first</strong>Accept its confident answers. Send the other messages to a larger model.</span></a><a href=\"@/training-results.html\"><span><strong>4. Teach the model differently</strong>Train intermediate answers, learn from another model, or remove later layers.</span></a></div><p class=\"small\"><a href=\"@/decision-checks.html\">Other datasets and stress tests</a> · <a href=\"@/chat-results.html\">Original 600-message comparison</a> · <a href=\"@/browser-benchmark.html\">Try output formats in your browser</a></p><details><summary>New-message follow-up: more training and int8</summary><p>More training raised tiny BERT from 81 to 82 correct out of 100, but it missed more toxic messages. A stricter fallback preserved Qwen’s decisions with little speed benefit. Int8 Qwen ran faster but fell from 86 to 53 correct. These recipes do not establish a useful quality-preserving improvement.</p><p class=\"small\"><a href=\"@/docs/chat-refinement.md\">All candidates, timing passes and confidence limits</a></p></details><p class=\"small\"><a href=\"@/batch-results.html\">Queue throughput: same answers, fewer separate calls</a></p><p class=\"small\"><a href=\"@/prefix-results.html\">Reusing the fixed instructions: measured results</a></p><section id=\"next-execution-results\"><h2>Further measured tests</h2><ul class=\"page-links\"><li><a href=\"@/shared-model-results.html\">One model, two chances to answer</a></li><li><a href=\"@/shared-qwen-results.html\">Check Qwen before continuing</a></li><li><a href=\"@/combined-results.html\">Reuse instructions and group messages</a></li></ul></section><section id=\"latest-validation\"><h2>Latest checks</h2><p class=\"next-links\"><a href=\"@/fresh-message-results.html\">Fresh-message validation</a> · <a href=\"@/quantization-results.html\">Smaller-number tests</a> · <a href=\"@/browser-method-results.html\">Browser comparisons</a></p></section>",
     "journey": {
       "topic": {
         "href": "adaptive.html",
@@ -1250,6 +1329,826 @@
       "topic": {
         "href": "decisions.html",
         "label": "Decisions without a written reply"
+      }
+    }
+  },
+  "examples/molecules.html": {
+    "title": "Molecule and drug research",
+    "description": "Rank research candidates against a stated goal.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Candidate structures</li><li>Score desired properties</li><li>Choose what to test</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A research tool could help shortlist molecular candidates for further evaluation. The older site proposed drug discovery; this remains a research application, not a demonstrated treatment-design system.</p><h2>Where the small model fits</h2><p>A domain model represents each candidate. A small scorer learns from measured properties or expert comparisons, while separate checks enforce the experiment&#x27;s constraints.</p><h2>What would need to work</h2><p>Compare selection against conventional search using independently measured outcomes and the same evaluation budget. A high learned score does not establish safety, efficacy or biological activity. No molecular benchmark has been run here.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/architecture.html": {
+    "title": "Architecture and interiors",
+    "description": "Explore layouts and rooms that fit your taste.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate rooms or plans</li><li>Keep fixed constraints</li><li>Suggest a new option</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A homeowner could compare room layouts, materials or facade designs while keeping the room size and budget fixed. Residential layouts, commercial facades and urban planning appeared in the original application list.</p><h2>Where the small model fits</h2><p>A design model generates or represents options. A preference scorer ranks them, while independent rules keep dimensions and other requirements fixed. The scorer can guide appearance; it does not certify a building.</p><h2>What would need to work</h2><p>Test whether people prefer the proposed options and whether every design still meets the specified constraints. Start with a room-layout task before making broader architecture claims.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/stories.html": {
+    "title": "Stories and interactive fiction",
+    "description": "Learn which style of story a reader enjoys.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare short passages</li><li>Learn reader preferences</li><li>Rank new continuations</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A reading app could learn that someone prefers short mysteries, quiet humour or a particular writing style. An interactive story could offer a few continuations and learn from the reader&#x27;s choices.</p><h2>Where the small model fits</h2><p>A language model writes candidate passages. A small preference scorer ranks their representations. This is a ranking approach; it does not assume every language model exposes controls that can be edited into a desired story.</p><h2>What would need to work</h2><p>Use blind reader comparisons on new passages, checking continuity and variety as well as enjoyment. A passage can score well while contradicting the rest of the story.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/fashion.html": {
+    "title": "Fashion and outfit choices",
+    "description": "Find clothes that fit your style.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Like or pass on outfits</li><li>Learn style preferences</li><li>Rank available choices</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A shopper could rate a few outfits, then see clothing or custom-design variations closer to their taste. Outfit recommendations, garment design and trend exploration were original proposals.</p><h2>Where the small model fits</h2><p>A visual model describes each item. A personal scorer ranks options within the chosen size, price and stock limits. A generator could also propose styles, separately from the catalog of things that can actually be bought.</p><h2>What would need to work</h2><p>Measure choices on unseen outfits and distinguish liking a picture from fit, comfort or purchase intent. A personal taste model does not establish population-wide fashion trends.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/materials.html": {
+    "title": "Material research",
+    "description": "Choose candidates under several requirements.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Candidate materials</li><li>Score the trade-offs</li><li>Test selected candidates</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A researcher might seek a material that balances strength, weight, conductivity or environmental cost. A small model could help choose which candidate deserves the next expensive evaluation.</p><h2>Where the small model fits</h2><p>A domain model represents the candidates; a trained scorer estimates the chosen properties or learns an expert&#x27;s trade-offs. Known requirements remain separate constraints.</p><h2>What would need to work</h2><p>Count useful candidates found per evaluation budget, using independent measurements. The lab&#x27;s toy constraint checks do not validate physical material properties.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/games.html": {
+    "title": "Game levels and difficulty",
+    "description": "Suggest levels a player wants to play.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Play a short level</li><li>Rate the experience</li><li>Suggest another layout</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A game could learn whether a player enjoys exploration, tight timing or short puzzles, then choose or generate a suitable level. Difficulty, visual style and rewards can be considered separately.</p><h2>Where the small model fits</h2><p>A level generator proposes layouts. A small scorer predicts preference from level features, while a separate playability check rejects impossible levels.</p><h2>What would need to work</h2><p>Measure enjoyment and completion on new levels, not just the score assigned to a generated layout. The current maze policy chooses moves; it does not learn player taste or generate preferred levels.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><p class=\"next-links\"><a href=\"@/examples/game-moves.html\">Different task: choose the next move</a></p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/news.html": {
+    "title": "News and content curation",
+    "description": "Find useful articles in a preferred format.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate useful articles</li><li>Rank relevant coverage</li><li>Choose format or depth</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A reader could prefer concise local reporting in the morning and detailed analysis later. The original proposal covered interest-based ranking and different ways of presenting headlines or stories.</p><h2>Where the small model fits</h2><p>A personal scorer ranks article representations. A separate writing model may change length or presentation while retaining the source facts and attribution; a preference score is not a fact check.</p><h2>What would need to work</h2><p>Measure usefulness, factual consistency and breadth of coverage. The system should not alter reported events to make a story more pleasing. No news-personalization study has been run here.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/beauty.html": {
+    "title": "Makeup and appearance previews",
+    "description": "Explore a look through small visual changes.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate example looks</li><li>Keep the starting photo</li><li>Preview a small edit</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>Someone could rate makeup colours or styles, then preview a modest change to their own photo. This was one of the original examples of changing an existing image rather than generating an entirely new one.</p><h2>Where the small model fits</h2><p>A compatible encoder maps the photo into the generator&#x27;s internal inputs. The preference scorer helps find a limited change to those inputs before decoding a new preview, with separate checks on unrelated features. Product suggestions would need a separate link to real products.</p><h2>What would need to work</h2><p>Check whether the preview preserves identity and whether the proposed effect is achievable. A higher image score alone does not validate a real-world makeover or product recommendation.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/automotive.html": {
+    "title": "Automotive design",
+    "description": "Explore car shapes, colours and cabins.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare car concepts</li><li>Learn design preferences</li><li>Suggest a variation</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A customer or designer could compare exterior forms, colours and cabin layouts, then explore nearby alternatives without manually describing every detail.</p><h2>Where the small model fits</h2><p>A design model supplies candidates. A small scorer learns visual preferences, and separate design constraints preserve dimensions and required features.</p><h2>What would need to work</h2><p>Evaluate preferred appearance and constraint satisfaction independently. A liked rendering says nothing by itself about road safety, aerodynamics or whether a car can be manufactured.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/genetics.html": {
+    "title": "Genetics research",
+    "description": "Prioritize candidates for an independent test.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Research candidates</li><li>Score a defined objective</li><li>Validate independently</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>The original site proposed applying the model-plus-scorer pattern to genetic representations. This is retained as a research possibility, not a claim that personal ratings can reliably design biological traits.</p><h2>Where the small model fits</h2><p>A domain-specific representation would feed a scorer trained on suitable measured outcomes. Biological validity would require its own evidence, separate from the score used to shortlist candidates.</p><h2>What would need to work</h2><p>Establish a narrowly defined, independently measured research task before evaluating the approach. No genetic-design experiment or biological validation has been performed by this lab.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/models-3d.html": {
+    "title": "3D assets and objects",
+    "description": "Choose shapes that fit a project.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare object shapes</li><li>Rate useful options</li><li>Suggest another asset</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An artist could teach a tool the shape language of a game or product family, then rank chairs, props or other 3D assets for that project.</p><h2>Where the small model fits</h2><p>A 3D model supplies representations and candidates. The preference scorer ranks style, while separate checks handle dimensions, geometry and the target application&#x27;s requirements.</p><h2>What would need to work</h2><p>Evaluate whether artists choose the suggestions and can use the exported assets. A good preview image does not establish usable geometry.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/recipes.html": {
+    "title": "Recipes and meal choices",
+    "description": "Learn taste within the ingredients you choose.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate dishes</li><li>Apply ingredient rules</li><li>Suggest a meal</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A meal planner could learn that someone enjoys quick, savoury dishes and dislikes particular textures, then rank recipes that fit their chosen ingredients and preparation time.</p><h2>Where the small model fits</h2><p>A recipe representation feeds a personal scorer. Explicit ingredient exclusions remain rules outside the preference score; they should not be traded away for a better predicted rating.</p><h2>What would need to work</h2><p>Test satisfaction with meals people actually prepare, not just appealing recipe descriptions. This is a preference proposal, not nutrition or allergy advice.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/video.html": {
+    "title": "Video edits and effects",
+    "description": "Learn which cuts and visual styles work.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare short edits</li><li>Rate pace and style</li><li>Rank new versions</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A creator could compare short edits, transitions or colour treatments, then use those choices to guide the next set of variations.</p><h2>Where the small model fits</h2><p>A video model represents candidate clips. A small scorer learns preferences across whole clips rather than judging only a still frame; generation and editing remain separate work.</p><h2>What would need to work</h2><p>Use unseen clips and measure continuity, viewer preference and full rendering cost. No video preference model is running in the drawing demo.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/voice.html": {
+    "title": "Voice and narration style",
+    "description": "Choose a comfortable pace and delivery.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Hear short samples</li><li>Choose a delivery</li><li>Rank new readings</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A listener could compare the pace and delivery of audiobook or podcast samples, then ask for new readings closer to those preferences.</p><h2>Where the small model fits</h2><p>An audio representation feeds a preference scorer. A speech generator supplies candidate readings; the scorer selects among them or guides supported voice controls.</p><h2>What would need to work</h2><p>Test intelligibility and comfort over longer listening sessions, not just the appeal of a five-second sample. This is a proposed narration task, not a voice-cloning demo.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/education.html": {
+    "title": "Learning materials",
+    "description": "Find explanations a learner finds useful.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare explanations</li><li>Rate clarity</li><li>Suggest the next example</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A learner could prefer a worked example over a long explanation. A teaching tool could learn that preference while choosing between materials covering the same concept.</p><h2>Where the small model fits</h2><p>A small scorer ranks explanation representations using learner feedback. Checks on correctness and evidence of learning remain separate from the person&#x27;s style preference.</p><h2>What would need to work</h2><p>Measure understanding on new questions as well as satisfaction. Liking an explanation does not prove that it teaches the subject better.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/shopping.html": {
+    "title": "Product recommendations",
+    "description": "Rank available products by personal taste.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Rate a few products</li><li>Filter price and stock</li><li>Rank the remaining choices</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A shopper could teach a catalog their taste in furniture or household items, then browse a short list within a chosen budget.</p><h2>Where the small model fits</h2><p>A product model represents the existing inventory. The small preference scorer ranks real items; no new product has to be generated. Price, availability and required features are separate filters.</p><h2>What would need to work</h2><p>Compare choices against ordinary filters and recommendations, including returns and variety. Preference should be measured on unseen products rather than the examples used to train the scorer.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/proteins.html": {
+    "title": "Protein research",
+    "description": "Score candidates without treating scores as proof.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Candidate representations</li><li>Rank a research objective</li><li>Check measured outcomes</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>The earlier whitepaper proposed protein design as another domain for candidate scoring. Here it remains an untested research idea with no biological results claimed.</p><h2>Where the small model fits</h2><p>A suitable domain model would provide representations. A small head could rank a defined objective, provided relevant training labels and an independent evaluation were available.</p><h2>What would need to work</h2><p>Evaluate against measured outcomes on unseen candidates. Structural plausibility or a learned score is not evidence that a proposed protein performs a desired function.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/interfaces.html": {
+    "title": "Interface and layout choices",
+    "description": "Learn which layouts someone finds usable.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Compare layouts</li><li>Rate the experience</li><li>Suggest a constrained variant</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A design tool could help a team explore page layouts without rewriting a brief for each version. Font size, reading order and essential controls would stay fixed where required.</p><h2>Where the small model fits</h2><p>Layout representations feed a preference scorer. The tool ranks candidates or adjusts supported controls, while explicit accessibility and layout checks remain independent.</p><h2>What would need to work</h2><p>Test task completion and readability as well as visual preference. A more attractive screenshot is not necessarily an easier interface to use.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/patient-preferences.html": {
+    "title": "Patient preferences in approved options",
+    "description": "Record what matters to a patient.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Clinician-approved options</li><li>Patient comparisons</li><li>Review priorities together</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>The earlier exploration page mentioned healthcare. A limited interpretation is helping a patient express preferences among options a clinician has already judged appropriate.</p><h2>Where the small model fits</h2><p>A small scorer could summarize patient comparisons for discussion. It would not determine which treatments are medically suitable or replace clinical judgment.</p><h2>What would need to work</h2><p>This is an untested decision-support proposal. No clinical validation, improved outcomes or treatment recommendation capability is claimed.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/moderation.html": {
+    "title": "Live chat moderation",
+    "description": "Return an allow, block or review decision.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Chat message</li><li>Small decision head</li><li>Allow, block or review</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A chat application needs a decision for each incoming message, usually without a written explanation. A review route can handle messages that the model cannot classify reliably.</p><h2>Where the small model fits</h2><p>A trained head reads a text model&#x27;s internal representation. A separate optimization could try a smaller model first or check an earlier layer, continuing when the stopping rule does not accept the result.</p><h2>What would need to work</h2><p>The lab has ToxicChat experiments and browser demos. They do not establish reliable context-aware live moderation, including abuse split across users or messages. Count missed harmful messages and false blocks separately.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/moderation-benchmark.html\">Run the message benchmark</a></p><p class=\"small\">The browser demo compares direct vocabulary scores with generated output; the trained-head and stopping studies use different models or weights.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/chat-results.html\">Trained moderation classifier results</a> · <a href=\"@/fresh-message-results.html\">Early stopping on fresh messages</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/support.html": {
+    "title": "Route customer requests",
+    "description": "Send a request to the right queue.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Where is my order?</li><li>Predict a category</li><li>Send to order support</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A help desk could send billing, delivery and account questions to the right team. If the request does not fit a known category, it can ask for clarification instead of forcing a match.</p><h2>Where the small model fits</h2><p>A text encoder supplies features and a classifier returns a category ID. Intermediate heads or a small-model fallback could reduce processing for routine requests; those are separate comparisons from removing a written reply.</p><h2>What would need to work</h2><p>Test routing accuracy, unfamiliar requests and the cost of sending a request to the wrong queue. Existing banking-topic tests do not establish that the same classifier works for arbitrary company policies.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/practical-demo.html?task=routing\">Try request routing</a></p><p class=\"small\">A small task classifier runs locally. Its results are separate from the trained Qwen banking experiment.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/routing-results.html\">Routing and clarification results</a> · <a href=\"@/docs/banking77-results.md\">Separate banking-topic study</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/redaction.html": {
+    "title": "Find text to redact",
+    "description": "Mark spans instead of writing a new document.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Original message</li><li>Locate name spans</li><li>Review highlighted text</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A support tool could highlight names before a transcript is shared. Returning exact text spans lets the application show what would be removed before changing the document.</p><h2>Where the small model fits</h2><p>A model assigns labels to tokens or character spans. The application applies redaction using those locations rather than asking a language model to rewrite the entire message.</p><h2>What would need to work</h2><p>Measure missed names and incorrect removals. The current prototype covers names; it is not a complete detector for addresses, account numbers or every kind of personal information.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/practical-demo.html?task=privacy\">Try name detection</a></p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/redaction-results.html\">Name-detection results</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/receipts.html": {
+    "title": "Choose a receipt total",
+    "description": "Return the right amount from a short list.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Receipt text</li><li>Score candidate amounts</li><li>Return the chosen total</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An expense tool needs the final amount rather than an essay about the receipt. A classifier could distinguish a total from tax, subtotal or change.</p><h2>Where the small model fits</h2><p>Text recognition supplies candidate amounts and their context. A small scoring head selects a candidate; the application retains the original number and its location for review.</p><h2>What would need to work</h2><p>Measure exact amount selection on unseen receipt layouts. The current text-based demo does not reproduce a complete photo-to-expense workflow.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/practical-demo.html?task=receipts\">Try total selection</a></p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/receipt-results.html\">Receipt-selection results</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/search.html": {
+    "title": "Rank search results",
+    "description": "Put useful matches near the top.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Query and first matches</li><li>Score relevance</li><li>Return a ranked list</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A knowledge base can show useful documents without generating an answer. A second scorer can reorder the first matches when word overlap alone gives a poor ranking.</p><h2>Where the small model fits</h2><p>A small model reads each query-document pair and returns a relevance score. An adaptive version could reserve a larger scorer for close calls, provided that deciding when to stop costs less than it saves.</p><h2>What would need to work</h2><p>Use held-out relevance judgments, ranking quality and total query time. The current reranker experiment is not evidence that early stopping preserves those rankings.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/rerank-demo.html\">Run the reranker</a></p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/search-next-results.html\">Search and reranking results</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/game-moves.html": {
+    "title": "Choose a game move",
+    "description": "Return a direction on each turn.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Current maze state</li><li>Score legal directions</li><li>Move and repeat</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A maze game needs UP, DOWN, LEFT or RIGHT every turn. A learned policy could return the action directly, with the game separately rejecting moves through walls.</p><h2>Where the small model fits</h2><p>A small network reads the game state and scores actions. A larger policy or extra layers could handle uncertain states, but that must be compared with the cost of the small policy and ordinary pathfinding.</p><h2>What would need to work</h2><p>Measure completed mazes and total decisions, not just one-step accuracy. Our current demo is a small trained maze policy; it is not a Pac-Man agent or a validated adaptive-compute policy.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/maze-live.html\">Play with the maze policy</a></p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/maze-results.html\">Maze-policy results</a></p></details><p class=\"next-links\"><a href=\"@/examples/games.html\">Different task: learn a player&#x27;s level preferences</a></p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/inbox.html": {
+    "title": "Sort an inbox",
+    "description": "Separate receipts, requests and newsletters.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Incoming message</li><li>Predict a folder</li><li>File or ask for review</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An inbox tool could identify receipts, meeting requests and newsletters without drafting a response. An uncertain or unfamiliar message could remain in the main inbox.</p><h2>Where the small model fits</h2><p>A small classifier returns a folder label from an email representation. Easy messages could use an early exit or a smaller model; a larger model would handle the rest.</p><h2>What would need to work</h2><p>Evaluate on new senders and future mail, including the cost of hiding an important message. No email-routing or phishing-detection benchmark has been run here.</p><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/routing-results.html\">Related request-routing task</a> · <a href=\"@/cascade-results.html\">How a small-model fallback works</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/offline-commands.html": {
+    "title": "Commands on a small device",
+    "description": "Use a short path for familiar commands.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Command text</li><li>Check an early answer</li><li>Act or continue processing</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A local tool may only need a few commands such as pause, next or cancel. It could handle familiar inputs quickly and continue processing when a command is unclear.</p><h2>Where the small model fits</h2><p>Intermediate classifiers share the early part of one model. A stopping rule chooses whether to accept a command, continue through more layers, or return an unknown-command result.</p><h2>What would need to work</h2><p>Test wrong actions, unknown commands, full latency and device energy. Speech recognition, if used, has a separate cost; a text-command classifier does not eliminate that work.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/shared-decision-demo.html\">See a shared model with two exits</a></p><p class=\"small\">The related demo uses moderation messages, not device commands. No command or energy benchmark has been run.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/shared-model-results.html\">Shared-model study</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/adaptive.html#use-cases\">Stopping early</a> · <a href=\"@/decisions.html#use-cases\">Decisions without text</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "adaptive.html",
+        "label": "Stopping early"
+      },
+      "approach": {
+        "href": "examples/index.html#adaptive",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/desktop-actions.html": {
+    "title": "Point to an app control",
+    "description": "Find a button without writing coordinates.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Screenshot + click Save</li><li>Locate the target</li><li>Return a point</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An automation tool could locate Save, Search or another requested control in a screenshot. The surrounding application decides whether and when to perform the click.</p><h2>Where the small model fits</h2><p>A vision model encodes the screen and instruction. A spatial head selects a region or point directly; a no-target result is needed when the control is absent.</p><h2>What would need to work</h2><p>Test held-out applications, ambiguous controls and missing targets. Our recorded model predictions and live text-matching demo are different implementations, and neither establishes reliable end-to-end automation.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/point-demo.html\">Find visible text in your screenshot</a></p><p class=\"small\">Live OCR and text matching, not the vision model in the recorded experiment.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/coordinate-results.html\">Recorded vision-model results</a> · <a href=\"@/visual-refusal-results.html\">Missing targets and harder screens</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/assistive-pointing.html": {
+    "title": "Assistive pointing",
+    "description": "Turn a requested control into a location.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Choose a control by name</li><li>Highlight its location</li><li>Confirm the action</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>Someone using voice or switch controls could ask for a visible button and confirm the highlighted target. The point output would be one part of an assistive interface.</p><h2>Where the small model fits</h2><p>A spatial head returns a location for the chosen control. The interface can preview the point and preserve a cancel path; speech input and action confirmation are separate components.</p><h2>What would need to work</h2><p>Measure successful tasks with intended users, including ambiguous and moving targets. There is no assistive-technology user study here; the screenshot demo only illustrates target location.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/point-demo.html\">Try the related screenshot locator</a></p><p class=\"small\">This is an OCR prototype, not a tested accessibility product.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/visual-refusal-results.html\">Current target-location limitations</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/ui-testing.html": {
+    "title": "Check changing interfaces",
+    "description": "Locate a control after a layout changes.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Screenshot of a new layout</li><li>Find the expected control</li><li>Verify the next screen</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A test could ask whether a familiar control is still findable after a responsive layout change. A screenshot locator might help where stable programmatic selectors are unavailable.</p><h2>Where the small model fits</h2><p>The locator returns a point or no-target result. A test runner performs the action in a controlled environment, then separately checks the expected outcome.</p><h2>What would need to work</h2><p>Compare completed test flows with ordinary selectors. A point inside a button does not prove that the action succeeded or that the interface is accessible.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/screenshot-demo.html\">Inspect recorded target predictions</a></p><p class=\"small\">Recorded model outputs, not live UI test execution.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/coordinate-results.html\">Screenshot-target study</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/image-annotation.html": {
+    "title": "Suggest an image annotation",
+    "description": "Mark a starting point for a human editor.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Image and target description</li><li>Suggest a point or region</li><li>Review and adjust</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An annotation tool could suggest where an object starts, then let a person correct the point or outline. The useful result is editable geometry rather than a sentence describing the picture.</p><h2>Where the small model fits</h2><p>A vision representation feeds a point, box or mask head suited to the task. A single point is not a substitute for a complete object boundary.</p><h2>What would need to work</h2><p>Measure correction time and final annotation quality, including missing or repeated objects. Our coordinate workbench records manual labels; it does not infer object boundaries.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/coordinate-lab.html\">Try manual coordinate annotation</a></p><p class=\"small\">A manual labeling tool and recorded examples, not an automatic object annotator.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/coordinate-results.html\">Related point-output experiment</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/ecg.html": {
+    "title": "ECG labels without a written report",
+    "description": "Return structured predictions from a heart trace.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Recorded ECG</li><li>Signal model + label head</li><li>Predictions for review</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A research system could read a recorded ECG and return defined rhythm or diagnostic labels for review, without generating a narrative report. More than one label may apply to a recording.</p><h2>Where the small model fits</h2><p>An ECG encoder supplies signal features to a small, potentially multi-label classifier. An experimental early-exit version could check intermediate layers and continue when uncertain. This would reduce model computation, not shorten the recording needed to observe an event.</p><h2>What would need to work</h2><p>Compare with a conventional ECG classifier at matched quality; structured outputs alone are not a new capability. Use patient-separated PTB-XL cases, then other devices and populations. Report sensitivity by finding, false alarms, uncertain cases and latency. No clinical accuracy or safe stopping rule is established here.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><h2>A dataset to start with</h2><p>PTB-XL contains annotated 12-lead, 10-second ECG recordings and recommended evaluation splits. <a href=\"https://physionet.org/content/ptb-xl/1.0.3/\">PTB-XL dataset and evaluation splits</a>.</p><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/early-exit-results.html\">Related method: intermediate classifiers, tested on text</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/ecg-quality.html": {
+    "title": "Check ECG recording quality",
+    "description": "Flag an unusable trace for another recording.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Recorded heart trace</li><li>Check signal quality</li><li>Accept or request review</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A recording tool could flag poor signal quality before someone relies on the trace. This is a different task from deciding whether the heart rhythm is abnormal.</p><h2>Where the small model fits</h2><p>A small signal classifier returns a quality label. An adaptive model could spend more processing on unclear recordings, or leave the quality decision for review instead of forcing an answer.</p><h2>What would need to work</h2><p>Compare with an ordinary signal-quality classifier, including time spent on exit checks. Test bad recordings accepted and good ones rejected across devices. A quality label is not a normal-heart verdict. This lab has not run an ECG quality experiment.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><h2>A dataset to start with</h2><p>The PhysioNet 2011 challenge provides an ECG recording-quality task, separate from disease classification. <a href=\"https://physionet.org/content/challenge-2011/1.0.0/\">PhysioNet ECG-quality challenge</a>.</p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/mri-segmentation.html": {
+    "title": "Mark regions in an MRI",
+    "description": "Return a mask that a reviewer can inspect.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>MRI volume</li><li>Predict a region mask</li><li>Review the boundaries</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A medical-image research tool could mark structures or specified findings in a scan for expert review. A region mask is more useful for this task than a written coordinate or a single click point.</p><h2>Where the small model fits</h2><p>A scan encoder feeds a segmentation head that labels locations across the image volume. Intermediate masks could be compared with the full model to study whether computation can stop earlier; that requires a medical model and its own training.</p><h2>What would need to work</h2><p>Compare with a conventional full-depth segmentation model on patient-separated cases, including timing. Check missed regions, boundary errors and failures across scanners. Overall pixel accuracy can hide a small important finding. No medical segmentation model has been tested here.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><h2>A dataset to start with</h2><p>BraTS provides a research task for brain-tumor segmentation in multimodal MRI. It does not cover every anatomy or MRI use case. <a href=\"https://www.med.upenn.edu/cbica/brats2020/tasks.html\">BraTS MRI segmentation task</a>.</p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a> · <a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/mri-reconstruction.html": {
+    "title": "MRI reconstruction with fewer model steps",
+    "description": "Study when further reconstruction stops helping.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Acquired scan measurements</li><li>Reconstruction checkpoints</li><li>Image + quality checks</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An iterative reconstruction model may refine an MRI image through several stages. A research experiment could ask whether some inputs need fewer model stages while retaining important detail.</p><h2>Where the small model fits</h2><p>A quality head checks intermediate reconstructions, alongside consistency with the acquired measurements. It decides whether to continue computing. This is a different output task from an ECG label or a preference classifier.</p><h2>What would need to work</h2><p>Compare with a full reconstruction model at matched image quality, including the cost of the stopping checks. Evaluate errors and clinically relevant detail with expert review. Fewer neural-network steps do not by themselves demonstrate a shorter MRI acquisition or safe scanner protocol.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><h2>A dataset to start with</h2><p>The NYU fastMRI project provides data for studying MRI reconstruction. Dataset access and use follow the project&#x27;s terms. <a href=\"https://fastmri.med.nyu.edu/\">NYU fastMRI research project</a>.</p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "adaptive.html",
+        "label": "Stopping early"
+      },
+      "approach": {
+        "href": "examples/index.html#adaptive",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/eeg-sleep.html": {
+    "title": "EEG sleep-stage labels",
+    "description": "Classify recorded sleep segments directly.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Recorded signal segment</li><li>Predict a sleep stage</li><li>Review the sequence</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A sleep-research pipeline could assign a defined stage to each recorded segment, then show the sequence for review. A language model does not need to write the stage name token by token.</p><h2>Where the small model fits</h2><p>A signal encoder and classification head return stage scores. Earlier heads or a small-model fallback could be compared while retaining the temporal context needed by the task.</p><h2>What would need to work</h2><p>Compare with a conventional sleep-stage classifier at matched quality. Split by participant and recording, measure mistakes between stages and total time. This is not an insomnia diagnosis or a claim that monitoring can safely omit parts of a recording.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><h2>A dataset to start with</h2><p>Sleep-EDF Expanded includes sleep recordings and corresponding sleep-stage annotations for research. <a href=\"https://physionet.org/content/sleep-edfx/1.0.0/\">Sleep-EDF Expanded dataset</a>.</p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/decisions.html#use-cases\">Decisions without text</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "decisions.html",
+        "label": "Decisions without text"
+      },
+      "approach": {
+        "href": "examples/index.html#decisions",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/medical-annotation.html": {
+    "title": "Medical-image landmarks and measurements",
+    "description": "Suggest editable points for a specialist.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Scan and defined target</li><li>Suggest landmarks</li><li>Review the measurement</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An image viewer could suggest anatomical landmarks or an initial outline in MRI, CT or ultrasound. A specialist could correct the geometry before using a measurement.</p><h2>Where the small model fits</h2><p>A modality-specific model returns points, boxes or masks directly. The viewer maps them into image coordinates and physical units using the scan metadata; it does not need to parse an LLM&#x27;s written coordinates.</p><h2>What would need to work</h2><p>Evaluate localization error, wrong or absent targets, measurement error and correction time on the chosen modality. A screenshot-button locator is not a medical landmark model, and no such model has been tested here.</p><p class=\"small\">Research proposal only. SkinDeep has no clinical model, patient-use demo or validated medical performance for this task.</p><p class=\"next-links\"><a href=\"@/examples/mri-segmentation.html\">Related task: MRI region masks</a> · <a href=\"@/examples/image-annotation.html\">General image annotation</a></p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/coordinates.html#use-cases\">Finding where to click</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "coordinates.html",
+        "label": "Finding where to click"
+      },
+      "approach": {
+        "href": "examples/index.html#coordinates",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/model-routing.html": {
+    "title": "Route between small and large models",
+    "description": "Use the larger model when it adds value.",
+    "status": "Use case · Related prototype",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Request or small-model result</li><li>Estimate difficulty or risk</li><li>Accept or use a larger model</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An app could send a routine request to a small model and use a larger one for a difficult request. It could also try the small model first, then escalate when a learned check rejects its result.</p><h2>Where the small model fits</h2><p>A router predicts which model to use, or a confidence checker decides whether to accept a candidate answer. These are different policies. Separate models normally process the input separately; a shared encoder or intermediate handoff needs compatible, trained components.</p><h2>What would need to work</h2><p>Measure useful answers, routing mistakes and total time or cost including fallback. The lab&#x27;s existing cascade returns moderation labels, not general chat replies, and does not demonstrate interchangeable hidden states between unrelated models.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/method-demo.html?method=cascade\">Compare a small-model fallback</a></p><p class=\"small\">The browser demo uses BERT classifiers. The recorded Qwen cascade is a separate experiment.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/cascade-results.html\">How the current cascade works</a> · <a href=\"@/cascade-test-results.html\">Recorded cascade results</a> · <a href=\"@/shared-model-results.html\">Related option: one model with two exits</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "adaptive.html",
+        "label": "Stopping early"
+      },
+      "approach": {
+        "href": "examples/index.html#adaptive",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/faster-llm.html": {
+    "title": "Get an LLM result sooner",
+    "description": "Use less model work before returning an answer.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Read the request</li><li>Check a candidate result</li><li>Return it or continue</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>A tool request might only need a label or action, while a chat request needs a written answer. Both could benefit from less computation, but they require different stopping methods.</p><h2>Where the small model fits</h2><p>For a fixed decision, a head can read an intermediate layer and return an enum. For a written answer, an early-exit decoder or a small draft model could propose tokens for a larger model to check. A confident label head alone cannot supply or validate the rest of a conversation.</p><h2>What would need to work</h2><p>Measure time to the first result, time to finish, answer quality and verification overhead. Our layer-exit tests concern classifiers, not a demonstrated faster general-purpose chat model.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/shared-decision-demo.html\">Try early exit on a fixed decision</a></p><p class=\"small\">This demonstrates classification, not early generation of complete LLM replies.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/early-exit-results.html\">Current classifier stopping results</a> · <a href=\"@/shared-qwen-results.html\">Qwen checkpoint study</a></p></details><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "adaptive.html",
+        "label": "Stopping early"
+      },
+      "approach": {
+        "href": "examples/index.html#adaptive",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/image-safety.html": {
+    "title": "Stop an unsafe image before it finishes",
+    "description": "Check during generation and cancel early.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Image generation in progress</li><li>Classifier checks a checkpoint</li><li>Cancel or keep generating</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>An image service could cancel a generation once an intermediate classifier detects a policy violation, rather than paying for every remaining generation step and the final image decode.</p><h2>Where the small model fits</h2><p>A trained safety head could read intermediate image-model features, or classify a cheap partial preview. The first route might avoid decoding a preview; the second adds some decoding work. In a diffusion model, checkpoints would be denoising steps, not necessarily the transformer layers used in our text experiments.</p><h2>What would need to work</h2><p>Finish matched generations offline, using the same prompts and seeds, to check what cancelled images would have become. Measure unsafe outputs missed, acceptable images cancelled, useful checkpoint depth and net time after preview/checking costs. Passing an early check does not certify the final image; continuing outputs still need the final check. This experiment has not been run here.</p><p class=\"next-links\"><a href=\"@/examples/image-preferences.html\">Related idea: stop an image that misses your taste</a> · <a href=\"@/examples/model-routing.html\">Another way to avoid expensive model work</a></p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/adaptive.html#use-cases\">Stopping early</a> · <a href=\"@/decisions.html#use-cases\">Decisions without text</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "adaptive.html",
+        "label": "Stopping early"
+      },
+      "approach": {
+        "href": "examples/index.html#adaptive",
+        "label": "Use cases"
+      }
+    }
+  },
+  "examples/image-preferences.html": {
+    "title": "Stop an image that misses your taste",
+    "description": "Spend rendering time on more promising ideas.",
+    "status": "Use case · Idea to test",
+    "styles": [
+      "results.css",
+      "use-cases.css"
+    ],
+    "body": "<figure class=\"method-figure use-case-flow\"><ol class=\"method-flow\"><li>Learn from your image ratings</li><li>Score a generation in progress</li><li>Continue, cancel or restart</li></ol><figcaption>Illustration of the proposed workflow.</figcaption></figure><p>If a person consistently rejects a certain visual style, a generator could stop a poor candidate before finishing it and spend the remaining budget on another idea. This connects the original personal preference model to adaptive computation.</p><h2>Where the small model fits</h2><p>A personal scorer would learn how intermediate features relate to the person&#x27;s final ratings. A separate stopping rule would estimate whether an initially poor candidate is likely to recover. A scorer trained only on finished images may not work on noisy previews.</p><h2>What would need to work</h2><p>Compare finished images people prefer per fixed time or compute budget, counting cancelled images and lost variety. Evaluate rejected candidates too, so good images cancelled early are visible. This is an untested extension of preference learning, not the current drawing demo.</p><section id=\"live-demo-link\"><h2>Try the related work</h2><p class=\"next-links\"><a href=\"@/demo.html\">Try the drawing-based learning loop</a></p><p class=\"small\">This demo learns from simple drawings. It does not run the application described above.</p></section><details><summary>Related experiments and evidence</summary><p class=\"next-links\"><a href=\"@/how-it-works.html\">How preference learning works</a> · <a href=\"@/preference-results.html\">What the current preference tests show</a></p></details><p class=\"next-links\"><a href=\"@/examples/image-safety.html\">Different goal: detect unsafe generation</a> · <a href=\"@/examples/art.html\">Original use: learn visual preferences</a></p><nav aria-label=\"Related topics\"><p class=\"next-links\"><a href=\"@/preferences.html#use-cases\">Learning what you like</a> · <a href=\"@/adaptive.html#use-cases\">Stopping early</a></p></nav><p class=\"next-links\"><a href=\"@/examples/index.html\">All use cases</a></p>",
+    "journey": {
+      "topic": {
+        "href": "preferences.html",
+        "label": "Learning what you like"
+      },
+      "approach": {
+        "href": "examples/index.html#preferences",
+        "label": "Use cases"
       }
     }
   }
