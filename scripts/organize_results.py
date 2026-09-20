@@ -211,6 +211,8 @@ def update(pages, legacy=None):
     update_next_research(pages)
     from refresh_demo_links import update as update_demo_links
     update_demo_links(pages)
+    from refresh_navigation import update as update_navigation
+    update_navigation(pages)
 
 
 if __name__ == '__main__':

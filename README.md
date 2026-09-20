@@ -33,7 +33,11 @@ python -m pip install -r experiments/requirements.txt
 python experiments/run_synthetic.py
 ```
 
-Browser checks: `node scripts/test_browser.cjs`. Use Playwright/Chromium in a separate tooling environment, or set `PLAYWRIGHT_MODULE` to an existing playwright-core module. The script tests 30 pages at seven widths with a two-renderer cap. See [experiments/README.md](experiments/README.md) for model downloads and runtime limits.
+Browser checks: `node scripts/test_browser.cjs`. Use Playwright/Chromium in a separate tooling environment, or set `PLAYWRIGHT_MODULE` to an existing playwright-core module. The script tests every current page at seven widths with a two-renderer cap. See [experiments/README.md](experiments/README.md) for model downloads and runtime limits.
+
+Navigation follows topic → approach → demo ↔ matching results → evidence. `scripts/refresh_navigation.py`, called last by `scripts/organize_results.py`, defines the page relationships and mode-specific routes, generates the saved browser-result pages, and builds the complete HTML sitemap. Regenerate with `python scripts/organize_results.py` followed by `python scripts/build_site.py`. The scoped `scripts/journey.js` updates related links when a demo's mode changes; it does not run or change models.
+
+`node scripts/test_journeys.cjs` checks deep links, demo/results round trips and selector changes without downloading models. `python scripts/audit_navigation.py` refreshes the [navigation map](docs/navigation-map.html); `node scripts/test_navigation_map.cjs` checks it against browser DOMs. The [audit](docs/navigation-audit.md) retains the original findings and distinguishes the implemented workflow from optional future page mergers.
 
 Accessibility and enlarged-text checks: `node scripts/audit_accessibility.cjs` against the local preview. Set `AXE_CORE_PATH` to a separate axe-core installation. See the [accessibility review](docs/accessibility.md) for coverage, findings, and reproduction commands.
 

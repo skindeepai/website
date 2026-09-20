@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "modeRoundTrips": 12,
+  "viewportChecks": 28,
+  "pagesInSitemap": 69,
+  "modelDownloads": 0,
+  "checks": [
+    "deep links select correct mode",
+    "matching result destinations",
+    "results return to the same demo mode",
+    "mode changes update links and URL",
+    "refresh retains selection",
+    "all journey destinations exist",
+    "sitemap complete",
+    "specific missing connections repaired"
+  ],
+  "browser": "151.0.7922.34"
+}

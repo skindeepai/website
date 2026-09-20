@@ -8,8 +8,27 @@ ROOT = Path(__file__).resolve().parents[1]
 NAV = [
     ('The lab', [('index.html', 'Overview'), ('research.html', 'Research FAQ'), ('results.html', 'Test results')]),
     ('Topics', [('preferences.html', 'Learning what you like'), ('decisions.html', 'Decisions without text'), ('coordinates.html', 'Finding where to click'), ('adaptive.html', 'Stopping early')]),
-    ('Explore', [('demo.html', 'Preference demo'), ('coordinate-lab.html', 'Recorded clicks'), ('demo-directory.html', 'Live demos'), ('history.html', 'History & archive'), ('about.html', 'About')])
+    ('Explore', [('demo-directory.html', 'Live demos'), ('history.html', 'History & archive'), ('about.html', 'About')])
 ]
+
+def journey_markup(config, prefix):
+    def relative(value):
+        if isinstance(value, dict):
+            return {k: prefix + v if k == 'href' else relative(v) for k, v in value.items()}
+        return value
+    config = relative(config)
+    selected = {**config, **next(iter(config.get('modes', {}).values()), {})}
+    def anchor(key):
+        item = selected.get(key)
+        return ('<a data-journey="' + key + '" href="' + escape(item['href'], quote=True) + '">' + escape(item['label']) + '</a>') if item else ''
+    trail = '<nav id="journey-trail" class="small" aria-label="Topic and approach">' + ' · '.join(filter(None, [anchor('topic'), anchor('approach')])) + '</nav>'
+    links = ' · '.join(filter(None, [anchor('results'), anchor('evidence')]))
+    context = ('<nav id="journey-links" class="next-links small" aria-label="Results and evidence">' + links + '</nav>') if links else ''
+    if selected.get('note'):
+        context += '<p id="journey-note" class="small">' + escape(selected['note']) + '</p>'
+    if config.get('modes'):
+        context += '<script id="journey-config" type="application/json">' + json.dumps(config, ensure_ascii=False).replace('<', '\\u003c') + '</script><script src="' + prefix + 'scripts/journey.js" defer></script>'
+    return trail, context
 
 def build():
     pages = json.loads((ROOT / 'content/pages.json').read_text(encoding='utf-8'))
@@ -21,7 +40,10 @@ def build():
             '<a ' + ('aria-current="page" ' if name == href else '') + 'href="' + url(href) + '">' + label + '</a>' for href, label in links) + '</div>' for title, links in NAV)
         body = p.get('body', '')
         if 'template' in p: body = (ROOT / p['template']).read_text(encoding='utf-8')
+        for old, new in p.get('link_replacements', {}).items():
+            body = body.replace('href="@/' + old + '"', 'href="@/' + new + '"')
         body = body.replace('href="@/', 'href="' + prefix).replace('src="@/', 'src="' + prefix)
+        trail, context = journey_markup(p['journey'], prefix) if p.get('journey') else ('', '')
         extra_css = ''.join('<link rel="stylesheet" href="' + url(s) + '">' for s in p.get('styles', []))
         scripts = ''.join('<script src="' + url(s) + '" defer></script>' for s in p.get('scripts', []))
         topline = '<p class="page-status">' + escape(p['status']) + '</p>' if p.get('status') else ''
@@ -37,8 +59,8 @@ def build():
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="lab-header"><a class="wordmark" href="{url('index.html')}">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">{header_note}</span></header>
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation">{nav}</nav><div class="rail-note"><a href="{url('sitemap.html')}">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
-<main class="lab-main" id="main" tabindex="-1">{topline}
-<h1>{escape(p['title'])}</h1><p class="page-lead">{escape(p['description'])}</p>{body}
+<main class="lab-main" id="main" tabindex="-1">{trail}{topline}
+<h1>{escape(p['title'])}</h1><p class="page-lead">{escape(p['description'])}</p>{context}{body}
 <footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="{url('history.html')}">History</a><a href="{url('research.html')}">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>
 '''
         target = ROOT / name

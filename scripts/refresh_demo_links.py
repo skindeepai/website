@@ -21,8 +21,8 @@ def update(pages):
     links(['active-learning-strategies.html'],'preference-method-demo.html','Compare how examples are chosen','Live random versus least-certain sampling from your ratings.')
     links(['multi-modal-preferences-deep-dive.html'],'preference-method-demo.html','Teach two different styles','Live linear versus nonlinear preference learning; this illustrates separated preferences without a generator mixture.')
     links(['examples/art.html','examples/music.html','examples/social-media.html','examples/dating.html','examples/science.html','examples/index.html'],'demo.html','Try the underlying preference-learning loop','The working example learns from drawings. The application described here is a proposal, not a completed product demo.')
-    links(['decisions.html','chat-results.html','decision-checks.html'],'moderation-benchmark.html','Run Qwen on real messages','Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies.')
-    links(['adaptive.html','shared-model-results.html','fresh-message-results.html'],'shared-decision-demo.html','Run early stopping on your device','Live two/four-layer BERT with shared computation.')
+    links(['decisions.html','chat-results.html','decision-checks.html'],'moderation-benchmark.html','Live demo: compare labels and written replies','Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier.')
+    links(['adaptive.html','shared-model-results.html','fresh-message-results.html'],'shared-decision-demo.html','Live demo: compare early stopping and full depth','Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate.')
     links(['decision-results.html'],'method-demo.html','Compare the methods live','Browser BERT comparisons; the recorded Qwen results remain separate.')
     for mode,names,label,note in [
         ('fixed',['depth-results.html'],'Try stopping at a fixed layer','Live layer-2 versus layer-4 BERT; not a replication of the Qwen depths below.'),

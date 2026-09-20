@@ -56,33 +56,33 @@
   },
   "decisions.html": {
     "target": "moderation-benchmark.html",
-    "label": "Run Qwen on real messages",
-    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+    "label": "Live demo: compare labels and written replies",
+    "note": "Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier."
   },
   "chat-results.html": {
     "target": "moderation-benchmark.html",
-    "label": "Run Qwen on real messages",
-    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+    "label": "Live demo: compare labels and written replies",
+    "note": "Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier."
   },
   "decision-checks.html": {
     "target": "moderation-benchmark.html",
-    "label": "Run Qwen on real messages",
-    "note": "Live full-depth vocabulary decisions, one-token replies and JSON; separate from the trained Python task-head studies."
+    "label": "Live demo: compare labels and written replies",
+    "note": "Run Qwen 0.5B on real messages and compare accuracy and time. All 24 layers run; this demo does not use the trained banking classifier."
   },
   "adaptive.html": {
     "target": "shared-decision-demo.html",
-    "label": "Run early stopping on your device",
-    "note": "Live two/four-layer BERT with shared computation."
+    "label": "Live demo: compare early stopping and full depth",
+    "note": "Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate."
   },
   "shared-model-results.html": {
     "target": "shared-decision-demo.html",
-    "label": "Run early stopping on your device",
-    "note": "Live two/four-layer BERT with shared computation."
+    "label": "Live demo: compare early stopping and full depth",
+    "note": "Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate."
   },
   "fresh-message-results.html": {
     "target": "shared-decision-demo.html",
-    "label": "Run early stopping on your device",
-    "note": "Live two/four-layer BERT with shared computation."
+    "label": "Live demo: compare early stopping and full depth",
+    "note": "Compare accuracy and time on real messages. This demo uses a four-layer BERT model that can stop after layer 2; the Qwen tests below are separate."
   },
   "decision-results.html": {
     "target": "method-demo.html",
