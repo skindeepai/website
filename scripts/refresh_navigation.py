@@ -106,7 +106,8 @@ def update(pages):
     item = journey('practical-demo.html', 'decisions.html')
     item.update(selector='practical-task', parameter='task', modes={})
     for task, study, title in [('routing', 'routing-results.html', 'Route a request'), ('privacy', 'redaction-results.html', 'Find names'), ('receipts', 'receipt-results.html', 'Choose a receipt total')]:
-        item['modes'][task] = dict(approach=route(study, title), results=route(study, 'Recorded task results'), evidence=route('docs/practical-baselines.md', 'Dataset, method and evidence'))
+        evidence='docs/privacy-full-document.md' if task=='privacy' else 'docs/practical-baselines.md'
+        item['modes'][task] = dict(approach=route(study, title), results=route(study, 'Recorded task results'), evidence=route(evidence, 'Dataset, method and evidence'))
     journey('browser-method-results.html', 'adaptive.html', ('decision-results.html', 'Compare approaches'))
     journey('browser-execution-results.html', 'decisions.html')
 

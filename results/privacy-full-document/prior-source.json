@@ -1,0 +1,15 @@
+{
+  "git_revision": "1c48dddf0bdd545792c8bfde4b3446849f64b7c4",
+  "files": {
+    "scripts/practical-demo-core.js": {
+      "copy": "prior-core.cjs",
+      "sha256": "77d831fb5a653456500aa6a0867d591706afd8a4ce3c1f2013d14b6dcc2923c6",
+      "matches_original_browser_protocol": true
+    },
+    "scripts/practical-demo.js": {
+      "copy": "prior-ui.cjs",
+      "sha256": "28e6eec94535601a27cbf2af61e452e7b290f407d23f109586be7ac2ed5931bc",
+      "matches_original_browser_protocol": null
+    }
+  }
+}

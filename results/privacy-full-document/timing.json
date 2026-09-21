@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "001-93304",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 9.537199999999984,
+    "tokens": 587
+  },
+  {
+    "id": "001-93304",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 8.147600000000011,
+    "tokens": 587
+  },
+  {
+    "id": "001-60649",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 9.304400000000015,
+    "tokens": 1328
+  },
+  {
+    "id": "001-60649",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 10.794200000000018,
+    "tokens": 1200
+  },
+  {
+    "id": "001-78429",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 5.369400000000013,
+    "tokens": 1200
+  },
+  {
+    "id": "001-78429",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 6.294499999999999,
+    "tokens": 1393
+  },
+  {
+    "id": "001-101231",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.3444000000000074,
+    "tokens": 763
+  },
+  {
+    "id": "001-101231",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.279599999999988,
+    "tokens": 763
+  },
+  {
+    "id": "001-95382",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.8290999999999826,
+    "tokens": 571
+  },
+  {
+    "id": "001-95382",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.4545000000000243,
+    "tokens": 571
+  },
+  {
+    "id": "001-87512",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.4192999999999927,
+    "tokens": 792
+  },
+  {
+    "id": "001-87512",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.2007999999999868,
+    "tokens": 792
+  },
+  {
+    "id": "001-81110",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.4238,
+    "tokens": 796
+  },
+  {
+    "id": "001-81110",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.2417999999999836,
+    "tokens": 796
+  },
+  {
+    "id": "001-61332",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.8760000000000048,
+    "tokens": 609
+  },
+  {
+    "id": "001-61332",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.7006000000000085,
+    "tokens": 609
+  },
+  {
+    "id": "001-79030",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.5826000000000136,
+    "tokens": 1200
+  },
+  {
+    "id": "001-79030",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 4.520299999999992,
+    "tokens": 1360
+  },
+  {
+    "id": "001-57901",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 4.891500000000008,
+    "tokens": 1685
+  },
+  {
+    "id": "001-57901",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 4.196999999999974,
+    "tokens": 1200
+  },
+  {
+    "id": "001-90967",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.1632000000000176,
+    "tokens": 717
+  },
+  {
+    "id": "001-90967",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.883100000000013,
+    "tokens": 717
+  },
+  {
+    "id": "001-59527",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.698199999999986,
+    "tokens": 1748
+  },
+  {
+    "id": "001-59527",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.4599000000000046,
+    "tokens": 1200
+  },
+  {
+    "id": "001-79415",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.9832999999999856,
+    "tokens": 683
+  },
+  {
+    "id": "001-79415",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.724400000000003,
+    "tokens": 683
+  },
+  {
+    "id": "001-91092",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.121499999999969,
+    "tokens": 387
+  },
+  {
+    "id": "001-91092",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.0002000000000066,
+    "tokens": 387
+  },
+  {
+    "id": "001-87456",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.2234000000000265,
+    "tokens": 424
+  },
+  {
+    "id": "001-87456",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.1657999999999902,
+    "tokens": 424
+  },
+  {
+    "id": "001-91088",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 0.9198999999999842,
+    "tokens": 295
+  },
+  {
+    "id": "001-91088",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 0.737700000000018,
+    "tokens": 295
+  },
+  {
+    "id": "001-87626",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.4166000000000167,
+    "tokens": 591
+  },
+  {
+    "id": "001-87626",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.5097000000000094,
+    "tokens": 591
+  },
+  {
+    "id": "001-90575",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.074700000000007,
+    "tokens": 381
+  },
+  {
+    "id": "001-90575",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 0.9767999999999688,
+    "tokens": 381
+  },
+  {
+    "id": "001-95777",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.7298000000000116,
+    "tokens": 1025
+  },
+  {
+    "id": "001-95777",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.282099999999957,
+    "tokens": 1025
+  },
+  {
+    "id": "001-95199",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.5409999999999968,
+    "tokens": 579
+  },
+  {
+    "id": "001-95199",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.415300000000002,
+    "tokens": 579
+  },
+  {
+    "id": "001-94000",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.329499999999996,
+    "tokens": 498
+  },
+  {
+    "id": "001-94000",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.3081999999999994,
+    "tokens": 498
+  },
+  {
+    "id": "001-84289",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.2648000000000366,
+    "tokens": 701
+  },
+  {
+    "id": "001-84289",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.9603999999999928,
+    "tokens": 701
+  },
+  {
+    "id": "001-82750",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.93689999999998,
+    "tokens": 682
+  },
+  {
+    "id": "001-82750",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.7323999999999842,
+    "tokens": 682
+  },
+  {
+    "id": "001-57867",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.477299999999957,
+    "tokens": 1605
+  },
+  {
+    "id": "001-57867",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.571300000000008,
+    "tokens": 1200
+  },
+  {
+    "id": "001-61680",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.4454999999999814,
+    "tokens": 1200
+  },
+  {
+    "id": "001-61680",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 5.220199999999977,
+    "tokens": 1558
+  },
+  {
+    "id": "001-59853",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.2337000000000558,
+    "tokens": 1094
+  },
+  {
+    "id": "001-59853",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.752299999999991,
+    "tokens": 1094
+  },
+  {
+    "id": "001-76746",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.6458999999999833,
+    "tokens": 525
+  },
+  {
+    "id": "001-76746",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.3634999999999877,
+    "tokens": 525
+  },
+  {
+    "id": "001-94119",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.4476999999999975,
+    "tokens": 851
+  },
+  {
+    "id": "001-94119",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 9.642899999999997,
+    "tokens": 851
+  },
+  {
+    "id": "001-58410",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.0232999999999493,
+    "tokens": 689
+  },
+  {
+    "id": "001-58410",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.8496999999999844,
+    "tokens": 689
+  },
+  {
+    "id": "001-73360",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 4.605699999999956,
+    "tokens": 1628
+  },
+  {
+    "id": "001-73360",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 4.017699999999991,
+    "tokens": 1200
+  },
+  {
+    "id": "001-85728",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.1533999999999764,
+    "tokens": 378
+  },
+  {
+    "id": "001-85728",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 0.9898000000000025,
+    "tokens": 378
+  },
+  {
+    "id": "001-75894",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.2878000000000043,
+    "tokens": 1141
+  },
+  {
+    "id": "001-75894",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.857400000000041,
+    "tokens": 1141
+  },
+  {
+    "id": "001-92767",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.5673999999999637,
+    "tokens": 1200
+  },
+  {
+    "id": "001-92767",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 6.453900000000033,
+    "tokens": 1945
+  },
+  {
+    "id": "001-79069",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.7767999999999802,
+    "tokens": 595
+  },
+  {
+    "id": "001-79069",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.5745000000000005,
+    "tokens": 595
+  },
+  {
+    "id": "001-105434",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 4.8197999999999865,
+    "tokens": 1200
+  },
+  {
+    "id": "001-105434",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 5.870200000000011,
+    "tokens": 2032
+  },
+  {
+    "id": "001-58086",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.315399999999954,
+    "tokens": 1666
+  },
+  {
+    "id": "001-58086",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.3903999999999996,
+    "tokens": 1200
+  },
+  {
+    "id": "001-92425",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.4184999999999945,
+    "tokens": 425
+  },
+  {
+    "id": "001-92425",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.1050000000000182,
+    "tokens": 425
+  },
+  {
+    "id": "001-90569",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.3935000000000173,
+    "tokens": 550
+  },
+  {
+    "id": "001-90569",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.4986999999999853,
+    "tokens": 550
+  },
+  {
+    "id": "001-170347",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.022899999999993,
+    "tokens": 992
+  },
+  {
+    "id": "001-170347",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.6473000000000297,
+    "tokens": 992
+  },
+  {
+    "id": "001-84580",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.576599999999985,
+    "tokens": 421
+  },
+  {
+    "id": "001-84580",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.299599999999998,
+    "tokens": 421
+  },
+  {
+    "id": "001-60793",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.6621000000000095,
+    "tokens": 562
+  },
+  {
+    "id": "001-60793",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.4698999999999955,
+    "tokens": 562
+  },
+  {
+    "id": "001-61807",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.0699000000000183,
+    "tokens": 573
+  },
+  {
+    "id": "001-61807",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.913000000000011,
+    "tokens": 573
+  },
+  {
+    "id": "001-79713",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.9418000000000006,
+    "tokens": 597
+  },
+  {
+    "id": "001-79713",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.0891000000000304,
+    "tokens": 597
+  },
+  {
+    "id": "001-66782",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.276899999999955,
+    "tokens": 777
+  },
+  {
+    "id": "001-66782",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.0552999999999884,
+    "tokens": 777
+  },
+  {
+    "id": "001-60737",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 4.452499999999986,
+    "tokens": 1200
+  },
+  {
+    "id": "001-60737",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.698500000000024,
+    "tokens": 1327
+  },
+  {
+    "id": "001-91290",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.7660999999999945,
+    "tokens": 595
+  },
+  {
+    "id": "001-91290",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.5410999999999717,
+    "tokens": 595
+  },
+  {
+    "id": "001-91059",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.2618999999999687,
+    "tokens": 560
+  },
+  {
+    "id": "001-91059",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.4500999999999635,
+    "tokens": 560
+  },
+  {
+    "id": "001-61253",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.4821000000000026,
+    "tokens": 951
+  },
+  {
+    "id": "001-61253",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.7520999999999276,
+    "tokens": 951
+  },
+  {
+    "id": "001-57874",
+    "pass": 1,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 5.40969999999993,
+    "tokens": 1200
+  },
+  {
+    "id": "001-57874",
+    "pass": 1,
+    "position": 2,
+    "variant": "full",
+    "ms": 6.54729999999995,
+    "tokens": 2180
+  },
+  {
+    "id": "001-84379",
+    "pass": 1,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.024400000000014,
+    "tokens": 669
+  },
+  {
+    "id": "001-84379",
+    "pass": 1,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.915300000000002,
+    "tokens": 669
+  },
+  {
+    "id": "001-93304",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.8596000000000004,
+    "tokens": 587
+  },
+  {
+    "id": "001-93304",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.8211999999999762,
+    "tokens": 587
+  },
+  {
+    "id": "001-60649",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 5.206099999999992,
+    "tokens": 1200
+  },
+  {
+    "id": "001-60649",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.9654999999999063,
+    "tokens": 1328
+  },
+  {
+    "id": "001-78429",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.379099999999994,
+    "tokens": 1393
+  },
+  {
+    "id": "001-78429",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 5.1299000000000206,
+    "tokens": 1200
+  },
+  {
+    "id": "001-101231",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.404899999999998,
+    "tokens": 763
+  },
+  {
+    "id": "001-101231",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.215000000000032,
+    "tokens": 763
+  },
+  {
+    "id": "001-95382",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.40280000000007,
+    "tokens": 571
+  },
+  {
+    "id": "001-95382",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.6522999999999683,
+    "tokens": 571
+  },
+  {
+    "id": "001-87512",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.050100000000043,
+    "tokens": 792
+  },
+  {
+    "id": "001-87512",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.966099999999983,
+    "tokens": 792
+  },
+  {
+    "id": "001-81110",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.2334999999999354,
+    "tokens": 796
+  },
+  {
+    "id": "001-81110",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.920500000000061,
+    "tokens": 796
+  },
+  {
+    "id": "001-61332",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.147299999999973,
+    "tokens": 609
+  },
+  {
+    "id": "001-61332",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.7051999999999907,
+    "tokens": 609
+  },
+  {
+    "id": "001-79030",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 4.8596,
+    "tokens": 1360
+  },
+  {
+    "id": "001-79030",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.4844000000000506,
+    "tokens": 1200
+  },
+  {
+    "id": "001-57901",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.5372999999999593,
+    "tokens": 1200
+  },
+  {
+    "id": "001-57901",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 5.170799999999986,
+    "tokens": 1685
+  },
+  {
+    "id": "001-90967",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.5814000000000306,
+    "tokens": 717
+  },
+  {
+    "id": "001-90967",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.3799000000000206,
+    "tokens": 717
+  },
+  {
+    "id": "001-59527",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 4.303800000000024,
+    "tokens": 1200
+  },
+  {
+    "id": "001-59527",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 5.088999999999942,
+    "tokens": 1748
+  },
+  {
+    "id": "001-79415",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.188099999999963,
+    "tokens": 683
+  },
+  {
+    "id": "001-79415",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.8660999999999603,
+    "tokens": 683
+  },
+  {
+    "id": "001-91092",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.254099999999994,
+    "tokens": 387
+  },
+  {
+    "id": "001-91092",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.0020000000000664,
+    "tokens": 387
+  },
+  {
+    "id": "001-87456",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.1334999999999127,
+    "tokens": 424
+  },
+  {
+    "id": "001-87456",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.2039000000000897,
+    "tokens": 424
+  },
+  {
+    "id": "001-91088",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.0783999999999878,
+    "tokens": 295
+  },
+  {
+    "id": "001-91088",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.1166999999999234,
+    "tokens": 295
+  },
+  {
+    "id": "001-87626",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 3.1277000000000044,
+    "tokens": 591
+  },
+  {
+    "id": "001-87626",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.6082000000000107,
+    "tokens": 591
+  },
+  {
+    "id": "001-90575",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.0389000000000124,
+    "tokens": 381
+  },
+  {
+    "id": "001-90575",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 0.9670999999999594,
+    "tokens": 381
+  },
+  {
+    "id": "001-95777",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.793199999999956,
+    "tokens": 1025
+  },
+  {
+    "id": "001-95777",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 4.089500000000044,
+    "tokens": 1025
+  },
+  {
+    "id": "001-95199",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.0030000000000427,
+    "tokens": 579
+  },
+  {
+    "id": "001-95199",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.5135000000000218,
+    "tokens": 579
+  },
+  {
+    "id": "001-94000",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.4502999999999702,
+    "tokens": 498
+  },
+  {
+    "id": "001-94000",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.433300000000031,
+    "tokens": 498
+  },
+  {
+    "id": "001-84289",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.741800000000012,
+    "tokens": 701
+  },
+  {
+    "id": "001-84289",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.9851999999999634,
+    "tokens": 701
+  },
+  {
+    "id": "001-82750",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.3584999999999354,
+    "tokens": 682
+  },
+  {
+    "id": "001-82750",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.9061999999998989,
+    "tokens": 682
+  },
+  {
+    "id": "001-57867",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 4.076000000000022,
+    "tokens": 1200
+  },
+  {
+    "id": "001-57867",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 4.2346,
+    "tokens": 1605
+  },
+  {
+    "id": "001-61680",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.323800000000006,
+    "tokens": 1558
+  },
+  {
+    "id": "001-61680",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.435799999999972,
+    "tokens": 1200
+  },
+  {
+    "id": "001-59853",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.874500000000012,
+    "tokens": 1094
+  },
+  {
+    "id": "001-59853",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.658300000000054,
+    "tokens": 1094
+  },
+  {
+    "id": "001-76746",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.4125000000000227,
+    "tokens": 525
+  },
+  {
+    "id": "001-76746",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.264099999999985,
+    "tokens": 525
+  },
+  {
+    "id": "001-94119",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.3518000000000256,
+    "tokens": 851
+  },
+  {
+    "id": "001-94119",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 3.1543000000000347,
+    "tokens": 851
+  },
+  {
+    "id": "001-58410",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.142600000000016,
+    "tokens": 689
+  },
+  {
+    "id": "001-58410",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.8612999999999147,
+    "tokens": 689
+  },
+  {
+    "id": "001-73360",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.564100000000053,
+    "tokens": 1200
+  },
+  {
+    "id": "001-73360",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 6.309200000000033,
+    "tokens": 1628
+  },
+  {
+    "id": "001-85728",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.278099999999995,
+    "tokens": 378
+  },
+  {
+    "id": "001-85728",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.0475999999999885,
+    "tokens": 378
+  },
+  {
+    "id": "001-75894",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 3.352899999999977,
+    "tokens": 1141
+  },
+  {
+    "id": "001-75894",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 4.285600000000045,
+    "tokens": 1141
+  },
+  {
+    "id": "001-92767",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 5.80359999999996,
+    "tokens": 1945
+  },
+  {
+    "id": "001-92767",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 4.499300000000062,
+    "tokens": 1200
+  },
+  {
+    "id": "001-79069",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.838200000000029,
+    "tokens": 595
+  },
+  {
+    "id": "001-79069",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.5366999999999962,
+    "tokens": 595
+  },
+  {
+    "id": "001-105434",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 6.407700000000091,
+    "tokens": 2032
+  },
+  {
+    "id": "001-105434",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.5932999999999993,
+    "tokens": 1200
+  },
+  {
+    "id": "001-58086",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 4.297300000000064,
+    "tokens": 1200
+  },
+  {
+    "id": "001-58086",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 4.680500000000052,
+    "tokens": 1666
+  },
+  {
+    "id": "001-92425",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.4418000000000575,
+    "tokens": 425
+  },
+  {
+    "id": "001-92425",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.1608999999999696,
+    "tokens": 425
+  },
+  {
+    "id": "001-90569",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.4073000000000775,
+    "tokens": 550
+  },
+  {
+    "id": "001-90569",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.5067000000000235,
+    "tokens": 550
+  },
+  {
+    "id": "001-170347",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.7912999999999784,
+    "tokens": 992
+  },
+  {
+    "id": "001-170347",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 2.671799999999962,
+    "tokens": 992
+  },
+  {
+    "id": "001-84580",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.084100000000035,
+    "tokens": 421
+  },
+  {
+    "id": "001-84580",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.2340000000000373,
+    "tokens": 421
+  },
+  {
+    "id": "001-60793",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 1.6870999999999867,
+    "tokens": 562
+  },
+  {
+    "id": "001-60793",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.5896999999999935,
+    "tokens": 562
+  },
+  {
+    "id": "001-61807",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.6521999999999935,
+    "tokens": 573
+  },
+  {
+    "id": "001-61807",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.63900000000001,
+    "tokens": 573
+  },
+  {
+    "id": "001-79713",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.653599999999983,
+    "tokens": 597
+  },
+  {
+    "id": "001-79713",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.56899999999996,
+    "tokens": 597
+  },
+  {
+    "id": "001-66782",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.2035999999999376,
+    "tokens": 777
+  },
+  {
+    "id": "001-66782",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.9902000000000726,
+    "tokens": 777
+  },
+  {
+    "id": "001-60737",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 4.603899999999953,
+    "tokens": 1327
+  },
+  {
+    "id": "001-60737",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.277500000000032,
+    "tokens": 1200
+  },
+  {
+    "id": "001-91290",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 1.7405999999999722,
+    "tokens": 595
+  },
+  {
+    "id": "001-91290",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.616800000000012,
+    "tokens": 595
+  },
+  {
+    "id": "001-91059",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 2.2134999999999536,
+    "tokens": 560
+  },
+  {
+    "id": "001-91059",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 1.4206000000000358,
+    "tokens": 560
+  },
+  {
+    "id": "001-61253",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.919999999999959,
+    "tokens": 951
+  },
+  {
+    "id": "001-61253",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 2.6591999999999416,
+    "tokens": 951
+  },
+  {
+    "id": "001-57874",
+    "pass": 2,
+    "position": 1,
+    "variant": "full",
+    "ms": 6.762200000000007,
+    "tokens": 2180
+  },
+  {
+    "id": "001-57874",
+    "pass": 2,
+    "position": 2,
+    "variant": "prefix",
+    "ms": 3.5652000000000044,
+    "tokens": 1200
+  },
+  {
+    "id": "001-84379",
+    "pass": 2,
+    "position": 1,
+    "variant": "prefix",
+    "ms": 2.953700000000026,
+    "tokens": 669
+  },
+  {
+    "id": "001-84379",
+    "pass": 2,
+    "position": 2,
+    "variant": "full",
+    "ms": 1.8494000000000597,
+    "tokens": 669
+  }
+]

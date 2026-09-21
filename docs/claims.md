@@ -1,6 +1,6 @@
 # Claim and evidence ledger
 
-Updated 2026-09-19. Current pages describe this checkout. Archived pages and source documents retain historical assertions and are not current validation.
+Updated 2026-09-20. Current pages describe this checkout. Archived pages and source documents retain historical assertions and are not current validation.
 
 | Statement | Evidence and status | Limit |
 | --- | --- | --- |
@@ -9,12 +9,12 @@ Updated 2026-09-19. Current pages describe this checkout. Archived pages and sou
 | Linear head learns linear synthetic utility | Five seeded held-out pilots | No human study |
 | Linear head misses disconnected preferences | P04 linear versus quadratic-feature pilot | One chosen synthetic utility |
 | Maximizing predicted preference can harm true utility | P05 independent synthetic oracle | Unequal candidate budgets; failure illustration, not efficiency comparison |
-| Active sampling reduces required ratings | Open hypothesis; fixed-budget pilot only | Browser 5/4/3 policy and human experience not established |
+| Active sampling reduces required ratings | [Exact browser 5/4/3 sampler tested](preference-followups.md); it was not consistently better and lost to random sampling with noisy ratings | Synthetic rules and five seeds; human rating savings remain unestablished |
 | Qwen can return a direct enum | Frozen 0.5B model, trained heads, pinned fixtures | Small rule grammar; not arbitrary instructions |
-| Runtime can skip later layers | Hooks count six executed layers | CPU batch one, no persistent-cache continuation |
+| Runtime can skip later layers | [Qwen checkpoint traces](chat-next-methods.md) and [shared BERT execution](shared-browser.md) verify stopping and continuation without repeating earlier blocks | Measured implementations and samples; not general answer-readiness detection |
 | Original synthetic early exit preserves quality | **Not supported**: 91.7% versus 97.9% full-depth accuracy | Exceeds proposed one-point tolerance |
 | Pointer head returns coordinates without decoding text | GUI-Actor pretrained reproduction | Existing architecture/weights; small local fixtures |
-| Missing GUI targets can be rejected | **Not implemented** in reproduced head | Always chooses a patch; needs abstention |
+| Missing GUI targets can be rejected | [A separate cutoff withheld all 25 infeasible requests](visual-next.md), but also withheld 21 valid ones and accepted two wrong clicks | The pointer head itself always chooses a patch; the cutoff returns uncertainty, not a learned missing-target verdict |
 | Direct coordinates beat JSON at equal quality | Open hypothesis | Vocabulary-projection ablation is not JSON comparison |
 | Transfer, music, feeds, matching or scientific value | Registered P04–P15 studies | Need independent data and labels |
 | Encodings make private data anonymous | **Not established**; P11 pending | Reconstruction/linkage/membership require evaluation |

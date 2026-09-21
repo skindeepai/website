@@ -16,7 +16,7 @@
   for(const row of result.summary){
    const tr=document.createElement('tr');
    const recall=row.toxic?(100*row.toxicCaught/row.toxic).toFixed(1)+'% ('+row.toxicCaught+'/'+row.toxic+')':'No toxic examples yet';
-   for(const value of [{direct:'Direct decision',token:'One-token control',json:'Written JSON'}[row.format],row.correct+' / '+row.count,seconds(row.totalMs),recall,row.safeBlocked,row.invalid]){
+   for(const value of [{direct:'Direct decision',token:'One-token control',json:'Written JSON',cached:'Cached instructions'}[row.format],row.correct+' / '+row.count,seconds(row.totalMs),recall,row.safeBlocked,row.invalid]){
     const cell=document.createElement(tr.childElementCount?'td':'th');if(!tr.childElementCount)cell.scope='row';cell.textContent=String(value);tr.append(cell);
    }summary.append(tr);
   }
@@ -32,7 +32,7 @@
  run.addEventListener('click',()=>{
   if(typeof Worker==='undefined'||typeof WebAssembly==='undefined'||!window.crypto?.subtle){status.textContent='This benchmark needs a browser with Web Workers, WebAssembly and SHA-256 on HTTPS or localhost. No download was started.';return;}
   body.replaceChildren();summary.replaceChildren();comparison.textContent='';setup.textContent='';result={complete:false,requested:Number(count.value),rows:[]};save.disabled=true;
-  run.disabled=true;stop.disabled=false;count.disabled=true;progress.value=0;progress.max=result.requested*3;
+  run.disabled=true;stop.disabled=false;count.disabled=true;progress.value=0;progress.max=result.requested*4;
   status.textContent='Starting. Downloads come from Hugging Face and jsDelivr. Messages are processed on this device.';
   try{worker=new Worker('scripts/moderation-benchmark-worker.js',{type:'module'});}catch(error){status.textContent=error.message;finish();return;}
   worker.onerror=event=>{result.error=event.message;status.textContent='Run failed: '+event.message+'. Any completed rows can still be saved.';finish();update();};
@@ -43,7 +43,7 @@
    if(data.type==='row'){
     result.rows.push(data.row);progress.value=data.completed;
     const row=data.row,tr=document.createElement('tr');
-    for(const value of [row.id,{direct:'Direct',token:'One token',json:'JSON'}[row.format],row.expected,row.output||'(empty)',row.correct?'Correct':row.label?'Wrong':'Invalid',row.outputTokens,seconds(row.endToEndMs)]){
+    for(const value of [row.id,{direct:'Direct',token:'One token',json:'JSON',cached:'Cached'}[row.format],row.expected,row.output||'(empty)',row.correct?'Correct':row.label?'Wrong':'Invalid',row.outputTokens,seconds(row.endToEndMs)]){
      const td=document.createElement('td');td.textContent=String(value);tr.append(td);
     }body.append(tr);update();
    }
@@ -51,8 +51,9 @@
     result=data.result;update();
     const byId=new Map();for(const row of result.rows){if(!byId.has(row.id))byId.set(row.id,{});byId.get(row.id)[row.format]=row.label;}
     const different=Array.from(byId.values()).filter(pair=>pair.direct!==pair.json).length;
+    const cacheDifferent=Array.from(byId.values()).filter(pair=>pair.direct!==pair.cached).length;
     const controlDifferent=Array.from(byId.values()).filter(pair=>pair.direct!==pair.token).length;
-    status.textContent='Finished '+result.requested+' messages in all three formats. Direct and JSON disagreed on '+different+' messages; direct and one-token control on '+controlDifferent+'. Totals exclude loading and warm-up.';finish();
+    status.textContent='Finished '+result.requested+' messages in all four paths. Direct and JSON disagreed on '+different+' messages; direct and one-token control on '+controlDifferent+'; cached and uncached direct on '+cacheDifferent+'. Totals exclude loading and warm-up.';finish();
    }
   };
   worker.postMessage({type:'run',count:result.requested});

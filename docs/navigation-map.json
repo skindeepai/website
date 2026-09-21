@@ -1,6 +1,6 @@
 {
   "scope": "Current local generated site, including uncommitted navigation edits; not a crawl of production.",
-  "git_head": "18dbe02371c274b9c36421224a96bd45add1c51a",
+  "git_head": "1c48dddf0bdd545792c8bfde4b3446849f64b7c4",
   "definitions": {
     "content": "Links inside main, excluding footer; includes closed details and declared mode-specific navigation routes unless marked otherwise. Static anchor counts exclude these additional mode variants.",
     "connection": "Distinct source-to-current-page pair. Self links excluded. Modes/fragments retained per anchor but collapsed for graph reachability.",
@@ -9,7 +9,7 @@
   },
   "summary": {
     "pages": 112,
-    "anchors": 3127,
+    "anchors": 3128,
     "content_page_link_occurrences": 928,
     "unique_content_connections": 773,
     "unique_all_connections": 1824,
@@ -18,7 +18,7 @@
       "utility": 112,
       "header": 112,
       "sidebar": 1344,
-      "content": 1223,
+      "content": 1224,
       "footer": 336
     },
     "pages_with_repeated_content_destinations": [
@@ -20825,7 +20825,7 @@
     "redaction-results.html": {
       "title": "Find names to redact",
       "description": "Return marked text spans instead of rewriting a document.",
-      "sha256": "ac62026961e95b48abbec7aef550102b6eade1712bb6d85fd44ffed956e85be3",
+      "sha256": "93408868a5e013667f50e55261a5e4e14209d46ba38fb7062e7764c692b03965",
       "links": [
         {
           "href": "#main",
@@ -21015,8 +21015,19 @@
           "fragment": ""
         },
         {
+          "href": "docs/privacy-full-document.md",
+          "label": "Full-input comparison and every outcome",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/privacy-full-document.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "docs/practical-baselines.md#find-names-before-redacting-text",
-          "label": "Data, method and every outcome",
+          "label": "Original model and dataset",
           "zone": "content",
           "collapsed": true,
           "hidden": false,
@@ -24752,7 +24763,7 @@
     "practical-demo.html": {
       "title": "Try a small task classifier",
       "description": "Edit the input and get a direct result from trained weights.",
-      "sha256": "7707ce292809aca879a123e86b74cfd2d3fd6597826ede739425132331c873db",
+      "sha256": "c3306bb297734d982a7f706e082f9756a81b0492fc7c53c66dba82de47c64ae2",
       "links": [
         {
           "href": "#main",
@@ -25081,14 +25092,14 @@
           "fragment": ""
         },
         {
-          "href": "docs/practical-baselines.md",
+          "href": "docs/privacy-full-document.md",
           "label": "Dataset, method and evidence",
           "mode": "privacy",
           "zone": "content",
           "collapsed": false,
           "hidden": false,
           "kind": "evidence",
-          "target": "docs/practical-baselines.md",
+          "target": "docs/privacy-full-document.md",
           "query": "",
           "fragment": ""
         },

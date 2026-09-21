@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "timed_calls": 400,
+  "unique_messages": 50,
+  "checks": [
+    "Runner, parent and source-data hashes",
+    "Original human-annotated labels",
+    "Exact declared method ordering",
+    "Every block and vocabulary trace",
+    "Finite complete and stage timings",
+    "Independent confusion and timing arithmetic",
+    "Every decision matches both original timing passes",
+    "Stored logits match original two-row scores"
+  ],
+  "maximum_logit_delta_vs_parent": 9.5367431640625e-06,
+  "hashes": {
+    "experiments/check_chat_readout_control.py": "cb575c4116a6da9a1273e125850dd49dce01c1ba46d9083e826c5a8a2129e11e",
+    "results/chat-readout-control/protocol.json": "3dfbfaaadb724014a31ef986bd207fe045f94282cfcc0f5810f43a711b25ec63",
+    "results/chat-readout-control/records.json": "133760a5b9061599a4e7ce19bf3ab72ff264b602fd09bb4d70602c08643fe5b6",
+    "results/chat-readout-control/result.json": "d9b26c72061f3d63558428233aa9f728a73008eba9f15ac57de1fc918ad92a81",
+    "results/chat-output-steps/records.json": "19595473e2a68db7e0a44be59c06e7b8a602bf75fbd25f53d2eca5c2d149b4d8"
+  },
+  "limits": "Internal code and saved-artifact review, not independent model or hardware replication. Two/full vocabulary isolates projection. Generation also changes cache and API work; the generation wrapper alone is not isolated. Manual cached-state deallocation falls outside timing."
+}

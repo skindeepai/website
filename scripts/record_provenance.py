@@ -13,5 +13,5 @@ def main():
     hashes={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
     git=lambda *args:subprocess.check_output(['git',*args],cwd=ROOT,stderr=subprocess.DEVNULL)
     payload={'recorded_utc':datetime.now(timezone.utc).isoformat(),'record_type':'Finalized local working-tree record, not immutable pre-registration','git_base':git('rev-parse','HEAD').decode().strip(),'tracked_diff_sha256':hashlib.sha256(git('diff','--binary','HEAD','--','.',':(exclude)results/provenance.json')).hexdigest(),'tracked_diff_scope':'git diff --binary HEAD -- . :(exclude)results/provenance.json; untracked files are covered by the artifact hashes','python':platform.python_version(),'platform':platform.platform(),'sha256':hashes}
-    (ROOT/'results/provenance.json').write_text(json.dumps(payload,indent=2)+'\n',encoding='utf-8');print(f'Recorded {len(hashes)} source/artifact hashes.')
+    (ROOT/'results/provenance.json').write_text(json.dumps(payload,indent=2)+'\n',encoding='utf-8',newline='\n');print(f'Recorded {len(hashes)} source/artifact hashes.')
 if __name__=='__main__':main()

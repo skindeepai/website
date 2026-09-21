@@ -1,0 +1,54 @@
+{
+  "documents": 50,
+  "person_occurrences": 445,
+  "methods": {
+    "prefix": {
+      "tokens": 39626,
+      "confusion": {
+        "tp": 1088,
+        "fn": 141,
+        "fp": 339
+      },
+      "span_counts": {
+        "fully_marked": 290,
+        "partly_marked": 70,
+        "unmarked": 37,
+        "beyond_prefix": 45,
+        "crosses_prefix": 3,
+        "no_token_overlap": 0
+      },
+      "complete_documents": 24,
+      "mean_ms": 2.7638709999999986
+    },
+    "full": {
+      "tokens": 45481,
+      "confusion": {
+        "tp": 1157,
+        "fn": 171,
+        "fp": 378
+      },
+      "span_counts": {
+        "fully_marked": 319,
+        "partly_marked": 80,
+        "unmarked": 46,
+        "beyond_prefix": 0,
+        "crosses_prefix": 0,
+        "no_token_overlap": 0
+      },
+      "complete_documents": 25,
+      "mean_ms": 3.021480999999998
+    }
+  },
+  "documents_exceeding_browser_limit": 0,
+  "new_complete_spans": 29,
+  "lost_complete_spans": 0,
+  "checks": [
+    "Model and source data hashes",
+    "Original token and span metrics reproduced on every document",
+    "All tokens before old boundary retain exact features and scores",
+    "Two repeated passes produce identical predictions",
+    "No full-document occurrence beyond processed input"
+  ],
+  "record_sha256": "f41c408321cfa85f8f51d433ed66fe641c19c44fe09e9a61163e615c63078734",
+  "timing_sha256": "b5a9c0990d16bb6d4b9add627997e7ccf4acaa8d49cb5d694c169aad3dc7a9ba"
+}

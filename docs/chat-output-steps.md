@@ -46,6 +46,8 @@ The first-token SAFE path kept the same total accuracy but introduced one toxic 
 
 ## Timing and limits
 
+A [matched follow-up](chat-readout-control.md) isolates full-vocabulary versus two-row scoring with the same cache setting: 6.4% less total time, identical decisions.
+
 Two rotating/reversed passes, 50 messages, batch size one, four CPU compute threads and one interop thread, float32, eager attention. Timing includes input tokenization/truncation, prompt construction, actual forward/generation work, classifier or vocabulary readout, and token-to-text conversion. Model loading, warm-up, file writes and offline output parsing are excluded. The earlier parser study measured negligible parser overhead; no parser-only speed gain is claimed here.
 
 All 900 timed calls passed layer-trace checks; both timing repeats produced identical outputs. Timing repeats do not create 100 independent quality examples. This is one warmed CPU session, not GPU/NPU, browser or CtrlVox performance. The trained classifier has different task supervision, so its accuracy cannot be attributed solely to returning numbers.

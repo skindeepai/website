@@ -1,0 +1,7 @@
+{
+  "scope": "Warm-up probe only; no timed dataset run completed.",
+  "runtime": "Transformers.js 4.2.0, Qwen3_5ForConditionalGeneration",
+  "attempt": "model.generate with a cloned DynamicCache from a fixed-policy prefill",
+  "error": "Missing the following inputs: pixel_values, image_grid_thw.",
+  "resolution": "Not used in production or reported as a successful caching result; direct cached forward was tested separately."
+}

@@ -50,7 +50,7 @@
   return {label:block?'BLOCK':'SAFE',scores};
  }
  function summarize(rows){
-  return ['direct','token','json'].map(format=>{
+  return ['direct','token','json','cached'].map(format=>{
    const selected=rows.filter(row=>row.format===format),toxic=selected.filter(row=>row.expected==='BLOCK');
    return {format,count:selected.length,correct:selected.filter(row=>row.label===row.expected).length,
     toxic:toxic.length,toxicCaught:toxic.filter(row=>row.label==='BLOCK').length,

@@ -9,9 +9,10 @@ function disposeTree(value,seen=new Set()){
  for(const child of Object.values(value))disposeTree(child,seen);
 }
 let running=false;
+const formats=['direct','token','json','cached'];
 self.onmessage=async({data})=>{
  if(data.type!=='run'||running)return;
- running=true;let model;
+ running=true;let model,prefixOutput,prefixInputs,prefixCache;
  try{
   if(!self.crypto?.subtle||typeof WebAssembly==='undefined')throw new Error('This benchmark needs WebAssembly and a secure page (HTTPS or localhost) with SHA-256 support.');
   const count=Number(data.count);
@@ -27,7 +28,7 @@ self.onmessage=async({data})=>{
   const datasetMs=performance.now()-started;
   send('status',{message:'Loading Qwen 0.5B. The first download is about 800 MB; inference uses one CPU thread.'});
   const loadStarted=performance.now();
-  const {AutoTokenizer,AutoModelForCausalLM,LogitsProcessorList,env}=await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/dist/transformers.min.js');
+  const {AutoTokenizer,AutoModelForCausalLM,LogitsProcessorList,Tensor,env}=await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/dist/transformers.min.js');
   env.allowLocalModels=false;env.backends.onnx.wasm.numThreads=1;
   const tokenizer=await AutoTokenizer.from_pretrained(B.MODEL,{revision:B.REVISION});
   let downloadPercent=-1;
@@ -48,16 +49,21 @@ self.onmessage=async({data})=>{
    }
    return logits;
   });
+  const prefixText=tokenizer.apply_chat_template([{role:'system',content:B.TASK+' Reply with exactly SAFE or BLOCK.'}],{tokenize:false,add_generation_prompt:false});
+  const prefixIds=tokenizer.encode(prefixText,{add_special_tokens:false});
+  function clonePrefix(){return Object.fromEntries(Object.entries(prefixCache).map(([key,t])=>[key,new Tensor(t.type,t.data.slice(),t.dims.slice())]));}
+  function clearPrefix(){disposeTree(prefixOutput);disposeTree(prefixInputs);prefixOutput=prefixInputs=prefixCache=null;}
   const loadMs=performance.now()-loadStarted;
   const metadata={model:B.MODEL,modelRevision:B.REVISION,runtime:'Transformers.js 3.8.1',device:'wasm',dtype:'q4',threads:1,
    transformerLayers:24,layersSkipped:0,dataset:'ToxicChat0124 human-annotated subset',datasetRevision:B.DATA_REVISION,datasetSHA256:hash,
    datasetLicense:'CC-BY-NC-4.0',requested:count,ids:tasks.map(task=>task.id),datasetMs,loadMs,tokenIds,
-   date:new Date().toISOString(),task:B.TASK,maxMessageTokens:256,jsonMaxNewTokens:16,
+   date:new Date().toISOString(),task:B.TASK,maxMessageTokens:256,jsonMaxNewTokens:16,prefixTokens:prefixIds.length,cacheBuildIncluded:true,
    limitations:['Previously inspected exploratory subset; not fresh or deployment-representative validation.',
     'Direct path reads two final vocabulary logits. It still computes the full vocabulary projection and all 24 layers; no trained task head or early exit.',
     'JSON is greedy, capped at 16 new tokens, and must parse as exactly one label field. Invalid outputs count as incorrect.',
     'Direct and one-token control share the exact prompt. JSON changes only the output instruction.',
     'One timed pass per format/message, rotating and reversing order. Download, loading and warm-up excluded from per-format totals.',
+    'Cached mode reuses only fixed instruction state; its first timed request includes prefix construction. All layers and the full vocabulary projection still run on new input. Cache parity is measured, not assumed.',
     'Timings include message tokenization/truncation, prompt preparation, inference and output parsing. Browser and hardware affect timings.',
     'Equal accuracy, if observed, does not prove identical errors or guarantee future quality.']};
   send('metadata',{metadata});
@@ -69,10 +75,21 @@ self.onmessage=async({data})=>{
    const instruction=format!=='json'?' Reply with exactly SAFE or BLOCK.':' Reply with only JSON containing exactly one label field: {"label":"SAFE"} or {"label":"BLOCK"}.';
    const inputs=tokenizer.apply_chat_template([{role:'system',content:B.TASK+instruction},{role:'user',content:message}],{tokenize:true,add_generation_prompt:true,return_dict:true});
    const inputTokens=inputs.input_ids.dims.at(-1),prepared=performance.now();
-   let output,label,scores=null,outputTokens=0,modelOutput;
+   let output,label,scores=null,outputTokens=0,modelOutput,feeds=inputs,cacheBuildMs=0;
    try{
-    if(format==='direct'){
-     modelOutput=await model(inputs);
+    if(format==='direct'||format==='cached'){
+     if(format==='cached'){
+      if(!prefixIds.every((id,i)=>BigInt(id)===inputs.input_ids.data[i]))throw new Error('Prompt prefix changed; cache cannot be reused.');
+      if(!prefixCache){
+       const building=performance.now();
+       prefixInputs=tokenizer(prefixText,{add_special_tokens:false});
+       prefixOutput=await model(prefixInputs);prefixCache=model.getPastKeyValues(prefixOutput,null);
+       if(Object.keys(prefixCache).length!==48)throw new Error('Expected 24 key/value pairs.');
+       cacheBuildMs=performance.now()-building;
+      }
+      feeds={input_ids:new Tensor('int64',inputs.input_ids.data.slice(prefixIds.length),[1,inputTokens-prefixIds.length]),attention_mask:inputs.attention_mask,past_key_values:clonePrefix()};
+     }
+     modelOutput=await model(feeds);
      ({label,scores}=B.chooseLogits(modelOutput.logits.data,modelOutput.logits.dims,tokenIds));
      output=label;
     }else{
@@ -82,24 +99,25 @@ self.onmessage=async({data})=>{
     }
     const finished=performance.now();
     return {id:task.id,format,expected:task.expected,label,output,scores,correct:label===task.expected,
-     inputTokens,originalMessageTokens:messageIds.length,truncated,outputTokens,
+     inputTokens,processedInputTokens:format==='cached'?inputTokens-prefixIds.length:inputTokens,cacheBuildMs,originalMessageTokens:messageIds.length,truncated,outputTokens,
      preparationMs:prepared-before,inferenceAndReadoutMs:finished-prepared,endToEndMs:finished-before,layers:24};
-   }finally{disposeTree(modelOutput);disposeTree(inputs);}
+   }finally{disposeTree(modelOutput);if(feeds!==inputs){disposeTree(feeds.input_ids);disposeTree(feeds.past_key_values);}disposeTree(inputs);}
   }
-  send('status',{message:'Warming all three paths on one separate example. Warm-up is reported separately.'});
+  send('status',{message:'Warming all four paths on one separate example. Warm-up is reported separately.'});
   const warmStarted=performance.now();
-  for(const format of ['direct','token','json'])await run({id:'warmup',text:'Thank you for your help.',expected:'SAFE'},format);
+  for(const format of formats)await run({id:'warmup',text:'Thank you for your help.',expected:'SAFE'},format);
+  clearPrefix(); // Charge the first timed cached request for building its prefix.
   metadata.warmupMs=performance.now()-warmStarted;send('metadata',{metadata});
   const rows=[],benchmarkStarted=performance.now();
   for(let i=0;i<tasks.length;i++){
-   const orders=[['direct','token','json'],['json','token','direct'],['token','json','direct'],['direct','json','token'],['json','direct','token'],['token','direct','json']];
-   for(const format of orders[i%orders.length]){
-    send('status',{message:'Message '+(i+1)+' of '+tasks.length+': '+({direct:'reading the decision',token:'generating one label token',json:'writing the JSON reply'}[format])+'.'});
-    const row=await run(tasks[i],format);rows.push(row);send('row',{row,completed:rows.length,total:tasks.length*3});
+   const order=formats.slice(i%4).concat(formats.slice(0,i%4));if(i%2)order.reverse();
+   for(const format of order){
+    send('status',{message:'Message '+(i+1)+' of '+tasks.length+': '+({direct:'reading the decision',token:'generating one label token',json:'writing the JSON reply',cached:'reusing the fixed instructions'}[format])+'.'});
+    const row=await run(tasks[i],format);rows.push(row);send('row',{row,completed:rows.length,total:tasks.length*formats.length});
    }
   }
   metadata.benchmarkWallMs=performance.now()-benchmarkStarted;
   send('complete',{result:{...metadata,complete:true,rows,summary:B.summarize(rows)}});
  }catch(error){send('error',{message:error.message||String(error)});}
- finally{if(model)await model.dispose();running=false;}
+ finally{disposeTree(prefixOutput);disposeTree(prefixInputs);if(model)await model.dispose();running=false;}
 };

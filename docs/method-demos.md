@@ -24,6 +24,8 @@ The cascade pairs the existing 4.37M two-layer BERT with the 11.1M four-layer BE
 
 The practical export re-executes each original recipe against its pinned cached data, captures the trained numerical weights, and preserves all previous artifacts. [Privacy export](../results/practical-browser/privacy/export.json), [receipt export](../results/practical-browser/receipts/export.json), [routing export](../results/practical-browser/routing/export.json). Editable receipt text uses supplied rows or SROIE box CSV; there is no OCR in that classifier demo. Privacy features follow Python title/digit behavior, including Unicode edge cases checked separately; the demo does not establish complete anonymization.
 
+The name detector now uses the same weights on the [whole accepted input](privacy-full-document.md); the original 1,200-token prefix remains only as an explicit reproduction control.
+
 Neural model downloads begin after a run button. The tiny maze weights load on page entry. Typed messages and uploaded images stay local; downloaded comparison reports omit the typed message. Public-data reports retain IDs, labels and predictions. Browser runtimes/tokenizers are downloaded from their documented sources. BERT moderation artifacts use ToxicChat (CC BY-NC 4.0) and are research artifacts for noncommercial use; base BERT and the TinyBERT reranker are Apache-2.0.
 
 ## Runtime validation

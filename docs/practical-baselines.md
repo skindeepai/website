@@ -6,9 +6,13 @@ A separate agent reran all three studies from their exact recorded source and re
 
 ## Find names before redacting text
 
+The editable demo now checks the [entire input](privacy-full-document.md). The figures below preserve the original bounded experiment.
+
 On the first 1,200 tokens of each of 50 held-out TAB court documents, a trained token classifier found **1,088 of 1,229 person-name tokens**, missing 141 and incorrectly marking 339 other tokens. A fixed title rule (Mr/Mrs/Ms/Dr followed by capitalized words) found 646, missed 583 and incorrectly marked 6. Learned precision/recall were **76.2% / 88.5%**, versus **99.1% / 52.6%** for the rule.
 
 This is name detection, **not complete anonymization**. It does not cover addresses, dates, indirect identifiers, the identity of the person to protect, or all text in a document. Thirteen test documents exceeded the 1,200-token prefix. Token recall is not the chance that a person remains unidentifiable.
+
+A retrospective [complete-name coverage audit](privacy-spans.md) found all tokens marked in 290/397 fully observed PERSON occurrences (73.0%); another 48 occurrences cross or fall beyond the input limit. It uses the same frozen predictions, with no retraining or new accuracy test.
 
 The [Text Anonymization Benchmark](https://github.com/NorskRegnesentral/text-anonymization-benchmark) contains real ECHR court documents with human annotations. We preserve its official train/dev/test division and verify no document ID overlap. A fixed seed samples 100 training, 25 development and 50 test documents. PERSON annotations are unioned across annotators; this simplifies their differing annotations and is not the official subject-specific masking evaluation. The token classifier uses word, neighboring word, capitalization and prefix/suffix features. Development F2 selects its threshold. No test labels select it.
 

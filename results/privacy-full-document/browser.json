@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "browser": "151.0.7922.34",
+  "populatedViewportChecks": 14,
+  "checkedLongInputTokens": 1262,
+  "checks": [
+    "Original prefix control retained",
+    "Short and Unicode input parity",
+    "Full-input tail classified and correctly highlighted",
+    "Empty input does not download models",
+    "30000-character limit retained",
+    "Maximum-length token wraps on mobile",
+    "Receipt and routing continue to work",
+    "Privacy evidence links to matching new study",
+    "Published full-input counts match evidence",
+    "No page errors or external requests"
+  ],
+  "hashes": {
+    "scripts/practical-demo-core.js": "8244f4039e46632229ceab4f1c3535d53e5a8d42ba9125cac1667542aa37feaa",
+    "scripts/practical-demo.js": "bf7fe568e24cd671d6726392a0611e8c86632673d319ea4ed84951e4cad39114",
+    "scripts/test_practical_full_input.cjs": "87933c623956a7c6708eac479f1781127ac09b2eeade43b19b686768ca2ae63d",
+    "models/practical/privacy.json": "127b61eee5096e46345ef2c38a2209ee4dd8fddb05fc291d3f7c7d51c95fc41a"
+  }
+}

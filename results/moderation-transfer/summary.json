@@ -1,0 +1,226 @@
+{
+  "development": {
+    "baseline": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 804.4539999985695,
+      "medianMs": 720.9500000178814,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 1,
+      "cacheFallbacks": 0
+    },
+    "original": {
+      "count": 50,
+      "correct": 41,
+      "meanMs": 416.70199999928474,
+      "medianMs": 359.85000002384186,
+      "toxicMissed": 5,
+      "benignBlocked": 4,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "original-one": {
+      "count": 50,
+      "correct": 41,
+      "meanMs": 371.41199999809265,
+      "medianMs": 322.0000000298023,
+      "toxicMissed": 5,
+      "benignBlocked": 4,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "original-direct": {
+      "count": 50,
+      "correct": 41,
+      "meanMs": 363.7640000009537,
+      "medianMs": 317.05000001192093,
+      "toxicMissed": 5,
+      "benignBlocked": 4,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "original-cache": {
+      "count": 50,
+      "correct": 40,
+      "meanMs": 398.37399999976157,
+      "medianMs": 484.44999998807907,
+      "toxicMissed": 5,
+      "benignBlocked": 5,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "short": {
+      "count": 50,
+      "correct": 32,
+      "meanMs": 361.1840000009537,
+      "medianMs": 308.35000002384186,
+      "toxicMissed": 3,
+      "benignBlocked": 15,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "short-one": {
+      "count": 50,
+      "correct": 32,
+      "meanMs": 314.50199999690057,
+      "medianMs": 264.19999998807907,
+      "toxicMissed": 3,
+      "benignBlocked": 15,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "short-direct": {
+      "count": 50,
+      "correct": 32,
+      "meanMs": 305.3819999980926,
+      "medianMs": 248.64999997615814,
+      "toxicMissed": 3,
+      "benignBlocked": 15,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "short-cache": {
+      "count": 50,
+      "correct": 32,
+      "meanMs": 363.36799999713895,
+      "medianMs": 436.0,
+      "toxicMissed": 3,
+      "benignBlocked": 15,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    }
+  },
+  "validation": {
+    "baseline": {
+      "count": 50,
+      "correct": 31,
+      "meanMs": 853.897999997139,
+      "medianMs": 725.1500000059605,
+      "toxicMissed": 13,
+      "benignBlocked": 6,
+      "invalidReplies": 4,
+      "cacheFallbacks": 0
+    },
+    "original-one": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 408.947999997139,
+      "medianMs": 318.5499999821186,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 1,
+      "cacheFallbacks": 0,
+      "changedFromDirect": 0
+    },
+    "original-direct": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 395.7040000021458,
+      "medianMs": 300.94999998807907,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "original-cache": {
+      "count": 50,
+      "correct": 37,
+      "meanMs": 260.4100000011921,
+      "medianMs": 167.35000002384186,
+      "toxicMissed": 8,
+      "benignBlocked": 5,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0,
+      "changedFromDirect": 3
+    },
+    "original-cache-guard": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 462.80400000214576,
+      "medianMs": 437.19999998807907,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 0,
+      "cacheFallbacks": 27,
+      "changedFromDirect": 0
+    }
+  },
+  "production": {
+    "production": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 421.0239999973774,
+      "medianMs": 323.69999998807907,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    }
+  },
+  "user-placement": {
+    "baseline": {
+      "count": 50,
+      "correct": 38,
+      "meanMs": 819.3160000050068,
+      "medianMs": 724.4499999880791,
+      "toxicMissed": 7,
+      "benignBlocked": 5,
+      "invalidReplies": 1,
+      "cacheFallbacks": 0
+    },
+    "user-one": {
+      "count": 50,
+      "correct": 37,
+      "meanMs": 365.3039999973774,
+      "medianMs": 314.90000000596046,
+      "toxicMissed": 13,
+      "benignBlocked": 0,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    },
+    "user-direct": {
+      "count": 50,
+      "correct": 37,
+      "meanMs": 363.5099999952316,
+      "medianMs": 315.59999999403954,
+      "toxicMissed": 13,
+      "benignBlocked": 0,
+      "invalidReplies": 0,
+      "cacheFallbacks": 0
+    }
+  },
+  "scope": "Exploratory reused ToxicChat data; single-message quality. Context cases are authored regression checks.",
+  "inputHashes": {
+    "assets.json": "91c7d6936a35ce9142aee7310cc97122c4e60e440032a1fb3704a7525aace2f4",
+    "browser-qwen25.json": "65283cfb1b182dd7a620ddc8eb3d4538dea5c177f5d7cb530a51d74db8ed62e3",
+    "browser-ui.json": "69436d62352f896d917bdffdc02e0831695f6030d704d708c88437851aff7cd9",
+    "cache-generation-failure.json": "b61a7356afeb69a69ea2992d2fad0fe50d9bfb3d6c646bfc2fe870361fab6693",
+    "cache-probe-runtime.json": "a5ac6d62a832311342fbac6e5d813d708522df158b40771204666887f470ae3c",
+    "context-final-network.json": "4bdc3ad63a21d376f1bccb319fc4018eb4cfd6454357597981dc9a9d6eb624b2",
+    "context-final-runtime.json": "85cfe1d48aadfb247270f5466884bfd2c557fff92a5d0643982cecd99bf0c616",
+    "context-final-warmups.json": "6d971199c12639d79162b6675b02fc9e8eea9368c585881cd0aa74fc9776ece8",
+    "context-user-tasks.json": "70a53f9a8256599f19e50b44146ecf43bbd28bb41dae11dae1189b9eaaac31de",
+    "development-runtime.json": "1fc0353f62b7451626ad42ce35bcff5abdab127e2b7b87bd9b76f2c4d89fb34d",
+    "development.json": "b5fd660fd2630944ec7672585306597a9d5b6c5ece40482d561d7a1c931e254d",
+    "integration-fixed-network.json": "cb486b321a80de5e86a1d6ca0b167c0403e2e590a674421ff3f837ebef0038a9",
+    "integration-fixed-runtime.json": "85104274b5e026922c072388698ae3bdc99c5d151e14c9e15dc97b5169a08062",
+    "integration-retry-error.json": "c9c9b5ff384eb2b17b1d10e52b8df311613440654808fc3beaa91d9d19d794fe",
+    "integration-retry-network.json": "b228e0934fb6fe797e42203bf2f59f46d0fd10d9610c5965f4d28152d1d3cc88",
+    "integration-retry-runtime.json": "f978b812e0f7fe9406d3a0a3dee4dab93826704b7875764df5458d26bc256da7",
+    "production-context.json": "c110f837e0c5edfcef2adef4699dc26e4913cde798b233961170b16ea39842c5",
+    "production-error.json": "0a2032aef6b7d78aca65981d7697a06bc8614b0381742f25499131de9f3a1f94",
+    "production-integration.json": "94695052e0f7c85db10f7d1f252009c9377338ae09909aed0d9494ff85c5a58c",
+    "production-runtime.json": "073a8c914a230c829f23968df6c638d71ef6960a0a5d7d48148e989fb80dc9a6",
+    "production.json": "f7d4798378bc6c7e5e76a429b536d23052c41d965a24185b96022495ec07d68f",
+    "records.json": "72d74a9d304ddc3adc416f1c7aa8ea093292f2a5133ef32af60ea78df0b09d6e",
+    "runtime.json": "1fc0353f62b7451626ad42ce35bcff5abdab127e2b7b87bd9b76f2c4d89fb34d",
+    "tasks.json": "6ad1cc2b252ccb1ae068eb61c1a05afd9146a68583c75d3d2187148fdb718f18",
+    "user-placement-network.json": "2eea974088399d77e9ead734c3fe47e39e85d41ff86c359c90912421d04f53b4",
+    "user-placement-runtime.json": "9a16f870bf323ce2f5ad75e2bdb62db68e89f15bc8706d4b83cc8caa0d85a66e",
+    "user-placement.json": "330bfdfb6ec59a713528283f865aa45699887d9b597f0f8f1d5e8bb629680ed6",
+    "validation-runtime.json": "ab44524f1be2f73c45f9b8c243b01b75ab083ab7d29ef1d95c32488b2fa01342",
+    "validation-tasks.json": "9b700dba16c2d96ac7f39bc9745a37f1eb4a041d929784faf191f14ce80b20d3",
+    "validation.json": "597d58fc39a3a39f5ba83b2b255694069855c67c5db9b0d3f631bfa3fa841052"
+  }
+}

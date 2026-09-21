@@ -1,0 +1,268 @@
+[
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "baseline",
+    "text": "BLOCK",
+    "finishReason": "stop",
+    "guardReason": "",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 1023.6000000238419,
+    "inputTokens": 356,
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "original",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 441.30000001192093,
+    "inputTokens": 178,
+    "outputTokens": 2,
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "original-one",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 392.4000000357628,
+    "inputTokens": 178,
+    "outputTokens": 1,
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "original-direct",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "scores": [
+      20.542449951171875,
+      22.829565048217773
+    ],
+    "ms": 388.5,
+    "inputTokens": 178,
+    "cacheBuildMs": 0,
+    "cacheHit": false,
+    "cacheTokens": 0,
+    "cacheEntries": 0,
+    "logitsDims": [
+      1,
+      178,
+      248320
+    ],
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "short",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 398.19999998807907,
+    "inputTokens": 146,
+    "outputTokens": 2,
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "short-one",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 336.30000001192093,
+    "inputTokens": 146,
+    "outputTokens": 1,
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "short-direct",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "scores": [
+      19.736778259277344,
+      21.09340476989746
+    ],
+    "ms": 305.19999998807907,
+    "inputTokens": 146,
+    "cacheBuildMs": 0,
+    "cacheHit": false,
+    "cacheTokens": 0,
+    "cacheEntries": 0,
+    "logitsDims": [
+      1,
+      146,
+      248320
+    ],
+    "correct": true
+  },
+  {
+    "id": "train:3992",
+    "expected": "BLOCK",
+    "mode": "short-cache",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "scores": [
+      19.751663208007812,
+      21.065393447875977
+    ],
+    "ms": 219.5,
+    "inputTokens": 146,
+    "cacheBuildMs": 0,
+    "cacheHit": true,
+    "cacheTokens": 63,
+    "cacheEntries": 48,
+    "logitsDims": [
+      1,
+      83,
+      248320
+    ],
+    "correct": true
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "short-cache",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "scores": [
+      21.32656478881836,
+      21.491403579711914
+    ],
+    "ms": 136.39999997615814,
+    "inputTokens": 98,
+    "cacheBuildMs": 0,
+    "cacheHit": true,
+    "cacheTokens": 63,
+    "cacheEntries": 48,
+    "logitsDims": [
+      1,
+      35,
+      248320
+    ],
+    "correct": false
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "short-direct",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "scores": [
+      21.41310691833496,
+      21.53802490234375
+    ],
+    "ms": 215.80000001192093,
+    "inputTokens": 98,
+    "cacheBuildMs": 0,
+    "cacheHit": false,
+    "cacheTokens": 0,
+    "cacheEntries": 0,
+    "logitsDims": [
+      1,
+      98,
+      248320
+    ],
+    "correct": false
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "short-one",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 257.80000001192093,
+    "inputTokens": 98,
+    "outputTokens": 1,
+    "correct": false
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "short",
+    "text": "BLOCK",
+    "label": "BLOCK",
+    "parseOk": true,
+    "ms": 298.4000000357628,
+    "inputTokens": 98,
+    "outputTokens": 2,
+    "correct": false
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "original-direct",
+    "text": "OK",
+    "label": "OK",
+    "parseOk": true,
+    "scores": [
+      23.208932876586914,
+      21.621978759765625
+    ],
+    "ms": 280.5,
+    "inputTokens": 130,
+    "cacheBuildMs": 0,
+    "cacheHit": false,
+    "cacheTokens": 0,
+    "cacheEntries": 0,
+    "logitsDims": [
+      1,
+      130,
+      248320
+    ],
+    "correct": true
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "original-one",
+    "text": "OK",
+    "label": "OK",
+    "parseOk": true,
+    "ms": 297.39999997615814,
+    "inputTokens": 130,
+    "outputTokens": 1,
+    "correct": true
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "original",
+    "text": "OK",
+    "label": "OK",
+    "parseOk": true,
+    "ms": 337.9000000357628,
+    "inputTokens": 130,
+    "outputTokens": 2,
+    "correct": true
+  },
+  {
+    "id": "train:4982",
+    "expected": "OK",
+    "mode": "baseline",
+    "text": "OK",
+    "finishReason": "stop",
+    "guardReason": "",
+    "label": "OK",
+    "parseOk": true,
+    "ms": 715.1000000238419,
+    "inputTokens": 308,
+    "correct": true
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "model": "onnx-community/Qwen3.5-0.8B-ONNX-OPT",
+  "revision": "fafab72d87a9e6be3925b38caf48286d2838f2d0",
+  "source": "Public Hugging Face OPT export; no self-hosted deployment or Cloudflare access.",
+  "files": [
+    {
+      "path": "onnx/decoder_model_merged_q4.onnx",
+      "bytes": 576621,
+      "sha256": "7390858c80a67275d8cb81fb70f66a24d3b86fe333057c1312de09c184a2d41b"
+    },
+    {
+      "path": "onnx/decoder_model_merged_q4.onnx_data",
+      "bytes": 483655680,
+      "sha256": "1a9165072dd51a9b6a917b6357a3686372b7429313022802cd4c9a730e8c9749"
+    },
+    {
+      "path": "onnx/embed_tokens_q4.onnx",
+      "bytes": 857,
+      "sha256": "8773dcf4858f855bfce13def4356ca17e0bc516a477154496b6ffb6dd6d084dc"
+    },
+    {
+      "path": "onnx/embed_tokens_q4.onnx_data",
+      "bytes": 162897920,
+      "sha256": "9210b1d26eb14136d3522584d17da14cc5f4b82b6f5607e6d80d59424a8cbe99"
+    },
+    {
+      "path": "onnx/vision_encoder_q4.onnx",
+      "bytes": 185278,
+      "sha256": "9b62022e77de4b22ca0bbc4453083c0cdeb8f967ccf13931d4c24c6e7c776177"
+    },
+    {
+      "path": "onnx/vision_encoder_q4.onnx_data",
+      "bytes": 68267008,
+      "sha256": "98aebedf02fc5414fd1c7f06a6580b42e272600ace9ecd33bfbc479a0c541c64"
+    },
+    {
+      "path": "config.json",
+      "bytes": 2849,
+      "sha256": "36fed6a902ccd06ef19a452bd5a0750bd88fe347d06ab75ef515615bac5b296d"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 248,
+      "sha256": "dc0cbe66543f310896469b7b1448af792f403293a1080baaf04d586c57b23e48"
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 336,
+      "sha256": "6a970fd06f30e6943b3e2c14d5d3b42d49b06cf99b99103d56689bef462d90f8"
+    },
+    {
+      "path": "processor_config.json",
+      "bytes": 1300,
+      "sha256": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 19226111,
+      "sha256": "89da80cc6689bef4d90cc1028249436975ffb0814618f1d93c65310e05801a9b"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 9161,
+      "sha256": "fccbff64ebe09343aa2171028657f5b038db96fb4f657609bc76743eddfa3b9d"
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 7755,
+      "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+    }
+  ],
+  "original_ssn_sources": {
+    "ai.js": "96f78e6b17fa8632d48f8fc34bc13c67e2c2a470aefc2f788cca44845f66f9db",
+    "local-browser-model-worker.js": "752bde562a08615a93e86534bb1ae559527a39a3cb83a9080b54d1859d8d46d6",
+    "shared/ai/browserModelCatalog.js": "5988737da70bb34f595111546e67e33796a4612c5e015e908feb74a407942d26",
+    "shared/ai/localBrowserLLM.js": "dc760c19e02f6f735badb5de6a771f87fa1673cd283692b60be0c551dfac027e"
+  }
+}

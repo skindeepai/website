@@ -1,0 +1,73 @@
+{
+  "methods": {
+    "two_rows": {
+      "correct": 31,
+      "n": 50,
+      "missed_toxic": 3,
+      "false_block": 16,
+      "mean_ms": 650.8553559990833,
+      "pass_ms": [
+        666.2144099967554,
+        635.4963020014111
+      ],
+      "mean_stages_ms": {
+        "input_ms": 1.13548600114882,
+        "backbone_ms": 649.5304819988087,
+        "readout_ms": 0.05500200320966542
+      }
+    },
+    "full_vocabulary": {
+      "correct": 31,
+      "n": 50,
+      "missed_toxic": 3,
+      "false_block": 16,
+      "mean_ms": 695.5345630034572,
+      "pass_ms": [
+        722.0714900107123,
+        668.997635996202
+      ],
+      "mean_stages_ms": {
+        "input_ms": 1.150703999446705,
+        "backbone_ms": 653.1403990043327,
+        "readout_ms": 41.105813999893144
+      }
+    },
+    "two_rows_cache": {
+      "correct": 31,
+      "n": 50,
+      "missed_toxic": 3,
+      "false_block": 16,
+      "mean_ms": 656.1984080035472,
+      "pass_ms": [
+        676.1622340045869,
+        636.2345820025075
+      ],
+      "mean_stages_ms": {
+        "input_ms": 1.1864380026236176,
+        "backbone_ms": 654.8188249988016,
+        "readout_ms": 0.05510999821126461
+      }
+    },
+    "generate_one": {
+      "correct": 31,
+      "n": 50,
+      "missed_toxic": 3,
+      "false_block": 16,
+      "mean_ms": 700.0424320058664,
+      "pass_ms": [
+        727.1821360080503,
+        672.9027280036826
+      ],
+      "mean_stages_ms": {
+        "input_ms": 1.1360489996150136,
+        "generation_ms": 698.7770790001377
+      }
+    }
+  },
+  "timed_calls": 400,
+  "unique_messages": 50,
+  "all_predictions_match": true,
+  "all_selected_logits_within": 0.0005,
+  "all_layers_executed": 24,
+  "layers_skipped": 0
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "production",
+    "text": "OK",
+    "finishReason": "moderation_decision",
+    "guardReason": "",
+    "label": "OK",
+    "parseOk": true,
+    "ms": 2218.100000023842,
+    "inputTokens": 131
+  }
+]

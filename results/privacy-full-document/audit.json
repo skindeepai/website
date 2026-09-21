@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "independently_reconstructed_token_predictions": 85107,
+  "documents": 50,
+  "timed_calls": 200,
+  "checks": [
+    "All source, model and data hashes",
+    "Python Unicode feature reconstruction and scalar linear classification",
+    "Every per-document confusion count and name-span outcome",
+    "Exact paired execution order",
+    "All aggregate values, new detections and lost detections"
+  ],
+  "source_sha256": "5830f592bd425059e418abc7f772f7cd64bb3291c55940c6a7d82756698780fe",
+  "result_sha256": "7d766bdc50b425d833d9851a5379c412c6187d9a9a7c72727fdd642c15a56cab"
+}
