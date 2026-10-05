@@ -423,11 +423,11 @@
         "strategy": "Improved self-editing agent, prose ledger (the model must read)",
         "files": "no",
         "budget": "32K",
-        "right": "0",
+        "right": "0 (void)",
         "time": "3.5 h",
         "written": "926K tokens",
         "peak": "25K",
-        "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). The agent fetched 6 of 20 batches in 120 calls, had none of the 24 answers right and broke the no-files rule. Every success above was a task code could read. Cause being traced.",
+        "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). Not a valid reading test: the agent's instructions told it to write a fold script, so it spent the run building a parser instead of reading. It fetched 6 of 20 batches in 120 calls and also broke the no-files rule. Whether the model can read and fold more text than its budget is still not measured.",
         "status": "measured"
       }
     ]
@@ -495,8 +495,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "ef994734f",
-    "time": "2026-10-05 19:10 UTC (15:10 EDT)",
+    "commit": "c66327ede",
+    "time": "2026-10-05 19:25 UTC (15:25 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
