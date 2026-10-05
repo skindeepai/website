@@ -183,7 +183,7 @@ def update(pages):
             + table(['Answer path', 'Correct', 'Median time'], [
                 ['One token, thinking off', o['right_one_step'], o['median_seconds']['one_step']],
                 ['Ordinary label, thinking off', o['right_decoding'], o['median_seconds']['decoding']],
-                ['Think, then label (subset)', o['right_thinking'], o['median_seconds']['thinking']], 'Easy label decisions', 'ctx-summary-table')
+                ['Think, then label (subset)', o['right_thinking'], o['median_seconds']['thinking']]], 'Easy label decisions', 'ctx-summary-table')
             + '<p>The one-step and ordinary decoding answers matched on 80/80 items. Both got 78/80 right. On the 24 items with thinking enabled, one-step and thinking answers matched on 24/24; both got 23/24 right.</p>'
             '<p>Median response time was about 0.09 seconds for either non-thinking path, versus 0.59 seconds with thinking. The roughly 6.5× ratio describes these easy-item timing samples; it is not a speedup over ordinary non-thinking decoding.</p>'
             '<p>The allowed labels began with distinct tokens. Restricting the first token ensures a valid label choice; it does not guarantee the choice is correct. All model layers still run. Hard decisions where reasoning changes the answer need a separate accuracy comparison.</p>'
