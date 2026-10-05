@@ -417,6 +417,18 @@
           }
         ],
         "input_tokens": 478000
+      },
+      {
+        "id": "improved-prose-121k",
+        "strategy": "Improved self-editing agent, prose ledger (the model must read)",
+        "files": "no",
+        "budget": "32K",
+        "right": "0",
+        "time": "3.5 h",
+        "written": "926K tokens",
+        "peak": "25K",
+        "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). The agent fetched 6 of 20 batches in 120 calls, had none of the 24 answers right and broke the no-files rule. Every success above was a task code could read. Cause being traced.",
+        "status": "measured"
       }
     ]
   },
@@ -483,8 +495,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "18cd050812e4c2e2e07b381123c773b923bf266e",
-    "time": "2026-10-05 15:37 UTC (11:37 EDT)",
+    "commit": "ef994734f",
+    "time": "2026-10-05 19:10 UTC (15:10 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
