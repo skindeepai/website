@@ -507,8 +507,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "953457072",
-    "time": "2026-10-05 19:34 UTC (15:34 EDT)",
+    "commit": "57061cc60",
+    "time": "2026-10-05 21:31 UTC (17:31 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
@@ -586,23 +586,152 @@
     }
   },
   "edit_cost": {
-    "status": "in progress",
+    "status": "measured",
     "about": "Wait before the first output token after one edit (a deletion) inside a cached prompt, exact prefix cache on. first_edit_s: first request after the edit; repeat_s: the same edited prompt sent again; cold_s: the same prompt with nothing cached. Fill a cell by setting status to \"measured\" and the three times, then run scripts/organize_results.py and scripts/build_site.py.",
-    "contexts": ["30K", "120K", "200K"],
-    "positions": ["10%", "50%", "90%", "last block"],
+    "contexts": [
+      "30K",
+      "120K",
+      "200K"
+    ],
+    "positions": [
+      "10%",
+      "50%",
+      "90%",
+      "last block"
+    ],
     "cells": [
-      {"context": "30K", "position": "10%", "status": "being measured"},
-      {"context": "30K", "position": "50%", "status": "measured", "edit": "300-token deletion", "resumed_from_token": 13312, "first_edit_s": 6.7, "repeat_s": 0.7, "cold_s": 11.3, "source": "notes/2026-10-05-prefix-cache-exactness-prereg.md"},
-      {"context": "30K", "position": "90%", "status": "being measured"},
-      {"context": "30K", "position": "last block", "status": "being measured"},
-      {"context": "120K", "position": "10%", "status": "being measured"},
-      {"context": "120K", "position": "50%", "status": "being measured"},
-      {"context": "120K", "position": "90%", "status": "being measured"},
-      {"context": "120K", "position": "last block", "status": "being measured"},
-      {"context": "200K", "position": "10%", "status": "being measured"},
-      {"context": "200K", "position": "50%", "status": "being measured"},
-      {"context": "200K", "position": "90%", "status": "being measured"},
-      {"context": "200K", "position": "last block", "status": "being measured"}
+      {
+        "context": "30K",
+        "position": "10%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 0,
+        "first_edit_s": 11.3,
+        "repeat_s": 0.7,
+        "cold_s": 11.4,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "30K",
+        "position": "50%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 13312,
+        "first_edit_s": 6.7,
+        "repeat_s": 0.7,
+        "cold_s": 11.4,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "30K",
+        "position": "90%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 13312,
+        "first_edit_s": 6.7,
+        "repeat_s": 0.7,
+        "cold_s": 11.4,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "30K",
+        "position": "last block",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 28288,
+        "first_edit_s": 0.7,
+        "repeat_s": 0.7,
+        "cold_s": 11.4,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "120K",
+        "position": "10%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 0,
+        "first_edit_s": 69.6,
+        "repeat_s": 1.5,
+        "cold_s": 69.8,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "120K",
+        "position": "50%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 53248,
+        "first_edit_s": 46.6,
+        "repeat_s": 1.5,
+        "cold_s": 69.8,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "120K",
+        "position": "90%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 106496,
+        "first_edit_s": 11.0,
+        "repeat_s": 1.5,
+        "cold_s": 69.8,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "120K",
+        "position": "last block",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 118144,
+        "first_edit_s": 1.5,
+        "repeat_s": 1.5,
+        "cold_s": 69.8,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "200K",
+        "position": "10%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 0,
+        "first_edit_s": 151.7,
+        "repeat_s": 2.2,
+        "cold_s": 152.1,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "200K",
+        "position": "50%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 93184,
+        "first_edit_s": 103.1,
+        "repeat_s": 2.2,
+        "cold_s": 152.1,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "200K",
+        "position": "90%",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 173056,
+        "first_edit_s": 30.7,
+        "repeat_s": 2.2,
+        "cold_s": 152.1,
+        "source": "notes/2026-10-05-context-research-results.md"
+      },
+      {
+        "context": "200K",
+        "position": "last block",
+        "status": "measured",
+        "edit": "four lines (about 260 tokens) removed",
+        "resumed_from_token": 186368,
+        "first_edit_s": 15.8,
+        "repeat_s": 2.2,
+        "cold_s": 152.1,
+        "source": "notes/2026-10-05-context-research-results.md"
+      }
     ]
   }
 }

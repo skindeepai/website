@@ -155,7 +155,7 @@
 <path d="M200 24V62" stroke="#b23b3b" stroke-width="2.5"/><text x="203" y="73" font-size="11" fill="#b23b3b">edit</text>
 <text x="20" y="96" font-weight="600">The same edited prompt, sent again</text>
 <rect x="20" y="104" width="354" height="30" fill="#dce8fb" stroke="#2854da"/><rect x="374" y="104" width="6" height="30" fill="#fde4c4" stroke="#b5620b"/><text x="196" y="123" text-anchor="middle">reused up to the state kept at its end: 0.7 s</text>
-<text x="20" y="160" font-weight="600">An edit in the last block (being measured)</text>
+<text x="20" y="160" font-weight="600">An edit in the last block</text>
 <rect x="20" y="168" width="319.5" height="30" fill="#dce8fb" stroke="#2854da"/><text x="180" y="187" text-anchor="middle">reused</text>
 <rect x="339.5" y="168" width="40.5" height="30" fill="#fde4c4" stroke="#b5620b"/>
 <path d="M362 164V202" stroke="#b23b3b" stroke-width="2.5"/>
@@ -212,7 +212,7 @@
 <section id="edit-cost"><h2>Edit cost here</h2>
 <p>Wait before the first output token after one deletion, with the exact cache on. Each measured cell shows the first edited request, the same prompt sent again, and a cold read with nothing cached.</p>
 {{EDIT_COST_TABLE}}
-<p class="ctx-table-note">The 30K, 50% cell is a 300-token deletion that resumed from token 13,312. The other cells are being measured.</p>
+<p class="ctx-table-note">Each edit removes four lines (about 260 tokens). An edit re-reads from the last kept state before it to the end of the prompt: one to sixteen seconds near the end, the whole cold read near the start. Kept states were 13,312 tokens apart in this run; a hit lands one block before the shared text ends, so an edit just after a kept state falls back to the one before it (the 15.8 s cell). One server, measured once.</p>
 </section>
 
 <section id="sources"><h2>Sources</h2>
