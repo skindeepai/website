@@ -365,12 +365,12 @@
         "strategy": "Files allowed, 480K stream",
         "files": "yes",
         "budget": "32K",
-        "right": "",
-        "time": "",
-        "written": "",
-        "peak": "",
-        "note": "No completed result in the pinned research snapshot.",
-        "status": "pending"
+        "right": "24 and 24 (two agents)",
+        "time": "1.9 and 1.3 min",
+        "written": "8K and 5K tokens",
+        "peak": "9.7K and 7.1K",
+        "note": "The same 478K stream with files allowed: no management (11 calls) and self-editing (12 calls). Both saved the batches to disk and computed the answers with a script.",
+        "status": "measured"
       }
     ]
   },
@@ -437,8 +437,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "7d3a957f4",
-    "time": "2026-10-05 15:35 UTC (11:35 EDT)",
+    "commit": "a3bbb9599",
+    "time": "2026-10-05 15:25 UTC (11:25 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
