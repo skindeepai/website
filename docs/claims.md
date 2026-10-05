@@ -73,3 +73,18 @@ The [separate chat review](chat600-review.md) verifies the calculations while re
 | Confidence identifies absent click targets generally | **Not established** by [two-screenshot diagnostic](coordinate-abstention-smoke.md) | Rejects two absent targets but accepts one wrong point; repeated requests and interface |
 
 The [adversarial audit](chat-smoke-review.md) checks artifacts and code within this session; it is not external replication.
+
+## Longer context
+
+Added 2026-10-05. Status for every row: **measured pilot on a single machine** (two Intel Arc Pro B70 cards, Qwen3.8-27B with FP8 weights and a 16-bit cache), mostly one seed. The common protocol asks for at least three seeds for exploratory stochastic runs; these runs use greedy decoding and one seed per strategy, so seed-to-seed spread is unknown. Rows still running are marked as such on the [results page](../context-results.html).
+
+| Finding | Evidence | Limit |
+| --- | --- | --- |
+| The full 262,144-token window opens and is used on two cards with a 16-bit cache | [Window and recall](context-window.md) | Single-server first looks; look-ups exact up to about 60K in the hardest test, about 1 in 40 look-alike slips from 120K to 250K |
+| An exact prefix cache reuses a long context without changing answers | [99 of 99 identical](context-prefix-cache.md) | One user; token ids compared, not scores; cold reads 14-27% slower |
+| Keeping working data in files keeps the context small with no loss | [24 of 24, under 9K of context](context-management.md#files) | One task family, one seed; needs code or search to do the reading |
+| The paper's self-editing agent preserves information | **Not supported as shipped**: 19 of 24; all five losses from its own rollback of delivered data | The model's own edits lost nothing; the improved agent is running |
+| Self-editing gives unlimited context | **Not established**: the stream larger than the window is running | Removed text is gone unless saved; unlimited length of work, not unlimited detail |
+| A small CPU cleaner turns 32K into 100K | **Not supported**: [1.8% freed without loss](context-cleaning.md) | Dropping old thinking blindly left one run stuck |
+| Disk can stand in for video memory at the engine level | **Estimate only, not built**: [roughly 3-4 tokens a second](context-on-disk.md) | No implementation or measurement |
+| A label can be returned in one step without thinking | [80 of 80 same as decoding, 6.5 times faster than thinking](one-step-decisions.md) | Easy items only; hard decisions where thinking changes the answer not measured |

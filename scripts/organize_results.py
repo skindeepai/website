@@ -264,6 +264,8 @@ def update(pages, legacy=None):
     update_demo_links(pages)
     from refresh_use_cases import update as update_use_cases
     update_use_cases(pages)
+    from refresh_long_context import update as update_long_context
+    update_long_context(pages)
     from refresh_navigation import update as update_navigation
     update_navigation(pages)
 

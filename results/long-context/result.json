@@ -1,0 +1,312 @@
+{
+  "schema": "skindeep.long-context.v1",
+  "updated": "2026-10-05",
+  "about": "Single source for every number on context.html, context-results.html and one-step-results.html. Values are copied from the public lab notes linked in 'sources'. To publish a finished run, replace its 'running' row values, set status to 'measured', then run: python scripts/organize_results.py && python scripts/build_site.py",
+  "setup": "Qwen3.8-27B (FP8 weights, 16-bit cache) on two Intel Arc Pro B70 cards. Drafting on unless stated. Nothing quantized beyond the published FP8 weights. One machine; single-server timings.",
+  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/",
+  "sources": {
+    "results": "notes/2026-10-05-context-research-results.md",
+    "window": "notes/2026-10-05-context-window-prereg.md",
+    "cache_test": "notes/2026-10-05-prefix-cache-exactness-prereg.md",
+    "cache_rules": "notes/2026-10-05-prefix-cache-reuse-rules.md",
+    "self_editing": "notes/2026-10-05-self-editing-first-comparison.md",
+    "cleaning": "notes/2026-10-05-context-hygiene-census.md",
+    "review": "notes/2026-10-05-context-research-review.md",
+    "scripts": "scripts/context/",
+    "cache_code": "overlays/b70-prefix-cache-exact/",
+    "data": "data/2026-10-05-context/"
+  },
+  "window": {
+    "opens_tokens": 262144,
+    "columns": [
+      "Context",
+      "Read speed",
+      "First word, cold",
+      "First word, cached",
+      "Write speed"
+    ],
+    "rows": [
+      [
+        "8K",
+        "3,280 tok/s",
+        "2.4 s",
+        "",
+        "127 tok/s"
+      ],
+      [
+        "30K",
+        "3,050 tok/s",
+        "9.8 s",
+        "0.8 s",
+        "99 tok/s"
+      ],
+      [
+        "60K",
+        "2,700 tok/s",
+        "22 s",
+        "1.0 s",
+        "70 tok/s"
+      ],
+      [
+        "120K",
+        "2,190 tok/s",
+        "55 s",
+        "1.5 s",
+        "48 tok/s"
+      ],
+      [
+        "200K",
+        "1,745 tok/s",
+        "114 s",
+        "2.0 s",
+        "35 tok/s"
+      ],
+      [
+        "250K",
+        "1,550 tok/s",
+        "161 s",
+        "2.4 s",
+        "26 tok/s"
+      ]
+    ]
+  },
+  "recall": {
+    "asked": 720,
+    "columns": [
+      "Context",
+      "Codes buried in ordinary words",
+      "Wall of look-alike codes"
+    ],
+    "rows": [
+      [
+        "60K",
+        "60 of 60",
+        "60 of 60"
+      ],
+      [
+        "120K",
+        "60 of 60",
+        "58 of 60"
+      ],
+      [
+        "160K",
+        "59 of 60",
+        "58 of 60"
+      ],
+      [
+        "200K",
+        "58 of 60",
+        "57 of 60"
+      ],
+      [
+        "230K",
+        "60 of 60",
+        "60 of 60"
+      ],
+      [
+        "250K",
+        "60 of 60",
+        "58 of 60"
+      ]
+    ]
+  },
+  "cache": {
+    "cases_identical": "99 of 99",
+    "block_tokens": 832,
+    "keep_state_every_tokens": [
+      6656,
+      13312
+    ],
+    "cold_read_slower": "14-27%",
+    "state_memory": "the memory of about 2,500 tokens of context",
+    "repeat_30k": [
+      "11.4 s",
+      "0.8 s"
+    ],
+    "edit_30k_first": [
+      "11.3 s",
+      "6.7 s"
+    ],
+    "edit_30k_again": "0.7 s",
+    "cached_200k": [
+      "114 s",
+      "2.0 s"
+    ],
+    "users_tested": 1
+  },
+  "comparison": {
+    "task": "A stream of 20 batches (121,000 tokens) of counter updates with overwrites and deletes. A delivered batch cannot be fetched again. At the end: the current value of 24 counters.",
+    "seeds": 1,
+    "columns": [
+      "Strategy",
+      "Files",
+      "Budget",
+      "Right of 24",
+      "Time",
+      "Written",
+      "Most context held",
+      "What happened"
+    ],
+    "rows": [
+      {
+        "id": "keep",
+        "strategy": "Keep everything in the big window, exact cache on",
+        "files": "no",
+        "budget": "full window",
+        "right": "24",
+        "time": "26 min",
+        "written": "89K tokens",
+        "peak": "112K",
+        "note": "91% of reading served by the cache; about 95% of the time was writing",
+        "status": "measured"
+      },
+      {
+        "id": "paper",
+        "strategy": "The paper's self-editing agent",
+        "files": "no",
+        "budget": "32K",
+        "right": "19",
+        "time": "64 min",
+        "written": "233K tokens",
+        "peak": "28K",
+        "note": "all 5 losses were batches its own rollback-and-retry removed after delivery",
+        "status": "measured"
+      },
+      {
+        "id": "summary",
+        "strategy": "Summarise at 75% of the budget",
+        "files": "no",
+        "budget": "32K",
+        "right": "24",
+        "time": "41 min",
+        "written": "211K tokens",
+        "peak": "24K",
+        "note": "12 summaries; every summary breaks the cache",
+        "status": "measured"
+      },
+      {
+        "id": "files-edit",
+        "strategy": "Self-editing, files allowed",
+        "files": "yes",
+        "budget": "32K",
+        "right": "24",
+        "time": "1.9 min",
+        "written": "7K tokens",
+        "peak": "8.2K",
+        "note": "no edit was needed",
+        "status": "measured"
+      },
+      {
+        "id": "files-plain",
+        "strategy": "No management, files allowed",
+        "files": "yes",
+        "budget": "32K",
+        "right": "24",
+        "time": "1.9 min",
+        "written": "8K tokens",
+        "peak": "8.9K",
+        "note": "",
+        "status": "measured"
+      },
+      {
+        "id": "no-thinking",
+        "strategy": "Keep everything, old thinking dropped",
+        "files": "no",
+        "budget": "full window",
+        "right": "no answer",
+        "time": "stopped at 2.6 h",
+        "written": "397K tokens",
+        "peak": "113K",
+        "note": "stuck re-deriving its state every call; never acted",
+        "status": "measured"
+      },
+      {
+        "id": "improved-121k",
+        "strategy": "Improved self-editing agent",
+        "files": "no",
+        "budget": "32K",
+        "right": "",
+        "time": "",
+        "written": "",
+        "peak": "",
+        "note": "",
+        "status": "running"
+      },
+      {
+        "id": "improved-480k",
+        "strategy": "Improved self-editing agent, 480K stream (larger than the window)",
+        "files": "no",
+        "budget": "32K",
+        "right": "",
+        "time": "",
+        "written": "",
+        "peak": "",
+        "note": "",
+        "status": "running"
+      },
+      {
+        "id": "files-480k",
+        "strategy": "Files allowed, 480K stream",
+        "files": "yes",
+        "budget": "32K",
+        "right": "",
+        "time": "",
+        "written": "",
+        "peak": "",
+        "note": "",
+        "status": "running"
+      }
+    ]
+  },
+  "cleaning": {
+    "tokens": "5.0M",
+    "columns": [
+      "Rule",
+      "Context freed"
+    ],
+    "rows": [
+      [
+        "Strictly no loss: duplicate outputs, repeated lines, whitespace and terminal noise",
+        "1.8%"
+      ],
+      [
+        "Large tool outputs moved to disk with a pointer (about one in three was read back later)",
+        "7.5%"
+      ],
+      [
+        "The model's earlier thinking, re-sent on every call",
+        "about 10% typical, up to 56%"
+      ]
+    ],
+    "window_32k_holds": "about 33K tokens' worth after strict no-loss cleaning"
+  },
+  "disk_estimate": {
+    "status": "estimated from measurements, not built",
+    "cache_per_token": "64 KiB",
+    "cache_200k": "about 13 GB (12 GiB)",
+    "drive_read": "12.7 GB/s (measured)",
+    "card_upload": "roughly 9-16 GB/s",
+    "step_time": "a little over a second",
+    "write_speed": [
+      "roughly 3-4 tok/s",
+      "about 35 tok/s"
+    ],
+    "prompt_200k_streamed": "about 1.5 TB",
+    "park_and_restore": "designed, not built: about 13 GB saved for 200K, restored in seconds instead of a two-minute re-read"
+  },
+  "one_step": {
+    "items": 80,
+    "kinds": "yes/no, A-D choice, sentiment, routing",
+    "same_as_decoding": "80 of 80",
+    "right_one_step": "78 of 80",
+    "right_decoding": "78 of 80",
+    "right_thinking": "23 of 24",
+    "same_as_thinking": "24 of 24",
+    "median_seconds": {
+      "one_step": "0.09 s",
+      "decoding": "0.09 s",
+      "thinking": "0.59 s"
+    },
+    "speedup_vs_thinking": "6.5x"
+  }
+}

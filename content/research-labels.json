@@ -27,5 +27,11 @@
   "C03": "Can it stop early when finding a click target?",
   "C04": "Does better pointing help finish a task?",
   "X01": "Can an app use your preferences while following instructions?",
-  "X02": "Do the results hold up when models and software change?"
+  "X02": "Do the results hold up when models and software change?",
+  "L01": "Can the model use its whole context window?",
+  "L02": "Can an unchanged context be reused without changing answers?",
+  "L03": "Can the model edit its own context without losing track?",
+  "L04": "Does keeping working data in files keep the context small?",
+  "L05": "Can a small CPU cleaner make the window hold more?",
+  "L06": "Can disk stand in for video memory?"
 }

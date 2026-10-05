@@ -5,7 +5,7 @@ A research lab exploring preference learning, direct model decisions, direct coo
 ## Explore
 
 - `index.html`: lab overview and sidebar navigation.
-- `research.html`: 29 registered questions, status and next steps.
+- `research.html`: 35 registered questions, status and next steps.
 - `results.html`: measured pilots, failures and limitations.
 - `demo.html`: local preferences, seeded sessions and blind evaluation.
 - `coordinate-lab.html`: local screenshot annotation; no browser model.
@@ -90,7 +90,7 @@ The [results index](results.html) now opens focused pages for [preferences](pref
 
 ## Research questions and local follow-ups
 
-[Research FAQ](research.html) replaces the public experiment backlog. [The evidence ledger](docs/research-status.md) retains all 29 protocol IDs, with actual outcomes and explicit untested scope. Its source is `content/research-evidence.json`; FAQ copy is in `content/research-faq.json`. Both standard refresh paths preserve the FAQ and its incoming anchors.
+[Research FAQ](research.html) replaces the public experiment backlog. [The evidence ledger](docs/research-status.md) retains all 35 protocol IDs (29 original plus six longer-context protocols), with actual outcomes and explicit untested scope. Its source is `content/research-evidence.json`; FAQ copy is in `content/research-faq.json`. Both standard refresh paths preserve the FAQ and its incoming anchors.
 
 [Preference follow-ups](docs/preference-followups.md) complete four local checks: the actual browser sampler, equal-candidate selection, recurring known contexts, and conflicting explicit constraints. These are synthetic experiments, not completed human or real-generator studies. Regenerate their reports with `python scripts/refresh_preference_followups.py`.
 
@@ -136,3 +136,7 @@ Detailed protocols preserve failed attempts and runtime-only amendments. [Valida
 [The demo directory](demo-directory.html) now links real browser implementations of decision methods, Qwen instruction reuse/batching, practical classifiers, search reranking, maze policies, screenshot text locations and preference learning. Forty-three topic/method pages link directly to the relevant demo. Smaller BERT examples, OCR alternatives and recorded GUI-Actor results are explicitly distinguished.
 
 [Implementation and runtime checks](docs/method-demos.md) include actual model calls, export parity, failures found during testing, mobile/desktop checks and dataset limitations. No model-generated accuracy is invented for a user's unlabelled input.
+
+## Longer context
+
+[Working past the context limit](context.html) asks how long jobs keep going when there is more text than a model can read at once: a 262K-token window, an exact prefix cache, self-editing context, files and CPU cleaning, measured on Qwen3.8-27B (FP8 weights, 16-bit cache) on two Intel Arc Pro B70 cards. [Results, failures and limits](context-results.html); protocols L01-L06 in [EXPERIMENTS.md](EXPERIMENTS.md); evidence in `docs/context-*.md`. Every number on these pages comes from `results/long-context/result.json`; rows still running are marked `"status": "running"` there. After editing it, run `python scripts/organize_results.py` and `python scripts/build_site.py`. The [one-step decision result](one-step-results.html) belongs to "Return a decision".

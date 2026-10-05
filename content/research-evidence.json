@@ -244,5 +244,56 @@
     ],
     "observed": "Separate implementation and published runtime replayed saved predictions and exits.",
     "remaining": "No second-hardware replication, cross-model transfer or full cost study."
+  },
+  "L01": {
+    "status": "Measured pilot",
+    "evidence": [
+      "results/long-context/result.json",
+      "results/long-context/recall-ordinary-words.log",
+      "results/long-context/recall-wall-of-codes.log"
+    ],
+    "observed": "The full 262,144-token window opens on two cards with a 16-bit cache. Read speed falls from 3,280 tokens a second at 8K to 1,550 at 250K and write speed from 127 to 26. Drafting gave exactly the no-drafting answer at every length. Of 720 buried codes, every one was right at 60K; from 120K to 250K about 1 look-up in 40 returned a look-alike neighbour. No value was invented and no region of the context was lost.",
+    "remaining": "Single-server first looks on one machine, not package numbers. The window that opens is larger than the window that is look-up exact (about 60K in the hardest test)."
+  },
+  "L02": {
+    "status": "Measured pilot",
+    "evidence": [
+      "results/long-context/cache-probe.log",
+      "results/long-context/result.json"
+    ],
+    "observed": "An exact prefix cache that keeps only state made while reading gave the uncached answer in 99 of 99 cases with drafting on, including second and third turns. A question over a cached 200K context starts in 2.0 s instead of 114 s; an edit in the middle of a 30K prompt resumes from the last kept state. A cold read is 14-27% slower.",
+    "remaining": "One user; token ids compared, not scores; prompts above 30K tested only by a cold repeat at 120K; the one-card server untested."
+  },
+  "L03": {
+    "status": "Measured pilot, one seed; longer runs in progress",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "On a 121,000-token stream of counter updates, keeping everything in the window got 24 of 24 in 26 minutes; summarising at 75% of a 32K budget got 24 of 24 in 41 minutes; the paper’s self-editing agent got 19 of 24 in 64 minutes. All five losses were batches its own rollback-and-retry removed after delivery; the model’s own edits lost nothing.",
+    "remaining": "One task family and one seed. An improved agent and a stream larger than the window (480K) are running. Removed text is gone unless it is saved somewhere."
+  },
+  "L04": {
+    "status": "Measured pilot, one seed; longer run in progress",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "With files allowed, the model kept its data on disk and got 24 of 24 in 1.9 minutes, holding at most 8.2K (self-editing) and 8.9K (no management) tokens of context: 14 to 22 times faster than keeping everything or summarising.",
+    "remaining": "One task family and one seed; the 480K stream with files allowed is running. Works when code or search does the reading; text the model must itself understand still has to pass through the card."
+  },
+  "L05": {
+    "status": "Measured census",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "On 5.0M tokens of real agent sessions, strict no-loss cleaning freed 1.8% and moving large tool outputs to disk 7.5% (about one in three was read back later). Re-sent earlier thinking is about 10% of a typical call and up to 56%. A 32K window holds about 33K tokens’ worth after no-loss cleaning.",
+    "remaining": "Blanket dropping of earlier thinking left one run stuck for 2.6 hours with no answer; it is safe only when the working state lives elsewhere."
+  },
+  "L06": {
+    "status": "Estimated, not built",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "The cache is exactly 64 KiB per token, about 13 GB for 200K tokens. With a 12.7 GB/s drive (measured) and 9-16 GB/s uploads to the card, streaming it on every written token would give roughly 3-4 tokens a second against about 35 in video memory.",
+    "remaining": "Nothing built. Parking and restoring a whole conversation’s cache is designed, not built or measured."
   }
 }

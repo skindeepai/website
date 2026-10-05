@@ -109,6 +109,8 @@ def update(pages):
         evidence='docs/privacy-full-document.md' if task=='privacy' else 'docs/practical-baselines.md'
         item['modes'][task] = dict(approach=route(study, title), results=route(study, 'Recorded task results'), evidence=route(evidence, 'Dataset, method and evidence'))
     journey('browser-method-results.html', 'adaptive.html', ('decision-results.html', 'Compare approaches'))
+    journey('context-results.html', 'context.html')
+    journey('one-step-results.html', 'decisions.html', evidence=('docs/one-step-decisions.md', 'Test design and detailed evidence'))
     journey('browser-execution-results.html', 'decisions.html')
 
     # Fix missing topic paths, sample mismatches, and newer-validation discovery.

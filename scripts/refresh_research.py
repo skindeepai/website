@@ -12,14 +12,14 @@ def pct(x): return f'{100*x:.1f}%'
 
 def main():
     pages=read('content/pages.json');protocol=(ROOT/'EXPERIMENTS.md').read_text(encoding='utf-8')
-    evidence=read('content/research-evidence.json');groups={'P':'preferences','D':'decisions','C':'coordinates','X':'combined'}
+    evidence=read('content/research-evidence.json');groups={'P':'preferences','D':'decisions','C':'coordinates','X':'combined','L':'context'}
     entries=[]
-    for match in re.finditer(r'^### ([PDCX]\d\d) [^\w\n]+ ([^\n]+)\n(.*?)(?=^### |^## |\Z)',protocol,re.M|re.S):
+    for match in re.finditer(r'^### ([PDCXL]\d\d) [^\w\n]+ ([^\n]+)\n(.*?)(?=^### |^## |\Z)',protocol,re.M|re.S):
         identifier,title,body=match.groups();title=re.sub(r' \[.*?\]','',title)
         fields=dict(re.findall(r'\*\*(.+?):\*\* (.*?)(?=\n\n|\Z)',body,re.S))
         record=evidence[identifier]
         entries.append({'id':identifier,'title':title,'track':groups[identifier[0]],'fields':fields,**record})
-    assert len(entries)==29,len(entries)
+    assert len(entries)==35,len(entries)  # 29 original protocols plus L01-L06 (longer context)
     (ROOT/'content/experiments.json').write_text(json.dumps(entries,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
     # Public answers are rendered by refresh_faq through organize_results.
     body='<div class="note warning"><p><strong>Exploratory results, not deployment claims.</strong> These runs establish working mechanisms and expose failure cases. They do not validate arbitrary policies, human preferences or general GUI control.</p></div>'
@@ -95,6 +95,6 @@ def main():
     from organize_results import update
     update(pages, legacy=pages['results.html']['body'])
     (ROOT/'content/pages.json').write_text(json.dumps(pages,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
-    print('Refreshed 29 experiments and measured result summaries.')
+    print('Refreshed 35 experiments and measured result summaries.')
 
 if __name__=='__main__':main()

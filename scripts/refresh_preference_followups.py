@@ -46,7 +46,7 @@ def main():
     (ROOT/'docs/preference-followups.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     status=read('content/research-evidence.json')
     ledger=['# Research evidence status','',
-        'The website now answers these questions in the [FAQ](../research.html). This ledger preserves all 29 original protocol IDs and distinguishes completed local checks from broader unfinished studies. A negative result closes the recorded run, not the entire research question.','',
+        'The website now answers these questions in the [FAQ](../research.html). This ledger preserves all 29 original protocol IDs, plus six longer-context protocols (L01-L06) added on 2026-10-05, and distinguishes completed local checks from broader unfinished studies. A negative result closes the recorded run, not the entire research question.','',
         'Completed work includes actual decision timing, model fallback, replay checks, coordinate pilots, maze actions and the new exact sampler / candidate / context / constraint checks. Human studies, privacy attacks, real preference generators, audio/video context, matched accelerator tests and end-to-end GUI tasks have not been completed. They require evidence that these local fixtures do not supply.','',
         *table(['ID','Evidence status','Observed','Still unestablished'],[[i,v['status'],v['observed']+(' '+' '.join(f'[Record {j+1}](../{n})' for j,n in enumerate(v['evidence'])) if v['evidence'] else ''),v['remaining']] for i,v in status.items()]),'',
         '[Detailed study designs](../EXPERIMENTS.md). The untested items are retained as scope limits, not advertised as forthcoming features or silently marked done.']
@@ -57,6 +57,6 @@ def main():
     if marker in previous:
         ledger+=['',marker+previous.split(marker,1)[1].rstrip()]
     status_path.write_text('\n'.join(ledger)+'\n',encoding='utf-8',newline='\n')
-    print('Updated preference follow-ups and the 29-item evidence ledger.')
+    print('Updated preference follow-ups and the 35-item evidence ledger.')
 
 if __name__=='__main__':main()

@@ -1,6 +1,6 @@
 {
   "scope": "Current local generated site, including uncommitted navigation edits; not a crawl of production.",
-  "git_head": "1c48dddf0bdd545792c8bfde4b3446849f64b7c4",
+  "git_head": "53ffea6da64338479d723a1eee495a9d77ba38d9",
   "definitions": {
     "content": "Links inside main, excluding footer; includes closed details and declared mode-specific navigation routes unless marked otherwise. Static anchor counts exclude these additional mode variants.",
     "connection": "Distinct source-to-current-page pair. Self links excluded. Modes/fragments retained per anchor but collapsed for graph reachability.",
@@ -8,18 +8,18 @@
     "limitations": "Static anchors only. No form actions, model downloads or runtime-generated export links. Collapsed means inside a closed details element, not a pixel visibility measurement. Missing return links are candidates for editorial review, not automatically defects."
   },
   "summary": {
-    "pages": 112,
-    "anchors": 3128,
-    "content_page_link_occurrences": 928,
-    "unique_content_connections": 773,
-    "unique_all_connections": 1824,
+    "pages": 115,
+    "anchors": 3354,
+    "content_page_link_occurrences": 961,
+    "unique_content_connections": 790,
+    "unique_all_connections": 1981,
     "missing_from_sitemap": [],
     "link_occurrences_by_zone": {
-      "utility": 112,
-      "header": 112,
-      "sidebar": 1344,
-      "content": 1224,
-      "footer": 336
+      "utility": 115,
+      "header": 115,
+      "sidebar": 1495,
+      "content": 1284,
+      "footer": 345
     },
     "pages_with_repeated_content_destinations": [
       "preferences.html",
@@ -57,7 +57,8 @@
       "practical-demo.html",
       "maze-live.html",
       "point-demo.html",
-      "rerank-demo.html"
+      "rerank-demo.html",
+      "context.html"
     ],
     "no_content_incoming": [],
     "only_sitemap_incoming": [
@@ -348,7 +349,7 @@
     "index.html": {
       "title": "SkinDeep",
       "description": "Research notes and experiments by Steve Seguin.",
-      "sha256": "1aea19467767cd783f43ef9156f8ba1b653deb2f80dfb2a5713371ec38cd09b6",
+      "sha256": "81b52857359cdebd7050bd9353be1658b872b0a5cf8e659f44f7b433d7492e27",
       "links": [
         {
           "href": "#main",
@@ -446,6 +447,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -549,6 +561,17 @@
           "fragment": ""
         },
         {
+          "href": "context.html",
+          "label": "Work past the context limit Keep long jobs going without losing track.",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "results.html",
           "label": "Test results",
           "zone": "content",
@@ -621,6 +644,7 @@
       ],
       "outgoing": [
         "adaptive.html",
+        "context.html",
         "coordinates.html",
         "decisions.html",
         "history.html",
@@ -647,7 +671,7 @@
     "preferences.html": {
       "title": "Learning what you like",
       "description": "Show the model a few examples you like and a few you do not.",
-      "sha256": "6b76c70d7e23f7e7b7b87b7d49e117931541e5438d1a37c3b02541788c9d193f",
+      "sha256": "46e5ff93e068d521c74791a8636e692af14375fcc23cc354c5b3a9becd374546",
       "links": [
         {
           "href": "#main",
@@ -745,6 +769,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -1336,7 +1371,7 @@
     "how-it-works.html": {
       "title": "How the model learns",
       "description": "Your ratings tell it which details to pay attention to.",
-      "sha256": "feebac7cd05163f8343bf951bbfb48e6a7263aa90227d613658fe310570012f2",
+      "sha256": "97e0de0791f9d5b2d8c763a3d0000a0f0e8bcfd15ae3f33400df129f0d5a12a5",
       "links": [
         {
           "href": "#main",
@@ -1434,6 +1469,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -1682,7 +1728,7 @@
     "decisions.html": {
       "title": "Decisions without a written reply",
       "description": "Sometimes an app only needs a label, such as “support” or “spam”.",
-      "sha256": "8abe7337530c1b24556d11ada52bb004fc9a1ed0c6bf368ade198e2c3e48c400",
+      "sha256": "a117bdaf83e4f603c470ba2016cf149c0477f91c4e218a984a4ed9f6d3e0502e",
       "links": [
         {
           "href": "#main",
@@ -1780,6 +1826,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -2213,6 +2270,17 @@
           "fragment": ""
         },
         {
+          "href": "one-step-results.html",
+          "label": "One-step decision results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "maze-results.html",
           "label": "Learn to move through a maze",
           "zone": "content",
@@ -2307,7 +2375,8 @@
         "examples/mri-segmentation.html",
         "examples/eeg-sleep.html",
         "examples/image-safety.html",
-        "output-results.html"
+        "output-results.html",
+        "one-step-results.html"
       ],
       "outgoing": [
         "batch-results.html",
@@ -2331,6 +2400,7 @@
         "maze-live.html",
         "maze-results.html",
         "moderation-benchmark.html",
+        "one-step-results.html",
         "output-results.html",
         "prefix-results.html",
         "receipt-results.html",
@@ -2376,7 +2446,7 @@
     "coordinates.html": {
       "title": "Finding where to click",
       "description": "Give the model a screenshot and an instruction, such as “click Save”.",
-      "sha256": "c7b2bd7bbb5dc9253c565c418b356b8c4cd16d9351c7ae130fcd6eec84ce8161",
+      "sha256": "9f36bbc9f19a8d107722e8d9e22ab111f56a02981411e00485d7ac1c7159bb8d",
       "links": [
         {
           "href": "#main",
@@ -2474,6 +2544,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -2876,7 +2957,7 @@
     "adaptive.html": {
       "title": "Stopping early",
       "description": "An easy task may not need every step of a model’s processing.",
-      "sha256": "8a658e83c81d6c542606acf810e96a7c8b95da36cd5ab8f9445efcd55be9fc61",
+      "sha256": "eccd3bb30b36b2cdbec24e1bf8979aa98c4f2a75d2935a8a04e813ddac858005",
       "links": [
         {
           "href": "#main",
@@ -2974,6 +3055,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -3622,7 +3714,7 @@
     "about.html": {
       "title": "About SkinDeep",
       "description": "A research project by Steve Seguin.",
-      "sha256": "486502ba1276aa9e82e98c86e098192cf2d0a0540a23abd522ea9a874cca2b0f",
+      "sha256": "b6f88668e94f469d50d51ef4cf988384dc7c026c3ce103eceeca29c466f5c870",
       "links": [
         {
           "href": "#main",
@@ -3720,6 +3812,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -3895,7 +3998,7 @@
     "history.html": {
       "title": "History",
       "description": "The original work and how the project has changed.",
-      "sha256": "26cecff909fc9280caec6be1b19fc0b23b16f28b990d4cf40c4e84a054b24638",
+      "sha256": "892327d147ce4a03e215989db42c67ec31eeea0334e09b80fb96f0ae11538d79",
       "links": [
         {
           "href": "#main",
@@ -3993,6 +4096,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -4276,7 +4390,7 @@
     "whitepaper.html": {
       "title": "The original paper",
       "description": "The longer explanation of SkinDeep’s preference-learning approach.",
-      "sha256": "c31df06e077eff0c6c6ac35c21453887c9aa7301ed1f528fdd2c78000b31f1a0",
+      "sha256": "ce809b75632d4d3fe9b72aab2ac8a969ba493799a4c5eb6d6e4837f72db3db72",
       "links": [
         {
           "href": "#main",
@@ -4374,6 +4488,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -4586,7 +4711,7 @@
     "active-learning-strategies.html": {
       "title": "Which example should come next?",
       "description": "Some ratings teach the model more than others.",
-      "sha256": "dc307af9fd3de55e4e2a616b1c1dd7e9c9572f6084ca91dcaa7da15e0a8721bd",
+      "sha256": "6f4933c3e2cb924c5d415b37d3714804e2b0ba41bf85af765910bfcfe0f012e3",
       "links": [
         {
           "href": "#main",
@@ -4684,6 +4809,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -4871,7 +5007,7 @@
     "multi-modal-preferences-deep-dive.html": {
       "title": "Liking more than one style",
       "description": "You can like two different things without liking everything in between.",
-      "sha256": "49c0416d326a6537a128891e6fa8c6f82e60a3cbecaafe438d984f0750670faf",
+      "sha256": "cd676266e678160f148197223ec4ef8f46ac92f94b5293399546df6d18e87412",
       "links": [
         {
           "href": "#main",
@@ -4969,6 +5105,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -5157,7 +5304,7 @@
     "landscape.html": {
       "title": "Related research",
       "description": "Other work on making models return useful results with less processing.",
-      "sha256": "0926abeb180151ae064710e7a1b4e8388da0dbefa5f377cb0cc657fb5ac4b2b9",
+      "sha256": "f0ba58d49458e4b0dbbf69034d25a4d2e9c471ce17e99aea7d5d1e19e6702e8e",
       "links": [
         {
           "href": "#main",
@@ -5255,6 +5402,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -5482,7 +5640,7 @@
     "getting-started.html": {
       "title": "Run the code locally",
       "description": "Run the website and reproduce the research experiments.",
-      "sha256": "deed24a9ee85dcc770f8989c4df0b69651b8cbb7fcf336a308337aa950e64034",
+      "sha256": "c44bec7273908fb047e2e2e05b3ec51cbaf5b9af1ececc7a76dccf817d40a03b",
       "links": [
         {
           "href": "#main",
@@ -5580,6 +5738,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -5802,7 +5971,7 @@
     "future-explorations.html": {
       "title": "Ideas to explore",
       "description": "Possible uses beyond the first demos.",
-      "sha256": "071fce3bb52797e4c997344ceddeb5ff0d3e733d6af9084d56e3d2ae4d0314f8",
+      "sha256": "02f8100d4b70b71fa0447b6b4c4bda8853a05c0149a34cc1cb89c12f1383ebe5",
       "links": [
         {
           "href": "#main",
@@ -5900,6 +6069,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -6065,7 +6245,7 @@
     "roadmap.html": {
       "title": "What comes next",
       "description": "Fix the weak points before trying larger applications.",
-      "sha256": "6e58d8d90761a7abf45afcf6c010fe9079c1820546a5bc345cf57169bfae8228",
+      "sha256": "d65d64643510ca0c3d43f74b231fe8ad3d3a7949e649ea138729b35d71d12b47",
       "links": [
         {
           "href": "#main",
@@ -6163,6 +6343,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -6328,7 +6519,7 @@
     "vc-analysis.html": {
       "title": "Earlier investment analysis",
       "description": "An archived discussion of the project as a business.",
-      "sha256": "bedf241739f4500a889920a58cdb9136be3e9d0483a62b7d3db36eb0dfd74514",
+      "sha256": "15d2217b71244bdb18ec766a8bf7ef8b49898f94a9251e6b1e08a4c6798a788a",
       "links": [
         {
           "href": "#main",
@@ -6426,6 +6617,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -6579,7 +6781,7 @@
     "investment-response.html": {
       "title": "Earlier investment response",
       "description": "An archived response to the investment discussion.",
-      "sha256": "682c32458ea23225353b885da893a5645536a9dbd05847170e712bac4470a3e2",
+      "sha256": "36096cd4b35fe1e7758ae9148896844d5c217707ac3491eaca0e75d018bed3a2",
       "links": [
         {
           "href": "#main",
@@ -6677,6 +6879,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -6830,7 +7043,7 @@
     "examples/art.html": {
       "title": "Art and visual design",
       "description": "Choose a direction by rating examples.",
-      "sha256": "3f6949a342b1d3be10347e62cc739dd55d9dfbcd216bd9db7dd406ef48c40ea7",
+      "sha256": "1af8459c7de8b629290f9869265aab2db4e91b4eb5c7bcb525e9251a2895d410",
       "links": [
         {
           "href": "#main",
@@ -6928,6 +7141,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -7149,7 +7373,7 @@
     "examples/music.html": {
       "title": "Music and playlists",
       "description": "Learn what you like to hear next.",
-      "sha256": "b55b5340cef3214cb2f976d2d18d537845dd2955623bb2df85876ee9dd199a2d",
+      "sha256": "4cf460dc99338f76466531047afb7a7e61007fd8dd61dc5a3490f36b0da970f2",
       "links": [
         {
           "href": "#main",
@@ -7247,6 +7471,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -7467,7 +7702,7 @@
     "examples/social-media.html": {
       "title": "A feed without repeated prompting",
       "description": "Learn from what people choose to see.",
-      "sha256": "9af588c053e3be64ed940c660b6508087390e2a12f5614538119313e390beeb3",
+      "sha256": "8146e7751d487a9dd4bfc2b2f884fed21c300b82f93b01f663b135427244901f",
       "links": [
         {
           "href": "#main",
@@ -7565,6 +7800,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -7785,7 +8031,7 @@
     "examples/dating.html": {
       "title": "Dating through mutual preferences",
       "description": "Rate generated faces. Reveal real profiles only by mutual agreement.",
-      "sha256": "361f9910558151d34e13e0e77196f22e6c6cd03c06d879c9ccace4a81268fbce",
+      "sha256": "45e590152cbbd6575a624f6c95a67f4b59bc67ee065f17e9f25f1fcd0166afd1",
       "links": [
         {
           "href": "#main",
@@ -7883,6 +8129,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -8103,7 +8360,7 @@
     "examples/science.html": {
       "title": "Engineering with constraints",
       "description": "Keep useful designs within fixed requirements.",
-      "sha256": "7bca0e966f385e2c52735e3ac7ea6e7b2386718299c0dd192ed868d34759ad88",
+      "sha256": "b7b5a70b5afa7f009e9fe3ff7a9f50a927fbe343291a63bb2b4c97f688fd2521",
       "links": [
         {
           "href": "#main",
@@ -8201,6 +8458,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -8422,7 +8690,7 @@
     "examples/index.html": {
       "title": "Use cases",
       "description": "Applications for preference models, direct decisions, spatial outputs and less computation.",
-      "sha256": "dbb135d1705f1d4c3f518a46c2134eae9cb982edc7ba13d557fd5d9a247e6433",
+      "sha256": "32c1828d12cc62c976e82fdb930830e5598175264cd0c14d2b4719b01e75e3b5",
       "links": [
         {
           "href": "#main",
@@ -8520,6 +8788,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -9580,7 +9859,7 @@
     "demo.html": {
       "title": "Teach it what you like",
       "description": "Tap Like or Pass on the drawings. Then see what it suggests.",
-      "sha256": "56622e49f2c15e32326a6858aa9e84e54db1058d280012139c77123ae797ee0a",
+      "sha256": "db7d03335cc7bb989393717f90641f48797be866c4649d89fd818caa0b99e9cf",
       "links": [
         {
           "href": "#main",
@@ -9678,6 +9957,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -9927,7 +10217,7 @@
     "coordinate-lab.html": {
       "title": "See where the model would click",
       "description": "Choose an example and compare its click with the target.",
-      "sha256": "94d3e9ababf8cdd7f172f3a0f832bdf7e880d7a1ff83c584e5432237ee19108f",
+      "sha256": "708467f55d13627730f44439938dc7aa848b025a5051975507dd45c5503414c4",
       "links": [
         {
           "href": "#main",
@@ -10025,6 +10315,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -10215,7 +10516,7 @@
     "research.html": {
       "title": "Research FAQ",
       "description": "What the experiments show, how the methods work, and what is still untested.",
-      "sha256": "d4966ef8505912308aad817188148c6497ac8b03a6d2c50f2245cddbf2487af4",
+      "sha256": "448a95e9f94dc885a51e8db791dce5b0602c3cbaf4b084b0558eb2261e7a9037",
       "links": [
         {
           "href": "#main",
@@ -10313,6 +10614,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -10680,6 +10992,138 @@
           "fragment": ""
         },
         {
+          "href": "docs/context-on-disk.md",
+          "label": "The disk arithmetic",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-on-disk.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-management.md#files",
+          "label": "Files on the 121K task",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": "files"
+        },
+        {
+          "href": "context.html",
+          "label": "Working past the context limit",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#comparison",
+          "label": "Comparison and losses",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison"
+        },
+        {
+          "href": "docs/context-management.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-prefix-cache.md",
+          "label": "Exact cache",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-prefix-cache.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html",
+          "label": "All measured tables",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#limits",
+          "label": "Limits and what is not measured",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "limits"
+        },
+        {
+          "href": "docs/context-management.md#files",
+          "label": "Files and plan-style state",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": "files"
+        },
+        {
+          "href": "context-results.html#comparison",
+          "label": "Comparison table",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison"
+        },
+        {
+          "href": "docs/context-cleaning.md",
+          "label": "Census method and tables",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-cleaning.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#cleaning",
+          "label": "Cleaning results",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "cleaning"
+        },
+        {
           "href": "docs/preference-followups.md",
           "label": "Constraint-conflict checks",
           "zone": "content",
@@ -10802,12 +11246,15 @@
         "investment-response.html",
         "results.html",
         "sitemap.html",
-        "results-record.html"
+        "results-record.html",
+        "context.html"
       ],
       "outgoing": [
         "batch-results.html",
         "cascade-results.html",
         "cascade-test-results.html",
+        "context-results.html",
+        "context.html",
         "coordinate-lab.html",
         "coordinate-results.html",
         "decision-checks.html",
@@ -10850,6 +11297,16 @@
             "Compare a real shared model on your device",
             "Run the shared model yourself"
           ]
+        },
+        {
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison",
+          "count": 2,
+          "labels": [
+            "Comparison and losses",
+            "Comparison table"
+          ]
         }
       ],
       "paths": {
@@ -10874,7 +11331,7 @@
     "results.html": {
       "title": "Test results",
       "description": "Choose a question. Each comparison explains the method, the data and what happened.",
-      "sha256": "c5067fbc4642386193cbac248670678aa981fef44e17565786469bb7969e618e",
+      "sha256": "749cac54f6c815a385d1847139455054052cba179aa7ed99af89eaaf6cfbdd37",
       "links": [
         {
           "href": "#main",
@@ -10972,6 +11429,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -11119,6 +11587,28 @@
           "fragment": ""
         },
         {
+          "href": "context-results.html",
+          "label": "How do long jobs keep going? A 262K window, an exact cache, self-editing, files and CPU cleaning, with failures.",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "one-step-results.html",
+          "label": "Can a decision skip the thinking? One-step labels on a large model, compared with decoding and thinking.",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "search-next-results.html",
           "label": "Search ranking",
           "zone": "content",
@@ -11246,10 +11736,12 @@
       "outgoing": [
         "browser-execution-results.html",
         "browser-method-results.html",
+        "context-results.html",
         "coordinate-results.html",
         "decision-results.html",
         "demo-directory.html",
         "maze-results.html",
+        "one-step-results.html",
         "preference-results.html",
         "receipt-results.html",
         "redaction-results.html",
@@ -11281,7 +11773,7 @@
     "sitemap.html": {
       "title": "All pages",
       "description": "Demos, explanations, experiments and the original records.",
-      "sha256": "a6ff9dd57acef89b628f7639ba9ad13c930c71f41e66159e0ddbd3881ff0167c",
+      "sha256": "d70e35bd4f44f8872828b5efa33fefc1276da8a3f8ede3c762c660f8cb39b0c1",
       "links": [
         {
           "href": "#main",
@@ -11379,6 +11871,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -11654,6 +12157,17 @@
           "hidden": false,
           "kind": "page",
           "target": "roadmap.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Working past the context limit",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -12138,6 +12652,17 @@
           "hidden": false,
           "kind": "page",
           "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "one-step-results.html",
+          "label": "A label in one step",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
           "query": "",
           "fragment": ""
         },
@@ -12670,6 +13195,17 @@
           "fragment": ""
         },
         {
+          "href": "context-results.html",
+          "label": "Longer context: test results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
           "href": "history.html",
           "label": "History",
           "zone": "footer",
@@ -12719,6 +13255,8 @@
         "cascade-test-results.html",
         "chat-results.html",
         "combined-results.html",
+        "context-results.html",
+        "context.html",
         "coordinate-lab.html",
         "coordinate-results.html",
         "coordinates.html",
@@ -12792,6 +13330,7 @@
         "method-demo.html",
         "moderation-benchmark.html",
         "multi-modal-preferences-deep-dive.html",
+        "one-step-results.html",
         "output-results.html",
         "point-demo.html",
         "practical-demo.html",
@@ -12849,7 +13388,7 @@
     "browser-benchmark.html": {
       "title": "Try Qwen in your browser",
       "description": "Compare a one-letter answer with a short JSON reply on your own device.",
-      "sha256": "401cffdb6e517534b073f8a6c518da60c0913e9c0d427368149fc084ddd9dcbd",
+      "sha256": "dd145fd578346509ff3109e67e348e6c944546e217f451c627f25256833ce474",
       "links": [
         {
           "href": "#main",
@@ -12947,6 +13486,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -13135,7 +13685,7 @@
     "maze-benchmark.html": {
       "title": "Watch the maze test",
       "description": "Inspect recorded moves from the full-depth and early-exit Qwen classifiers.",
-      "sha256": "216390255d73b4961eab407a01630065b8a1a41d7792a20fa9d463dfa2fceb37",
+      "sha256": "742acd78dac0e8c21b39e3bbbd8af7468c7c04b62782055ebc3384c760363690",
       "links": [
         {
           "href": "#main",
@@ -13233,6 +13783,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -13466,7 +14027,7 @@
     "results-record.html": {
       "title": "Earlier combined results",
       "description": "The previous report, preserved as a reference. Start with the topic pages for shorter explanations.",
-      "sha256": "abc73b5c5eb1c14e7ac991ab2ffb5290a937fcef35ba4a5d925eab252c630f7d",
+      "sha256": "43aa8c8297a79c0278683a07327349b71d5a6888f787042ae7229925d7e086fa",
       "links": [
         {
           "href": "#main",
@@ -13564,6 +14125,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -14147,7 +14719,7 @@
     "decision-results.html": {
       "title": "Ways to make a decision sooner",
       "description": "Compare the measured speed and accuracy, then open a method for its test results.",
-      "sha256": "9e60652d952e22f14fdfb8694ad569e1ff82997642f22d82f6c03c74ea650925",
+      "sha256": "f67782a7e1e6c4f43c671417e1184c8b2122281cd862cf92659dc8ab76da49f1",
       "links": [
         {
           "href": "#main",
@@ -14245,6 +14817,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -14786,7 +15369,7 @@
     "depth-results.html": {
       "title": "Where should processing stop?",
       "description": "Qwen has 24 transformer layers. Here is what happens when we stop earlier.",
-      "sha256": "39bf92c92e644178e8341e70595ba599bac6742b5722a2d46197da11816791c7",
+      "sha256": "b92ef4e0a8c10780bfcdaac41b1fbfb105eb238518b77c829917ecdb1e9a1f12",
       "links": [
         {
           "href": "#main",
@@ -14884,6 +15467,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -15188,7 +15782,7 @@
     "early-exit-results.html": {
       "title": "Check whether more layers are needed",
       "description": "Keep processing uncertain messages. Stop earlier on others.",
-      "sha256": "89a87240f9560b8c8e8b6601736a7bc9fb9acd67407852e620d82db0f7b465ea",
+      "sha256": "574a4c083b65ab197303e82ac5b9d1242e72181d6df91f40fcd543d4fa6c74ad",
       "links": [
         {
           "href": "#main",
@@ -15286,6 +15880,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -15545,7 +16150,7 @@
     "cascade-results.html": {
       "title": "Try a tiny model first",
       "description": "Use the larger model only when the small one is uncertain.",
-      "sha256": "21b41842cf1ebc7b4f6fec9abc6dd6c8a402ee428ae7be70a3c7bf7989144b5f",
+      "sha256": "8c2ae0d5b90e7c2b689ddd6b0fbe60b524b926ba360ffeaf7c5684c678c00430",
       "links": [
         {
           "href": "#main",
@@ -15643,6 +16248,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -15934,7 +16550,7 @@
     "training-results.html": {
       "title": "Teach useful answers to appear earlier",
       "description": "Changing the readout is one option. Changing what the model learns is another.",
-      "sha256": "a09611426ddde3a8ec20b702c86a323e16f07da58a8f629f27fd76e2b9e560d1",
+      "sha256": "e7aecd458bd44ddb0d36f080972a7e988a71f471f05a1e995791c8381d273ad9",
       "links": [
         {
           "href": "#main",
@@ -16032,6 +16648,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -16302,7 +16929,7 @@
     "chat-results.html": {
       "title": "The original 600-message test",
       "description": "A real-message workload showed both the savings and the extra mistakes.",
-      "sha256": "68328aabe86fbf7a14e39810fb96a396e6700ed8e30b686eb3939020db3888ec",
+      "sha256": "7ea8e957791a92edb917630aa85187183dec2609f9fc7249298410d21eb540f1",
       "links": [
         {
           "href": "#main",
@@ -16400,6 +17027,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -16657,7 +17295,7 @@
     "coordinate-results.html": {
       "title": "Finding the right point",
       "description": "Return a location directly, then check whether it actually hits the target.",
-      "sha256": "7d32704a9832156832bc945272fb38bbfc3e5f389911b569eb4ce3d7c089645a",
+      "sha256": "709df10bf033121226463bff65eacecdff5c6a9639509880f683ef0eea19cada",
       "links": [
         {
           "href": "#main",
@@ -16755,6 +17393,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -17014,7 +17663,7 @@
     "maze-results.html": {
       "title": "From a decision to a finished task",
       "description": "A correct-looking move is not enough. The agent needs to reach the goal.",
-      "sha256": "cd63756b5f9ed07f4e5f5bd3f0cf50e5eb095b48e89c3dce80812b6d8af68d3e",
+      "sha256": "af38c7edfe3046ecdfef6d7e83b747fa772feb81e754aef7ca4756c7b9546a5b",
       "links": [
         {
           "href": "#main",
@@ -17112,6 +17761,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -17335,7 +17995,7 @@
     "preference-results.html": {
       "title": "Does preference learning work?",
       "description": "The calculations work. Whether the suggestions are useful still needs a human test.",
-      "sha256": "8d808b546046c57fdf357834afa1ddb21425834f781464e99298f8530109e727",
+      "sha256": "1ada5b4a13befa27a74dca47eaa17040bb437f20c212657c837316d33bdcc783",
       "links": [
         {
           "href": "#main",
@@ -17433,6 +18093,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -17738,7 +18409,7 @@
     "decision-checks.html": {
       "title": "Other decision tests",
       "description": "Public data and harder cases show where the shortcuts break.",
-      "sha256": "3aa0230aceabf3a089c62098ed604b5641caed9911cd8af9a33d0b9ae47304ad",
+      "sha256": "dd4e01290233cc92c9e4a309125a52719fdf3c0acd49e4cc599e0eb0937c11c1",
       "links": [
         {
           "href": "#main",
@@ -17836,6 +18507,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -18123,7 +18805,7 @@
     "cascade-test-results.html": {
       "title": "Cascade: test results",
       "description": "The recorded decisions, mistakes and processing time for the tiny-model fallback experiment.",
-      "sha256": "c20264a91b425d59cbf1ae094b091b8563b2d3e93b6b7915855e1aca3fce597e",
+      "sha256": "b7a44912f1d171c2924fa0358f8dc6ec043f8f875a5f916d97ab13b1c7041388",
       "links": [
         {
           "href": "#main",
@@ -18221,6 +18903,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -18475,7 +19168,7 @@
     "moderation-benchmark.html": {
       "title": "Try 100 real messages",
       "description": "Run Qwen locally and compare accuracy and time.",
-      "sha256": "b41f67bd155b1c0632abc59d03129305eb4599ea0c75c515a50e8b5380bb4a38",
+      "sha256": "ecb32d59da581d8b545221703cf154ce3c148468bec721e92f30247184174ec9",
       "links": [
         {
           "href": "#main",
@@ -18573,6 +19266,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -18820,7 +19524,7 @@
     "batch-results.html": {
       "title": "Process a queue together",
       "description": "A small throughput improvement with the same model and the same decisions.",
-      "sha256": "bca24a0b2abfe4f4ba0e1a370015da948c37399d7f7a7d705acf18b43b520019",
+      "sha256": "da95d46f7083c66449c1fe23d57724b682c89366541fb1d01e716f0dd04ffbf7",
       "links": [
         {
           "href": "#main",
@@ -18918,6 +19622,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -19107,7 +19822,7 @@
     "prefix-results.html": {
       "title": "Reuse the instructions",
       "description": "Avoid computing the same fixed instructions for every message.",
-      "sha256": "4966741a931db9e1408ce99f0206c5549906ef609d7ff340181c8303fcdb9153",
+      "sha256": "e785b77f7fb20a45bff02f7eb013da840ce75dc083e7298ae9d8ddca3e4a0172",
       "links": [
         {
           "href": "#main",
@@ -19205,6 +19920,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -19392,7 +20118,7 @@
     "tiny-decision-demo.html": {
       "title": "A small model, one decision",
       "description": "Try a trained moderation classifier on your device.",
-      "sha256": "39971e055a1d8363b06ef407f1dc57db238a1bad618c24cef1c8b0b2c79ad0f1",
+      "sha256": "f6a476da447d307efc0b4bc01d0f8c7e3c65cdf80c8849b1d0f350845d460269",
       "links": [
         {
           "href": "#main",
@@ -19490,6 +20216,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -19721,7 +20458,7 @@
     "search-demo.html": {
       "title": "Search real research",
       "description": "Find papers with keywords or a small model that compares meaning.",
-      "sha256": "7f145f17463d47f5f741f095f3374aaa2d0ef751eaba3095994fd2644c0c592e",
+      "sha256": "2b34cb580c68800548fc462ee3208fffa0bdfbdb594951d3a3e8452afdc7f573",
       "links": [
         {
           "href": "#main",
@@ -19819,6 +20556,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -20127,7 +20875,7 @@
     "screenshot-demo.html": {
       "title": "Where would it click?",
       "description": "Replay a real screenshot and see the point the model chose.",
-      "sha256": "2518554831c263ec28b7fe364243872f1ef0010f15e74185d499495f2f3d337e",
+      "sha256": "70577c35f5483a9a17eb22e64ac35c5ad8acd68bc2059746235f36cd0665f286",
       "links": [
         {
           "href": "#main",
@@ -20225,6 +20973,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -20485,7 +21244,7 @@
     "image-action-demo.html": {
       "title": "Read an image. Return an action.",
       "description": "A small trained model looks at the pixels and returns a direction.",
-      "sha256": "1bba285f38375fa699242dc31cff356a1e49770a7e84b11d694a9cd9e8788cd5",
+      "sha256": "c063a532ec72fd82cbaea1941f7c93eeb150b178c742a578099525e3c3366949",
       "links": [
         {
           "href": "#main",
@@ -20583,6 +21342,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -20825,7 +21595,7 @@
     "redaction-results.html": {
       "title": "Find names to redact",
       "description": "Return marked text spans instead of rewriting a document.",
-      "sha256": "93408868a5e013667f50e55261a5e4e14209d46ba38fb7062e7764c692b03965",
+      "sha256": "9e087d7eeb2135a39e8a3ba01bff8b47a062e31cbca33c6106ae5969394eebf6",
       "links": [
         {
           "href": "#main",
@@ -20923,6 +21693,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -21120,7 +21901,7 @@
     "receipt-results.html": {
       "title": "Choose the receipt total",
       "description": "Select a value that already appears on the receipt.",
-      "sha256": "1a0ed1bd01afe91a96637b1bb91fd09832d84fe7a6ad3493faa796bdd34b2826",
+      "sha256": "8e6cda146f02cda2353300bac8a64fa4bf23a62159c69b113609c9516d4f0c62",
       "links": [
         {
           "href": "#main",
@@ -21218,6 +21999,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -21404,7 +22196,7 @@
     "routing-results.html": {
       "title": "Route or ask for help",
       "description": "Choose a supported action, or return UNKNOWN.",
-      "sha256": "3b77174c950d278a744474978acd7967f700f84531829b772ef8c3c92d9665e5",
+      "sha256": "048602cda1f647862c41305b7e3cc59ee509abfe1db06b3e7780f46fa34945c0",
       "links": [
         {
           "href": "#main",
@@ -21502,6 +22294,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -21689,7 +22492,7 @@
     "shared-model-results.html": {
       "title": "One model, two chances to answer",
       "description": "Compute the beginning once; continue only when needed.",
-      "sha256": "b285924aafb0c304cf32ea7a8965b32b697771d3c2f908179c97a977700ca08f",
+      "sha256": "98cdd496be622376193182112ae5d789a616499589cf6413e789857e1ce4fb4e",
       "links": [
         {
           "href": "#main",
@@ -21787,6 +22590,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -22012,7 +22826,7 @@
     "combined-results.html": {
       "title": "Reuse instructions and group messages",
       "description": "Test two execution improvements together.",
-      "sha256": "ac07c6cb631f38203351862ca1f7c0d6032e01afdf83f826d5dd98d7711df8de",
+      "sha256": "6b01ea1e68382e04aa745103abef057ce4c93a7234a59b5ca72f21ab44713566",
       "links": [
         {
           "href": "#main",
@@ -22110,6 +22924,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -22309,7 +23134,7 @@
     "shared-qwen-results.html": {
       "title": "Check Qwen before continuing",
       "description": "Several chances to answer within one model pass.",
-      "sha256": "4bde12dc0d71f3852c421807c413159f395f6614c6669355397f08ad36f6a4bc",
+      "sha256": "1c2cadfabd644e82d64bb0706a39106b43ee6f8b5c96d210ea441d97ea9c7834",
       "links": [
         {
           "href": "#main",
@@ -22407,6 +23232,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -22620,7 +23456,7 @@
     "shared-decision-demo.html": {
       "title": "Stop after two layers, or continue",
       "description": "Run a real shared model on your device and compare it with full-depth processing.",
-      "sha256": "42c4d1d08660ab91b22315efa0fdb55fc321bd868e3fb0f600018bffc838cd63",
+      "sha256": "9c42265c465abab1b3ff0262292bc5e7cabd9dcba283c8ec6a72e693caff5b2b",
       "links": [
         {
           "href": "#main",
@@ -22718,6 +23554,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -22974,7 +23821,7 @@
     "search-next-results.html": {
       "title": "Give search a second check",
       "description": "A small model checks a shortlist; compare quality and processing on fresh queries.",
-      "sha256": "2f86cb7e864b90a6b19725f0dcd51c4d6e6db7bf21f0789cb9b49ab3fcd26a4a",
+      "sha256": "906dcd05f0e3da9e36ae320a625f5d4948cd04d7671ecb9a28124937e73962f3",
       "links": [
         {
           "href": "#main",
@@ -23072,6 +23919,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -23292,7 +24150,7 @@
     "quantization-results.html": {
       "title": "Which parts tolerate smaller numbers?",
       "description": "Locate the accuracy loss before attempting another compressed model.",
-      "sha256": "297e602cc6ccd40f7f6b083471b6bcca4d534b53176e0118458a9f32ebd532be",
+      "sha256": "0348254801dbfef424b25777efe189eba290597e6c3c51536c32d924fffe95c8",
       "links": [
         {
           "href": "#main",
@@ -23390,6 +24248,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -23581,7 +24450,7 @@
     "fresh-message-results.html": {
       "title": "Does stopping hold up on new messages?",
       "description": "Stronger training and a learned check tested on 500 unused messages.",
-      "sha256": "4cbc14702db5477c7eaf2f633cfb6274312f37aac23a4520e8a376caa7186aaf",
+      "sha256": "93a8e02d8a35024da6e35136415fc689971163d25ab8ccc1e8555df28c6a2bdf",
       "links": [
         {
           "href": "#main",
@@ -23679,6 +24548,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -23891,7 +24771,7 @@
     "visual-refusal-results.html": {
       "title": "Click, or hold the action?",
       "description": "A real-screen test that includes infeasible requests.",
-      "sha256": "f6e8c1eb8deb40dc44228f6bfbf84f128d2a9962ef3e2c3e80c362baa5269c35",
+      "sha256": "2da53adef97a856f3d4a296612676070e8c22d429654fe161ce0b4c3aa115cfd",
       "links": [
         {
           "href": "#main",
@@ -23989,6 +24869,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -24222,7 +25113,7 @@
     "method-demo.html": {
       "title": "Compare ways to decide sooner",
       "description": "Run real classifiers on your text or a public message sample.",
-      "sha256": "8795bd2a7e9674a87597183badf30e85de1b7894fa09ab7eb9ca313a11487425",
+      "sha256": "ba2d0d3630c6deb70c14c1d8421027a4b6d92fec2e94b5e59436200e432a6185",
       "links": [
         {
           "href": "#main",
@@ -24320,6 +25211,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -24763,7 +25665,7 @@
     "practical-demo.html": {
       "title": "Try a small task classifier",
       "description": "Edit the input and get a direct result from trained weights.",
-      "sha256": "c3306bb297734d982a7f706e082f9756a81b0492fc7c53c66dba82de47c64ae2",
+      "sha256": "2144fa9591b9151e4ccefcbfbde753d55781ae1dac2ce8bf9e4934747bade8c1",
       "links": [
         {
           "href": "#main",
@@ -24861,6 +25763,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -25198,7 +26111,7 @@
     "execution-demo.html": {
       "title": "Reuse work inside Qwen",
       "description": "Measure instruction caching and batching on your device.",
-      "sha256": "68975df87a8b444d3dee88c61b4558e99433909fa19e9d9b0e2bd31b5d4ecf42",
+      "sha256": "1acc88d4ba9c1655655ebdcc7fdc124e777fe3fa5c4b230edfeab63d65ac9b52",
       "links": [
         {
           "href": "#main",
@@ -25296,6 +26209,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -25622,7 +26546,7 @@
     "maze-live.html": {
       "title": "Let a trained model choose the moves",
       "description": "Run the policy, change the walls, and see whether it reaches the goal.",
-      "sha256": "7c0d149c1db78f8a67af05957dba0916b64d2760f2a923aee7ca54a8bbca1e35",
+      "sha256": "d0f5b65b86cb3bccef5fac25df272959e40ab21c1b5afb47d7788148a76f395a",
       "links": [
         {
           "href": "#main",
@@ -25720,6 +26644,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -25942,7 +26877,7 @@
     "point-demo.html": {
       "title": "Find visible text in a screenshot",
       "description": "Upload an image and get a point back, computed locally.",
-      "sha256": "894d9d88de85fd7faec5adff5020b293728e94174b170f6b57dad909edb77694",
+      "sha256": "ca1d47e9711765218c0dbb84e4e3a0c5ebb1c2a85c4b6ea94fa604d95a097880",
       "links": [
         {
           "href": "#main",
@@ -26040,6 +26975,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -26274,7 +27220,7 @@
     "rerank-demo.html": {
       "title": "Give your search a second check",
       "description": "A two-layer model scores the first 20 keyword matches.",
-      "sha256": "638ff9459846cd6de2fddc5d74f15f48439a5755e9a49d91cd5df658aca3316a",
+      "sha256": "fee939055def7c3eaa384858d748b993170a7242410c51b2f4a49ae0700778da",
       "links": [
         {
           "href": "#main",
@@ -26372,6 +27318,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -26596,7 +27553,7 @@
     "demo-directory.html": {
       "title": "Run a demo",
       "description": "Choose a task or an approach, then try it yourself.",
-      "sha256": "cc9c48fc6acc6cf7d4c8a7751a712a839835e29c0546782d4c651c53201d83ee",
+      "sha256": "e62b70055a36a47c1096eec3bc0d3aa3f0095649d5eee7b9c9ed4941c301b87b",
       "links": [
         {
           "href": "#main",
@@ -26694,6 +27651,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -27009,7 +27977,7 @@
     "preference-method-demo.html": {
       "title": "Learn more than one favorite style",
       "description": "Compare example selection and simple preference models.",
-      "sha256": "af2eb37bd8301a3e8a736fdb1053424b77e48e32408f3f260670b7e7339f0314",
+      "sha256": "88aea41aaf7d291edec738208d4e48851340ce12d7ae80e7a2cdef071e147d93",
       "links": [
         {
           "href": "#main",
@@ -27107,6 +28075,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -27309,7 +28288,7 @@
     "browser-method-results.html": {
       "title": "Recorded browser comparisons",
       "description": "Saved BERT comparisons and the standalone tiny-classifier check.",
-      "sha256": "1a64f0c75ceaa52f979762d851f3a141985f4783fee05ae9daca5c3ea82a658a",
+      "sha256": "306b654d62446e96adb6583f04a8a1c4ce2305138d6f6cd590370e9696a04235",
       "links": [
         {
           "href": "#main",
@@ -27407,6 +28386,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -27932,7 +28922,7 @@
     "browser-execution-results.html": {
       "title": "Qwen browser execution check",
       "description": "The saved four-message run for caching and batching.",
-      "sha256": "2c5bb3951b9da2b30497b01af431f62175329cc8ec21ac20e9de2d85be13092a",
+      "sha256": "61b53f6c9d50c6448be28fd8a15d639087d0b8cd9705ceb78817c2f03b6daefc",
       "links": [
         {
           "href": "#main",
@@ -28030,6 +29020,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -28272,7 +29273,7 @@
     "examples/molecules.html": {
       "title": "Molecule and drug research",
       "description": "Rank research candidates against a stated goal.",
-      "sha256": "32faa5169c0acfcb5ebfdb254cd5e1add8bcffd0e67d6830582a01dd41aaf5a3",
+      "sha256": "0e8778e8773ecdd4e04e30dad5e92fcf87cc21e4ef0d8cb225fc8937cc9fddef",
       "links": [
         {
           "href": "#main",
@@ -28370,6 +29371,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -28580,7 +29592,7 @@
     "examples/architecture.html": {
       "title": "Architecture and interiors",
       "description": "Explore layouts and rooms that fit your taste.",
-      "sha256": "de9c179581c4d1cd285d27cda8a9b530c55b4a3f88d05486d5f55bbfeaba752c",
+      "sha256": "787f58653e54bc777e27860fe6bc85ffa527a4c906470d8d2311e359488639c0",
       "links": [
         {
           "href": "#main",
@@ -28678,6 +29690,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -28887,7 +29910,7 @@
     "examples/stories.html": {
       "title": "Stories and interactive fiction",
       "description": "Learn which style of story a reader enjoys.",
-      "sha256": "29942919fe10227e3567c32f4720d9ab6cb87e1a5fbbcee84270e9d889b81fde",
+      "sha256": "68ac53eb39e1bf670a9b89eae7bd336924b6194316d3be50f12b09c3b9413cd5",
       "links": [
         {
           "href": "#main",
@@ -28985,6 +30008,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -29195,7 +30229,7 @@
     "examples/fashion.html": {
       "title": "Fashion and outfit choices",
       "description": "Find clothes that fit your style.",
-      "sha256": "2daf0afe30fff40791efa0263cb2b76ac5c332c3489cae531cd73a9affd1fab7",
+      "sha256": "432e6060504259a5e491fb4cd1bdad051044902ac2194e6e5ab4319294e555bb",
       "links": [
         {
           "href": "#main",
@@ -29293,6 +30327,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -29503,7 +30548,7 @@
     "examples/materials.html": {
       "title": "Material research",
       "description": "Choose candidates under several requirements.",
-      "sha256": "27851ff4506131872a402ca4336609651cb2f60eab00c299324572b4717957a2",
+      "sha256": "3b4e5bb7d76e69492a82b4adce7f28a5ac95ca45a723de8bc96559a4c78b0f8f",
       "links": [
         {
           "href": "#main",
@@ -29601,6 +30646,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -29811,7 +30867,7 @@
     "examples/games.html": {
       "title": "Game levels and difficulty",
       "description": "Suggest levels a player wants to play.",
-      "sha256": "868006d973094e7645283c17c372ea94265d49b40314b1e4469b00f1c4e63aca",
+      "sha256": "4e36b1395bb9968f3331cd615bc1c7f195bf9cd140cca3c9f068cfde5f41ba4f",
       "links": [
         {
           "href": "#main",
@@ -29909,6 +30965,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -30132,7 +31199,7 @@
     "examples/news.html": {
       "title": "News and content curation",
       "description": "Find useful articles in a preferred format.",
-      "sha256": "6dbf8740d55e16c7c96bff73b2c91e4719f12a49f73732e854ff60b90ada9b3f",
+      "sha256": "98e75e5918f4d3d3c6673b6394de2087bd36a17b3bb6a400008fb77b695e2749",
       "links": [
         {
           "href": "#main",
@@ -30230,6 +31297,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -30440,7 +31518,7 @@
     "examples/beauty.html": {
       "title": "Makeup and appearance previews",
       "description": "Explore a look through small visual changes.",
-      "sha256": "94201e0b51490f701b97c7f708531843e16d9df8a02380c296433c75cfa8784c",
+      "sha256": "edd28a10f03fd24e7afc842607bf298bc66b0925ec5f2e9d1bef4ff99cab0bc9",
       "links": [
         {
           "href": "#main",
@@ -30538,6 +31616,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -30747,7 +31836,7 @@
     "examples/automotive.html": {
       "title": "Automotive design",
       "description": "Explore car shapes, colours and cabins.",
-      "sha256": "47cc5e43d9e3aa7ce2a4fa01e67c4ef6b8e523209631bb5b5894531b753045b7",
+      "sha256": "9e9bf23ad23563b7007ec256a0d502a43739fc2a97146bbde1ebd4e802698b03",
       "links": [
         {
           "href": "#main",
@@ -30845,6 +31934,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -31055,7 +32155,7 @@
     "examples/genetics.html": {
       "title": "Genetics research",
       "description": "Prioritize candidates for an independent test.",
-      "sha256": "322f76575a80e7474ef25f0853a268acaea2388485c1a85557ed0a5636fc9d84",
+      "sha256": "51e6b0b8411e73dc2dfab354fb2d0f6381157c7ccdd959e3f053d2b516184b67",
       "links": [
         {
           "href": "#main",
@@ -31153,6 +32253,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -31363,7 +32474,7 @@
     "examples/models-3d.html": {
       "title": "3D assets and objects",
       "description": "Choose shapes that fit a project.",
-      "sha256": "685fe05e92b0e8906eef4ef0e40134c79fe9bc4b871099a0b3054895fe6546dc",
+      "sha256": "736034e9a5e86ba4728d4ef6a44927aec5950a40c8f8fdb4d7ac319efda8edca",
       "links": [
         {
           "href": "#main",
@@ -31461,6 +32572,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -31671,7 +32793,7 @@
     "examples/recipes.html": {
       "title": "Recipes and meal choices",
       "description": "Learn taste within the ingredients you choose.",
-      "sha256": "2096ef897c0c8837b4944d1752f07f7f9afe5fe4507c802b4c6eb01824c3e5ef",
+      "sha256": "b6a49e112d8bc3e6361be3a4983c4fbe109f8efd5365b7949707bead1d0c7271",
       "links": [
         {
           "href": "#main",
@@ -31769,6 +32891,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -31979,7 +33112,7 @@
     "examples/video.html": {
       "title": "Video edits and effects",
       "description": "Learn which cuts and visual styles work.",
-      "sha256": "8156bc20dcd3a12f24fe043801d7a86ad9e5b15af4c659a5e0e1dc4bcb8ffebc",
+      "sha256": "02276466c123e4d10396e87e9ac23f908cc3c44ce9eaf8106d5bc96b18f76608",
       "links": [
         {
           "href": "#main",
@@ -32077,6 +33210,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -32287,7 +33431,7 @@
     "examples/voice.html": {
       "title": "Voice and narration style",
       "description": "Choose a comfortable pace and delivery.",
-      "sha256": "81683660c37508870cb2112c0dbf6a55f1b32899162e489acdff94c8d7058b1a",
+      "sha256": "9cdd51b38dfaf927ad8d075f4ce7e4298d1e805cbcbf902cbacf0b38572049fb",
       "links": [
         {
           "href": "#main",
@@ -32385,6 +33529,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -32595,7 +33750,7 @@
     "examples/education.html": {
       "title": "Learning materials",
       "description": "Find explanations a learner finds useful.",
-      "sha256": "0897e64eac7ca4c1d801301266717a386864d00fdf7c0efdc09e90bc6333b3f7",
+      "sha256": "983beda9dd86f0c94baf4e74c0151abd828e8830f9d66aa0b1ccf28498a081a3",
       "links": [
         {
           "href": "#main",
@@ -32693,6 +33848,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -32903,7 +34069,7 @@
     "examples/shopping.html": {
       "title": "Product recommendations",
       "description": "Rank available products by personal taste.",
-      "sha256": "38e89aec8b2ce8fc31e379029f32145f4b7065948f0512dfe63f099db2edebbf",
+      "sha256": "e0f841640af19b5c7e2eb7bdedacf815ffbe197943164d2ab145f2c2c17db555",
       "links": [
         {
           "href": "#main",
@@ -33001,6 +34167,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -33211,7 +34388,7 @@
     "examples/proteins.html": {
       "title": "Protein research",
       "description": "Score candidates without treating scores as proof.",
-      "sha256": "e91dde63b3e2e15689525f9b00d0f6ec45503cf07184cc50501f2fb9040c8574",
+      "sha256": "17d789b8b25d750c29885186dcda9be3f4d37a2870c634fbaf2113b8aadc0543",
       "links": [
         {
           "href": "#main",
@@ -33309,6 +34486,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -33519,7 +34707,7 @@
     "examples/interfaces.html": {
       "title": "Interface and layout choices",
       "description": "Learn which layouts someone finds usable.",
-      "sha256": "1659cc2937157e67f35650fea627d23abe6cf9c54e50083ee03490d774bce113",
+      "sha256": "295b5dfa235796d39b70bba27ac4d3418861994e5a269bb68a74912a35cae119",
       "links": [
         {
           "href": "#main",
@@ -33617,6 +34805,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -33827,7 +35026,7 @@
     "examples/patient-preferences.html": {
       "title": "Patient preferences in approved options",
       "description": "Record what matters to a patient.",
-      "sha256": "05c96dddcb5c9248ae4f344b301a1e416aeb8f37614c642c49a219a235e4ffdb",
+      "sha256": "9ed0e7a5da0937353c6515bd6a1859712884daa5323ebe5eea9a08be8d615e91",
       "links": [
         {
           "href": "#main",
@@ -33925,6 +35124,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -34135,7 +35345,7 @@
     "examples/moderation.html": {
       "title": "Live chat moderation",
       "description": "Return an allow, block or review decision.",
-      "sha256": "13bdd2ec583e3a5f6836f9fe5d84e71c266a405aabc4e00e647cd2c445354eb4",
+      "sha256": "0995b45f05cac68795c1017cf58db1129f56a47d3d2c84429c10827386861823",
       "links": [
         {
           "href": "#main",
@@ -34233,6 +35443,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -34455,7 +35676,7 @@
     "examples/support.html": {
       "title": "Route customer requests",
       "description": "Send a request to the right queue.",
-      "sha256": "b98112c6d5cde3f5fbb5b3f4b7982dd78f6f2db974a91b8b8cce2fb9ec3cff7d",
+      "sha256": "f2a54e5aa68a79f7573be02b5ab60c700f9c4858e5b47cd1630a9820bc9ecc57",
       "links": [
         {
           "href": "#main",
@@ -34553,6 +35774,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -34774,7 +36006,7 @@
     "examples/redaction.html": {
       "title": "Find text to redact",
       "description": "Mark spans instead of writing a new document.",
-      "sha256": "947ff2f52865a1de0f201a7eeeeb8f986faeb046cf22a4a296b09aa8facd7511",
+      "sha256": "cab3e2e4c7b963627225ed7dc0a3d31c5bacda7f7f6968f45be03535034c6ecb",
       "links": [
         {
           "href": "#main",
@@ -34872,6 +36104,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -35070,7 +36313,7 @@
     "examples/receipts.html": {
       "title": "Choose a receipt total",
       "description": "Return the right amount from a short list.",
-      "sha256": "85191c7500a2dfc9af18652fc31feda7d4816d6bbd8692ec42e272454b47446d",
+      "sha256": "889a82059bc1de202dc819c9013f63c34ff8d416ff12132dcdd54200d4f27e73",
       "links": [
         {
           "href": "#main",
@@ -35168,6 +36411,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -35365,7 +36619,7 @@
     "examples/search.html": {
       "title": "Rank search results",
       "description": "Put useful matches near the top.",
-      "sha256": "785a86a5b4ae2c6746e31dc573b8bbd71dafd40667aeddfec34acb7b3544a48d",
+      "sha256": "ef6a7aa9615784116485c844029af195565d3056f6cbb1ffdd6a27f836a69ed8",
       "links": [
         {
           "href": "#main",
@@ -35463,6 +36717,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -35674,7 +36939,7 @@
     "examples/game-moves.html": {
       "title": "Choose a game move",
       "description": "Return a direction on each turn.",
-      "sha256": "c134df4f73ab766d4709c0ee4f8173eb0c7f9ff540c78a6a2a79d2dc69784a11",
+      "sha256": "e86581c96444aaeb0ecd734f091dca32a6ca729d1d21a463abbd098a15198370",
       "links": [
         {
           "href": "#main",
@@ -35772,6 +37037,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -35996,7 +37272,7 @@
     "examples/inbox.html": {
       "title": "Sort an inbox",
       "description": "Separate receipts, requests and newsletters.",
-      "sha256": "6f7a073fce0766a4fba599325956a41bb0e582f98ea0b2cad57b11fb31b3acf1",
+      "sha256": "5380f4146f9d51b57647b2dd776509f852b8b43e16f92a8dcfc8eb3e558bfe9e",
       "links": [
         {
           "href": "#main",
@@ -36094,6 +37370,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -36305,7 +37592,7 @@
     "examples/offline-commands.html": {
       "title": "Commands on a small device",
       "description": "Use a short path for familiar commands.",
-      "sha256": "9cd927310213f63e18d3ed568db5558ce38e934a18bc6a102210224a6f5dc8d6",
+      "sha256": "48a4a978added38abb87663ce440bf46e0489ef0752e8a053c59d71dce1d567d",
       "links": [
         {
           "href": "#main",
@@ -36403,6 +37690,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -36614,7 +37912,7 @@
     "examples/desktop-actions.html": {
       "title": "Point to an app control",
       "description": "Find a button without writing coordinates.",
-      "sha256": "30ea4bffa390e5b0838eaf8ad6109d97c6c89c806165ef3f28b145f47aa838f7",
+      "sha256": "657fc3b5895cf12d0fbf8ec39ed4ee74c9ad508ac1a17b8557c45475246062ab",
       "links": [
         {
           "href": "#main",
@@ -36712,6 +38010,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -36921,7 +38230,7 @@
     "examples/assistive-pointing.html": {
       "title": "Assistive pointing",
       "description": "Turn a requested control into a location.",
-      "sha256": "104530ffd2fa7ed8866b7deabb82422a919bf4bcfce1b14f8600e67b9e1936ca",
+      "sha256": "ac2f0fda920f227f39f4070a91667c7bdd6b56358a98083e4c6eafd3333e0cb3",
       "links": [
         {
           "href": "#main",
@@ -37019,6 +38328,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -37216,7 +38536,7 @@
     "examples/ui-testing.html": {
       "title": "Check changing interfaces",
       "description": "Locate a control after a layout changes.",
-      "sha256": "c5fce7a1a65db9e68e93b1eb29d0a9ced4d659d2d429a2b78c2924ccd399e6e7",
+      "sha256": "f419e2a574137ad26179165aa7ea2347ca46f92df3403d2131c4d1a609c39be4",
       "links": [
         {
           "href": "#main",
@@ -37314,6 +38634,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -37511,7 +38842,7 @@
     "examples/image-annotation.html": {
       "title": "Suggest an image annotation",
       "description": "Mark a starting point for a human editor.",
-      "sha256": "94f864932c6b60a948a6d648c83d574221600ef5492a45483b3768a797dfbd4d",
+      "sha256": "5ea4618c6d5bf2c922da5e54e9c75e055af780a86a20e59b55d23e6e39d85b7b",
       "links": [
         {
           "href": "#main",
@@ -37609,6 +38940,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -37807,7 +39149,7 @@
     "examples/ecg.html": {
       "title": "ECG labels without a written report",
       "description": "Return structured predictions from a heart trace.",
-      "sha256": "905b0a85cf4c887d9f3f139c7784fa765547f03586e3c99e833f36344817bae9",
+      "sha256": "57a1d1bc42664be2d8b2db14a7d9dcb50c1d83d01cfaccd4f6e363f8fdd2c0ae",
       "links": [
         {
           "href": "#main",
@@ -37905,6 +39247,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -38114,7 +39467,7 @@
     "examples/ecg-quality.html": {
       "title": "Check ECG recording quality",
       "description": "Flag an unusable trace for another recording.",
-      "sha256": "787e9fc306114d3441333fee82820be53ebd40f32062aebd08fee95dafd9e4f3",
+      "sha256": "b0419f4998c6e3e84da8cd3ff0bab3f8469171bc3ff7fbcce8465afaa2c26776",
       "links": [
         {
           "href": "#main",
@@ -38212,6 +39565,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -38410,7 +39774,7 @@
     "examples/mri-segmentation.html": {
       "title": "Mark regions in an MRI",
       "description": "Return a mask that a reviewer can inspect.",
-      "sha256": "7617453fedea52d29426e4d914f27f95e943e8144f112bb507657c5ad6f3046d",
+      "sha256": "fd83e89706519e90b8b1272e6426e37095dad57dc7907b2984feb6610eb425a9",
       "links": [
         {
           "href": "#main",
@@ -38508,6 +39872,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -38719,7 +40094,7 @@
     "examples/mri-reconstruction.html": {
       "title": "MRI reconstruction with fewer model steps",
       "description": "Study when further reconstruction stops helping.",
-      "sha256": "d36ecac54b6b5e8493104f443c2c14005e1ac9b24cec0557567386103cc410b6",
+      "sha256": "d303b389efcc6ceef532f4d3e5242ebdda0f2f8183afa6b4e24431fb885208ce",
       "links": [
         {
           "href": "#main",
@@ -38817,6 +40192,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -39002,7 +40388,7 @@
     "examples/eeg-sleep.html": {
       "title": "EEG sleep-stage labels",
       "description": "Classify recorded sleep segments directly.",
-      "sha256": "024a00d65809642fd9688c880a33934f54174671d590fce56dcc425817d8c192",
+      "sha256": "12d7734c3245383037cec20953e807a9c757c3e659f21188b019c618c02aedf1",
       "links": [
         {
           "href": "#main",
@@ -39100,6 +40486,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -39298,7 +40695,7 @@
     "examples/medical-annotation.html": {
       "title": "Medical-image landmarks and measurements",
       "description": "Suggest editable points for a specialist.",
-      "sha256": "3072d29683a8dff13b977769bb341cb092c61e061e7c11e117af59c260c2177f",
+      "sha256": "c8e4a48afa91a20244bd42569a881f999618ee8f6d9240d112acbea19a5c50c9",
       "links": [
         {
           "href": "#main",
@@ -39396,6 +40793,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -39593,7 +41001,7 @@
     "examples/model-routing.html": {
       "title": "Route between small and large models",
       "description": "Use the larger model when it adds value.",
-      "sha256": "a80abaa43aa9334c397ea6b0539fe8fc5b4ae8a0467e282d2deac6e590133cc6",
+      "sha256": "515ded99a153361780d15e0601c0dabe71a66e8bebcca8d0b6aee215f5eb500f",
       "links": [
         {
           "href": "#main",
@@ -39691,6 +41099,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -39913,7 +41332,7 @@
     "examples/faster-llm.html": {
       "title": "Get an LLM result sooner",
       "description": "Use less model work before returning an answer.",
-      "sha256": "750fb095f2ed392a2772fbf6d11c429f96fd580c4d974ce303c4b8a61906e7b7",
+      "sha256": "c737c0fbdf9b0ae3d4791c39fbdc0d98a7e87aa18620ed5ac15be78e20b8a9f0",
       "links": [
         {
           "href": "#main",
@@ -40011,6 +41430,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -40220,7 +41650,7 @@
     "examples/image-safety.html": {
       "title": "Stop an unsafe image before it finishes",
       "description": "Check during generation and cancel early.",
-      "sha256": "6a2914b2def0f48b046bcf98ec7bd65b401fb5ba2b230c47d8864a66841b5762",
+      "sha256": "8ac1853fa50ca0bc761e542e6f5ac952382852e8f9687f6ad1c17d9673861688",
       "links": [
         {
           "href": "#main",
@@ -40318,6 +41748,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -40529,7 +41970,7 @@
     "examples/image-preferences.html": {
       "title": "Stop an image that misses your taste",
       "description": "Spend rendering time on more promising ideas.",
-      "sha256": "30f1f0d27589afddf9f6824ba3e596a81a7aa5c355b87ae7a3882c8def6a402e",
+      "sha256": "202cc4ea544735973f1dc68e84592aab07011bd6b10fb5bef7f69a3e1f0f6513",
       "links": [
         {
           "href": "#main",
@@ -40627,6 +42068,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "../context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -40874,7 +42326,7 @@
     "output-results.html": {
       "title": "A decision without a written reply",
       "description": "Compare a trained classifier, direct label scores and stopping after one output token.",
-      "sha256": "64b5fe344f206a4eadc043e09e3327df626c64f6c5ab65c4cab553bfed938699",
+      "sha256": "dc41ae297337da34c21dbbb4718958f31bbd7425d4f6f23a6c7784e8cb5e4e24",
       "links": [
         {
           "href": "#main",
@@ -40972,6 +42424,17 @@
           "hidden": false,
           "kind": "page",
           "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
           "query": "",
           "fragment": ""
         },
@@ -41214,7 +42677,8 @@
         "decision-results.html",
         "depth-results.html",
         "training-results.html",
-        "moderation-benchmark.html"
+        "moderation-benchmark.html",
+        "one-step-results.html"
       ],
       "outgoing": [
         "decision-results.html",
@@ -41244,6 +42708,1186 @@
           "index.html",
           "decisions.html",
           "output-results.html"
+        ]
+      }
+    },
+    "context.html": {
+      "title": "Working past the context limit",
+      "description": "A model can only read so much text at once. Long jobs can still keep going without losing track.",
+      "sha256": "c1ed585e0a00c9b7be9eb6e83cb36fabadad653962ba7fe0783767b4749fdd38",
+      "links": [
+        {
+          "href": "#main",
+          "label": "Skip to content",
+          "zone": "utility",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": "main"
+        },
+        {
+          "href": "index.html",
+          "label": "SkinDeep RESEARCH",
+          "zone": "header",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "index.html",
+          "label": "Overview",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results.html",
+          "label": "Test results",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "preferences.html",
+          "label": "Learning what you like",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "preferences.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without text",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "coordinates.html",
+          "label": "Finding where to click",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "coordinates.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "adaptive.html",
+          "label": "Stopping early",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "demo-directory.html",
+          "label": "Live demos",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "demo-directory.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History & archive",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "about.html",
+          "label": "About",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "about.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "sitemap.html",
+          "label": "All pages",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "sitemap.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/skindeepai",
+          "label": "Source on GitHub ↗",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/skindeepai",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#comparison",
+          "label": "Full table, written tokens and what went wrong",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison"
+        },
+        {
+          "href": "context-results.html#window",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "window"
+        },
+        {
+          "href": "docs/context-window.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-window.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#cache",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "cache"
+        },
+        {
+          "href": "docs/context-prefix-cache.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-prefix-cache.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#comparison",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison"
+        },
+        {
+          "href": "docs/context-management.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#comparison",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison"
+        },
+        {
+          "href": "docs/context-management.md#files",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": "files"
+        },
+        {
+          "href": "context-results.html#cleaning",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "cleaning"
+        },
+        {
+          "href": "docs/context-cleaning.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-cleaning.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context-results.html#disk",
+          "label": "Results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "disk"
+        },
+        {
+          "href": "docs/context-on-disk.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-on-disk.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "one-step-results.html",
+          "label": "One-step decisions: results",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html#L06",
+          "label": "Can disk make up for limited video memory?",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": "L06"
+        },
+        {
+          "href": "research.html#L03",
+          "label": "Can the context be edited surgically, without plain trimming or a full summary?",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": "L03"
+        },
+        {
+          "href": "research.html#L01",
+          "label": "How fast is it, and how much quality is lost?",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": "L01"
+        },
+        {
+          "href": "research.html#L04",
+          "label": "How is this different from an updated plan file?",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": "L04"
+        },
+        {
+          "href": "research.html#L05",
+          "label": "Can a small CPU cleaner turn 32K into 100K?",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": "L05"
+        },
+        {
+          "href": "context-results.html#failures",
+          "label": "What did not work",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "failures"
+        },
+        {
+          "href": "context-results.html#limits",
+          "label": "Limits and what is not measured",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "limits"
+        },
+        {
+          "href": "docs/claims.md#longer-context",
+          "label": "Claim ledger",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/claims.md",
+          "query": "",
+          "fragment": "longer-context"
+        },
+        {
+          "href": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md",
+          "label": "Lab summary (plain words)",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md",
+          "label": "Paper review",
+          "zone": "content",
+          "collapsed": true,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "mailto:contact@skindeep.ai",
+          "label": "Contact",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "mailto:contact@skindeep.ai",
+          "query": "",
+          "fragment": ""
+        }
+      ],
+      "mode_links": [],
+      "incoming": [
+        "index.html",
+        "research.html",
+        "sitemap.html",
+        "context-results.html",
+        "one-step-results.html"
+      ],
+      "outgoing": [
+        "context-results.html",
+        "one-step-results.html",
+        "research.html"
+      ],
+      "duplicate_content_links": [
+        {
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "comparison",
+          "count": 3,
+          "labels": [
+            "Full table, written tokens and what went wrong",
+            "Results",
+            "Results"
+          ]
+        }
+      ],
+      "paths": {
+        "content": [
+          "index.html",
+          "context.html"
+        ],
+        "without_sitemap": [
+          "index.html",
+          "context.html"
+        ],
+        "visible_content": [
+          "index.html",
+          "context.html"
+        ],
+        "all_links": [
+          "index.html",
+          "context.html"
+        ]
+      }
+    },
+    "context-results.html": {
+      "title": "Longer context: test results",
+      "description": "Measured tables, failures and limits for each way of working past the context limit.",
+      "sha256": "6a27c95679593a89f76bddf3c8a17f662af681ff6223648d407e4bfc72063b03",
+      "links": [
+        {
+          "href": "#main",
+          "label": "Skip to content",
+          "zone": "utility",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context-results.html",
+          "query": "",
+          "fragment": "main"
+        },
+        {
+          "href": "index.html",
+          "label": "SkinDeep RESEARCH",
+          "zone": "header",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "index.html",
+          "label": "Overview",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results.html",
+          "label": "Test results",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "preferences.html",
+          "label": "Learning what you like",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "preferences.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without text",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "coordinates.html",
+          "label": "Finding where to click",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "coordinates.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "adaptive.html",
+          "label": "Stopping early",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "demo-directory.html",
+          "label": "Live demos",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "demo-directory.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History & archive",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "about.html",
+          "label": "About",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "about.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "sitemap.html",
+          "label": "All pages",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "sitemap.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/skindeepai",
+          "label": "Source on GitHub ↗",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/skindeepai",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Working past the context limit",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-window.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-window.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md",
+          "label": "Lab notes",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/long-context/recall-ordinary-words.log",
+          "label": "Summaries: ordinary words",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/long-context/recall-ordinary-words.log",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/long-context/recall-wall-of-codes.log",
+          "label": "Summaries: wall of codes",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/long-context/recall-wall-of-codes.log",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-prefix-cache.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-prefix-cache.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/long-context/cache-probe.log",
+          "label": "All 99 comparisons",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/long-context/cache-probe.log",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-management.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-management.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md",
+          "label": "Lab notes, call by call",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-cleaning.md",
+          "label": "Method and raw data",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-cleaning.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/context-on-disk.md",
+          "label": "The arithmetic",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/context-on-disk.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "one-step-results.html",
+          "label": "Same labels as decoding, 6.5 times faster than thinking on easy items",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "mailto:contact@skindeep.ai",
+          "label": "Contact",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "mailto:contact@skindeep.ai",
+          "query": "",
+          "fragment": ""
+        }
+      ],
+      "mode_links": [],
+      "incoming": [
+        "research.html",
+        "results.html",
+        "sitemap.html",
+        "context.html"
+      ],
+      "outgoing": [
+        "context.html",
+        "one-step-results.html"
+      ],
+      "duplicate_content_links": [],
+      "paths": {
+        "content": [
+          "index.html",
+          "context.html",
+          "context-results.html"
+        ],
+        "without_sitemap": [
+          "index.html",
+          "context.html",
+          "context-results.html"
+        ],
+        "visible_content": [
+          "index.html",
+          "context.html",
+          "context-results.html"
+        ],
+        "all_links": [
+          "index.html",
+          "context.html",
+          "context-results.html"
+        ]
+      }
+    },
+    "one-step-results.html": {
+      "title": "A label in one step",
+      "description": "For a yes/no, a choice or a label, switch thinking off and allow only the label words.",
+      "sha256": "7be22680722fb02efe2cd9dd048d1e6fbf66093eb8d4597fc903571eae22f7fe",
+      "links": [
+        {
+          "href": "#main",
+          "label": "Skip to content",
+          "zone": "utility",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "one-step-results.html",
+          "query": "",
+          "fragment": "main"
+        },
+        {
+          "href": "index.html",
+          "label": "SkinDeep RESEARCH",
+          "zone": "header",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "index.html",
+          "label": "Overview",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "index.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results.html",
+          "label": "Test results",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "preferences.html",
+          "label": "Learning what you like",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "preferences.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without text",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "coordinates.html",
+          "label": "Finding where to click",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "coordinates.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "adaptive.html",
+          "label": "Stopping early",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "adaptive.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Longer context",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "demo-directory.html",
+          "label": "Live demos",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "demo-directory.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History & archive",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "about.html",
+          "label": "About",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "about.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "sitemap.html",
+          "label": "All pages",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "sitemap.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "https://github.com/skindeepai",
+          "label": "Source on GitHub ↗",
+          "zone": "sidebar",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "https://github.com/skindeepai",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "decisions.html",
+          "label": "Decisions without a written reply",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "decisions.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "docs/one-step-decisions.md",
+          "label": "Test design and detailed evidence",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "docs/one-step-decisions.md",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "results/long-context/one-step-choice-summary.json",
+          "label": "Summary record",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "evidence",
+          "target": "results/long-context/one-step-choice-summary.json",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "output-results.html",
+          "label": "Related: reading two label scores on a small model",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "output-results.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "context.html",
+          "label": "Where this came from: longer context",
+          "zone": "content",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "context.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "history.html",
+          "label": "History",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "history.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "research.html",
+          "label": "Research FAQ",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "page",
+          "target": "research.html",
+          "query": "",
+          "fragment": ""
+        },
+        {
+          "href": "mailto:contact@skindeep.ai",
+          "label": "Contact",
+          "zone": "footer",
+          "collapsed": false,
+          "hidden": false,
+          "kind": "external",
+          "target": "mailto:contact@skindeep.ai",
+          "query": "",
+          "fragment": ""
+        }
+      ],
+      "mode_links": [],
+      "incoming": [
+        "decisions.html",
+        "results.html",
+        "sitemap.html",
+        "context.html",
+        "context-results.html"
+      ],
+      "outgoing": [
+        "context.html",
+        "decisions.html",
+        "output-results.html"
+      ],
+      "duplicate_content_links": [],
+      "paths": {
+        "content": [
+          "index.html",
+          "context.html",
+          "one-step-results.html"
+        ],
+        "without_sitemap": [
+          "index.html",
+          "context.html",
+          "one-step-results.html"
+        ],
+        "visible_content": [
+          "index.html",
+          "context.html",
+          "one-step-results.html"
+        ],
+        "all_links": [
+          "index.html",
+          "context.html",
+          "one-step-results.html"
         ]
       }
     }

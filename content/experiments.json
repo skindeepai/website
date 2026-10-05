@@ -256,10 +256,11 @@
       "results/decision-export/result.json",
       "results/decision-export/browser.json",
       "results/shared-browser/result.json",
-      "results/shared-browser/ui-lazy.json"
+      "results/shared-browser/ui-lazy.json",
+      "results/chat-output-steps/result.json"
     ],
-    "observed": "Direct labels and a matched trained-token output were tested. The Qwen browser path passed a two-message smoke. A separate two-output BERT export preserved all 100 decisions in actual browser execution. A shared two/four-layer browser model also matches every saved exit; typed input loads only its 44.5 MB adaptive graphs.",
-    "remaining": "No reliable enum-only timing advantage or general output-format superiority."
+    "observed": "Direct labels and a matched trained-token output were tested. The Qwen browser path passed a two-message smoke. A separate two-output BERT export preserved all 100 decisions in actual browser execution. A shared two/four-layer browser model also matches every saved exit; typed input loads only its 44.5 MB adaptive graphs. Two original vocabulary rows matched constrained one-token decisions on 50 reused messages with 6.6% less whole-path time.",
+    "remaining": "Returning an enum alone showed no reliable timing gain; the newer paths also differ in cache construction and generation overhead. No general output-format superiority."
   },
   {
     "id": "D02",
@@ -275,9 +276,10 @@
     "evidence": [
       "results/chat-smoke-heads/result.json",
       "results/chat600/result.json",
-      "results/chat-depth-timing/result.json"
+      "results/chat-depth-timing/result.json",
+      "results/chat-late-exit/result.json"
     ],
-    "observed": "Fixed early, middle, late and full-depth classifiers compared; all four actual stopping depths timed over three paired passes.",
+    "observed": "Fixed early, middle, late and full-depth classifiers were actually timed. Follow-up heads at 22/23/24 skip exactly the recorded blocks; the late shortcuts introduced new toxic misses.",
     "remaining": "No general layer at which arbitrary answers become ready."
   },
   {
@@ -290,7 +292,7 @@
       "Measure": "Risk versus coverage, exit-depth distribution, false early acceptance, incorrect ignores, unnecessary continuation/escalation, and final task quality. Use an oracle gate only as an explicitly labeled upper bound.",
       "Gate/artifact": "Thresholds selected on calibration data satisfy registered test limits at useful coverage. A high softmax value or two agreeing heads is not proof of correctness. Depends on D02."
     },
-    "status": "Measured pilot",
+    "status": "Measured pilot with fresh follow-up",
     "evidence": [
       "results/chat-smoke-heads/runtime.json",
       "results/compact-specialist/result.json",
@@ -299,10 +301,11 @@
       "results/chat-next-methods/continuation-timing.json",
       "results/compact-next/result.json",
       "results/compact-next/audit.json",
-      "results/compact-next/split-selection-audit.json"
+      "results/compact-next/split-selection-audit.json",
+      "results/compact-next/timing-cached.json"
     ],
-    "observed": "Actual input-dependent exits execute in Python and the browser. On 500 unused messages, the original shared BERT rule proposes 400 layer-2 exits and preserves all full-depth decisions, projecting 40% fewer blocks. Its model gets 440/500 correct. The selected distilled model gets 451/500 but increases toxic misses from 3 to 5; its learned risk check stops fewer cases than the confidence rule.",
-    "remaining": "Actual reliability beyond this eligible annotated remainder is unproven: only18 toxic cases, with wide rare-error bounds. Full-depth errors remain. No general or deployment-safety acceptance claim."
+    "observed": "Actual input-dependent exits execute in Python and the browser. On 500 unused messages, the original shared BERT rule proposes 400 layer-2 exits and preserves all full-depth decisions, projecting 40% fewer blocks. Its model gets 440/500 correct. The selected distilled model gets 451/500 but increases toxic misses from 3 to 5; its learned risk check stops fewer cases than the confidence rule. Actual execution on the first 50 fresh messages preserved decisions and reduced time by 34.7%.",
+    "remaining": "The fresh remainder had only 18 toxic messages. This preserves the reference model's errors and does not establish rare-error reliability or arbitrary-rule handling. Earlier Qwen reliability gates failed."
   },
   {
     "id": "D04",
@@ -345,8 +348,8 @@
       "results/compact-next/timing-cached-records.json",
       "results/shared-browser/browser-isolated.json"
     ],
-    "observed": "Actual layer traces and request times measured. Fixed-prefix reuse and four-message batches preserved all 100 predictions while reducing own paired workload times by 37.9% and 9.7%; every message still uses all 24 layers. Combined prefix reuse+batch4 reduced its paired50-message workload by42.9%, preserving all decisions; all24 layers execute. Original shared BERT saved 34.7% in three actual CPU passes on the first50 fresh messages, preserving predictions and layer traces; a separate consumed50 browser test saved36.4% with real shared-state continuation. Loading is excluded and separately reported.",
-    "remaining": "Independent hardware, cold starts, live arrival queues and broader quality replication remain untested."
+    "observed": "Actual layer traces and request times measured. Fixed-prefix reuse and four-message batches preserved all 100 predictions while reducing own paired workload times by 37.9% and 9.7%; every message still uses all 24 layers. Combined prefix reuse plus batches of four reduced its paired 50-message workload by 42.9%, preserving all decisions; all 24 layers execute. Original shared BERT saved 34.7% in three actual CPU passes on the first 50 fresh messages, preserving predictions and layer traces; a separate consumed 50 browser test saved 36.4% with real shared-state continuation. Loading is excluded and separately reported.",
+    "remaining": "These are warm CPU workload measurements, not live-response latency, independent-hardware replication or accepted moderation quality."
   },
   {
     "id": "D06",
@@ -424,7 +427,7 @@
       "Test": "Held-out websites/apps, small targets, repeated icons, multiple acceptable targets, overlays, disabled controls, absent targets, zoom, viewport changes, crops, padding/letterboxing, and device pixel ratios. Document screenshot-pixel versus CSS-pixel coordinates and every resize transform. Test matched screenshots with different requested targets.",
       "Measure/gate": "Target hit rate and wrong-click/abstention rates by slice, position-mapping error, and calibration. An average coordinate between two valid targets counts as a miss if it is not itself valid. Choose a valid point inside a selected region. Depends on C01."
     },
-    "status": "Measured pilot",
+    "status": "Measured pilot with harder follow-up",
     "evidence": [
       "results/screenspot/result.json",
       "results/coordinate-abstention-smoke/result.json",
@@ -433,7 +436,7 @@
       "results/visual-next/protocol.json"
     ],
     "observed": "Earlier ScreenSpot region selection found 25/30 present targets. On a fresh OSWorld-G stress test, it found 8/25 present targets. A frozen confidence cutoff withheld all 25 author-labelled infeasible requests, but allowed only 4 present requests: 2 correct and 2 wrong. Predicted-point cropping improved 2/10 to 3/10 with another complete model pass.",
-    "remaining": "Useful click coverage and reliable accepted actions remain unresolved. The new domain test does not establish strict application-family disjointness or literal missing-control detection; infeasible requests can include impossible actions on present controls."
+    "remaining": "Useful click coverage and reliable accepted actions remain unresolved. A cutoff returns uncertainty, not learned absent-target recognition; infeasible requests can include impossible actions on present controls."
   },
   {
     "id": "C03",
@@ -493,5 +496,110 @@
     ],
     "observed": "Separate implementation and published runtime replayed saved predictions and exits.",
     "remaining": "No second-hardware replication, cross-model transfer or full cost study."
+  },
+  {
+    "id": "L01",
+    "title": "Open the whole context window exactly",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "The model's full window can be served on two cards with a 16-bit cache, and the model can use all of it.",
+      "Test": "Prompts of 8K to 250K tokens; measure read speed, wait for the first word (cold and cached) and write speed; compare drafting on and off. Recall: 720 buried codes in ordinary text and in a wall of look-alike records, asked from every third of the context. ([Plan and results](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md))",
+      "Measure": "Exact answers versus no drafting, codes right by length and position, invented values, speeds.",
+      "Gate/artifact": "Report the length up to which look-ups stay exact separately from the length that opens. Single-server first looks are not package numbers."
+    },
+    "status": "Measured pilot",
+    "evidence": [
+      "results/long-context/result.json",
+      "results/long-context/recall-ordinary-words.log",
+      "results/long-context/recall-wall-of-codes.log"
+    ],
+    "observed": "The full 262,144-token window opens on two cards with a 16-bit cache. Read speed falls from 3,280 tokens a second at 8K to 1,550 at 250K and write speed from 127 to 26. Drafting gave exactly the no-drafting answer at every length. Of 720 buried codes, every one was right at 60K; from 120K to 250K about 1 look-up in 40 returned a look-alike neighbour. No value was invented and no region of the context was lost.",
+    "remaining": "Single-server first looks on one machine, not package numbers. The window that opens is larger than the window that is look-up exact (about 60K in the hardest test)."
+  },
+  {
+    "id": "L02",
+    "title": "Reuse an unchanged context exactly",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "A prefix cache can skip re-reading unchanged text while giving exactly the answer a cold read gives.",
+      "Test": "Store only state made while reading a prompt, in fixed 832-token pieces, with periodic kept states for mid-context edits. Compare against a server without the cache on repeats, appends, edits and second and third turns, drafting on. ([Plan and results](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md), [reuse rules](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md))",
+      "Measure": "Identical token ids, cache hits, wait for the first word, cold-read cost, memory per kept state.",
+      "Gate/artifact": "Every compared case identical. Several users, the one-card server and a scores-level comparison are separate, later tests."
+    },
+    "status": "Measured pilot",
+    "evidence": [
+      "results/long-context/cache-probe.log",
+      "results/long-context/result.json"
+    ],
+    "observed": "An exact prefix cache that keeps only state made while reading gave the uncached answer in 99 of 99 cases with drafting on, including second and third turns. A question over a cached 200K context starts in 2.0 s instead of 114 s; an edit in the middle of a 30K prompt resumes from the last kept state. A cold read is 14-27% slower.",
+    "remaining": "One user; token ids compared, not scores; prompts above 30K tested only by a cold repeat at 120K; the one-card server untested."
+  },
+  {
+    "id": "L03",
+    "title": "Let the model edit its own context",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "A model that edits its own transcript, as in \"Context Language Models\" (arXiv 2609.37725), can run past its budget without losing needed information.",
+      "Test": "A stream of counter updates with overwrites and deletes that cannot be fetched twice; compare keeping everything, the paper's self-editing agent, summarising at 75% of a 32K budget, and an improved agent that never rolls back delivered data. Then a stream larger than the window. ([Comparison notes](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md), [paper review](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md))",
+      "Measure": "Values right of 24, time, tokens written, most context held, and the cause of every loss.",
+      "Gate/artifact": "Losses are traced to a cause. Two seeds within one value of keeping everything, with no delivered item lost, before an improved agent is called equal."
+    },
+    "status": "Measured pilot, one seed; longer runs in progress",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "On a 121,000-token stream of counter updates, keeping everything in the window got 24 of 24 in 26 minutes; summarising at 75% of a 32K budget got 24 of 24 in 41 minutes; the paper’s self-editing agent got 19 of 24 in 64 minutes. All five losses were batches its own rollback-and-retry removed after delivery; the model’s own edits lost nothing.",
+    "remaining": "One task family and one seed. An improved agent and a stream larger than the window (480K) are running. Removed text is gone unless it is saved somewhere."
+  },
+  {
+    "id": "L04",
+    "title": "Keep the working state outside the context",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "Letting the model keep its data in files keeps the context small with no loss, as a plan file does for a human-run project.",
+      "Test": "The same task with files allowed, with and without self-editing, at a 32K budget; then a stream larger than the window.",
+      "Measure": "As L03.",
+      "Gate/artifact": "All values right with a context well under the budget. Name the cases this cannot cover: work where the model itself must understand raw text."
+    },
+    "status": "Measured pilot, one seed; longer run in progress",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "With files allowed, the model kept its data on disk and got 24 of 24 in 1.9 minutes, holding at most 8.2K (self-editing) and 8.9K (no management) tokens of context: 14 to 22 times faster than keeping everything or summarising.",
+    "remaining": "One task family and one seed; the 480K stream with files allowed is running. Works when code or search does the reading; text the model must itself understand still has to pass through the card."
+  },
+  {
+    "id": "L05",
+    "title": "Clean the context on the CPU without loss",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "A small CPU-side cleaner or classifier can make a fixed window hold much more.",
+      "Test": "Apply no-loss rules (duplicate outputs, repeated lines, whitespace and terminal noise), moving large outputs to disk, and dropping earlier thinking to 5.0M tokens of real agent sessions and to the model's own runs. ([Census](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-hygiene-census.md))",
+      "Measure": "Share of context freed per rule and combined; how often moved text was needed later.",
+      "Gate/artifact": "Report the effective window multiplier. Lossy rules are reported separately from no-loss rules."
+    },
+    "status": "Measured census",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "On 5.0M tokens of real agent sessions, strict no-loss cleaning freed 1.8% and moving large tool outputs to disk 7.5% (about one in three was read back later). Re-sent earlier thinking is about 10% of a typical call and up to 56%. A 32K window holds about 33K tokens’ worth after no-loss cleaning.",
+    "remaining": "Blanket dropping of earlier thinking left one run stuck for 2.6 hours with no answer; it is safe only when the working state lives elsewhere."
+  },
+  {
+    "id": "L06",
+    "title": "Keep the model's cache on disk",
+    "track": "context",
+    "fields": {
+      "Hypothesis": "Disk can stand in for video memory, either by streaming the cache during writing or by parking a whole conversation's cache between sessions.",
+      "Test": "Not built. Estimate from the measured cache size per token, drive read speed and upload speed to the card; build the park-and-restore path only after the exact cache passes several-user tests.",
+      "Measure": "Write speed and prompt-read time with a streamed cache; restore time and byte-for-byte identity for a parked cache.",
+      "Gate/artifact": "Label every number as an estimate until a build is measured."
+    },
+    "status": "Estimated, not built",
+    "evidence": [
+      "results/long-context/result.json"
+    ],
+    "observed": "The cache is exactly 64 KiB per token, about 13 GB for 200K tokens. With a 12.7 GB/s drive (measured) and 9-16 GB/s uploads to the card, streaming it on every written token would give roughly 3-4 tokens a second against about 35 in video memory.",
+    "remaining": "Nothing built. Parking and restoring a whole conversation’s cache is designed, not built or measured."
   }
 ]

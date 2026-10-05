@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def update(pages):
     rows=json.loads((ROOT/'content/research-faq.json').read_text(encoding='utf-8'))
     identifiers=[identifier for row in rows for identifier in row['ids']]
-    assert len(identifiers)==29 and len(set(identifiers))==29
+    assert len(identifiers)==35 and len(set(identifiers))==35
     body='';group=None
     for index,row in enumerate(rows):
         if row['group']!=group:
@@ -25,7 +25,7 @@ def update(pages):
     for page in pages.values():
         def replace(match):
             label=match.group(1)
-            if 'protocol' in label.lower() or re.search(r'[PDCX]\d\d',label):
+            if 'protocol' in label.lower() or re.search(r'[PDCXL]\d\d',label):
                 return '<a href="@/EXPERIMENTS.md">Technical study protocols</a>'
             return '<a href="@/research.html">Research FAQ</a>'
         page['body']=re.sub(r'<a href="@/research.html">([^<]+)</a>',replace,page.get('body',''))

@@ -7,7 +7,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 NAV = [
     ('The lab', [('index.html', 'Overview'), ('research.html', 'Research FAQ'), ('results.html', 'Test results')]),
-    ('Topics', [('preferences.html', 'Learning what you like'), ('decisions.html', 'Decisions without text'), ('coordinates.html', 'Finding where to click'), ('adaptive.html', 'Stopping early')]),
+    ('Topics', [('preferences.html', 'Learning what you like'), ('decisions.html', 'Decisions without text'), ('coordinates.html', 'Finding where to click'), ('adaptive.html', 'Stopping early'), ('context.html', 'Longer context')]),
     ('Explore', [('demo-directory.html', 'Live demos'), ('history.html', 'History & archive'), ('about.html', 'About')])
 ]
 

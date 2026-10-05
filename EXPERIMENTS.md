@@ -316,7 +316,71 @@ Every result should contain the run ID, code commit plus dirty-diff identity if 
 
 **Measure/gate:** Reproduced quality/cost curves, head portability, regression rate, adaptation expense, and documented failure boundaries. Publish hardware/model-specific results instead of a blanket claim. Depends on whichever tracks produce promising results.
 
-## 6. Execution order and stop conditions
+## 6. Longer context and long-running agents
+
+Added 2026-10-05. These protocols run on Qwen3.8-27B (FP8 weights, 16-bit cache) on two Intel Arc Pro B70 cards. Each was written down before its run in the public lab notebook; the links point to those notes. Measured results are on [context-results.html](context-results.html); evidence notes are under `docs/context-*.md`. Nothing here is compressed or approximated: a change that alters the model's output is reported as lossy, not adopted.
+
+### L01 — Open the whole context window exactly
+
+**Hypothesis:** The model's full window can be served on two cards with a 16-bit cache, and the model can use all of it.
+
+**Test:** Prompts of 8K to 250K tokens; measure read speed, wait for the first word (cold and cached) and write speed; compare drafting on and off. Recall: 720 buried codes in ordinary text and in a wall of look-alike records, asked from every third of the context. ([Plan and results](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md))
+
+**Measure:** Exact answers versus no drafting, codes right by length and position, invented values, speeds.
+
+**Gate/artifact:** Report the length up to which look-ups stay exact separately from the length that opens. Single-server first looks are not package numbers.
+
+### L02 — Reuse an unchanged context exactly
+
+**Hypothesis:** A prefix cache can skip re-reading unchanged text while giving exactly the answer a cold read gives.
+
+**Test:** Store only state made while reading a prompt, in fixed 832-token pieces, with periodic kept states for mid-context edits. Compare against a server without the cache on repeats, appends, edits and second and third turns, drafting on. ([Plan and results](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md), [reuse rules](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md))
+
+**Measure:** Identical token ids, cache hits, wait for the first word, cold-read cost, memory per kept state.
+
+**Gate/artifact:** Every compared case identical. Several users, the one-card server and a scores-level comparison are separate, later tests.
+
+### L03 — Let the model edit its own context
+
+**Hypothesis:** A model that edits its own transcript, as in "Context Language Models" (arXiv 2609.37725), can run past its budget without losing needed information.
+
+**Test:** A stream of counter updates with overwrites and deletes that cannot be fetched twice; compare keeping everything, the paper's self-editing agent, summarising at 75% of a 32K budget, and an improved agent that never rolls back delivered data. Then a stream larger than the window. ([Comparison notes](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md), [paper review](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md))
+
+**Measure:** Values right of 24, time, tokens written, most context held, and the cause of every loss.
+
+**Gate/artifact:** Losses are traced to a cause. Two seeds within one value of keeping everything, with no delivered item lost, before an improved agent is called equal.
+
+### L04 — Keep the working state outside the context
+
+**Hypothesis:** Letting the model keep its data in files keeps the context small with no loss, as a plan file does for a human-run project.
+
+**Test:** The same task with files allowed, with and without self-editing, at a 32K budget; then a stream larger than the window.
+
+**Measure:** As L03.
+
+**Gate/artifact:** All values right with a context well under the budget. Name the cases this cannot cover: work where the model itself must understand raw text.
+
+### L05 — Clean the context on the CPU without loss
+
+**Hypothesis:** A small CPU-side cleaner or classifier can make a fixed window hold much more.
+
+**Test:** Apply no-loss rules (duplicate outputs, repeated lines, whitespace and terminal noise), moving large outputs to disk, and dropping earlier thinking to 5.0M tokens of real agent sessions and to the model's own runs. ([Census](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-hygiene-census.md))
+
+**Measure:** Share of context freed per rule and combined; how often moved text was needed later.
+
+**Gate/artifact:** Report the effective window multiplier. Lossy rules are reported separately from no-loss rules.
+
+### L06 — Keep the model's cache on disk
+
+**Hypothesis:** Disk can stand in for video memory, either by streaming the cache during writing or by parking a whole conversation's cache between sessions.
+
+**Test:** Not built. Estimate from the measured cache size per token, drive read speed and upload speed to the card; build the park-and-restore path only after the exact cache passes several-user tests.
+
+**Measure:** Write speed and prompt-read time with a streamed cache; restore time and byte-for-byte identity for a parked cache.
+
+**Gate/artifact:** Label every number as an estimate until a build is measured.
+
+## 7. Execution order and stop conditions
 
 1. **Local correctness:** P01, claim ledger, documentation corrections, and reference setup. No model downloads are needed.
 2. **Cheap learning evidence:** P02–P04 plus P06 synthetic cases. Establish whether the existing preference story holds and where it fails.
@@ -329,7 +393,7 @@ Before a large training run, use the pilot to estimate memory, elapsed time, and
 
 Further ideas from the archived future-explorations page can be mapped into these experiments: Bayesian/evolutionary search into P05/P06; caching/batching into P08/D05/D07; collaborative preference initialization into P09/P11; explanation of preference edits into P06; learned inverse proposals into P05. Each requires a matched-budget baseline and a separate ablation before receiving its own public claim.
 
-## 7. Primary references and provenance
+## 8. Primary references and provenance
 
 The shared conversation motivates dynamic-context handling, direct outputs, and hardware-aware cascades. Its performance/market assertions are hypotheses to verify, not benchmark evidence: [Steve's shared discussion](https://chatgpt.com/share/6aa02459-99bc-83e9-bc85-a8c2874a0558).
 
