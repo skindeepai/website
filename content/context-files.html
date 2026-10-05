@@ -1,18 +1,14 @@
-<p><strong>The big saving came from doing less work inside the model.</strong> Files let code keep the ledger up to date while the model worked with a short conversation. There was no need to reread or regenerate every record on every turn.</p>
-<figure class="ctx-flow">
-  <div><span class="ctx-label">Input</span><strong>121K tokens</strong><p>Counter updates, overwritten values, deletions and irrelevant memos.</p></div><span class="ctx-arrow" aria-hidden="true">→</span>
-  <div><span class="ctx-label">Tools and files</span><strong>Current state</strong><p>Code applies updates and keeps the useful records.</p></div><span class="ctx-arrow" aria-hidden="true">→</span>
-  <div><span class="ctx-label">Answer</span><strong>24 / 24 correct</strong><p>About 1.9 minutes; under 9K active context.</p></div>
-  <figcaption>A synthetic running-ledger task, one seed. The model used a shell; the numerical bookkeeping was done by code.</figcaption>
-</figure>
-<h2>Does writing to disk slow decoding?</h2>
-<p>A file operation takes time, but it is a tool action between model calls. The model does not read every saved file for every output token. Its decode speed depends on the active context and the serving system, not simply on the size of the archive.</p>
-<p>The trial measured the whole task, including tool use. It did <strong>not</strong> isolate the cost of writing a file or prove that disk access is free. The total was much lower: about 1.9 minutes with files versus 26 minutes with the large context and 41 with periodic summaries, all with 24 correct answers.</p>
-<p>Generation fell from 89K tokens in the large-window run and 211K in the summary run to about 7–8K with files. Fewer generated tokens and a shorter active context both help; the task timings do not separate their individual contributions.</p>
-<h2>Is anything lost?</h2>
-<p>Saving the original text intact preserves those bytes. It does not guarantee that the model will find the right record, apply updates correctly or remember to search. Keeping only a table of current totals also discards the history unless that history is saved separately.</p>
-<p>On this task, the current table was enough. For a question about why a value changed, or an exact quotation from an old document, the original records may be essential.</p>
-<details id="saving"><summary>A real failure: saving only half a batch</summary><p>In the earlier key-value comparison, all 12 trials moved data into files. Some used a shell pipeline that saved and displayed a batch at the same time. Stopping the display early also stopped the saving process, leaving truncated files. The resulting scores measured a file-saving failure, not a difference between context policies.</p><p>The practical lesson is to save the complete record first and preview it afterward. Preserve the original when later questions may need it. <a href="{{NOTE_SELF_EDITING}}">Read the original trial analysis</a>.</p></details>
-<h2>When is this useful?</h2>
-<p>Logs, source trees, tables and document collections are good candidates when a tool can locate or compute the relevant information. Comparing themes across many documents may require reading more passages and several model calls. Files supply an archive, not simultaneous understanding of everything in it.</p>
-<p class="next-links"><a href="@/context-clm.html">How this differs from editing the conversation</a> · <a href="@/context-memory.html">Text files versus numerical GPU cache</a> · <a href="@/context-results.html#comparison">Measured comparison</a></p>
+<p><strong>Keep the records outside the conversation and load what matters.</strong> Code or search can find a relevant passage, update a total or check a file without asking the model to reread the whole archive.</p>
+<figure class="ctx-illustration"><img src="@/images/context-records-and-workspace.png" width="1942" height="809" alt="A shelf holds many records, while an arrow brings a few selected excerpts to a small working area." decoding="async"><figcaption>A large archive can support a small working context.</figcaption></figure>
+<h2>What changed in the ledger test?</h2>
+<p>The model processed a long stream of updates, then answered 24 questions about the final totals. With files, both agents answered all 24 in about 1.9 minutes and kept active context below 9K tokens.</p>
+{{TASK_CHART}}
+<p>Files cut the amount of text generated to about 7–8K tokens, versus 89K with the large window and 211K with summaries. Code kept the totals; the model did much less reading and writing.</p>
+<h2>Does writing a file slow decoding?</h2>
+<p>A file operation takes time between model calls. It does not make the model read the entire archive for every new output token. The smaller active context can also make generation faster.</p>
+<p>The test measured total task time. It did not isolate file-write overhead or show that disk access is free. <a href="@/context-memory.html">Streaming the model’s numerical cache from disk</a> is a different operation.</p>
+<h2>What should be saved?</h2>
+<p>A table of current totals was enough for this task. An exact quotation or a question about an old change may need the original records. Save those too when later questions could depend on them.</p>
+<p>Saving a record preserves its bytes; finding the right passage and using it correctly still matter.</p>
+<details id="saving"><summary>A failure to avoid: saving only part of a record</summary><p>In the earlier key-value trials, some shell pipelines saved and displayed a batch at the same time. Stopping the display early also stopped the save, leaving truncated files. Save the complete record first and preview it afterward.</p><p><a href="{{NOTE_SELF_EDITING}}">Original failure analysis</a></p></details>
+<p class="next-links"><a href="@/context-clm.html">How self-editing differs</a> · <a href="@/context-results.html#comparison">Full results and test setup</a></p>

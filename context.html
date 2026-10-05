@@ -1,39 +1,32 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Working past the context limit — SkinDeep Research</title><meta name="description" content="What long-context experiments taught us about files, memory and speed.">
+<title>Working past the context limit — SkinDeep Research</title><meta name="description" content="Which ways of managing an AI’s memory actually helped?">
 <link rel="canonical" href="https://skindeep.ai/context.html">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/context.html">
-<meta property="og:title" content="Working past the context limit — SkinDeep Research"><meta property="og:description" content="What long-context experiments taught us about files, memory and speed.">
+<meta property="og:title" content="Working past the context limit — SkinDeep Research"><meta property="og:description" content="Which ways of managing an AI’s memory actually helped?">
 <meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Working past the context limit — SkinDeep Research"><meta name="twitter:description" content="What long-context experiments taught us about files, memory and speed."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Working past the context limit — SkinDeep Research"><meta name="twitter:description" content="Which ways of managing an AI’s memory actually helped?"><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
 
 <link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
 </head><body class="lab-page ">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a aria-current="page" href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
-<main class="lab-main" id="main" tabindex="-1"><p class="page-status">October 5, 2026 research</p>
-<h1>Working past the context limit</h1><p class="page-lead">What long-context experiments taught us about files, memory and speed.</p><p><strong>A small working context can handle a much longer job.</strong> The useful trick is to keep records in files, bring back what matters, and preserve the current state. Saving a file does not give the GPU unlimited working memory.</p>
-<figure class="ctx-flow" aria-label="External records and the model's working context">
-  <div><span class="ctx-label">On disk</span><strong>The records</strong><p>Documents, logs and saved state.</p></div>
-  <span class="ctx-arrow" aria-hidden="true">↔</span>
-  <div><span class="ctx-label">In the model</span><strong>What matters now</strong><p>The question, relevant excerpts and next action.</p></div>
-  <figcaption>Search or code connects the two. Only the text sent to the model occupies its active context.</figcaption>
-</figure>
-<h2>Three things we learned</h2>
-<div class="ctx-findings">
-  <section><strong>1.9 minutes</strong><h3>A long task with a small context</h3><p>With files allowed, the model answered all 24 questions about a 121K-token stream. Its active context stayed under 9K tokens.</p><a href="context-files.html">How files helped</a></section>
-  <section><strong>About 2 seconds</strong><h3>A faster start on repeat questions</h3><p>A question over a cached 200K-token document started in about 2 seconds. A separate cold read took 114 seconds. Caching saves rereading.</p><a href="context-cache.html">What caching speeds up</a></section>
-  <section><strong>Length still costs</strong><h3>Writing slows as context grows</h3><p>Observed output speed was about 127 tokens/s near 8K context and 27 tokens/s near 250K. A cache does not remove that cost.</p><a href="context-results.html#window">See the measurements</a></section>
+<main class="lab-main" id="main" tabindex="-1">
+<h1>Working past the context limit</h1><p class="page-lead">Which ways of managing an AI’s memory actually helped?</p><div class="ctx-page"><p>How can an AI finish a long job when its working memory is limited? We tested a stream of counter updates, like transactions in a ledger, then asked for <strong>24 final totals</strong>.</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Long-task approaches and results"><table><thead><tr><th scope="col">Approach</th><th scope="col">Correct</th><th scope="col">Time</th></tr></thead><tbody><tr><th scope="row"><a href="context-results.html#comparison">Large window</a></th><td>24/24</td><td>26 min</td></tr><tr><th scope="row"><a id="approach-self-editing" href="context-clm.html">Summaries</a></th><td>24/24</td><td>41 min</td></tr><tr><th scope="row"><a href="context-clm.html">Self-editing (CLM)</a></th><td>19/24</td><td>64 min</td></tr><tr><th scope="row"><a id="approach-files" href="context-files.html">Files + plain agent</a></th><td>24/24</td><td>1.9 min</td></tr><tr><th scope="row"><a href="context-files.html">Files + self-editing</a></th><td>24/24</td><td>1.9 min</td></tr><tr><th scope="row"><a href="context-clm.html#thinking">Remove old thinking</a></th><td>No answer</td><td>stopped at 2.6 h</td></tr></tbody></table></div>
+<p>Files let the model keep a small working context while code maintained the totals. Both file-using approaches finished in <strong>1.9 minutes with all 24 answers right</strong>.</p>
+<p class="ctx-table-note">The stream contained 121K tokens; the file-using runs held under 9K at once. The original self-editing run lost five delivered batches. <a href="context-results.html#comparison">Full comparison and test details</a>.</p>
+<h2>Other ways to handle more context</h2>
+<div class="table-scroll ctx-table ctx-summary-table ctx-other-table" tabindex="0" role="region" aria-label="Other context approaches and their findings"><table><thead><tr><th scope="col">Approach</th><th scope="col">Result</th></tr></thead><tbody><tr><th scope="row"><a id="approach-cache" href="context-cache.html">Prefix caching</a></th><td>Repeated 30K prompt: first token in 0.8 s instead of 11.4 s. Standard-check writing speed stayed near 89 tokens/s.</td></tr><tr><th scope="row"><a id="approach-window" href="context-results.html#window">Bigger active context</a></th><td>Observed writing speed: about 127 tokens/s at 8K, versus 27 at 250K, in separate prompt tests.</td></tr><tr><th scope="row"><a id="approach-cleaning" href="context-clm.html#cleaning">CPU text cleanup</a></th><td>1.83% fewer tokens with conservative cleanup.</td></tr><tr><th scope="row"><a id="approach-disk" href="context-memory.html">Active cache on disk</a></th><td>Not benchmarked. The 200K-token attention cache alone needs about 12.2 GiB.</td></tr></tbody></table></div>
+<h2>The practical difference</h2>
+<p><strong>Files store the records. Active context is what the model can use right now.</strong> Keeping records outside the conversation can extend a job. It does not give the GPU unlimited working memory.</p>
+<ul class="ctx-read-next">
+  <li><a href="context-methods.html">Compare the approaches</a></li>
+  <li><a href="context-memory.html">Can disk replace missing GPU memory?</a></li>
+  <li><a href="context-questions.html">Common questions, in plain language</a></li>
+  <li><a id="approach-decisions" href="context-results.html">All measurements and original research</a></li>
+</ul>
 </div>
-<p class="small">October 5, 2026 · Qwen3.8-27B on two Intel Arc Pro B70 GPUs. The ledger comparison used one task and one seed; the speed examples come from separate prompt tests.</p>
-<h2>Start with your question</h2>
-<div class="topic-links">
-  <a href="context-memory.html"><span><strong>Can disk replace missing GPU memory?</strong>Why a few spare kilobytes cannot provide a full 200K-token active window.</span></a>
-  <a href="context-methods.html"><span><strong>Which approaches can keep going?</strong>Compare files, self-editing, summaries, bigger windows and caches.</span></a>
-  <a href="context-questions.html"><span><strong>Common questions, in plain language</strong>Context versus memory, decode speed, accuracy and what “unlimited” means.</span></a>
-</div>
-<p class="next-links"><a href="context-results.html">Detailed results and original research →</a></p>
-<details><summary>Go directly to an approach</summary><ul class="ctx-source-list"><li id="approach-window"><a href="context-results.html#window">The full window</a></li><li id="approach-cache"><a href="context-cache.html">Exact prefix caching</a></li><li id="approach-self-editing"><a href="context-clm.html">Self-editing context</a></li><li id="approach-files"><a href="context-files.html">Files and retrieval</a></li><li id="approach-cleaning"><a href="context-clm.html#cleaning">CPU cleanup</a></li><li id="approach-disk"><a href="context-memory.html">Cache on disk</a></li><li id="approach-decisions"><a href="one-step-results.html">One-step decisions</a></li></ul></details>
 <footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

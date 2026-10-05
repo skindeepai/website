@@ -24,6 +24,12 @@ def section(pages, name, ident, html):
     pages[name]['body'] = body + '<section id="' + ident + '">' + html + '</section>'
 
 
+def chart_image(name, alt, caption, height):
+    return ('<figure class="ctx-plot"><picture><source media="(max-width:600px)" srcset="images/' + name + '-mobile.png">'
+            '<img src="@/images/' + name + '.png" width="1548" height="' + str(height) + '" loading="lazy" decoding="async" alt="' + escape(alt, quote=True)
+            + '"></picture><figcaption>' + caption + '</figcaption></figure>')
+
+
 def update(pages):
     d = json.loads((ROOT / DATA).read_text(encoding='utf-8'))
     base = d['lab']
@@ -32,13 +38,36 @@ def update(pages):
     c = d['cache']
     measured = [r for r in d['comparison']['rows'] if r['status'] == 'measured']
     decode = d['window']['decode_rows']
+    overview_labels = {
+        'keep': ('Large window', 'context-results.html#comparison'),
+        'paper': ('Self-editing (CLM)', 'context-clm.html'),
+        'summary': ('Summaries', 'context-clm.html'),
+        'files-edit': ('Files + self-editing', 'context-files.html'),
+        'files-plain': ('Files + plain agent', 'context-files.html'),
+        'no-thinking': ('Remove old thinking', 'context-clm.html#thinking')}
+    overview_order = ['keep', 'summary', 'paper', 'files-plain', 'files-edit', 'no-thinking']
+    by_id = {r['id']: r for r in measured}
+    overview = table(['Approach', 'Correct', 'Time'], [[overview_labels[key][0],
+        by_id[key]['right'] + '/24' if by_id[key]['right'].isdigit() else 'No answer', by_id[key]['time']]
+        for key in overview_order], 'Long-task approaches and results', 'ctx-summary-table')
+    for label, path in overview_labels.values():
+        overview = overview.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
+    other = table(['Approach', 'Result'], [
+        ['Prefix caching', 'Repeated 30K prompt: first token in 0.8 s instead of 11.4 s. Standard-check writing speed stayed near 89 tokens/s.'],
+        ['Bigger active context', 'Observed writing speed: about 127 tokens/s at 8K, versus ' + str(round(decode[-1]['tokens_per_second'])) + ' at 250K, in separate prompt tests.'],
+        ['CPU text cleanup', '1.83% fewer tokens with conservative cleanup.'],
+        ['Active cache on disk', 'Not benchmarked. The 200K-token attention cache alone needs about 12.2 GiB.']],
+        'Other context approaches and their findings', 'ctx-summary-table ctx-other-table')
+    for label, path in [('Prefix caching', 'context-cache.html'), ('Bigger active context', 'context-results.html#window'),
+                        ('CPU text cleanup', 'context-clm.html#cleaning'), ('Active cache on disk', 'context-memory.html')]:
+        other = other.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     cache_wait = table(['Prompt or edit', 'First token without reuse', 'First token with reuse'], [
         ['Repeated 30K prompt', c['repeat_30k'][0], c['repeat_30k'][1]],
         ['Middle edit in 30K, first request', c['edit_30k_first'][0], c['edit_30k_first'][1]],
         ['Same edit, repeated', c['edit_30k_first'][0], c['edit_30k_again']],
         ['Question over 200K (separate probes)', c['cached_200k'][0], c['cached_200k'][1]]], 'Wait for the first output token')
-    cache_decode = table(['Standard 12-prompt check', 'First-pass output rate', 'Second-pass output rate', 'Reference answers matched'],
-                         [[r['configuration'], f'{r["first_tok_s"]:.1f} tokens/s', f'{r["second_tok_s"]:.1f} tokens/s', '12/12 on each pass'] for r in c['decode_gate']],
+    cache_decode = table(['Server', 'First pass', 'Repeat pass', 'Exact per pass'],
+                         [['Cache on' if i else 'Cache off', f'{r["first_tok_s"]:.1f} tokens/s', f'{r["second_tok_s"]:.1f} tokens/s', '12/12'] for i, r in enumerate(c['decode_gate'])],
                          'Decode rate with and without prefix caching')
     memory = d['disk_estimate']
     transfer = table(['Assumed sustained storage read rate', 'Time to move the 200K cache once'],
@@ -50,25 +79,22 @@ def update(pages):
                              [[r['strategy'], r['right'], r['time']] for r in measured if r['id'] in ['keep', 'summary', 'files-edit', 'files-plain']],
                              'Equal-score strategies on the same ledger')
     method_rows = [
-        ['Bigger active window', 'More text visible at once, up to the model and engine limits.', 'Generation slows with length; about 127 to ' + str(round(decode[-1]['tokens_per_second'])) + ' tokens/s in separate 8K to 250K probes.', 'Measured here; finite window.'],
-        ['Exact prefix cache', 'Reuse previously computed prompt state.', 'Shorter wait to start; roughly unchanged decode rate in the standard check.', 'Measured here; no larger active window.'],
-        ['Files and retrieval', 'Archive beyond the window; select what to load.', 'Smaller active context and less generation can help; tools and reads cost time.', '1.9-minute ledger measured; archive limited by storage and retrieval.'],
-        ['CLM self-editing', 'Rewrite the conversation into useful current state.', 'Edits and rereading cost time; shorter subsequent context can help.', '19/24 in the original trial; delivery rollback caused the five misses.'],
-        ['Periodic summaries', 'Replace history with a shorter account.', 'Summary generation and cache invalidation can outweigh the savings.', '24/24 in 41 minutes here; omitted details may be lost.'],
-        ['Park a cache on disk', 'Retain an inactive session for later restoration.', 'Load/save wait; no per-token disk read needed after a full resident restore.', 'Proposed here; does not make the active state smaller.'],
-        ['Stream active cache from disk/RAM', 'Trade data movement or CPU work for memory capacity.', 'Repeated transfers can slow generation; no measured decode rate here.', 'Not implemented or benchmarked in these runs.'],
-        ['CPU text cleanup', 'Remove repetition and formatting noise.', 'No separate model-speed result; 1.83% fewer tokens in the census.', 'Measured text reduction; not a large window multiplier.']]
-    methods = table(['Approach', 'What it buys', 'Effect on speed', 'Evidence and limit'], method_rows, 'Context approaches compared', 'ctx-methods')
+        ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
+        ['Exact prefix cache', 'Reuses the unchanged start. Repeat questions began sooner; writing stayed near 89 tokens/s in the standard check.'],
+        ['Files and retrieval', 'Stores records outside the conversation. Both ledger runs got 24/24 in 1.9 minutes with under 9K active context.'],
+        ['CLM self-editing', 'Rewrites the working history. The original run got 19/24 in 64 minutes; rollback discarded five delivered batches.'],
+        ['Periodic summaries', 'Replaces old history with a short account. It got 24/24 in 41 minutes; making summaries added work.'],
+        ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
+        ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
+        ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.']]
+    methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
     for label, path in [('Bigger active window', 'context-results.html#window'), ('Exact prefix cache', 'context-cache.html'),
                         ('Files and retrieval', 'context-files.html'), ('CLM self-editing', 'context-clm.html'),
                         ('Periodic summaries', 'context-clm.html'), ('Park a cache on disk', 'context-memory.html#parking'),
                         ('Stream active cache from disk/RAM', 'context-memory.html#streaming'), ('CPU text cleanup', 'context-clm.html#cleaning')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
-    chart = '<figure class="ctx-chart"><figcaption>Observed output tokens per second. A shorter active context was faster in these recall probes.</figcaption>'
-    for r in decode:
-        chart += ('<div class="ctx-bar-row"><span>' + escape(r['context']) + '</span><span class="ctx-bar" aria-hidden="true"><i style="width:'
-                  + f'{r["tokens_per_second"] / 130 * 100:.1f}' + '%"></i></span><strong>' + str(round(r['tokens_per_second'])) + ' tok/s</strong></div>')
-    chart += '</figure>'
+    chart = chart_image('context-decode-speed', 'Observed output rate: 127 tokens per second at 8K context, 99 at 30K, 70 at 60K, 49 at 120K, 40 at 160K, 35 at 200K, 31 at 230K and 27 at 250K.',
+                        'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
     source_list = '<ul class="ctx-source-list">'
     for key, title, description in [
         ('results', 'Research summary', 'Completed findings and pending work in the October 5 snapshot.'),
@@ -85,6 +111,13 @@ def update(pages):
         'DECODE_250': str(round(decode[-1]['tokens_per_second'])),
         'RECALL_CORRECT': str(d['recall']['correct']), 'RECALL_ASKED': str(d['recall']['asked']),
         'COMPARISON_TABLE': comparison, 'SHORT_COMPARISON': short_comparison, 'METHOD_TABLE': methods,
+        'OVERVIEW_TABLE': overview, 'OVERVIEW_OTHER_TABLE': other,
+        'TASK_CHART': chart_image('context-task-time', 'Large window: 26 minutes, 24 of 24 correct. Summaries: 41 minutes, 24 correct. Original self-editing: 64 minutes, 19 correct. Both file-using agents: 1.9 minutes, 24 correct.',
+            'Five completed runs on the same 121K-token ledger. ' + link('@/context-results.html#comparison', 'Full results and test setup'), 990),
+        'RECALL_CHART': chart_image('context-recall', 'Codes correct out of 60 per style. Ordinary words and look-alike codes: 60K, 60 and 60; 120K, 60 and 58; 160K, 59 and 58; 200K, 58 and 57; 230K, 60 and 60; 250K, 60 and 58.',
+            'Correct codes out of 60 for each context length and filler style.', 864),
+        'CACHE_CHART': chart_image('context-cache-speed', 'Repeated 30K prompt: cache off 11.4 seconds to first token, cache on 0.8 seconds. Separate standard 12-prompt check, second pass: 88.7 output tokens per second with cache off and 89.7 with cache on.',
+            'Caching shortened the wait. The roughly 1% writing-speed difference is within normal variation.', 1206),
         'DECODE_CHART': chart, 'DECODE_TABLE': table(['Context', 'Output tokens/s', 'Replies measured'],
             [[r['context'], str(round(r['tokens_per_second'])), r['samples']] for r in decode], 'Observed generation speed by context length'),
         'COLD_TABLE': table(d['window']['cold_columns'], d['window']['cold_rows'], 'First uncached prompt-reading probe'),
@@ -102,10 +135,10 @@ def update(pages):
         replacements['NOTE_' + key.upper()] = note(key)
 
     registry = [
-        ('context.html', 'Working past the context limit', 'What long-context experiments taught us about files, memory and speed.', None),
+        ('context.html', 'Working past the context limit', 'Which ways of managing an AI’s memory actually helped?', None),
         ('context-questions.html', 'Longer context, plain answers', 'Common questions about memory, disk, speed and what “unlimited” can mean.', None),
         ('context-methods.html', 'Ways to work with more context', 'Compare what each approach keeps, what it costs and what the experiments showed.', None),
-        ('context-files.html', 'Keep records in files, work with what matters', 'Why a 121K-token task finished with less than 9K of active context.', 'context-methods.html'),
+        ('context-files.html', 'Keep records in files', 'A long task can use a small working context.', 'context-methods.html'),
         ('context-cache.html', 'Read once, reuse the unchanged start', 'Prefix caching reduces the wait before an answer; long-context generation still has a cost.', 'context-methods.html'),
         ('context-memory.html', 'Can disk replace GPU memory?', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
         ('context-clm.html', 'Let the model edit its own context', 'CLM, summaries and state files: how a long task can use a short working history.', 'context-methods.html'),
@@ -117,19 +150,19 @@ def update(pages):
             body = body.replace('{{' + key + '}}', value)
         assert not re.search(r'\{\{[A-Z_0-9]+\}\}', body), name + ': unresolved template value'
         if name == 'context.html':
-            body += '<details><summary>Go directly to an approach</summary><ul class="ctx-source-list">' + ''.join(
-                '<li id="approach-' + ident + '">' + link('@/' + target, label) + '</li>' for ident, target, label in [
-                    ('window', 'context-results.html#window', 'The full window'), ('cache', 'context-cache.html', 'Exact prefix caching'),
-                    ('self-editing', 'context-clm.html', 'Self-editing context'), ('files', 'context-files.html', 'Files and retrieval'),
-                    ('cleaning', 'context-clm.html#cleaning', 'CPU cleanup'), ('disk', 'context-memory.html', 'Cache on disk'),
-                    ('decisions', 'one-step-results.html', 'One-step decisions')]) + '</ul></details>'
-        p = dict(title=title, description=description, status='October 5, 2026 research', styles=['results.css', 'context.css'], body=body)
+            for ident, target in [('window', 'context-results.html#window'), ('cache', 'context-cache.html'),
+                                  ('self-editing', 'context-clm.html'), ('files', 'context-files.html'),
+                                  ('cleaning', 'context-clm.html#cleaning'), ('disk', 'context-memory.html'),
+                                  ('decisions', 'context-results.html')]:
+                body = body.replace('href="@/' + target + '"', 'id="approach-' + ident + '" href="@/' + target + '"', 1)
+        p = dict(title=title, description=description, styles=['results.css', 'context.css'], body=body)
         if name != 'context.html':
             p['journey'] = {'topic': {'href': 'context.html', 'label': 'Longer context overview'}}
             if parent:
                 p['journey']['approach'] = {'href': parent, 'label': 'Compare approaches'}
-            if name != 'context-results.html':
+            if name != 'context-results.html' and '@/context-results.html' not in p['body']:
                 p['body'] += '<p class="next-links">' + link('@/context-results.html', 'Detailed results and original research') + '</p>'
+        p['body'] = '<div class="ctx-page">' + p['body'] + '</div>'
         pages[name] = p
 
     o = d['one_step']

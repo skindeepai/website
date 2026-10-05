@@ -1,8 +1,9 @@
-<p class="study-sample">{{SETUP}} Research snapshot: {{RESEARCH_TIME}}. K means approximately one thousand tokens; output speeds include drafting unless stated.</p>
+<p><strong>Files completed the ledger fastest. Caching shortened the wait before an answer. Longer active context slowed generation.</strong></p>
 <nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Task results</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#sources">Original research</a></nav>
 <section id="comparison"><h2>Completing a long task</h2>
 <p>A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. One task instance, seed 0.</p>
-{{COMPARISON_TABLE}}
+{{TASK_CHART}}
+<details><summary>Every task result, context budget and token count</summary>{{COMPARISON_TABLE}}</details>
 <p><strong>Both file-using agents answered 24/24 in about 1.9 minutes.</strong> Their peak active contexts were 8.2K and 8.9K tokens. The equal-score large-window and summary runs took about 26 and 41 minutes: approximately 14× and 22× the elapsed time in this particular trial.</p>
 <p>These totals combine generation, prompt processing and tool use. They are not per-token decode speeds. The “large window” arm imposed no context-management budget, but the model still filtered batches through code; it did not retain every raw memo in its conversation.</p>
 <details id="failures"><summary>Why the failures matter</summary><p>The original self-editing run got 19/24. Its five missed answers exactly matched a ledger with batches 2, 3, 4, 5 and 7 omitted: the harness rolled back those already-delivered batches. The model’s recorded state edits were not the source of these five misses.</p><p>The earlier 12-trial key-value comparison also does not rank context policies: all arms wrote data to files, and incomplete file writes caused the losses. Some summary calls were empty after reasoning used the output allowance.</p><p>The separate old-thinking-removal trial was stopped after 2.6 hours without a final answer. It generated about 397K tokens while repeatedly reconstructing state and hitting the output cap.</p><p><a href="{{NOTE_SELF_EDITING}}">Call-by-call analysis</a> · <a href="@/context-clm.html">Readable explanation</a></p></details>
@@ -12,8 +13,8 @@
 <section id="window"><h2>Longer context slows generation</h2>
 <p>The server accepted a 262,144-token configured window; the probes supplied up to about 250K input tokens with room for an answer. Weights were FP8; the attention cache stayed at 16-bit precision.</p>
 {{DECODE_CHART}}
-{{DECODE_TABLE}}
-<p class="small">8K and 30K: one chat recall prompt each, cache disabled. 60K–250K: medians over 20 six-code replies per length, two filler styles, exact prefix cache enabled. These are separate prompt tests, not a matched speed comparison across methods. Short replies and draft acceptance affect the measured output rates.</p>
+<details><summary>Speed values and how they were measured</summary>{{DECODE_TABLE}}
+<p>8K and 30K: one chat recall prompt each, cache disabled. 60K–250K: medians over 20 six-code replies per length, two filler styles, exact prefix cache enabled. These are separate prompt tests, not a matched speed comparison across methods. Short replies and draft acceptance affect the measured output rates.</p></details>
 <details><summary>Cold reading speed and the first empty-answer result</summary>
 {{COLD_TABLE}}
 <p>These are the initial uncached bare-text probe’s input-processing measurements. Its short rows ran out of the 96-token output allowance, and at 250K both drafting settings immediately ended the answer. A follow-up using chat formatting answered at 213.5K and 250K, so the apparent bare-text cutoff was not an engine window limit.</p><p>The first probe’s drafting-on and drafting-off token sequences matched at all tested lengths, including the empty 250K response. That equality does not itself establish successful recall at every length. Later chat and recall results answer that separate question.</p>
@@ -22,7 +23,8 @@
 </section>
 <section id="recall"><h2>Can it find the right record?</h2>
 <p>Two prompt styles, six lengths, ten questions per length and six codes per question: <strong>{{RECALL_CORRECT}}/{{RECALL_ASKED}} codes correct</strong>. Each question sampled records spread through the context.</p>
-{{RECALL_TABLE}}
+{{RECALL_CHART}}
+<details><summary>Recall data table</summary>{{RECALL_TABLE}}</details>
 <p>All 12 misses returned another record’s real code. Half were the preceding record; half had a similar record number. Errors appeared at different positions, and results did not worsen steadily: both styles were perfect at 230K.</p>
 <p>The preset rule required at least 59/60 in both styles at a length and every shorter tested length. Only 60K met that continuous-range rule. It is a result on these similar-code prompts, not a universal reliable-context limit.</p>
 <p><a href="{{RAW_RECALL_PROSE}}">Raw data: codes among ordinary words</a> · <a href="{{RAW_RECALL_LEDGER}}">Raw data: wall of codes</a></p>
@@ -43,8 +45,8 @@
 <details id="disk"><summary>Disk cache: calculations, not a completed benchmark</summary><p>The full-attention cache payload is 64 KiB/token for this target model at 16 bits. At 200,000 tokens that is 13.1072 GB, or 12.207 GiB, before other state. Saving text, parking this cache and streaming it while generating are different operations.</p>{{TRANSFER_TABLE}}<p>These are hypothetical single-transfer lower bounds, not measured tokens/s. Neither disk parking/restoration nor active disk streaming has a completed result in this snapshot. <a href="@/context-memory.html">Explanation, assumptions and memory sizes</a>.</p></details>
 <details id="one-step"><summary>Related result: short label decisions</summary><p>One-step constrained labels and normal decoding without thinking agreed on 80/80 easy items; both got 78/80 correct. On the 24-item thinking subset, labels agreed on 24/24 and got 23/24 correct. Median response times were about 0.09 seconds without thinking and 0.59 with thinking.</p><p>Skipping reasoning supplied the saving; decoding a short label was already about 0.09 seconds. This is not a hard-reasoning benchmark or a context-offload speedup. <a href="@/one-step-results.html">Full one-step result</a>.</p></details>
 <details id="limits"><summary>How far to generalize these results</summary><p>The agent comparison is one synthetic ledger, one seed and one machine. The task was designed to have compact current state and irrelevant memos. Arbitrary documents or exact quotations can require much more retained information. Exact-match scoring checks the requested answers, not every possible question about the history.</p><p>One request ran at a time. Timings include different prompt shapes and reading configurations where identified. Do not use them as an SSD benchmark, a many-user capacity estimate, or a guarantee for another model. The source record includes proposals as well as completed trials; pending work has no measured score here.</p></details>
+<details><summary>Hardware and research snapshot</summary><p>{{SETUP}} Research snapshot: {{RESEARCH_TIME}}. K means approximately one thousand tokens; output speeds include drafting unless stated.</p></details>
 <section id="sources"><h2>Original research</h2>
-<p>Follow the explanations first, then use these records for the protocols, implementation and individual results. Links are pinned to the research snapshot so the evidence behind this page remains identifiable.</p>
 {{SOURCE_LIST}}
 <p><a href="@/results/long-context/result.json">Website measurement record and aggregation notes</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/scripts/context">Latest research scripts</a></p>
 </section>

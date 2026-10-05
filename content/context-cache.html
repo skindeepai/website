@@ -1,18 +1,19 @@
 <p><strong>Prefix caching makes the next answer start sooner.</strong> It saves the model’s already-computed representation of the unchanged start of a prompt. The next call reuses it and processes the remaining text.</p>
-<figure class="ctx-flow">
-  <div><span class="ctx-label">First question</span><strong>Read the document</strong><p>Compute and retain its internal state.</p></div><span class="ctx-arrow" aria-hidden="true">→</span>
-  <div><span class="ctx-label">Next question</span><strong>Reuse the unchanged start</strong><p>Read the uncached tail and new question.</p></div>
-  <figcaption>This experiment kept the active cache in GPU memory. It was not a disk-offload test.</figcaption>
-</figure>
 <h2>Waiting and writing are different</h2>
-{{CACHE_WAIT_TABLE}}
-<p>The 30K cases compare fixed 832-token reading chunks with reuse off and on. The 200K example combines separate long-context runs, with different reading configurations; it illustrates the size of the saved wait.</p>
+{{CACHE_CHART}}
 <p>Once generation starts, full-attention layers still use the retained context for each new token. A cached long document remains a long document.</p>
+<p>All 12 answers matched the reference on both passes of the standard check. The cache was held in GPU memory.</p>
+<details><summary>All waiting and writing measurements</summary>
+{{CACHE_WAIT_TABLE}}
+<p>The 30K cases compare fixed 832-token reading chunks with reuse off and on. The 200K example combines separate long-context runs with different reading configurations.</p>
 {{CACHE_DECODE_TABLE}}
-<p>The standard 12-prompt check showed no meaningful decode-speed change: roughly 89 tokens/s either way. All 12 answers matched the reference on both passes of each server. This was one server per configuration, so the small difference is not evidence of a speedup.</p>
-<h2>What did making the cache exact require?</h2>
+<p>One server per configuration; the small decode-rate difference is not evidence of a speedup.</p></details>
+<h2>Did the answers change?</h2>
+<p>The exact-cache test returned the same output tokens in <strong>99/99 cases</strong>, including repeat questions, edits and later turns. It covered prompts up to 30K; separate cold-repeat checks also matched at 120K.</p>
+<details><summary>How the cache stayed exact</summary>
 <p>This model combines ordinary attention with layers that carry a running state. The lab’s cache saves only states created while reading a prompt, and uses consistent 832-token reading chunks. It avoids mixing those states with ones created through a different computation path while generating an answer.</p>
 <p>With drafting enabled, <strong>99/99 cases returned the same token sequence</strong> as the matched uncached reference, including second and third conversation turns. The test covered eleven prompts up to 30K and up to 48 output tokens per case. Separate 120K cold repeats matched too. Matching output tokens is narrower than a scores-level or every-input guarantee.</p>
+</details>
 <h2>What does it cost?</h2>
 <p>Smaller reading chunks made the initial read slower: a 30K prompt took about 11.4 seconds instead of 9.8; a 120K cold check took 69.6 instead of about 55. Saved checkpoints also consume GPU memory. Repeated questions recover that cost by skipping much of the reading.</p>
 <p>An edit keeps only the matching prefix reusable. The 30K middle-edit test started in 6.7 seconds on its first edited request and 0.7 seconds on a repeat. Putting frequently updated state near the end reduces how much text must be recomputed. Eviction, a changed prompt or a restarted server can remove reuse.</p>

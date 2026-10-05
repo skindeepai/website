@@ -1,25 +1,22 @@
-<p><strong>No: a GPU with only a few kilobytes free cannot gain a full 200K-token active context simply by saving it to disk.</strong> The model needs working space to compute, and its numerical context is much larger than the text. A system designed to offload computation or cache blocks can trade speed for capacity, but it still needs buffers and data transfers.</p>
-<h2>Three different things people call “context on disk”</h2>
-<div class="ctx-findings">
-  <section><h3>1. Save text and records</h3><p>Keep documents or a state table in files. Read selected parts when needed.</p><p><strong>Measured here.</strong> The ledger finished in 1.9 minutes with under 9K active context.</p><a href="@/context-files.html">Files and retrieval</a></section>
-  <section><h3>2. Park an inactive cache</h3><p>Save the model’s numerical state between sessions, then restore it before use.</p><p><strong>Proposed here.</strong> Pay save/restore time; the active state still needs somewhere to run.</p><a href="#parking">How parking differs</a></section>
-  <section><h3>3. Stream the active cache</h3><p>Move cache blocks during generation because they cannot all stay in GPU memory.</p><p><strong>Not measured here.</strong> Repeated transfers can become the bottleneck.</p><a href="#streaming">Why speed changes</a></section>
-</div>
-<h2 id="size">Why 200K tokens need gigabytes</h2>
-<p>The text is converted into arrays of numbers that let attention use earlier tokens. For the target model’s 16 full-attention layers with a 16-bit key/value cache, those arrays grow by <strong>64 KiB per token across both GPUs</strong>.</p>
-{{MEMORY_TABLE}}
-<p class="small">Calculated attention KV payload only. Model weights, recurrent state, drafting, checkpoints, allocation padding and temporary workspace require additional memory. This is specific to this model and precision, not a universal LLM formula.</p>
-<p>A 200K-token prompt therefore needs about <strong>12.2 GiB of attention cache</strong>, roughly 6.1 GiB per GPU when evenly split across two. A few spare kilobytes are insufficient even before other working memory is counted.</p>
-<p><strong>200 KB is not 200K tokens.</strong> KB measures file bytes. Tokens are pieces of text counted by the model’s tokenizer. Their relationship depends on the text, language and tokenizer; count the tokens before estimating the cache.</p>
-<h2 id="parking">Does parking the cache avoid a decode penalty?</h2>
-<p>If the complete required state is restored into the same active memory layout before generation, the design need not add disk traffic to each subsequent token. But saving and restoring takes time, and that design cannot help an active state that still does not fit.</p>
-<p>A byte-preserving snapshot can retain the numerical values. Correct continuation also requires compatible model weights, positions, recurrent state and runtime metadata. A model or runtime change can make a saved cache unusable. The lab proposed this path; it did not publish a completed save/restore benchmark.</p>
-<h2 id="streaming">What happens if the GPU must keep fetching from disk?</h2>
-<p>Full attention needs the earlier keys and values during generation. If almost the entire 200K cache must be read from storage for each ordinary next-token pass, approximately 13.1 GB must move per pass. Fast storage is still far from a free replacement for local GPU memory.</p>
-{{TRANSFER_TABLE}}
-<p class="small">Illustrative lower bounds: 13.1072 GB divided by the assumed sustained read rate. These are transfer times, not measured model speeds. They exclude computation and any additional unoverlapped upload. Keeping part of the cache resident, overlapping work, or accepting multiple draft tokens per pass changes the calculation.</p>
-<p>That is why this research does not establish a disk-streamed decode rate. The measured roughly 35 tokens/s at 200K used an in-memory cache. A proposed disk path needs its own full-task, speed and correctness tests.</p>
-<h2>What can a memory-constrained machine do?</h2>
-<p>Use a smaller active context with files or retrieval when the task allows it. If all the text must be active at once, the options involve enough memory, a smaller model or cache representation, or an engine that explicitly supports offloading. Saving a transcript alone does not change the model’s 262,144-position limit.</p>
-<details><summary>Calculation and original sources</summary><p>16 attention layers × 2 arrays (K and V) × 4 KV heads × 256 values per head × 2 bytes = 65,536 bytes per token. The recurrent layers add state separately.</p><p><a href="{{NOTE_CACHE_RULES}}">Model shapes and cache accounting</a> · <a href="{{NOTE_REVIEW}}">Original disk and offload discussion</a> · <a href="https://docs.lmcache.ai/kv_cache/storage_backends/local_storage.html">LMCache’s storage explanation</a>. These describe the mechanisms; they do not establish compatibility or performance for a disk-offloaded B70 run.</p></details>
-<p class="next-links"><a href="@/context-questions.html">More common questions</a> · <a href="@/context-methods.html">Compare all approaches</a></p>
+<p><strong>A nearly full GPU cannot gain a full 200K-token active context just by saving it to disk.</strong> The model still needs working memory. An offloading engine can trade transfers or CPU work for capacity, but needs buffers and a place to compute.</p>
+<h2>Three different uses of disk</h2>
+<dl class="ctx-definitions">
+  <dt><a href="@/context-files.html">Save text and records</a></dt><dd>Keep an archive and read selected parts. This is the approach that completed the ledger in 1.9 minutes with under 9K active context.</dd>
+  <dt><a href="#parking">Park an inactive cache</a></dt><dd>Save the model’s numerical state between sessions, then restore it before use.</dd>
+  <dt><a href="#streaming">Stream an active cache</a></dt><dd>Move numerical state during generation because it cannot all stay in GPU memory.</dd>
+</dl>
+<h2 id="size">How much memory does 200K need?</h2>
+<p>For this model, <strong>about 12.2 GiB for the attention cache alone</strong>, spread across two GPUs. Model weights and other working state need additional space.</p>
+<p>That is much larger than the original text. Also, <strong>200 KB is not 200K tokens</strong>: KB measures file bytes; tokens are pieces of text counted by the model.</p>
+<details><summary>Cache sizes and calculation</summary>{{MEMORY_TABLE}}<p>The target model has 16 full-attention layers. At 16-bit precision: 16 layers × 2 arrays × 4 KV heads × 256 values × 2 bytes = 65,536 bytes per token across both GPUs. At 200,000 tokens this is 13.1072 GB, or 12.207 GiB.</p><p>This excludes weights, recurrent state, drafting, checkpoints, allocation padding and temporary workspace. <a href="{{NOTE_CACHE_RULES}}">Model shapes and accounting</a>.</p></details>
+<h2 id="parking">Does parking a cache slow writing?</h2>
+<p>Saving and restoring adds waiting time. Once the complete state is restored to active memory, ordinary generation need not keep reading disk. The state must still fit the chosen execution arrangement.</p>
+<p>The lab proposed this path but did not complete a save/restore benchmark. A correct restore needs compatible weights, positions and all required runtime state.</p>
+<h2 id="streaming">What if it keeps fetching from disk?</h2>
+<p>Full attention consults earlier keys and values while generating. Repeated transfers can become a bottleneck. This is different from saving text files between model calls.</p>
+<p>The lab did not benchmark active disk or RAM offload. Its roughly 35 tokens/s at 200K used an in-memory cache.</p>
+<details><summary>Example: moving the 200K cache once</summary>{{TRANSFER_TABLE}}<p>These are hypothetical transfer lower bounds: 13.1072 GB divided by storage bandwidth. They are not measured model speeds. Computation and any additional unoverlapped upload cost more; partial residence, pipelining and accepted draft tokens change the calculation.</p></details>
+<h2>What should a smaller machine do?</h2>
+<p>Use a smaller active context with files or retrieval when the task allows it. Keeping everything active requires enough memory, a smaller model or cache representation, or an engine with explicit offloading support. Saving a transcript does not enlarge the model’s native window.</p>
+<details><summary>Original research and related storage documentation</summary><p><a href="{{NOTE_REVIEW}}">Disk and offload research notes</a> · <a href="https://docs.lmcache.ai/kv_cache/storage_backends/local_storage.html">LMCache’s storage explanation</a></p></details>
+<p class="next-links"><a href="@/context-questions.html">Common questions</a> · <a href="@/context-methods.html">Compare approaches</a></p>

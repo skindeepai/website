@@ -3,11 +3,8 @@
 {{METHOD_TABLE}}
 <h2>What worked best in this experiment?</h2>
 <p>The task was a running ledger: process 20 batches of updates, then report 24 current values. The 121K tokens of input contained much more text than the small table needed to answer. That made it a good task for code and external files.</p>
-{{SHORT_COMPARISON}}
-<p>The two file-using agents both got 24/24 in about 1.9 minutes. The big-window and summary agents also got 24/24, taking about 26 and 41 minutes. These are elapsed times for one ledger trial, not universal speed multipliers or measurements of disk write overhead.</p>
 <p><a href="@/context-files.html">Why files helped so much</a> · <a href="@/context-results.html#comparison">Full comparison, including failures</a></p>
 <h2>Can any of these remember everything forever?</h2>
 <p>No finite context can hold every detail of an ever-growing history. Files can retain an archive up to available storage; retrieval decides what to read. A summary or state table can support a long task when it preserves everything that task needs. If future questions may require arbitrary original details, retain the originals too.</p>
-<p>The completed 121K-token task exceeded the small 32K budget, but still fit inside the model’s 262K maximum. It demonstrates working with a smaller context; it is not a completed demonstration of an endless task.</p>
 <details><summary>Other approaches: retrieval, rolling windows and compression</summary><p>Retrieval-augmented generation (RAG) selects passages from an external collection. File search is a simple version of the same idea; this ledger used code and files, not a separately benchmarked vector database. A rolling window discards old text, and a model-written summary can omit details. Both can keep a session moving while losing information. Reducing the precision of the numerical cache saves memory but changes its numbers; that was not part of these context experiments.</p><p>Recursive reading of documents and selective cache eviction are related approaches, not measured competitors in the ledger table. Follow the <a href="{{NOTE_REVIEW}}">research review</a> for the wider literature.</p></details>
 <p class="next-links"><a href="@/context-questions.html#unlimited">What “unlimited context” means</a> · <a href="@/context-memory.html">Disk and GPU memory</a></p>
