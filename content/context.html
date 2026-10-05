@@ -1,11 +1,12 @@
-<p>How can an AI finish a long job when its working memory is limited? We tested a stream of counter updates, like transactions in a ledger, then asked for <strong>24 final totals</strong>. Choose an approach below to see how it works.</p>
+<p>How can an AI finish a long job when its working memory is limited? The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> processed a stream of ledger updates, then answered <strong>24 questions about the final totals</strong>.</p>
+<p>CLM edits the model’s next prompt. Files keep records outside it for tools to read. <a href="@/context-clm-vs-files.html">How the approaches differ</a>.</p>
 {{OVERVIEW_TABLE}}
 <p>Files let the model keep a small working context while code maintained the totals. Both file-using approaches finished in <strong>1.9 minutes with all 24 answers right</strong>.</p>
 <p class="ctx-table-note">The stream contained 121K tokens; the file-using runs held under 9K at once. The large-window runs used two versions of the ledger; its second run filled the window before answering. <a href="@/context-results.html#comparison">Full comparison, including the 478K stream</a>.</p>
 <h2>Other ways to handle more context</h2>
 {{OVERVIEW_OTHER_TABLE}}
 <h2>The practical difference</h2>
-<p><strong>Files store the records. Active context is what the model can use right now.</strong> Keeping records outside the conversation can extend a job. It does not give the GPU unlimited working memory.</p>
+<p><strong>Files store the records. Active context is what the model can use right now.</strong> In these tests, that active numerical state stayed in GPU memory. <a href="@/context-model-tools.html">How tools bring saved information into the next prompt</a>.</p>
 <ul class="ctx-read-next">
   <li><a href="@/context-methods.html">Compare the approaches</a></li>
   <li><a href="@/context-memory.html">Can disk replace missing GPU memory?</a></li>

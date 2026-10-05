@@ -1,7 +1,7 @@
 <p><strong>Files completed the ledger fastest. Caching shortened the wait before an answer. Longer active context slowed generation.</strong></p>
 <nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Task results</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#sources">Original research</a></nav>
 <section id="comparison"><h2>Completing a long task</h2>
-<p>A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. Large-window and revised self-editing arms used seeds 0 and 1; other 121K arms used seed 0.</p>
+<p>Each approach used Qwen3.8-27B on two B70 GPUs. A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. Large-window and revised self-editing arms used seeds 0 and 1; other 121K arms used seed 0. <a href="@/context-model-tools.html#prompts">Model setup and task prompts</a>.</p>
 {{TASK_CHART}}
 <details><summary>Every task result, context budget and token count</summary>{{COMPARISON_TABLE}}</details>
 <p><strong>Both file-using agents answered 24/24 in about 1.9 minutes.</strong> Their peak active contexts were 8.2K and 8.9K tokens. The equal-score large-window and summary runs took about 26 and 41 minutes: approximately 14× and 22× the elapsed time in this particular trial.</p>

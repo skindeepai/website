@@ -1,7 +1,8 @@
 <p><strong>Let the model rewrite the conversation it will see next.</strong> It can remove a finished step, replace an old value or preserve a useful passage. CLM stands for Context Language Model.</p>
 {{DIAGRAM_SELF_EDITING}}
 <h2>What is actually being edited?</h2>
-<p>The application exposes the conversation as an editable text file. When the agent changes that file, the application turns the accepted version back into messages for the next model call. The model’s trained weights do not change.</p>
+<p>The application exposes the working message history as an editable text file. The prompt tells the model where it is and how to edit it with code. The application turns accepted edits back into messages for the next model call. <a href="{{PROMPT_CLM}}">Read the editing instructions</a>.</p>
+<p>This edits prompt text, not the model’s trained weights or GPU cache directly. The server processes the changed prompt into numerical state in GPU memory. <a href="@/context-model-tools.html">Where text, tools and active memory fit</a>.</p>
 <p>For our apple ledger, the agent can apply “add 3” to “apples: 10,” replace the saved total with 13, then remove the processed update. The next call sees the new total and the next task.</p>
 <h2>How is it different?</h2>
 <p>Ordinary chat keeps appending messages. <a href="@/context-summaries.html">Periodic summaries</a> replace a broad stretch of history at a threshold. Self-editing lets the agent choose smaller changes as it works. Saving an ordinary notes file alone does not rewrite the live conversation.</p>
@@ -11,4 +12,4 @@
 <h2>Why use it, and what are the limits?</h2>
 <p>A compact, current state can let a long task fit a small window. But an edit can remove something needed later, and rewriting early messages can force the cache to recompute later work. Keep original records elsewhere when future questions may need them.</p>
 <details><summary>Technical details: the editable mirror</summary><p>The lab used a 32K budget with external data files forbidden. The transcript mirror was allowed because its contents became the model’s context. The settled loop used code to fold a batch into a marked state block, then replace the raw batch with a short acknowledgment.</p><p>Most of the original run’s 233K generated tokens came before that stable loop. Its rollback behavior is a failure of this implementation, not proof that all self-editing loses data. The <a href="@/context-revised-editing.html">revised agent</a> protects delivered batches.</p><p><a href="{{NOTE_SELF_EDITING}}">Edits, rollbacks and call-by-call evidence</a> · <a href="@/context-clm.html">CLM research and comparisons</a></p></details>
-<p class="next-links">Compare: <a href="@/context-revised-editing.html">self-editing with a protected state</a> · <a href="@/context-files-editing.html">files with editing available</a></p>
+<p class="next-links">Compare: <a href="@/context-revised-editing.html">self-editing with a protected state</a> · <a href="@/context-clm-vs-files.html">CLM versus external files</a></p>

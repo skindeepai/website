@@ -1,4 +1,5 @@
 <p><strong>A nearly full GPU cannot gain a full 200K-token active context just by saving it to disk.</strong> The model still needs working memory. An offloading engine can trade transfers or CPU work for capacity, but needs buffers and a place to compute.</p>
+<p>The ledger’s active numerical state stayed in GPU memory. Its saved files were text for tools to read between calls. <a href="@/context-model-tools.html">See the model–tools–disk loop</a>.</p>
 <h2>Three different uses of disk</h2>
 <dl class="ctx-definitions">
   <dt><a href="@/context-files.html">Save text and records</a></dt><dd>Keep an archive and read selected parts. This is the approach that completed the ledger in 1.9 minutes with under 9K active context.</dd>

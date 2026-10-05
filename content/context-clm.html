@@ -1,13 +1,13 @@
 <p><strong>CLM gives the model an editable conversation.</strong> Here CLM means <em>Context Language Model</em>: the model can replace obsolete parts of its live transcript with useful state, rather than only appending new messages.</p>
-<p>Explore the mechanisms: <a href="@/context-self-editing.html">original self-editing</a>, <a href="@/context-revised-editing.html">protected state</a> or <a href="@/context-summaries.html">periodic summaries</a>.</p>
+<p>The model here is Qwen3.8-27B. <a href="@/context-clm-vs-files.html">CLM versus files</a> explains the storage rules; <a href="@/context-model-tools.html#prompts">model setup and prompts</a> shows how the application makes each approach work.</p>
 <h2>How is that different from a summary or a plan file?</h2>
-<p>A periodic summary replaces a large portion of the conversation at a chosen threshold. CLM can make smaller, targeted edits: update a counter, delete a superseded log, or keep an exact quotation. In both cases, information removed without a saved copy is gone.</p>
+<p>A <a href="@/context-summaries.html">periodic summary</a> replaces a large portion of the conversation at a chosen threshold. <a href="@/context-self-editing.html">Original CLM</a> can make smaller, targeted edits: update a counter, delete a superseded log, or keep an exact quotation. In both cases, information removed without a saved copy is gone.</p>
 <p>An ordinary plan file lives outside the live conversation. The model sees it when the application loads it. The CLM mirror is different: an accepted edit changes the message history sent on the next call. Merely saving a transcript file does not make this happen.</p>
 <h2>What did the experiment find?</h2>
 <p>With external data files forbidden, the revised agent was faster, but only one of its two runs was fully correct.</p>
 {{CLM_RESULT_TABLE}}
 <p>In the original run, the surrounding software discarded five batches after delivering them, and they could not be fetched again. That explains its five wrong answers. The model’s own state edits did not cause those misses.</p>
-<p><strong>The revised agent retained every batch.</strong> Its second run made a different mistake: the model rewrote its update script and stopped applying deletes from batch 17. That caused three wrong totals. Keeping data available and computing the answer correctly are separate requirements.</p>
+<p><strong>The <a href="@/context-revised-editing.html">revised agent</a> retained every batch.</strong> Its second run made a different mistake: the model rewrote its update script and stopped applying deletes from batch 17. That caused three wrong totals. Keeping data available and computing the answer correctly are separate requirements.</p>
 <h2 id="thinking"><a href="@/context-drop-thinking.html">Why not just delete old thinking?</a></h2>
 <p>The model may have stored its working state there. Removing earlier thinking left one run repeatedly rebuilding its state, without a final answer after 2.6 hours. Keep explicit task state before attempting this optimization.</p>
 <details><summary>How much room did earlier reasoning use?</summary><p>A median 9.9% of input across 277 calls in the initial key-value comparison, reaching 55.8% on one call. The stuck trial was a separate large-window ledger run. <a href="{{NOTE_RESULTS}}">Measurements and outcome</a>.</p></details>

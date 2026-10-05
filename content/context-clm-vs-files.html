@@ -1,0 +1,20 @@
+<p><strong>CLM edits what the model sees next. Files keep records it can look up later.</strong> They can be used together; “files with editing available” is that combination.</p>
+<h2>Same model, different memory rules</h2>
+<p>Every row used <a href="@/context-model-choice.html">Qwen3.8-27B</a> and could run code. CLM was an editing method, not a different trained model. The comparison changed the prompts, the surrounding application and permission to keep data outside context.</p>
+<div class="table-scroll ctx-table ctx-summary-table ctx-other-table" tabindex="0" role="region" aria-label="CLM and external files compared"><table><thead><tr><th scope="col">Approach</th><th scope="col">Where useful information lives</th></tr></thead><tbody>
+  <tr><th scope="row"><a href="@/context-self-editing.html">Original CLM</a></th><td>Inside the editable message history. No separate data archive was allowed in this arm.</td></tr>
+  <tr><th scope="row"><a href="@/context-revised-editing.html">Revised CLM</a></th><td>Inside a protected working context, with a state file loaded into every call. Its contents still use the 32K budget.</td></tr>
+  <tr><th scope="row"><a href="@/context-files-code.html">Files, no editing</a></th><td>In an external archive and state files. Tools return selected text or calculated results; message history is not rewritten.</td></tr>
+  <tr><th scope="row"><a href="@/context-files-editing.html">Files, editing available</a></th><td>The same external storage, plus the original CLM mechanism for rewriting message history.</td></tr>
+</tbody></table></div>
+<h2 id="state">But revised CLM has a file too?</h2>
+<p><strong>What matters is how the file is used.</strong> The application automatically places the revised agent’s <code>STATE.txt</code> into the next prompt. A 2K-token state therefore uses 2K tokens of context. It is a convenient editing interface, not extra memory outside the budget.</p>
+<p>An archive can contain a million tokens while a tool returns only a 100-token excerpt. Only the returned text joins the prompt. The numerical state for that active prompt still lives in <a href="@/context-model-tools.html#where">GPU memory</a>.</p>
+<h2>What can each remember?</h2>
+<p>Suppose “10 apples, add 3, remove 2” becomes “apples: 11.” That compact state answers a question about the current total. If the original updates were discarded, it cannot explain which transaction removed two apples. A complete saved archive lets a tool find that transaction later.</p>
+<p>CLM can also use such an archive when permitted. The lab’s context-only rule isolated its ability to maintain useful state inside a small window; it is not a restriction inherent to CLM.</p>
+<h2>Why did the file agents finish sooner?</h2>
+<p>Saved scripts updated saved totals with little model output. On the 121K ledger, both file agents got 24/24 in 1.9 minutes; revised CLM took 15 and 21 minutes, scoring 24/24 and 21/24. The file-and-editing run never needed a context edit, so its result does not show a benefit from adding editing.</p>
+<p><a href="@/context-results.html#comparison">All results</a> · <a href="@/context-revised-editing.html">What the revised agent changed and what failed</a></p>
+<details><summary>Who was told to do what?</summary><p>The original CLM prompt teaches transcript editing. Revised CLM adds an explicit routine: update the state immediately after a batch, then remove the processed batch. File-enabled agents receive permission to save data, but choose their own file layout and processing code.</p><p><a href="@/context-model-tools.html#prompts">Read the prompt sources and model setup</a> · <a href="{{NOTE_SELF_EDITING}}">Detailed run analysis</a></p></details>
+<p class="next-links"><a href="@/context-model-tools.html">Follow a file read from model to disk and back</a> · <a href="@/context-model-choice.html">Would a smarter model help?</a></p>

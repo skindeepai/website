@@ -2,7 +2,8 @@
 {{DIAGRAM_FILES_CODE}}
 <h2>Walk through one batch</h2>
 <ol><li>Save the incoming batch to a file: “10 apples, add 3, remove 2.”</li><li>Run a script that reads those records and writes “apples: 11” to a state file.</li><li>Show the model a short result. When the final question arrives, read the saved total.</li></ol>
-<p>The agent can also search the original files when it needs a past detail. Only the excerpts or results returned to the model take up its active context.</p>
+<p>The <a href="{{PROMPT_STORAGE}}">storage instruction</a> explicitly permits notes and copies. The model chooses the files and code; the application executes its commands and returns their output. Only that returned text joins the next prompt. The archive is not automatically loaded.</p>
+<p>The same tool loop can search an old record when needed. <a href="@/context-model-tools.html#retrieval">How the model knows to read a file</a>.</p>
 <h2>What does “plain agent” mean?</h2>
 <p>It can still run code, read files and write files. It simply has no special mechanism for rewriting its conversation. Unlike <a href="@/context-large-window.html">ordinary large-window chat</a>, the bulk input goes to files instead of accumulating in messages.</p>
 <h2>What happened in the tests?</h2>

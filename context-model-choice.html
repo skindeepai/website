@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is the 27B model enough? — SkinDeep Research</title><meta name="description" content="What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.">
+<link rel="canonical" href="https://skindeep.ai/context-model-choice.html">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/context-model-choice.html">
+<meta property="og:title" content="Is the 27B model enough? — SkinDeep Research"><meta property="og:description" content="What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.">
+<meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Is the 27B model enough? — SkinDeep Research"><meta name="twitter:description" content="What Qwen3.8-27B solved with tools, and how a stronger or trained model might help."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+
+<link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
+</head><body class="lab-page ">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
+<aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
+<main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="context.html">Longer context overview</a> · <a data-journey="approach" href="context-methods.html">Compare approaches</a></nav>
+<h1>Is the 27B model enough?</h1><p class="page-lead">Qwen3.8-27B was sufficient to solve this ledger with tools. It wrote code, maintained totals and answered all 24 questions correctly in the file-using runs. That does not make every memory strategy equally reliable.</p><div class="ctx-page"><h2 id="model">Which model did each approach use?</h2>
+<p>The same 27-billion-parameter model ran the large-window, summary, original CLM, revised CLM and file-enabled agents. It used FP8 weights on two Intel Arc Pro B70 GPUs working together, not a separate model on each card. The experiments changed instructions, storage permissions and the agent software, without task-specific training.</p>
+<p>The model chose actions and wrote programs; CPU code did the ledger arithmetic. Summaries came from another call to the same model, not a smaller helper. <a href="context-model-tools.html">How the model and tools work together</a>.</p>
+<h2>What did 27B handle well?</h2>
+<p>Both file agents answered 24/24 on the 121K and 478K streams. Revised CLM also got 24/24 on the 478K stream, with code reading 74 of its 76 batches without putting their raw text into the model’s prompt.</p>
+<p>This is useful evidence for structured work with clear rules. It does not establish the same reliability for a long legal argument, ambiguous documents or questions that require connecting many passages.</p>
+<h2>Would a smarter model help?</h2>
+<p>It could write more reliable code, choose better excerpts or need fewer attempts. Those are plausible benefits, not measured improvements here: there is no matched larger-model ledger comparison.</p>
+<p>A larger model can need more GPU memory and time per token; fewer retries might offset that cost. Compare total time to a correct answer.</p>
+<p>One revised run made three mistakes after rewriting its delete-handling code. A better model might avoid that bug; retaining and checking the script can address it too. Neither greater size nor training can recover records that the application permanently discarded.</p>
+<h2>Would fine-tuning help?</h2>
+<p>These successful runs needed no additional training. Specialized training could teach more consistent saving, retrieval and editing habits.</p>
+<p>There is evidence on a different task: the CLM paper’s reinforcement-learning experiment raised Qwen3.5-9B’s BrowseComp-Plus accuracy from 28.8% to 42.5%. That was a different model and a deep-research benchmark, not this B70 ledger. <a href="https://arxiv.org/html/2609.37725v1#S5.SS2">Training experiment in the paper</a>.</p>
+<h2>How should I choose?</h2>
+<p>For structured records, start by keeping originals, using exact code and checking its results. For tasks requiring interpretation, compare models on representative questions under the same storage rules. Judge correct completed answers and total time, not parameter count or token speed alone.</p>
+<p class="next-links"><a href="context-model-tools.html#prompts">Model setup and prompts</a> · <a href="context-results.html#comparison">Measured task results</a></p>
+</div>
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

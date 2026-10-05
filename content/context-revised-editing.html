@@ -2,12 +2,12 @@
 {{DIAGRAM_REVISED}}
 <h2>How it works</h2>
 <ol><li>Check that there is room before fetching another batch.</li><li>Apply the batch to a small state table, such as “apples: 13.”</li><li>Keep that table visible on the next call, then remove the processed batch.</li></ol>
-<p>Already-delivered batches cannot be discarded by a retry. Earlier thinking is removed, so facts needed later must go into the explicit state.</p>
+<p>The <a href="{{PROMPT_REVISED}}">revised prompt</a> explicitly instructs the model to follow this routine. The application reloads <code>STATE.txt</code> into each call, protects delivered batches from rollback and removes earlier thinking.</p>
 <h2>What changed from the original?</h2>
-<p>The <a href="@/context-self-editing.html">original agent</a> could lose an unread batch during rollback. This version protects delivery and shows the working state at the end of each prompt. Its state file counts as active context; it is not an unlimited hidden archive.</p>
+<p>The <a href="@/context-self-editing.html">original agent</a> could lose an unread batch during rollback. This version protects delivery and puts the state file at the end of each prompt. Its contents count as active context, whose numerical state stays in GPU memory. An <a href="@/context-clm-vs-files.html#state">external archive works differently</a>: tools choose what to bring back.</p>
 <h2>What happened in the tests?</h2>
 {{RESULT_REVISED}}
-<p>Both 121K runs retained every batch. The second made a coding mistake: its rewritten update script stopped applying deletes, causing three wrong totals.</p>
+<p>Both 121K runs retained every batch. The first used <code>STATE.txt</code> as instructed. The second kept a state block in the transcript instead and repeatedly rewrote its update script. A delete-handling bug in that script caused three wrong totals.</p>
 <p>On the 478K stream, code processed most batches without showing their raw text to the model. That is useful processing beyond the window’s size, but does not show the model understanding 478K tokens at once.</p>
 <h2>Why might it help? What can still fail?</h2>
 <p>The model spends less effort reconstructing past work, and a long stream can fit if its useful state stays small. Correct bookkeeping still depends on correct code. A state-size check cannot tell whether a total is right; tasks needing all original details may outgrow the state budget.</p>

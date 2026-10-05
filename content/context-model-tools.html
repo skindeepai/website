@@ -1,0 +1,35 @@
+<p><strong>The model works in GPU memory. Files hold records outside it.</strong> A tool can read those records and return an excerpt or a calculated result for the model’s next call.</p>
+{{DIAGRAM_MODEL_TOOLS}}
+<h2 id="where">What is stored where?</h2>
+<dl class="ctx-definitions">
+  <dt>On disk: readable records</dt><dd>Batch files, scripts, notes and saved totals. They can outgrow the context window because the model does not read them all at once.</dd>
+  <dt>In the application: the next prompt</dt><dd>The selected instructions, messages and tool results. “Live conversation” means this working message history, not every past message saved anywhere.</dd>
+  <dt>In GPU memory: the model and its numerical state</dt><dd>The server turns the prompt’s tokens into the internal state used to generate a reply. The attention cache, often called the KV cache, stayed on the GPUs in these tests.</dd>
+</dl>
+<p><strong>These file-using runs did not decode from an SSD.</strong> Reading a file was a tool step between model calls. Only text returned to the model entered its active context; a script could process much more without printing it.</p>
+<h2 id="retrieval">How does it know to read a file?</h2>
+<p>The application must provide file tools; instructions alone do not give the model disk access.</p>
+<ol>
+  <li><strong>The prompt sets the task and permissions.</strong> Here it described the ledger rules and explicitly allowed saved notes and data in the file-using runs.</li>
+  <li><strong>The model requests a command.</strong> It chooses what to save, search or calculate and supplies a shell command or Python code.</li>
+  <li><strong>The application runs it.</strong> The CPU reads the files and executes the code. Its output becomes a tool result in the next prompt.</li>
+  <li><strong>The model continues from that result.</strong> It can request another tool step or answer.</li>
+</ol>
+<p>For example, the model can ask code for the current apple total and receive “11.” It need not read every apple transaction itself. There was no separate retrieval model or vector database in this ledger workflow.</p>
+<p>A filename alone provides no memory. For a resumed job, supply the goal, a short state or file index, and access to the records. The agent must then request the right files, or the application must load them.</p>
+<h2 id="automatic">Is any file loaded automatically?</h2>
+<p><strong>Yes, when the application gives it that special role.</strong> Accepted edits to the CLM transcript file become the next message history. Revised CLM also reloads <code>STATE.txt</code> on every call; all of its contents count against the context budget. Ordinary archive files have neither behavior.</p>
+<p><a href="@/context-clm-vs-files.html">Compare CLM’s context files with an external archive</a>.</p>
+<details id="prompts"><summary>Read the prompts and model setup</summary>
+<p>All ledger approaches used Qwen3.8-27B, with FP8 weights, a 16-bit attention cache and two Intel Arc Pro B70 GPUs. The server’s full window was 262,144 tokens; small-context arms used a 32K working budget. The model was not fine-tuned for these tasks. The same model also made the periodic summaries.</p>
+<p>The input combined a task template, a storage rule and agent instructions. The links below show those source components; task generation fills in the batch and token counts.</p>
+<ul>
+  <li><a href="{{PROMPT_LEDGER}}">Ledger task: update rules and final questions</a></li>
+  <li><a href="{{PROMPT_STORAGE}}">Storage rules: context only, or files allowed</a></li>
+  <li><a href="{{PROMPT_CLM}}">Original CLM: how to edit the transcript</a></li>
+  <li><a href="{{PROMPT_REVISED}}">Revised CLM: the state-file protocol used for these trials</a></li>
+  <li><a href="{{PROMPT_BASELINE}}">Plain agent and periodic-summary instructions</a></li>
+</ul>
+<p>The revised-protocol link preserves the version used before the later verified-update helper. <a href="{{CONTEXT_README}}">Full run configuration</a>.</p>
+</details>
+<p class="next-links"><a href="@/context-model-choice.html">Is this 27B model enough?</a> · <a href="@/context-memory.html">Why disk does not replace GPU working memory</a></p>

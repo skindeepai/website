@@ -1,0 +1,17 @@
+<p><strong>Qwen3.8-27B was sufficient to solve this ledger with tools.</strong> It wrote code, maintained totals and answered all 24 questions correctly in the file-using runs. That does not make every memory strategy equally reliable.</p>
+<h2 id="model">Which model did each approach use?</h2>
+<p>The same 27-billion-parameter model ran the large-window, summary, original CLM, revised CLM and file-enabled agents. It used FP8 weights on two Intel Arc Pro B70 GPUs working together, not a separate model on each card. The experiments changed instructions, storage permissions and the agent software, without task-specific training.</p>
+<p>The model chose actions and wrote programs; CPU code did the ledger arithmetic. Summaries came from another call to the same model, not a smaller helper. <a href="@/context-model-tools.html">How the model and tools work together</a>.</p>
+<h2>What did 27B handle well?</h2>
+<p>Both file agents answered 24/24 on the 121K and 478K streams. Revised CLM also got 24/24 on the 478K stream, with code reading 74 of its 76 batches without putting their raw text into the model’s prompt.</p>
+<p>This is useful evidence for structured work with clear rules. It does not establish the same reliability for a long legal argument, ambiguous documents or questions that require connecting many passages.</p>
+<h2>Would a smarter model help?</h2>
+<p>It could write more reliable code, choose better excerpts or need fewer attempts. Those are plausible benefits, not measured improvements here: there is no matched larger-model ledger comparison.</p>
+<p>A larger model can need more GPU memory and time per token; fewer retries might offset that cost. Compare total time to a correct answer.</p>
+<p>One revised run made three mistakes after rewriting its delete-handling code. A better model might avoid that bug; retaining and checking the script can address it too. Neither greater size nor training can recover records that the application permanently discarded.</p>
+<h2>Would fine-tuning help?</h2>
+<p>These successful runs needed no additional training. Specialized training could teach more consistent saving, retrieval and editing habits.</p>
+<p>There is evidence on a different task: the CLM paper’s reinforcement-learning experiment raised Qwen3.5-9B’s BrowseComp-Plus accuracy from 28.8% to 42.5%. That was a different model and a deep-research benchmark, not this B70 ledger. <a href="https://arxiv.org/html/2609.37725v1#S5.SS2">Training experiment in the paper</a>.</p>
+<h2>How should I choose?</h2>
+<p>For structured records, start by keeping originals, using exact code and checking its results. For tasks requiring interpretation, compare models on representative questions under the same storage rules. Judge correct completed answers and total time, not parameter count or token speed alone.</p>
+<p class="next-links"><a href="@/context-model-tools.html#prompts">Model setup and prompts</a> · <a href="@/context-results.html#comparison">Measured task results</a></p>

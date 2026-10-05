@@ -2,7 +2,7 @@
 {{DIAGRAM_SUMMARIES}}
 <h2>How it works</h2>
 <p>Suppose the history says “10 apples, add 3, remove 2.” A useful summary might say “Current stock: 11 apples.” The next update can build on 11 without carrying all three earlier messages.</p>
-<p>Here, a separate model call made a summary when the conversation reached 75% of its 32K budget. Unlike the <a href="@/context-large-window.html">large-window approach</a>, the next prompt no longer contained the complete earlier history.</p>
+<p>Here, the application asked the same Qwen3.8-27B model for a summary at 75% of the 32K budget. It kept the original instructions and task, replaced the older working history with that summary, and continued. <a href="{{PROMPT_BASELINE}}">Read the summary prompt</a>.</p>
 <h2>What happened in the test?</h2>
 {{RESULT_SUMMARIES}}
 <p>The agent made 12 summaries. It finished correctly, but took longer than the successful large-window run, which took 26 minutes.</p>

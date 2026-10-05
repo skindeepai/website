@@ -147,6 +147,11 @@ def update(pages):
         'RAW_RECALL_PROSE': raw('recall/recall-prose.json'), 'RAW_RECALL_LEDGER': raw('recall/recall-ledger.json'),
         'RAW_CACHE': raw('prefixcache-exact-mtp/cache.json'), 'RAW_GATE': raw('pcgate/results.json'),
         'CONTEXT_README': note('scripts') + 'README.md',
+        'PROMPT_LEDGER': note('scripts') + 'make_ledger_tasks.py#L39-L62',
+        'PROMPT_STORAGE': note('scripts') + 'make_kvstream_tasks.py#L215-L229',
+        'PROMPT_BASELINE': note('scripts') + 'clm_baselines.py#L54-L85',
+        'PROMPT_CLM': 'https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/clm/clm_harness/clm_agent/prompts.yaml#L5-L51',
+        'PROMPT_REVISED': 'https://github.com/steveseguin/b70-optimization-lab/blob/73a6693b275d70432086c5ea91fa36e4cec0c6c2/experiments/qwen38-27b-b70/scripts/context/clm_improved.py#L107-L128',
     }
     for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review', 'timing']:
         replacements['NOTE_' + key.upper()] = note(key)
@@ -179,6 +184,7 @@ def update(pages):
         ('cleanup', 'Repeated progress lines and terminal formatting are reduced to one readable line with a repetition count.'),
         ('parking', 'An inactive numerical cache moves from GPU memory to disk, then back to active memory before the session resumes.'),
         ('offload', 'Part of the active cache stays in RAM or disk. Needed portions repeatedly move into GPU working space during generation.'),
+        ('model-tools', 'The GPU model requests an apple total. The application runs CPU code that reads files on disk. Only the result, 11 apples, returns to the next model prompt; the archive stays outside it.'),
     ]:
         replacements['DIAGRAM_' + key.upper().replace('-', '_')] = (
             '<figure class="ctx-diagram"><picture><source media="(max-width:600px)" width="360" height="698" srcset="images/context-how-' + key + '-mobile.png">'
@@ -192,6 +198,9 @@ def update(pages):
         ('context-cache.html', 'Read once, reuse the unchanged start', 'Prefix caching reduces the wait before an answer; long-context generation still has a cost.', 'context-methods.html'),
         ('context-memory.html', 'Can disk replace GPU memory?', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
         ('context-clm.html', 'Let the model edit its own context', 'CLM, summaries and state files: how a long task can use a short working history.', 'context-methods.html'),
+        ('context-model-tools.html', 'How the model uses files', 'Follow a tool request from the GPU model to disk and back, with the actual prompt sources.', 'context-methods.html'),
+        ('context-clm-vs-files.html', 'CLM or files: what changes?', 'Compare live context editing, an automatically loaded state file and a separate archive.', 'context-methods.html'),
+        ('context-model-choice.html', 'Is the 27B model enough?', 'What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.', 'context-methods.html'),
         ('context-results.html', 'Longer context: the measured results', 'Task outcomes, speed, recall and the source records behind the explanations.', None),
         ('context-large-window.html', 'Use a larger context window', 'Keep more conversation in view: how it works, its results and where it runs out.', 'context-methods.html'),
         ('context-summaries.html', 'Replace old history with a summary', 'How periodic summaries make room, what they preserve and what they can lose.', 'context-methods.html'),
@@ -217,7 +226,7 @@ def update(pages):
                                   ('decisions', 'context-results.html')]:
                 body = body.replace('href="@/' + target + '"', 'id="approach-' + ident + '" href="@/' + target + '"', 1)
         p = dict(title=title, description=description, styles=['results.css', 'context.css'], body=body)
-        if '<figure class="ctx-diagram">' in body:
+        if '<figure class="ctx-diagram">' in body or name in ('context-clm-vs-files.html', 'context-model-choice.html'):
             opening = re.match(r'<p>(.*?)</p>\s*', body, flags=re.S)
             p['meta_description'] = description
             p['description'] = re.sub(r'<[^>]+>', '', opening[1])
