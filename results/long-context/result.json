@@ -353,12 +353,12 @@
         "strategy": "Improved self-editing agent, 480K stream (larger than the window)",
         "files": "no",
         "budget": "32K",
-        "right": "",
-        "time": "",
-        "written": "",
-        "peak": "",
-        "note": "No completed result in the pinned research snapshot.",
-        "status": "pending"
+        "right": "24",
+        "time": "8.2 min",
+        "written": "36K tokens",
+        "peak": "10K",
+        "note": "478K tokens in 76 batches, 1.8 times the whole window. The model wrote one small script, kept its table in the pinned state and piped each batch through the script; it read only 2 of the 76 batches itself. Shows unlimited input when code can do the reading, not yet the model understanding more text than its window.",
+        "status": "measured"
       },
       {
         "id": "files-480k",
@@ -437,8 +437,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "097a4d84c",
-    "time": "2026-10-05 15:25 UTC (11:25 EDT)",
+    "commit": "7d3a957f4",
+    "time": "2026-10-05 15:35 UTC (11:35 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
