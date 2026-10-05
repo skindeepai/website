@@ -179,18 +179,18 @@ def update(pages):
         pages[name] = p
 
     o = d['one_step']
-    body = ('<p class="study-sample">80 easy yes/no, A–D, sentiment and routing items. Qwen3.8-27B on two B70 GPUs. One pass; thinking was also tested on a 24-item subset.</p>'
+    body = ('<p>The test used 80 easy yes/no, multiple-choice, sentiment and routing questions. A 24-question subset was also tested with thinking enabled.</p>'
             + table(['Answer path', 'Correct', 'Median time'], [
-                ['One token, labels restricted, thinking off', o['right_one_step'], o['median_seconds']['one_step'] + ' seconds'],
-                ['Ordinary label decoding, thinking off', o['right_decoding'], o['median_seconds']['decoding'] + ' seconds'],
-                ['Reasoning then label, 24-item subset', o['right_thinking'], o['median_seconds']['thinking'] + ' seconds']], 'Easy label decisions')
+                ['One token, thinking off', o['right_one_step'], o['median_seconds']['one_step'] + ' s'],
+                ['Ordinary label, thinking off', o['right_decoding'], o['median_seconds']['decoding'] + ' s'],
+                ['Think, then label (subset)', o['right_thinking'], o['median_seconds']['thinking'] + ' s']], 'Easy label decisions', 'ctx-summary-table')
             + '<p>The one-step and ordinary decoding answers matched on 80/80 items. Both got 78/80 right. On the 24 items with thinking enabled, one-step and thinking answers matched on 24/24; both got 23/24 right.</p>'
             '<p>Median response time was about 0.09 seconds for either non-thinking path, versus 0.59 seconds with thinking. The roughly 6.5× ratio describes these easy-item timing samples; it is not a speedup over ordinary non-thinking decoding.</p>'
             '<p>The allowed labels began with distinct tokens. Restricting the first token ensures a valid label choice; it does not guarantee the choice is correct. All model layers still run. Hard decisions where reasoning changes the answer need a separate accuracy comparison.</p>'
             '<p>' + link('@/context-clm.html#thinking', 'Removing earlier reasoning is a different experiment') + ' · ' + link('@/output-results.html', 'Related: trained label outputs') + '</p>'
-            '<details><summary>Original measurements and method</summary><p>' + link(raw('edge/choice.json'), 'Every item and timing') + ' · '
+            '<details><summary>Original measurements and method</summary><p>Qwen3.8-27B on two B70 GPUs, one pass. The one-token path restricted output to the allowed labels.</p><p>' + link(raw('edge/choice.json'), 'Every item and timing') + ' · '
             + link(note('window'), 'Original protocol and result') + ' · ' + link('@/docs/one-step-decisions.md', 'Method note') + '</p></details>')
-    pages['one-step-results.html'] = dict(title='A label in one step', description='On easy decisions, skipping reasoning saved time; shortening an already short label added little.', status='Measured pilot', styles=['results.css', 'context.css'], body=body)
+    pages['one-step-results.html'] = dict(title='A label in one step', description='On easy decisions, skipping reasoning saved time; shortening an already short label added little.', styles=['results.css', 'context.css'], body='<div class="ctx-page">' + body + '</div>')
     section(pages, 'decisions.html', 'one-step-link', '<h2>Short labels on a larger model</h2><p>One-step labels matched ordinary decoding on 80 easy items. On a 24-item subset, skipping reasoning kept the same answers; median response time was about 0.09 seconds without reasoning versus 0.59 with it.</p><p>' + link('@/one-step-results.html', 'One-step decision results') + '</p>')
     section(pages, 'results.html', 'context', '<h2>Working past the context limit</h2><p>A 121K-token ledger with under 9K active context, faster repeat questions, and the limits of disk-backed memory.</p><p>'
             + link('@/context.html', 'Plain-language overview') + ' · ' + link('@/context-results.html', 'Measured results') + ' · ' + link('@/context-questions.html', 'Common questions') + '</p>')
