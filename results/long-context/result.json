@@ -375,6 +375,18 @@
         "input_tokens": 121000
       },
       {
+        "id": "improved-light-121k",
+        "strategy": "Improved self-editing agent, thinking only when needed",
+        "files": "no",
+        "budget": "32K",
+        "right": "24 and 24 (two seeds)",
+        "time": "6.6 and 5.7 min",
+        "written": "20K and 18K tokens",
+        "peak": "17K and 16K",
+        "note": "The fold script is written once and checked by the harness on every batch; thinking is on only at the start, after an error and for the final answer. Right on both seeds, including the one where the earlier version dropped its delete rule.",
+        "status": "measured"
+      },
+      {
         "id": "improved-480k",
         "strategy": "Improved self-editing agent, 480K stream (larger than the window)",
         "files": "no",
@@ -495,8 +507,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "c66327ede",
-    "time": "2026-10-05 19:25 UTC (15:25 EDT)",
+    "commit": "953457072",
+    "time": "2026-10-05 19:34 UTC (15:34 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
