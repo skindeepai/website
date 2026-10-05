@@ -42,24 +42,25 @@ def update(pages):
             continue
         if 'trials' in r:
             for trial in r['trials']:
-                measured.append({**r, **trial, 'id': r['id'] + '-s' + str(trial['seed']),
-                                 'strategy': 'Revised self-editing, seed ' + str(trial['seed'])})
+                measured.append({**r, **trial, 'id': r['id'] + ('-' + trial['variant'] if 'variant' in trial else '-s' + str(trial['seed'])),
+                                 'strategy': trial['strategy'] if 'strategy' in trial else r['strategy'] + ', seed ' + str(trial['seed'])})
         else:
             measured.append(r)
     decode = d['window']['decode_rows']
     overview_labels = {
-        'keep': ('Large window', 'context-results.html#comparison'),
-        'paper': ('Self-editing (CLM)', 'context-clm.html'),
-        'summary': ('Summaries', 'context-clm.html'),
-        'files-edit': ('Files + self-editing', 'context-files.html'),
-        'files-plain': ('Files + plain agent', 'context-files.html'),
-        'improved-121k-s0': ('Revised self-editing, run 1', 'context-clm.html#improved'),
-        'improved-121k-s1': ('Revised self-editing, run 2', 'context-clm.html#improved'),
-        'no-thinking': ('Remove old thinking', 'context-clm.html#thinking')}
-    overview_order = ['keep', 'summary', 'paper', 'improved-121k-s0', 'improved-121k-s1', 'files-plain', 'files-edit', 'no-thinking']
+        'keep-s0': ('Large window, run 1', 'context-large-window.html'),
+        'keep-s1': ('Large window, run 2', 'context-large-window.html'),
+        'paper': ('Self-editing (CLM)', 'context-self-editing.html'),
+        'summary': ('Summaries', 'context-summaries.html'),
+        'files-edit': ('Files, editing available', 'context-files-editing.html'),
+        'files-plain': ('Files, no context editing', 'context-files-code.html'),
+        'improved-121k-s0': ('Revised self-editing, run 1', 'context-revised-editing.html'),
+        'improved-121k-s1': ('Revised self-editing, run 2', 'context-revised-editing.html'),
+        'no-thinking': ('Remove old thinking', 'context-drop-thinking.html')}
+    overview_order = ['keep-s0', 'keep-s1', 'summary', 'paper', 'improved-121k-s0', 'improved-121k-s1', 'files-plain', 'files-edit', 'no-thinking']
     by_id = {r['id']: r for r in measured}
-    overview = table(['Approach', 'Correct', 'Time'], [[overview_labels[key][0],
-        by_id[key]['right'] + '/24' if by_id[key]['right'].isdigit() else 'No answer', by_id[key]['time']]
+    score = lambda r: 'No answer' if r.get('no_answer') or not r['right'].isdigit() else r['right'] + '/24'
+    overview = table(['Approach', 'Correct', 'Time'], [[overview_labels[key][0], score(by_id[key]), by_id[key]['time']]
         for key in overview_order], 'Long-task approaches and results', 'ctx-summary-table')
     for label, path in overview_labels.values():
         overview = overview.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
@@ -69,8 +70,8 @@ def update(pages):
         ['CPU text cleanup', '1.83% fewer tokens with conservative cleanup.'],
         ['Active cache on disk', 'Not benchmarked. The 200K-token attention cache alone needs about 12.2 GiB.']],
         'Other context approaches and their findings', 'ctx-summary-table ctx-other-table')
-    for label, path in [('Prefix caching', 'context-cache.html'), ('Bigger active context', 'context-results.html#window'),
-                        ('CPU text cleanup', 'context-clm.html#cleaning'), ('Active cache on disk', 'context-memory.html')]:
+    for label, path in [('Prefix caching', 'context-prefix-cache.html'), ('Bigger active context', 'context-large-window.html'),
+                        ('CPU text cleanup', 'context-cleanup.html'), ('Active cache on disk', 'context-cache-offload.html')]:
         other = other.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     cache_wait = table(['Prompt or edit', 'First token without reuse', 'First token with reuse'], [
         ['Repeated 30K prompt', c['repeat_30k'][0], c['repeat_30k'][1]],
@@ -83,23 +84,26 @@ def update(pages):
     memory = d['disk_estimate']
     transfer = table(['Assumed sustained storage read rate', 'Time to move the 200K cache once'],
                      [[f'{r["gb_s"]:g} GB/s', f'At least {r["seconds"]:.2f} seconds'] for r in memory['transfer_examples']], 'Illustrative transfer times; not a model benchmark')
-    comparison = table(['Strategy', 'External files', 'Context budget', 'Correct / 24', 'Elapsed time', 'Tokens generated'],
-                       [[r['strategy'], r['files'], r['budget'], r['right'], r['time'], r['written']] for r in measured],
-                       'One 121K-token ledger, seed 0', 'ctx-comparison')
+    comparison = table(['Strategy', 'External files', 'Context budget', 'Correct', 'Elapsed time', 'Tokens generated'],
+                       [[r['strategy'], r['files'], r['budget'], score(r), r['time'], r['written']] for r in measured if r.get('input_tokens', 121000) == 121000],
+                       '121K-token ledger trials, including both large-window and revised-agent seeds', 'ctx-comparison')
     method_rows = [
         ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
         ['Exact prefix cache', 'Reuses the unchanged start. Repeat questions began sooner; writing stayed near 89 tokens/s in the standard check.'],
-        ['Files and retrieval', 'Stores records outside the conversation. Both ledger runs got 24/24 in 1.9 minutes with under 9K active context.'],
-        ['CLM self-editing', 'Rewrites the working history. Revised agent: 24/24 in 15 minutes and 21/24 in 21 minutes on two seeds; original agent: 19/24 in 64 minutes.'],
+        ['Files, no context editing', 'Code reads saved records and keeps the totals. 24/24 in 1.9 minutes on the 121K ledger.'],
+        ['Files, editing available', 'Adds permission to rewrite the conversation. 24/24 in 1.9 minutes on the 121K ledger; no edit was needed.'],
+        ['CLM self-editing', 'Rewrites selected parts of the working history. Original agent: 19/24 in 64 minutes; its harness lost five delivered batches.'],
         ['Periodic summaries', 'Replaces old history with a short account. It got 24/24 in 41 minutes; making summaries added work.'],
+        ['Revised self-editing', 'Protects incoming batches and pins the current state. 24/24 and 21/24 on two 121K runs; 24/24 on a 478K stream.'],
+        ['Remove old thinking', 'Drops earlier reasoning from later calls. One ledger run repeatedly rebuilt its state and returned no answer after 2.6 hours.'],
         ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
         ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
-    for label, path in [('Bigger active window', 'context-results.html#window'), ('Exact prefix cache', 'context-cache.html'),
-                        ('Files and retrieval', 'context-files.html'), ('CLM self-editing', 'context-clm.html'),
-                        ('Periodic summaries', 'context-clm.html'), ('Park a cache on disk', 'context-memory.html#parking'),
-                        ('Stream active cache from disk/RAM', 'context-memory.html#streaming'), ('CPU text cleanup', 'context-clm.html#cleaning')]:
+    for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'),
+                        ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
+                        ('Periodic summaries', 'context-summaries.html'), ('Revised self-editing', 'context-revised-editing.html'), ('Remove old thinking', 'context-drop-thinking.html'),
+                        ('Park a cache on disk', 'context-cache-parking.html'), ('Stream active cache from disk/RAM', 'context-cache-offload.html'), ('CPU text cleanup', 'context-cleanup.html')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     chart = chart_image('context-decode-speed', 'Observed output rate: 127 tokens per second at 8K context, 99 at 30K, 70 at 60K, 49 at 120K, 40 at 160K, 35 at 200K, 31 at 230K and 27 at 250K.',
                         'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
@@ -126,7 +130,7 @@ def update(pages):
         'TIMING_TABLE': table(d['timing_analysis']['columns'], d['timing_analysis']['rows'], 'Measured totals and estimated time breakdown', 'ctx-comparison'),
         'OVERVIEW_TABLE': overview, 'OVERVIEW_OTHER_TABLE': other,
         'TASK_CHART': chart_image('context-task-time', 'Large window: 26 minutes, 24 of 24 correct. Summaries: 41 minutes, 24 correct. Original self-editing: 64 minutes, 19 correct. Revised self-editing: 15 minutes and 24 correct on seed 0, 21 minutes and 21 correct on seed 1. Both file-using agents: 1.9 minutes, 24 correct.',
-            'Completed 121K-token ledger runs. Revised self-editing used two seeds; the other approaches used seed 0. ' + link('@/context-results.html#comparison', 'Full results'), 1170),
+            '121K ledger: seed 0 for each approach, plus seed 1 for revised self-editing. The large-window seed-1 run returned no answer; see the ' + link('@/context-results.html#comparison', 'full comparison') + '.', 1170),
         'RECALL_CHART': chart_image('context-recall', 'Codes correct out of 60 per style. Ordinary words and look-alike codes: 60K, 60 and 60; 120K, 60 and 58; 160K, 59 and 58; 200K, 58 and 57; 230K, 60 and 60; 250K, 60 and 58.',
             'Correct codes out of 60 for each context length and filler style.', 864),
         'CACHE_CHART': chart_image('context-cache-speed', 'Repeated 30K prompt: cache off 11.4 seconds to first token, cache on 0.8 seconds. Separate standard 12-prompt check, second pass: 88.7 output tokens per second with cache off and 89.7 with cache on.',
@@ -147,6 +151,39 @@ def update(pages):
     for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review', 'timing']:
         replacements['NOTE_' + key.upper()] = note(key)
 
+    def outcomes(items):
+        return table(['Trial', 'Correct', 'Time'], [[label, score(by_id[key]), by_id[key]['time']] for key, label in items],
+                     'Measured task outcomes', 'ctx-summary-table')
+
+    replacements.update({
+        'RESULT_WINDOW': outcomes([('keep-s0', '121K, run 1'), ('keep-s1', '121K, run 2')]),
+        'RESULT_SUMMARIES': outcomes([('summary', '121K ledger')]),
+        'RESULT_SELF_EDITING': outcomes([('paper', '121K ledger')]),
+        'RESULT_REVISED': outcomes([('improved-121k-s0', '121K, run 1'), ('improved-121k-s1', '121K, run 2'), ('improved-480k', '478K stream')]),
+        'RESULT_FILES_CODE': outcomes([('files-plain', '121K ledger'), ('files-480k-plain', '478K stream')]),
+        'RESULT_FILES_EDITING': outcomes([('files-edit', '121K ledger'), ('files-480k-editing-available', '478K stream')]),
+        'RESULT_DROP_THINKING': outcomes([('no-thinking', '121K ledger')]),
+        'STREAM_TABLE': outcomes([('improved-480k', 'Revised self-editing'), ('files-480k-plain', 'Files, no context editing'), ('files-480k-editing-available', 'Files, editing available')]),
+    })
+    for label, path in [('Revised self-editing', 'context-revised-editing.html'), ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html')]:
+        replacements['STREAM_TABLE'] = replacements['STREAM_TABLE'].replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
+    for key, alt in [
+        ('window', 'The active conversation grows: first 10 apples, then add 3, then remove 2. Earlier updates remain visible.'),
+        ('summaries', 'The old messages are replaced by a summary saying apples: 11. The next call uses the summary, not the original history.'),
+        ('self-editing', 'The agent edits its live transcript: apples: 10 plus add 3 becomes apples: 13, with the processed batch removed.'),
+        ('revised', 'A room check protects the next batch; code updates the state; the next call receives the pinned state and keeps space for more data.'),
+        ('files-code', 'Batch records stay in files. A saved script updates a state file. The model receives the short result, apples: 11.'),
+        ('files-editing', 'Saved records and code keep the prompt small. Editing the live conversation is available if needed; it was not needed in the 121K run.'),
+        ('drop-thinking', 'Earlier reasoning contains apples: 11. Removing it without saving that total leaves the next call needing to reconstruct it.'),
+        ('prefix', 'The first question computes the document cache. The second reuses the unchanged document and processes a new question.'),
+        ('cleanup', 'Repeated progress lines and terminal formatting are reduced to one readable line with a repetition count.'),
+        ('parking', 'An inactive numerical cache moves from GPU memory to disk, then back to active memory before the session resumes.'),
+        ('offload', 'Part of the active cache stays in RAM or disk. Needed portions repeatedly move into GPU working space during generation.'),
+    ]:
+        replacements['DIAGRAM_' + key.upper().replace('-', '_')] = (
+            '<figure class="ctx-diagram"><picture><source media="(max-width:600px)" width="360" height="698" srcset="images/context-how-' + key + '-mobile.png">'
+            '<img src="@/images/context-how-' + key + '.png" width="1200" height="360" decoding="async" alt="' + escape(alt, quote=True) + '"></picture></figure>')
+
     registry = [
         ('context.html', 'Working past the context limit', 'Which ways of managing an AI’s memory actually helped?', None),
         ('context-questions.html', 'Longer context, plain answers', 'Common questions about memory, disk, speed and what “unlimited” can mean.', None),
@@ -156,6 +193,17 @@ def update(pages):
         ('context-memory.html', 'Can disk replace GPU memory?', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
         ('context-clm.html', 'Let the model edit its own context', 'CLM, summaries and state files: how a long task can use a short working history.', 'context-methods.html'),
         ('context-results.html', 'Longer context: the measured results', 'Task outcomes, speed, recall and the source records behind the explanations.', None),
+        ('context-large-window.html', 'Use a larger context window', 'Keep more conversation in view: how it works, its results and where it runs out.', 'context-methods.html'),
+        ('context-summaries.html', 'Replace old history with a summary', 'How periodic summaries make room, what they preserve and what they can lose.', 'context-methods.html'),
+        ('context-self-editing.html', 'Let the model edit its conversation', 'What CLM self-editing actually changes, with a simple example and measured results.', 'context-methods.html'),
+        ('context-revised-editing.html', 'Self-editing with a protected state', 'How delivery checks and an explicit state change the self-editing approach.', 'context-methods.html'),
+        ('context-files-code.html', 'Keep records in files and use code', 'How a plain file-using agent completed long ledgers with a small active context.', 'context-methods.html'),
+        ('context-files-editing.html', 'Files with context editing available', 'Two tools with different jobs: files store records, while editing can shorten the live conversation.', 'context-methods.html'),
+        ('context-drop-thinking.html', 'Remove earlier thinking', 'What gets removed, when it saves space and why one long-task run stalled.', 'context-methods.html'),
+        ('context-prefix-cache.html', 'Reuse the reading with a prefix cache', 'How cached computation helps a repeated prompt start answering sooner.', 'context-methods.html'),
+        ('context-cleanup.html', 'Clean up text before the model reads it', 'What simple CPU cleanup removes and why its measured savings were small.', 'context-methods.html'),
+        ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
+        ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
     ]
     for name, title, description, parent in registry:
         body = (ROOT / 'content' / name).read_text(encoding='utf-8')
@@ -163,12 +211,17 @@ def update(pages):
             body = body.replace('{{' + key + '}}', value)
         assert not re.search(r'\{\{[A-Z_0-9]+\}\}', body), name + ': unresolved template value'
         if name == 'context.html':
-            for ident, target in [('window', 'context-results.html#window'), ('cache', 'context-cache.html'),
-                                  ('self-editing', 'context-clm.html'), ('files', 'context-files.html'),
-                                  ('cleaning', 'context-clm.html#cleaning'), ('disk', 'context-memory.html'),
+            for ident, target in [('window', 'context-large-window.html'), ('cache', 'context-prefix-cache.html'),
+                                  ('self-editing', 'context-self-editing.html'), ('files', 'context-files-code.html'),
+                                  ('cleaning', 'context-cleanup.html'), ('disk', 'context-cache-offload.html'),
                                   ('decisions', 'context-results.html')]:
                 body = body.replace('href="@/' + target + '"', 'id="approach-' + ident + '" href="@/' + target + '"', 1)
         p = dict(title=title, description=description, styles=['results.css', 'context.css'], body=body)
+        if '<figure class="ctx-diagram">' in body:
+            opening = re.match(r'<p>(.*?)</p>\s*', body, flags=re.S)
+            p['meta_description'] = description
+            p['description'] = re.sub(r'<[^>]+>', '', opening[1])
+            p['body'] = body[opening.end():]
         if name != 'context.html':
             p['journey'] = {'topic': {'href': 'context.html', 'label': 'Longer context overview'}}
             if parent:

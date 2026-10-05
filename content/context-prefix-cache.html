@@ -1,0 +1,15 @@
+<p><strong>Reuse the work of reading an unchanged beginning.</strong> If several questions share the same long document, the server can start from its saved computation instead of reading that document from scratch each time.</p>
+{{DIAGRAM_PREFIX}}
+<h2>A simple example</h2>
+<p>First ask “How many apples?” after a long ledger. Then send the same ledger followed by “How many pears?” The server reuses the matching beginning and reads the new ending.</p>
+<p>This caches the model’s numerical state, not the old answer. It still generates an answer to the new question.</p>
+<h2>How is it different from normal chat?</h2>
+<p>The text available to the model stays the same; the server skips repeated computation. <a href="@/context-summaries.html">Summaries</a> and <a href="@/context-self-editing.html">self-editing</a> instead change which text the next call receives.</p>
+<h2>What happened in the tests?</h2>
+<p>A repeated 30K-token prompt began answering in <strong>0.8 seconds instead of 11.4 seconds</strong>. In a separate standard check, writing stayed near <strong>89 tokens/s</strong> with or without caching.</p>
+<p>The matching cache test produced the same output tokens in 99/99 cases. <a href="@/context-cache.html">See the charts, exactness checks and costs</a>.</p>
+<h2>Why does it help? What does it not solve?</h2>
+<p>It saves repeated reading, especially across many questions over the same material. It does not shrink the active context or remove the cost of attending to it while writing.</p>
+<p>Editing an early passage leaves only the beginning before that edit reusable. Cached state takes memory, can be evicted, and does not survive a restart unless the system explicitly saves and restores it.</p>
+<details><summary>Technical details: exact reuse on this model</summary><p>Qwen3.8 combines full attention and recurrent layers. The lab’s add-on retained prompt-reading states at compatible checkpoints, using fixed 832-token reading chunks for both cached and matched uncached calls. It excluded states produced through the generation path.</p><p>The 99 cases covered prompts up to 30K and up to 48 output tokens, including later conversation turns. Separate 120K cold-repeat checks also matched. Smaller chunks made cold reads slower: about 9.8 to 11.4 seconds at 30K and 55 to 69.6 seconds at 120K. Repeated reuse can recover that cost.</p><p><a href="{{NOTE_CACHE_RULES}}">Cache rules</a> · <a href="{{NOTE_CACHE_TEST}}">Exactness and speed evidence</a></p></details>
+<p class="next-links">Compare: <a href="@/context-cache-parking.html">save an inactive cache to disk</a> · <a href="@/context-cache-offload.html">move cache while generating</a></p>

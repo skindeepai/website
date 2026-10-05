@@ -1,0 +1,14 @@
+<p><strong>Stop sending the model’s earlier reasoning back on every call.</strong> This frees space when the reasoning is no longer useful. It does not turn off reasoning for the current answer.</p>
+{{DIAGRAM_DROP_THINKING}}
+<h2>What gets removed?</h2>
+<p>A model may first work through a calculation, then issue a command or answer. Later calls can include both that earlier reasoning and the result. This approach removes the earlier reasoning while retaining the other messages.</p>
+<p>If “apples: 11” was saved in an explicit state table, the next call can use it. If the total lived only inside the removed reasoning, the model must calculate it again.</p>
+<h2>How is it different from a summary?</h2>
+<p>A <a href="@/context-summaries.html">summary</a> tries to preserve useful facts before replacing history. This is a blanket removal by message type. It is simpler, but does not check whether an essential fact was stored there.</p>
+<h2>What happened in the test?</h2>
+{{RESULT_DROP_THINKING}}
+<p>The agent repeatedly reconstructed its state, hit its output limit and failed to act. It generated about 397K tokens before the run was stopped.</p>
+<h2>When can it help?</h2>
+<p>Use it when durable facts, progress and next steps live in a separate visible state or file. The <a href="@/context-revised-editing.html">revised self-editing agent</a> uses that arrangement. Removing reasoning alone did not provide it.</p>
+<details><summary>Technical details: size reduction is not a speed result</summary><p>Across 277 calls in a separate initial comparison, old reasoning was a median 9.9% of input, with a maximum of 55.8%. Those percentages measure occupied space, not the speed gained by deleting it.</p><p>The experiment stripped previous reasoning from the message history and disabled its preservation in the chat template. Current-call thinking remained enabled. Reformatting earlier messages can also reduce prefix reuse.</p><p><a href="{{NOTE_RESULTS}}">Stopped-run analysis</a> · <a href="{{CONTEXT_README}}">Drop-thinking implementation</a></p></details>
+<p class="next-links">Compare: <a href="@/context-cleanup.html">remove repeated or decorative text</a> · <a href="@/context-revised-editing.html">keep explicit working state</a></p>

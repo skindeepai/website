@@ -2,8 +2,8 @@
 <h2>Three different uses of disk</h2>
 <dl class="ctx-definitions">
   <dt><a href="@/context-files.html">Save text and records</a></dt><dd>Keep an archive and read selected parts. This is the approach that completed the ledger in 1.9 minutes with under 9K active context.</dd>
-  <dt><a href="#parking">Park an inactive cache</a></dt><dd>Save the model’s numerical state between sessions, then restore it before use.</dd>
-  <dt><a href="#streaming">Stream an active cache</a></dt><dd>Move numerical state during generation because it cannot all stay in GPU memory.</dd>
+  <dt><a href="@/context-cache-parking.html">Park an inactive cache</a></dt><dd>Save the model’s numerical state between sessions, then restore it before use.</dd>
+  <dt><a href="@/context-cache-offload.html">Stream an active cache</a></dt><dd>Move numerical state during generation because it cannot all stay in GPU memory.</dd>
 </dl>
 <h2 id="size">How much memory does 200K need?</h2>
 <p>For this model, <strong>about 12.2 GiB for the attention cache alone</strong>, spread across two GPUs. Model weights and other working state need additional space.</p>

@@ -1,0 +1,13 @@
+<p><strong>Remove predictable clutter before sending text to the model.</strong> A small CPU script can strip terminal decoration or replace repeated output without asking a language model to write a summary.</p>
+{{DIAGRAM_CLEANUP}}
+<h2>How it works</h2>
+<p>A tool might print the same progress line many times, with color-control codes around it. A cleaner can produce one readable line with a repetition count. The useful result stays visible while unnecessary formatting disappears.</p>
+<p>Unlike <a href="@/context-self-editing.html">self-editing</a>, fixed rules choose what to change. Unlike <a href="@/context-summaries.html">a summary</a>, the cleaner does not try to rewrite the meaning of the whole conversation.</p>
+<h2>What happened in the measurement?</h2>
+<p>Conservative cleanup removed <strong>1.83%</strong> of about five million tokens across three transcripts. That is a small saving: roughly 33K tokens of that material might fit where 32K fitted before.</p>
+<p>A separate rule moving large tool outputs to files removed 7.50% from view. That is <a href="@/context-files-code.html">external storage</a>, with a possible read-back cost, rather than cleanup alone.</p>
+<h2>Why use it? Where are its limits?</h2>
+<p>It can cheaply tidy noisy logs. It cannot turn a full window of useful facts into a much smaller one without losing or moving information.</p>
+<p>Repetition can itself matter: ten identical errors may mean something different from one. Preserve counts, order and original logs when those affect the task. Removing visible text does not establish that the model will answer equally well.</p>
+<details><summary>Technical details: what the census measured</summary><p>This was token accounting on roughly 4.99 million tokens, not a paired model-quality or decode-speed test. The conservative rules addressed duplicate outputs, repeated lines, whitespace and terminal noise. No trained CPU classifier was benchmarked.</p><p>The 7.50% offload figure was measured separately and cannot simply be added to 1.83%. In 54 of 152 large outputs, a line from the hidden middle was quoted later; that indicates possible retrieval needs, not a measured number of file reads.</p><p><a href="{{NOTE_CLEANING}}">Rules and detailed census</a> · <a href="@/context-results.html#cleaning">Measurement table</a></p></details>
+<p class="next-links">Compare: <a href="@/context-drop-thinking.html">remove old reasoning</a> · <a href="@/context-summaries.html">summarize useful content</a></p>

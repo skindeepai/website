@@ -3,7 +3,7 @@
   "updated": "2026-10-05",
   "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
   "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
-  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/",
+  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/",
   "sources": {
     "results": "notes/2026-10-05-context-research-results.md",
     "window": "notes/2026-10-05-context-window-prereg.md",
@@ -256,7 +256,27 @@
         "written": "89K and 99K tokens",
         "peak": "112K and 246K",
         "note": "First seed: the model filtered batches with code and about 91% of prompt tokens were cached. Second seed: no answers. It let every batch into its context and re-typed it, grew about 13K tokens per batch, and the server refused the next request at about 246K, one batch before the questions arrived. Its running table was exact up to that point; it had never been told its window size.",
-        "status": "measured"
+        "status": "measured",
+        "trials": [
+          {
+            "seed": 0,
+            "right": "24",
+            "time": "26 min",
+            "written": "89K tokens",
+            "peak": "112K",
+            "note": "Filtered batches with code; every final answer correct."
+          },
+          {
+            "seed": 1,
+            "right": "0",
+            "no_answer": true,
+            "time": "38 min",
+            "written": "99K tokens",
+            "peak": "246K",
+            "note": "Context filled before the final questions arrived; no answers returned."
+          }
+        ],
+        "input_tokens": 121000
       },
       {
         "id": "paper",
@@ -268,7 +288,8 @@
         "written": "233K tokens",
         "peak": "",
         "note": "all 5 losses were batches its own rollback-and-retry removed after delivery",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 121000
       },
       {
         "id": "summary",
@@ -280,7 +301,8 @@
         "written": "211K tokens",
         "peak": "",
         "note": "12 summaries, 57 calls; rewritten history reduces prefix reuse.",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 121000
       },
       {
         "id": "files-edit",
@@ -292,7 +314,8 @@
         "written": "7K tokens",
         "peak": "8.2K",
         "note": "no edit was needed",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 121000
       },
       {
         "id": "files-plain",
@@ -304,7 +327,8 @@
         "written": "8K tokens",
         "peak": "8.9K",
         "note": "",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 121000
       },
       {
         "id": "no-thinking",
@@ -316,7 +340,8 @@
         "written": "397K tokens",
         "peak": "113K",
         "note": "stuck re-deriving its state every call; never acted",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 121000
       },
       {
         "id": "improved-121k",
@@ -346,7 +371,8 @@
             "peak": "15K",
             "note": "All batches retained. A re-typed fold script stopped applying deletes from batch 17, causing three wrong final values."
           }
-        ]
+        ],
+        "input_tokens": 121000
       },
       {
         "id": "improved-480k",
@@ -358,7 +384,8 @@
         "written": "36K tokens",
         "peak": "10K",
         "note": "478K tokens in 76 batches, 1.8 times the whole window. The model wrote one small script, kept its table in the pinned state and piped each batch through the script; it read only 2 of the 76 batches itself. Shows unlimited input when code can do the reading, not yet the model understanding more text than its window.",
-        "status": "measured"
+        "status": "measured",
+        "input_tokens": 478000
       },
       {
         "id": "files-480k",
@@ -370,7 +397,26 @@
         "written": "8K and 5K tokens",
         "peak": "9.7K and 7.1K",
         "note": "The same 478K stream with files allowed: no management (11 calls) and self-editing (12 calls). Both saved the batches to disk and computed the answers with a script.",
-        "status": "measured"
+        "status": "measured",
+        "trials": [
+          {
+            "strategy": "Files, no context editing",
+            "right": "24",
+            "time": "1.9 min",
+            "written": "8K tokens",
+            "peak": "9.7K",
+            "variant": "plain"
+          },
+          {
+            "strategy": "Files, editing available",
+            "right": "24",
+            "time": "1.3 min",
+            "written": "5K tokens",
+            "peak": "7.1K",
+            "variant": "editing-available"
+          }
+        ],
+        "input_tokens": 478000
       }
     ]
   },
@@ -437,8 +483,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "a3bbb9599",
-    "time": "2026-10-05 15:25 UTC (11:25 EDT)",
+    "commit": "18cd050812e4c2e2e07b381123c773b923bf266e",
+    "time": "2026-10-05 15:37 UTC (11:37 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
@@ -474,14 +520,14 @@
         4.4
       ],
       [
-        "Files + self-editing",
+        "Files, editing available",
         112,
         76,
         16,
         2.7
       ],
       [
-        "Files + plain agent",
+        "Files, no context editing",
         111,
         80,
         15,

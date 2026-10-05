@@ -1,4 +1,4 @@
-<p><strong>Prefix caching makes the next answer start sooner.</strong> It saves the model’s already-computed representation of the unchanged start of a prompt. The next call reuses it and processes the remaining text.</p>
+<p><strong>Prefix caching makes the next answer start sooner.</strong> It saves the model’s already-computed representation of the unchanged start of a prompt. <a href="@/context-prefix-cache.html">See how prefix caching works, step by step</a>.</p>
 <h2>Waiting and writing are different</h2>
 {{CACHE_CHART}}
 <p>Once generation starts, full-attention layers still use the retained context for each new token. A cached long document remains a long document.</p>

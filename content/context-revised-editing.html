@@ -1,0 +1,15 @@
+<p><strong>Keep an explicit working state and protect new data until it has been processed.</strong> This revision keeps the self-editing idea while changing how the surrounding application handles memory.</p>
+{{DIAGRAM_REVISED}}
+<h2>How it works</h2>
+<ol><li>Check that there is room before fetching another batch.</li><li>Apply the batch to a small state table, such as “apples: 13.”</li><li>Keep that table visible on the next call, then remove the processed batch.</li></ol>
+<p>Already-delivered batches cannot be discarded by a retry. Earlier thinking is removed, so facts needed later must go into the explicit state.</p>
+<h2>What changed from the original?</h2>
+<p>The <a href="@/context-self-editing.html">original agent</a> could lose an unread batch during rollback. This version protects delivery and shows the working state at the end of each prompt. Its state file counts as active context; it is not an unlimited hidden archive.</p>
+<h2>What happened in the tests?</h2>
+{{RESULT_REVISED}}
+<p>Both 121K runs retained every batch. The second made a coding mistake: its rewritten update script stopped applying deletes, causing three wrong totals.</p>
+<p>On the 478K stream, code processed most batches without showing their raw text to the model. That is useful processing beyond the window’s size, but does not show the model understanding 478K tokens at once.</p>
+<h2>Why might it help? What can still fail?</h2>
+<p>The model spends less effort reconstructing past work, and a long stream can fit if its useful state stays small. Correct bookkeeping still depends on correct code. A state-size check cannot tell whether a total is right; tasks needing all original details may outgrow the state budget.</p>
+<details><summary>Technical details: state placement and verified updates</summary><p>The harness reloads a pinned STATE.txt into the final message and counts it against the context budget. Placing changing state last preserves more unchanged prompt text for prefix caching. It also checks available space before fetching and prevents rollback from deleting a delivered item.</p><p>A subsequent verified-fold revision keeps one update script, runs its self-test and checks how many lines of each kind it handled. That addresses the observed delete bug; it is distinct from the completed trials above. The results above do not establish that later revision’s accuracy.</p><p><a href="{{NOTE_RESULTS}}">Completed results and failure analysis</a> · <a href="{{CONTEXT_README}}">Implementation and run instructions</a></p></details>
+<p class="next-links">Compare: <a href="@/context-files-code.html">store records outside context</a> · <a href="@/context-drop-thinking.html">remove old thinking on its own</a></p>

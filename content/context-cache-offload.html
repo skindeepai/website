@@ -1,0 +1,14 @@
+<p><strong>Keep part of the active numerical cache outside the GPU and access it as the model works.</strong> This trades data movement or CPU computation for more capacity. It requires support inside the inference engine.</p>
+{{DIAGRAM_OFFLOAD}}
+<h2>How does it work?</h2>
+<p>While generating an answer, attention uses information from earlier tokens. An offloading engine can keep some of those stored numbers in system RAM or on disk, bringing needed portions to the GPU in stages. Some designs do part of the computation on the CPU instead.</p>
+<p>Unlike <a href="@/context-cache-parking.html">parking an inactive cache</a>, this extra work happens while the session is active. Unlike <a href="@/context-files-code.html">searching text files</a>, the system is moving the model’s internal numbers, not selecting a few passages to read.</p>
+<h2>Does this give unlimited context?</h2>
+<p>No. It can help with memory capacity, but does not extend the model’s supported window. The engine still needs buffers and working space, and longer histories require more storage and work.</p>
+<h2>What do the results show?</h2>
+<p><strong>Active RAM or disk offloading was not benchmarked here.</strong> The measured speed of about 35 tokens/s at 200K used an in-memory cache. It is not a disk-backed speed.</p>
+<h2>Why might it help? What could make it slow?</h2>
+<p>It can make a larger active context possible on a constrained GPU. But repeated transfers can become the bottleneck; RAM and disk have different bandwidth and latency. A faster drive does not remove all transfer or computation costs.</p>
+<p>A GPU with only a few KB free cannot simply point to a text file and gain 200K active tokens. Use a supported offloading engine, or keep a smaller context and retrieve relevant records.</p>
+<details><summary>Technical details: why bytes ÷ bandwidth is not tokens/second</summary><p>This model’s full-attention cache at 200K is about 13.1 GB, before other state. Moving that much data once at a hypothetical 5 GB/s takes at least 2.62 seconds. That is a transfer illustration, not a measured token latency.</p><p>Partial GPU residence, layer-by-layer staging, overlapping transfers with computation and accepted draft tokens change how much data moves per generated token. CPU attention changes the calculation again. A useful benchmark must measure the actual engine, hardware and output quality.</p><p><a href="@/context-memory.html#streaming">Transfer examples and memory sizes</a> · <a href="{{NOTE_REVIEW}}">Original offloading discussion</a></p></details>
+<p class="next-links">Compare: <a href="@/context-cache-parking.html">restore once, then generate</a> · <a href="@/context-files-code.html">keep a small context with files</a></p>

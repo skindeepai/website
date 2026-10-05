@@ -1,7 +1,7 @@
-<p>How can an AI finish a long job when its working memory is limited? We tested a stream of counter updates, like transactions in a ledger, then asked for <strong>24 final totals</strong>.</p>
+<p>How can an AI finish a long job when its working memory is limited? We tested a stream of counter updates, like transactions in a ledger, then asked for <strong>24 final totals</strong>. Choose an approach below to see how it works.</p>
 {{OVERVIEW_TABLE}}
 <p>Files let the model keep a small working context while code maintained the totals. Both file-using approaches finished in <strong>1.9 minutes with all 24 answers right</strong>.</p>
-<p class="ctx-table-note">The stream contained 121K tokens; the file-using runs held under 9K at once. The original self-editing run lost five delivered batches. <a href="@/context-results.html#comparison">Full comparison and test details</a>.</p>
+<p class="ctx-table-note">The stream contained 121K tokens; the file-using runs held under 9K at once. The large-window runs used two versions of the ledger; its second run filled the window before answering. <a href="@/context-results.html#comparison">Full comparison, including the 478K stream</a>.</p>
 <h2>Other ways to handle more context</h2>
 {{OVERVIEW_OTHER_TABLE}}
 <h2>The practical difference</h2>

@@ -1,0 +1,15 @@
+<p><strong>Replace a long conversation with a shorter handover note.</strong> The next model call receives that note and recent messages, freeing room for the task to continue.</p>
+{{DIAGRAM_SUMMARIES}}
+<h2>How it works</h2>
+<p>Suppose the history says “10 apples, add 3, remove 2.” A useful summary might say “Current stock: 11 apples.” The next update can build on 11 without carrying all three earlier messages.</p>
+<p>Here, a separate model call made a summary when the conversation reached 75% of its 32K budget. Unlike the <a href="@/context-large-window.html">large-window approach</a>, the next prompt no longer contained the complete earlier history.</p>
+<h2>What happened in the test?</h2>
+{{RESULT_SUMMARIES}}
+<p>The agent made 12 summaries. It finished correctly, but took longer than the successful large-window run, which took 26 minutes.</p>
+<h2>Why might it help?</h2>
+<p>A short account of current decisions, facts and unfinished work can support a much longer job. Smaller prompts need less working memory; useful details can survive after their original messages leave the window.</p>
+<h2>What can go wrong?</h2>
+<p>“11 apples” answers the current-total question, but cannot explain every earlier change. Repeated summaries can omit a detail or carry an earlier mistake forward. Save original records separately if later questions may need them.</p>
+<p>Making a summary also takes time. Replacing earlier text reduces <a href="@/context-prefix-cache.html">prefix-cache reuse</a>, so the next call may need more reading even though the prompt is shorter.</p>
+<details><summary>Technical details: periodic summaries versus self-editing</summary><p>This arm used a threshold-triggered summarizer, a 32K working budget and no external data files. It generated about 211K tokens across the task, including its work to maintain the conversation. Total elapsed time includes ordinary calls, summaries and tools; it is not a decode-rate measurement.</p><p><a href="@/context-self-editing.html">Self-editing</a> instead gives the agent control over specific parts of its message history. It can replace one obsolete batch or update an exact state block without requesting the same broad handover each time.</p><p><a href="{{NOTE_SELF_EDITING}}">Original comparison and summary failures</a> · <a href="{{NOTE_TIMING}}">Time and cache-reuse analysis</a></p></details>
+<p class="next-links">Compare: <a href="@/context-self-editing.html">edit selected parts of the history</a> · <a href="@/context-files-code.html">save the originals outside it</a></p>
