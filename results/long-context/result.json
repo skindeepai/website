@@ -251,11 +251,11 @@
         "strategy": "Large window, exact cache on",
         "files": "no",
         "budget": "full window",
-        "right": "24",
-        "time": "26 min",
-        "written": "89K tokens",
-        "peak": "",
-        "note": "Model filtered batches with code; no external data files. About 91% of prompt tokens were cached.",
+        "right": "24 and 0 (two seeds)",
+        "time": "26 and 38 min",
+        "written": "89K and 99K tokens",
+        "peak": "112K and 202K",
+        "note": "First seed: the model filtered batches with code and about 91% of prompt tokens were cached. Second seed: no answers at all; the context grew to 202K and the run ended first. Cause being traced.",
         "status": "measured"
       },
       {
@@ -437,8 +437,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "9b25b1b19d319c019344dae5884b3abf79827313",
-    "time": "2026-10-05 14:37 UTC (10:37 EDT)",
+    "commit": "d25fb9835",
+    "time": "2026-10-05 15:05 UTC (11:05 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
