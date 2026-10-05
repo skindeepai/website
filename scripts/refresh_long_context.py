@@ -36,7 +36,16 @@ def update(pages):
     note = lambda key: base + d['sources'][key]
     raw = lambda path: base + 'data/2026-10-05-context/' + path
     c = d['cache']
-    measured = [r for r in d['comparison']['rows'] if r['status'] == 'measured']
+    measured = []
+    for r in d['comparison']['rows']:
+        if r['status'] != 'measured':
+            continue
+        if 'trials' in r:
+            for trial in r['trials']:
+                measured.append({**r, **trial, 'id': r['id'] + '-s' + str(trial['seed']),
+                                 'strategy': 'Revised self-editing, seed ' + str(trial['seed'])})
+        else:
+            measured.append(r)
     decode = d['window']['decode_rows']
     overview_labels = {
         'keep': ('Large window', 'context-results.html#comparison'),
@@ -44,8 +53,10 @@ def update(pages):
         'summary': ('Summaries', 'context-clm.html'),
         'files-edit': ('Files + self-editing', 'context-files.html'),
         'files-plain': ('Files + plain agent', 'context-files.html'),
+        'improved-121k-s0': ('Revised self-editing, run 1', 'context-clm.html#improved'),
+        'improved-121k-s1': ('Revised self-editing, run 2', 'context-clm.html#improved'),
         'no-thinking': ('Remove old thinking', 'context-clm.html#thinking')}
-    overview_order = ['keep', 'summary', 'paper', 'files-plain', 'files-edit', 'no-thinking']
+    overview_order = ['keep', 'summary', 'paper', 'improved-121k-s0', 'improved-121k-s1', 'files-plain', 'files-edit', 'no-thinking']
     by_id = {r['id']: r for r in measured}
     overview = table(['Approach', 'Correct', 'Time'], [[overview_labels[key][0],
         by_id[key]['right'] + '/24' if by_id[key]['right'].isdigit() else 'No answer', by_id[key]['time']]
@@ -75,14 +86,11 @@ def update(pages):
     comparison = table(['Strategy', 'External files', 'Context budget', 'Correct / 24', 'Elapsed time', 'Tokens generated'],
                        [[r['strategy'], r['files'], r['budget'], r['right'], r['time'], r['written']] for r in measured],
                        'One 121K-token ledger, seed 0', 'ctx-comparison')
-    short_comparison = table(['Strategy', 'Correct / 24', 'Elapsed time'],
-                             [[r['strategy'], r['right'], r['time']] for r in measured if r['id'] in ['keep', 'summary', 'files-edit', 'files-plain']],
-                             'Equal-score strategies on the same ledger')
     method_rows = [
         ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
         ['Exact prefix cache', 'Reuses the unchanged start. Repeat questions began sooner; writing stayed near 89 tokens/s in the standard check.'],
         ['Files and retrieval', 'Stores records outside the conversation. Both ledger runs got 24/24 in 1.9 minutes with under 9K active context.'],
-        ['CLM self-editing', 'Rewrites the working history. The original run got 19/24 in 64 minutes; rollback discarded five delivered batches.'],
+        ['CLM self-editing', 'Rewrites the working history. Revised agent: 24/24 in 15 minutes and 21/24 in 21 minutes on two seeds; original agent: 19/24 in 64 minutes.'],
         ['Periodic summaries', 'Replaces old history with a short account. It got 24/24 in 41 minutes; making summaries added work.'],
         ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
@@ -103,6 +111,7 @@ def update(pages):
         ('cache_rules', 'How the cache works', 'Detailed engine analysis, state sizes and reuse rules.'),
         ('self_editing', 'Self-editing and ledger comparisons', 'Task rules, failure analysis and revised-agent design.'),
         ('cleaning', 'CPU cleanup census', 'Token accounting and potential retrieval costs.'),
+        ('timing', 'Where the time went', 'Saved-run timing reconstruction and prefix reuse.'),
         ('review', 'Paper and related research', 'CLM, alternatives and proposed disk-cache experiments.')]:
         source_list += '<li>' + link(note(key), title + ' (Markdown)') + '<span>' + escape(description) + '</span></li>'
     source_list += '<li>' + link(note('scripts') + 'README.md', 'Run instructions and scripts') + '</li></ul>'
@@ -110,10 +119,14 @@ def update(pages):
         'SETUP': escape(d['setup']), 'RESEARCH_TIME': escape(d['snapshot']['time']),
         'DECODE_250': str(round(decode[-1]['tokens_per_second'])),
         'RECALL_CORRECT': str(d['recall']['correct']), 'RECALL_ASKED': str(d['recall']['asked']),
-        'COMPARISON_TABLE': comparison, 'SHORT_COMPARISON': short_comparison, 'METHOD_TABLE': methods,
+        'COMPARISON_TABLE': comparison, 'METHOD_TABLE': methods,
+        'CLM_RESULT_TABLE': table(['Self-editing agent', 'Correct', 'Time'],
+            [[overview_labels[key][0], by_id[key]['right'] + '/24', by_id[key]['time']] for key in ['paper', 'improved-121k-s0', 'improved-121k-s1']],
+            'Original and revised self-editing trials', 'ctx-summary-table'),
+        'TIMING_TABLE': table(d['timing_analysis']['columns'], d['timing_analysis']['rows'], 'Measured totals and estimated time breakdown', 'ctx-comparison'),
         'OVERVIEW_TABLE': overview, 'OVERVIEW_OTHER_TABLE': other,
-        'TASK_CHART': chart_image('context-task-time', 'Large window: 26 minutes, 24 of 24 correct. Summaries: 41 minutes, 24 correct. Original self-editing: 64 minutes, 19 correct. Both file-using agents: 1.9 minutes, 24 correct.',
-            'Five completed runs on the same 121K-token ledger. ' + link('@/context-results.html#comparison', 'Full results and test setup'), 990),
+        'TASK_CHART': chart_image('context-task-time', 'Large window: 26 minutes, 24 of 24 correct. Summaries: 41 minutes, 24 correct. Original self-editing: 64 minutes, 19 correct. Revised self-editing: 15 minutes and 24 correct on seed 0, 21 minutes and 21 correct on seed 1. Both file-using agents: 1.9 minutes, 24 correct.',
+            'Completed 121K-token ledger runs. Revised self-editing used two seeds; the other approaches used seed 0. ' + link('@/context-results.html#comparison', 'Full results'), 1170),
         'RECALL_CHART': chart_image('context-recall', 'Codes correct out of 60 per style. Ordinary words and look-alike codes: 60K, 60 and 60; 120K, 60 and 58; 160K, 59 and 58; 200K, 58 and 57; 230K, 60 and 60; 250K, 60 and 58.',
             'Correct codes out of 60 for each context length and filler style.', 864),
         'CACHE_CHART': chart_image('context-cache-speed', 'Repeated 30K prompt: cache off 11.4 seconds to first token, cache on 0.8 seconds. Separate standard 12-prompt check, second pass: 88.7 output tokens per second with cache off and 89.7 with cache on.',
@@ -131,7 +144,7 @@ def update(pages):
         'RAW_CACHE': raw('prefixcache-exact-mtp/cache.json'), 'RAW_GATE': raw('pcgate/results.json'),
         'CONTEXT_README': note('scripts') + 'README.md',
     }
-    for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review']:
+    for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review', 'timing']:
         replacements['NOTE_' + key.upper()] = note(key)
 
     registry = [

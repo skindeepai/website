@@ -252,7 +252,7 @@
       "L03"
     ],
     "question": "Can self-editing let a task continue beyond its context budget?",
-    "answer": "In principle, when the retained state is enough for the task. The original self-editing ledger run got 19/24: the harness rolled back five already-delivered batches, which explains all five missed answers. Its recorded state edits did not cause those losses. The revised agent and 480K stream have no completed result in the cited snapshot. Editing changes what the model can see; preserve originals when future questions may need them.",
+    "answer": "The revised self-editing agent processed a 121K-token ledger within a 32K working budget. It got 24/24 in 15 minutes on one seed and 21/24 in 21 minutes on another. The three misses came from a bug in its update script, with every batch retained. The 480K-stream result is still pending. Keeping the data available does not by itself ensure correct computation.",
     "links": [
       [
         "context-clm.html",

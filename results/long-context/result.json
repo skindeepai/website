@@ -3,7 +3,7 @@
   "updated": "2026-10-05",
   "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
   "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
-  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/",
+  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/",
   "sources": {
     "results": "notes/2026-10-05-context-research-results.md",
     "window": "notes/2026-10-05-context-window-prereg.md",
@@ -14,7 +14,8 @@
     "review": "notes/2026-10-05-context-research-review.md",
     "scripts": "scripts/context/",
     "cache_code": "overlays/b70-prefix-cache-exact/",
-    "data": "data/2026-10-05-context/"
+    "data": "data/2026-10-05-context/",
+    "timing": "notes/2026-10-05-context-time-and-reuse.md"
   },
   "window": {
     "opens_tokens": 262144,
@@ -233,7 +234,7 @@
   },
   "comparison": {
     "task": "A stream of 20 batches (121,000 tokens) of counter updates with overwrites and deletes. A delivered batch cannot be fetched again. At the end: the current value of 24 counters.",
-    "seeds": 1,
+    "seeds": "Seed 0 for the original arms; seeds 0 and 1 for revised self-editing.",
     "columns": [
       "Strategy",
       "Files",
@@ -322,12 +323,30 @@
         "strategy": "Improved self-editing agent",
         "files": "no",
         "budget": "32K",
-        "right": "",
-        "time": "",
-        "written": "",
-        "peak": "",
-        "note": "No completed result in the pinned research snapshot.",
-        "status": "pending"
+        "right": "24 and 21 (two seeds)",
+        "time": "15 and 21 min",
+        "written": "67K and 91K tokens",
+        "peak": "20K and 15K",
+        "note": "No delivered batch was lost. The first seed was fully right. On the second, 3 of 24 were wrong: the model re-typed its own batch-folding script with a mistake, so deletes stopped being applied from batch 17 on. A harness check on each fold is being tested.",
+        "status": "measured",
+        "trials": [
+          {
+            "seed": 0,
+            "right": "24",
+            "time": "15 min",
+            "written": "67K tokens",
+            "peak": "20K",
+            "note": "No delivered batch lost; all final values correct."
+          },
+          {
+            "seed": 1,
+            "right": "21",
+            "time": "21 min",
+            "written": "91K tokens",
+            "peak": "15K",
+            "note": "All batches retained. A re-typed fold script stopped applying deletes from batch 17, causing three wrong final values."
+          }
+        ]
       },
       {
         "id": "improved-480k",
@@ -418,8 +437,82 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "83a71180e3abf4eec7f57181fc1433cedc3cdd26",
-    "time": "2026-10-05 13:42 UTC (09:42 EDT)",
+    "commit": "9b25b1b19d319c019344dae5884b3abf79827313",
+    "time": "2026-10-05 14:37 UTC (10:37 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
+  },
+  "timing_analysis": {
+    "source": "notes/2026-10-05-context-time-and-reuse.md",
+    "method": "Wall time and tool time from saved run records. Reading estimated from cold-read rates; writing is a residual and includes call overhead. Summary-call times are estimated. No per-token timestamps or isolated disk-I/O measurements.",
+    "columns": [
+      "Run",
+      "Total seconds",
+      "Estimated writing + call overhead",
+      "Estimated reading",
+      "Tool seconds"
+    ],
+    "rows": [
+      [
+        "Large window",
+        1589,
+        1461,
+        110,
+        2.7
+      ],
+      [
+        "Original self-editing",
+        3841,
+        3476,
+        336,
+        5.8
+      ],
+      [
+        "Summaries",
+        2464,
+        2068,
+        253,
+        4.4
+      ],
+      [
+        "Files + self-editing",
+        112,
+        76,
+        16,
+        2.7
+      ],
+      [
+        "Files + plain agent",
+        111,
+        80,
+        15,
+        2.5
+      ],
+      [
+        "Revised self-editing, seed 0",
+        896,
+        758,
+        109,
+        4.5
+      ],
+      [
+        "Revised self-editing, seed 1",
+        1258,
+        1095,
+        130,
+        5.6
+      ]
+    ],
+    "cache_reuse": {
+      "exact_calls": 226,
+      "within_one_832_token_block": 292,
+      "calls": 296,
+      "method": "Common prefixes measured in rendered characters and converted to tokens with per-call ratios; not exact tokenization."
+    },
+    "cache_break_even": {
+      "large_window_call": 4,
+      "estimated_read_seconds_with_cache": 110,
+      "estimated_read_seconds_without_cache": 866,
+      "method": "Counterfactual calculation from saved calls and measured/assumed cold-read rates; not a paired cache-off run."
+    }
   }
 }

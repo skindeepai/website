@@ -18,9 +18,11 @@ The earlier key-value trials all offloaded into files. Their losses came from tr
 
 ## Follow-up status
 
-The revised agent protects delivered batches, checks room before reading and keeps explicit state. The cited snapshot includes code and stub checks, but no completed score for it or the proposed 480K stream. The completed 121K task exceeds the small 32K budget, not the model's full 262K limit.
+The revised agent retained every delivered batch. Seed 0 scored 24/24 in 15 minutes; seed 1 scored 21/24 in 21 minutes. The second run's three wrong totals came from a rewritten update script that stopped applying deletes from batch 17. Peak active context was 20K and 15K; generated output was 67K and 91K tokens.
+
+A verified-fold fix and the 480K stream have no completed scored result in the cited snapshot. The completed 121K task exceeds the small 32K budget, not the model's full 262K limit.
 
 ## Sources
 
-- [Reported results](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md) / [Call-by-call analysis and revised design](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md)
-- [Task rules and runners](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/scripts/context/README.md)
+- [Reported results](https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md) / [Call-by-call analysis and revised design](https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md)
+- [Task rules and runners](https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/scripts/context/README.md)

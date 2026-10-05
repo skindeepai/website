@@ -6,7 +6,8 @@
 <p>Files cut the amount of text generated to about 7–8K tokens, versus 89K with the large window and 211K with summaries. Code kept the totals; the model did much less reading and writing.</p>
 <h2>Does writing a file slow decoding?</h2>
 <p>A file operation takes time between model calls. It does not make the model read the entire archive for every new output token. The smaller active context can also make generation faster.</p>
-<p>The test measured total task time. It did not isolate file-write overhead or show that disk access is free. <a href="@/context-memory.html">Streaming the model’s numerical cache from disk</a> is a different operation.</p>
+<p>All tool commands combined took <strong>2.5–2.7 seconds</strong> in the file-using runs, including other command work. This does not isolate disk-write time or show that disk access is free. <a href="@/context-memory.html">Streaming the model’s numerical cache from disk</a> is a different operation.</p>
+<details><summary>Where the rest of the time went</summary><p>The saved-call analysis estimates that generation and call overhead used about 76–80 seconds of the 111–112-second file-using runs. Reading used roughly 15–16 seconds. Much of the generated text was thinking. These are reconstructed phases, not per-token timing measurements.</p><p><a href="{{NOTE_TIMING}}">Timing reconstruction and file operations</a></p></details>
 <h2>What should be saved?</h2>
 <p>A table of current totals was enough for this task. An exact quotation or a question about an old change may need the original records. Save those too when later questions could depend on them.</p>
 <p>Saving a record preserves its bytes; finding the right passage and using it correctly still matter.</p>

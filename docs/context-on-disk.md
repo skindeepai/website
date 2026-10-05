@@ -18,6 +18,6 @@ A few free kilobytes cannot hold this active state. Disk also does not enlarge t
 
 ## Sources
 
-- [Model shapes and cache accounting](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md)
-- [Original research discussion](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md)
+- [Model shapes and cache accounting](https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md)
+- [Original research discussion](https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md)
 - [Website calculations and assumptions](../results/long-context/result.json)

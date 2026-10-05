@@ -510,7 +510,7 @@
     "status": "Measured pilot",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md"
     ],
     "observed": "The configured 262,144-position window opened on two GPUs. Chat responses used up to about 250K input. Code recall was 708/720 across the full test; all 120 lookups at 60K were correct. Separate chat and recall probes observed about 127 tokens/s at 8K and a median 27 at 250K.",
     "remaining": "One machine and one request at a time. The continuous-range recall rule passed only 60K on these similar-code prompts; it is not a universal safe limit."
@@ -528,7 +528,7 @@
     "status": "Measured pilot",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md"
     ],
     "observed": "The exact prefix cache matched output tokens on 99/99 cases with drafting, plus separate cold checks at 120K. The standard 12-prompt gate matched reference answers on both passes; output rates were 88.5/88.7 without cache and 89.6/89.7 with it. Reuse reduced waiting, not the long-context decode cost.",
     "remaining": "The 99-case test used up to 30K inputs and 48 output tokens, one user, token IDs rather than scores. One server per decode-gate configuration; no performance promotion."
@@ -543,13 +543,14 @@
       "Measure": "Values right of 24, time, tokens written, most context held, and the cause of every loss.",
       "Gate/artifact": "Losses are traced to a cause. Two seeds within one value of keeping everything, with no delivered item lost, before an improved agent is called equal."
     },
-    "status": "Measured pilot; follow-ups pending",
+    "status": "Measured pilot; revised agent tested on two seeds",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
     ],
-    "observed": "On a 121K-token ledger, the large-window baseline got 24/24 in 26 minutes, summaries 24/24 in 41, and original self-editing 19/24 in 64. All five wrong values match five delivered batches removed by harness rollback.",
-    "remaining": "One task, seed 0. The revised agent and 480K stream have no completed score in the pinned snapshot. Retain removed source data when future questions may need it."
+    "observed": "On a 121K-token ledger, original self-editing got 19/24 in 64 minutes after rollback discarded five batches. Revised self-editing retained every batch: seed 0 got 24/24 in 15 minutes; seed 1 got 21/24 in 21 minutes after a generated script stopped applying deletes. The large-window and summary arms got 24/24 in 26 and 41 minutes.",
+    "remaining": "One task family; original arms use seed 0, revised agent seeds 0 and 1. The 480K stream and verified-fold fix have no completed result in this snapshot."
   },
   {
     "id": "L04",
@@ -564,9 +565,10 @@
     "status": "Measured pilot",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-time-and-reuse.md"
     ],
-    "observed": "The file-using self-editing and plain agents each got 24/24 in about 1.9 minutes, with peak active context of 8.2K and 8.9K. Generated tokens fell to 7-8K, versus 89K and 211K for the equal-score no-files paths.",
+    "observed": "The file-using self-editing and plain agents each got 24/24 in about 1.9 minutes, with peak active context of 8.2K and 8.9K. Generated tokens fell to 7-8K, versus 89K and 211K for the equal-score no-files paths. All tool commands together took 2.5-2.7 seconds, including command overhead.",
     "remaining": "Whole-task timing on one ledger; no isolated disk-overhead measurement, universal speed ratio or unlimited-retention result."
   },
   {
@@ -582,7 +584,7 @@
     "status": "Measured text census",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-hygiene-census.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-hygiene-census.md"
     ],
     "observed": "Conservative combined cleanup removed 1.83% from three agent transcripts totaling about 4.99M tokens. Offloading large outputs was a separate 7.50% reduction; 54/152 outputs had a hidden line quoted later, a proxy for retrieval need. Earlier reasoning was a median 9.9% of input in 277 separate 27B calls.",
     "remaining": "No trained pruning classifier or equal-answer cleanup benchmark. Earlier-reasoning removal caused a different run to get stuck."
@@ -600,7 +602,7 @@
     "status": "Proposed; payload calculated",
     "evidence": [
       "results/long-context/result.json",
-      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md"
     ],
     "observed": "The target attention KV payload is 64 KiB/token across both GPUs: 12.207 GiB at 200,000 tokens, excluding weights and other state. An illustrative full read at 10 GB/s takes at least 1.31 seconds before other costs.",
     "remaining": "No completed disk snapshot/restore or active-streaming benchmark. This transfer lower bound is not a measured decode rate."

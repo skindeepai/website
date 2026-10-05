@@ -76,7 +76,7 @@ The [adversarial audit](chat-smoke-review.md) checks artifacts and code within t
 
 ## Longer context
 
-[Plain-language overview](../context.html) / [Measured results and sources](../context-results.html). Research snapshot: October 5, 2026, 13:42 UTC. These are diagnostic single-machine results, not promoted package performance numbers.
+[Plain-language overview](../context.html) / [Measured results and sources](../context-results.html). Research snapshot: October 5, 2026, 14:37 UTC. These are diagnostic single-machine results, not promoted package performance numbers.
 
 | Claim | Evidence | Scope |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ The [adversarial audit](chat-smoke-review.md) checks artifacts and code within t
 | Prefix caching changes decode rate | No meaningful change in the standard check: about 89 tokens/s either way | One server per configuration; 12/12 exact on each of two passes |
 | Files can keep this long task's active context small | 24/24 in 1.9 minutes; 8.2K/8.9K peak active context | One 121K-token ledger, seed 0; code performed bookkeeping |
 | Original self-editing was lossless end to end | Not supported: 19/24 | Five delivered batches were rolled back; recorded state edits did not explain these losses |
-| Self-editing provides unlimited retention | Not established | Revised-agent and 480K-stream results remain pending in the cited snapshot |
+| Self-editing provides unlimited retention | Not established | Revised agent: 24/24 and 21/24 on two 121K seeds; the 480K result remains pending |
 | Conservative CPU cleanup makes the window much larger | Not supported by this census: 1.83% reduction | Text reduction, not a model-answer equivalence test |
 | Disk provides penalty-free active GPU cache | Not established | [Payload and transfer calculations](context-on-disk.md), no completed offload benchmark |
 | One-step labels save time over thinking | 24/24 label agreement on the thinking subset; about 0.09 s versus 0.59 s | Easy items only; ordinary non-thinking decoding was also about 0.09 s |
