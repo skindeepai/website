@@ -1,9 +1,9 @@
 {
-  "schema": "skindeep.long-context.v1",
+  "schema": "skindeep.long-context.v2",
   "updated": "2026-10-05",
-  "about": "Single source for every number on context.html, context-results.html and one-step-results.html. Values are copied from the public lab notes linked in 'sources'. To publish a finished run, replace its 'running' row values, set status to 'measured', then run: python scripts/organize_results.py && python scripts/build_site.py",
-  "setup": "Qwen3.8-27B (FP8 weights, 16-bit cache) on two Intel Arc Pro B70 cards. Drafting on unless stated. Nothing quantized beyond the published FP8 weights. One machine; single-server timings.",
-  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/",
+  "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
+  "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
+  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/",
   "sources": {
     "results": "notes/2026-10-05-context-research-results.md",
     "window": "notes/2026-10-05-context-window-prereg.md",
@@ -18,56 +18,120 @@
   },
   "window": {
     "opens_tokens": 262144,
-    "columns": [
-      "Context",
-      "Read speed",
-      "First word, cold",
-      "First word, cached",
-      "Write speed"
+    "cold_columns": [
+      "Input tokens",
+      "Cold time to first token",
+      "Input tokens/s"
     ],
-    "rows": [
+    "cold_rows": [
       [
-        "8K",
-        "3,280 tok/s",
+        "7,848",
         "2.4 s",
-        "",
-        "127 tok/s"
+        "3288"
       ],
       [
-        "30K",
-        "3,050 tok/s",
+        "29,865",
         "9.8 s",
-        "0.8 s",
-        "99 tok/s"
+        "3059"
       ],
       [
-        "60K",
-        "2,700 tok/s",
-        "22 s",
-        "1.0 s",
-        "70 tok/s"
+        "59,836",
+        "22.1 s",
+        "2704"
       ],
       [
-        "120K",
-        "2,190 tok/s",
-        "55 s",
-        "1.5 s",
-        "48 tok/s"
+        "119,720",
+        "54.7 s",
+        "2187"
       ],
       [
-        "200K",
-        "1,745 tok/s",
-        "114 s",
-        "2.0 s",
-        "35 tok/s"
+        "199,588",
+        "114.4 s",
+        "1745"
       ],
       [
-        "250K",
-        "1,550 tok/s",
-        "161 s",
-        "2.4 s",
-        "26 tok/s"
+        "249,599",
+        "160.8 s",
+        "1552"
       ]
+    ],
+    "cold_source": "longctx/probe-mtp5.json",
+    "cold_method": "Initial bare-text probe, cache off, one request at each length. Input speeds and latency only; follow-up chat probes repaired answer-format and output-limit problems.",
+    "decode_rows": [
+      {
+        "context": "8K",
+        "tokens_per_second": 127.03356950677434,
+        "samples": 1,
+        "source": "edge/chat-recall.json",
+        "aggregation": "Single chat recall response, cache disabled."
+      },
+      {
+        "context": "30K",
+        "tokens_per_second": 98.98518786414266,
+        "samples": 1,
+        "source": "edge/chat-recall.json",
+        "aggregation": "Single chat recall response, cache disabled."
+      },
+      {
+        "context": "60K",
+        "tokens_per_second": 69.8434579627333,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      },
+      {
+        "context": "120K",
+        "tokens_per_second": 48.591171080118656,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      },
+      {
+        "context": "160K",
+        "tokens_per_second": 40.3206480045132,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      },
+      {
+        "context": "200K",
+        "tokens_per_second": 34.51304292413509,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      },
+      {
+        "context": "230K",
+        "tokens_per_second": 31.056435954048723,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      },
+      {
+        "context": "250K",
+        "tokens_per_second": 27.404339835822896,
+        "samples": 20,
+        "sources": [
+          "recall/recall-prose.json",
+          "recall/recall-ledger.json"
+        ],
+        "aggregation": "Median across 20 six-code replies: ten question sets in each of two styles. Exact prefix cache enabled; includes the first reply at each length."
+      }
     ]
   },
   "recall": {
@@ -108,6 +172,11 @@
         "60 of 60",
         "58 of 60"
       ]
+    ],
+    "correct": 708,
+    "sources": [
+      "recall/recall-prose.json",
+      "recall/recall-ledger.json"
     ]
   },
   "cache": {
@@ -117,7 +186,6 @@
       6656,
       13312
     ],
-    "cold_read_slower": "14-27%",
     "state_memory": "the memory of about 2,500 tokens of context",
     "repeat_30k": [
       "11.4 s",
@@ -132,7 +200,36 @@
       "114 s",
       "2.0 s"
     ],
-    "users_tested": 1
+    "users_tested": 1,
+    "decode_gate": [
+      {
+        "configuration": "Cache off, shipped configuration",
+        "first_tok_s": 88.52316833989481,
+        "second_tok_s": 88.70866054312881,
+        "first_exact": "12/12",
+        "second_exact": "12/12"
+      },
+      {
+        "configuration": "Exact cache on",
+        "first_tok_s": 89.58575404953177,
+        "second_tok_s": 89.71508162724501,
+        "first_exact": "12/12",
+        "second_exact": "12/12"
+      }
+    ],
+    "decode_gate_source": "pcgate/results.json",
+    "cold_latency_examples": [
+      {
+        "context": "30K",
+        "shipped_seconds": 9.8,
+        "exact_cache_seconds": 11.4
+      },
+      {
+        "context": "120K",
+        "shipped_seconds": 54.8,
+        "exact_cache_seconds": 69.6
+      }
+    ]
   },
   "comparison": {
     "task": "A stream of 20 batches (121,000 tokens) of counter updates with overwrites and deletes. A delivered batch cannot be fetched again. At the end: the current value of 24 counters.",
@@ -143,32 +240,32 @@
       "Budget",
       "Right of 24",
       "Time",
-      "Written",
-      "Most context held",
-      "What happened"
+      "Generated tokens",
+      "Peak context where reported",
+      "Observation"
     ],
     "rows": [
       {
         "id": "keep",
-        "strategy": "Keep everything in the big window, exact cache on",
+        "strategy": "Large window, exact cache on",
         "files": "no",
         "budget": "full window",
         "right": "24",
         "time": "26 min",
         "written": "89K tokens",
-        "peak": "112K",
-        "note": "91% of reading served by the cache; about 95% of the time was writing",
+        "peak": "",
+        "note": "Model filtered batches with code; no external data files. About 91% of prompt tokens were cached.",
         "status": "measured"
       },
       {
         "id": "paper",
-        "strategy": "The paper's self-editing agent",
+        "strategy": "Original self-editing agent",
         "files": "no",
         "budget": "32K",
         "right": "19",
         "time": "64 min",
         "written": "233K tokens",
-        "peak": "28K",
+        "peak": "",
         "note": "all 5 losses were batches its own rollback-and-retry removed after delivery",
         "status": "measured"
       },
@@ -180,8 +277,8 @@
         "right": "24",
         "time": "41 min",
         "written": "211K tokens",
-        "peak": "24K",
-        "note": "12 summaries; every summary breaks the cache",
+        "peak": "",
+        "note": "12 summaries, 57 calls; rewritten history reduces prefix reuse.",
         "status": "measured"
       },
       {
@@ -210,7 +307,7 @@
       },
       {
         "id": "no-thinking",
-        "strategy": "Keep everything, old thinking dropped",
+        "strategy": "Large window, earlier reasoning removed",
         "files": "no",
         "budget": "full window",
         "right": "no answer",
@@ -229,8 +326,8 @@
         "time": "",
         "written": "",
         "peak": "",
-        "note": "",
-        "status": "running"
+        "note": "No completed result in the pinned research snapshot.",
+        "status": "pending"
       },
       {
         "id": "improved-480k",
@@ -241,8 +338,8 @@
         "time": "",
         "written": "",
         "peak": "",
-        "note": "",
-        "status": "running"
+        "note": "No completed result in the pinned research snapshot.",
+        "status": "pending"
       },
       {
         "id": "files-480k",
@@ -253,8 +350,8 @@
         "time": "",
         "written": "",
         "peak": "",
-        "note": "",
-        "status": "running"
+        "note": "No completed result in the pinned research snapshot.",
+        "status": "pending"
       }
     ]
   },
@@ -266,33 +363,44 @@
     ],
     "rows": [
       [
-        "Strictly no loss: duplicate outputs, repeated lines, whitespace and terminal noise",
-        "1.8%"
+        "Conservative cleanup on three transcripts (combined rules)",
+        "1.83% of approximately 4.99M tokens"
       ],
       [
-        "Large tool outputs moved to disk with a pointer (about one in three was read back later)",
-        "7.5%"
+        "Large tool outputs offloaded (separate rule)",
+        "7.50% of transcript tokens; later hidden-line quotation in 54/152 outputs"
       ],
       [
-        "The model's earlier thinking, re-sent on every call",
-        "about 10% typical, up to 56%"
+        "Earlier reasoning in 277 separate 27B model calls",
+        "9.9% median input share, 55.8% maximum"
       ]
     ],
     "window_32k_holds": "about 33K tokens' worth after strict no-loss cleaning"
   },
   "disk_estimate": {
-    "status": "estimated from measurements, not built",
-    "cache_per_token": "64 KiB",
-    "cache_200k": "about 13 GB (12 GiB)",
-    "drive_read": "12.7 GB/s (measured)",
-    "card_upload": "roughly 9-16 GB/s",
-    "step_time": "a little over a second",
-    "write_speed": [
-      "roughly 3-4 tok/s",
-      "about 35 tok/s"
+    "status": "Calculated payload and illustrative transfers; no completed disk-cache benchmark",
+    "bytes_per_token": 65536,
+    "attention_payload_formula": "16 layers * 2 arrays * 4 KV heads * 256 head dimension * 2 bytes; target attention KV only, summed across both GPUs",
+    "tokens": 200000,
+    "bytes": 13107200000,
+    "gib": 12.20703125,
+    "transfer_examples": [
+      {
+        "gb_s": 1,
+        "seconds": 13.1072
+      },
+      {
+        "gb_s": 5,
+        "seconds": 2.62144
+      },
+      {
+        "gb_s": 10,
+        "seconds": 1.31072
+      }
     ],
-    "prompt_200k_streamed": "about 1.5 TB",
-    "park_and_restore": "designed, not built: about 13 GB saved for 200K, restored in seconds instead of a two-minute re-read"
+    "assumptions": "One complete read of the attention cache at the stated hypothetical sustained storage bandwidth. Not an output-token rate. Excludes computation, recurrent/draft state, padding, metadata, and additional unoverlapped transfer. Partial residence, pipelining and speculative acceptance change the model calculation.",
+    "parking_status": "Proposed, not benchmarked",
+    "streaming_status": "Not implemented or benchmarked in the cited experiments"
   },
   "one_step": {
     "items": 80,
@@ -308,5 +416,10 @@
       "thinking": "0.59 s"
     },
     "speedup_vs_thinking": "6.5x"
+  },
+  "snapshot": {
+    "commit": "83a71180e3abf4eec7f57181fc1433cedc3cdd26",
+    "time": "2026-10-05 13:42 UTC (09:42 EDT)",
+    "research_started": "2026-10-05 04:58 UTC"
   }
 }

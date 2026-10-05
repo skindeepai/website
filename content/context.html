@@ -1,0 +1,21 @@
+<p><strong>A small working context can handle a much longer job.</strong> The useful trick is to keep records in files, bring back what matters, and preserve the current state. Saving a file does not give the GPU unlimited working memory.</p>
+<figure class="ctx-flow" aria-label="External records and the model's working context">
+  <div><span class="ctx-label">On disk</span><strong>The records</strong><p>Documents, logs and saved state.</p></div>
+  <span class="ctx-arrow" aria-hidden="true">↔</span>
+  <div><span class="ctx-label">In the model</span><strong>What matters now</strong><p>The question, relevant excerpts and next action.</p></div>
+  <figcaption>Search or code connects the two. Only the text sent to the model occupies its active context.</figcaption>
+</figure>
+<h2>Three things we learned</h2>
+<div class="ctx-findings">
+  <section><strong>1.9 minutes</strong><h3>A long task with a small context</h3><p>With files allowed, the model answered all 24 questions about a 121K-token stream. Its active context stayed under 9K tokens.</p><a href="@/context-files.html">How files helped</a></section>
+  <section><strong>About 2 seconds</strong><h3>A faster start on repeat questions</h3><p>A question over a cached 200K-token document started in about 2 seconds. A separate cold read took 114 seconds. Caching saves rereading.</p><a href="@/context-cache.html">What caching speeds up</a></section>
+  <section><strong>Length still costs</strong><h3>Writing slows as context grows</h3><p>Observed output speed was about 127 tokens/s near 8K context and {{DECODE_250}} tokens/s near 250K. A cache does not remove that cost.</p><a href="@/context-results.html#window">See the measurements</a></section>
+</div>
+<p class="small">October 5, 2026 · Qwen3.8-27B on two Intel Arc Pro B70 GPUs. The ledger comparison used one task and one seed; the speed examples come from separate prompt tests.</p>
+<h2>Start with your question</h2>
+<div class="topic-links">
+  <a href="@/context-memory.html"><span><strong>Can disk replace missing GPU memory?</strong>Why a few spare kilobytes cannot provide a full 200K-token active window.</span></a>
+  <a href="@/context-methods.html"><span><strong>Which approaches can keep going?</strong>Compare files, self-editing, summaries, bigger windows and caches.</span></a>
+  <a href="@/context-questions.html"><span><strong>Common questions, in plain language</strong>Context versus memory, decode speed, accuracy and what “unlimited” means.</span></a>
+</div>
+<p class="next-links"><a href="@/context-results.html">Detailed results and original research →</a></p>

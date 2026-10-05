@@ -1,21 +1,19 @@
-# Reusing a context exactly: the prefix cache
+# Exact prefix reuse
 
-Part of [Working past the context limit](../context.html). Results: [cache table](../context-results.html#cache). Protocol: [L02](../EXPERIMENTS.md#l02--reuse-an-unchanged-context-exactly).
+Start with [the cache explanation](../context-cache.html). [Measured tables](../context-results.html#cache) separate first-token waiting from output rate.
 
-**The problem.** Without reuse, every turn of a long conversation re-reads the whole prompt: about two minutes at 200K. The serving engine's own cache can skip that, but here it was not guaranteed to give the same answer as a cold read. It also stores pieces made while the model was writing, and with drafting it keeps the model's running-summary layers at every block, four times the memory per token.
+The add-on retains prompt-reading states and uses fixed 832-token reading chunks. It excludes states produced during generation and retains periodic recurrent-state checkpoints, allowing an edit to resume before the changed region. Later text must still be recomputed.
 
-**What was built.** A small add-on stores only what was made while reading a prompt, in fixed 832-token pieces, so a cached read runs the same arithmetic as a cold read. It can also keep the running state every 6,656 or 13,312 tokens (a memory-for-reuse dial), so an edit in the middle of a long context resumes from the last kept state before the edit instead of from the start.
+**Matched comparison:** two fresh servers, both using 832-token chunks, with drafting on. Eleven prompts, nine variants each, including second and third turns; up to 30K input and 48 output tokens. All 99 output token sequences matched. Separate cold checks at 120K matched too. This was not a scores-level comparison with drafting.
 
-**Test.** Two fresh servers with drafting on: a reference without the cache, then the cache server. Eleven prompts, nine cases each: repeat, append, edit in the middle, repeated edit, and the second and third turn of a conversation, where the shared text includes answers the server wrote. Token ids compared, up to 48 tokens per case. Result: 99 of 99 identical; a cold repeat at 120K matched the cached answer.
+**Decode check:** the standard 12-prompt gate returned 12/12 reference answers on both passes of each server. Cache off: 88.5 and 88.7 tokens/s. Exact cache on: 89.6 and 89.7. One server per configuration; the approximately 1% difference is not a reliable speedup claim.
 
-**Costs.** A cold read is 14-27% slower because of the fixed piece size. Each kept state costs the memory of about 2,500 tokens of context.
+**Costs:** cold latency increased from about 9.8 to 11.4 seconds at 30K, and about 55 to 69.6 seconds at 120K. A saved recurrent checkpoint costs roughly three 832-token attention blocks' worth of memory; drafting and allocator details affect physical allocation. Cached 200K questions started in about 2 seconds, versus 114 seconds in the separate initial cold probe.
 
-**Not tested yet.** Several users at once, the one-card server, a comparison at the level of scores, prompts above 30K in the edit cases.
+The multi-user, one-card and disk-restore cases need separate validation. Approximate reuse of old suffix states after an edit is a different method and was not part of this cache result.
 
-**Rejected alternative.** The paper's "suffix cache reuse" keeps cache computed for the text before an edit; the authors describe it as an approximation of re-reading. Not exact, so not used.
+## Sources
 
-## Raw data and lab notes
-
-- [All 99 comparisons and the summary line](../results/long-context/cache-probe.log) (cached_tokens = tokens served from the cache; ttft = seconds to the first word)
-- [Plan and results](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md) · [How the engine decides what it can reuse](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md)
-- [Add-on code](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/overlays/b70-prefix-cache-exact/) · [Run data](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-05-context/prefixcache-exact-mtp/)
+- [Experiments and standard decode gate](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md) / [Detailed reuse rules](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md)
+- [99-case data](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/data/2026-10-05-context/prefixcache-exact-mtp/cache.json) / [Standard gate data](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/data/2026-10-05-context/pcgate/results.json)
+- [Add-on source](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/overlays/b70-prefix-cache-exact/b70_prefix_cache_exact.py)

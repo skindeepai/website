@@ -1,18 +1,23 @@
-# Keeping the model's cache on disk
+# Context on disk: text, snapshots and active offload
 
-Part of [Working past the context limit](../context.html). Results: [estimate table](../context-results.html#disk). Protocol: [L06](../EXPERIMENTS.md#l06--keep-the-models-cache-on-disk).
+For the explanation, start with [Can disk replace GPU memory?](../context-memory.html).
 
-**Status: estimated from measurements, not built.**
+**Text files:** the file-using ledger agents each got 24/24 in about 1.9 minutes, with active context below 9K tokens. This is total task time, not a measurement of file-write overhead or disk-streamed attention.
 
-There are three different uses of disk:
+**Numerical cache snapshots:** saving and restoring the complete compatible state could avoid recomputing a prompt. The active state must still fit the execution arrangement after restoration. Byte-preserving storage is not by itself a test of correct model continuation. No completed snapshot benchmark is in this research snapshot.
 
-1. **Files the model reads and writes (measured).** The model keeps its data in files and searches them. Lossless and fast on the ledger task; see [Managing the context](context-management.md#files).
-2. **Streaming the cache from disk during writing (estimated).** The model's cache is exactly 64 KiB per token for this model at 16 bits, so 200K tokens take about 13 GB (12 GiB). Every written token reads the whole cache, so a card that holds only 16K would have to pass the rest through on every step. At 12.7 GB/s from this machine's drive (measured) and roughly 9-16 GB/s uploads to the card, one step takes a little over a second: roughly 3-4 tokens a second with drafting, against about 35 with the cache in video memory, and several times slower on an ordinary drive. Reading a 200K prompt would stream about 1.5 TB in total, roughly doubling the two-minute read. The arithmetic would run in pieces, so results would be repeatable but not bit-identical to the in-memory path.
-3. **Parking a whole conversation (designed, not built).** Save a finished conversation's cache, about 13 GB for 200K, and restore it in seconds instead of re-reading for two minutes. Byte-for-byte, so lossless.
+**Active offload:** processing cache blocks from RAM or disk during generation trades data movement or CPU work for capacity. It requires explicit engine support and working buffers. No completed active-offload benchmark is in this snapshot.
 
-Disk does not make the model's own window (262,144 tokens) any bigger. It only changes where the cache for that window is kept, and what that costs in speed.
+## Payload calculation
+
+For the target model: 16 full-attention layers x 2 arrays x 4 KV heads x 256 values x 2 bytes = 65,536 bytes per token across both GPUs. At 200,000 tokens: 13.1072 GB, or 12.207 GiB, of attention KV payload. Weights, recurrent state, drafting, checkpoints, padding and temporary workspace are additional.
+
+At a hypothetical sustained 10 GB/s, reading that entire payload once takes at least 1.31 seconds; at 5 GB/s, 2.62 seconds. These are transfer lower bounds, not measured output rates. Resident cache portions, overlapped work and multiple accepted draft tokens per pass change the calculation.
+
+A few free kilobytes cannot hold this active state. Disk also does not enlarge the model's 262,144-position limit. KB of text and thousands of model tokens are different units.
 
 ## Sources
 
-- [Cache size and the disk discussion](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md) · [Paper review, section on disk](https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md)
-- [Numbers used above](../results/long-context/result.json)
+- [Model shapes and cache accounting](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md)
+- [Original research discussion](https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md)
+- [Website calculations and assumptions](../results/long-context/result.json)

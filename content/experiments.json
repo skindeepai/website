@@ -510,11 +510,10 @@
     "status": "Measured pilot",
     "evidence": [
       "results/long-context/result.json",
-      "results/long-context/recall-ordinary-words.log",
-      "results/long-context/recall-wall-of-codes.log"
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-window-prereg.md"
     ],
-    "observed": "The full 262,144-token window opens on two cards with a 16-bit cache. Read speed falls from 3,280 tokens a second at 8K to 1,550 at 250K and write speed from 127 to 26. Drafting gave exactly the no-drafting answer at every length. Of 720 buried codes, every one was right at 60K; from 120K to 250K about 1 look-up in 40 returned a look-alike neighbour. No value was invented and no region of the context was lost.",
-    "remaining": "Single-server first looks on one machine, not package numbers. The window that opens is larger than the window that is look-up exact (about 60K in the hardest test)."
+    "observed": "The configured 262,144-position window opened on two GPUs. Chat responses used up to about 250K input. Code recall was 708/720 across the full test; all 120 lookups at 60K were correct. Separate chat and recall probes observed about 127 tokens/s at 8K and a median 27 at 250K.",
+    "remaining": "One machine and one request at a time. The continuous-range recall rule passed only 60K on these similar-code prompts; it is not a universal safe limit."
   },
   {
     "id": "L02",
@@ -528,11 +527,11 @@
     },
     "status": "Measured pilot",
     "evidence": [
-      "results/long-context/cache-probe.log",
-      "results/long-context/result.json"
+      "results/long-context/result.json",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md"
     ],
-    "observed": "An exact prefix cache that keeps only state made while reading gave the uncached answer in 99 of 99 cases with drafting on, including second and third turns. A question over a cached 200K context starts in 2.0 s instead of 114 s; an edit in the middle of a 30K prompt resumes from the last kept state. A cold read is 14-27% slower.",
-    "remaining": "One user; token ids compared, not scores; prompts above 30K tested only by a cold repeat at 120K; the one-card server untested."
+    "observed": "The exact prefix cache matched output tokens on 99/99 cases with drafting, plus separate cold checks at 120K. The standard 12-prompt gate matched reference answers on both passes; output rates were 88.5/88.7 without cache and 89.6/89.7 with it. Reuse reduced waiting, not the long-context decode cost.",
+    "remaining": "The 99-case test used up to 30K inputs and 48 output tokens, one user, token IDs rather than scores. One server per decode-gate configuration; no performance promotion."
   },
   {
     "id": "L03",
@@ -544,12 +543,13 @@
       "Measure": "Values right of 24, time, tokens written, most context held, and the cause of every loss.",
       "Gate/artifact": "Losses are traced to a cause. Two seeds within one value of keeping everything, with no delivered item lost, before an improved agent is called equal."
     },
-    "status": "Measured pilot, one seed; longer runs in progress",
+    "status": "Measured pilot; follow-ups pending",
     "evidence": [
-      "results/long-context/result.json"
+      "results/long-context/result.json",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md"
     ],
-    "observed": "On a 121,000-token stream of counter updates, keeping everything in the window got 24 of 24 in 26 minutes; summarising at 75% of a 32K budget got 24 of 24 in 41 minutes; the paper’s self-editing agent got 19 of 24 in 64 minutes. All five losses were batches its own rollback-and-retry removed after delivery; the model’s own edits lost nothing.",
-    "remaining": "One task family and one seed. An improved agent and a stream larger than the window (480K) are running. Removed text is gone unless it is saved somewhere."
+    "observed": "On a 121K-token ledger, the large-window baseline got 24/24 in 26 minutes, summaries 24/24 in 41, and original self-editing 19/24 in 64. All five wrong values match five delivered batches removed by harness rollback.",
+    "remaining": "One task, seed 0. The revised agent and 480K stream have no completed score in the pinned snapshot. Retain removed source data when future questions may need it."
   },
   {
     "id": "L04",
@@ -561,12 +561,13 @@
       "Measure": "As L03.",
       "Gate/artifact": "All values right with a context well under the budget. Name the cases this cannot cover: work where the model itself must understand raw text."
     },
-    "status": "Measured pilot, one seed; longer run in progress",
+    "status": "Measured pilot",
     "evidence": [
-      "results/long-context/result.json"
+      "results/long-context/result.json",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
     ],
-    "observed": "With files allowed, the model kept its data on disk and got 24 of 24 in 1.9 minutes, holding at most 8.2K (self-editing) and 8.9K (no management) tokens of context: 14 to 22 times faster than keeping everything or summarising.",
-    "remaining": "One task family and one seed; the 480K stream with files allowed is running. Works when code or search does the reading; text the model must itself understand still has to pass through the card."
+    "observed": "The file-using self-editing and plain agents each got 24/24 in about 1.9 minutes, with peak active context of 8.2K and 8.9K. Generated tokens fell to 7-8K, versus 89K and 211K for the equal-score no-files paths.",
+    "remaining": "Whole-task timing on one ledger; no isolated disk-overhead measurement, universal speed ratio or unlimited-retention result."
   },
   {
     "id": "L05",
@@ -578,12 +579,13 @@
       "Measure": "Share of context freed per rule and combined; how often moved text was needed later.",
       "Gate/artifact": "Report the effective window multiplier. Lossy rules are reported separately from no-loss rules."
     },
-    "status": "Measured census",
+    "status": "Measured text census",
     "evidence": [
-      "results/long-context/result.json"
+      "results/long-context/result.json",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-hygiene-census.md"
     ],
-    "observed": "On 5.0M tokens of real agent sessions, strict no-loss cleaning freed 1.8% and moving large tool outputs to disk 7.5% (about one in three was read back later). Re-sent earlier thinking is about 10% of a typical call and up to 56%. A 32K window holds about 33K tokens’ worth after no-loss cleaning.",
-    "remaining": "Blanket dropping of earlier thinking left one run stuck for 2.6 hours with no answer; it is safe only when the working state lives elsewhere."
+    "observed": "Conservative combined cleanup removed 1.83% from three agent transcripts totaling about 4.99M tokens. Offloading large outputs was a separate 7.50% reduction; 54/152 outputs had a hidden line quoted later, a proxy for retrieval need. Earlier reasoning was a median 9.9% of input in 277 separate 27B calls.",
+    "remaining": "No trained pruning classifier or equal-answer cleanup benchmark. Earlier-reasoning removal caused a different run to get stuck."
   },
   {
     "id": "L06",
@@ -595,11 +597,12 @@
       "Measure": "Write speed and prompt-read time with a streamed cache; restore time and byte-for-byte identity for a parked cache.",
       "Gate/artifact": "Label every number as an estimate until a build is measured."
     },
-    "status": "Estimated, not built",
+    "status": "Proposed; payload calculated",
     "evidence": [
-      "results/long-context/result.json"
+      "results/long-context/result.json",
+      "https://github.com/steveseguin/b70-optimization-lab/blob/83a71180e3abf4eec7f57181fc1433cedc3cdd26/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md"
     ],
-    "observed": "The cache is exactly 64 KiB per token, about 13 GB for 200K tokens. With a 12.7 GB/s drive (measured) and 9-16 GB/s uploads to the card, streaming it on every written token would give roughly 3-4 tokens a second against about 35 in video memory.",
-    "remaining": "Nothing built. Parking and restoring a whole conversation’s cache is designed, not built or measured."
+    "observed": "The target attention KV payload is 64 KiB/token across both GPUs: 12.207 GiB at 200,000 tokens, excluding weights and other state. An illustrative full read at 10 GB/s takes at least 1.31 seconds before other costs.",
+    "remaining": "No completed disk snapshot/restore or active-streaming benchmark. This transfer lower bound is not a measured decode rate."
   }
 ]

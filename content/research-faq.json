@@ -233,20 +233,16 @@
     "ids": [
       "L06"
     ],
-    "question": "Can disk make up for limited video memory, so a card with room for 16K of context works with 200K?",
-    "answer": "Two different things. Measured, at the application level: yes. With files allowed, the model kept its working data on disk and its context under 9K on a 121K-token task, with every answer right, 14 to 22 times faster than keeping the data in context. Nothing is lost because the raw data stays on disk. This works when code or search does the reading; when the model itself must understand raw text, that text has to pass through the card at some point. Estimated from measurements, not built, at the engine level: the model’s cache is 64 KiB per token, so 200K of context is about 13 GB. Every written token would have to pass the whole cache through the card. This drive reads 12.7 GB/s (measured) and uploads run at roughly 9-16 GB/s, so one step takes a little over a second: roughly 3-4 tokens a second against about 35 with the cache in video memory, and several times slower on an ordinary drive. Reading a 200K prompt would stream about 1.5 TB, roughly doubling the two-minute read. The arithmetic would run in pieces, so results would be repeatable but not bit-identical to the in-memory path. Not built: parking a whole conversation’s cache on disk (about 13 GB for 200K) and restoring it in seconds instead of re-reading for two minutes; that would be byte-for-byte lossless.",
+    "question": "Can a nearly full GPU use disk for a 200K-token context?",
+    "answer": "Saving text to files can let a long task use a short working context. It does not give a GPU unlimited active memory. This model needs about 12.2 GiB of attention cache for 200,000 tokens, plus other working state. Parking an inactive numerical cache and streaming it during generation are different designs; neither has a completed benchmark in this research snapshot.",
     "links": [
       [
-        "docs/context-on-disk.md",
-        "The disk arithmetic"
+        "context-memory.html",
+        "Disk, GPU memory and the calculations"
       ],
       [
-        "docs/context-management.md#files",
-        "Files on the 121K task"
-      ],
-      [
-        "context.html",
-        "Working past the context limit"
+        "context-files.html",
+        "The measured file-using task"
       ]
     ]
   },
@@ -255,20 +251,16 @@
     "ids": [
       "L03"
     ],
-    "question": "Can the context be edited surgically, as in the paper, to be unlimited, without plain trimming or a full summary?",
-    "answer": "Measured so far: yes in mechanism, with caveats. The model’s own surgical edits lost nothing: it kept a small state table, folded each batch in by code and deleted the raw batch. The paper’s harness lost data through its own rollback. An exact prefix cache means an edit costs only re-reading what follows the edit point, resuming from a kept state before it, while staying identical to a cold read. The decisive test, a 480K stream (bigger than the window) at a 32K budget, is running. What stays true: an edit deletes text from the model’s view. Unless the removed text is saved somewhere it is gone, so “unlimited” means an unlimited length of work, not unlimited detail at once.",
+    "question": "Can self-editing let a task continue beyond its context budget?",
+    "answer": "In principle, when the retained state is enough for the task. The original self-editing ledger run got 19/24: the harness rolled back five already-delivered batches, which explains all five missed answers. Its recorded state edits did not cause those losses. The revised agent and 480K stream have no completed result in the cited snapshot. Editing changes what the model can see; preserve originals when future questions may need them.",
     "links": [
       [
+        "context-clm.html",
+        "Self-editing and summaries"
+      ],
+      [
         "context-results.html#comparison",
-        "Comparison and losses"
-      ],
-      [
-        "docs/context-management.md",
-        "Method and raw data"
-      ],
-      [
-        "docs/context-prefix-cache.md",
-        "Exact cache"
+        "Task comparison"
       ]
     ]
   },
@@ -278,16 +270,16 @@
       "L01",
       "L02"
     ],
-    "question": "How fast is it all, and how much quality is lost?",
-    "answer": "Measured: reading slows from 3,280 tokens a second at 8K to 1,550 at 250K, and writing from 127 to 26. With the exact cache a question over a cached 200K context starts in 2 s instead of 114 s; the first read is 14-27% slower. Summarising took 41 minutes, keeping everything 26, and keeping the data in files 1.9. Recall is exact at 60K; from 120K to 250K about 1 look-up in 40 returns a look-alike neighbour, and nothing is invented. Disk is not the limit (the drive reads 12.7 GB/s); the model’s writing speed is. Long agent tasks: one task family, one or two seeds, up to 121K so far; longer ones are running. Not measured: several users sharing the cache, other task families, hard decisions where thinking changes the answer.",
+    "question": "What changes the wait, writing speed and accuracy?",
+    "answer": "Prefix caching cuts repeated reading: cached 200K questions started in about 2 seconds, versus 114 seconds in a separate cold probe. Standard-gate decode stayed near 89 tokens/s with or without caching. Longer active context still slowed generation; the recall probes ranged from about 127 tokens/s at 8K to 27 at 250K. Recall was 708/720 across the test, including 120/120 at 60K. See the tables for sample sizes and differences between the runs.",
     "links": [
       [
-        "context-results.html",
-        "All measured tables"
+        "context-cache.html",
+        "Caching versus decoding"
       ],
       [
-        "context-results.html#limits",
-        "Limits and what is not measured"
+        "context-results.html",
+        "Speed and recall tables"
       ]
     ]
   },
@@ -296,16 +288,16 @@
     "ids": [
       "L04"
     ],
-    "question": "How is this different from an updated plan file, the way the B70 lab is run?",
-    "answer": "Measured: the same idea at a different layer, and the results favour it. A plan file is state kept outside the model’s context, rewritten as work proceeds, with the raw evidence in other files; it survives a context reset and a new session. Self-editing edits the running transcript in place, so a reset is not needed. In the measurements the winning pattern was exactly the plan-file pattern: state and data on disk, small context. In-context editing is the tool for keeping the record of the agent’s own steps small between plan updates. Differences: a plan file is only as good as what was written into it (what was not written down is lost at the reset), and it costs a re-read at the start of each session; in-context state is always in view but shrinks the room for everything else and slows writing. The improved agent tested here pins a small state block that the harness checks: a plan file kept inside the context.",
+    "question": "How are external notes different from an editable conversation?",
+    "answer": "A notes file is stored outside the active conversation and must be loaded when needed. A CLM mirror edit changes the message history sent to the model on the next call. On the 121K-token ledger, both file-using agents got 24/24 in about 1.9 minutes while holding under 9K active tokens. That is one task result, not a guarantee that every detail was archived or that every long document will be equally fast.",
     "links": [
       [
-        "docs/context-management.md#files",
-        "Files and plan-style state"
+        "context-files.html",
+        "Files, state and retrieval"
       ],
       [
-        "context-results.html#comparison",
-        "Comparison table"
+        "context-clm.html",
+        "How the editable mirror works"
       ]
     ]
   },
@@ -314,16 +306,16 @@
     "ids": [
       "L05"
     ],
-    "question": "Can a small CPU-side cleaner or classifier turn 32K into 100K?",
-    "answer": "Measured: no. On 5.0M tokens of real agent sessions, strict no-loss cleaning frees 1.8% and moving large tool outputs to disk 7.5%. The model’s re-sent old thinking is about 10% of a typical call (up to 56%), but dropping it blindly made one run get stuck.",
+    "question": "Can a CPU cleaner turn a 32K context into 100K?",
+    "answer": "The measured cleanup rules did not: conservative deduplication and formatting cleanup removed 1.83% of roughly five million tokens. Moving large outputs to files was a separate 7.50% reduction, with a proxy indicating some text would need retrieval later. A trained CPU pruning classifier was not benchmarked. Removing earlier reasoning blindly left a separate model run stuck without an answer.",
     "links": [
       [
-        "docs/context-cleaning.md",
-        "Census method and tables"
+        "context-clm.html#cleaning",
+        "What the census measured"
       ],
       [
-        "context-results.html#cleaning",
-        "Cleaning results"
+        "context-questions.html",
+        "More context questions"
       ]
     ]
   },

@@ -1,0 +1,20 @@
+<p><strong>Prefix caching makes the next answer start sooner.</strong> It saves the model’s already-computed representation of the unchanged start of a prompt. The next call reuses it and processes the remaining text.</p>
+<figure class="ctx-flow">
+  <div><span class="ctx-label">First question</span><strong>Read the document</strong><p>Compute and retain its internal state.</p></div><span class="ctx-arrow" aria-hidden="true">→</span>
+  <div><span class="ctx-label">Next question</span><strong>Reuse the unchanged start</strong><p>Read the uncached tail and new question.</p></div>
+  <figcaption>This experiment kept the active cache in GPU memory. It was not a disk-offload test.</figcaption>
+</figure>
+<h2>Waiting and writing are different</h2>
+{{CACHE_WAIT_TABLE}}
+<p>The 30K cases compare fixed 832-token reading chunks with reuse off and on. The 200K example combines separate long-context runs, with different reading configurations; it illustrates the size of the saved wait.</p>
+<p>Once generation starts, full-attention layers still use the retained context for each new token. A cached long document remains a long document.</p>
+{{CACHE_DECODE_TABLE}}
+<p>The standard 12-prompt check showed no meaningful decode-speed change: roughly 89 tokens/s either way. All 12 answers matched the reference on both passes of each server. This was one server per configuration, so the small difference is not evidence of a speedup.</p>
+<h2>What did making the cache exact require?</h2>
+<p>This model combines ordinary attention with layers that carry a running state. The lab’s cache saves only states created while reading a prompt, and uses consistent 832-token reading chunks. It avoids mixing those states with ones created through a different computation path while generating an answer.</p>
+<p>With drafting enabled, <strong>99/99 cases returned the same token sequence</strong> as the matched uncached reference, including second and third conversation turns. The test covered eleven prompts up to 30K and up to 48 output tokens per case. Separate 120K cold repeats matched too. Matching output tokens is narrower than a scores-level or every-input guarantee.</p>
+<h2>What does it cost?</h2>
+<p>Smaller reading chunks made the initial read slower: a 30K prompt took about 11.4 seconds instead of 9.8; a 120K cold check took 69.6 instead of about 55. Saved checkpoints also consume GPU memory. Repeated questions recover that cost by skipping much of the reading.</p>
+<p>An edit keeps only the matching prefix reusable. The 30K middle-edit test started in 6.7 seconds on its first edited request and 0.7 seconds on a repeat. Putting frequently updated state near the end reduces how much text must be recomputed. Eviction, a changed prompt or a restarted server can remove reuse.</p>
+<p class="next-links"><a href="@/context-clm.html">Why edits affect reuse</a> · <a href="@/context-memory.html#parking">Saving a cache between sessions</a> · <a href="@/context-results.html#cache">Results and original evidence</a></p>
+<details><summary>Exact prefix reuse versus approximate suffix reuse</summary><p>If an early passage changes, later internal states were calculated using the old passage. Reusing those states is an approximation even when the later words are unchanged. The CLM paper’s suffix-cache technique explores that tradeoff; it was not used in these exact-prefix results.</p><p><a href="{{NOTE_CACHE_RULES}}">Detailed engine rules</a> · <a href="https://docs.vllm.ai/en/latest/features/automatic_prefix_caching/">vLLM’s explanation of prefix caching</a></p></details>
