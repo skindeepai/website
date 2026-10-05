@@ -326,7 +326,7 @@
         "time": "15 and 21 min",
         "written": "67K and 91K tokens",
         "peak": "20K and 15K",
-        "note": "No delivered batch was lost. The first seed was fully right; the second had 3 of 24 wrong, cause not yet traced.",
+        "note": "No delivered batch was lost. The first seed was fully right. On the second, 3 of 24 were wrong: the model re-typed its own batch-folding script with a mistake, so deletes stopped being applied from batch 17 on. A harness check on each fold is being tested.",
         "status": "measured"
       },
       {
@@ -418,8 +418,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "4e1746630",
-    "time": "2026-10-05 14:25 UTC (10:25 EDT)",
+    "commit": "37d7ca984",
+    "time": "2026-10-05 14:35 UTC (10:35 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   }
 }
