@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Changing the context without re-reading it — SkinDeep Research</title><meta name="description" content="How the CLM paper’s suffix cache reuse works, why it is approximate, and how it compares with this lab’s exact cache.">
+<link rel="canonical" href="https://skindeep.ai/context-reuse.html">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/context-reuse.html">
+<meta property="og:title" content="Changing the context without re-reading it — SkinDeep Research"><meta property="og:description" content="How the CLM paper’s suffix cache reuse works, why it is approximate, and how it compares with this lab’s exact cache.">
+<meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Changing the context without re-reading it — SkinDeep Research"><meta name="twitter:description" content="How the CLM paper’s suffix cache reuse works, why it is approximate, and how it compares with this lab’s exact cache."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+
+<link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
+</head><body class="lab-page ">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
+<aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
+<main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="context.html">Longer context overview</a> · <a data-journey="approach" href="context-methods.html">Compare approaches</a></nav>
+<h1>Changing the context without re-reading it</h1><p class="page-lead">The CLM paper’s agent edits its context as a text file. A separate server patch then avoids re-reading most of the unchanged text after each edit. That patch reuses old work that no longer exactly matches the new text, so it is an approximation. This lab uses an exact cache instead: it skips the unchanged text before an edit and re-reads what follows.</p><div class="ctx-page"><ul class="ctx-read-next">
+  <li><strong>The file is not the speed trick.</strong> Editing a file changes what the model sees next. On its own it saves no computing.</li>
+  <li><strong>The speed trick is approximate.</strong> It moves old cached work into place after an edit, even though that work was computed from the text before the edit.</li>
+  <li><strong>We already skip re-reading the unchanged start.</strong> After an edit we re-read from just before it. In our agent runs, reading was only about 7–14% of the time, so even perfect, free reuse could not save much more.</li>
+</ul>
+<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#why-reread">Why edits cost reading</a><a href="#two-things">Two separate ideas</a><a href="#how-scr-works">How the trick works</a><a href="#approximation">Why it is approximate</a><a href="#paper-measured">What the paper measured</a><a href="#what-we-do">What we do</a><a href="#time-at-stake">Time at stake</a><a href="#why-not">Why not copy it?</a><a href="#what-it-would-take">What it would take</a><a href="#edit-cost">Edit cost here</a></nav>
+<details><summary>Six words used on this page</summary><dl class="ctx-definitions">
+<dt>Prefix</dt><dd>The start of a prompt, up to the first change.</dd>
+<dt>Suffix</dt><dd>Everything after that change, even if those words are unchanged.</dd>
+<dt>Cache (KV cache)</dt><dd>The numbers the model saved while reading each token (keys and values), kept in GPU memory so it does not read the token again.</dd>
+<dt>Prefill, or reading</dt><dd>Processing the prompt before the first word of the answer. This is what a cache can skip.</dd>
+<dt>Decode, or writing</dt><dd>Producing the answer one token at a time. A cache does not skip this.</dd>
+<dt>Recurrent state</dt><dd>A fixed-size running summary that some layers update as they read. It has no separate entry per token.</dd>
+</dl></details>
+
+<section id="why-reread"><h2>Why does changing earlier text mean re-reading what follows?</h2>
+<p><strong>The model saves notes for every piece of text it reads, but each note was written while looking at everything before it.</strong> If you change something early, every later note was made against text that no longer exists. The only exact fix is to go back to the change and read again from there.</p>
+<figure class="ctx-diagram"><svg viewBox="0 0 400 236" role="img" aria-labelledby="reuse-d1-t reuse-d1-d" style="max-width:600px"><title id="reuse-d1-t">What each part of the cache depends on</title><desc id="reuse-d1-d">Three blocks of context, A, B and C. Below them, attention-cache entries: A’s were made from A, B’s from A and B, C’s from A, B and C. Below that, one running state updated after A, after B and after C. If B is edited, A’s entries stay valid, but B’s and C’s entries and every running state after A were computed from the old B.</desc>
+<defs><pattern id="reuse-p-stale" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f8dada"/><line x1="0" y1="0" x2="0" y2="6" stroke="#b23b3b" stroke-width="1.6"/></pattern></defs>
+<g font-family="system-ui,sans-serif" fill="#152c45">
+<text x="10" y="13" font-size="12" fill="#43536a">Context: the text the model reads, left to right</text>
+<rect x="10" y="20" width="120" height="32" rx="4" fill="#eef2f7" stroke="#395775"/><text x="70" y="41" font-size="14" text-anchor="middle">A</text>
+<rect x="140" y="20" width="120" height="32" rx="4" fill="#eef2f7" stroke="#b23b3b" stroke-width="2" stroke-dasharray="5 3"/><text x="200" y="41" font-size="14" text-anchor="middle">B, then edited</text>
+<rect x="270" y="20" width="120" height="32" rx="4" fill="#eef2f7" stroke="#395775"/><text x="330" y="41" font-size="14" text-anchor="middle">C</text>
+<text x="10" y="77" font-size="12" fill="#43536a">Attention cache: one entry per token (16 of 64 layers)</text>
+<rect x="10" y="84" width="120" height="34" rx="4" fill="#dce8fb" stroke="#2854da"/><text x="70" y="105" font-size="12" text-anchor="middle">made from A</text>
+<rect x="140" y="84" width="120" height="34" rx="4" fill="url(#reuse-p-stale)" stroke="#b23b3b"/><text x="200" y="105" font-size="12" text-anchor="middle">made from A + B</text>
+<rect x="270" y="84" width="120" height="34" rx="4" fill="url(#reuse-p-stale)" stroke="#b23b3b"/><text x="330" y="105" font-size="12" text-anchor="middle">made from A + B + C</text>
+<text x="10" y="143" font-size="12" fill="#43536a">Running state: one per layer, updated as it reads (48 of 64)</text>
+<rect x="10" y="150" width="125" height="22" fill="#dce8fb" stroke="#2854da"/><rect x="135" y="150" width="255" height="22" fill="url(#reuse-p-stale)" stroke="#b23b3b"/>
+<g fill="#152c45"><circle cx="135" cy="161" r="4"/><circle cx="265" cy="161" r="4"/><circle cx="390" cy="161" r="4"/></g>
+<text x="135" y="189" font-size="11.5" text-anchor="middle">after A</text><text x="265" y="189" font-size="11.5" text-anchor="middle">after A + B</text><text x="390" y="189" font-size="11.5" text-anchor="end">after A + B + C</text>
+<rect x="10" y="204" width="14" height="12" fill="#dce8fb" stroke="#2854da"/><text x="30" y="214" font-size="12">still valid after B changes</text>
+<rect x="200" y="204" width="14" height="12" fill="url(#reuse-p-stale)" stroke="#b23b3b"/><text x="220" y="214" font-size="12">computed from the old B</text>
+</g></svg><figcaption>Change B and only A’s part of the cache still matches. The same is true for any model that reads left to right.</figcaption></figure>
+<details><summary>The detail: attention entries and running states</summary>
+<p>A language model reads left to right. In an attention layer, each token’s saved keys and values (the KV cache) come from that layer’s input, and from the second layer up that input already mixes in every earlier token. So C’s saved entries encode “C, as read after this particular A and B”. They are not a property of C alone.</p>
+<p>The Qwen 27B models used here and in the paper are hybrids. Only 16 of their 64 layers are attention layers with one entry per token: about 64 KiB per token in 16-bit form. The other 48 are Gated DeltaNet layers. Each keeps one fixed-size running state that folds in every token it reads. That state has no per-token entries: there is nothing to cut out when text is deleted, and nothing to move when text shifts.</p>
+<p>An exact cache can therefore reuse only a prefix: the part before the first change. It resumes from a saved running state at or before that point and recomputes everything after it. <a href="context-prefix-cache.html">Prefix caching, step by step</a>.</p>
+</details>
+</section>
+
+<section id="two-things"><h2>Two separate things in the paper</h2>
+<p><strong>First, the agent’s context is mirrored to a text file that the model edits with ordinary tools.</strong> That changes what the model sees on the next call; by itself it saves no computing. <strong>Second, a serving patch called Suffix Cache Reuse (SCR)</strong> tries to make the next call cheaper to read after such an edit.</p>
+<figure class="ctx-diagram"><svg viewBox="0 0 400 268" role="img" aria-labelledby="reuse-d2-t reuse-d2-d" style="max-width:600px"><title id="reuse-d2-t">The file-edit loop and where SCR fits</title><desc id="reuse-d2-d">Step 1: the model reads the prompt and writes a tool call to edit the context file. Step 2: the harness applies the edit to the context file, plain text on disk. Step 3: the harness rebuilds the next prompt from the file. Step 4: the server reads the new prompt, then the model writes. Steps 2 and 3 decide what the model sees. Step 4 is where reading costs time, and the only place SCR acts.</desc>
+<defs><marker id="reuse-m-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#395775"/></marker></defs>
+<g font-family="system-ui,sans-serif" fill="#152c45" font-size="12">
+<rect x="10" y="10" width="172" height="70" rx="6" fill="#eef2f7" stroke="#395775"/>
+<text x="20" y="31" font-weight="600">1. Model reads the prompt</text><text x="20" y="48">and writes a tool call:</text><text x="20" y="65">“edit the context file”</text>
+<rect x="218" y="10" width="172" height="70" rx="6" fill="#e5f3e7" stroke="#2f7a3d"/>
+<text x="228" y="31" font-weight="600">2. Harness applies the</text><text x="228" y="48">edit to the context file</text><text x="228" y="65">(plain text on disk)</text>
+<rect x="218" y="136" width="172" height="70" rx="6" fill="#e5f3e7" stroke="#2f7a3d"/>
+<text x="228" y="157" font-weight="600">3. Harness rebuilds the</text><text x="228" y="174">next prompt from the file</text>
+<rect x="10" y="136" width="172" height="70" rx="6" fill="#fde4c4" stroke="#b5620b"/>
+<text x="20" y="157" font-weight="600">4. Server reads the new</text><text x="20" y="174">prompt (prefill), then</text><text x="20" y="191">the model writes</text>
+<g stroke="#395775" stroke-width="2" fill="none" marker-end="url(#reuse-m-arrow)"><path d="M182 45H214"/><path d="M304 80V132"/><path d="M218 171H186"/><path d="M96 136V84"/></g>
+<rect x="10" y="226" width="14" height="12" fill="#e5f3e7" stroke="#2f7a3d"/><text x="30" y="236">Steps 2–3: what the model sees (the CLM file)</text>
+<rect x="10" y="248" width="14" height="12" fill="#fde4c4" stroke="#b5620b"/><text x="30" y="258">Step 4: reading cost. SCR works only here.</text>
+</g></svg><figcaption>The server never sees “an edit”. It receives a new prompt; SCR compares it with the last one.</figcaption></figure>
+<details><summary>The detail: why the two ideas are independent</summary>
+<p>The CLM harness exposes the working history as a file, applies accepted edits, and turns the file back into messages for the next call. <a href="context-self-editing.html">How the editable file works</a>. Any server can run that loop; this lab ran it on its own server without SCR.</p>
+<p>SCR runs inside the server. It does not need the CLM harness or a session header. It matches each request to an earlier conversation by content: a common start of at least 1,024 tokens and high overall token overlap. Then it compares the new prompt with that conversation’s previous prompt. Anything that changes earlier text can trigger it, including a chat template that strips old reasoning from earlier turns.</p>
+</details>
+</section>
+
+<section id="how-scr-works"><h2>How Suffix Cache Reuse works</h2>
+<p><strong>After an edit, SCR keeps the cached work for text that survived, moves it to its new place, and reads only the new text plus a few tokens at the end of each moved piece.</strong> Ordinary prefix caching keeps only the start and re-reads everything after the first change.</p>
+<figure class="ctx-diagram"><svg viewBox="0 0 400 304" role="img" aria-labelledby="reuse-d3-t reuse-d3-d" style="max-width:600px"><title id="reuse-d3-t">Three ways to serve the prompt A, B′, C after B was edited</title><desc id="reuse-d3-d">Re-read everything: A, B′ and C are all read. Exact prefix reuse, used in this lab: A is reused; B′ and C are read. Suffix cache reuse, from the paper: A is reused, B′ is read, C’s old cache entries are moved to their new positions, and only C’s last 16 tokens are read. The moved entries were computed against the old B, so they are reused approximately.</desc>
+<defs><pattern id="reuse-p-moved" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#dce8fb"/><line x1="0" y1="0" x2="0" y2="6" stroke="#2854da" stroke-width="1.6"/></pattern></defs>
+<g font-family="system-ui,sans-serif" fill="#152c45" font-size="12">
+<text x="10" y="13" fill="#43536a">New prompt after the edit: A, then B′ (shorter than B), then C</text>
+<rect x="10" y="20" width="120" height="26" rx="3" fill="#eef2f7" stroke="#395775"/><text x="70" y="38" text-anchor="middle" font-size="13">A</text>
+<rect x="136" y="20" width="60" height="26" rx="3" fill="#eef2f7" stroke="#395775"/><text x="166" y="38" text-anchor="middle" font-size="13">B′</text>
+<rect x="202" y="20" width="188" height="26" rx="3" fill="#eef2f7" stroke="#395775"/><text x="296" y="38" text-anchor="middle" font-size="13">C (unchanged words)</text>
+<text x="10" y="72" font-weight="600">Re-read everything</text>
+<rect x="10" y="79" width="120" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="70" y="98" text-anchor="middle">read</text>
+<rect x="136" y="79" width="60" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="166" y="98" text-anchor="middle">read</text>
+<rect x="202" y="79" width="188" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="296" y="98" text-anchor="middle">read</text>
+<text x="10" y="134" font-weight="600">Exact prefix reuse (this lab)</text>
+<rect x="10" y="141" width="120" height="30" rx="3" fill="#dce8fb" stroke="#2854da"/><text x="70" y="160" text-anchor="middle">reused</text>
+<rect x="136" y="141" width="60" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="166" y="160" text-anchor="middle">read</text>
+<rect x="202" y="141" width="188" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="296" y="160" text-anchor="middle">read again</text>
+<text x="10" y="196" font-weight="600">Suffix cache reuse (the paper’s SCR)</text>
+<rect x="10" y="203" width="120" height="30" rx="3" fill="#dce8fb" stroke="#2854da"/><text x="70" y="222" text-anchor="middle">reused</text>
+<rect x="136" y="203" width="60" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/><text x="166" y="222" text-anchor="middle">read</text>
+<rect x="202" y="203" width="168" height="30" rx="3" fill="url(#reuse-p-moved)" stroke="#2854da"/><rect x="236" y="211" width="100" height="15" rx="2" fill="#ffffff"/><text x="286" y="222" text-anchor="middle">moved, shifted</text>
+<rect x="370" y="203" width="20" height="30" rx="3" fill="#fde4c4" stroke="#b5620b"/>
+<path d="M380 233V241" stroke="#b5620b"/><text x="390" y="252" text-anchor="end" font-size="11.5">last 16 tokens read</text>
+<rect x="10" y="264" width="14" height="11" fill="#dce8fb" stroke="#2854da"/><text x="30" y="274">reused exactly</text>
+<rect x="136" y="264" width="14" height="11" fill="#fde4c4" stroke="#b5620b"/><text x="156" y="274">read now</text>
+<rect x="10" y="284" width="14" height="11" fill="url(#reuse-p-moved)" stroke="#2854da"/><text x="30" y="294">reused approximately: computed against the old B</text>
+</g></svg><figcaption>Only the attention layers have entries to move. The recurrent layers are handled differently; see the next section.</figcaption></figure>
+<details><summary>The detail, as the released code does it</summary>
+<ol>
+<li><strong>Keep a copy.</strong> When a turn finishes, SCR copies that conversation’s attention keys and values into a separate GPU side buffer. In our reading of the code, the copy covers the prompt and the reply the model wrote. Defaults: 12 conversations × 30,000 tokens, which the code logs as 21.97 GiB (64 KiB per token) for Qwen3.6-27B.</li>
+<li><strong>Find what survived.</strong> The new prompt is compared token by token with the previous one. The unchanged start (A) comes from the server’s normal prefix cache.</li>
+<li><strong>Pick the pieces to move.</strong> Among the unchanged runs after the edit, it takes up to K of the longest, largest first. The launcher sets K = 6. Runs shorter than 80 tokens are not moved; they are read.</li>
+<li><strong>Read the new text in front of a piece</strong> (B′) normally.</li>
+<li><strong>Move the piece.</strong> Its keys and values are copied from the side buffer into fresh cache slots. Position is built into each key as a rotation (RoPE). The code rotates each copied key by the difference between its old and new position. Values are copied unchanged.</li>
+<li><strong>Read the last 16 tokens of the piece</strong> instead of moving them, then the next stretch of new text, the next piece, and finally the new text at the end.</li>
+<li><strong>Fall back</strong> to ordinary prefix caching if the plan does not apply or the cache slots cannot be allocated.</li>
+</ol>
+<p>In our reading of the code, a conversation whose prompt plus reply exceeds the 30,000-token copy loses its side-buffer slot. Its later turns are then served by ordinary prefix caching.</p>
+<p><a href="https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse/README.md">SCR README</a> · <a href="https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse/suffix_cache_reuse/config.py">Default settings</a> · <a href="https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse/suffix_cache_reuse/overlay.py#L1653-L1672">Key re-rotation</a></p>
+</details>
+</section>
+
+<section id="approximation"><h2>Why SCR is an approximation, not magic</h2>
+<p><strong>The moved entries for C were computed while the model was looking at the old B. SCR corrects where they sit, not what they contain.</strong> In the recurrent layers it continues from a saved state that has already read the deleted text. The paper’s own words: SCR “approximates re-prefilling”.</p>
+<details><summary>The detail: the attention layers and the recurrent layers</summary>
+<p><strong>Attention layers (16 of 64).</strong> Re-rotation makes each moved key carry its new position. The content still reflects the old B: from the second layer up, C’s keys and values were built from inputs that had attended to B, not B′. The authors describe this “stale” state as possibly helpful, since it keeps information from the past. Either way, it is not what a fresh read computes.</p>
+<p><strong>Recurrent layers (48 of 64).</strong> There are no per-token entries to move. The released code’s default mode, <code>fork</code>, restores “the state saved at the end of the previous prompt” when it moves the first piece. That state has read A, the old B, and all of the old C. In our reading of the control flow, the restore replaces the state that had just read B′. B′ then reaches these layers only indirectly, through the attention layers’ outputs. The last 16 tokens of each moved piece are fed in again on top of a state that has already read them.</p>
+<p>So after the model deletes text, 48 of its 64 layers still carry a trace of it. The paper’s README describes this step as continuing from a snapshot “before the edit”; the code comment and control flow say “end of the previous prompt”. We follow the code. A <code>strict</code> mode adds a length check before moving anything (the saved state may not cover more tokens than are reused) but restores the same saved state. A <code>none</code> mode skips the restore. Neither is the default, and the README lists <code>fork</code> as the supported setting.</p>
+<p><strong>Consequences.</strong></p>
+<ul>
+<li>The answer after an edit is not the answer a clean read of the same text would give.</li>
+<li>It depends on the edit history. Each turn’s saved state is built on the previous restored state, so traces can carry forward.</li>
+<li>It cannot be checked against a reference token by token. Only a quality benchmark can judge it.</li>
+</ul>
+<p><a href="https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse/suffix_cache_reuse/overlay.py#L1174-L1184">Recurrent-state modes in the code</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md#suffix-cache-reuse-what-exactly-is-reused-why-it-is-not-exact-measured-effect">Lab review of SCR</a></p>
+</details>
+</section>
+
+<section id="paper-measured"><h2>What the paper measured</h2>
+<p><strong>On one web-browsing benchmark, accuracy was the same with and without SCR, and the paper’s compute count for each question fell by about 35%.</strong> That is a saving in computing, measured on one workload. It is not a measured saving in total time.</p>
+<div class="table-scroll ctx-table ctx-summary-table ctx-other-table" tabindex="0" role="region" aria-label="SCR results reported in the paper"><table><thead><tr><th scope="col">Measure</th><th scope="col">Reported result</th></tr></thead><tbody>
+<tr><th scope="row">Setup</th><td>BrowseComp-Plus, 830 questions, Qwen3.6-27B, one GPU, SGLang 0.5.16 with the SCR patch</td></tr>
+<tr><th scope="row">Accuracy</th><td>60.2% with and without SCR, sampled at temperature 0.7</td></tr>
+<tr><th scope="row">Compute per question</th><td>10.98 → 7.14 PFLOPs (65.0% of standard serving)</td></tr>
+<tr><th scope="row">Prompt tokens, standard serving</th><td>72.9% reused as prefix, 27.1% read</td></tr>
+<tr><th scope="row">Prompt tokens, SCR</th><td>73.9% reused as prefix, 7.8% moved, 18.3% read</td></tr>
+<tr><th scope="row">Where the 7.8% moved came from</th><td>5.3 points: the chat template removing old reasoning. 2.5 points: the model’s own edits.</td></tr>
+<tr><th scope="row">Side buffer</th><td>12 conversations × 30,000 tokens, about 22 GiB (64 KiB per token)</td></tr>
+</tbody></table></div>
+<details><summary>What this does and does not show</summary>
+<ul>
+<li><strong>Equal accuracy is a statistical tie on one benchmark.</strong> With sampling at temperature 0.7, answers vary from run to run anyway. It does not show that SCR’s outputs match a fresh read.</li>
+<li><strong>The compute count is not a time.</strong> The README’s analysis script counts two operations per model parameter for every token run through the model, including written tokens. Attention cost and waiting are not included.</li>
+<li><strong>Most moved tokens did not come from self-editing.</strong> About two thirds came from the template stripping old reasoning blocks. That change can be avoided exactly by sending earlier turns in the same form on every call.</li>
+<li><strong>The authors name the remaining waste themselves.</strong> Much of what is still re-read is an unchanged prefix that the server fails to reuse, because it saves recurrent states only at request boundaries. They suggest finer checkpoints, such as message boundaries, which would help exact prefix caching too.</li>
+</ul>
+<p><a href="https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse/README.md#results">Results and figures in the README</a> · <a href="https://arxiv.org/abs/2609.37725">The paper</a></p>
+</details>
+</section>
+
+<section id="what-we-do"><h2>What this lab does instead</h2>
+<p><strong>We do not re-read everything on every change.</strong> The lab’s cache resumes from a saved state just before an edit and re-reads only what follows it. Everything it reuses is exactly what a fresh read computes, so a cached answer is identical to an uncached one.</p>
+<figure class="ctx-diagram"><svg viewBox="0 0 400 262" role="img" aria-labelledby="reuse-d4-t reuse-d4-d" style="max-width:600px"><title id="reuse-d4-t">Where kept states sit along a 30K-token prompt, and where an edit resumes</title><desc id="reuse-d4-d">Kept states sit every 13,312 tokens and at the end of each prompt. After a 300-token deletion near the middle, the first request reuses everything up to the kept state at 13,312 and re-reads the rest: 6.7 seconds instead of 11.3 cold. Sent again, the edited prompt reuses almost everything: 0.7 seconds. An edit in the last block would resume from 26,624 and re-read only a few thousand tokens; that case is being measured.</desc>
+<g font-family="system-ui,sans-serif" fill="#152c45" font-size="12">
+<g stroke="#9aa9bc" stroke-dasharray="3 3"><path d="M179.7 24V214"/><path d="M339.5 24V214"/></g>
+<text x="20" y="20" font-weight="600">First request after a middle deletion</text>
+<rect x="20" y="28" width="159.7" height="30" fill="#dce8fb" stroke="#2854da"/><text x="100" y="47" text-anchor="middle">reused</text>
+<rect x="179.7" y="28" width="200.3" height="30" fill="#fde4c4" stroke="#b5620b"/><text x="280" y="47" text-anchor="middle">re-read: 6.7 s (cold 11.3 s)</text>
+<path d="M200 24V62" stroke="#b23b3b" stroke-width="2.5"/><text x="203" y="73" font-size="11" fill="#b23b3b">edit</text>
+<text x="20" y="96" font-weight="600">The same edited prompt, sent again</text>
+<rect x="20" y="104" width="354" height="30" fill="#dce8fb" stroke="#2854da"/><rect x="374" y="104" width="6" height="30" fill="#fde4c4" stroke="#b5620b"/><text x="196" y="123" text-anchor="middle">reused up to the state kept at its end: 0.7 s</text>
+<text x="20" y="160" font-weight="600">An edit in the last block (being measured)</text>
+<rect x="20" y="168" width="319.5" height="30" fill="#dce8fb" stroke="#2854da"/><text x="180" y="187" text-anchor="middle">reused</text>
+<rect x="339.5" y="168" width="40.5" height="30" fill="#fde4c4" stroke="#b5620b"/>
+<path d="M362 164V202" stroke="#b23b3b" stroke-width="2.5"/>
+<path d="M20 222H380" stroke="#395775" stroke-width="1.5"/>
+<g fill="#152c45"><path d="M179.7 216l6 6-6 6-6-6z"/><path d="M339.5 216l6 6-6 6-6-6z"/><path d="M380 216l6 6-6 6-6-6z"/></g>
+<text x="20" y="242" font-size="11.5">0</text><text x="179.7" y="242" font-size="11.5" text-anchor="middle">13,312</text><text x="339.5" y="242" font-size="11.5" text-anchor="middle">26,624</text><text x="390" y="242" font-size="11.5" text-anchor="end">30K</text>
+<text x="20" y="258" font-size="11.5" fill="#43536a">◆ kept state (shown every 13,312 tokens) and at each prompt’s end</text>
+</g></svg><figcaption>The cost of an exact edit is the text after the nearest kept state before it. Edits near the end are cheap.</figcaption></figure>
+<details><summary>The detail: the exact cache and its measured costs</summary>
+<p>Running states are kept every 6,656 or 13,312 tokens, depending on the setting, at the end of each prompt, and at the point where a new prompt leaves the old one. The prompt is read in 832-token pieces, the same way with or without the cache, so a resumed read does the same arithmetic as a cold one. Nothing the model wrote is cached: states made while generating are never reused.</p>
+<p><strong>Exactness:</strong> 99 of 99 cases gave identical output tokens with drafting on, including edits and later turns. The standard 12-prompt check returned identical answers, at 88.5–88.7 tokens/s without the cache and 89.6–89.7 with it.</p>
+<div class="table-scroll ctx-table " tabindex="0" role="region" aria-label="Wait for the first output token"><table><thead><tr><th scope="col">Prompt or edit</th><th scope="col">First token without reuse</th><th scope="col">First token with reuse</th></tr></thead><tbody><tr><th scope="row">Repeated 30K prompt</th><td>11.4 s</td><td>0.8 s</td></tr><tr><th scope="row">Middle edit in 30K, first request</th><td>11.3 s</td><td>6.7 s</td></tr><tr><th scope="row">Same edit, repeated</th><td>11.3 s</td><td>0.7 s</td></tr><tr><th scope="row">Question over 200K (separate probes)</th><td>114 s</td><td>2.0 s</td></tr></tbody></table></div>
+<p>A cold read is slower with the cache on because of the 832-token pieces: about 9.8 → 11.4 s at 30K and 55 → 69.6 s at 120K, 16–27% longer. Across 296 agent calls, the reuse rules predicted the reused length exactly on 226 and within one 832-token block on 292.</p>
+<p><strong>The two causes of waste the authors name.</strong> The template effect can be avoided exactly: send earlier turns in the same form on every call, so nothing needs moving. The lab found the same effect in its own runs (an empty-reasoning tag that appears or disappears on old turns) plus a mirror that re-rendered old turns; the fixes are small harness changes, estimated rather than yet measured. Finer recurrent-state checkpoints are exactly what the kept states above provide; in the lab’s runs, extra checkpoints at every message start would have recovered less than an append-only layout.</p>
+<p><a href="context-cache.html">Exact-cache charts and checks</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md">Reuse rules</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md">Exactness tests</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-time-and-reuse.md">Time and reuse analysis</a></p>
+</details>
+</section>
+
+<section id="time-at-stake"><h2>How much time is actually at stake?</h2>
+<p><strong>In the lab’s agent runs, writing took most of the time and reading was the small part: about 7–14%.</strong> Even a perfect, free suffix reuse could remove only that slice, and most of it is new text that has to be read once under any scheme.</p>
+<div class="table-scroll ctx-table ctx-comparison" tabindex="0" role="region" aria-label="Where the time went in the agent runs"><table><thead><tr><th scope="col">Run (121K ledger)</th><th scope="col">Total</th><th scope="col">Writing and calls</th><th scope="col">Reading</th><th scope="col">Reading share</th></tr></thead><tbody><tr><th scope="row">Large window</th><td>26.5 min</td><td>24.4 min</td><td>1.8 min</td><td>7%</td></tr><tr><th scope="row">Original self-editing</th><td>64.0 min</td><td>57.9 min</td><td>5.6 min</td><td>9%</td></tr><tr><th scope="row">Summaries</th><td>41.1 min</td><td>34.5 min</td><td>4.2 min</td><td>10%</td></tr><tr><th scope="row">Files, editing available</th><td>1.9 min</td><td>1.3 min</td><td>0.3 min</td><td>14%</td></tr><tr><th scope="row">Files, no context editing</th><td>1.9 min</td><td>1.3 min</td><td>0.2 min</td><td>14%</td></tr><tr><th scope="row">Revised self-editing, seed 0</th><td>14.9 min</td><td>12.6 min</td><td>1.8 min</td><td>12%</td></tr><tr><th scope="row">Revised self-editing, seed 1</th><td>21.0 min</td><td>18.2 min</td><td>2.2 min</td><td>10%</td></tr><tr><th scope="row">Revised self-editing, thinking only when needed (two seeds)</th><td>6.6 and 5.7 min</td><td>Not split</td><td>Not split</td><td>Not split</td></tr></tbody></table></div>
+<p class="ctx-table-note">Reading is estimated from measured cold-read speeds; writing is the remainder and includes call overhead. The thinking-reduced runs were timed as a whole, not split.</p>
+<details><summary>What a better layout would save, and how this compares with the paper’s 35%</summary>
+<ul>
+<li><strong>Original self-editing agent:</strong> an append-only layout alone would cut its reading from about 5.6 to about 2.5 minutes. Its waste came from a retry counter and a state block rewritten near the top.</li>
+<li><strong>Revised agent:</strong> a perfect layout would save 20–30 seconds per run. Even then it would still read about 239K of its 292K new tokens, because batches, its own earlier replies and the state are new text.</li>
+<li><strong>The thinking-reduced revised agent</strong> finished in about 6 minutes for the whole run, without any cache change. Writing less mattered far more than reading less.</li>
+<li><strong>The paper’s 35%</strong> is prefill compute on a browsing workload where large tool outputs dominate, not total time. About two thirds of its moved tokens came from a template effect that can be fixed exactly.</li>
+</ul>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-time-and-reuse.md">Time and reuse analysis</a> · <a href="context-results.html#comparison">All agent results</a></p>
+</details>
+</section>
+
+<section id="why-not"><h2>So why not do the same?</h2>
+<p><strong>Because it trades exact, repeatable results for a saving that is a few percent of run time here.</strong> The same benefit is available exactly for edits near the end of the context, and most of this model cannot be spliced anyway.</p>
+<ol>
+<li><strong>Exactness.</strong> The lab’s rule is that a faster path must give the same answer as the reference. SCR’s answers depend on the edit history and cannot be checked token by token. The measured prize is a few percent of a run.</li>
+<li><strong>Edits at the end are already cheap.</strong> A well-laid-out agent shows its state last and deletes a raw item right after folding it into the state. Those edits sit at the tail, where an exact cache re-reads only a little.</li>
+<li><strong>48 of 64 layers cannot be spliced.</strong> Their running state has no per-token entries. SCR handles them by reusing a state that has read the deleted text, which is exactly the kind of mismatch the lab avoids.</li>
+</ol>
+</section>
+
+<section id="what-it-would-take"><h2>What would it take?</h2>
+<p><strong>A port of the patch, a decision about the recurrent layers, and a different way to judge results.</strong> It is possible engineering, not a setting.</p>
+<ul>
+<li><strong>Port it.</strong> SCR patches SGLang; this lab serves with vLLM. It needs a key/value block copy with position re-rotation in the attention kernels, plus a per-conversation side buffer of 64 KiB per token: about 2 GiB for 30K tokens, about 12 GiB for 200K.</li>
+<li><strong>Decide about the recurrent layers.</strong> Either restart them from the last kept state and re-read from there, which is exactly what the exact cache already does, or accept a stale state as SCR does.</li>
+<li><strong>Accept answers that depend on edit history.</strong> Two runs with the same final text could answer differently.</li>
+<li><strong>Add a quality evaluation.</strong> Bit-identity can no longer be the test, so every change would need a benchmark with enough questions to detect a loss.</li>
+</ul>
+<p><strong>What an exact scheme can never do:</strong> reuse cached work for text that comes after a change, because that work was computed from the text before it. Edits at the tail are cheap under every scheme. Edits at the top of a long context are expensive under every exact scheme.</p>
+</section>
+
+<section id="edit-cost"><h2>Edit cost here</h2>
+<p>Wait before the first output token after one deletion, with the exact cache on. Each measured cell shows the first edited request, the same prompt sent again, and a cold read with nothing cached.</p>
+<div class="table-scroll ctx-table ctx-comparison" tabindex="0" role="region" aria-label="Wait before the first output token after one edit, by context length and edit position"><table><thead><tr><th scope="col">Context</th><th scope="col">Edit at 10%</th><th scope="col">Edit at 50%</th><th scope="col">Edit at 90%</th><th scope="col">Edit in the last block</th></tr></thead><tbody><tr><th scope="row">30K</th><td>Being measured</td><td>6.7 s first, 0.7 s repeated (cold 11.3 s)</td><td>Being measured</td><td>Being measured</td></tr><tr><th scope="row">120K</th><td>Being measured</td><td>Being measured</td><td>Being measured</td><td>Being measured</td></tr><tr><th scope="row">200K</th><td>Being measured</td><td>Being measured</td><td>Being measured</td><td>Being measured</td></tr></tbody></table></div>
+<p class="ctx-table-note">The 30K, 50% cell is a 300-token deletion that resumed from token 13,312. The other cells are being measured.</p>
+</section>
+
+<section id="sources"><h2>Sources</h2>
+<ul class="ctx-source-list">
+<li><a href="https://arxiv.org/abs/2609.37725">Context Language Models</a> (arXiv 2609.37725)<span>The paper: the editable context and Suffix Cache Reuse.</span></li>
+<li><a href="https://github.com/facebookresearch/context-language-models/tree/18dc11115f50f261233c5bba7937834491e307e8/suffix_cache_reuse">The authors’ SCR code</a><span>The SGLang patch, its defaults, tests and analysis script, at the version read for this page.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-review.md">Lab review of the paper</a> (Markdown)<span>Paper, code and related work, including the SCR section.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-reuse-rules.md">Exact cache reuse rules</a> (Markdown)<span>Where states are kept and when a prompt can resume.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-prefix-cache-exactness-prereg.md">Exactness tests</a> (Markdown)<span>The 99-case comparison and the standard decode check.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-time-and-reuse.md">Where the time went</a> (Markdown)<span>Reading and writing time per run, and what a better layout would save.</span></li>
+</ul>
+</section>
+<p class="next-links"><a href="context-cache.html">The exact cache in detail</a> · <a href="context-clm.html">Self-editing context (CLM)</a> · <a href="context-results.html">Detailed results and original research</a></p>
+</div>
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

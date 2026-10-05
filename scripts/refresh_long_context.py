@@ -68,10 +68,11 @@ def update(pages):
         ['Prefix caching', 'Repeated 30K prompt: first token in 0.8 s instead of 11.4 s. Standard-check writing speed stayed near 89 tokens/s.'],
         ['Bigger active context', 'Observed writing speed: about 127 tokens/s at 8K, versus ' + str(round(decode[-1]['tokens_per_second'])) + ' at 250K, in separate prompt tests.'],
         ['CPU text cleanup', '1.83% fewer tokens with conservative cleanup.'],
-        ['Active cache on disk', 'Not benchmarked. The 200K-token attention cache alone needs about 12.2 GiB.']],
+        ['Active cache on disk', 'Not benchmarked. The 200K-token attention cache alone needs about 12.2 GiB.'],
+        ['Reuse after an edit', 'The CLM paper reuses cached work after an edit, approximately. Here the exact cache re-reads from just before the edit.']],
         'Other context approaches and their findings', 'ctx-summary-table ctx-other-table')
     for label, path in [('Prefix caching', 'context-prefix-cache.html'), ('Bigger active context', 'context-large-window.html'),
-                        ('CPU text cleanup', 'context-cleanup.html'), ('Active cache on disk', 'context-cache-offload.html')]:
+                        ('CPU text cleanup', 'context-cleanup.html'), ('Active cache on disk', 'context-cache-offload.html'), ('Reuse after an edit', 'context-reuse.html')]:
         other = other.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     cache_wait = table(['Prompt or edit', 'First token without reuse', 'First token with reuse'], [
         ['Repeated 30K prompt', c['repeat_30k'][0], c['repeat_30k'][1]],
@@ -90,6 +91,7 @@ def update(pages):
     method_rows = [
         ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
         ['Exact prefix cache', 'Reuses the unchanged start. Repeat questions began sooner; writing stayed near 89 tokens/s in the standard check.'],
+        ['Suffix cache reuse (CLM paper)', 'Also reuses cached text after an edit, approximately. Not used here; answers would depend on edit history.'],
         ['Files, no context editing', 'Code reads saved records and keeps the totals. 24/24 in 1.9 minutes on the 121K ledger.'],
         ['Files, editing available', 'Adds permission to rewrite the conversation. 24/24 in 1.9 minutes on the 121K ledger; no edit was needed.'],
         ['CLM self-editing', 'Rewrites selected parts of the working history. Original agent: 19/24 in 64 minutes; its harness lost five delivered batches.'],
@@ -100,7 +102,7 @@ def update(pages):
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
         ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
-    for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'),
+    for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'), ('Suffix cache reuse (CLM paper)', 'context-reuse.html'),
                         ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
                         ('Periodic summaries', 'context-summaries.html'), ('Revised self-editing', 'context-revised-editing.html'), ('Remove old thinking', 'context-drop-thinking.html'),
                         ('Park a cache on disk', 'context-cache-parking.html'), ('Stream active cache from disk/RAM', 'context-cache-offload.html'), ('CPU text cleanup', 'context-cleanup.html')]:
@@ -155,6 +157,21 @@ def update(pages):
     }
     for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review', 'timing']:
         replacements['NOTE_' + key.upper()] = note(key)
+    minutes = lambda seconds: f'{seconds / 60:.1f} min'
+    reuse_rows = [[r[0], minutes(r[1]), minutes(r[2]), minutes(r[3]), f'{100 * r[3] / r[1]:.0f}%'] for r in d['timing_analysis']['rows']]
+    light = by_id['improved-light-121k']
+    reuse_rows.append(['Revised self-editing, thinking only when needed (two seeds)', light['time'], 'Not split', 'Not split', 'Not split'])
+    replacements['REUSE_TIME_TABLE'] = table(['Run (121K ledger)', 'Total', 'Writing and calls', 'Reading', 'Reading share'], reuse_rows,
+                                             'Where the time went in the agent runs', 'ctx-comparison')
+    edit = d['edit_cost']
+    cells = {(x['context'], x['position']): x for x in edit['cells']}
+    def edit_cell(x):
+        if x.get('status') != 'measured':
+            return 'Being measured'
+        return f"{x['first_edit_s']:g} s first, {x['repeat_s']:g} s repeated (cold {x['cold_s']:g} s)"
+    replacements['EDIT_COST_TABLE'] = table(['Context', *(('Edit at ' if p.endswith('%') else 'Edit in the ') + p for p in edit['positions'])],
+                                            [[c, *(edit_cell(cells.get((c, p), {})) for p in edit['positions'])] for c in edit['contexts']],
+                                            'Wait before the first output token after one edit, by context length and edit position', 'ctx-comparison')
 
     def outcomes(items):
         return table(['Trial', 'Correct', 'Time'], [[label, score(by_id[key]), by_id[key]['time']] for key, label in items],
@@ -210,6 +227,7 @@ def update(pages):
         ('context-files-editing.html', 'Files with context editing available', 'Two tools with different jobs: files store records, while editing can shorten the live conversation.', 'context-methods.html'),
         ('context-drop-thinking.html', 'Remove earlier thinking', 'What gets removed, when it saves space and why one long-task run stalled.', 'context-methods.html'),
         ('context-prefix-cache.html', 'Reuse the reading with a prefix cache', 'How cached computation helps a repeated prompt start answering sooner.', 'context-methods.html'),
+        ('context-reuse.html', 'Changing the context without re-reading it', 'How the CLM paper’s suffix cache reuse works, why it is approximate, and how it compares with this lab’s exact cache.', 'context-methods.html'),
         ('context-cleanup.html', 'Clean up text before the model reads it', 'What simple CPU cleanup removes and why its measured savings were small.', 'context-methods.html'),
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),

@@ -8,5 +8,5 @@
 .ctx-table td{white-space:normal;min-width:90px}.ctx-table th{min-width:105px}.ctx-table td,.ctx-table th{vertical-align:top;font-size:.9rem}
 .ctx-table table{min-width:540px}.ctx-comparison table{min-width:690px}.ctx-table caption{text-align:left;font-size:.85rem;color:var(--muted);padding-bottom:10px}
 .ctx-source-list{padding-left:20px}.ctx-source-list li{margin:12px 0}.ctx-source-list span{display:block;font-size:.88rem;color:var(--muted)}
-.ctx-diagram{margin:22px 0 26px;max-width:780px}.ctx-diagram img{display:block;width:100%;height:auto}.ctx-page ol{max-width:66ch;padding-left:24px}.ctx-page ol li{padding-left:3px;margin:9px 0;line-height:1.65}
+.ctx-diagram{margin:22px 0 26px;max-width:780px}.ctx-diagram img{display:block;width:100%;height:auto}.ctx-diagram svg{display:block;width:100%;height:auto;margin:0 auto}.ctx-page ol{max-width:66ch;padding-left:24px}.ctx-page ol li{padding-left:3px;margin:9px 0;line-height:1.65}
 @media print{.ctx-plot,.ctx-illustration{break-inside:avoid}.ctx-table{overflow:visible}.ctx-table table{min-width:0}}

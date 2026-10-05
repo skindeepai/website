@@ -584,5 +584,25 @@
       "estimated_read_seconds_without_cache": 866,
       "method": "Counterfactual calculation from saved calls and measured/assumed cold-read rates; not a paired cache-off run."
     }
+  },
+  "edit_cost": {
+    "status": "in progress",
+    "about": "Wait before the first output token after one edit (a deletion) inside a cached prompt, exact prefix cache on. first_edit_s: first request after the edit; repeat_s: the same edited prompt sent again; cold_s: the same prompt with nothing cached. Fill a cell by setting status to \"measured\" and the three times, then run scripts/organize_results.py and scripts/build_site.py.",
+    "contexts": ["30K", "120K", "200K"],
+    "positions": ["10%", "50%", "90%", "last block"],
+    "cells": [
+      {"context": "30K", "position": "10%", "status": "being measured"},
+      {"context": "30K", "position": "50%", "status": "measured", "edit": "300-token deletion", "resumed_from_token": 13312, "first_edit_s": 6.7, "repeat_s": 0.7, "cold_s": 11.3, "source": "notes/2026-10-05-prefix-cache-exactness-prereg.md"},
+      {"context": "30K", "position": "90%", "status": "being measured"},
+      {"context": "30K", "position": "last block", "status": "being measured"},
+      {"context": "120K", "position": "10%", "status": "being measured"},
+      {"context": "120K", "position": "50%", "status": "being measured"},
+      {"context": "120K", "position": "90%", "status": "being measured"},
+      {"context": "120K", "position": "last block", "status": "being measured"},
+      {"context": "200K", "position": "10%", "status": "being measured"},
+      {"context": "200K", "position": "50%", "status": "being measured"},
+      {"context": "200K", "position": "90%", "status": "being measured"},
+      {"context": "200K", "position": "last block", "status": "being measured"}
+    ]
   }
 }
