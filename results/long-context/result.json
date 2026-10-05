@@ -322,12 +322,12 @@
         "strategy": "Improved self-editing agent",
         "files": "no",
         "budget": "32K",
-        "right": "",
-        "time": "",
-        "written": "",
-        "peak": "",
-        "note": "No completed result in the pinned research snapshot.",
-        "status": "pending"
+        "right": "24 and 21 (two seeds)",
+        "time": "15 and 21 min",
+        "written": "67K and 91K tokens",
+        "peak": "20K and 15K",
+        "note": "No delivered batch was lost. The first seed was fully right; the second had 3 of 24 wrong, cause not yet traced.",
+        "status": "measured"
       },
       {
         "id": "improved-480k",
@@ -418,8 +418,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "83a71180e3abf4eec7f57181fc1433cedc3cdd26",
-    "time": "2026-10-05 13:42 UTC (09:42 EDT)",
+    "commit": "4e1746630",
+    "time": "2026-10-05 14:25 UTC (10:25 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   }
 }
