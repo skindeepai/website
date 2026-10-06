@@ -439,8 +439,56 @@
         "time": "3.5 h",
         "written": "926K tokens",
         "peak": "25K",
-        "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). Not a valid reading test: the agent's instructions told it to write a fold script, so it spent the run building a parser instead of reading. It fetched 6 of 20 batches in 120 calls and also broke the no-files rule. Whether the model can read and fold more text than its budget is still not measured.",
+        "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). Not a valid reading test: the agent's instructions told it to write a fold script, so it spent the run building a parser instead of reading. It fetched 6 of 20 batches in 120 calls and also broke the no-files rule. A calibrated narrative task was built afterwards; see the rows below.",
         "status": "measured"
+      },
+      {
+        "id": "read-improved-119k",
+        "strategy": "Read-mode self-editing agent, narrative text (the model must read)",
+        "files": "no",
+        "budget": "32K",
+        "right": "20",
+        "time": "10 min",
+        "written": "30K tokens",
+        "peak": "24K",
+        "note": "Different task: 119K of ordinary narrative with three real counter changes per 2K batch, numbers written as words, calibrated so that a single step is about 98% right. The agent read each batch itself (152 of 283 calls with thinking off), kept a plain table and dropped the text. Five counters ended wrong: two arithmetic slips, two dropped from the table, one lost during an edit.",
+        "status": "measured"
+      },
+      {
+        "id": "read-keep-119k",
+        "strategy": "Keep everything in the window, narrative text",
+        "files": "no",
+        "budget": "full window",
+        "right": "24",
+        "time": "20 min",
+        "written": "53K tokens",
+        "peak": "160K",
+        "note": "Same narrative task. Everything stayed in view and the model read it all at the end with thinking on. 120K fits the window; a 480K stream would not.",
+        "status": "measured"
+      },
+      {
+        "id": "read-files-119k",
+        "strategy": "No management, files allowed, narrative text",
+        "files": "yes",
+        "budget": "32K",
+        "right": "24",
+        "time": "5 min",
+        "written": "21K tokens",
+        "peak": "26K",
+        "note": "Same narrative task. The model saved the batches to files, wrote a script that pulls out the sentences naming a counter, and read only those. Search narrowed the reading; nothing was lost because the text stayed on disk.",
+        "status": "measured"
+      },
+      {
+        "id": "read-improved-480k",
+        "strategy": "Read-mode self-editing agent, narrative text, 480K stream (larger than the window)",
+        "files": "no",
+        "budget": "32K",
+        "right": "",
+        "time": "",
+        "written": "",
+        "peak": "",
+        "note": "Running.",
+        "status": "pending"
       }
     ]
   },
@@ -507,8 +555,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "57061cc60",
-    "time": "2026-10-05 21:31 UTC (17:31 EDT)",
+    "commit": "db7812771",
+    "time": "2026-10-06 00:04 UTC (20:04 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
