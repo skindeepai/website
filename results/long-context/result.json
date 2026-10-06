@@ -489,6 +489,66 @@
         "peak": "24K",
         "note": "479,512 tokens of narrative in 240 batches, 1.8 times the whole window, read at a 32K budget with the guarded agent: 634 calls, 576 with thinking off, 287 edits of its own context, no rule broken, no parser. The model read more than it can hold, by understanding, and kept an exact running table. One seed; the second is queued. The same agent without the guards had failed on this stream.",
         "status": "measured"
+      },
+      {
+        "id": "ret-archive-119k",
+        "strategy": "Table plus archive and recall, narrative text with questions about dropped text",
+        "files": "archive only",
+        "budget": "32K",
+        "right": "36 of 36",
+        "time": "6.1 min",
+        "written": "14K tokens",
+        "peak": "23K",
+        "note": "Retention test: the 119K narrative task plus twelve questions, asked only at the end, about values later overwritten and incidental details. Dropped batches go verbatim to an archive the model can only read, with a search tool. Every answer right, including the twelve about dropped text; it searched the archive 12 times. Nothing is deleted, only moved out of view.",
+        "status": "measured"
+      },
+      {
+        "id": "ret-table-119k",
+        "strategy": "Table only (read-mode agent), same retention test",
+        "files": "no",
+        "budget": "32K",
+        "right": "25 of 36",
+        "time": "5.7 min",
+        "written": "15K tokens",
+        "peak": "20K",
+        "note": "A running table cannot answer questions about the past, as designed: 6 blank, 5 wrong.",
+        "status": "measured"
+      },
+      {
+        "id": "ret-summary-119k",
+        "strategy": "Summarise at 75%, same retention test",
+        "files": "no",
+        "budget": "32K",
+        "right": "36 of 36",
+        "time": "26 min",
+        "written": "121K tokens",
+        "peak": "23K",
+        "note": "Summarising also got everything right: with thinking on, its eight summaries kept the old values. Four times slower than the archive agent and eight times the writing.",
+        "status": "measured"
+      },
+      {
+        "id": "ret-keep-119k",
+        "strategy": "Keep everything in the window, same retention test",
+        "files": "no",
+        "budget": "full window",
+        "right": "34 of 36",
+        "time": "14 min",
+        "written": "33K tokens",
+        "peak": "144K",
+        "note": "Two wrong with the whole text in view.",
+        "status": "measured"
+      },
+      {
+        "id": "ret-files-119k",
+        "strategy": "No management, files allowed, same retention test",
+        "files": "yes",
+        "budget": "32K",
+        "right": "3 of 36",
+        "time": "6.6 min",
+        "written": "26K tokens",
+        "peak": "27K",
+        "note": "The plain agent thought its way through its 32K budget in 25 calls before it had finished reading, and the budget stop ended it. The same agent got 24 of 24 on the version without the extra questions; it has no guards and its results swing.",
+        "status": "measured"
       }
     ]
   },
@@ -555,8 +615,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "f534aa6a0",
-    "time": "2026-10-06 02:54 UTC (22:54 EDT)",
+    "commit": "974df5792",
+    "time": "2026-10-06 04:46 UTC (00:46 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
