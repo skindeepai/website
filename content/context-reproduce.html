@@ -67,6 +67,7 @@ API_BASE=... OUT_DIR=&lt;out_dir&gt;/context-clm-second-$(date +%Y%m%d) SUBSET=c
 <tr><th scope="row">B32io</th><td>B32i with thinking off on every call.</td></tr>
 <tr><th scope="row">B32ir</th><td>Read mode for narrative text: the model reads each report itself and keeps one line per counter; a drop is refused unless every counter mentioned has a line.</td></tr>
 <tr><th scope="row">B32ira</th><td>B32ir plus a read-only archive of dropped batches and a <code>recall</code> search tool.</td></tr>
+<tr><th scope="row">B32iq</th><td>Quoted events: the model supplies changes with supporting quotes; the harness verifies them, updates the totals and archives dropped batches for recall. Uses a 32K budget.</td></tr>
 </tbody></table></div>
 </section>
 <section id="check"><h2>5. Check each batch and report</h2>

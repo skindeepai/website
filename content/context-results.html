@@ -1,9 +1,9 @@
 <p><strong>Files completed the ledger fastest. Caching shortened the wait before an answer. Longer active context slowed generation.</strong></p>
-<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Task results</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#retention">Retention</a><a href="#sources">Original research</a><a href="@/context-reproduce.html">Reproduce</a></nav>
+<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Ledger tasks</a><a href="#reading">Narrative reading</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#retention">Retention</a><a href="#sources">Original research</a><a href="@/context-reproduce.html">Reproduce</a></nav>
 <section id="comparison"><h2>Completing a long task</h2>
 <p>Each approach used Qwen3.8-27B on two B70 GPUs. A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. Large-window and revised self-editing arms used seeds 0 and 1; other 121K arms used seed 0. <a href="@/context-model-tools.html#prompts">Model setup and task prompts</a>.</p>
 {{TASK_CHART}}
-<details><summary>Every task result, context budget and token count</summary>{{COMPARISON_TABLE}}</details>
+<details><summary>121K ledger results, context budgets and token counts</summary>{{COMPARISON_TABLE}}</details>
 <p><strong>Both file-using agents answered 24/24 in about 1.9 minutes.</strong> Their peak active contexts were 8.2K and 8.9K tokens. The equal-score large-window and summary runs took about 26 and 41 minutes: approximately 14× and 22× the elapsed time in this particular trial.</p>
 <p>These totals combine generation, prompt processing and tool use. They are not per-token decode speeds. The “large window” arm imposed no context-management budget, but the model still filtered batches through code; it did not retain every raw memo in its conversation.</p>
 <details id="failures"><summary>Why the failures matter</summary><p>The original self-editing run got 19/24. Its five missed answers exactly matched a ledger with batches 2, 3, 4, 5 and 7 omitted: the harness rolled back those already-delivered batches. The model’s recorded state edits were not the source of these five misses.</p><p>The earlier 12-trial key-value comparison also does not rank context policies: all arms wrote data to files, and incomplete file writes caused the losses. Some summary calls were empty after reasoning used the output allowance.</p><p>The separate old-thinking-removal trial was stopped after 2.6 hours without a final answer. It generated about 397K tokens while repeatedly reconstructing state and hitting the output cap.</p><p><a href="{{NOTE_SELF_EDITING}}">Call-by-call analysis</a> · <a href="@/context-clm.html">Readable explanation</a></p></details>
@@ -13,9 +13,18 @@
 <p>The 478K-token ledger contained 76 batches, about 1.8 times the model’s full window. Code processed most input without placing its raw text in the model’s context.</p>
 {{STREAM_TABLE}}
 <p>The revised agent peaked at 10K active context; the file agents peaked at 9.7K and 7.1K. This demonstrates processing a longer stream, not attending to all 478K tokens at once.</p>
-<details><summary>Verified-fold revision and task scope</summary><p>A fix that retains and checks the update script is under test. The completed 478K results above did not use that later verified-fold revision.</p><p>The 121K ledger exceeded the 32K working budget but remained below the model’s full 262K position limit. The tasks were locally constructed, not a reproduction of the paper’s benchmark scores.</p></details>
+<details><summary>Verified-fold revision and task scope</summary><p>The later revision retains and checks the update script and enables thinking only when needed. It scored 24/24 on both 121K ledger seeds, in 6.6 and 5.7 minutes. The completed 478K results above used the earlier revision.</p><p>The 121K ledger exceeded the 32K working budget but remained below the model’s full 262K position limit. The tasks were locally constructed, not a reproduction of the paper’s benchmark scores.</p></details>
 <details id="time-breakdown"><summary>Where the time went: reconstruction from saved calls</summary>{{TIMING_TABLE}}<p>Wall and tool times come from run records. Reading time is estimated from cold-read rates; writing is the remaining call time and includes call overhead. Summary-call time is estimated too. The columns omit other harness and setup time.</p><p>Most time went into generation, much of it thinking. All file-using tool commands together took 2.5–2.7 seconds. This does not isolate disk I/O, buffered versus durable writes or per-token decode rates.</p><p><a href="{{NOTE_TIMING}}">Method, engine-log cross-checks and reuse calculations</a></p></details>
 <p><a href="@/context-files.html">Why files helped</a> · <a href="{{NOTE_RESULTS}}">Original reported task results</a></p>
+</section>
+<section id="reading"><h2>Reading narrative text</h2>
+<p>These tasks require reading counter changes from prose. The read-mode agent updates its own table; the quoted-events agent supplies event lines with supporting quotes and the harness updates the table. The quoted agent also has a read-only archive. Question counts vary by task and seed, so each score shows its own denominator.</p>
+<p><strong>On the matched 480K narrative stream, both agents answered 10/10 correctly.</strong> Quoted events took 19.6 minutes versus 25.7 for read mode, about 24% less elapsed time in this one-seed comparison. The stream contained 282 narrative batches plus the final questions. Both agents used a 32K working budget.</p>
+{{READING_TABLE}}
+<p><a href="{{REVIEW_EVIDENCE}}">Trial scores, source hashes and copied grader results</a>.</p>
+<p>Unless a different seed is shown, these are seed-0 trials. The dense prose-ledger attempt is void because it broke the no-files rule. The separate million-token read-mode trial scored 23/24. Verifying supplied quotes and computing their arithmetic does not establish that the model found every relevant change.</p>
+<details><summary>Quoted-event revisions and unsuccessful attempts</summary><p>The original quote checker rejected some correct written-number events. Fixing it reduced the three-change trial from 12.4 to 4.7 minutes. At twelve changes per batch, that revision hit the step cap without answers and broke the no-files rule. The subsequent revision completed 16/16 in 7.4 minutes; it added stronger file guards, typo handling, recognition of batches merged into notes and larger thinking allowances on retries. These results compare successive harness versions.</p></details>
+<p><a href="{{NOTE_RESULTS}}">Research record and failed attempts</a> · <a href="@/context-reproduce.html#compare">Run the reading arms</a></p>
 </section>
 <section id="window"><h2>Longer context slows generation</h2>
 <p>The server accepted a 262,144-token configured window; the probes supplied up to about 250K input tokens with room for an answer. Weights were FP8; the attention cache stayed at 16-bit precision.</p>
@@ -48,6 +57,9 @@
 <section id="retention"><h2>Remembering what was dropped</h2>
 <p>The 119K narrative task with twelve extra questions about earlier text. Moving dropped batches to a searchable archive matched summarising on correctness, with less time and writing.</p>
 {{RETENTION_TABLE}}
+<h3>Quoted events with an archive</h3>
+<p>These two trials used different harness revisions. Seed 0 is the rerun with the final questions pinned in context; the earlier attempt lost those questions and scored 24/36. Seed 1 has six fewer current-value questions.</p>
+{{QUOTED_RETENTION_TABLE}}
 <p><a href="@/context-retention.html">What this shows and how the archive works</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
 </section>
 <details id="cleaning"><summary>CPU cleanup and reasoning history</summary>

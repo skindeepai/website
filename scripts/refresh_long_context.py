@@ -32,10 +32,20 @@ def chart_image(name, alt, caption, height):
             + '"></picture><figcaption>' + caption + '</figcaption></figure>')
 
 
+def score(row):
+    if row.get('void'):
+        return 'Void (rule breach)'
+    if row.get('no_answer'):
+        return 'No answer'
+    assert isinstance(row['correct'], int) and isinstance(row['asked'], int), row['id']
+    assert 0 <= row['correct'] <= row['asked'] and row['asked'] > 0, row['id']
+    return f'{row["correct"]}/{row["asked"]}'
+
+
 def update(pages):
     d = json.loads((ROOT / DATA).read_text(encoding='utf-8'))
     base = d['lab']
-    note = lambda key: base + d['sources'][key]
+    note = lambda key: d.get('source_urls', {}).get(key, base + d['sources'][key])
     raw = lambda path: base + 'data/2026-10-05-context/' + path
     c = d['cache']
     measured = []
@@ -61,7 +71,6 @@ def update(pages):
         'no-thinking': ('Remove old thinking', 'context-drop-thinking.html')}
     overview_order = ['keep-s0', 'keep-s1', 'summary', 'paper', 'improved-121k-s0', 'improved-121k-s1', 'files-plain', 'files-edit', 'no-thinking']
     by_id = {r['id']: r for r in measured}
-    score = lambda r: 'No answer' if r.get('no_answer') or not r['right'].isdigit() else r['right'] + '/24'
     overview = table(['Approach', 'Correct', 'Time'], [[overview_labels[key][0], score(by_id[key]), by_id[key]['time']]
         for key in overview_order], 'Long-task approaches and results', 'ctx-summary-table')
     for label, path in overview_labels.values():
@@ -88,7 +97,8 @@ def update(pages):
     transfer = table(['Assumed sustained storage read rate', 'Time to move the 200K cache once'],
                      [[f'{r["gb_s"]:g} GB/s', f'At least {r["seconds"]:.2f} seconds'] for r in memory['transfer_examples']], 'Illustrative transfer times; not a model benchmark')
     comparison = table(['Strategy', 'External files', 'Context budget', 'Correct', 'Elapsed time', 'Tokens generated'],
-                       [[r['strategy'], r['files'], r['budget'], score(r), r['time'], r['written']] for r in measured if r.get('input_tokens', 121000) == 121000],
+                       [[r['strategy'], r['files'], r['budget'], score(r), r['time'], r['written']] for r in measured
+                        if r['task_family'] == 'ledger' and r['input_tokens'] == 121000],
                        '121K-token ledger trials, including both large-window and revised-agent seeds', 'ctx-comparison')
     method_rows = [
         ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
@@ -113,7 +123,7 @@ def update(pages):
                         'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
     source_list = '<ul class="ctx-source-list">'
     for key, title, description in [
-        ('results', 'Research summary', 'Completed findings and pending work in the October 5 snapshot.'),
+        ('results', 'Research summary', 'Completed findings and pending work in the recorded research snapshot.'),
         ('window', 'Window, recall and one-step decisions', 'Preregistered probes, corrections and results.'),
         ('cache_test', 'Exact prefix cache tests', '99-case comparison and the separate decode-rate gate.'),
         ('cache_rules', 'How the cache works', 'Detailed engine analysis, state sizes and reuse rules.'),
@@ -129,7 +139,7 @@ def update(pages):
         'RECALL_CORRECT': str(d['recall']['correct']), 'RECALL_ASKED': str(d['recall']['asked']),
         'COMPARISON_TABLE': comparison, 'METHOD_TABLE': methods,
         'CLM_RESULT_TABLE': table(['Self-editing agent', 'Correct', 'Time'],
-            [[overview_labels[key][0], by_id[key]['right'] + '/24', by_id[key]['time']] for key in ['paper', 'improved-121k-s0', 'improved-121k-s1']],
+            [[overview_labels[key][0], score(by_id[key]), by_id[key]['time']] for key in ['paper', 'improved-121k-s0', 'improved-121k-s1']],
             'Original and revised self-editing trials', 'ctx-summary-table'),
         'TIMING_TABLE': table(d['timing_analysis']['columns'], d['timing_analysis']['rows'], 'Measured totals and estimated time breakdown', 'ctx-comparison'),
         'OVERVIEW_TABLE': overview, 'OVERVIEW_OTHER_TABLE': other,
@@ -148,6 +158,7 @@ def update(pages):
             [[f'{n:,}', f'{n * memory["bytes_per_token"] / 2**30:.2f} GiB'] for n in [8192, 32768, 60000, 120000, 200000, 262144]], 'Calculated attention cache payload'),
         'TRANSFER_TABLE': transfer, 'CLEANING_TABLE': table(d['cleaning']['columns'], d['cleaning']['rows'], 'Separate token-reduction and reasoning-history measurements'),
         'SOURCE_LIST': source_list,
+        'REVIEW_EVIDENCE': d['review_evidence_url'],
         'RAW_RECALL_PROSE': raw('recall/recall-prose.json'), 'RAW_RECALL_LEDGER': raw('recall/recall-ledger.json'),
         'RAW_CACHE': raw('prefixcache-exact-mtp/cache.json'), 'RAW_GATE': raw('pcgate/results.json'),
         'CONTEXT_README': note('scripts') + 'README.md',
@@ -161,8 +172,9 @@ def update(pages):
         replacements['NOTE_' + key.upper()] = note(key)
     minutes = lambda seconds: f'{seconds / 60:.1f} min'
     reuse_rows = [[r[0], minutes(r[1]), minutes(r[2]), minutes(r[3]), f'{100 * r[3] / r[1]:.0f}%'] for r in d['timing_analysis']['rows']]
-    light = by_id['improved-light-121k']
-    reuse_rows.append(['Revised self-editing, thinking only when needed (two seeds)', light['time'], 'Not split', 'Not split', 'Not split'])
+    for seed in (0, 1):
+        light = by_id[f'improved-light-121k-s{seed}']
+        reuse_rows.append([f'Revised self-editing, thinking only when needed, seed {seed}', light['time'], 'Not split', 'Not split', 'Not split'])
     replacements['REUSE_TIME_TABLE'] = table(['Run (121K ledger)', 'Total', 'Writing and calls', 'Reading', 'Reading share'], reuse_rows,
                                              'Where the time went in the agent runs', 'ctx-comparison')
     edit = d['edit_cost']
@@ -179,12 +191,22 @@ def update(pages):
                  ('ret-summary-119k', 'Summarise at 75%'), ('ret-keep-119k', 'Keep everything in the window'),
                  ('ret-files-119k', 'No management, files allowed')]
     replacements['RETENTION_TABLE'] = table(['Approach', 'Files', 'Right', 'Time', 'Peak context', 'Tokens written'],
-                                            [[label, by_id[key]['files'], by_id[key]['right'], by_id[key]['time'], by_id[key]['peak'], by_id[key]['written']]
+                                            [[label, by_id[key]['files'], score(by_id[key]), by_id[key]['time'], by_id[key]['peak'], by_id[key]['written']]
                                              for key, label in retention], 'Retention test: 36 questions, 12 of them about dropped text', 'ctx-comparison')
     for key, _ in retention:
         for field in ('right', 'time', 'written'):
             replacements['RET_' + key.split('-')[1].upper() + '_' + field.upper()] = escape(by_id[key][field])
     replacements['RETENTION_DATA'] = RETENTION_DATA
+    replacements['READING_TABLE'] = table(
+        ['Trial', 'Files', 'Correct', 'Time', 'Tokens generated'],
+        [[r['strategy'], r['files'], score(r), r['time'], r['written']]
+         for r in measured if r['task_family'] == 'reading'],
+        'Narrative reading trials, with each seed and question count shown separately', 'ctx-comparison')
+    replacements['QUOTED_RETENTION_TABLE'] = table(
+        ['Trial', 'Correct', 'Time', 'Tokens generated', 'Peak context'],
+        [[r['strategy'], score(r), r['time'], r['written'], r['peak']]
+         for r in measured if r['id'].startswith('quoted-ret-')],
+        'Quoted-events retention trials, one row per seed', 'ctx-comparison')
 
     def outcomes(items):
         return table(['Trial', 'Correct', 'Time'], [[label, score(by_id[key]), by_id[key]['time']] for key, label in items],

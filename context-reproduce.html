@@ -83,6 +83,7 @@ API_BASE=... OUT_DIR=&lt;out_dir&gt;/context-clm-second-$(date +%Y%m%d) SUBSET=c
 <tr><th scope="row">B32io</th><td>B32i with thinking off on every call.</td></tr>
 <tr><th scope="row">B32ir</th><td>Read mode for narrative text: the model reads each report itself and keeps one line per counter; a drop is refused unless every counter mentioned has a line.</td></tr>
 <tr><th scope="row">B32ira</th><td>B32ir plus a read-only archive of dropped batches and a <code>recall</code> search tool.</td></tr>
+<tr><th scope="row">B32iq</th><td>Quoted events: the model supplies changes with supporting quotes; the harness verifies them, updates the totals and archives dropped batches for recall. Uses a 32K budget.</td></tr>
 </tbody></table></div>
 </section>
 <section id="check"><h2>5. Check each batch and report</h2>
@@ -109,7 +110,7 @@ python3 qwen38-fp8-prefix-cache-exactness-probe.py --base-url http://127.0.0.1:1
 python3 qwen38-fp8-edit-cost-probe.py --base-url http://127.0.0.1:18196 --lengths 30000,120000,200000 --out edit-cost.json
 API_BASE=http://127.0.0.1:18124/v1 MODEL_NAME=qwen38-27b-fp8 \
   prose_fold_probe.py TASK_DIR [TASK_DIR ...] [--thinking on|off|both] [--variant plain|reason|both]</code></pre>
-<p><a href="context-results.html">Measured results</a> · <a href="context-retention.html">Remembering what was dropped</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md">Lab research summary</a></p>
+<p><a href="context-results.html">Measured results</a> · <a href="context-retention.html">Remembering what was dropped</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md">Lab research summary</a></p>
 </section>
 </div>
 <footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

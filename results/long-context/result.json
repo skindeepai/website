@@ -1,6 +1,6 @@
 {
-  "schema": "skindeep.long-context.v2",
-  "updated": "2026-10-05",
+  "schema": "skindeep.long-context.v3",
+  "updated": "2026-10-06",
   "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
   "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
   "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/",
@@ -264,7 +264,9 @@
             "time": "26 min",
             "written": "89K tokens",
             "peak": "112K",
-            "note": "Filtered batches with code; every final answer correct."
+            "note": "Filtered batches with code; every final answer correct.",
+            "correct": 24,
+            "asked": 24
           },
           {
             "seed": 1,
@@ -273,10 +275,14 @@
             "time": "38 min",
             "written": "99K tokens",
             "peak": "246K",
-            "note": "Context filled before the final questions arrived; no answers returned."
+            "note": "Context filled before the final questions arrived; no answers returned.",
+            "correct": 0,
+            "asked": 24
           }
         ],
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24
       },
       {
         "id": "paper",
@@ -289,7 +295,10 @@
         "peak": "",
         "note": "all 5 losses were batches its own rollback-and-retry removed after delivery",
         "status": "measured",
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 19
       },
       {
         "id": "summary",
@@ -302,7 +311,10 @@
         "peak": "",
         "note": "12 summaries, 57 calls; rewritten history reduces prefix reuse.",
         "status": "measured",
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 24
       },
       {
         "id": "files-edit",
@@ -315,7 +327,10 @@
         "peak": "8.2K",
         "note": "no edit was needed",
         "status": "measured",
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 24
       },
       {
         "id": "files-plain",
@@ -328,7 +343,10 @@
         "peak": "8.9K",
         "note": "",
         "status": "measured",
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 24
       },
       {
         "id": "no-thinking",
@@ -341,7 +359,11 @@
         "peak": "113K",
         "note": "stuck re-deriving its state every call; never acted",
         "status": "measured",
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 0,
+        "no_answer": true
       },
       {
         "id": "improved-121k",
@@ -361,7 +383,9 @@
             "time": "15 min",
             "written": "67K tokens",
             "peak": "20K",
-            "note": "No delivered batch lost; all final values correct."
+            "note": "No delivered batch lost; all final values correct.",
+            "correct": 24,
+            "asked": 24
           },
           {
             "seed": 1,
@@ -369,10 +393,14 @@
             "time": "21 min",
             "written": "91K tokens",
             "peak": "15K",
-            "note": "All batches retained. A re-typed fold script stopped applying deletes from batch 17, causing three wrong final values."
+            "note": "All batches retained. A re-typed fold script stopped applying deletes from batch 17, causing three wrong final values.",
+            "correct": 21,
+            "asked": 24
           }
         ],
-        "input_tokens": 121000
+        "input_tokens": 121000,
+        "task_family": "ledger",
+        "asked": 24
       },
       {
         "id": "improved-light-121k",
@@ -384,7 +412,30 @@
         "written": "20K and 18K tokens",
         "peak": "17K and 16K",
         "note": "The fold script is written once and checked by the harness on every batch; thinking is on only at the start, after an error and for the final answer. Right on both seeds, including the one where the earlier version dropped its delete rule.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "ledger",
+        "input_tokens": 121000,
+        "asked": 24,
+        "trials": [
+          {
+            "seed": 0,
+            "correct": 24,
+            "asked": 24,
+            "right": "24",
+            "time": "6.6 min",
+            "written": "20K tokens",
+            "peak": "17K"
+          },
+          {
+            "seed": 1,
+            "correct": 24,
+            "asked": 24,
+            "right": "24",
+            "time": "5.7 min",
+            "written": "18K tokens",
+            "peak": "16K"
+          }
+        ]
       },
       {
         "id": "improved-480k",
@@ -397,7 +448,10 @@
         "peak": "10K",
         "note": "478K tokens in 76 batches, 1.8 times the whole window. The model wrote one small script, kept its table in the pinned state and piped each batch through the script; it read only 2 of the 76 batches itself. Shows unlimited input when code can do the reading, not yet the model understanding more text than its window.",
         "status": "measured",
-        "input_tokens": 478000
+        "input_tokens": 478000,
+        "task_family": "ledger",
+        "asked": 24,
+        "correct": 24
       },
       {
         "id": "files-480k",
@@ -417,7 +471,9 @@
             "time": "1.9 min",
             "written": "8K tokens",
             "peak": "9.7K",
-            "variant": "plain"
+            "variant": "plain",
+            "correct": 24,
+            "asked": 24
           },
           {
             "strategy": "Files, editing available",
@@ -425,10 +481,14 @@
             "time": "1.3 min",
             "written": "5K tokens",
             "peak": "7.1K",
-            "variant": "editing-available"
+            "variant": "editing-available",
+            "correct": 24,
+            "asked": 24
           }
         ],
-        "input_tokens": 478000
+        "input_tokens": 478000,
+        "task_family": "ledger",
+        "asked": 24
       },
       {
         "id": "improved-prose-121k",
@@ -440,19 +500,56 @@
         "written": "926K tokens",
         "peak": "25K",
         "note": "Different task: the same counters, but every batch is narrative text that a short script cannot parse (an 80-line parser scores 13-33%). Not a valid reading test: the agent's instructions told it to write a fold script, so it spent the run building a parser instead of reading. It fetched 6 of 20 batches in 120 calls and also broke the no-files rule. A calibrated narrative task was built afterwards; see the rows below.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "void": true
       },
       {
         "id": "read-improved-119k",
         "strategy": "Read-mode self-editing agent, narrative text (the model must read)",
         "files": "no",
         "budget": "32K",
-        "right": "23 and 18 of 18 (two seeds)",
-        "time": "5.4 and 5.1 min",
-        "written": "14K and 12K tokens",
+        "right": "23 of 24 and 18 of 18 (two seeds)",
+        "time": "5.4 and 5.3 min",
+        "written": "14K and 13K tokens",
         "peak": "20K and 19K",
-        "note": "Different task: 119K of ordinary narrative with three real counter changes per 2K batch, numbers written as words, calibrated so that a single step is about 98% right. With guards on the agent loop (no repeated command, no state change without a batch in view, no silent dropped lines): seed 0 got 23 of 24 (one reading slip, one dropped counter); seed 1 asks 18 counters and got all 18, with its table matching the hidden reference after every batch, but is void by the letter of the no-files rule because it wrote the whole table into the answers file before the questions arrived. Before the guards seed 0 was 20 of 24 in 10 minutes.",
-        "status": "measured"
+        "note": "Narrative text with three changes per batch and numbers written as words. Seed 0: 23/24. The completed seed-1 rerun: 18/18 with no rule breach. An earlier seed-1 attempt also returned 18/18 but was void because it wrote unasked values to the answer file; that invalid attempt is not the result shown here.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "trials": [
+          {
+            "seed": 0,
+            "correct": 23,
+            "asked": 24,
+            "right": "23",
+            "time": "5.4 min",
+            "written": "14K tokens",
+            "peak": "20K",
+            "elapsed_seconds": 325,
+            "generated_tokens": 13571,
+            "peak_tokens": 20109,
+            "calls": 144,
+            "evidence_id": "context-clm-tenth-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__w3fFKXY",
+            "input_tokens": 119282
+          },
+          {
+            "seed": 1,
+            "correct": 18,
+            "asked": 18,
+            "right": "18",
+            "time": "5.3 min",
+            "written": "13K tokens",
+            "peak": "19K",
+            "elapsed_seconds": 315,
+            "generated_tokens": 12825,
+            "peak_tokens": 18873,
+            "calls": 144,
+            "evidence_id": "context-clm-eleventh-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s1/sparse-memory-t120k-s1__tyQwrPZ",
+            "input_tokens": 119172
+          }
+        ]
       },
       {
         "id": "read-keep-119k",
@@ -464,7 +561,11 @@
         "written": "53K tokens",
         "peak": "160K",
         "note": "Same narrative task. Everything stayed in view and the model read it all at the end with thinking on. 120K fits the window; a 480K stream would not.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 24,
+        "asked": 24
       },
       {
         "id": "read-files-119k",
@@ -476,19 +577,34 @@
         "written": "21K tokens",
         "peak": "26K",
         "note": "Same narrative task. The model saved the batches to files, wrote a script that pulls out the sentences naming a counter, and read only those. Search narrowed the reading; nothing was lost because the text stayed on disk.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 24,
+        "asked": 24
       },
       {
         "id": "read-improved-480k",
         "strategy": "Read-mode self-editing agent, narrative text, 480K stream (larger than the window)",
         "files": "no",
         "budget": "32K",
-        "right": "24 and 24 (two seeds)",
-        "time": "25.7 and 25 min",
+        "right": "10",
+        "time": "25.7 min",
         "written": "68K tokens",
         "peak": "24K",
-        "note": "479,512 tokens of narrative in 240 batches, 1.8 times the whole window, read at a 32K budget with the guarded agent: 634 calls, 576 with thinking off, 287 edits of its own context, no rule broken, no parser. The model read more than it can hold, by understanding, and kept an exact running table. Two seeds, both all right. The same agent without the guards had failed on this stream.",
-        "status": "measured"
+        "note": "Seed 0: 479,512 tokens in 282 narrative batches plus final questions, with a 32K budget. 634 calls, 576 with thinking off, 287 context edits, no rule breach. Ten questions were asked and all ten answered correctly. The previously claimed second-seed success has no verified run record and is excluded.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 10,
+        "asked": 10,
+        "input_tokens": 479512,
+        "elapsed_seconds": 1539,
+        "generated_tokens": 68185,
+        "peak_tokens": 23547,
+        "calls": 634,
+        "narrative_batches": 282,
+        "evidence_id": "context-clm-tenth-20261005/client/rd480/runs/jobs/B32ir__sparse-memory-t480k-s0/sparse-memory-t480k-s0__YzT5eSk"
       },
       {
         "id": "ret-archive-119k",
@@ -500,7 +616,11 @@
         "written": "14K tokens",
         "peak": "23K",
         "note": "Retention test: the 119K narrative task plus twelve questions, asked only at the end, about values later overwritten and incidental details. Dropped batches go verbatim to an archive the model can only read, with a search tool. Every answer right, including the twelve about dropped text; it searched the archive 12 times. Nothing is deleted, only moved out of view.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "correct": 36,
+        "asked": 36
       },
       {
         "id": "ret-table-119k",
@@ -512,7 +632,11 @@
         "written": "15K tokens",
         "peak": "20K",
         "note": "A running table cannot answer questions about the past, as designed: 6 blank, 5 wrong.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "correct": 25,
+        "asked": 36
       },
       {
         "id": "ret-summary-119k",
@@ -524,7 +648,11 @@
         "written": "121K tokens",
         "peak": "23K",
         "note": "Summarising also got everything right: with thinking on, its eight summaries kept the old values. Four times slower than the archive agent and eight times the writing.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "correct": 36,
+        "asked": 36
       },
       {
         "id": "ret-keep-119k",
@@ -536,7 +664,11 @@
         "written": "33K tokens",
         "peak": "144K",
         "note": "Two wrong with the whole text in view.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "correct": 34,
+        "asked": 36
       },
       {
         "id": "ret-files-119k",
@@ -548,7 +680,11 @@
         "written": "26K tokens",
         "peak": "27K",
         "note": "The plain agent thought its way through its 32K budget in 25 calls before it had finished reading, and the budget stop ended it. The same agent got 24 of 24 on the version without the extra questions; it has no guards and its results swing.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "correct": 3,
+        "asked": 36
       },
       {
         "id": "read-paper-119k",
@@ -556,11 +692,21 @@
         "files": "no",
         "budget": "32K",
         "right": "24",
-        "time": "39 min",
+        "time": "38.7 min",
         "written": "171K tokens",
         "peak": "28K",
         "note": "Same 119K narrative task. Right, but seven times slower than the guarded read-mode agent: the difference is thinking tokens.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 24,
+        "asked": 24,
+        "evidence_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/B32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__XqHBYPX",
+        "input_tokens": 119282,
+        "elapsed_seconds": 2321,
+        "generated_tokens": 170682,
+        "peak_tokens": 28042,
+        "calls": 156
       },
       {
         "id": "read-summary-119k",
@@ -568,47 +714,89 @@
         "files": "no",
         "budget": "32K",
         "right": "24",
-        "time": "17 min",
+        "time": "16.9 min",
         "written": "78K tokens",
         "peak": "23K",
         "note": "Same 119K narrative task; seven summaries.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 24,
+        "asked": 24,
+        "evidence_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/C32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__LduPkBe",
+        "input_tokens": 119282,
+        "elapsed_seconds": 1011,
+        "generated_tokens": 77833,
+        "peak_tokens": 22705,
+        "calls": 81
       },
       {
         "id": "read-improved-d6-119k",
         "strategy": "Guarded read-mode agent, 6 changes per batch",
         "files": "no",
         "budget": "32K",
-        "right": "24",
+        "right": "22",
         "time": "8.8 min",
         "written": "31K tokens",
         "peak": "23K",
-        "note": "Twice the reading density of the calibrated setting.",
-        "status": "measured"
+        "note": "Twice the calibrated reading density: 22 questions, all correct.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 22,
+        "asked": 22,
+        "evidence_id": "context-clm-fourteenth-20261005/client/rd120-d6/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__cYMHaL5",
+        "input_tokens": 119687,
+        "elapsed_seconds": 527,
+        "generated_tokens": 30983,
+        "peak_tokens": 23428,
+        "calls": 166
       },
       {
         "id": "read-improved-d12-119k",
         "strategy": "Guarded read-mode agent, 12 changes per batch",
         "files": "no",
         "budget": "32K",
-        "right": "21",
-        "time": "13 min",
+        "right": "14",
+        "time": "13.4 min",
         "written": "46K tokens",
         "peak": "21K",
-        "note": "Four times the density: the single-step reading error at this density is about 6 per 100 changes, and it shows.",
-        "status": "measured"
+        "note": "Four times the calibrated density: 14 of the 16 questions were answered correctly. The old 21/24 display rescaled the success rate to a fixed denominator and was incorrect.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 14,
+        "asked": 16,
+        "evidence_id": "context-clm-fourteenth-20261005/client/rd120-d12/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__EbpSRTh",
+        "input_tokens": 119652,
+        "elapsed_seconds": 804,
+        "generated_tokens": 46295,
+        "peak_tokens": 20836,
+        "calls": 217
       },
       {
         "id": "quoted-480k",
         "strategy": "Quoted events: the model quotes each change, code keeps the books, 480K narrative stream",
         "files": "archive only",
         "budget": "32K",
-        "right": "24",
+        "right": "10",
         "time": "19.6 min",
         "written": "37K tokens",
         "peak": "22K",
-        "note": "The model reports each change as one fixed-format line with an exact quote from the batch; the harness checks the quote is in the text, checks the counter and the amount, does the arithmetic itself, archives the batch and drops it. 479,512 tokens in 240 batches, 1.8 times the whole window: 578 calls, 573 with thinking off, 542 thinking tokens in the whole run. 23% faster than the read-mode agent on the same stream, and the arithmetic cannot go wrong. One seed.",
-        "status": "measured"
+        "note": "Seed 0 on the same 479,512-token task as the read-mode seed-0 trial: 282 narrative batches plus final questions, ten questions, all correct. The harness verifies event quotes and does the arithmetic. 578 calls, 573 with thinking off; 542 thinking tokens. Elapsed time was about 24% lower than the matched read-mode trial. Quote verification does not prove that every relevant event was extracted.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 10,
+        "asked": 10,
+        "input_tokens": 479512,
+        "elapsed_seconds": 1173,
+        "generated_tokens": 36702,
+        "peak_tokens": 22430,
+        "calls": 578,
+        "thinking_tokens": 542,
+        "narrative_batches": 282,
+        "evidence_id": "context-planA-client/rd480q/runs/jobs/B32iq__sparse-memory-t480k-s0/sparse-memory-t480k-s0__DKggW8r"
       },
       {
         "id": "quoted-119k",
@@ -619,32 +807,109 @@
         "time": "4.7 min",
         "written": "9K tokens",
         "peak": "17K",
-        "note": "After a bug in the harness's own number reader was fixed (it had refused correct lists and cost most of the time in the first runs). Faster than every other no-files strategy on this task and exact.",
-        "status": "measured"
+        "note": "After the harness number reader was fixed: 24/24 in 4.7 minutes, with a read-only archive. The earlier checker rejected correct event lists and added retries.",
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 24,
+        "asked": 24,
+        "evidence_id": "context-planA-client/rd120q/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__MFciE7a",
+        "input_tokens": 119282,
+        "elapsed_seconds": 280,
+        "generated_tokens": 8686,
+        "peak_tokens": 16829,
+        "calls": 143
+      },
+      {
+        "id": "quoted-d12-119k",
+        "strategy": "Quoted events, 119K narrative text (12 changes per batch)",
+        "files": "archive only",
+        "budget": "32K",
+        "task_family": "reading",
+        "status": "measured",
+        "seed": 0,
+        "note": "After the second harness revision: 16/16. The original checker took 61 minutes for 16/16; the first checker fix then hit the step cap without answers and broke the no-files rule. This rerun includes the final-question pin, typo handling, folded-batch discovery, file guards and escalating retry thinking caps.",
+        "correct": 16,
+        "asked": 16,
+        "right": "16",
+        "evidence_id": "context-planA-client/rd120q2-d12/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__6nQ7wM5",
+        "input_tokens": 119652,
+        "elapsed_seconds": 445,
+        "generated_tokens": 25158,
+        "peak_tokens": 21408,
+        "calls": 144,
+        "time": "7.4 min",
+        "written": "25K tokens",
+        "peak": "21K"
       },
       {
         "id": "quoted-ret-119k",
-        "strategy": "Quoted events, retention test (two seeds)",
+        "strategy": "Quoted events, retention test",
         "files": "archive only",
         "budget": "32K",
-        "right": "29 of 30 and 35 of 36",
-        "time": "5.1 and 5.7 min",
-        "written": "10K and 27K tokens",
-        "peak": "21K and 22K",
-        "note": "Seed 1 right on all but one. Seed 0 first left the twelve old-value questions blank because the model compacted away the batch holding the questions; with that batch pinned it got 35 of 36 in 5.7 minutes.",
-        "status": "measured"
+        "right": "35 of 36 and 29 of 30",
+        "time": "5.7 and 5.1 min",
+        "written": "12K and 10K tokens",
+        "peak": "21K and 21K",
+        "note": "Seed 0 with the final questions pinned: 35/36 in 340 seconds. Its previous attempt lost the questions and returned only current values (24/36). Seed 1: 29/30 in 308 seconds. These runs used different harness revisions.",
+        "status": "measured",
+        "task_family": "retention",
+        "seed": 0,
+        "trials": [
+          {
+            "seed": 0,
+            "correct": 35,
+            "asked": 36,
+            "right": "35",
+            "time": "5.7 min",
+            "written": "12K tokens",
+            "peak": "21K",
+            "elapsed_seconds": 340,
+            "generated_tokens": 11776,
+            "peak_tokens": 20962,
+            "calls": 159,
+            "evidence_id": "context-planA-client/ret120q2/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__rpcehLD",
+            "input_tokens": 119282
+          },
+          {
+            "seed": 1,
+            "correct": 29,
+            "asked": 30,
+            "right": "29",
+            "time": "5.1 min",
+            "written": "10K tokens",
+            "peak": "21K",
+            "elapsed_seconds": 308,
+            "generated_tokens": 10133,
+            "peak_tokens": 20820,
+            "calls": 150,
+            "evidence_id": "context-planA-client/ret120q/runs/jobs/B32iq__sparse-memory-t120k-s1/sparse-memory-t120k-s1__fyzUWqh",
+            "input_tokens": 119172
+          }
+        ]
       },
       {
         "id": "read-improved-1m",
         "strategy": "Read-mode self-editing agent, narrative text, 1,000K-token stream (3.8 times the window)",
         "files": "no",
         "budget": "32K",
-        "right": "23 (one stale value)",
-        "time": "62 min",
+        "right": "23",
+        "time": "62.2 min",
         "written": "170K tokens",
-        "peak": "22.5K",
+        "peak": "23K",
         "note": "A million tokens of narrative read by understanding at a 32K budget: 1,351 calls, never more than 23K in view. One value was stale at the end, in line with a reading error of about 1 in 100 changes over some 1,500 changes. One seed.",
-        "status": "measured"
+        "status": "measured",
+        "task_family": "reading",
+        "seed": 0,
+        "correct": 23,
+        "asked": 24,
+        "input_tokens": 999361,
+        "elapsed_seconds": 3734,
+        "generated_tokens": 170271,
+        "peak_tokens": 22511,
+        "calls": 1351,
+        "narrative_batches": 587,
+        "evidence_id": "context-planA-client/rd1m/runs/jobs/B32ir__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__8gCWSuS"
       }
     ]
   },
@@ -711,7 +976,7 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "5269846c1",
+    "commit": "65e2684bbabe80a00caa197e6ff8810d5f502e7d",
     "time": "2026-10-06 23:20 UTC (19:20 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
@@ -937,5 +1202,9 @@
         "source": "notes/2026-10-05-context-research-results.md"
       }
     ]
-  }
+  },
+  "source_urls": {
+    "results": "https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
+  },
+  "review_evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/data/2026-10-05-context/review-2026-10-06/evidence.json"
 }
