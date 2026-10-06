@@ -255,7 +255,7 @@
         "time": "26 and 38 min",
         "written": "89K and 99K tokens",
         "peak": "112K and 246K",
-        "note": "First seed: the model filtered batches with code and about 91% of prompt tokens were cached. Second seed: no answers. It let every batch into its context and re-typed it, grew about 13K tokens per batch, and the server refused the next request at about 246K, one batch before the questions arrived. Its running table was exact up to that point; it had never been told its window size.",
+        "note": "First seed: the model filtered batches with code and about 91% of prompt tokens were cached. Second seed: no answers. It let every batch into its context and re-typed it, grew about 13K tokens per batch, and the server refused the next request at about 246K, one batch before the questions arrived. Its running table was exact up to that point; it had never been told its window size. A third try with the window shown and a fetch guard also returned nothing: the model re-types every batch and thinks at length, and no guard changes that.",
         "status": "measured",
         "trials": [
           {
@@ -483,11 +483,11 @@
         "strategy": "Read-mode self-editing agent, narrative text, 480K stream (larger than the window)",
         "files": "no",
         "budget": "32K",
-        "right": "24",
-        "time": "25.7 min",
+        "right": "24 and 24 (two seeds)",
+        "time": "25.7 and 25 min",
         "written": "68K tokens",
         "peak": "24K",
-        "note": "479,512 tokens of narrative in 240 batches, 1.8 times the whole window, read at a 32K budget with the guarded agent: 634 calls, 576 with thinking off, 287 edits of its own context, no rule broken, no parser. The model read more than it can hold, by understanding, and kept an exact running table. One seed; the second is queued. The same agent without the guards had failed on this stream.",
+        "note": "479,512 tokens of narrative in 240 batches, 1.8 times the whole window, read at a 32K budget with the guarded agent: 634 calls, 576 with thinking off, 287 edits of its own context, no rule broken, no parser. The model read more than it can hold, by understanding, and kept an exact running table. Two seeds, both all right. The same agent without the guards had failed on this stream.",
         "status": "measured"
       },
       {
@@ -627,11 +627,23 @@
         "strategy": "Quoted events, retention test (two seeds)",
         "files": "archive only",
         "budget": "32K",
-        "right": "29 of 30 and 24 of 36",
-        "time": "5.1 and 9.9 min",
+        "right": "29 of 30 and 35 of 36",
+        "time": "5.1 and 5.7 min",
         "written": "10K and 27K tokens",
         "peak": "21K and 22K",
-        "note": "Seed 1 right on all but one. Seed 0 answered every current value but left the twelve old-value questions blank: the model compacted its own context and cut away the final batch that held the questions. Fixed by keeping that batch in the pinned message; rerun queued.",
+        "note": "Seed 1 right on all but one. Seed 0 first left the twelve old-value questions blank because the model compacted away the batch holding the questions; with that batch pinned it got 35 of 36 in 5.7 minutes.",
+        "status": "measured"
+      },
+      {
+        "id": "read-improved-1m",
+        "strategy": "Read-mode self-editing agent, narrative text, 1,000K-token stream (3.8 times the window)",
+        "files": "no",
+        "budget": "32K",
+        "right": "23 (one stale value)",
+        "time": "62 min",
+        "written": "170K tokens",
+        "peak": "22.5K",
+        "note": "A million tokens of narrative read by understanding at a 32K budget: 1,351 calls, never more than 23K in view. One value was stale at the end, in line with a reading error of about 1 in 100 changes over some 1,500 changes. One seed.",
         "status": "measured"
       }
     ]
@@ -699,8 +711,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "f71a6a5a7",
-    "time": "2026-10-06 17:45 UTC (13:45 EDT)",
+    "commit": "5269846c1",
+    "time": "2026-10-06 23:20 UTC (19:20 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
