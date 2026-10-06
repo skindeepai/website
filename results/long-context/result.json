@@ -597,6 +597,42 @@
         "peak": "21K",
         "note": "Four times the density: the single-step reading error at this density is about 6 per 100 changes, and it shows.",
         "status": "measured"
+      },
+      {
+        "id": "quoted-480k",
+        "strategy": "Quoted events: the model quotes each change, code keeps the books, 480K narrative stream",
+        "files": "archive only",
+        "budget": "32K",
+        "right": "24",
+        "time": "19.6 min",
+        "written": "37K tokens",
+        "peak": "22K",
+        "note": "The model reports each change as one fixed-format line with an exact quote from the batch; the harness checks the quote is in the text, checks the counter and the amount, does the arithmetic itself, archives the batch and drops it. 479,512 tokens in 240 batches, 1.8 times the whole window: 578 calls, 573 with thinking off, 542 thinking tokens in the whole run. 23% faster than the read-mode agent on the same stream, and the arithmetic cannot go wrong. One seed.",
+        "status": "measured"
+      },
+      {
+        "id": "quoted-119k",
+        "strategy": "Quoted events, narrative text at 119K (3 changes per batch)",
+        "files": "archive only",
+        "budget": "32K",
+        "right": "24",
+        "time": "4.7 min",
+        "written": "9K tokens",
+        "peak": "17K",
+        "note": "After a bug in the harness's own number reader was fixed (it had refused correct lists and cost most of the time in the first runs). Faster than every other no-files strategy on this task and exact.",
+        "status": "measured"
+      },
+      {
+        "id": "quoted-ret-119k",
+        "strategy": "Quoted events, retention test (two seeds)",
+        "files": "archive only",
+        "budget": "32K",
+        "right": "29 of 30 and 24 of 36",
+        "time": "5.1 and 9.9 min",
+        "written": "10K and 27K tokens",
+        "peak": "21K and 22K",
+        "note": "Seed 1 right on all but one. Seed 0 answered every current value but left the twelve old-value questions blank: the model compacted its own context and cut away the final batch that held the questions. Fixed by keeping that batch in the pinned message; rerun queued.",
+        "status": "measured"
       }
     ]
   },
@@ -663,8 +699,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "0a3774f43",
-    "time": "2026-10-06 14:09 UTC (10:09 EDT)",
+    "commit": "f71a6a5a7",
+    "time": "2026-10-06 17:45 UTC (13:45 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
