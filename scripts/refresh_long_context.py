@@ -6,6 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = 'results/long-context/result.json'
+RETENTION_DATA = ('https://github.com/steveseguin/b70-optimization-lab/tree/974df5792372b424d66d8225af171c4a94307e74/'
+                  'experiments/qwen38-27b-b70/data/2026-10-05-context/retention')
 
 
 def link(href, label):
@@ -173,6 +175,17 @@ def update(pages):
                                             [[c, *(edit_cell(cells.get((c, p), {})) for p in edit['positions'])] for c in edit['contexts']],
                                             'Wait before the first output token after one edit, by context length and edit position', 'ctx-comparison')
 
+    retention = [('ret-archive-119k', 'Table plus archive and recall'), ('ret-table-119k', 'Table only'),
+                 ('ret-summary-119k', 'Summarise at 75%'), ('ret-keep-119k', 'Keep everything in the window'),
+                 ('ret-files-119k', 'No management, files allowed')]
+    replacements['RETENTION_TABLE'] = table(['Approach', 'Files', 'Right', 'Time', 'Peak context', 'Tokens written'],
+                                            [[label, by_id[key]['files'], by_id[key]['right'], by_id[key]['time'], by_id[key]['peak'], by_id[key]['written']]
+                                             for key, label in retention], 'Retention test: 36 questions, 12 of them about dropped text', 'ctx-comparison')
+    for key, _ in retention:
+        for field in ('right', 'time', 'written'):
+            replacements['RET_' + key.split('-')[1].upper() + '_' + field.upper()] = escape(by_id[key][field])
+    replacements['RETENTION_DATA'] = RETENTION_DATA
+
     def outcomes(items):
         return table(['Trial', 'Correct', 'Time'], [[label, score(by_id[key]), by_id[key]['time']] for key, label in items],
                      'Measured task outcomes', 'ctx-summary-table')
@@ -231,6 +244,8 @@ def update(pages):
         ('context-cleanup.html', 'Clean up text before the model reads it', 'What simple CPU cleanup removes and why its measured savings were small.', 'context-methods.html'),
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
+        ('context-retention.html', 'Remembering what was dropped', 'An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.', 'context-methods.html'),
+        ('context-reproduce.html', 'How to reproduce the context tests', 'The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.', None),
     ]
     for name, title, description, parent in registry:
         body = (ROOT / 'content' / name).read_text(encoding='utf-8')

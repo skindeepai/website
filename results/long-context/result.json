@@ -549,6 +549,54 @@
         "peak": "27K",
         "note": "The plain agent thought its way through its 32K budget in 25 calls before it had finished reading, and the budget stop ended it. The same agent got 24 of 24 on the version without the extra questions; it has no guards and its results swing.",
         "status": "measured"
+      },
+      {
+        "id": "read-paper-119k",
+        "strategy": "Paper's self-editing agent (as released, lab harness fixes only), narrative text",
+        "files": "no",
+        "budget": "32K",
+        "right": "24",
+        "time": "39 min",
+        "written": "171K tokens",
+        "peak": "28K",
+        "note": "Same 119K narrative task. Right, but seven times slower than the guarded read-mode agent: the difference is thinking tokens.",
+        "status": "measured"
+      },
+      {
+        "id": "read-summary-119k",
+        "strategy": "Summarise at 75%, narrative text",
+        "files": "no",
+        "budget": "32K",
+        "right": "24",
+        "time": "17 min",
+        "written": "78K tokens",
+        "peak": "23K",
+        "note": "Same 119K narrative task; seven summaries.",
+        "status": "measured"
+      },
+      {
+        "id": "read-improved-d6-119k",
+        "strategy": "Guarded read-mode agent, 6 changes per batch",
+        "files": "no",
+        "budget": "32K",
+        "right": "24",
+        "time": "8.8 min",
+        "written": "31K tokens",
+        "peak": "23K",
+        "note": "Twice the reading density of the calibrated setting.",
+        "status": "measured"
+      },
+      {
+        "id": "read-improved-d12-119k",
+        "strategy": "Guarded read-mode agent, 12 changes per batch",
+        "files": "no",
+        "budget": "32K",
+        "right": "21",
+        "time": "13 min",
+        "written": "46K tokens",
+        "peak": "21K",
+        "note": "Four times the density: the single-step reading error at this density is about 6 per 100 changes, and it shows.",
+        "status": "measured"
       }
     ]
   },
@@ -615,8 +663,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "974df5792",
-    "time": "2026-10-06 04:46 UTC (00:46 EDT)",
+    "commit": "0a3774f43",
+    "time": "2026-10-06 14:09 UTC (10:09 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {

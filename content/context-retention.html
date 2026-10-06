@@ -1,0 +1,21 @@
+<p><strong>The goal: when an agent has to make room, lose less than summarising does, and spend less time doing it.</strong> Moving dropped text to a searchable archive answered every question, including those about text it had dropped, in a quarter of the summariser’s time.</p>
+<h2>The test</h2>
+<p>The 119K-token narrative reading task, with twelve extra questions asked only at the end: values that were later overwritten, and small details in the text. 36 questions in all. Every approach had a 32K working budget except keep-everything, which used the full window.</p>
+{{RETENTION_TABLE}}
+<h2>What it showed</h2>
+<ul class="ctx-read-next">
+<li><strong>The archive beat summarising on time and writing, at equal correctness.</strong> Both answered {{RET_ARCHIVE_RIGHT}}. The archive agent took {{RET_ARCHIVE_TIME}} and wrote {{RET_ARCHIVE_WRITTEN}}; the summariser took {{RET_SUMMARY_TIME}} and wrote {{RET_SUMMARY_WRITTEN}}.</li>
+<li><strong>A running table alone cannot answer about the past.</strong> It keeps only current values, so questions about overwritten values and details went blank or wrong: {{RET_TABLE_RIGHT}}.</li>
+<li><strong>The plain files agent collapsed because it has no guards.</strong> It spent its 32K budget thinking before it had finished reading and was stopped: {{RET_FILES_RIGHT}}. The same agent got every answer on the version without the extra questions.</li>
+</ul>
+<h2>How the archive works</h2>
+<ol>
+<li>When the agent drops a batch from its working context, the batch goes word for word to an archive the model can read but not change.</li>
+<li>A <code>recall</code> search tool finds passages in that archive.</li>
+<li>Recalled text counts against the 32K budget like any other tool output.</li>
+<li>The grader voids the run if any other file holds stream data, so the archive is the only memory outside the context.</li>
+</ol>
+<p>Nothing is deleted, only moved out of view. In this run the agent searched the archive 12 times. <a href="@/context-summaries.html">How summaries work</a> · <a href="@/context-files.html">Why files helped on the ledger</a>.</p>
+<h2>Limits</h2>
+<p>One seed and one task family, so treat the ranking as a first result. Summarising also got every answer here: with thinking on, its summaries kept the old values. Its cost was time and writing, not accuracy.</p>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md#retention-remembering-what-was-dropped-measured-2026-10-06-0045-edt">Lab note: Retention</a> · <a href="{{RETENTION_DATA}}">Per-run summaries</a> · <a href="@/context-reproduce.html#compare">How to reproduce</a> · <a href="@/context-results.html#retention">All results</a></p>

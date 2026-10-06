@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to reproduce the context tests — SkinDeep Research</title><meta name="description" content="The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.">
+<link rel="canonical" href="https://skindeep.ai/context-reproduce.html">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/context-reproduce.html">
+<meta property="og:title" content="How to reproduce the context tests — SkinDeep Research"><meta property="og:description" content="The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.">
+<meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to reproduce the context tests — SkinDeep Research"><meta name="twitter:description" content="The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+
+<link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
+</head><body class="lab-page ">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
+<aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
+<main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="context.html">Longer context overview</a></nav>
+<h1>How to reproduce the context tests</h1><p class="page-lead">The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.</p><div class="ctx-page"><p><strong>Everything except the server is public.</strong> The tasks, graders, agent harness, comparison driver and probes are in the lab’s repository. They run against any OpenAI-compatible server with tool calling, and the harness can be checked on an ordinary computer with a fake server, no GPU needed.</p>
+<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#what-is-public">What you can rerun</a><a href="#server">Server</a><a href="#stub">Check without a GPU</a><a href="#tasks">Make the tasks</a><a href="#compare">Run a comparison</a><a href="#check">Check and report</a><a href="#probes">Probes</a></nav>
+<section id="what-is-public"><h2>What you can and cannot rerun</h2>
+<p>All measurements used <strong>Qwen3.8-27B with FP8 weights and a 16-bit attention cache, on two Intel Arc Pro B70 GPUs</strong>, one request at a time.</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="What is and is not reproducible"><table><thead><tr><th scope="col">Part</th><th scope="col">Reproducible by others?</th></tr></thead><tbody>
+<tr><th scope="row">Task generators and graders</th><td>Yes. Python, CPU only; the same seed gives the same task.</td></tr>
+<tr><th scope="row">Agent harness patches</th><td>Yes. The summary, plain and improved self-editing agents subclass the paper’s released harness without changing it (<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/clm_baselines.py">clm_baselines.py</a>, <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/clm_improved.py">clm_improved.py</a>, <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/ctxfold.py">ctxfold.py</a>).</td></tr>
+<tr><th scope="row">Stub checks</th><td>Yes. A fake OpenAI server plays the model; needs Docker and the harness, no GPU.</td></tr>
+<tr><th scope="row">Comparison driver and probes</th><td>Yes, against any OpenAI-compatible server with tool calling. Scores and times will differ with another model, server or machine.</td></tr>
+<tr><th scope="row">The lab’s server</th><td>No. It runs the lab’s own vLLM build with its add-ons, started by the lab’s launcher. The exact-cache add-on’s source is public, but the image it runs in is not.</td></tr>
+</tbody></table></div>
+<p>The agents run on the upstream <a href="https://github.com/facebookresearch/context-language-models">CLM harness</a> at commit 18dc111 (CC BY-NC 4.0, non-commercial), installed with <code>pip install -e</code> in a Python 3.12 environment. The scripts’ default paths point at the lab’s machine: set <code>VENV</code> to your environment and pass <code>--tokenizer</code> to the task generators.</p>
+<pre><code>git clone https://github.com/steveseguin/b70-optimization-lab
+D=b70-optimization-lab/experiments/qwen38-27b-b70/scripts/context
+export VENV=/path/to/clm-venv</code></pre>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/README.md">Full harness notes</a>: how requests are built, budgets, sandboxing and the exact prompts.</p>
+</section>
+<section id="server"><h2>1. The server</h2>
+<p>The lab started one two-card server with its research launcher and kept it up while a client script ran. Its settings:</p>
+<ul>
+<li><strong>Window:</strong> 262,144 tokens (<code>--max-model-len 262144</code>), one sequence at a time.</li>
+<li><strong>Exact prefix cache:</strong> <code>--prefix-cache align</code>; the prompt is read in 832-token pieces, one cache block each, so a resumed read does the same arithmetic as a fresh one; a kept state every 13,312 tokens (<code>--prefix-cache-retention-interval=13312</code>). Add-on: <a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/overlays/b70-prefix-cache-exact">b70-prefix-cache-exact</a>.</li>
+<li><strong>Drafting on:</strong> the model’s own draft head, five tokens ahead.</li>
+<li><strong>Tool calling:</strong> <code>--enable-auto-tool-choice --tool-call-parser qwen3_coder --reasoning-parser qwen3</code>. The harness needs these; without them requests with tools are refused.</li>
+</ul>
+<p>On another server, the same tool-calling flags and a window that holds the budget plus the answer allowance are what matter. <a href="context-prefix-cache.html">How the exact cache works</a>.</p>
+</section>
+<section id="stub"><h2>2. Check the harness without a GPU</h2>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/stub-checks.sh">stub-checks.sh</a> starts <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/fake_openai_server.py">fake_openai_server.py</a> on a free port and runs tiny trials against it: summaries fire, old thinking is dropped from requests, delivered batches are never lost, guards refuse what they should, and the archive is accepted by the grader. It prints one PASS or FAIL line per check.</p>
+<pre><code>stub-checks.sh &lt;out_dir&gt;
+STUB=1 $D/smoke.sh &lt;out_dir&gt;/context-stub-smoke
+STUB=1 SIZES=4000 OUT_DIR=&lt;out_dir&gt;/context-stub-second $D/second-comparison.sh</code></pre>
+<p>The second-comparison stub run also includes two rule probes: an agent that stores stream data in a file must be voided; one that keeps it in context must not.</p>
+</section>
+<section id="tasks"><h2>3. Make the tasks</h2>
+<p>Each generator writes Harbor tasks with their grader. In <code>memory</code> mode stream data may live only in the model’s context, and a file holding it voids the run; in <code>notes</code> mode files are allowed.</p>
+<ul class="ctx-source-list">
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/make_ledger_tasks.py">make_ledger_tasks.py</a><span>Line-format ledger: about 160 counters, SET/ADD/DEL lines with irrelevant memos, 24 questions at the end.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/make_kvstream_tasks.py">make_kvstream_tasks.py</a><span>Key-value stream: batches of 100 SETs of 24-word values, then 24 lookups.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/make_sparse_prose_tasks.py">make_sparse_prose_tasks.py</a><span>Narrative text with a few real counter changes. <code>--density</code> sets changes per 2,000 tokens, <code>--words</code> writes numbers as words, <code>--surprise K</code> adds K hidden questions about earlier text (the retention test).</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/make_prose_ledger_tasks.py">make_prose_ledger_tasks.py</a><span>Dense narrative ledger with pronouns, corrections and distractors; harder than one call can read reliably.</span></li>
+</ul>
+<pre><code>make_ledger_tasks.py OUT_DIR --tokens 60000 120000 180000 --mode memory|notes [--seeds 0 1]
+make_kvstream_tasks.py OUT_DIR --tokens N --mode memory|notes
+make_sparse_prose_tasks.py OUT_DIR --tokens 60000 120000 480000 [--density 3] [--words] ...
+                           [--mode memory|notes] [--seeds 0 1] [--batch-tokens 2000] [--n-batches N]
+make_prose_ledger_tasks.py OUT_DIR --tokens 60000 120000 480000 --mode memory|notes [--seeds 0 1]</code></pre>
+</section>
+<section id="compare"><h2>4. Run a comparison</h2>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/second-comparison.sh">second-comparison.sh</a> runs each arm on each task as its own trial and skips finished trials on a re-run. Choose with <code>ARMS</code> (run in the order given), <code>KINDS</code> (for example <code>sparse</code>), <code>SIZES</code>, <code>SEEDS</code> and <code>SPARSE_ARGS</code> (options for the sparse prose generator). <code>DRY_RUN=1</code> prints the plan and a time estimate; <code>touch $OUT_DIR/STOP</code> stops between trials.</p>
+<pre><code>OUT_DIR=/tmp/x API_BASE=http://unused DRY_RUN=1 SUBSET=core $D/second-comparison.sh    # plan + estimate
+API_BASE=... OUT_DIR=&lt;out_dir&gt;/context-clm-second-$(date +%Y%m%d) SUBSET=core $D/second-comparison.sh</code></pre>
+<p>The retention test is what <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/retention-run.sh">retention-run.sh</a> runs, in two blocks (<code>B32ira B32ir E32r</code>, then <code>C32 Ar</code>):</p>
+<pre><code>SPARSE_ARGS="--density 3 --words --surprise 12" ARMS="B32ira B32ir E32r" KINDS=sparse SEEDS="0" SIZES=120000 \
+  OUT_DIR=&lt;out_dir&gt;/ret120 SUBSET=core ./second-comparison.sh</code></pre>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Comparison arms"><table><thead><tr><th scope="col">Arm</th><th scope="col">What it is</th></tr></thead><tbody>
+<tr><th scope="row">A</th><td>No management and no budget: the whole task in the 262K window; stream data only in context.</td></tr>
+<tr><th scope="row">Aw</th><td>A, plus every tool result states the window used and left; a fetch that cannot fit is refused with a request to write down what is needed first.</td></tr>
+<tr><th scope="row">Ar</th><td>Keep everything with the window shown: the baseline for the reading tasks.</td></tr>
+<tr><th scope="row">B32</th><td>The paper’s self-editing agent, unmodified, 32K budget, data only in context.</td></tr>
+<tr><th scope="row">C32</th><td>Summarise when the context reaches 75% of a 32K budget, data only in context.</td></tr>
+<tr><th scope="row">D32</th><td>Self-editing, 32K budget, files allowed.</td></tr>
+<tr><th scope="row">E32</th><td>No management, 32K budget, files allowed.</td></tr>
+<tr><th scope="row">E32r</th><td>The same plain files-allowed agent, on the reading tasks.</td></tr>
+<tr><th scope="row">B32i</th><td>Revised self-editing: delivered batches are never rolled back, a room check before each fetch, a pinned state file, old thinking dropped.</td></tr>
+<tr><th scope="row">B32in</th><td>B32i with thinking off on routine calls and on where judgement is needed.</td></tr>
+<tr><th scope="row">B32io</th><td>B32i with thinking off on every call.</td></tr>
+<tr><th scope="row">B32ir</th><td>Read mode for narrative text: the model reads each report itself and keeps one line per counter; a drop is refused unless every counter mentioned has a line.</td></tr>
+<tr><th scope="row">B32ira</th><td>B32ir plus a read-only archive of dropped batches and a <code>recall</code> search tool.</td></tr>
+</tbody></table></div>
+</section>
+<section id="check"><h2>5. Check each batch and report</h2>
+<ul class="ctx-source-list">
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/replay_state_check.py">replay_state_check.py</a><span>Compares the agent’s working table after every batch with the true state, and names each error: missed update, missed delete, distractor applied, lost at an edit and so on. CPU only.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/reading_run_report.py">reading_run_report.py</a><span>Per trial: score, answer counts, per-batch accuracy, calls with thinking on and off, tokens written, a reading/writing/tool time split, refusals, and whether the model wrote a parser.</span></li>
+</ul>
+<pre><code>replay_state_check.py TRIAL_DIR|JOB_DIR|runs/ [...] [--json out.json]
+reading_run_report.py PATH [PATH ...] [--json out.json]</code></pre>
+</section>
+<section id="probes"><h2>6. Probes</h2>
+<ul class="ctx-source-list">
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/qwen38-fp8-long-context-probe.py">qwen38-fp8-long-context-probe.py</a><span>Recall mode (<code>--question-sets</code>): several questions per length over one ledger. Edge mode (<code>--bisect</code>): narrows the longest length that still answers every code.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/qwen38-fp8-prefix-cache-exactness-probe.py">qwen38-fp8-prefix-cache-exactness-probe.py</a><span>Is an answer served from the cache identical to a cold one? Save against a cache-off server, then compare on the cache server.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/qwen38-fp8-edit-cost-probe.py">qwen38-fp8-edit-cost-probe.py</a><span>Wait for the first token after one edit, by context length and edit position.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/prose_fold_probe.py">prose_fold_probe.py</a><span>Can one call read a narrative batch? Each call gets the true state before the batch, so errors do not compound.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/scripts/context/calibrate-reading.sh">calibrate-reading.sh</a><span>Runs that probe over a grid of densities and difficulty switches and prints the hardest setting that passes as <code>SPARSE_ARGS</code>.</span></li>
+</ul>
+<pre><code>python3 qwen38-fp8-long-context-probe.py --base-url http://127.0.0.1:18196 --model qwen38-27b-fp8 \
+    --tokenizer &lt;model_dir&gt; --lengths 8000,30000,60000,120000,200000,250000 --out probe.json
+python3 qwen38-fp8-prefix-cache-exactness-probe.py --base-url http://127.0.0.1:18132 --save control.json
+python3 qwen38-fp8-prefix-cache-exactness-probe.py --base-url http://127.0.0.1:18132 --compare-with control.json \
+    --out cache.json
+python3 qwen38-fp8-edit-cost-probe.py --base-url http://127.0.0.1:18196 --lengths 30000,120000,200000 --out edit-cost.json
+API_BASE=http://127.0.0.1:18124/v1 MODEL_NAME=qwen38-27b-fp8 \
+  prose_fold_probe.py TASK_DIR [TASK_DIR ...] [--thinking on|off|both] [--variant plain|reason|both]</code></pre>
+<p><a href="context-results.html">Measured results</a> · <a href="context-retention.html">Remembering what was dropped</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md">Lab research summary</a></p>
+</section>
+</div>
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

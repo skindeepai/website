@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remembering what was dropped — SkinDeep Research</title><meta name="description" content="An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.">
+<link rel="canonical" href="https://skindeep.ai/context-retention.html">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/context-retention.html">
+<meta property="og:title" content="Remembering what was dropped — SkinDeep Research"><meta property="og:description" content="An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.">
+<meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Remembering what was dropped — SkinDeep Research"><meta name="twitter:description" content="An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+
+<link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
+</head><body class="lab-page ">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
+<aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
+<main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="context.html">Longer context overview</a> · <a data-journey="approach" href="context-methods.html">Compare approaches</a></nav>
+<h1>Remembering what was dropped</h1><p class="page-lead">An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.</p><div class="ctx-page"><p><strong>The goal: when an agent has to make room, lose less than summarising does, and spend less time doing it.</strong> Moving dropped text to a searchable archive answered every question, including those about text it had dropped, in a quarter of the summariser’s time.</p>
+<h2>The test</h2>
+<p>The 119K-token narrative reading task, with twelve extra questions asked only at the end: values that were later overwritten, and small details in the text. 36 questions in all. Every approach had a 32K working budget except keep-everything, which used the full window.</p>
+<div class="table-scroll ctx-table ctx-comparison" tabindex="0" role="region" aria-label="Retention test: 36 questions, 12 of them about dropped text"><table><thead><tr><th scope="col">Approach</th><th scope="col">Files</th><th scope="col">Right</th><th scope="col">Time</th><th scope="col">Peak context</th><th scope="col">Tokens written</th></tr></thead><tbody><tr><th scope="row">Table plus archive and recall</th><td>archive only</td><td>36 of 36</td><td>6.1 min</td><td>23K</td><td>14K tokens</td></tr><tr><th scope="row">Table only</th><td>no</td><td>25 of 36</td><td>5.7 min</td><td>20K</td><td>15K tokens</td></tr><tr><th scope="row">Summarise at 75%</th><td>no</td><td>36 of 36</td><td>26 min</td><td>23K</td><td>121K tokens</td></tr><tr><th scope="row">Keep everything in the window</th><td>no</td><td>34 of 36</td><td>14 min</td><td>144K</td><td>33K tokens</td></tr><tr><th scope="row">No management, files allowed</th><td>yes</td><td>3 of 36</td><td>6.6 min</td><td>27K</td><td>26K tokens</td></tr></tbody></table></div>
+<h2>What it showed</h2>
+<ul class="ctx-read-next">
+<li><strong>The archive beat summarising on time and writing, at equal correctness.</strong> Both answered 36 of 36. The archive agent took 6.1 min and wrote 14K tokens; the summariser took 26 min and wrote 121K tokens.</li>
+<li><strong>A running table alone cannot answer about the past.</strong> It keeps only current values, so questions about overwritten values and details went blank or wrong: 25 of 36.</li>
+<li><strong>The plain files agent collapsed because it has no guards.</strong> It spent its 32K budget thinking before it had finished reading and was stopped: 3 of 36. The same agent got every answer on the version without the extra questions.</li>
+</ul>
+<h2>How the archive works</h2>
+<ol>
+<li>When the agent drops a batch from its working context, the batch goes word for word to an archive the model can read but not change.</li>
+<li>A <code>recall</code> search tool finds passages in that archive.</li>
+<li>Recalled text counts against the 32K budget like any other tool output.</li>
+<li>The grader voids the run if any other file holds stream data, so the archive is the only memory outside the context.</li>
+</ol>
+<p>Nothing is deleted, only moved out of view. In this run the agent searched the archive 12 times. <a href="context-summaries.html">How summaries work</a> · <a href="context-files.html">Why files helped on the ledger</a>.</p>
+<h2>Limits</h2>
+<p>One seed and one task family, so treat the ranking as a first result. Summarising also got every answer here: with thinking on, its summaries kept the old values. Its cost was time and writing, not accuracy.</p>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md#retention-remembering-what-was-dropped-measured-2026-10-06-0045-edt">Lab note: Retention</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/tree/974df5792372b424d66d8225af171c4a94307e74/experiments/qwen38-27b-b70/data/2026-10-05-context/retention">Per-run summaries</a> · <a href="context-reproduce.html#compare">How to reproduce</a> · <a href="context-results.html#retention">All results</a></p>
+</div>
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>

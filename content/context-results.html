@@ -1,5 +1,5 @@
 <p><strong>Files completed the ledger fastest. Caching shortened the wait before an answer. Longer active context slowed generation.</strong></p>
-<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Task results</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#sources">Original research</a></nav>
+<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Task results</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#retention">Retention</a><a href="#sources">Original research</a><a href="@/context-reproduce.html">Reproduce</a></nav>
 <section id="comparison"><h2>Completing a long task</h2>
 <p>Each approach used Qwen3.8-27B on two B70 GPUs. A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. Large-window and revised self-editing arms used seeds 0 and 1; other 121K arms used seed 0. <a href="@/context-model-tools.html#prompts">Model setup and task prompts</a>.</p>
 {{TASK_CHART}}
@@ -45,6 +45,11 @@
 <details><summary>Checkpoint cost and equality scope</summary><p>The target model has recurrent layers as well as full attention. A reusable point needs the matching attention prefix and saved recurrent state. Checkpoints cost approximately three 832-token attention blocks’ worth of memory, with drafting and allocator details affecting actual allocation.</p><p>The add-on excludes generation-produced blocks and retains periodic reading checkpoints. An edit resumes before the change and recomputes what follows; it does not reuse stale post-edit states. The 99-case drafting test compared output tokens, not scores. Multi-user scheduling, one-card execution and disk restore were not established by this test.</p></details>
 <p><a href="@/context-cache.html">How the cache works</a> · <a href="{{NOTE_CACHE_TEST}}">Cache experiments</a> · <a href="{{RAW_CACHE}}">99-case data</a> · <a href="{{RAW_GATE}}">Standard decode gate data</a></p>
 </section>
+<section id="retention"><h2>Remembering what was dropped</h2>
+<p>The 119K narrative task with twelve extra questions about earlier text. Moving dropped batches to a searchable archive matched summarising on correctness, with less time and writing.</p>
+{{RETENTION_TABLE}}
+<p><a href="@/context-retention.html">What this shows and how the archive works</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
+</section>
 <details id="cleaning"><summary>CPU cleanup and reasoning history</summary>
 {{CLEANING_TABLE}}
 <p>The cleanup census used roughly 4.99 million tokens from three existing agent transcripts. The 1.83% combined cleanup result is a text reduction, not an equal-answer model test. The 7.50% output-offload rule was measured separately and cannot simply be added to it.</p><p>54/152 large outputs had a line from the hidden middle quoted later, suggesting possible read-back work. It was not a measured retrieval experiment. Reasoning-history shares came from a different set of 277 model calls.</p><p><a href="@/context-clm.html#cleaning">Plain-language implications</a> · <a href="{{NOTE_CLEANING}}">Census, methods and caveats</a></p>
@@ -55,5 +60,5 @@
 <details><summary>Hardware and research snapshot</summary><p>{{SETUP}} Research snapshot: {{RESEARCH_TIME}}. K means approximately one thousand tokens; output speeds include drafting unless stated.</p></details>
 <section id="sources"><h2>Original research</h2>
 {{SOURCE_LIST}}
-<p><a href="@/results/long-context/result.json">Website measurement record and aggregation notes</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/scripts/context">Latest research scripts</a></p>
+<p><a href="@/results/long-context/result.json">Website measurement record and aggregation notes</a> · <a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/scripts/context">Latest research scripts</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
 </section>
