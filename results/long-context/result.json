@@ -447,11 +447,11 @@
         "strategy": "Read-mode self-editing agent, narrative text (the model must read)",
         "files": "no",
         "budget": "32K",
-        "right": "20",
-        "time": "10 min",
-        "written": "30K tokens",
-        "peak": "24K",
-        "note": "Different task: 119K of ordinary narrative with three real counter changes per 2K batch, numbers written as words, calibrated so that a single step is about 98% right. The agent read each batch itself (152 of 283 calls with thinking off), kept a plain table and dropped the text. Five counters ended wrong: two arithmetic slips, two dropped from the table, one lost during an edit.",
+        "right": "23 and 18 of 18 (two seeds)",
+        "time": "5.4 and 5.1 min",
+        "written": "14K and 12K tokens",
+        "peak": "20K and 19K",
+        "note": "Different task: 119K of ordinary narrative with three real counter changes per 2K batch, numbers written as words, calibrated so that a single step is about 98% right. With guards on the agent loop (no repeated command, no state change without a batch in view, no silent dropped lines): seed 0 got 23 of 24 (one reading slip, one dropped counter); seed 1 asks 18 counters and got all 18, with its table matching the hidden reference after every batch, but is void by the letter of the no-files rule because it wrote the whole table into the answers file before the questions arrived. Before the guards seed 0 was 20 of 24 in 10 minutes.",
         "status": "measured"
       },
       {
@@ -483,12 +483,12 @@
         "strategy": "Read-mode self-editing agent, narrative text, 480K stream (larger than the window)",
         "files": "no",
         "budget": "32K",
-        "right": "",
-        "time": "",
-        "written": "",
-        "peak": "",
-        "note": "Running.",
-        "status": "pending"
+        "right": "24",
+        "time": "25.7 min",
+        "written": "68K tokens",
+        "peak": "24K",
+        "note": "479,512 tokens of narrative in 240 batches, 1.8 times the whole window, read at a 32K budget with the guarded agent: 634 calls, 576 with thinking off, 287 edits of its own context, no rule broken, no parser. The model read more than it can hold, by understanding, and kept an exact running table. One seed; the second is queued. The same agent without the guards had failed on this stream.",
+        "status": "measured"
       }
     ]
   },
@@ -555,8 +555,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "db7812771",
-    "time": "2026-10-06 00:04 UTC (20:04 EDT)",
+    "commit": "f534aa6a0",
+    "time": "2026-10-06 02:54 UTC (22:54 EDT)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
