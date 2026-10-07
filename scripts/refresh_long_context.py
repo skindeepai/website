@@ -216,7 +216,9 @@ def update(pages):
         '<p><strong>On the matched 480K narrative stream, read mode scored ' + score(read_stream)
         + ' and quoted events scored ' + score(quoted_stream) + '.</strong> Quoted events took '
         + quoted_stream['time'] + ' versus ' + read_stream['time'] + ' for read mode, about '
-        + f'{saved:.0f}%' + ' less elapsed time in this one-seed comparison. Both agents used a 32K working budget.</p>')
+        + f'{saved:.0f}%' + ' less elapsed time in this one-seed comparison. Both agents used a 32K working budget. '
+        + 'These measurements used prefix caching in both methods and different agent protocols. '
+        + 'They describe one paired task; a cold-request or replicated speed comparison has not been established.</p>')
     read_million, quoted_million = by_id['read-improved-1m'], by_id['quoted-1m']
     assert read_million['task_fingerprint'] == quoted_million['task_fingerprint'], 'Million-token tasks differ'
     replacements['MATCHED_MILLION_SUMMARY'] = (
