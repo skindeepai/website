@@ -1,0 +1,35 @@
+{
+  "schema": "context-diagnostic-selection.v1",
+  "source_revision": "f3b0629014d738474dd192ef68c5b1f84dfe8337",
+  "source_repository": "https://github.com/steveseguin/b70-optimization-lab",
+  "studies": {
+    "semantic": {
+      "audit_path": "results/long-context/diagnostics/semantic-audit.json",
+      "audit_sha256": "9e147e660d517752f00e6ddedb0d61a012af602c6f3110ffe1d806ec66606b7c",
+      "schema": "semantic-native-audit.v1",
+      "lab_audit_path": "experiments/qwen38-27b-b70/data/2026-10-07-context-semantic-result/audit.json",
+      "lab_note_path": "experiments/qwen38-27b-b70/notes/2026-10-07-context-semantic-result.md"
+    },
+    "sparse": {
+      "audit_path": "results/long-context/diagnostics/sparse-audit.json",
+      "audit_sha256": "dea14d87ce87919b8bf98c4348b9f211a9c80cc2bb659fbf4cc1a63e89d0c535",
+      "schema": "sparse-replication-native-audit.v1",
+      "lab_audit_path": "experiments/qwen38-27b-b70/data/2026-10-07-sparse-state-replication-result/audit.json",
+      "lab_note_path": "experiments/qwen38-27b-b70/notes/2026-10-07-sparse-state-replication-result.md"
+    },
+    "history": {
+      "audit_path": "results/long-context/diagnostics/history-audit.json",
+      "audit_sha256": "010625f2c67845cebda90833cec8200b87833d78e61d44857d0f4e6758d95851",
+      "schema": "history-study-native-audit.v1",
+      "lab_audit_path": "experiments/qwen38-27b-b70/data/2026-10-07-history-study-result/audit.json",
+      "lab_note_path": "experiments/qwen38-27b-b70/notes/2026-10-07-history-state-study-result.md"
+    },
+    "full_source": {
+      "audit_path": "results/long-context/diagnostics/full_source-audit.json",
+      "audit_sha256": "ed19f75a0e89776efdd1f7527e4f020360552038ccdb30c0730fa3a3c1399673",
+      "schema": "full-source-native-audit.v1",
+      "lab_audit_path": "experiments/qwen38-27b-b70/data/2026-10-07-full-source-result/audit.json",
+      "lab_note_path": "experiments/qwen38-27b-b70/notes/2026-10-07-full-source-screen-result.md"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 """Render the context explainers from templates and the published measurement record."""
+import hashlib
 import json
+import math
 import re
 from context_trial_import import CONFIG, load_published, read_json
 from html import escape
@@ -41,6 +43,98 @@ def score(row):
     assert isinstance(row['correct'], int) and isinstance(row['asked'], int), row['id']
     assert 0 <= row['correct'] <= row['asked'] and row['asked'] > 0, row['id']
     return f'{row["correct"]}/{row["asked"]}'
+
+
+def diagnostic_replacements(root=ROOT):
+    """Render selected later diagnostics from portable, hash-bound audit snapshots."""
+    selection = json.loads((root / 'results/long-context/diagnostics.json').read_text())
+    assert selection['schema'] == 'context-diagnostic-selection.v1'
+    assert re.fullmatch(r'[0-9a-f]{40}', selection['source_revision'])
+    counts = {'semantic': 36, 'sparse': 4, 'history': 8, 'full_source': 2}
+    assert set(selection['studies']) == set(counts)
+    audits = {}
+    sources = []
+    labels = {'semantic': 'Short prose', 'sparse': 'Wide tables',
+              'history': 'Historical questions', 'full_source': 'Complete source'}
+    for name, count in counts.items():
+        spec = selection['studies'][name]
+        path = (root / spec['audit_path']).resolve()
+        assert path.is_relative_to(root.resolve())
+        raw = path.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == spec['audit_sha256'], name + ': audit hash mismatch'
+        audit = json.loads(raw)
+        assert audit['schema'] == spec['schema'] and audit['measurement_kind'] == 'model'
+        assert audit['infrastructure_abort'] is False
+        assert audit['planned_trials'] == audit['completed_trials'] == len(audit['trials']) == count
+        assert not any(audit.get(k, 0) for k in ('failed_trials', 'incomplete_trials', 'unstarted_trials'))
+        assert all(r['status'] == 'completed' for r in audit['trials'])
+        audits[name] = audit
+        base = selection['source_repository'] + '/blob/' + selection['source_revision'] + '/'
+        sources.append(link(base + spec['lab_note_path'], labels[name]) + ' ('
+                       + link('@/' + spec['audit_path'], 'saved audit') + ')')
+
+    def fraction(rows, numerator='correct', denominator='asked'):
+        for row in rows:
+            assert type(row[numerator]) is int and type(row[denominator]) is int
+            assert 0 <= row[numerator] <= row[denominator] and row[denominator] > 0
+        return f'{sum(r[numerator] for r in rows)}/{sum(r[denominator] for r in rows)}'
+
+    semantic = audits['semantic']['trials']
+    arms = {arm: [r for r in semantic if r['arm'] == arm] for arm in ('summary', 'archive', 'quoted')}
+    assert all(len(rows) == 12 and len({r['document_id'] for r in rows}) == 12 for rows in arms.values())
+    assert all(r['cold_cache_known'] and r['cached_tokens'] == 0 for r in semantic)
+    sparse = {(r['case_id'], r['arm']): r['native_audit'] for r in audits['sparse']['trials']}
+    assert set(sparse) == {(case, arm) for case in ('sparse-n128-seed83', 'sparse-n128-seed97-dispatch')
+                           for arm in ('archive', 'quoted')}
+    assert all(r['cold_cost_interpretation'] for r in audits['sparse']['trials'])
+    original = [sparse[('sparse-n128-seed83', arm)] for arm in ('archive', 'quoted')]
+    transfer = [sparse[('sparse-n128-seed97-dispatch', arm)] for arm in ('archive', 'quoted')]
+    history = audits['history']['trials']
+    assert {(r['case_id'], r['condition']) for r in history} == {
+        (case, condition) for case in ('t01-clinic', 't02-theatre') for condition in ('AS', 'QS', 'AH', 'QH')}
+    assert all(r['cold_cost_interpretation'] for r in history)
+    source_only = [r for r in history if r['retrieval_mode'] == 'source-only']
+    historical = [r for r in history if r['retrieval_mode'] == 'history']
+    assert len(source_only) == len(historical) == 4
+    assert len({fraction([r['score']]) for r in source_only}) == 1
+    assert len({r['score']['asked'] for r in historical}) == 1
+    direct = audits['full_source']['trials']
+    assert [r['case_id'] for r in direct] == ['t01-clinic', 't02-theatre']
+    for row in direct:
+        assert row['final_task_success'] and row['cost_eligible'] and row['cold_cost_interpretation']
+        assert row['checkpoint_quality'] is None and row['event_quality'] is None
+        assert math.isfinite(row['task_seconds']) and row['task_seconds'] > 0
+        assert all(row[key] == h[key] for h in history if h['case_id'] == row['case_id']
+                   for key in ('task_sha256', 'question_sha256')), 'Full-source and streaming tasks differ'
+    checkpoints = lambda rows: fraction(rows, 'checkpoints_exact', 'checkpoints_checked')
+    rows = [
+        ['Short prose: summaries, saved tables, quoted changes',
+         'Final answers: summaries ' + fraction(arms['summary']) + '; saved tables ' + fraction(arms['archive'])
+         + '; quoted changes ' + fraction(arms['quoted']) + '.',
+         'Saved states: tables ' + checkpoints(arms['archive']) + '; quoted changes ' + checkpoints(arms['quoted'])
+         + '. Summary states were not observed.'],
+        ['Wide numeric tables: original task and new seed/style',
+         'Original task: both ' + fraction([original[0]]) + '. New task: both ' + fraction([transfer[0]]) + '.',
+         'Original states: both ' + checkpoints([original[0]]) + '. New states: table '
+         + checkpoints([transfer[0]]) + ', quoted changes ' + checkpoints([transfer[1]])
+         + '. Correct final answers hid earlier table errors.'],
+        ['Historical balances and changing owners: two documents',
+         'Source retrieval: ' + fraction([source_only[0]['score']]) + ' in all four runs. Adding saved-state lookup: '
+         + str(min(r['score']['correct'] for r in historical)) + '–'
+         + str(max(r['score']['correct'] for r in historical)) + '/' + str(historical[0]['score']['asked']) + '.',
+         'Saved states: ' + checkpoints([r['native_audit'] for r in history])
+         + '. Wrong answers connected questions to initial ticket owners.'],
+        ['Complete source in one request: the same two documents',
+         'Clinic: ' + fraction([direct[0]['score']]) + ' in ' + f"{direct[0]['task_seconds']:.1f} s"
+         + '. Theatre: ' + fraction([direct[1]['score']]) + ' in ' + f"{direct[1]['task_seconds']:.1f} s" + '.',
+         'Final questions and source were available together. Intermediate states and extracted events were not measured.']]
+    # These selected pairs support the word "both" above; never silently merge unequal scores.
+    for pair in (original, transfer):
+        assert fraction([pair[0]]) == fraction([pair[1]])
+    assert checkpoints([original[0]]) == checkpoints([original[1]])
+    return {'BOOKKEEPING_TABLE': table(['Test', 'Final answers', 'What the state checks show'], rows,
+                                       'Later bookkeeping and historical-question diagnostics', 'ctx-comparison'),
+            'BOOKKEEPING_SOURCES': ' · '.join(sources)}
 
 
 def update(pages):
@@ -170,6 +264,7 @@ def update(pages):
         'PROMPT_CLM': 'https://github.com/facebookresearch/context-language-models/blob/18dc11115f50f261233c5bba7937834491e307e8/clm/clm_harness/clm_agent/prompts.yaml#L5-L51',
         'PROMPT_REVISED': 'https://github.com/steveseguin/b70-optimization-lab/blob/73a6693b275d70432086c5ea91fa36e4cec0c6c2/experiments/qwen38-27b-b70/scripts/context/clm_improved.py#L107-L128',
     }
+    replacements.update(diagnostic_replacements())
     for key in ['results', 'window', 'cache_test', 'cache_rules', 'self_editing', 'cleaning', 'review', 'timing']:
         replacements['NOTE_' + key.upper()] = note(key)
     minutes = lambda seconds: f'{seconds / 60:.1f} min'
