@@ -217,7 +217,13 @@ def update(pages):
         + ' and quoted events scored ' + score(quoted_stream) + '.</strong> Quoted events took '
         + quoted_stream['time'] + ' versus ' + read_stream['time'] + ' for read mode, about '
         + f'{saved:.0f}%' + ' less elapsed time in this one-seed comparison. Both agents used a 32K working budget.</p>')
-    replacements['MILLION_READING_SCORE'] = score(by_id['read-improved-1m'])
+    read_million, quoted_million = by_id['read-improved-1m'], by_id['quoted-1m']
+    assert read_million['task_fingerprint'] == quoted_million['task_fingerprint'], 'Million-token tasks differ'
+    replacements['MATCHED_MILLION_SUMMARY'] = (
+        '<p><strong>On the matched million-token narrative stream, quoted events scored ' + score(quoted_million)
+        + ' in ' + quoted_million['time'] + '; read mode scored ' + score(read_million)
+        + ' in ' + read_million['time'] + '.</strong> This is one completed pair on the same seed and task, '
+        + 'with a 32K working budget. It does not establish reliability across other tasks or seeds.</p>')
     def attempt_rows(rows):
         return [[r['id'].split('__')[-1], r['task_family'].replace('_', ' ') + ', '
                  + (f'{r["input_tokens"] / 1000:.0f}K' if r.get('input_tokens') else 'size unknown')

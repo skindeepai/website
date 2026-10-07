@@ -1,9 +1,9 @@
 {
   "schema": "skindeep.context-trial-selection.v1",
   "bundle": "results/long-context/evidence",
-  "source_revision": "a09630da8c37fa1c1124a79882bf171cb6e18532",
+  "source_revision": "0ced9bfaf47e63f1e63c76782ca2059ddd8af2f1",
   "source_repository": "https://github.com/steveseguin/b70-optimization-lab",
-  "source_path": "experiments/qwen38-27b-b70/data/2026-10-05-context/canonical-2026-10-06",
+  "source_path": "experiments/qwen38-27b-b70/data/2026-10-05-context/canonical-2026-10-07",
   "selections": [
     {
       "site_id": "read-improved-119k",
@@ -186,7 +186,21 @@
         "density": 3.0,
         "mode": "memory"
       }
+    },
+    {
+      "site_id": "quoted-1m",
+      "seed": 0,
+      "trial_id": "sparse-memory-t1000k-s0__QuVH42k",
+      "source_record_id": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 1000000,
+        "density": 3.0,
+        "mode": "memory"
+      }
     }
   ],
-  "manifest_sha256": "a192a6414d697c08235b7349fe25ab9f849bbc3efdd961d7f38c0be29e3d3de3"
+  "manifest_sha256": "41f50a8bee233f958dd2f6da3b90d77e059683ea1f36b017280deab5aabc540f"
 }

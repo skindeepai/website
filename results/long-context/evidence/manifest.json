@@ -1,6 +1,6 @@
 {
   "counts": {
-    "completed": 28,
+    "completed": 29,
     "incomplete": 1,
     "interrupted": 1
   },
@@ -850,23 +850,23 @@
     {
       "archive": true,
       "arm": "B32iq",
-      "asked": null,
-      "cached_tokens": null,
-      "completed": false,
-      "completion_tokens": null,
+      "asked": 24,
+      "cached_tokens": 14921920,
+      "completed": true,
+      "completion_tokens": 111709,
       "context_budget_tokens": 32768,
-      "correct": null,
+      "correct": 24,
       "density": 3.0,
-      "elapsed_seconds": null,
+      "elapsed_seconds": 2874.0,
       "exception_type": null,
       "id": "sparse-memory-t1000k-s0__QuVH42k",
       "import_method": "raw Harbor trial",
       "input_tokens": 999361,
-      "lm_calls": null,
+      "lm_calls": 1236,
       "mode": "memory",
       "model_name": "openai/qwen38-27b-fp8",
-      "peak_context_tokens": null,
-      "prompt_tokens": null,
+      "peak_context_tokens": 22815,
+      "prompt_tokens": 18186229,
       "quoted": true,
       "seed": 0,
       "source_record_id": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
@@ -889,6 +889,12 @@
           "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/tasks/sparse-memory/sparse-memory-t1000k-s0/environment/stream.jsonl",
           "sha256": "63f84e772698a57cd9122d7b595476803692319d6bd15c658a3c1c70795bba05"
         },
+        "summary": {
+          "bytes": 1077,
+          "copy_path": "sources/sparse-memory-t1000k-s0__QuVH42k/summary",
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/B32iq__sparse-memory-t1000k-s0.summary.txt",
+          "sha256": "e338ce85d34d667a87d319e187ff877501c0e8f9ee1f76d0c075568b26589c51"
+        },
         "task": {
           "bytes": 824,
           "copy_path": "sources/sparse-memory-t1000k-s0__QuVH42k/task",
@@ -900,9 +906,27 @@
           "copy_path": null,
           "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k/config.json",
           "sha256": "9af0c78b605c393f49b6a488bcb5aca4458a9bc81b9ea751dfa9b1c2ecacb02f"
+        },
+        "trial_result": {
+          "bytes": 4763,
+          "copy_path": null,
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k/result.json",
+          "sha256": "2cb6060cf9bf08a01ff468bcbcb285b0d7abeade66c2a430be18ff5b3d851b5a"
+        },
+        "usage": {
+          "bytes": 873,
+          "copy_path": "sources/sparse-memory-t1000k-s0__QuVH42k/usage",
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k/agent/usage.json",
+          "sha256": "5d4c547d614f11447e76cdd792fe8d1db3d859cdbc7062031a1e96f5d9c43a67"
+        },
+        "verifier": {
+          "bytes": 9263,
+          "copy_path": "sources/sparse-memory-t1000k-s0__QuVH42k/verifier",
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k/verifier/details.json",
+          "sha256": "64289548bbbae1d44d002d9c3c22efe18aa2cb08c5e219757fad0ce010822c38"
         }
       },
-      "status": "incomplete",
+      "status": "completed",
       "target_tokens": 1000000,
       "task_family": "narrative",
       "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb",
@@ -927,9 +951,9 @@
       },
       "versions": {
         "agent": {
-          "source": null,
-          "status": "unknown",
-          "value": null
+          "source": "trial_result.agent_info.version",
+          "status": "recorded",
+          "value": "0.1.0"
         },
         "checker": {
           "source": null,
@@ -942,9 +966,14 @@
           "value": null
         },
         "harness": {
-          "source": null,
-          "status": "unknown",
-          "value": null
+          "source": "usage.code_fingerprint",
+          "status": "recorded",
+          "value": {
+            "combined": "a0b224bbc615",
+            "context_env": "414f8f05b93d",
+            "harness": "5f1a5defc251",
+            "package": "2feef816912c"
+          }
         },
         "model_revision": {
           "source": null,
@@ -958,7 +987,7 @@
         }
       },
       "violations": [],
-      "void": null
+      "void": false
     },
     {
       "archive": true,
@@ -4178,6 +4207,119 @@
             "harness": "5f1a5defc251",
             "package": "2feef816912c"
           }
+        },
+        "model_revision": {
+          "source": null,
+          "status": "unknown",
+          "value": null
+        },
+        "runtime": {
+          "source": null,
+          "status": "unknown",
+          "value": null
+        }
+      },
+      "violations": [],
+      "void": null
+    },
+    {
+      "archive": true,
+      "arm": "B32iq",
+      "asked": null,
+      "cached_tokens": null,
+      "completed": false,
+      "completion_tokens": null,
+      "context_budget_tokens": 32768,
+      "correct": null,
+      "density": 3.0,
+      "elapsed_seconds": null,
+      "exception_type": null,
+      "id": "sparse-memory-t480k-s1__vZzo3qs",
+      "import_method": "raw Harbor trial",
+      "input_tokens": 480247,
+      "lm_calls": null,
+      "mode": "memory",
+      "model_name": "openai/qwen38-27b-fp8",
+      "peak_context_tokens": null,
+      "prompt_tokens": null,
+      "quoted": true,
+      "seed": 1,
+      "source_record_id": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/runs/jobs/B32iq__sparse-memory-t480k-s1/sparse-memory-t480k-s1__vZzo3qs",
+      "sources": {
+        "expected": {
+          "bytes": 370,
+          "copy_path": "sources/sparse-memory-t480k-s1__vZzo3qs/expected",
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/tasks/sparse-memory/sparse-memory-t480k-s1/tests/expected.json",
+          "sha256": "5c383184b711879b5c113932a1b38297d80bcffc95a419ec89642af6cabc4c24"
+        },
+        "grader": {
+          "bytes": 7147,
+          "copy_path": null,
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/tasks/sparse-memory/sparse-memory-t480k-s1/tests/grade.py",
+          "sha256": "c7a92b4c3f03583045211cc942f23d46a6f3542900c132c3f5db52bc49efe119"
+        },
+        "stream": {
+          "bytes": 2241022,
+          "copy_path": null,
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/tasks/sparse-memory/sparse-memory-t480k-s1/environment/stream.jsonl",
+          "sha256": "b68e775bd859c0a3b51b3266db8380d09ce9301d94929eaa61f6528d6ed5e832"
+        },
+        "task": {
+          "bytes": 822,
+          "copy_path": "sources/sparse-memory-t480k-s1__vZzo3qs/task",
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/tasks/sparse-memory/sparse-memory-t480k-s1/task.toml",
+          "sha256": "321433731d8070fab75c580edaadd4e65a4059697338e94743d15041d1ad52d9"
+        },
+        "trial_config": {
+          "bytes": 2672,
+          "copy_path": null,
+          "original_path": "/mnt/fast-ai/bench-results/context-planA-client/rd480q2/runs/jobs/B32iq__sparse-memory-t480k-s1/sparse-memory-t480k-s1__vZzo3qs/config.json",
+          "sha256": "4ccd3be03ac7e800f9c17a4443e1d035438cd2aca991e5b091cbe3c0bfb67eb9"
+        }
+      },
+      "status": "incomplete",
+      "target_tokens": 480000,
+      "task_family": "narrative",
+      "task_fingerprint": "1c492e88bc1eda91f0f1611ec9b45801a74c1e08a8e34c29ed3156a03c8906d4",
+      "task_fingerprint_method": "sha256 of canonical JSON mapping stream and expected SHA256s",
+      "task_metadata": {
+        "batch_tokens": 1703,
+        "density": 3.0,
+        "kind": "sparse",
+        "max_item_chars": 8119,
+        "mode": "memory",
+        "n_batches": 282,
+        "n_counters": 57,
+        "n_deleted_queried": 3,
+        "n_get": 21,
+        "n_items": 283,
+        "n_surprise": 0,
+        "seed": 1,
+        "setting": "w",
+        "stream_tokens": 480247,
+        "target_tokens": 480000,
+        "token_counter": "tokenizer"
+      },
+      "versions": {
+        "agent": {
+          "source": null,
+          "status": "unknown",
+          "value": null
+        },
+        "checker": {
+          "source": null,
+          "status": "unknown",
+          "value": null
+        },
+        "generator": {
+          "source": null,
+          "status": "unknown",
+          "value": null
+        },
+        "harness": {
+          "source": null,
+          "status": "unknown",
+          "value": null
         },
         "model_revision": {
           "source": null,

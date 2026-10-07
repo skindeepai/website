@@ -1,6 +1,6 @@
 {
   "schema": "skindeep.long-context.v3",
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
   "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
   "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/",
@@ -953,6 +953,31 @@
         "void": false,
         "canonical_trial_id": "sparse-memory-t1000k-s0__8gCWSuS",
         "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb"
+      },
+      {
+        "id": "quoted-1m",
+        "strategy": "Quoted events, narrative text, 1,000K-token stream (3.8 times the window)",
+        "files": "archive only",
+        "budget": "32K",
+        "task_family": "reading",
+        "status": "measured",
+        "seed": 0,
+        "note": "One completed seed-0 trial on the identical million-token narrative task used by the read-mode baseline. The harness verifies quoted events, computes updates and archives earlier batches. This matched pair does not establish general reliability across tasks or seeds.",
+        "correct": 24,
+        "asked": 24,
+        "void": false,
+        "right": "24",
+        "input_tokens": 999361,
+        "elapsed_seconds": 2874.0,
+        "generated_tokens": 111709,
+        "peak_tokens": 22815,
+        "calls": 1236,
+        "time": "47.9 min",
+        "written": "112K tokens",
+        "peak": "23K",
+        "evidence_id": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
+        "canonical_trial_id": "sparse-memory-t1000k-s0__QuVH42k",
+        "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb"
       }
     ]
   },
@@ -1253,6 +1278,6 @@
   "canonical_trials": {
     "manifest": "results/long-context/evidence/manifest.json",
     "selection": "results/long-context/trial-selection.json",
-    "source_revision": "a09630da8c37fa1c1124a79882bf171cb6e18532"
+    "source_revision": "0ced9bfaf47e63f1e63c76782ca2059ddd8af2f1"
   }
 }

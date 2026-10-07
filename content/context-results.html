@@ -20,9 +20,10 @@
 <section id="reading"><h2>Reading narrative text</h2>
 <p>These tasks require reading counter changes from prose. The read-mode agent updates its own table; the quoted-events agent supplies event lines with supporting quotes and the harness updates the table. The quoted agent also has a read-only archive. Question counts vary by task and seed, so each score shows its own denominator.</p>
 {{MATCHED_READING_SUMMARY}}
+{{MATCHED_MILLION_SUMMARY}}
 {{READING_TABLE}}
-<p><a href="{{REVIEW_EVIDENCE}}">Trial scores, source hashes and copied grader results</a>.</p>
-<p>Unless a different seed is shown, these are seed-0 trials. The dense prose-ledger attempt is void because it broke the no-files rule. The separate million-token read-mode trial scored {{MILLION_READING_SCORE}}. Verifying supplied quotes and computing their arithmetic does not establish that the model found every relevant change.</p>
+<p><a href="{{LOCAL_TRIAL_MANIFEST}}">Trial scores, source hashes and copied grader results</a>.</p>
+<p>Unless a different seed is shown, these are seed-0 trials. The dense prose-ledger attempt is void because it broke the no-files rule. Verifying supplied quotes and computing their arithmetic does not establish that the model found every relevant change.</p>
 <details><summary>Trial history and quoted-event revisions</summary><p>The quote checker initially rejected some correct written-number events. Subsequent revisions fixed number reading, protected the final questions, strengthened file guards and increased the thinking allowance after refusals. The history preserves unsuccessful and void attempts alongside later reruns; different harness revisions are separate trials.</p>
 {{TRIAL_HISTORY}}
 <p><a href="{{LOCAL_TRIAL_MANIFEST}}">Portable trial manifest and source hashes</a>{{TRIAL_SOURCE_LINK}}. Scores and timing fields are generated from the copied grader and summary records. Trials without completed evidence cannot enter the measured tables.</p></details>
