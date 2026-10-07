@@ -142,3 +142,16 @@ Detailed protocols preserve failed attempts and runtime-only amendments. [Valida
 [Working past the context limit](context.html) explains what files, prompt caching and self-editing context can do for long jobs. Start with the [common questions](context-questions.html), [compare approaches](context-methods.html), or read why [disk does not replace active GPU memory for free](context-memory.html). The [measured results](context-results.html) link to the original B70 lab records.
 
 The explanations live in `content/context*.html`; the measurement record and source snapshot are in `results/long-context/result.json`. Update both when adding findings, then run `python scripts/organize_results.py` and `python scripts/build_site.py`. Protocols L01–L06 are in [EXPERIMENTS.md](EXPERIMENTS.md). The [one-step decision result](one-step-results.html) belongs to "Return a decision".
+
+Recent context trials are imported from the lab's canonical evidence export. `results/long-context/trial-selection.json` selects exact trial identities, arms, tasks and seeds; it contains no scores. To refresh them, run:
+
+```sh
+python3 scripts/context_trial_import.py --bundle /path/to/canonical-export
+python3 scripts/context_trial_import.py --check
+python3 -m unittest discover -s scripts -p 'test_context_trial_import.py'
+python3 scripts/organize_results.py
+python3 scripts/build_site.py
+python3 scripts/check_site.py
+```
+
+The importer copies the manifest and its source records into `results/long-context/evidence`, checks hashes and scores against grader/task/summary records, and updates only explicitly selected rows. Regeneration validates that local snapshot and needs no lab checkout or original benchmark paths. Completed failures and void attempts stay in the expandable trial history; missing or unfinished selected trials stop the import. Historical measurements outside this selection stay unchanged. An optional `--source-revision COMMIT` records the immutable lab revision; local evidence remains the default citation.

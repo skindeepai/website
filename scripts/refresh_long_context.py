@@ -1,6 +1,7 @@
 """Render the context explainers from templates and the published measurement record."""
 import json
 import re
+from context_trial_import import CONFIG, load_published, read_json
 from html import escape
 from pathlib import Path
 
@@ -44,6 +45,7 @@ def score(row):
 
 def update(pages):
     d = json.loads((ROOT / DATA).read_text(encoding='utf-8'))
+    d, trial_manifest = load_published(d)
     base = d['lab']
     note = lambda key: d.get('source_urls', {}).get(key, base + d['sources'][key])
     raw = lambda path: base + 'data/2026-10-05-context/' + path
@@ -207,6 +209,38 @@ def update(pages):
         [[r['strategy'], score(r), r['time'], r['written'], r['peak']]
          for r in measured if r['id'].startswith('quoted-ret-')],
         'Quoted-events retention trials, one row per seed', 'ctx-comparison')
+    read_stream, quoted_stream = by_id['read-improved-480k'], by_id['quoted-480k']
+    assert read_stream['task_fingerprint'] == quoted_stream['task_fingerprint'], 'Matched reading tasks differ'
+    saved = 100 * (1 - quoted_stream['elapsed_seconds'] / read_stream['elapsed_seconds'])
+    replacements['MATCHED_READING_SUMMARY'] = (
+        '<p><strong>On the matched 480K narrative stream, read mode scored ' + score(read_stream)
+        + ' and quoted events scored ' + score(quoted_stream) + '.</strong> Quoted events took '
+        + quoted_stream['time'] + ' versus ' + read_stream['time'] + ' for read mode, about '
+        + f'{saved:.0f}%' + ' less elapsed time in this one-seed comparison. Both agents used a 32K working budget.</p>')
+    replacements['MILLION_READING_SCORE'] = score(by_id['read-improved-1m'])
+    def attempt_rows(rows):
+        return [[r['id'].split('__')[-1], r['task_family'].replace('_', ' ') + ', '
+                 + (f'{r["input_tokens"] / 1000:.0f}K' if r.get('input_tokens') else 'size unknown')
+                 + (f', density {r["density"]:g}' if r.get('density') else ''),
+                 r['arm'], r['seed'],
+                 (('Void; raw ' if r['void'] else '') + f'{r["correct"]}/{r["asked"]}')
+                 if r['status'] == 'completed' else r['status'].replace('_', ' '),
+                 minutes(r['elapsed_seconds']) if r.get('elapsed_seconds') is not None else 'Not recorded'] for r in rows]
+    completed = [r for r in trial_manifest['rows'] if r['status'] == 'completed']
+    unfinished = [r for r in trial_manifest['rows'] if r['status'] != 'completed']
+    replacements['TRIAL_HISTORY'] = table(['Trial', 'Task', 'Arm', 'Seed', 'Correct', 'Time'],
+        attempt_rows(completed), 'Completed trial history, including failed and void attempts', 'ctx-comparison')
+    if unfinished:
+        replacements['TRIAL_HISTORY'] += '<h4>Unfinished attempts</h4>' + table(
+            ['Trial', 'Task', 'Arm', 'Seed', 'Status', 'Time'], attempt_rows(unfinished),
+            'Unfinished attempts, excluded from measured results', 'ctx-comparison')
+    replacements['LOCAL_TRIAL_MANIFEST'] = '@/' + d['canonical_trials']['manifest']
+    trial_config = read_json(CONFIG)
+    replacements['TRIAL_SOURCE_LINK'] = ''
+    if trial_config.get('source_revision'):
+        source_url = (trial_config['source_repository'] + '/blob/' + trial_config['source_revision']
+                      + '/' + trial_config['source_path'].strip('/') + '/manifest.json')
+        replacements['TRIAL_SOURCE_LINK'] = ' · ' + link(source_url, 'Pinned lab export')
 
     def outcomes(items):
         return table(['Trial', 'Correct', 'Time'], [[label, score(by_id[key]), by_id[key]['time']] for key, label in items],

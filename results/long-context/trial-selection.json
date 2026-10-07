@@ -1,0 +1,192 @@
+{
+  "schema": "skindeep.context-trial-selection.v1",
+  "bundle": "results/long-context/evidence",
+  "source_revision": "a09630da8c37fa1c1124a79882bf171cb6e18532",
+  "source_repository": "https://github.com/steveseguin/b70-optimization-lab",
+  "source_path": "experiments/qwen38-27b-b70/data/2026-10-05-context/canonical-2026-10-06",
+  "selections": [
+    {
+      "site_id": "read-improved-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__w3fFKXY",
+      "source_record_id": "context-clm-tenth-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__w3fFKXY",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-improved-119k",
+      "seed": 1,
+      "trial_id": "sparse-memory-t120k-s1__tyQwrPZ",
+      "source_record_id": "context-clm-eleventh-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s1/sparse-memory-t120k-s1__tyQwrPZ",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 1,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-improved-480k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t480k-s0__YzT5eSk",
+      "source_record_id": "context-clm-tenth-20261005/client/rd480/runs/jobs/B32ir__sparse-memory-t480k-s0/sparse-memory-t480k-s0__YzT5eSk",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 480000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-paper-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__XqHBYPX",
+      "source_record_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/B32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__XqHBYPX",
+      "expect": {
+        "arm": "B32",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-summary-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__LduPkBe",
+      "source_record_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/C32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__LduPkBe",
+      "expect": {
+        "arm": "C32",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-improved-d6-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__cYMHaL5",
+      "source_record_id": "context-clm-fourteenth-20261005/client/rd120-d6/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__cYMHaL5",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 6.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-improved-d12-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__EbpSRTh",
+      "source_record_id": "context-clm-fourteenth-20261005/client/rd120-d12/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__EbpSRTh",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 12.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "quoted-480k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t480k-s0__DKggW8r",
+      "source_record_id": "context-planA-client/rd480q/runs/jobs/B32iq__sparse-memory-t480k-s0/sparse-memory-t480k-s0__DKggW8r",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 480000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "quoted-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__MFciE7a",
+      "source_record_id": "context-planA-client/rd120q/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__MFciE7a",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "quoted-d12-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__6nQ7wM5",
+      "source_record_id": "context-planA-client/rd120q2-d12/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__6nQ7wM5",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 12.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "quoted-ret-119k",
+      "seed": 0,
+      "trial_id": "sparse-memory-t120k-s0__rpcehLD",
+      "source_record_id": "context-planA-client/ret120q2/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__rpcehLD",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "retention",
+        "seed": 0,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "quoted-ret-119k",
+      "seed": 1,
+      "trial_id": "sparse-memory-t120k-s1__fyzUWqh",
+      "source_record_id": "context-planA-client/ret120q/runs/jobs/B32iq__sparse-memory-t120k-s1/sparse-memory-t120k-s1__fyzUWqh",
+      "expect": {
+        "arm": "B32iq",
+        "task_family": "retention",
+        "seed": 1,
+        "target_tokens": 120000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    },
+    {
+      "site_id": "read-improved-1m",
+      "seed": 0,
+      "trial_id": "sparse-memory-t1000k-s0__8gCWSuS",
+      "source_record_id": "context-planA-client/rd1m/runs/jobs/B32ir__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__8gCWSuS",
+      "expect": {
+        "arm": "B32ir",
+        "task_family": "narrative",
+        "seed": 0,
+        "target_tokens": 1000000,
+        "density": 3.0,
+        "mode": "memory"
+      }
+    }
+  ],
+  "manifest_sha256": "a192a6414d697c08235b7349fe25ab9f849bbc3efdd961d7f38c0be29e3d3de3"
+}

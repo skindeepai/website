@@ -19,11 +19,13 @@
 </section>
 <section id="reading"><h2>Reading narrative text</h2>
 <p>These tasks require reading counter changes from prose. The read-mode agent updates its own table; the quoted-events agent supplies event lines with supporting quotes and the harness updates the table. The quoted agent also has a read-only archive. Question counts vary by task and seed, so each score shows its own denominator.</p>
-<p><strong>On the matched 480K narrative stream, both agents answered 10/10 correctly.</strong> Quoted events took 19.6 minutes versus 25.7 for read mode, about 24% less elapsed time in this one-seed comparison. The stream contained 282 narrative batches plus the final questions. Both agents used a 32K working budget.</p>
+{{MATCHED_READING_SUMMARY}}
 {{READING_TABLE}}
 <p><a href="{{REVIEW_EVIDENCE}}">Trial scores, source hashes and copied grader results</a>.</p>
-<p>Unless a different seed is shown, these are seed-0 trials. The dense prose-ledger attempt is void because it broke the no-files rule. The separate million-token read-mode trial scored 23/24. Verifying supplied quotes and computing their arithmetic does not establish that the model found every relevant change.</p>
-<details><summary>Quoted-event revisions and unsuccessful attempts</summary><p>The original quote checker rejected some correct written-number events. Fixing it reduced the three-change trial from 12.4 to 4.7 minutes. At twelve changes per batch, that revision hit the step cap without answers and broke the no-files rule. The subsequent revision completed 16/16 in 7.4 minutes; it added stronger file guards, typo handling, recognition of batches merged into notes and larger thinking allowances on retries. These results compare successive harness versions.</p></details>
+<p>Unless a different seed is shown, these are seed-0 trials. The dense prose-ledger attempt is void because it broke the no-files rule. The separate million-token read-mode trial scored {{MILLION_READING_SCORE}}. Verifying supplied quotes and computing their arithmetic does not establish that the model found every relevant change.</p>
+<details><summary>Trial history and quoted-event revisions</summary><p>The quote checker initially rejected some correct written-number events. Subsequent revisions fixed number reading, protected the final questions, strengthened file guards and increased the thinking allowance after refusals. The history preserves unsuccessful and void attempts alongside later reruns; different harness revisions are separate trials.</p>
+{{TRIAL_HISTORY}}
+<p><a href="{{LOCAL_TRIAL_MANIFEST}}">Portable trial manifest and source hashes</a>{{TRIAL_SOURCE_LINK}}. Scores and timing fields are generated from the copied grader and summary records. Trials without completed evidence cannot enter the measured tables.</p></details>
 <p><a href="{{NOTE_RESULTS}}">Research record and failed attempts</a> · <a href="@/context-reproduce.html#compare">Run the reading arms</a></p>
 </section>
 <section id="window"><h2>Longer context slows generation</h2>
@@ -58,7 +60,7 @@
 <p>The 119K narrative task with twelve extra questions about earlier text. Moving dropped batches to a searchable archive matched summarising on correctness, with less time and writing.</p>
 {{RETENTION_TABLE}}
 <h3>Quoted events with an archive</h3>
-<p>These two trials used different harness revisions. Seed 0 is the rerun with the final questions pinned in context; the earlier attempt lost those questions and scored 24/36. Seed 1 has six fewer current-value questions.</p>
+<p>These two trials used different harness revisions. Seed 0 is the rerun with the final questions pinned in context; its earlier attempt lost those questions. The question counts shown below come from each trial’s grader.</p>
 {{QUOTED_RETENTION_TABLE}}
 <p><a href="@/context-retention.html">What this shows and how the archive works</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
 </section>

@@ -510,9 +510,9 @@
         "strategy": "Read-mode self-editing agent, narrative text (the model must read)",
         "files": "no",
         "budget": "32K",
-        "right": "23 of 24 and 18 of 18 (two seeds)",
-        "time": "5.4 and 5.3 min",
-        "written": "14K and 13K tokens",
+        "right": "23/24 and 18/18",
+        "time": "5.4 min and 5.2 min",
+        "written": "14K tokens and 13K tokens",
         "peak": "20K and 19K",
         "note": "Narrative text with three changes per batch and numbers written as words. Seed 0: 23/24. The completed seed-1 rerun: 18/18 with no rule breach. An earlier seed-1 attempt also returned 18/18 but was void because it wrote unasked values to the answer file; that invalid attempt is not the result shown here.",
         "status": "measured",
@@ -527,27 +527,35 @@
             "time": "5.4 min",
             "written": "14K tokens",
             "peak": "20K",
-            "elapsed_seconds": 325,
+            "elapsed_seconds": 325.0,
             "generated_tokens": 13571,
             "peak_tokens": 20109,
             "calls": 144,
             "evidence_id": "context-clm-tenth-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__w3fFKXY",
-            "input_tokens": 119282
+            "input_tokens": 119282,
+            "void": false,
+            "status": "measured",
+            "canonical_trial_id": "sparse-memory-t120k-s0__w3fFKXY",
+            "task_fingerprint": "8aaa4db51b082ed5196f29b6a8b73c242b5401a97d883209afb80c9d38b43b4a"
           },
           {
             "seed": 1,
             "correct": 18,
             "asked": 18,
             "right": "18",
-            "time": "5.3 min",
+            "time": "5.2 min",
             "written": "13K tokens",
             "peak": "19K",
-            "elapsed_seconds": 315,
+            "elapsed_seconds": 315.0,
             "generated_tokens": 12825,
             "peak_tokens": 18873,
             "calls": 144,
             "evidence_id": "context-clm-eleventh-20261005/client/rd120/runs/jobs/B32ir__sparse-memory-t120k-s1/sparse-memory-t120k-s1__tyQwrPZ",
-            "input_tokens": 119172
+            "input_tokens": 119172,
+            "void": false,
+            "status": "measured",
+            "canonical_trial_id": "sparse-memory-t120k-s1__tyQwrPZ",
+            "task_fingerprint": "8ada822d9ad47c854da38d679fd02fe8bd09a6215b59db2cc193b82ae60df43d"
           }
         ]
       },
@@ -589,7 +597,7 @@
         "files": "no",
         "budget": "32K",
         "right": "10",
-        "time": "25.7 min",
+        "time": "25.6 min",
         "written": "68K tokens",
         "peak": "24K",
         "note": "Seed 0: 479,512 tokens in 282 narrative batches plus final questions, with a 32K budget. 634 calls, 576 with thinking off, 287 context edits, no rule breach. Ten questions were asked and all ten answered correctly. The previously claimed second-seed success has no verified run record and is excluded.",
@@ -599,12 +607,15 @@
         "correct": 10,
         "asked": 10,
         "input_tokens": 479512,
-        "elapsed_seconds": 1539,
+        "elapsed_seconds": 1539.0,
         "generated_tokens": 68185,
         "peak_tokens": 23547,
         "calls": 634,
         "narrative_batches": 282,
-        "evidence_id": "context-clm-tenth-20261005/client/rd480/runs/jobs/B32ir__sparse-memory-t480k-s0/sparse-memory-t480k-s0__YzT5eSk"
+        "evidence_id": "context-clm-tenth-20261005/client/rd480/runs/jobs/B32ir__sparse-memory-t480k-s0/sparse-memory-t480k-s0__YzT5eSk",
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t480k-s0__YzT5eSk",
+        "task_fingerprint": "89e145e0be4d7d3af8cf22400439899ba694fb74d4054d5b298f6fdb7bc1c380"
       },
       {
         "id": "ret-archive-119k",
@@ -703,10 +714,13 @@
         "asked": 24,
         "evidence_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/B32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__XqHBYPX",
         "input_tokens": 119282,
-        "elapsed_seconds": 2321,
+        "elapsed_seconds": 2321.0,
         "generated_tokens": 170682,
         "peak_tokens": 28042,
-        "calls": 156
+        "calls": 156,
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__XqHBYPX",
+        "task_fingerprint": "8aaa4db51b082ed5196f29b6a8b73c242b5401a97d883209afb80c9d38b43b4a"
       },
       {
         "id": "read-summary-119k",
@@ -725,10 +739,13 @@
         "asked": 24,
         "evidence_id": "context-clm-fourteenth-20261005/client/rd120-base/runs/jobs/C32__sparse-memory-t120k-s0/sparse-memory-t120k-s0__LduPkBe",
         "input_tokens": 119282,
-        "elapsed_seconds": 1011,
+        "elapsed_seconds": 1011.0,
         "generated_tokens": 77833,
         "peak_tokens": 22705,
-        "calls": 81
+        "calls": 81,
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__LduPkBe",
+        "task_fingerprint": "8aaa4db51b082ed5196f29b6a8b73c242b5401a97d883209afb80c9d38b43b4a"
       },
       {
         "id": "read-improved-d6-119k",
@@ -747,10 +764,13 @@
         "asked": 22,
         "evidence_id": "context-clm-fourteenth-20261005/client/rd120-d6/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__cYMHaL5",
         "input_tokens": 119687,
-        "elapsed_seconds": 527,
+        "elapsed_seconds": 527.0,
         "generated_tokens": 30983,
         "peak_tokens": 23428,
-        "calls": 166
+        "calls": 166,
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__cYMHaL5",
+        "task_fingerprint": "093620b62aec9cfc843092fc51c2698387acd1c707795f648e4342fc9c754c03"
       },
       {
         "id": "read-improved-d12-119k",
@@ -769,10 +789,13 @@
         "asked": 16,
         "evidence_id": "context-clm-fourteenth-20261005/client/rd120-d12/runs/jobs/B32ir__sparse-memory-t120k-s0/sparse-memory-t120k-s0__EbpSRTh",
         "input_tokens": 119652,
-        "elapsed_seconds": 804,
+        "elapsed_seconds": 804.0,
         "generated_tokens": 46295,
         "peak_tokens": 20836,
-        "calls": 217
+        "calls": 217,
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__EbpSRTh",
+        "task_fingerprint": "7219f731b9aaaf1d236e41255f1ef3bc24c579f7dafa7488af2f32acd1062e47"
       },
       {
         "id": "quoted-480k",
@@ -790,13 +813,16 @@
         "correct": 10,
         "asked": 10,
         "input_tokens": 479512,
-        "elapsed_seconds": 1173,
+        "elapsed_seconds": 1173.0,
         "generated_tokens": 36702,
         "peak_tokens": 22430,
         "calls": 578,
         "thinking_tokens": 542,
         "narrative_batches": 282,
-        "evidence_id": "context-planA-client/rd480q/runs/jobs/B32iq__sparse-memory-t480k-s0/sparse-memory-t480k-s0__DKggW8r"
+        "evidence_id": "context-planA-client/rd480q/runs/jobs/B32iq__sparse-memory-t480k-s0/sparse-memory-t480k-s0__DKggW8r",
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t480k-s0__DKggW8r",
+        "task_fingerprint": "89e145e0be4d7d3af8cf22400439899ba694fb74d4054d5b298f6fdb7bc1c380"
       },
       {
         "id": "quoted-119k",
@@ -815,10 +841,13 @@
         "asked": 24,
         "evidence_id": "context-planA-client/rd120q/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__MFciE7a",
         "input_tokens": 119282,
-        "elapsed_seconds": 280,
+        "elapsed_seconds": 280.0,
         "generated_tokens": 8686,
         "peak_tokens": 16829,
-        "calls": 143
+        "calls": 143,
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__MFciE7a",
+        "task_fingerprint": "8aaa4db51b082ed5196f29b6a8b73c242b5401a97d883209afb80c9d38b43b4a"
       },
       {
         "id": "quoted-d12-119k",
@@ -834,22 +863,25 @@
         "right": "16",
         "evidence_id": "context-planA-client/rd120q2-d12/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__6nQ7wM5",
         "input_tokens": 119652,
-        "elapsed_seconds": 445,
+        "elapsed_seconds": 445.0,
         "generated_tokens": 25158,
         "peak_tokens": 21408,
         "calls": 144,
         "time": "7.4 min",
         "written": "25K tokens",
-        "peak": "21K"
+        "peak": "21K",
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t120k-s0__6nQ7wM5",
+        "task_fingerprint": "7219f731b9aaaf1d236e41255f1ef3bc24c579f7dafa7488af2f32acd1062e47"
       },
       {
         "id": "quoted-ret-119k",
         "strategy": "Quoted events, retention test",
         "files": "archive only",
         "budget": "32K",
-        "right": "35 of 36 and 29 of 30",
-        "time": "5.7 and 5.1 min",
-        "written": "12K and 10K tokens",
+        "right": "35/36 and 29/30",
+        "time": "5.7 min and 5.1 min",
+        "written": "12K tokens and 10K tokens",
         "peak": "21K and 21K",
         "note": "Seed 0 with the final questions pinned: 35/36 in 340 seconds. Its previous attempt lost the questions and returned only current values (24/36). Seed 1: 29/30 in 308 seconds. These runs used different harness revisions.",
         "status": "measured",
@@ -864,12 +896,16 @@
             "time": "5.7 min",
             "written": "12K tokens",
             "peak": "21K",
-            "elapsed_seconds": 340,
+            "elapsed_seconds": 340.0,
             "generated_tokens": 11776,
             "peak_tokens": 20962,
             "calls": 159,
             "evidence_id": "context-planA-client/ret120q2/runs/jobs/B32iq__sparse-memory-t120k-s0/sparse-memory-t120k-s0__rpcehLD",
-            "input_tokens": 119282
+            "input_tokens": 119282,
+            "void": false,
+            "status": "measured",
+            "canonical_trial_id": "sparse-memory-t120k-s0__rpcehLD",
+            "task_fingerprint": "1f0882bc3bfa8f663d1206043f7acbe02635a6e9801be4ea011c4dc5dc30104e"
           },
           {
             "seed": 1,
@@ -879,12 +915,16 @@
             "time": "5.1 min",
             "written": "10K tokens",
             "peak": "21K",
-            "elapsed_seconds": 308,
+            "elapsed_seconds": 308.0,
             "generated_tokens": 10133,
             "peak_tokens": 20820,
             "calls": 150,
             "evidence_id": "context-planA-client/ret120q/runs/jobs/B32iq__sparse-memory-t120k-s1/sparse-memory-t120k-s1__fyzUWqh",
-            "input_tokens": 119172
+            "input_tokens": 119172,
+            "void": false,
+            "status": "measured",
+            "canonical_trial_id": "sparse-memory-t120k-s1__fyzUWqh",
+            "task_fingerprint": "f63d52134a4754ce4d383c5a447a64a670a6143f281575b49c0eaf2a8cfdbdb1"
           }
         ]
       },
@@ -904,12 +944,15 @@
         "correct": 23,
         "asked": 24,
         "input_tokens": 999361,
-        "elapsed_seconds": 3734,
+        "elapsed_seconds": 3734.0,
         "generated_tokens": 170271,
         "peak_tokens": 22511,
         "calls": 1351,
         "narrative_batches": 587,
-        "evidence_id": "context-planA-client/rd1m/runs/jobs/B32ir__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__8gCWSuS"
+        "evidence_id": "context-planA-client/rd1m/runs/jobs/B32ir__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__8gCWSuS",
+        "void": false,
+        "canonical_trial_id": "sparse-memory-t1000k-s0__8gCWSuS",
+        "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb"
       }
     ]
   },
@@ -1206,5 +1249,10 @@
   "source_urls": {
     "results": "https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
   },
-  "review_evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/data/2026-10-05-context/review-2026-10-06/evidence.json"
+  "review_evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/65e2684bbabe80a00caa197e6ff8810d5f502e7d/experiments/qwen38-27b-b70/data/2026-10-05-context/review-2026-10-06/evidence.json",
+  "canonical_trials": {
+    "manifest": "results/long-context/evidence/manifest.json",
+    "selection": "results/long-context/trial-selection.json",
+    "source_revision": "a09630da8c37fa1c1124a79882bf171cb6e18532"
+  }
 }
