@@ -822,7 +822,22 @@
         "evidence_id": "context-planA-client/rd480q/runs/jobs/B32iq__sparse-memory-t480k-s0/sparse-memory-t480k-s0__DKggW8r",
         "void": false,
         "canonical_trial_id": "sparse-memory-t480k-s0__DKggW8r",
-        "task_fingerprint": "89e145e0be4d7d3af8cf22400439899ba694fb74d4054d5b298f6fdb7bc1c380"
+        "task_fingerprint": "89e145e0be4d7d3af8cf22400439899ba694fb74d4054d5b298f6fdb7bc1c380",
+        "reverified": {
+          "date": "2026-10-07",
+          "lab_commit": "8a46c0cae",
+          "checker_fix_commit": "414eb6374",
+          "correct": 10,
+          "asked": 10,
+          "elapsed_seconds": 1165.0,
+          "calls": 577,
+          "generated_tokens": 36600,
+          "peak_tokens": 19935,
+          "server_window": "65K",
+          "note": "Repeated with a 65K server window instead of 262K to leave host memory free; the agent never used more than about 23K of context plus 4K of output. The checker still does not verify event meaning or completeness; final answers are scored.",
+          "source": "https://github.com/steveseguin/b70-optimization-lab/blob/8a46c0cae87be86002b4fb369525040c505af0b7/experiments/qwen38-27b-b70/notes/2026-10-07-context-reverify-fixed-checker.md",
+          "data": "https://github.com/steveseguin/b70-optimization-lab/tree/8a46c0cae87be86002b4fb369525040c505af0b7/experiments/qwen38-27b-b70/data/2026-10-07-context-reverify"
+        }
       },
       {
         "id": "quoted-119k",
@@ -977,7 +992,22 @@
         "peak": "23K",
         "evidence_id": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
         "canonical_trial_id": "sparse-memory-t1000k-s0__QuVH42k",
-        "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb"
+        "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb",
+        "reverified": {
+          "date": "2026-10-07",
+          "lab_commit": "8a46c0cae",
+          "checker_fix_commit": "414eb6374",
+          "correct": 24,
+          "asked": 24,
+          "elapsed_seconds": 2867.0,
+          "calls": 1236,
+          "generated_tokens": 111709,
+          "peak_tokens": 22815,
+          "server_window": "65K",
+          "note": "Repeated with a 65K server window instead of 262K to leave host memory free; the agent never used more than about 23K of context plus 4K of output. The checker still does not verify event meaning or completeness; final answers are scored.",
+          "source": "https://github.com/steveseguin/b70-optimization-lab/blob/8a46c0cae87be86002b4fb369525040c505af0b7/experiments/qwen38-27b-b70/notes/2026-10-07-context-reverify-fixed-checker.md",
+          "data": "https://github.com/steveseguin/b70-optimization-lab/tree/8a46c0cae87be86002b4fb369525040c505af0b7/experiments/qwen38-27b-b70/data/2026-10-07-context-reverify"
+        }
       }
     ]
   },
@@ -1044,8 +1074,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "65e2684bbabe80a00caa197e6ff8810d5f502e7d",
-    "time": "2026-10-06 23:20 UTC (19:20 EDT)",
+    "commit": "8a46c0cae87be86002b4fb369525040c505af0b7",
+    "time": "2026-10-08 02:46 UTC (22:46 EDT, 2026-10-07)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {

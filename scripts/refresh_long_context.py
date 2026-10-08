@@ -321,6 +321,16 @@ def update(pages):
         + ' in ' + quoted_million['time'] + '; read mode scored ' + score(read_million)
         + ' in ' + read_million['time'] + '.</strong> This is one completed pair on the same seed and task, '
         + 'with a 32K working budget. It does not establish reliability across other tasks or seeds.</p>')
+    checked = [(label, r['reverified']) for label, r in (('480K stream', quoted_stream), ('million-token stream', quoted_million))
+               if r.get('reverified')]
+    if checked:
+        replacements['MATCHED_MILLION_SUMMARY'] += (
+            '<p><strong>Re-checked on ' + escape(checked[0][1]['date']) + ' with the fixed scorer:</strong> '
+            + '; '.join(escape(label) + f' {v["correct"]}/{v["asked"]} in {v["elapsed_seconds"] / 60:.1f} min'
+                        for label, v in checked)
+            + '. A review had found three holes in the quoted-events checker; after the fix, both runs were repeated on the same task '
+            + 'and gave the same scores. ' + escape(checked[0][1]['note']) + ' '
+            + link('@/docs/context-reverify.md', 'What was repeated') + ' · ' + link(checked[0][1]['source'], 'Lab note') + '</p>')
     def attempt_rows(rows):
         return [[r['id'].split('__')[-1], r['task_family'].replace('_', ' ') + ', '
                  + (f'{r["input_tokens"] / 1000:.0f}K' if r.get('input_tokens') else 'size unknown')
