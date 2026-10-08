@@ -990,7 +990,7 @@
         "time": "47.9 min",
         "written": "112K tokens",
         "peak": "23K",
-        "evidence_id": "/mnt/fast-ai/bench-results/context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
+        "evidence_id": "context-planA-client/rd1mq/runs/jobs/B32iq__sparse-memory-t1000k-s0/sparse-memory-t1000k-s0__QuVH42k",
         "canonical_trial_id": "sparse-memory-t1000k-s0__QuVH42k",
         "task_fingerprint": "aa962b595f47cdae4758d7c6fed86f7eb9c66ab6401932021cbb7420a7578abb",
         "reverified": {
