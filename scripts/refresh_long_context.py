@@ -294,6 +294,28 @@ def update(pages):
         for field in ('right', 'time', 'written'):
             replacements['RET_' + key.split('-')[1].upper() + '_' + field.upper()] = escape(by_id[key][field])
     replacements['RETENTION_DATA'] = RETENTION_DATA
+    lme = d['longmemeval']
+    def lme_row(r):
+        return [r['approach'], r['budget'], f"{r['right']} of {r['asked']}" + (' (stopped)' if r.get('stopped') else ''),
+                f"{r['median_time_s'] / 60:.1f} min", f"{r['median_tokens_written']:,}"]
+    replacements['LONGMEMEVAL_TABLE'] = table(['Approach', 'Working budget', 'Right', 'Median time per question', 'Median tokens written'],
+                                              [lme_row(r) for r in lme['rows']],
+                                              'LongMemEval, 56 questions with about 110K tokens of chat history each', 'ctx-comparison')
+    m = lme['matched']
+    replacements['LONGMEMEVAL_MATCHED_TABLE'] = table(['Approach', f"Right of {m['asked']}", 'Median time', 'Median tokens written'],
+                                                      [[r['approach'], str(r['right']),
+                                                        f"{r['median_time_s'] / 60:.1f} min" if 'median_time_s' in r else 'See above',
+                                                        f"{r['median_tokens_written']:,}" if 'median_tokens_written' in r else 'See above'] for r in m['rows']],
+                                                      f"The same {m['asked']} questions for all three approaches", 'ctx-comparison')
+    for k in ('benchmark', 'judge', 'server', 'date', 'note_url', 'data_url'):
+        replacements['LME_' + k.upper()] = escape(lme[k])
+    for k in ('only_archive', 'only_summary', 'both_wrong', 'asked'):
+        replacements['LME_' + k.upper()] = str(m[k])
+    replacements['LME_STRATA'] = escape(m['strata'])
+    for k, v in lme['where_archive_loses'].items():
+        replacements['LME_LOSES_' + k.upper()] = escape(v)
+    replacements['LME_STOPPED'] = escape(lme['rows'][2]['stopped'])
+    replacements['LME_INTERRUPTED'] = escape(lme['interrupted'])
     replacements['READING_TABLE'] = table(
         ['Trial', 'Files', 'Correct', 'Time', 'Tokens generated'],
         [[r['strategy'], r['files'], score(r), r['time'], r['written']]

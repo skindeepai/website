@@ -1,6 +1,6 @@
 {
   "schema": "skindeep.long-context.v3",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
   "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
   "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/",
@@ -1309,5 +1309,82 @@
     "manifest": "results/long-context/evidence/manifest.json",
     "selection": "results/long-context/trial-selection.json",
     "source_revision": "0ced9bfaf47e63f1e63c76782ca2059ddd8af2f1"
+  },
+  "longmemeval": {
+    "benchmark": "LongMemEval_S (MIT licence), 56 of the 500 questions: 8 per question type, each with about 110K tokens of chat history",
+    "judge": "Qwen3.8-27B FP8 on the lab host, using the benchmark's official judge prompts. The benchmark's published scores use GPT-4o as judge, so these numbers are not directly comparable with published ones.",
+    "server": "two Intel Arc Pro B70, 65,536-token window",
+    "date": "2026-10-08",
+    "lab_commit": "e596f2424",
+    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e596f2424/experiments/qwen38-27b-b70/notes/2026-10-08-longmemeval-stage2-result.md",
+    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/e596f2424/experiments/qwen38-27b-b70/data/2026-10-08-longmemeval-stage2",
+    "columns": [
+      "approach",
+      "budget",
+      "right",
+      "asked",
+      "median_time_s",
+      "median_tokens_written"
+    ],
+    "rows": [
+      {
+        "id": "lme-whole",
+        "approach": "Whole history in one call",
+        "budget": "No limit (fits the window)",
+        "right": 46,
+        "asked": 56,
+        "median_time_s": 74,
+        "median_tokens_written": 432
+      },
+      {
+        "id": "lme-archive",
+        "approach": "Archive and recall, free-text notes",
+        "budget": "32K",
+        "right": 42,
+        "asked": 56,
+        "median_time_s": 341,
+        "median_tokens_written": 10506
+      },
+      {
+        "id": "lme-summary",
+        "approach": "Summarise at 75%",
+        "budget": "32K",
+        "right": 19,
+        "asked": 23,
+        "median_time_s": 960,
+        "median_tokens_written": 58107,
+        "stopped": "Stopped after 23 questions: it was taking 16 minutes each and the comparison was already clear."
+      }
+    ],
+    "matched": {
+      "asked": 23,
+      "strata": "the single-session user, assistant and preference questions",
+      "rows": [
+        {
+          "approach": "Whole history in one call",
+          "right": 21
+        },
+        {
+          "approach": "Archive and recall",
+          "right": 20,
+          "median_time_s": 297,
+          "median_tokens_written": 9004
+        },
+        {
+          "approach": "Summarise at 75%",
+          "right": 19,
+          "median_time_s": 960,
+          "median_tokens_written": 58107
+        }
+      ],
+      "only_archive": 3,
+      "only_summary": 2,
+      "both_wrong": 1
+    },
+    "where_archive_loses": {
+      "abstention": "1 of 8 against 4 of 8 for whole-history reading: it answers when the history does not say",
+      "preference": "4 of 8 against 5 of 8"
+    },
+    "interrupted": "The run was stopped once by the host memory guard at 52 of 56 archive trials and resumed; finished trials were kept, no GPU fault."
   }
 }

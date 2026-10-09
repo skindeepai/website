@@ -16,6 +16,14 @@
 <li>The grader voids the run if any other file holds stream data, so the archive is the only memory outside the context.</li>
 </ol>
 <p>Nothing is deleted, only moved out of view. In this run the agent searched the archive 12 times. <a href="@/context-summaries.html">How summaries work</a> · <a href="@/context-files.html">Why files helped on the ledger</a>.</p>
+<h2>On an outside benchmark</h2>
+<p><strong>The same ranking held on a public memory benchmark, with the archive again the cheaper of the two methods that manage context.</strong> {{LME_BENCHMARK}}. The model must answer one question about a long chat history: a fact the user mentioned once, something the assistant said, a preference, a date to work out, a fact that was later updated, or a question the history does not answer, where the right reply is to say so. Every approach ran with the same 27B model on {{LME_SERVER}}.</p>
+{{LONGMEMEVAL_TABLE}}
+<p>The summarising approach was stopped early. {{LME_STOPPED}} On the {{LME_ASKED}} questions it did finish ({{LME_STRATA}}), all three approaches can be compared directly:</p>
+{{LONGMEMEVAL_MATCHED_TABLE}}
+<p>{{LME_ONLY_ARCHIVE}} questions only the archive got right, {{LME_ONLY_SUMMARY}} only summarising got right, and {{LME_BOTH_WRONG}} neither. That is a tie on accuracy at this sample size. The archive spent a third of the time and wrote a sixth of the tokens. A small pilot of seven questions had put summarising ahead; it did not hold up, which is what the larger run was for.</p>
+<p>Reading the whole history in one call is still the best answer whenever it fits the window. Where the archive falls short of it: questions the history cannot answer, {{LME_LOSES_ABSTENTION}}; and preferences, {{LME_LOSES_PREFERENCE}}. Teaching the note-taker to record what was not said is the next step.</p>
+<p>The judge: {{LME_JUDGE}} {{LME_INTERRUPTED}} <a href="{{LME_NOTE_URL}}">Lab note</a> · <a href="{{LME_DATA_URL}}">Per-question verdicts and scripts</a> ({{LME_DATE}}).</p>
 <h2>Limits</h2>
-<p>One seed and one task family, so treat the ranking as a first result. Summarising also got every answer here: with thinking on, its summaries kept the old values. Its cost was time and writing, not accuracy.</p>
+<p>The synthetic retention test above is one seed and one task family. The outside benchmark adds 56 questions from a second source with a different judge; the published scores for that benchmark use a different judge model, so compare the approaches with each other here, not with published leaderboards. Summarising also got every answer on the synthetic test: with thinking on, its summaries kept the old values. Its cost was time and writing, not accuracy.</p>
 <p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md#retention-remembering-what-was-dropped-measured-2026-10-06-0045-edt">Lab note: Retention</a> · <a href="{{RETENTION_DATA}}">Per-run summaries</a> · <a href="@/context-reproduce.html#compare">How to reproduce</a> · <a href="@/context-results.html#retention">All results</a></p>
