@@ -1,6 +1,57 @@
-<p><strong>Short answer: keeping old text word for word in a searchable archive, beside a small pinned state, was the most accurate method at a 32K window on both seeds: 63 of 65 questions right, against 48 to 56 for the others, in 15 to 16 minutes per run.</strong> No method kept a rule that was stated once at the start, until the pinned state had a permanent place for rules. With that place added, the same method read a 1,000,000-token history through the 32K window and answered 163 of 203 planted questions, with no drop for questions far back. That long run was stopped before its final check, so it is not yet a verified score.</p>
-<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#question">The question</a><a href="#methods">Methods</a><a href="#results">Results by distance</a><a href="#rule">Keeping a rule</a><a href="#million">One million tokens</a><a href="#findings">What it shows</a><a href="#limits">Limits</a><a href="#now">What we are solving now</a></nav>
-<section id="question"><h2>The question</h2>
+<p><strong>Short answer: the method that did best asks nothing of the agent.</strong> A “keeper” outside the agent moves the oldest turns, word for word, to an archive the model can search, has the model rewrite a short block of notes at each cut, and repeats the standing rules wherever questions arrive. Through a 32K window it answered every question on two 240K-token test streams (39 of 39 and 46 of 46) and 226 of 228 over 1,000,000 tokens in 83 minutes. Run as a small proxy in front of the model server, it scored 37 of 39 and 42 of 46. All of this is one family of test tasks, one model and one machine.</p>
+<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#keeper">The keeper</a><a href="#million">One million tokens</a><a href="#lessons">Lessons from failed runs</a><a href="#question">The test</a><a href="#methods">Methods</a><a href="#results">Results by distance</a><a href="#rule">Keeping a rule</a><a href="#findings">What it shows</a><a href="#limits">Limits</a><a href="#now">What we are solving now</a></nav>
+<section id="keeper"><h2>The keeper: nothing is asked of the agent</h2>
+<p>The test: the <a href="@/context-model-choice.html">Qwen3.8-27B model</a> reads a 240K-token stream of short stories through a live window capped at 32K tokens. The stream opens with a standing rule and a house method. Questions planted along the way ask for counters, their old values, small details, the rule and the method. <a href="#question">The test in full</a>. The table sets the keeper beside the two best earlier methods and the simplest baseline, on the first of two such streams.</p>
+{{DP_TABLE_KEEPER}}
+<p class="ctx-table-note">First stream (seed 0), 39 questions, one run per method, on one model and one machine. The keeper’s 197 model calls include its 23 note-taking calls. The proxy row counts the agent’s calls only; the proxy made 22 note-taking calls of its own. Every keeper run passed the task’s storage rule. <a href="{{DP_KEEPER_DATA_URL}}">Evidence for the keeper and proxy runs</a>.</p>
+<ul class="ctx-read-next">
+<li><strong>The keeper is the first method to answer everything on this task.</strong> It took 15 minutes and 197 model calls, about half the 400 and 424 calls of the two methods that make the model run a routine, because the agent no longer manages anything.</li>
+<li><strong>A second stream gave the same result.</strong> With a different rule, method and set of stories (seed 1, 46 questions), the keeper answered 46 of 46 in 16 minutes with 188 model calls.</li>
+<li><strong>The notes stayed short and kept the rules.</strong> On the first stream they stayed between 450 and 860 tokens. The rule and the method were in them, in the stream’s own words, from the first cut to the end, and the model never left one out.</li>
+<li><strong>The archive held exact copies.</strong> In both harness runs every archived item was a word-for-word copy: 138 of 138 and 137 of 137.</li>
+</ul>
+<h3 id="how">How the keeper works</h3>
+<p>Every earlier method that beat the simple baselines made the model run a routine: read a batch, fold it into a state file, drop it. That routine is tied to the task and costs two or more model calls per batch. With the keeper the agent just works. Whenever the conversation is about to outgrow the window, something outside the agent does three things:</p>
+<ol>
+<li>It writes the oldest turns, word for word, to an archive on disk.</li>
+<li>It asks the model once, with no tools, to rewrite a short NOTES block from the old notes and the turns about to go. NOTES has three parts: RULES (standing rules and methods; a rule the model leaves out is put back), STATE (what later work depends on) and OPEN.</li>
+<li>It replaces those turns with the NOTES.</li>
+</ol>
+<p>The model also gets a search tool over the archive, and whenever questions arrive the RULES are repeated right next to them. The keeper ran first inside the test harness, the program that runs the test, and then as a small proxy in front of the model server.</p>
+<h3 id="proxy">The same method as a proxy</h3>
+<p>The keeper was then moved out of the test harness into <a href="{{DP_PROXY_README}}">a small proxy</a> that any OpenAI-compatible client can point at. The agent sent its whole history on every call and did no context management of its own; the proxy kept the live window at 32K. On its first run against the real server it scored <strong>37 of 39</strong> in 21 minutes, using 25 MiB of memory. The model used the proxy’s search tool 12 times, although the agent’s own prompt names a shell as its only tool. Both misses concern one counter: its current value at the last question set, and the same counter in the final questions. It was slower than in the harness (21 minutes against 15): thinking now stays on while a question is open, and each archive search is one more round trip.</p>
+<p>On the second stream the proxy scored <strong>42 of 46</strong>, with the rule and the method both 5 of 5, but it took 47 minutes. The cause was a defect in the proxy that this run exposed: 10 of its 24 note-taking calls were rejected, because that call ran at a higher reasoning effort than the others and ran out of room. It now uses the same effort and has more room, and a rejected reply is asked for again without thinking. The second stream has not been run again since the fix.</p>
+<p><strong>Limits of the proxy result.</strong> The proxy has only been run on this benchmark: not yet under a real coding or research agent, and not yet on the 1,000,000-token stream.</p>
+</section>
+<section id="million"><h2>One million tokens through a 32K window</h2>
+<p>The keeper then read a 1,000,000-token stream, 31 times its live window. The stream arrived as 617 items: batches of stories, with the rule and the method stated at the start and 29 question sets of seven questions each planted along the way. 25 final questions came at the end. <strong>The keeper answered 226 of the 228 questions (99%) in 83 minutes.</strong> This is a finished run, graded by the task’s own checker, and the storage rule passed: 609 items in the archive, every one a word-for-word copy. It is one stream and one seed: a result, not yet a replication.</p>
+{{DP_TABLE_1M}}
+<p class="ctx-table-note">The right-hand column is an earlier run on the same stream by the archive method with pinned rule lines. It is a stopped run, not a verified score: its answers were rebuilt from the saved transcript and the grader’s final check did not run (<a href="#stopped-run">details below</a>). {{DP_1M_UNANSWERED}} <a href="{{DP_K1M_GRADE}}">The keeper’s grade record</a> · <a href="{{DP_K1M_NOTES}}">its notes at the end of the run</a> · <a href="{{DP_K1M_DETAILS}}">every answer</a>.</p>
+<ul class="ctx-read-next">
+<li><strong>Accuracy did not fall with distance or with the length of the history.</strong> Questions 400 or more batches back were all answered (25/25), and so was the last third of the run (63/63). The two misses were “who did it” questions 3 and 5 batches back, both in the first third.</li>
+<li><strong>Speed stayed flat.</strong> The run averaged 8.3 minutes per 100K tokens. By segment of 100K tokens it took {{DP_K1M_SEGMENTS}} minutes; the last 200K took 15% longer than the first.</li>
+<li><strong>The notes stayed small.</strong> They stayed between 388 and 1,031 tokens over 110 cuts. Both rules were in them from the first cut to the end, and the model never left one out.</li>
+<li><strong>It needed far fewer model calls.</strong> 865 (755 by the agent and 110 for the notes) against 2,170 for the earlier method.</li>
+<li><strong>The earlier method’s two weak spots did not appear.</strong> Old values were 58/58 against 37/58, and the standing rule was applied 29/29 times against 22/29.</li>
+<li><strong>This was the second attempt.</strong> The first reached 114 of 126 planted answers (90%) by item 378, then repeated one archive search 790 times and was stopped. The <a href="#lessons">third lesson below</a> is what fixed it.</li>
+</ul>
+<details id="stopped-run"><summary>The earlier stopped run in the right-hand column</summary>
+<p>Before the keeper, the archive method with pinned rule lines read the same stream. The server window was 262,144 tokens, but the method’s live context stayed under 30.7K.</p>
+<p><strong>Read its column as a stopped run, not a verified score.</strong> At the last item the model rewrote its answers file with only the final answers, which wiped the answers it had given to the planted questions, and the run was stopped there. The planted-question scores use the answers it wrote during the run, rebuilt from the write commands in the saved transcript: literal values only, nothing re-run. A copy of the answers file taken during the run gives the same counts through the 28th question set (157/196). The final-question score uses the file as it stood at the stop. The grader’s own final check, which includes its check of the storage rule, did not run.</p>
+<p>The run took {{DP_1M_MINUTES}} minutes: {{DP_1M_PER_100K}} minutes per 100K tokens on average, with the last 200K taking {{DP_1M_LAST_200K}} minutes against {{DP_1M_FIRST_200K}} for the first 200K. That was {{DP_1M_CALLS}} model calls, {{DP_1M_WRITTEN}} tokens written, {{DP_1M_SEARCHES}} archive searches and {{DP_1M_PROMPT}} prompt tokens, {{DP_1M_CACHED}} of them from the prefix cache.</p>
+<p>It had two weak spots. “What value did X hold at the end of item N” scored 37/58: to answer, the model has to replay every archived sentence about X. And a pinned rule lapsed in use: the rule stayed in view the whole time, yet of the 28 rule questions the model answered, 6 did not apply it (5 of them in the last ten question sets), and it was missed again in the final questions.</p>
+<p><a href="{{DP_1M_GRADE}}">The rebuilt answers, graded</a> · <a href="{{DP_1M_ANSWERS}}">the rebuilt answers</a> · <a href="{{DP_1M_AT_STOP}}">the answers file at the stop</a></p></details>
+</section>
+<section id="lessons"><h2>Three lessons from failed runs</h2>
+<p>Each of these comes from a run that went wrong. They are the part most likely to carry over to another agent with a long history.</p>
+<ol>
+<li><strong>Ask for the notes after the turns being removed, not before.</strong> In the first try the request came first, followed by about 8K tokens of the agent’s own turns. The model simply continued its own turns, wrote no RULES section, and the rule was lost at the first cut.</li>
+<li><strong>Give a rule a pinned place and a reminder at the point of use.</strong> With no pinned place, four methods answered 0 of 20 rule questions the way the rule required. Pinned only, the rule was applied 22 times out of 29 over 1,000,000 tokens. Pinned and repeated next to each set of questions, it was applied 29 times out of 29.</li>
+<li><strong>Keep thinking switched on while a question is open.</strong> In the first 1,000,000-token attempt, thinking was on for the call that received a question set and off for the calls that followed. Working on the questions without thinking, the model repeated one archive search 790 times. Thinking now stays on from a question set until the next ordinary batch arrives, and the same command is not run twice in a row.</li>
+</ol>
+<p><strong>A faster setting that failed.</strong> Writing the notes without thinking and cutting deeper, down to 50% of the window, saved a fifth of the time (12 minutes against 15) and lost two answers (37 of 39). The slower setting stays.</p>
+</section>
+<section id="question"><h2>The question, and how it is tested</h2>
 <p>An agent that works on one task for a long time builds up far more history than its live window can hold. Something has to leave the window. What can the agent still answer about things that happened long ago, and does it still follow what it was told at the start?</p>
 <p>The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> read a 240K-token stream of short stories in batches (147 on the first seed), with about three counter changes per batch. Its live window was capped at <strong>16K or 32K tokens</strong>, so the history was 7 to 15 times larger than what it could see at once. Every 25 batches it was asked three questions about a batch a known distance back:</p>
 <ul class="ctx-read-next">
@@ -12,14 +63,17 @@
 <p>A second version of the stream opens with two more things to remember: a <strong>standing rule</strong> (three counters are confidential; answer “protected” whenever asked for their value) and a <strong>house method</strong> (on the 240K stream, a counter’s tally is its value times 5 plus 13). Later question sets ask about both. <a href="#rule">Results for the rule and the method</a>.</p>
 </section>
 <section id="methods"><h2>Ways to manage the window</h2>
-<p>Four methods ran the distance tests. Two variants of the archive method were added for the rule questions.</p>
+<p>Four methods ran the distance tests, and summarising at a threshold was added later on one seed. Two variants of the archive method were added for the rule questions. The keeper came last and ran on the rule streams.</p>
 <dl class="ctx-definitions">
 <dt>Window-drop</dt><dd>When the window is full, the oldest turns are dropped. Nothing is kept. This is the simplest baseline, and it is lossy.</dd>
 <dt>Compaction</dt><dd>What coding agents commonly do: old tool output is replaced with a short stub and old thinking is removed, then the oldest turns go. Also lossy. Called D or P in the evidence files.</dd>
+<dt>Summarise at a threshold</dt><dd>What most production agents do: when the context reaches a threshold, here 75% of the window, the model writes a summary that takes the place of the older turns. Also lossy. Called C in the evidence files.</dd>
 <dt>Self-editing, read mode</dt><dd>The model reads each batch and keeps <code>name value</code> lines in a pinned state at the top; processed batches leave the window. <a href="@/context-revised-editing.html">How self-editing with a protected state works</a>.</dd>
 <dt>Self-editing + archive and search</dt><dd>The same pinned state, and every batch that leaves the window goes word for word to a read-only archive. A <code>recall</code> tool searches it. <a href="@/context-retention.html">How the archive works</a>.</dd>
 <dt>Archive and search + pinned rule lines</dt><dd>The archive method with one change: the pinned state may also hold permanent <code>RULE:</code> lines. An edit that removes or rewords one is rejected. The instructions say to write down a rule or method when one is stated, and to read the rule lines before answering.</dd>
 <dt>Archive and search with free-text notes</dt><dd>The archive method with free-text notes in place of the <code>name value</code> lines. Its instructions say nothing about rules.</dd>
+<dt>Keeper</dt><dd>The agent manages nothing. Something outside it archives the oldest turns word for word, has the model rewrite a short NOTES block at each cut, and repeats the rules next to each set of questions. <a href="#keeper">How the keeper works</a>.</dd>
+<dt>Keeper as a proxy</dt><dd>The same method in a small proxy in front of the model server. The agent sends its whole history on every call. <a href="{{DP_PROXY_README}}">What the proxy does and how to run it</a>.</dd>
 </dl>
 </section>
 <section id="results"><h2>Results by distance</h2>
@@ -38,9 +92,13 @@
 <details><summary>Earlier run: 48K window over a 480K history (2026-10-08)</summary>
 {{DP_TABLE_48K}}
 <p>{{DP_48K_NOTE}} <a href="{{DP_CHARTER_URL}}">Program charter</a>.</p></details>
+<h3 id="summary">Summarising at a threshold</h3>
+<p>Most production agents handle a full window by summarising it. Here the model wrote a summary whenever the context reached 75% of the 32K window. On the first seed of the plain 240K stream this was the slowest method, and it scored below simply dropping old turns.</p>
+{{DP_TABLE_SUMMARY}}
+<p class="ctx-table-note">One seed (the first), 29 questions. The other three rows are the first-seed runs behind the 32K rows of the table above. Thirteen summaries were written and none failed. The summaries kept old values (4/5) and lost the small details nobody knew to keep (“who did it”, 2/5). <a href="{{DP_KEEPER_DATA_URL}}">Evidence for this run</a>.</p>
 </section>
 <section id="rule"><h2>Keeping a rule and a method</h2>
-<p><strong>No method kept a rule that was stated once at the start.</strong> This 240K stream opened with the standing rule and the house method. Five later question sets each added one rule question and one method question to the usual three, 24 to 129 batches after the rule and the method were stated. One of the 14 final questions asked for a confidential counter. That makes 39 questions per run.</p>
+<p><strong>Of the methods that ran before the keeper, none kept a rule that was stated once at the start until rules had a pinned place.</strong> This 240K stream opened with the standing rule and the house method. Five later question sets each added one rule question and one method question to the usual three, 24 to 129 batches after the rule and the method were stated. One of the 14 final questions asked for a confidential counter. That makes 39 questions per run. The keeper’s 39 of 39 on the same stream is in <a href="#keeper">the table at the top</a>.</p>
 {{DP_TABLE_RULES}}
 <p class="ctx-table-note">One seed at a 32K window, so each cell is a handful of questions. The first four methods ran with a 65,536-token server window and the two variants with 262,144; the live window was 32K for all. <a href="{{DP_RULES_ANALYSIS}}">Probe analysis for this table</a>.</p>
 <ul class="ctx-read-next">
@@ -51,20 +109,10 @@
 <li><strong>Fetching four batches per step was not a way to go faster.</strong> At 32K it ran out of room and was stopped after 115 model calls for 21 batches. It is not scored.</li>
 </ul>
 </section>
-<section id="million"><h2>One million tokens through a 32K window</h2>
-<p>The archive method with pinned rule lines then read a 1,000,000-token stream, 31 times its live window, on one seed. The stream arrived as 617 items: batches of stories, with the rule and the method stated at the start and 29 question sets of seven questions each planted along the way. 25 final questions came at the end. The server window was 262,144 tokens, but the method’s live context stayed under 30.7K.</p>
-<p><strong>Read this as a stopped run, not a verified score.</strong> At the last item the model rewrote its answers file with only the final answers, which wiped the answers it had given to the planted questions, and the run was stopped there. The planted-question scores below use the answers it wrote during the run, rebuilt from the write commands in the saved transcript: literal values only, nothing re-run. A copy of the answers file taken during the run gives the same counts through the 28th question set (157/196). The final-question score uses the file as it stood at the stop. The grader’s own final check, which includes its check of the storage rule, did not run. One stream, one seed.</p>
-{{DP_TABLE_1M}}
-<p class="ctx-table-note">Stopped run; the answers were rebuilt as described above. {{DP_1M_UNANSWERED}} <a href="{{DP_1M_GRADE}}">The rebuilt answers, graded</a> · <a href="{{DP_1M_ANSWERS}}">the rebuilt answers</a> · <a href="{{DP_1M_AT_STOP}}">the answers file at the stop</a>.</p>
-<ul class="ctx-read-next">
-<li><strong>Accuracy did not fall as the history grew to 31 times the live window.</strong> Questions 400 or more batches back were answered as well (20/25) as questions 5–24 back (40/50), and the last third of the run was the best (55/63).</li>
-<li><strong>Speed stayed flat.</strong> The stream took {{DP_1M_MINUTES}} minutes: {{DP_1M_PER_100K}} minutes per 100K tokens on average, with the last 200K taking {{DP_1M_LAST_200K}} minutes against {{DP_1M_FIRST_200K}} for the first 200K. That was {{DP_1M_CALLS}} model calls, {{DP_1M_WRITTEN}} tokens written, {{DP_1M_SEARCHES}} archive searches and {{DP_1M_PROMPT}} prompt tokens, {{DP_1M_CACHED}} of them from the prefix cache.</li>
-<li><strong>Weak spot: old values.</strong> “What value did X hold at the end of item N” scored 37/58. To answer, the model has to replay every archived sentence about X.</li>
-<li><strong>Weak spot: a pinned rule can lapse in use.</strong> The rule stayed pinned in view the whole time. Yet of the 28 rule questions the model answered, 6 did not apply it (5 of them in the last ten question sets), and it was missed again in the final questions.</li>
-</ul>
-</section>
 <section id="findings"><h2>What it shows</h2>
 <ul class="ctx-read-next">
+<li><strong>Managing the context from outside the agent beat every method that makes the agent manage it.</strong> The keeper answered 39/39 and 46/46 at 240K and 226/228 at 1,000,000 tokens, with fewer model calls than the methods that run a routine: 197 against 400 and 424 at 240K, and 865 against 2,170 at 1,000,000. It is also the only method here that needs no change to the agent.</li>
+<li><strong>Summarising at a threshold was the slowest method and scored below dropping old turns.</strong> It answered 23/29 in 29 minutes, against 25/29 in 20 minutes for window-drop and 27/29 in 15 for archive and search. One seed.</li>
 <li><strong>Archive and search at 32K beat the lossy baselines on both seeds.</strong> It had the best probe score (28/30), all 35 final answers and the best total (63/65), at 15 to 16 minutes per run. On the second seed alone it scored 36/36, against 31/36 for both window-drop and compaction. The verbatim text is still there, so “who did it” questions can be answered (9/10, against 0/10 for read mode).</li>
 <li><strong>Compaction reported old values as current on one of two seeds.</strong> On the first seed at 32K it answered the probes well (13/15), then got only 4 of 14 final questions right: six answers were values that used to be true. On the second seed it got all 21 final questions right. Why the first seed went wrong has not been established, so this is a risk seen once, not a settled pattern. Compaction also loses “who did it” details, because those live in the tool output it stubs out (4/10 at 32K, 1/10 at 16K).</li>
 <li><strong>Window-drop is honest but forgets.</strong> It answered almost nothing beyond about 25 batches back in any run: 0/5 at 16K, 0/5 at 32K, and 1/6 then 0/4 even with a 48K window.</li>
@@ -74,8 +122,9 @@
 </ul>
 </section>
 <section id="limits"><h2>Limits</h2>
-<p>One synthetic task family, one model and one machine. The distance results are two seeds, and the archive method has only one scored seed at 16K. The rule and method results are one seed; a second seed is the next run. Each cell holds a handful of questions (at 25–99 batches back, 5 over two seeds and 2 on a single seed), so a difference of one or two answers is not decisive. The 1M run is one stream on one seed, stopped before its final check, and no other method has run on that stream yet.</p>
-<p><a href="{{DP_NOTE_URL}}">Lab note with every round and the post-mortems</a> · Raw evidence: <a href="{{DP_DATA_URL}}">the first two rounds</a>, <a href="{{DP_DATA2_URL}}">the second seed and the rule questions</a>, <a href="{{DP_DATA3_URL}}">pinned rule lines and the 1M run</a> · <a href="@/results/long-context/result.json">Website measurement record</a></p>
+<p>One synthetic task family, one model and one machine. The keeper’s 240K results are two streams of that one family, and its 1,000,000-token result is one stream and one seed. The proxy has been run on this benchmark only: not yet under a real coding or research agent, not yet on the 1,000,000-token stream, and its second run has not been repeated since its defect was fixed. A plain 200K window has still not been run on the 1,000,000-token stream. The summary baseline is one seed.</p>
+<p>The distance results are two seeds, and the archive method has only one scored seed at 16K. The rule and method results for the methods other than the keeper are one seed. Each cell holds a handful of questions (at 25–99 batches back, 5 over two seeds and 2 on a single seed), so a difference of one or two answers is not decisive.</p>
+<p><a href="{{DP_NOTE_URL}}">Lab note with every round and the post-mortems</a> · Raw evidence: <a href="{{DP_DATA_URL}}">the first two rounds</a>, <a href="{{DP_DATA2_URL}}">the second seed and the rule questions</a>, <a href="{{DP_DATA3_URL}}">pinned rule lines and the first 1M run</a>, <a href="{{DP_KEEPER_DATA_URL}}">the keeper, the proxy and the summary baseline</a> · <a href="{{DP_PROXY_CODE}}">The proxy’s code</a> · <a href="@/results/long-context/result.json">Website measurement record</a></p>
 </section>
 <section id="now"><h2>What we are trying to solve now</h2>
 <p><strong>The target is an agent that works on one task for weeks or months</strong>, with 1 to 10 million tokens of history, while its live window stays capped: 200K tokens on a dedicated GPU, or 32K–48K when the GPU is shared. The model must stay fast, accurate and on goal. The model’s own arithmetic stays exact; how the history is managed may lose information, but then the loss is measured.</p>
@@ -89,10 +138,9 @@
 </ul>
 <h3>Next steps</h3>
 <ol>
-<li>Fix what the 1M run exposed: an answers file that cannot be wiped, a version history of the pinned state for “what was true at item N” questions, and a reminder of the rules at the moment a question is asked.</li>
-<li>A method that asks nothing of the agent: a sliding window whose cut turns go to the archive, with notes (rules and state) rewritten at each cut, and a search tool. This is what a serving-side proxy could do for any agent.</li>
-<li>Two baselines still missing: summarise-at-a-threshold at 32K, and a plain 200K window on the 1M stream.</li>
-<li>A second seed for the rule and method questions and for the 1M run.</li>
+<li>The proxy under a real agent on a real task.</li>
+<li>The proxy on the 1,000,000-token stream, and a plain 200K window on the same stream for comparison.</li>
+<li>A second seed on the rule stream for the methods that make the model run a routine.</li>
 <li>Engine-side levers: parking and restoring the cache on fast disk, and background re-reading on the idle GPU.</li>
 </ol>
 <p><a href="{{DP_CHARTER_URL}}">The full program charter: the problem, every idea so far and the benchmark design</a> · <a href="@/context.html#recommendations">Recommendations so far</a></p>

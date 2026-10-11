@@ -140,8 +140,9 @@ def diagnostic_replacements(root=ROOT):
 FRACTION = re.compile(r'(\d+)/(\d+)')
 DP_METHODS = {'window': 'Window-drop', 'compaction': 'Compaction', 'self_edit_read': 'Self-editing, read mode',
               'archive': 'Self-editing + archive and search', 'archive_rules': 'Archive and search + pinned rule lines',
-              'archive_free': 'Archive and search with free-text notes'}
-DP_ORDER = ['archive', 'window', 'compaction', 'self_edit_read', 'archive_rules', 'archive_free']
+              'archive_free': 'Archive and search with free-text notes', 'keeper': 'Keeper', 'keeper_proxy': 'Keeper as a proxy',
+              'summary': 'Summarise at 75% of the window'}
+DP_ORDER = ['keeper', 'keeper_proxy', 'archive', 'window', 'summary', 'compaction', 'self_edit_read', 'archive_rules', 'archive_free']
 
 
 def fraction_parts(value):
@@ -203,22 +204,77 @@ def distance_replacements(dp):
     base_rules = [fraction_parts(r['rule']) for r in rules['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
     assert len(base_rules) == 4 and tuple(map(sum, zip(*base_rules))) == (0, 20)
 
-    # The 1M run: a stopped run, so its splits are checked against the rebuilt probe total and nothing else.
+    # The keeper on the same rule-and-method stream: every row must add up to its question count.
+    keeper = dp['keeper']
+    rules_by_id = {r['id']: r for r in rules['rows']}
+
+    def rule_stream_parts(r, asked):
+        assert r['method'] in DP_METHODS, r['id']
+        parts = {k: fraction_parts(r[k]) for k in ('current', 'old_value', 'who', 'rule', 'house_method', 'final', 'total')}
+        assert tuple(map(sum, zip(*(v for k, v in parts.items() if k != 'total')))) == parts['total'] == (parts['total'][0], asked), r['id']
+        return parts
+
+    keeper_rows = []
+    assert [r['method'] for r in keeper['rows']] == ['keeper', 'keeper_proxy']
+    for r in keeper['rows'] + [rules_by_id[i] for i in keeper['compare_with']]:
+        parts = rule_stream_parts(r, 39)
+        memory = tuple(map(sum, zip(*(parts[k] for k in ('current', 'old_value', 'who')))))
+        keeper_rows.append([label(r), r['total'], f'{memory[0]}/{memory[1]}', r['rule'], r['house_method'], r['final'], r['minutes'],
+                            f"{r['lm_calls']:,}" + (' ' + r['lm_calls_note'] if r.get('lm_calls_note') else '')])
+    second = {r['method']: r for r in keeper['second_seed']}
+    assert set(second) == {'keeper', 'keeper_proxy'} and fraction_parts(second['keeper']['total'])[1] == 46
+    rule_stream_parts(second['keeper_proxy'], 46)
+    assert len(keeper['lessons']) == 3 and dp['lab_commit'] in keeper['proxy']['readme_url']
+
+    # Summarising at a threshold: one seed of the plain stream, beside the first-seed 32K runs of the other methods.
+    sb = dp['summary_baseline']
+    seed0 = {r['id']: r for r in rounds['round2']['rows'] if r['cap'] == '32K'}
+    summary_runs = [sb['row']] + [seed0[i] for i in sb['compare_with']]
+    for r in summary_runs:
+        assert r['method'] in DP_METHODS and r['seeds'] == 1, r['id']
+        types = tuple(map(sum, zip(*(fraction_parts(r[k]) for k in ('current', 'old_value', 'who')))))
+        asked, last, total = (fraction_parts(r[k]) for k in ('probes', 'final', 'total'))
+        assert types == asked and (asked[0] + last[0], asked[1] + last[1]) == total and total[1] == 29, r['id']
+    summary_runs.sort(key=lambda r: -fraction_parts(r['total'])[0])
+    summary_rows = [[label(r), r['total'], r['probes'], r['current'], r['old_value'], r['who'], final(r), r['minutes']] for r in summary_runs]
+
+    # The 1M stream. The earlier run is a stopped run: its splits are checked against the rebuilt probe total and nothing else.
     m = dp['million']
     assert m['status'].startswith('Stopped run') and m['method'] in DP_METHODS and m['limit']
     probes = fraction_parts(m['probes'])
     for split in ('by_distance', 'by_type', 'by_third'):
         assert tuple(map(sum, zip(*map(fraction_parts, m[split].values())))) == probes, split + ' does not add up'
     assert round(100 * probes[0] / probes[1]) == m['probes_percent']
+    # The keeper's run on the same stream finished and was graded, so its splits must also add up to its graded total.
+    km = keeper['million']
+    assert km['status'].startswith('Finished run') and km['method'] == 'keeper' and km['limit']
+    k_probes, k_final, k_total = (fraction_parts(km[k]) for k in ('probes', 'final', 'total'))
+    for split in ('by_distance', 'by_type', 'by_third'):
+        assert list(km[split]) == list(m[split]), split + ': the two runs are split differently'
+        assert tuple(map(sum, zip(*map(fraction_parts, km[split].values())))) == k_probes, 'keeper ' + split + ' does not add up'
+        assert all(fraction_parts(km[split][k])[1] == fraction_parts(m[split][k])[1] for k in km[split]), split + ': different questions'
+    assert (k_probes[0] + k_final[0], k_probes[1] + k_final[1]) == k_total
+    assert round(100 * k_probes[0] / k_probes[1]) == km['probes_percent'] and round(100 * k_total[0] / k_total[1]) == km['total_percent']
+    m_final = fraction_parts(m['final'])
+    assert (probes[0] + m_final[0], probes[1] + m_final[1]) == fraction_parts(m['total']) and probes[1] + m_final[1] == k_total[1]
+    k_cost = km['cost']
+    assert k_cost['lm_calls'] == k_cost['agent_calls'] + k_cost['notes_calls'] and len(k_cost['minutes_per_100k']) == 9
+    assert all(dp['lab_commit'] in url for url in km['evidence'].values())
     names = {'d1_4': 'Asked 1–4 batches back', 'd5_24': 'Asked 5–24 back', 'd25_99': 'Asked 25–99 back',
              'd100_399': 'Asked 100–399 back', 'd400_plus': 'Asked 400 or more back', 'current': 'Current-value questions',
              'who': 'Who-did-it questions', 'house_method': 'House-method questions', 'rule': 'Standing-rule questions',
              'old_value': 'Old-value questions', 'probe_items_1_10': 'First third of the run (question sets 1–10)',
              'probe_items_11_20': 'Middle third (sets 11–20)', 'probe_items_21_29': 'Last third (sets 21–29)'}
-    million_rows = ([['All planted questions', m['probes'] + ' (' + str(m['probes_percent']) + '%)']]
-                    + [[names[k], v] for split in ('by_distance', 'by_type', 'by_third') for k, v in m[split].items()]
-                    + [['Final questions', m['final'] + ' (' + m['final_note'] + ')']])
     cost = m['cost']
+    million_rows = ([['All ' + str(k_total[1]) + ' questions', km['total'] + ' (' + str(km['total_percent']) + '%)', m['total']],
+                     ['All planted questions', km['probes'] + ' (' + str(km['probes_percent']) + '%)',
+                      m['probes'] + ' (' + str(m['probes_percent']) + '%)']]
+                    + [[names[k], km[split][k], v] for split in ('by_distance', 'by_type', 'by_third') for k, v in m[split].items()]
+                    + [['Final questions', km['final'] + ' (' + km['final_note'] + ')', m['final'] + ' (' + m['final_note'] + ')'],
+                       ['Minutes', str(k_cost['minutes']), str(cost['minutes'])],
+                       ['Minutes per 100K tokens', str(k_cost['minutes_per_100k_mean']), str(cost['minutes_per_100k_mean'])],
+                       ['Model calls', f"{k_cost['lm_calls']:,}", f"{cost['lm_calls']:,}"]])
+    segments = [str(x) for x in k_cost['minutes_per_100k']]
     costs = [[label(r), f"{r['tokens_written']:,}", f"{r['lm_calls']:,}", f"{r['peak_context']:,}",
               str(r.get('recalls', '–'))] for r in rounds['round2']['rows'] if r['cap'] == '32K']
     out = {
@@ -232,8 +288,21 @@ def distance_replacements(dp):
                                 'Each seed on its own at a 32K window', 'ctx-comparison'),
         'DP_TABLE_RULES': table(['Method at 32K', 'Values, old values, who', 'Standing rule', 'House method', 'Final questions', 'All 39',
                                  'Minutes'], rule_rows, 'A rule and a method stated once at the start: questions right', 'ctx-comparison'),
-        'DP_TABLE_1M': table(['Planted questions', 'Right / asked'], million_rows,
-                             'One million tokens through a 32K window: a stopped run'),
+        'DP_TABLE_1M': table(['What was counted', label(km) + ': finished and graded', label(m) + ': stopped run'], million_rows,
+                             'One million tokens through a 32K window: the keeper and the earlier stopped run'),
+        'DP_TABLE_KEEPER': table(['Method at 32K', 'All 39', 'Values, old values, who', 'Standing rule', 'House method', 'Final questions',
+                                  'Minutes', 'Model calls'], keeper_rows, 'The keeper against the earlier methods: questions right',
+                                 'ctx-comparison ctx-fit'),
+        'DP_TABLE_SUMMARY': table(['Method at 32K', 'All 29', 'Probes right', 'Current value', 'Old value', 'Who did it', 'Final questions',
+                                   'Minutes'], summary_rows, 'Summarising at a threshold against the other methods, first seed',
+                                  'ctx-comparison ctx-fit'),
+        'DP_K1M_SEGMENTS': escape(', '.join(segments[:-1]) + ' and ' + segments[-1]),
+        'DP_K1M_GRADE': escape(km['evidence']['grade'], quote=True),
+        'DP_K1M_DETAILS': escape(km['evidence']['details'], quote=True),
+        'DP_K1M_NOTES': escape(km['evidence']['final_notes'], quote=True),
+        'DP_PROXY_README': escape(keeper['proxy']['readme_url'], quote=True),
+        'DP_PROXY_CODE': escape(keeper['proxy']['code_url'], quote=True),
+        'DP_KEEPER_DATA_URL': escape(dp['data_urls']['keeper_proxy_and_summary_baseline'], quote=True),
         'DP_1M_LIMIT': escape(m['limit']), 'DP_1M_UNANSWERED': escape(m['unanswered']),
         'DP_1M_MINUTES': str(cost['minutes']), 'DP_1M_PER_100K': str(cost['minutes_per_100k_mean']),
         'DP_1M_FIRST_200K': str(cost['first_200k_minutes']), 'DP_1M_LAST_200K': str(cost['last_200k_minutes']),
@@ -264,6 +333,12 @@ def landing_table(by_id, lme, dp):
     r2 = {r['arm']: r for r in next(x for x in dp['rounds'] if x['id'] == 'cap32-two-seeds')['rows']}
     rules = {r['arm']: r for r in dp['rules']['rows']}
     million = dp['million']
+    keeper = dp['keeper']
+    k0, x0 = keeper['rows']
+    k1 = {r['method']: r for r in keeper['second_seed']}
+    km = keeper['million']
+    seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
+    c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
     no_place = tuple(map(sum, zip(*no_place)))
     light = by_id['improved-light-121k-s0'], by_id['improved-light-121k-s1']
@@ -285,12 +360,19 @@ def landing_table(by_id, lme, dp):
          'Archive and search: ' + r2['B32ira']['total'] + ' right, ' + r2['B32ira']['minutes'].replace('-', '–') + ' min per run',
          'Window-drop: ' + r2['W32']['total'] + ', and ' + r2['W32']['d25_99'] + ' beyond 25 batches back; compaction: ' + r2['P32']['total'],
          'context-distance.html#results'],
-        ['A rule stated once at the start of a 240K history',
-         'Archive and search with pinned rule lines: ' + rules['B32iraR']['rule'] + ' rule questions, ' + rules['B32iraR']['total'] + ' overall',
-         'Four methods with no pinned place for a rule: ' + f'{no_place[0]}/{no_place[1]}' + ' rule questions', 'context-distance.html#rule'],
-        ['A 1,000,000-token history through a 32K window (stopped run, not a verified score)',
-         'Archive and search with pinned rule lines: ' + million['probes'] + ' planted questions right, '
-         + million['by_distance']['d400_plus'] + ' from 400 or more batches back', 'No other method has run on this stream yet',
+        ['Summarising at a threshold, on the first of those two histories (one seed)',
+         'Archive and search: ' + seed0['B32ira']['total'] + ' in ' + seed0['B32ira']['minutes'] + ' min',
+         'Summarising at 75% of the window: ' + c32['total'] + ' in ' + c32['minutes'] + ' min; window-drop: '
+         + seed0['W32']['total'] + ' in ' + seed0['W32']['minutes'] + ' min', 'context-distance.html#summary'],
+        ['A rule and a method stated once at the start of a 240K history (two streams)',
+         'A keeper that asks nothing of the agent: ' + k0['total'] + ' and ' + k1['keeper']['total'] + '; run as a proxy: '
+         + x0['total'] + ' and ' + k1['keeper_proxy']['total'],
+         'On the first stream, archive and search with pinned rule lines: ' + rules['B32iraR']['total'] + '; window-drop: '
+         + rules['W32']['total'] + '. Four methods with no pinned place for a rule: ' + f'{no_place[0]}/{no_place[1]}' + ' rule questions',
+         'context-distance.html#keeper'],
+        ['A 1,000,000-token history through a 32K window (one stream, one seed)',
+         'The keeper: ' + km['total'] + ' right in ' + str(km['cost']['minutes']) + ' min, graded by the task’s own checker',
+         'Archive and search with pinned rule lines: ' + million['total'] + ' in a stopped run that was not verified',
          'context-distance.html#million'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
@@ -358,6 +440,10 @@ def update(pages):
                        [[r['strategy'], r['files'], r['budget'], score(r), r['time'], r['written']] for r in measured
                         if r['task_family'] == 'ledger' and r['input_tokens'] == 121000],
                        '121K-token ledger trials, including both large-window and revised-agent seeds', 'ctx-comparison')
+    dp_keeper = d['distance_probes']['keeper']
+    assert dp_keeper['second_seed'][0]['method'] == 'keeper'
+    dp_c32 = d['distance_probes']['summary_baseline']['row']
+    dp_w32 = next(r for x in d['distance_probes']['rounds'] if x['id'] == 'round2' for r in x['rows'] if r['id'] == 'W32')
     method_rows = [
         ['Bigger active window', 'Holds more text at once. The window opened to 262K positions; longer active context slowed generation.'],
         ['Exact prefix cache', 'Reuses the unchanged start. Repeat questions began sooner; writing stayed near 89 tokens/s in the standard check.'],
@@ -365,20 +451,26 @@ def update(pages):
         ['Files, no context editing', 'Code reads saved records and keeps the totals. 24/24 in 1.9 minutes on the 121K ledger.'],
         ['Files, editing available', 'Adds permission to rewrite the conversation. 24/24 in 1.9 minutes on the 121K ledger; no edit was needed.'],
         ['CLM self-editing', 'Rewrites selected parts of the working history. Original agent: 19/24 in 64 minutes; its harness lost five delivered batches.'],
-        ['Periodic summaries', 'Replaces old history with a short account. It got 24/24 in 41 minutes; making summaries added work.'],
+        ['Periodic summaries', 'Replaces old history with a short account. It got 24/24 in 41 minutes on the 121K ledger; making summaries added work. '
+         'Over a 240K history at a 32K window it was the slowest method and scored below simply dropping old turns ('
+         + dp_c32['total'] + ' against ' + dp_w32['total'] + ', one seed).'],
         ['Revised self-editing', 'Protects incoming batches and pins the current state. 24/24 and 21/24 on two 121K runs; 24/24 on a 478K stream.'],
         ['Remove old thinking', 'Drops earlier reasoning from later calls. One ledger run repeatedly rebuilt its state and returned no answer after 2.6 hours.'],
         ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
         ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.'],
         ['Archive and search', 'Moves dropped text word for word to a searchable archive. 36/36 on the retention test in 6.1 minutes; the best score on both seeds over a 240K history at a 32K window (63/65 pooled). It needs a pinned place for rules to keep one.'],
-        ['Compaction (stub old tool output)', 'Replaces old tool output with stubs. Cheap, but it lost “who did it” details and, on one of two seeds at 32K, reported six old values as current.']]
+        ['Compaction (stub old tool output)', 'Replaces old tool output with stubs. Cheap, but it lost “who did it” details and, on one of two seeds at 32K, reported six old values as current.'],
+        ['Keeper (managed from outside the agent)', 'The agent manages nothing. Something outside it archives the oldest turns word for word, has the model rewrite a short notes block at each cut, '
+         'and repeats the rules where questions arrive. ' + dp_keeper['rows'][0]['total'] + ' and ' + dp_keeper['second_seed'][0]['total']
+         + ' on two 240K streams at a 32K window; ' + dp_keeper['million']['total'] + ' over 1,000,000 tokens (one stream).']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
     for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'), ('Suffix cache reuse (CLM paper)', 'context-reuse.html'),
                         ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
                         ('Periodic summaries', 'context-summaries.html'), ('Revised self-editing', 'context-revised-editing.html'), ('Remove old thinking', 'context-drop-thinking.html'),
                         ('Park a cache on disk', 'context-cache-parking.html'), ('Stream active cache from disk/RAM', 'context-cache-offload.html'), ('CPU text cleanup', 'context-cleanup.html'),
-                        ('Archive and search', 'context-retention.html'), ('Compaction (stub old tool output)', 'context-distance.html')]:
+                        ('Archive and search', 'context-retention.html'), ('Compaction (stub old tool output)', 'context-distance.html'),
+                        ('Keeper (managed from outside the agent)', 'context-distance.html#keeper')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     chart = chart_image('context-decode-speed', 'Observed output rate: 127 tokens per second at 8K context, 99 at 30K, 70 at 60K, 49 at 120K, 40 at 160K, 35 at 200K, 31 at 230K and 27 at 250K.',
                         'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
@@ -603,7 +695,7 @@ def update(pages):
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
         ('context-retention.html', 'Remembering what was dropped', 'An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.', 'context-methods.html'),
-        ('context-distance.html', 'Past the window: what the agent still remembers', 'A history of 240K to 1,000,000 tokens behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them, and which still follow a rule.', 'context-methods.html'),
+        ('context-distance.html', 'Past the window: what the agent still remembers', 'A history of 240K to 1,000,000 tokens behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them, which still follow a rule, and a keeper that does the managing from outside the agent.', 'context-methods.html'),
         ('context-reproduce.html', 'How to reproduce the context tests', 'The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.', None),
     ]
     for name, title, description, parent in registry:
