@@ -72,7 +72,7 @@
 <p><a href="@/context-retention.html">What this shows and how the archive works</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
 </section>
 <section id="distance"><h2>Past the window: questions by distance</h2>
-<p>A 240K-token history behind a 16K or 32K live window, with questions planted at known distances back. At 32K, archive and search answered 13/15 planted questions and all 14 final ones; window-drop answered none beyond about 25 batches back, and compaction reported six old values as current.</p>
+<p>Histories of 240K to 1,000,000 tokens behind a 16K or 32K live window, with questions planted at known distances back. At 32K over two seeds, archive and search answered 28/30 planted questions and all 35 final ones; window-drop answered 0/5 beyond about 25 batches back, and compaction reported six old values as current on one seed and none on the other. No method kept a rule stated once at the start without a pinned place for it. A 1,000,000-token run through the 32K window answered 163/203 planted questions; it was stopped before its final check, so it is not a verified score.</p>
 <p><a href="@/context-distance.html">Full tables, findings and limits</a> · <a href="{{DP_NOTE_URL}}">Lab note</a> · <a href="{{DP_DATA_URL}}">Raw evidence</a></p>
 </section>
 <details id="cleaning"><summary>CPU cleanup and reasoning history</summary>

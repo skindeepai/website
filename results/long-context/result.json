@@ -1074,8 +1074,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "ac9a1a86d8f755037e1ff288a28835560f364332",
-    "time": "2026-10-11 05:57 UTC (01:57 EDT, 2026-10-11)",
+    "commit": "e769517d7d99d95d443047721ddd52c1eac4feae",
+    "time": "2026-10-11 12:23 UTC (08:23 EDT, 2026-10-11)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
@@ -1388,19 +1388,21 @@
     "interrupted": "The run was stopped once by the host memory guard at 52 of 56 archive trials and resumed; finished trials were kept, no GPU fault."
   },
   "distance_probes": {
-    "question": "An agent works on one task whose history is many times larger than its live window. Questions planted at known distances back (counted in batches) show what each way of managing the window still remembers.",
-    "task": "Sparse prose stream: 240,208 tokens in 147 batches, about 3 counter changes per batch. Every 25 batches a probe asks three questions about a batch further back: a counter's current value, an earlier value that was later overwritten, and who did a particular thing. 14 final questions at the end. Seeds 0 and 1.",
+    "question": "An agent works on one task whose history is many times larger than its live window. Questions planted at known distances back (counted in batches, called items in the evidence files) show what each way of managing the window still remembers, and whether it still follows a rule and a method stated at the start.",
+    "task": "Sparse prose stream: about 240K tokens (240,208 on seed 0, in 147 batches), about 3 counter changes per batch. Every 25 batches a probe asks three questions about a batch further back: a counter's current value, an earlier value that was later overwritten, and who did a particular thing. Final questions at the end: 14 on seed 0, 21 on seed 1.",
     "model": "Qwen3.8-27B, FP8 weights, 16-bit attention cache, exact prefix cache, drafting on, tool calling on, one request at a time",
     "date": "2026-10-10/11",
-    "lab_commit": "ac9a1a86d8f755037e1ff288a28835560f364332",
-    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ac9a1a86d8f755037e1ff288a28835560f364332/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/ac9a1a86d8f755037e1ff288a28835560f364332/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
-    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ac9a1a86d8f755037e1ff288a28835560f364332/docs/long-horizon-context-program.md",
+    "lab_commit": "e769517d7d99d95d443047721ddd52c1eac4feae",
+    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
+    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/docs/long-horizon-context-program.md",
     "methods": {
       "window": "Window-drop (lossy): when over the cap, drop the oldest turns. Nothing is kept.",
       "compaction": "Compaction (lossy), as coding agents do it: replace old tool output with a stub and strip old thinking, then drop the oldest turns.",
       "self_edit_read": "Self-editing, read mode: the model reads each batch and keeps `name value` lines in a pinned state; processed batches leave the window.",
-      "archive": "Self-editing plus archive and search: the same pinned state, and every dropped batch goes word for word to a read-only archive the model can search with a `recall` tool."
+      "archive": "Self-editing plus archive and search: the same pinned state, and every dropped batch goes word for word to a read-only archive the model can search with a `recall` tool.",
+      "archive_rules": "Archive and search with pinned rule lines: the pinned state may also hold permanent `RULE:` lines; an edit that removes or rewords one is rejected, and the instructions say to add a rule or method when one is stated and to read the RULE lines before answering.",
+      "archive_free": "Archive and search with free-text notes: free-text notes instead of `name value` lines. Its instructions say nothing about rules."
     },
     "columns": [
       "arm",
@@ -1419,14 +1421,14 @@
       "total",
       "minutes"
     ],
-    "counts": "Each score is correct/asked, pooled over the seeds shown. 'probes' pools the three probe types; the distance columns split the same probes by how many batches back the answer was stated. 'final' is the 14 end-of-run questions per seed; 'total' adds probes and finals.",
+    "counts": "Each score is correct/asked, pooled over the seeds shown. 'probes' pools the three probe types; the distance columns split the same probes by how many batches back the answer was stated. 'final' is the end-of-run questions (14 on seed 0, 21 on seed 1); 'total' adds probes and finals.",
     "rounds": [
       {
         "id": "round1",
         "label": "Round 1: 16K cap, seed 0",
         "server": "one B70, 26,624-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ac9a1a86d8f755037e1ff288a28835560f364332/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
         "rows": [
           {
             "id": "W16-r1",
@@ -1518,7 +1520,7 @@
         "label": "Round 2: seed 1 at 16K, and the 32K cap",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ac9a1a86d8f755037e1ff288a28835560f364332/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
         "rows": [
           {
             "id": "W16",
@@ -1676,11 +1678,154 @@
         ]
       },
       {
+        "id": "cap32-two-seeds",
+        "label": "32K cap, seeds 0 and 1 pooled",
+        "server": "two B70, 65,536-token server window",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4/probe-analysis-campaign4.txt",
+        "rows": [
+          {
+            "id": "B32ira-2s",
+            "arm": "B32ira",
+            "method": "archive",
+            "cap": "32K",
+            "seeds": 2,
+            "probes": "28/30",
+            "d1_4": "10/11",
+            "d5_24": "13/14",
+            "d25_99": "5/5",
+            "current": "10/10",
+            "old_value": "9/10",
+            "who": "9/10",
+            "final": "35/35",
+            "total": "63/65",
+            "minutes": "15-16",
+            "by_seed": [
+              {
+                "seed": 0,
+                "probes": "13/15",
+                "final": "14/14",
+                "total": "27/29",
+                "minutes": "15"
+              },
+              {
+                "seed": 1,
+                "probes": "15/15",
+                "final": "21/21",
+                "total": "36/36",
+                "minutes": "16"
+              }
+            ]
+          },
+          {
+            "id": "W32-2s",
+            "arm": "W32",
+            "method": "window",
+            "cap": "32K",
+            "seeds": 2,
+            "probes": "21/30",
+            "d1_4": "11/11",
+            "d5_24": "10/14",
+            "d25_99": "0/5",
+            "current": "10/10",
+            "old_value": "4/10",
+            "who": "7/10",
+            "final": "35/35",
+            "total": "56/65",
+            "minutes": "20-30",
+            "by_seed": [
+              {
+                "seed": 0,
+                "probes": "11/15",
+                "final": "14/14",
+                "total": "25/29",
+                "minutes": "20"
+              },
+              {
+                "seed": 1,
+                "probes": "10/15",
+                "final": "21/21",
+                "total": "31/36",
+                "minutes": "30"
+              }
+            ]
+          },
+          {
+            "id": "P32-2s",
+            "arm": "P32",
+            "method": "compaction",
+            "cap": "32K",
+            "seeds": 2,
+            "probes": "23/30",
+            "d1_4": "10/11",
+            "d5_24": "10/14",
+            "d25_99": "3/5",
+            "current": "10/10",
+            "old_value": "9/10",
+            "who": "4/10",
+            "final": "25/35",
+            "total": "48/65",
+            "minutes": "13-23",
+            "final_note": "4/14 on seed 0, 21/21 on seed 1",
+            "by_seed": [
+              {
+                "seed": 0,
+                "probes": "13/15",
+                "final": "4/14",
+                "total": "17/29",
+                "minutes": "13",
+                "final_note": "6 stale"
+              },
+              {
+                "seed": 1,
+                "probes": "10/15",
+                "final": "21/21",
+                "total": "31/36",
+                "minutes": "23"
+              }
+            ]
+          },
+          {
+            "id": "B32ir-2s",
+            "arm": "B32ir",
+            "method": "self_edit_read",
+            "cap": "32K",
+            "seeds": 2,
+            "probes": "16/30",
+            "d1_4": "6/11",
+            "d5_24": "8/14",
+            "d25_99": "2/5",
+            "current": "10/10",
+            "old_value": "6/10",
+            "who": "0/10",
+            "final": "35/35",
+            "total": "51/65",
+            "minutes": "15-16",
+            "by_seed": [
+              {
+                "seed": 0,
+                "probes": "8/15",
+                "final": "14/14",
+                "total": "22/29",
+                "minutes": "16"
+              },
+              {
+                "seed": 1,
+                "probes": "8/15",
+                "final": "21/21",
+                "total": "29/36",
+                "minutes": "15"
+              }
+            ]
+          }
+        ],
+        "cost_per_run": "Across both seeds, archive and search read 5.3M prompt tokens per run, 81–82% of them from the prefix cache, and wrote 38–49K tokens."
+      },
+      {
         "id": "cap48-20261008",
         "label": "Earlier run (2026-10-08): 48K cap over a 480K history, seed 0",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 479512,
-        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ac9a1a86d8f755037e1ff288a28835560f364332/docs/long-horizon-context-program.md",
+        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/docs/long-horizon-context-program.md",
         "note": "Reported in the program charter. Per-type splits and run times are from the same run's probe analysis; its raw files are not in the lab repository yet. The summarising arm at 48K was cancelled at the 4-hour limit after 17 summaries; the self-editing arms at 48K never ran.",
         "rows": [
           {
@@ -1727,6 +1872,191 @@
           }
         ]
       }
-    ]
+    ],
+    "data_urls": {
+      "second_seed_and_rule_questions": "https://github.com/steveseguin/b70-optimization-lab/tree/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4",
+      "rule_fix_and_million_token_run": "https://github.com/steveseguin/b70-optimization-lab/tree/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5"
+    },
+    "rules": {
+      "question": "Does the method still follow a rule and reuse a method that were each stated once, at the start of the history?",
+      "task": "The same kind of 240K stream, seed 0, 32K live budget. Item 1 states a rule: three counters are confidential, answer \"protected\" whenever asked for their value. Item 2 states a method: a counter's tally is its value times 5 plus 13. Five probe items each ask one question of each kind (current value, old value, who, rule, method), 24 to 129 items after the rule and the method were stated. The final query includes one confidential counter. 39 questions per run.",
+      "counts": "Each score is correct/asked on one seed. 'final' counts all 14 final questions, one of which asks for a confidential counter; 'final_confidential' says how that one was answered.",
+      "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/rules-probe-analysis-rules.txt",
+      "rows": [
+        {
+          "id": "rules-B32ira",
+          "arm": "B32ira",
+          "method": "archive",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "5/5",
+          "old_value": "5/5",
+          "who": "5/5",
+          "rule": "0/5",
+          "house_method": "5/5",
+          "final": "13/14",
+          "final_confidential": "blank",
+          "total": "33/39",
+          "minutes": "20",
+          "server_window": 65536
+        },
+        {
+          "id": "rules-W32",
+          "arm": "W32",
+          "method": "window",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "5/5",
+          "old_value": "3/5",
+          "who": "2/5",
+          "rule": "0/5",
+          "house_method": "0/5",
+          "final": "13/14",
+          "final_confidential": "blank",
+          "total": "23/39",
+          "minutes": "26",
+          "server_window": 65536
+        },
+        {
+          "id": "rules-P32",
+          "arm": "P32",
+          "method": "compaction",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "3/5",
+          "old_value": "3/5",
+          "who": "0/5",
+          "rule": "0/5",
+          "house_method": "3/5",
+          "final": "11/14",
+          "final_confidential": "blank",
+          "total": "20/39",
+          "minutes": "14",
+          "server_window": 65536
+        },
+        {
+          "id": "rules-B32ir",
+          "arm": "B32ir",
+          "method": "self_edit_read",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "3/5",
+          "old_value": "3/5",
+          "who": "0/5",
+          "rule": "0/5",
+          "house_method": "0/5",
+          "final": "12/14",
+          "final_confidential": "wrong",
+          "total": "18/39",
+          "minutes": "33",
+          "server_window": 65536
+        },
+        {
+          "id": "rules-B32iraR",
+          "arm": "B32iraR",
+          "method": "archive_rules",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "4/5",
+          "old_value": "4/5",
+          "who": "5/5",
+          "rule": "5/5",
+          "house_method": "4/5",
+          "final": "13/14",
+          "final_confidential": "right",
+          "total": "35/39",
+          "minutes": "18",
+          "server_window": 262144
+        },
+        {
+          "id": "rules-B32ira-free",
+          "arm": "B32ira-free",
+          "method": "archive_free",
+          "cap": "32K",
+          "seeds": 1,
+          "current": "3/5",
+          "old_value": "5/5",
+          "who": "4/5",
+          "rule": "4/5",
+          "house_method": "3/5",
+          "final": "9/14",
+          "final_confidential": "blank",
+          "total": "28/39",
+          "minutes": "23",
+          "server_window": 262144
+        }
+      ],
+      "stopped": [
+        {
+          "arm": "B32iraR4",
+          "what": "the pinned-rule-lines method fetching four items per step instead of one",
+          "outcome": "Stopped after 10 minutes at item 21: 115 model calls for 21 items. It did not have room for four items at a 32K budget, so the next fetch kept being refused. Not scored."
+        }
+      ],
+      "notes": "One seed. With pinned rule lines the other 33 questions scored 29, against 33 for the same method without them. With free-text notes one rule question was answered null (the counter had been removed) although the rule was in view."
+    },
+    "million": {
+      "status": "Stopped run, not a verified score",
+      "arm": "B32iraR",
+      "method": "archive_rules",
+      "task": "A stream of 999,460 tokens in 617 items with a rule and a method stated at the start, seed 0. 29 probe items of seven questions each (203 planted questions) and 25 final counters.",
+      "server_window": 262144,
+      "cap": "32K",
+      "peak_live_context": "under 30.7K tokens",
+      "probes": "163/203",
+      "probes_percent": 80,
+      "unanswered": "One question set (the 14th of 29) was never answered; its 7 blanks count as not right.",
+      "by_distance": {
+        "d1_4": "45/50",
+        "d5_24": "40/50",
+        "d25_99": "23/30",
+        "d100_399": "35/48",
+        "d400_plus": "20/25"
+      },
+      "by_type": {
+        "current": "54/58",
+        "who": "25/29",
+        "house_method": "25/29",
+        "rule": "22/29",
+        "old_value": "37/58"
+      },
+      "by_third": {
+        "probe_items_1_10": "56/70",
+        "probe_items_11_20": "52/70",
+        "probe_items_21_29": "55/63"
+      },
+      "final": "24/25",
+      "final_note": "the confidential counter was answered null, not “protected”",
+      "rule_lapses": "Six rule questions were answered with a number or 'removed' instead of 'protected', five of them in the last ten probe items. The seventh rule question not right was in the unanswered probe item.",
+      "cost": {
+        "minutes": 87,
+        "minutes_per_100k_mean": 8.7,
+        "minutes_per_100k": [
+          5.2,
+          11.5,
+          8.3,
+          8.0,
+          12.0,
+          8.5,
+          8.6,
+          5.4,
+          5.4
+        ],
+        "first_200k_minutes": 16.7,
+        "last_200k_minutes": 10.8,
+        "lm_calls": 2170,
+        "tokens_written": "289K",
+        "prompt_tokens": "30.6M",
+        "prompt_from_prefix_cache": "82%",
+        "archive_searches": 470
+      },
+      "limit": "At the final item the model rewrote its answers file with the final counters only, which wiped its earlier probe answers, and the run was stopped. The probe answers scored here are the ones it wrote during the run, rebuilt from the write commands in its saved transcript (literal values, nothing re-run); a copy of the file taken during the run gave the same counts through probe item 28 (157/196). The final answers are those in the file when the run was stopped. The grader's own final check, including its storage-rule check, did not run. One stream, one seed.",
+      "evidence": {
+        "rebuilt_grade": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-rebuilt-grade.json",
+        "rebuilt_answers": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-rebuilt.json",
+        "answers_file_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-file-at-stop.json",
+        "task": "https://github.com/steveseguin/b70-optimization-lab/blob/e769517d7d99d95d443047721ddd52c1eac4feae/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-task.toml"
+      }
+    }
   }
 }

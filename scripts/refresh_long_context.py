@@ -139,7 +139,9 @@ def diagnostic_replacements(root=ROOT):
 
 FRACTION = re.compile(r'(\d+)/(\d+)')
 DP_METHODS = {'window': 'Window-drop', 'compaction': 'Compaction', 'self_edit_read': 'Self-editing, read mode',
-              'archive': 'Self-editing + archive and search'}
+              'archive': 'Self-editing + archive and search', 'archive_rules': 'Archive and search + pinned rule lines',
+              'archive_free': 'Archive and search with free-text notes'}
+DP_ORDER = ['archive', 'window', 'compaction', 'self_edit_read', 'archive_rules', 'archive_free']
 
 
 def fraction_parts(value):
@@ -154,7 +156,8 @@ def distance_replacements(dp):
     """Tables for the distance-probe page; every row's bins must add up to its totals."""
     assert dp['lab_commit'] and all(dp[k].startswith('https://github.com/') for k in ('note_url', 'data_url', 'charter_url'))
     rounds = {r['id']: r for r in dp['rounds']}
-    assert set(rounds) == {'round1', 'round2', 'cap48-20261008'}
+    assert set(rounds) == {'round1', 'round2', 'cap32-two-seeds', 'cap48-20261008'}
+    assert all(dp['lab_commit'] in url for url in (dp['note_url'], dp['data_url'], dp['charter_url'], *dp['data_urls'].values()))
     for rnd in dp['rounds']:
         for r in rnd['rows']:
             assert r['method'] in DP_METHODS, r['id']
@@ -164,6 +167,9 @@ def distance_replacements(dp):
             for parts in (bins, types):
                 assert tuple(map(sum, zip(*parts))) == probes, r['id'] + ': probe split does not add up'
             assert (probes[0] + final[0], probes[1] + final[1]) == total, r['id'] + ': total does not add up'
+            for key in ('probes', 'final', 'total') if 'by_seed' in r else ():
+                parts = [fraction_parts(x[key]) for x in r['by_seed']]
+                assert tuple(map(sum, zip(*parts))) == fraction_parts(r[key]), r['id'] + ': seeds do not add up to the pooled ' + key
 
     def label(r):
         return DP_METHODS[r['method']] + ' (' + r['arm'] + ')'
@@ -177,8 +183,42 @@ def distance_replacements(dp):
                 for r in items]
     head = ['Method', 'Window', 'Seeds', 'Probes right', '1–4 back', '5–24 back', '25–99 back']
     tail = ['Current value', 'Old value', 'Who did it', 'Final questions', 'All', 'Minutes per run']
-    r2 = rounds['round2']['rows']
-    r2 = [r for r in r2 if r['cap'] == '32K'] + [r for r in r2 if r['cap'] == '16K']
+    by_method = lambda r: DP_ORDER.index(r['method'])
+    pooled = sorted(rounds['cap32-two-seeds']['rows'], key=by_method)
+    r2 = pooled + sorted((r for r in rounds['round2']['rows'] if r['cap'] == '16K'), key=by_method)
+    seed_rows = [[label(r), str(x['seed']), x['probes'], x['final'] + (' (' + x['final_note'] + ')' if x.get('final_note') else ''),
+                  x['total'], x['minutes']] for r in pooled for x in r['by_seed']]
+
+    # A rule and a method stated once at the start: every row must add up to its 39 questions.
+    rules = dp['rules']
+    rule_rows = []
+    for r in sorted(rules['rows'], key=by_method):
+        assert r['method'] in DP_METHODS and r['final_confidential'] in ('blank', 'wrong', 'right'), r['id']
+        parts = {k: fraction_parts(r[k]) for k in ('current', 'old_value', 'who', 'rule', 'house_method', 'final', 'total')}
+        assert tuple(map(sum, zip(*(v for k, v in parts.items() if k != 'total')))) == parts['total'] and parts['total'][1] == 39, r['id']
+        memory = tuple(map(sum, zip(*(parts[k] for k in ('current', 'old_value', 'who')))))
+        confidential = {'blank': 'confidential one left blank', 'wrong': 'confidential one wrong', 'right': 'confidential one right'}
+        rule_rows.append([label(r), f'{memory[0]}/{memory[1]}', r['rule'], r['house_method'],
+                          r['final'] + ' (' + confidential[r['final_confidential']] + ')', r['total'], r['minutes']])
+    base_rules = [fraction_parts(r['rule']) for r in rules['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
+    assert len(base_rules) == 4 and tuple(map(sum, zip(*base_rules))) == (0, 20)
+
+    # The 1M run: a stopped run, so its splits are checked against the rebuilt probe total and nothing else.
+    m = dp['million']
+    assert m['status'].startswith('Stopped run') and m['method'] in DP_METHODS and m['limit']
+    probes = fraction_parts(m['probes'])
+    for split in ('by_distance', 'by_type', 'by_third'):
+        assert tuple(map(sum, zip(*map(fraction_parts, m[split].values())))) == probes, split + ' does not add up'
+    assert round(100 * probes[0] / probes[1]) == m['probes_percent']
+    names = {'d1_4': 'Asked 1–4 batches back', 'd5_24': 'Asked 5–24 back', 'd25_99': 'Asked 25–99 back',
+             'd100_399': 'Asked 100–399 back', 'd400_plus': 'Asked 400 or more back', 'current': 'Current-value questions',
+             'who': 'Who-did-it questions', 'house_method': 'House-method questions', 'rule': 'Standing-rule questions',
+             'old_value': 'Old-value questions', 'probe_items_1_10': 'First third of the run (question sets 1–10)',
+             'probe_items_11_20': 'Middle third (sets 11–20)', 'probe_items_21_29': 'Last third (sets 21–29)'}
+    million_rows = ([['All planted questions', m['probes'] + ' (' + str(m['probes_percent']) + '%)']]
+                    + [[names[k], v] for split in ('by_distance', 'by_type', 'by_third') for k, v in m[split].items()]
+                    + [['Final questions', m['final'] + ' (' + m['final_note'] + ')']])
+    cost = m['cost']
     costs = [[label(r), f"{r['tokens_written']:,}", f"{r['lm_calls']:,}", f"{r['peak_context']:,}",
               str(r.get('recalls', '–'))] for r in rounds['round2']['rows'] if r['cap'] == '32K']
     out = {
@@ -188,6 +228,26 @@ def distance_replacements(dp):
                               'Earlier run: 48K window over a 480K history', 'ctx-comparison'),
         'DP_COST_TABLE': table(['Method at 32K', 'Tokens written', 'Model calls', 'Peak live context', 'Archive searches'], costs,
                                'Cost of one 32K run', 'ctx-comparison'),
+        'DP_TABLE_SEEDS': table(['Method at 32K', 'Seed', 'Probes right', 'Final questions', 'All', 'Minutes'], seed_rows,
+                                'Each seed on its own at a 32K window', 'ctx-comparison'),
+        'DP_TABLE_RULES': table(['Method at 32K', 'Values, old values, who', 'Standing rule', 'House method', 'Final questions', 'All 39',
+                                 'Minutes'], rule_rows, 'A rule and a method stated once at the start: questions right', 'ctx-comparison'),
+        'DP_TABLE_1M': table(['Planted questions', 'Right / asked'], million_rows,
+                             'One million tokens through a 32K window: a stopped run'),
+        'DP_1M_LIMIT': escape(m['limit']), 'DP_1M_UNANSWERED': escape(m['unanswered']),
+        'DP_1M_MINUTES': str(cost['minutes']), 'DP_1M_PER_100K': str(cost['minutes_per_100k_mean']),
+        'DP_1M_FIRST_200K': str(cost['first_200k_minutes']), 'DP_1M_LAST_200K': str(cost['last_200k_minutes']),
+        'DP_1M_CALLS': f"{cost['lm_calls']:,}", 'DP_1M_WRITTEN': escape(cost['tokens_written']),
+        'DP_1M_PROMPT': escape(cost['prompt_tokens']), 'DP_1M_CACHED': escape(cost['prompt_from_prefix_cache']),
+        'DP_1M_SEARCHES': str(cost['archive_searches']), 'DP_1M_PEAK': escape(m['peak_live_context']),
+        'DP_1M_GRADE': escape(m['evidence']['rebuilt_grade'], quote=True),
+        'DP_1M_ANSWERS': escape(m['evidence']['rebuilt_answers'], quote=True),
+        'DP_1M_AT_STOP': escape(m['evidence']['answers_file_at_stop'], quote=True),
+        'DP_RULES_ANALYSIS': escape(rules['analysis_url'], quote=True),
+        'DP_SEEDS_ANALYSIS': escape(rounds['cap32-two-seeds']['analysis_url'], quote=True),
+        'DP_DATA2_URL': escape(dp['data_urls']['second_seed_and_rule_questions'], quote=True),
+        'DP_DATA3_URL': escape(dp['data_urls']['rule_fix_and_million_token_run'], quote=True),
+        'DP_SEEDS_COST': escape(rounds['cap32-two-seeds']['cost_per_run']),
         'DP_NOTE_URL': escape(dp['note_url'], quote=True), 'DP_DATA_URL': escape(dp['data_url'], quote=True),
         'DP_CHARTER_URL': escape(dp['charter_url'], quote=True),
         'DP_R1_ANALYSIS': escape(rounds['round1']['analysis_url'], quote=True),
@@ -201,7 +261,11 @@ def distance_replacements(dp):
 def landing_table(by_id, lme, dp):
     """One row per question the lab has asked so far, newest last; every number comes from the record."""
     lme_rows = {r['id']: r for r in lme['rows']}
-    r2 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows']}
+    r2 = {r['arm']: r for r in next(x for x in dp['rounds'] if x['id'] == 'cap32-two-seeds')['rows']}
+    rules = {r['arm']: r for r in dp['rules']['rows']}
+    million = dp['million']
+    no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
+    no_place = tuple(map(sum, zip(*no_place)))
     light = by_id['improved-light-121k-s0'], by_id['improved-light-121k-s1']
     rows = [
         ['A 121K ledger of counter updates', 'Files and code: ' + score(by_id['files-plain']) + ' in ' + by_id['files-plain']['time'],
@@ -217,9 +281,17 @@ def landing_table(by_id, lme, dp):
          'Whole history in one call: ' + f"{lme_rows['lme-whole']['right']}/{lme_rows['lme-whole']['asked']}"
          + '; archive and search at 32K: ' + f"{lme_rows['lme-archive']['right']}/{lme_rows['lme-archive']['asked']}",
          'Summaries: stopped at ' + f"{lme_rows['lme-summary']['right']}/{lme_rows['lme-summary']['asked']}", 'context-retention.html#longmemeval'],
-        ['A 240K history behind a 32K window, questions planted at known distances',
-         'Archive and search: ' + r2['B32ira']['probes'] + ' probes, ' + r2['B32ira']['final'] + ' final, ' + r2['B32ira']['minutes'] + ' min',
-         'Window-drop: ' + r2['W32']['d25_99'] + ' beyond 25 batches back; compaction: ' + r2['P32']['final'] + ' final', 'context-distance.html'],
+        ['A 240K history behind a 32K window, questions planted at known distances (two seeds)',
+         'Archive and search: ' + r2['B32ira']['total'] + ' right, ' + r2['B32ira']['minutes'].replace('-', '–') + ' min per run',
+         'Window-drop: ' + r2['W32']['total'] + ', and ' + r2['W32']['d25_99'] + ' beyond 25 batches back; compaction: ' + r2['P32']['total'],
+         'context-distance.html#results'],
+        ['A rule stated once at the start of a 240K history',
+         'Archive and search with pinned rule lines: ' + rules['B32iraR']['rule'] + ' rule questions, ' + rules['B32iraR']['total'] + ' overall',
+         'Four methods with no pinned place for a rule: ' + f'{no_place[0]}/{no_place[1]}' + ' rule questions', 'context-distance.html#rule'],
+        ['A 1,000,000-token history through a 32K window (stopped run, not a verified score)',
+         'Archive and search with pinned rule lines: ' + million['probes'] + ' planted questions right, '
+         + million['by_distance']['d400_plus'] + ' from 400 or more batches back', 'No other method has run on this stream yet',
+         'context-distance.html#million'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
     for r in rows:
@@ -299,8 +371,8 @@ def update(pages):
         ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
         ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.'],
-        ['Archive and search', 'Moves dropped text word for word to a searchable archive. 36/36 on the retention test in 6.1 minutes; the only method above the lossy baselines on every question type over a 240K history at a 32K window.'],
-        ['Compaction (stub old tool output)', 'Replaces old tool output with stubs. Cheap, but it lost “who did it” details and, at 32K, reported six old values as current.']]
+        ['Archive and search', 'Moves dropped text word for word to a searchable archive. 36/36 on the retention test in 6.1 minutes; the best score on both seeds over a 240K history at a 32K window (63/65 pooled). It needs a pinned place for rules to keep one.'],
+        ['Compaction (stub old tool output)', 'Replaces old tool output with stubs. Cheap, but it lost “who did it” details and, on one of two seeds at 32K, reported six old values as current.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
     for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'), ('Suffix cache reuse (CLM paper)', 'context-reuse.html'),
                         ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
@@ -531,7 +603,7 @@ def update(pages):
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
         ('context-retention.html', 'Remembering what was dropped', 'An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.', 'context-methods.html'),
-        ('context-distance.html', 'Past the window: what the agent still remembers', 'A 240K-token history behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them.', 'context-methods.html'),
+        ('context-distance.html', 'Past the window: what the agent still remembers', 'A history of 240K to 1,000,000 tokens behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them, and which still follow a rule.', 'context-methods.html'),
         ('context-reproduce.html', 'How to reproduce the context tests', 'The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.', None),
     ]
     for name, title, description, parent in registry:

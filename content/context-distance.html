@@ -1,68 +1,99 @@
-<p><strong>Short answer: keeping old text word for word in a searchable archive, beside a small pinned state, was the only method that stayed above the simple baselines on every kind of question at a 32K window. It was also among the quickest: 15 minutes per run, against 13 to 20 for the others.</strong> Methods that only drop or compress old text forgot what lay more than about 25 batches back, or reported old values as if they were still current.</p>
-<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#question">The question</a><a href="#methods">Four methods</a><a href="#results">Results</a><a href="#findings">What it shows</a><a href="#limits">Limits</a><a href="#now">What we are solving now</a></nav>
+<p><strong>Short answer: keeping old text word for word in a searchable archive, beside a small pinned state, was the most accurate method at a 32K window on both seeds: 63 of 65 questions right, against 48 to 56 for the others, in 15 to 16 minutes per run.</strong> No method kept a rule that was stated once at the start, until the pinned state had a permanent place for rules. With that place added, the same method read a 1,000,000-token history through the 32K window and answered 163 of 203 planted questions, with no drop for questions far back. That long run was stopped before its final check, so it is not yet a verified score.</p>
+<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#question">The question</a><a href="#methods">Methods</a><a href="#results">Results by distance</a><a href="#rule">Keeping a rule</a><a href="#million">One million tokens</a><a href="#findings">What it shows</a><a href="#limits">Limits</a><a href="#now">What we are solving now</a></nav>
 <section id="question"><h2>The question</h2>
-<p>An agent that works on one task for a long time builds up far more history than its live window can hold. Something has to leave the window. What can the agent still answer about things that happened long ago?</p>
-<p>The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> read a 240K-token stream of short stories in 147 batches, with about three counter changes per batch. Its live window was capped at <strong>16K or 32K tokens</strong>, so the history was 7 to 15 times larger than what it could see at once. Every 25 batches it was asked three questions about a batch a known distance back:</p>
+<p>An agent that works on one task for a long time builds up far more history than its live window can hold. Something has to leave the window. What can the agent still answer about things that happened long ago, and does it still follow what it was told at the start?</p>
+<p>The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> read a 240K-token stream of short stories in batches (147 on the first seed), with about three counter changes per batch. Its live window was capped at <strong>16K or 32K tokens</strong>, so the history was 7 to 15 times larger than what it could see at once. Every 25 batches it was asked three questions about a batch a known distance back:</p>
 <ul class="ctx-read-next">
 <li><strong>Current value:</strong> what a counter is now.</li>
 <li><strong>Old value:</strong> what a counter was before it was overwritten.</li>
 <li><strong>Who did it:</strong> a small detail that only appeared once, in the story text.</li>
 </ul>
-<p>At the end it answered 14 final questions about the current state. Distance is counted in batches back from the question.</p>
+<p>At the end it answered final questions about the current state: 14 on the first seed, 21 on the second. Distance is counted in batches back from the question. The evidence files call each delivery an item and count distance in items.</p>
+<p>A second version of the stream opens with two more things to remember: a <strong>standing rule</strong> (three counters are confidential; answer “protected” whenever asked for their value) and a <strong>house method</strong> (on the 240K stream, a counter’s tally is its value times 5 plus 13). Later question sets ask about both. <a href="#rule">Results for the rule and the method</a>.</p>
 </section>
-<section id="methods"><h2>Four ways to manage the window</h2>
+<section id="methods"><h2>Ways to manage the window</h2>
+<p>Four methods ran the distance tests. Two variants of the archive method were added for the rule questions.</p>
 <dl class="ctx-definitions">
 <dt>Window-drop</dt><dd>When the window is full, the oldest turns are dropped. Nothing is kept. This is the simplest baseline, and it is lossy.</dd>
 <dt>Compaction</dt><dd>What coding agents commonly do: old tool output is replaced with a short stub and old thinking is removed, then the oldest turns go. Also lossy. Called D or P in the evidence files.</dd>
 <dt>Self-editing, read mode</dt><dd>The model reads each batch and keeps <code>name value</code> lines in a pinned state at the top; processed batches leave the window. <a href="@/context-revised-editing.html">How self-editing with a protected state works</a>.</dd>
 <dt>Self-editing + archive and search</dt><dd>The same pinned state, and every batch that leaves the window goes word for word to a read-only archive. A <code>recall</code> tool searches it. <a href="@/context-retention.html">How the archive works</a>.</dd>
+<dt>Archive and search + pinned rule lines</dt><dd>The archive method with one change: the pinned state may also hold permanent <code>RULE:</code> lines. An edit that removes or rewords one is rejected. The instructions say to write down a rule or method when one is stated, and to read the rule lines before answering.</dd>
+<dt>Archive and search with free-text notes</dt><dd>The archive method with free-text notes in place of the <code>name value</code> lines. Its instructions say nothing about rules.</dd>
 </dl>
 </section>
-<section id="results"><h2>Results</h2>
-<p>Each score is right/asked. The distance columns split the same probe questions by how far back the answer was stated; the type columns split them by question type. At 16K the scores are pooled over two seeds, except where noted. The 32K rows are one seed each.</p>
+<section id="results"><h2>Results by distance</h2>
+<p>Each score is right/asked. The distance columns split the same probe questions by how far back the answer was stated; the type columns split them by question type. Scores are pooled over two seeds, except the archive method at 16K, which has one scored seed.</p>
 {{DP_TABLE_ROUND2}}
-<p class="ctx-table-note">Second round: two B70 GPUs, server window 65,536 tokens, exact prefix cache, one run at a time. {{DP_VOID_NOTE}} <a href="{{DP_R2_ANALYSIS}}">Probe analysis for this table</a>.</p>
+<p class="ctx-table-note">All 32K runs and the second 16K seed: two B70 GPUs, server window 65,536 tokens, exact prefix cache, one run at a time. Compaction’s final score at 32K differs by seed: 4/14 on the first, 21/21 on the second. The archive method at 16K has one scored seed. {{DP_VOID_NOTE}} <a href="{{DP_SEEDS_ANALYSIS}}">Probe analysis for the 32K rows</a> · <a href="{{DP_R2_ANALYSIS}}">for the 16K rows</a>.</p>
+<details><summary>Each seed on its own at 32K</summary>
+{{DP_TABLE_SEEDS}}
+<p>On the second seed the archive method answered everything (36/36) in 16 minutes. Window-drop and compaction each scored 31/36, in 30 and 23 minutes.</p></details>
 <details><summary>First round: 16K window, seed 0, one GPU</summary>
 {{DP_TABLE_ROUND1}}
 <p>One B70 GPU with a 26,624-token server window. These seed-0 runs are included in the pooled 16K rows above. <a href="{{DP_R1_ANALYSIS}}">Probe analysis for this table</a>.</p></details>
 <details><summary>Cost of the 32K runs</summary>
 {{DP_COST_TABLE}}
-<p>The archive method wrote the fewest tokens of the 32K methods and searched its archive 20 times, with one rollback.</p></details>
+<p>First seed. The archive method wrote the fewest tokens of the 32K methods and searched its archive 20 times, with one rollback. {{DP_SEEDS_COST}}</p></details>
 <details><summary>Earlier run: 48K window over a 480K history (2026-10-08)</summary>
 {{DP_TABLE_48K}}
 <p>{{DP_48K_NOTE}} <a href="{{DP_CHARTER_URL}}">Program charter</a>.</p></details>
 </section>
+<section id="rule"><h2>Keeping a rule and a method</h2>
+<p><strong>No method kept a rule that was stated once at the start.</strong> This 240K stream opened with the standing rule and the house method. Five later question sets each added one rule question and one method question to the usual three, 24 to 129 batches after the rule and the method were stated. One of the 14 final questions asked for a confidential counter. That makes 39 questions per run.</p>
+{{DP_TABLE_RULES}}
+<p class="ctx-table-note">One seed at a 32K window, so each cell is a handful of questions. The first four methods ran with a 65,536-token server window and the two variants with 262,144; the live window was 32K for all. <a href="{{DP_RULES_ANALYSIS}}">Probe analysis for this table</a>.</p>
+<ul class="ctx-read-next">
+<li><strong>The best memory method failed the rule as completely as the worst.</strong> None of the first four methods answered a single rule question the way the rule required (0 of 20), and all four missed the confidential counter at the end.</li>
+<li><strong>Why the archive method lost it.</strong> The model noticed the rule when it read the first batch, but its pinned state only accepts <code>name value</code> lines, so the rule had nowhere to stay in view. A question about a confidential counter looks like any other value question, so nothing prompted a search. It kept the house method (5/5) only because those questions name the method, which sends the model to the archive.</li>
+<li><strong>A pinned place for rules fixes it.</strong> With permanent <code>RULE:</code> lines in the pinned state and one sentence telling the model to read them before answering, all five rule questions and the confidential final question were right. It was not free on this run: four bookkeeping answers were lost (29 of the other 33 questions, against 33 of 33 without the rule lines).</li>
+<li><strong>Free-text notes kept the rule without being told to, but not reliably.</strong> They scored 4 of 5: one rule question got the plain answer although the rule was in view, and the confidential final question was left blank. They also kept the books worse (9 of 14 final questions).</li>
+<li><strong>Fetching four batches per step was not a way to go faster.</strong> At 32K it ran out of room and was stopped after 115 model calls for 21 batches. It is not scored.</li>
+</ul>
+</section>
+<section id="million"><h2>One million tokens through a 32K window</h2>
+<p>The archive method with pinned rule lines then read a 1,000,000-token stream, 31 times its live window, on one seed. The stream arrived as 617 items: batches of stories, with the rule and the method stated at the start and 29 question sets of seven questions each planted along the way. 25 final questions came at the end. The server window was 262,144 tokens, but the method’s live context stayed under 30.7K.</p>
+<p><strong>Read this as a stopped run, not a verified score.</strong> At the last item the model rewrote its answers file with only the final answers, which wiped the answers it had given to the planted questions, and the run was stopped there. The planted-question scores below use the answers it wrote during the run, rebuilt from the write commands in the saved transcript: literal values only, nothing re-run. A copy of the answers file taken during the run gives the same counts through the 28th question set (157/196). The final-question score uses the file as it stood at the stop. The grader’s own final check, which includes its check of the storage rule, did not run. One stream, one seed.</p>
+{{DP_TABLE_1M}}
+<p class="ctx-table-note">Stopped run; the answers were rebuilt as described above. {{DP_1M_UNANSWERED}} <a href="{{DP_1M_GRADE}}">The rebuilt answers, graded</a> · <a href="{{DP_1M_ANSWERS}}">the rebuilt answers</a> · <a href="{{DP_1M_AT_STOP}}">the answers file at the stop</a>.</p>
+<ul class="ctx-read-next">
+<li><strong>Accuracy did not fall as the history grew to 31 times the live window.</strong> Questions 400 or more batches back were answered as well (20/25) as questions 5–24 back (40/50), and the last third of the run was the best (55/63).</li>
+<li><strong>Speed stayed flat.</strong> The stream took {{DP_1M_MINUTES}} minutes: {{DP_1M_PER_100K}} minutes per 100K tokens on average, with the last 200K taking {{DP_1M_LAST_200K}} minutes against {{DP_1M_FIRST_200K}} for the first 200K. That was {{DP_1M_CALLS}} model calls, {{DP_1M_WRITTEN}} tokens written, {{DP_1M_SEARCHES}} archive searches and {{DP_1M_PROMPT}} prompt tokens, {{DP_1M_CACHED}} of them from the prefix cache.</li>
+<li><strong>Weak spot: old values.</strong> “What value did X hold at the end of item N” scored 37/58. To answer, the model has to replay every archived sentence about X.</li>
+<li><strong>Weak spot: a pinned rule can lapse in use.</strong> The rule stayed pinned in view the whole time. Yet of the 28 rule questions the model answered, 6 did not apply it (5 of them in the last ten question sets), and it was missed again in the final questions.</li>
+</ul>
+</section>
 <section id="findings"><h2>What it shows</h2>
 <ul class="ctx-read-next">
-<li><strong>Archive and search at 32K is the first method above the lossy baselines on every axis at once.</strong> It had the best probe score (13/15), all 14 final answers, the best total (27/29), and at 15 minutes it beat window-drop and read mode. Only compaction finished sooner (13 minutes), with far worse final answers. The verbatim text is still there, so “who did it” questions can be answered.</li>
-<li><strong>Compaction that keeps old state visible reports stale values as current.</strong> At 32K it answered the probes well (13/15), then got only 4 of 14 final questions right: six answers were values that used to be true. It also loses “who did it” details, because those live in the tool output it stubs out (1/10 at 16K).</li>
-<li><strong>Window-drop is honest but forgets.</strong> It answered nothing correctly beyond about 25 batches back in any run: 0/5 at 16K, 0/2 at 32K, and 1/6 then 0/4 even with a 48K window.</li>
+<li><strong>Archive and search at 32K beat the lossy baselines on both seeds.</strong> It had the best probe score (28/30), all 35 final answers and the best total (63/65), at 15 to 16 minutes per run. On the second seed alone it scored 36/36, against 31/36 for both window-drop and compaction. The verbatim text is still there, so “who did it” questions can be answered (9/10, against 0/10 for read mode).</li>
+<li><strong>Compaction reported old values as current on one of two seeds.</strong> On the first seed at 32K it answered the probes well (13/15), then got only 4 of 14 final questions right: six answers were values that used to be true. On the second seed it got all 21 final questions right. Why the first seed went wrong has not been established, so this is a risk seen once, not a settled pattern. Compaction also loses “who did it” details, because those live in the tool output it stubs out (4/10 at 32K, 1/10 at 16K).</li>
+<li><strong>Window-drop is honest but forgets.</strong> It answered almost nothing beyond about 25 batches back in any run: 0/5 at 16K, 0/5 at 32K, and 1/6 then 0/4 even with a 48K window.</li>
 <li><strong>16K starves the methods that work inside the window.</strong> With the batch, the state, the instructions and room to think all inside 16K, the self-editing read mode fell to 9/30. The archive method had no room either: the harness refused to fetch the next batch 121 times and refused to fold old batches 35 times, so old values stuck (8/14 final). That was lack of room, not a fault in how recalled text was written back. At 32K neither failure appeared.</li>
-<li><strong>Speed did not degrade as history grew.</strong> Every method took about 4–10 minutes per 100K tokens of history, in both the first and second half of the stream.</li>
-<li><strong>End-of-run questions alone do not separate methods.</strong> At 16K three methods answered every final question while scoring 4/15 to 10/15 on the probes. They mostly ask about state that is still in view.</li>
+<li><strong>Speed did not degrade as history grew, with one exception.</strong> In the first 240K runs every method took about 4–10 minutes per 100K tokens of history in both halves of the stream. On the rule stream the archive method held at 8.5 then 7.9 minutes per 100K, while window-drop slowed from 7.9 to 12.6.</li>
+<li><strong>End-of-run questions alone do not separate methods.</strong> At 32K three of the four methods answered all 35 final questions while scoring from 16/30 to 28/30 on the probes. Final questions mostly ask about state that is still in view.</li>
 </ul>
 </section>
 <section id="limits"><h2>Limits</h2>
-<p>The 32K results are one seed; the 16K results are two seeds, and the archive method has only one valid 16K seed. Each distance bin holds few questions (as few as 2 at 25–99 batches back), so a difference of one or two answers is not decisive. One synthetic task family, one model and one machine. The stream reached 240K tokens, not the millions this program is aimed at.</p>
-<p><a href="{{DP_NOTE_URL}}">Lab note with both rounds and the post-mortem</a> · <a href="{{DP_DATA_URL}}">Raw evidence: checks, logs, probe analyses and server settings</a> · <a href="@/results/long-context/result.json">Website measurement record</a></p>
+<p>One synthetic task family, one model and one machine. The distance results are two seeds, and the archive method has only one scored seed at 16K. The rule and method results are one seed; a second seed is the next run. Each cell holds a handful of questions (at 25–99 batches back, 5 over two seeds and 2 on a single seed), so a difference of one or two answers is not decisive. The 1M run is one stream on one seed, stopped before its final check, and no other method has run on that stream yet.</p>
+<p><a href="{{DP_NOTE_URL}}">Lab note with every round and the post-mortems</a> · Raw evidence: <a href="{{DP_DATA_URL}}">the first two rounds</a>, <a href="{{DP_DATA2_URL}}">the second seed and the rule questions</a>, <a href="{{DP_DATA3_URL}}">pinned rule lines and the 1M run</a> · <a href="@/results/long-context/result.json">Website measurement record</a></p>
 </section>
 <section id="now"><h2>What we are trying to solve now</h2>
 <p><strong>The target is an agent that works on one task for weeks or months</strong>, with 1 to 10 million tokens of history, while its live window stays capped: 200K tokens on a dedicated GPU, or 32K–48K when the GPU is shared. The model must stay fast, accurate and on goal. The model’s own arithmetic stays exact; how the history is managed may lose information, but then the loss is measured.</p>
 <h3>Why the model limits the options</h3>
 <p>Qwen3.8-27B is a hybrid. Most of its layers carry a running summary state forward instead of keeping one entry per past token. That state cannot have a piece cut out of the middle. The exact operations are: add new text at the end, or roll back to a saved checkpoint and read everything after it again. Cutting a block out of the middle of an ordinary attention cache is only approximate too: the later entries were computed while looking at the removed text. So an exact edit in the middle means rolling back and re-reading the tail, which the second, idle GPU could do between turns.</p>
-<h3>How the next tests will measure it</h3>
+<h3>How the tests measure it</h3>
 <ul class="ctx-read-next">
-<li>Probe families at 1–4, 5–24, 25–99, 100–399 and 400+ batches back: current values, overwritten values, small details, updated facts and questions the history cannot answer.</li>
-<li>A rule stated at the start that must still hold at the end, and a procedure learned early that must be reused late.</li>
-<li>A compaction-count axis: force a set number of compactions and plot accuracy against it.</li>
+<li>In use now: questions planted 1–4, 5–24, 25–99, 100–399 and 400 or more batches back, asking for current values, overwritten values, small details, a rule stated at the start and a method learned early.</li>
+<li>Still to add: facts that are updated later, questions the history cannot answer, and a compaction-count axis (force a set number of compactions and plot accuracy against it).</li>
 <li>Costs for every method: time per 100K tokens of history, tokens spent on management, peak window and cache reuse.</li>
 </ul>
 <h3>Next steps</h3>
 <ol>
-<li>A second seed at 32K for all four methods.</li>
-<li>Harden the archive method for small windows: limit how much one search returns, tell the model how to free room instead of refusing again, and answer with what it has when steps run out.</li>
-<li>Add the rule-adherence and procedure-reuse questions.</li>
-<li>Measure saving and restoring the attention cache from fast disk for recalled batches, so recalled text need not be read again from scratch.</li>
+<li>Fix what the 1M run exposed: an answers file that cannot be wiped, a version history of the pinned state for “what was true at item N” questions, and a reminder of the rules at the moment a question is asked.</li>
+<li>A method that asks nothing of the agent: a sliding window whose cut turns go to the archive, with notes (rules and state) rewritten at each cut, and a search tool. This is what a serving-side proxy could do for any agent.</li>
+<li>Two baselines still missing: summarise-at-a-threshold at 32K, and a plain 200K window on the 1M stream.</li>
+<li>A second seed for the rule and method questions and for the 1M run.</li>
+<li>Engine-side levers: parking and restoring the cache on fast disk, and background re-reading on the idle GPU.</li>
 </ol>
 <p><a href="{{DP_CHARTER_URL}}">The full program charter: the problem, every idea so far and the benchmark design</a> · <a href="@/context.html#recommendations">Recommendations so far</a></p>
 </section>
