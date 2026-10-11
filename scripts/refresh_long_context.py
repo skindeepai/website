@@ -137,6 +137,96 @@ def diagnostic_replacements(root=ROOT):
             'BOOKKEEPING_SOURCES': ' · '.join(sources)}
 
 
+FRACTION = re.compile(r'(\d+)/(\d+)')
+DP_METHODS = {'window': 'Window-drop', 'compaction': 'Compaction', 'self_edit_read': 'Self-editing, read mode',
+              'archive': 'Self-editing + archive and search'}
+
+
+def fraction_parts(value):
+    m = FRACTION.fullmatch(value)
+    assert m, value
+    c, n = int(m[1]), int(m[2])
+    assert 0 <= c <= n and n > 0, value
+    return c, n
+
+
+def distance_replacements(dp):
+    """Tables for the distance-probe page; every row's bins must add up to its totals."""
+    assert dp['lab_commit'] and all(dp[k].startswith('https://github.com/') for k in ('note_url', 'data_url', 'charter_url'))
+    rounds = {r['id']: r for r in dp['rounds']}
+    assert set(rounds) == {'round1', 'round2', 'cap48-20261008'}
+    for rnd in dp['rounds']:
+        for r in rnd['rows']:
+            assert r['method'] in DP_METHODS, r['id']
+            bins = [fraction_parts(r[k]) for k in ('d1_4', 'd5_24', 'd25_99', 'd100_399') if k in r]
+            types = [fraction_parts(r[k]) for k in ('current', 'old_value', 'who')]
+            probes, final, total = (fraction_parts(r[k]) for k in ('probes', 'final', 'total'))
+            for parts in (bins, types):
+                assert tuple(map(sum, zip(*parts))) == probes, r['id'] + ': probe split does not add up'
+            assert (probes[0] + final[0], probes[1] + final[1]) == total, r['id'] + ': total does not add up'
+
+    def label(r):
+        return DP_METHODS[r['method']] + ' (' + r['arm'] + ')'
+
+    def final(r):
+        return r['final'] + (' (' + r['final_note'] + ')' if r.get('final_note') else '')
+
+    def rows(items, far=False):
+        return [[label(r), r['cap'], str(r['seeds']), r['probes'], r['d1_4'], r['d5_24'], r['d25_99'],
+                 *([r['d100_399']] if far else []), r['current'], r['old_value'], r['who'], final(r), r['total'], r['minutes']]
+                for r in items]
+    head = ['Method', 'Window', 'Seeds', 'Probes right', '1–4 back', '5–24 back', '25–99 back']
+    tail = ['Current value', 'Old value', 'Who did it', 'Final questions', 'All', 'Minutes per run']
+    r2 = rounds['round2']['rows']
+    r2 = [r for r in r2 if r['cap'] == '32K'] + [r for r in r2 if r['cap'] == '16K']
+    costs = [[label(r), f"{r['tokens_written']:,}", f"{r['lm_calls']:,}", f"{r['peak_context']:,}",
+              str(r.get('recalls', '–'))] for r in rounds['round2']['rows'] if r['cap'] == '32K']
+    out = {
+        'DP_TABLE_ROUND2': table(head + tail, rows(r2), 'Questions right by distance back and by type, 16K and 32K windows', 'ctx-comparison'),
+        'DP_TABLE_ROUND1': table(head + tail, rows(rounds['round1']['rows']), 'First round: 16K window, seed 0, one GPU', 'ctx-comparison'),
+        'DP_TABLE_48K': table(head + ['100–399 back'] + tail, rows(rounds['cap48-20261008']['rows'], True),
+                              'Earlier run: 48K window over a 480K history', 'ctx-comparison'),
+        'DP_COST_TABLE': table(['Method at 32K', 'Tokens written', 'Model calls', 'Peak live context', 'Archive searches'], costs,
+                               'Cost of one 32K run', 'ctx-comparison'),
+        'DP_NOTE_URL': escape(dp['note_url'], quote=True), 'DP_DATA_URL': escape(dp['data_url'], quote=True),
+        'DP_CHARTER_URL': escape(dp['charter_url'], quote=True),
+        'DP_R1_ANALYSIS': escape(rounds['round1']['analysis_url'], quote=True),
+        'DP_R2_ANALYSIS': escape(rounds['round2']['analysis_url'], quote=True),
+        'DP_48K_NOTE': escape(rounds['cap48-20261008']['note']),
+        'DP_VOID_NOTE': escape(next(r['note'] for r in rounds['round2']['rows'] if r['id'] == 'B16ira')),
+    }
+    return out
+
+
+def landing_table(by_id, lme, dp):
+    """One row per question the lab has asked so far, newest last; every number comes from the record."""
+    lme_rows = {r['id']: r for r in lme['rows']}
+    r2 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows']}
+    light = by_id['improved-light-121k-s0'], by_id['improved-light-121k-s1']
+    rows = [
+        ['A 121K ledger of counter updates', 'Files and code: ' + score(by_id['files-plain']) + ' in ' + by_id['files-plain']['time'],
+         'Summaries: ' + score(by_id['summary']) + ' in ' + by_id['summary']['time'], 'context-files-code.html'],
+        ['The same ledger, no files allowed', 'Self-editing, thinking only when needed: ' + score(light[0]) + ' and ' + score(light[1])
+         + ' in ' + light[0]['time'] + ' and ' + light[1]['time'],
+         'Original CLM agent: ' + score(by_id['paper']) + ' in ' + by_id['paper']['time'], 'context-revised-editing.html'],
+        ['A million-token story read through a 32K budget', 'Quoted events: ' + score(by_id['quoted-1m']) + ' in ' + by_id['quoted-1m']['time'],
+         'Read mode: ' + score(by_id['read-improved-1m']) + ' in ' + by_id['read-improved-1m']['time'], 'context-results.html#reading'],
+        ['Questions about text that was dropped (119K)', 'Archive and search: ' + score(by_id['ret-archive-119k']) + ' in ' + by_id['ret-archive-119k']['time'],
+         'Summaries: ' + score(by_id['ret-summary-119k']) + ' in ' + by_id['ret-summary-119k']['time'], 'context-retention.html'],
+        ['A public chat-memory benchmark (LongMemEval, 56 questions)',
+         'Whole history in one call: ' + f"{lme_rows['lme-whole']['right']}/{lme_rows['lme-whole']['asked']}"
+         + '; archive and search at 32K: ' + f"{lme_rows['lme-archive']['right']}/{lme_rows['lme-archive']['asked']}",
+         'Summaries: stopped at ' + f"{lme_rows['lme-summary']['right']}/{lme_rows['lme-summary']['asked']}", 'context-retention.html#longmemeval'],
+        ['A 240K history behind a 32K window, questions planted at known distances',
+         'Archive and search: ' + r2['B32ira']['probes'] + ' probes, ' + r2['B32ira']['final'] + ' final, ' + r2['B32ira']['minutes'] + ' min',
+         'Window-drop: ' + r2['W32']['d25_99'] + ' beyond 25 batches back; compaction: ' + r2['P32']['final'] + ' final', 'context-distance.html'],
+    ]
+    html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
+    for r in rows:
+        html = html.replace('<th scope="row">' + escape(r[0]) + '</th>', '<th scope="row">' + link('@/' + r[3], r[0]) + '</th>', 1)
+    return html
+
+
 def update(pages):
     d = json.loads((ROOT / DATA).read_text(encoding='utf-8'))
     d, trial_manifest = load_published(d)
@@ -208,12 +298,15 @@ def update(pages):
         ['Remove old thinking', 'Drops earlier reasoning from later calls. One ledger run repeatedly rebuilt its state and returned no answer after 2.6 hours.'],
         ['Park a cache on disk', 'Saves an inactive session for later restoration. Save/restore takes time; not benchmarked here.'],
         ['Stream active cache from disk/RAM', 'Trades repeated transfers or CPU work for capacity. Requires engine support; not benchmarked here.'],
-        ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.']]
+        ['CPU text cleanup', 'Removes repetition and formatting noise. Conservative cleanup reduced tokens by 1.83%.'],
+        ['Archive and search', 'Moves dropped text word for word to a searchable archive. 36/36 on the retention test in 6.1 minutes; the only method above the lossy baselines on every question type over a 240K history at a 32K window.'],
+        ['Compaction (stub old tool output)', 'Replaces old tool output with stubs. Cheap, but it lost “who did it” details and, at 32K, reported six old values as current.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
     for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'), ('Suffix cache reuse (CLM paper)', 'context-reuse.html'),
                         ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
                         ('Periodic summaries', 'context-summaries.html'), ('Revised self-editing', 'context-revised-editing.html'), ('Remove old thinking', 'context-drop-thinking.html'),
-                        ('Park a cache on disk', 'context-cache-parking.html'), ('Stream active cache from disk/RAM', 'context-cache-offload.html'), ('CPU text cleanup', 'context-cleanup.html')]:
+                        ('Park a cache on disk', 'context-cache-parking.html'), ('Stream active cache from disk/RAM', 'context-cache-offload.html'), ('CPU text cleanup', 'context-cleanup.html'),
+                        ('Archive and search', 'context-retention.html'), ('Compaction (stub old tool output)', 'context-distance.html')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     chart = chart_image('context-decode-speed', 'Observed output rate: 127 tokens per second at 8K context, 99 at 30K, 70 at 60K, 49 at 120K, 40 at 160K, 35 at 200K, 31 at 230K and 27 at 250K.',
                         'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
@@ -316,6 +409,8 @@ def update(pages):
         replacements['LME_LOSES_' + k.upper()] = escape(v)
     replacements['LME_STOPPED'] = escape(lme['rows'][2]['stopped'])
     replacements['LME_INTERRUPTED'] = escape(lme['interrupted'])
+    replacements.update(distance_replacements(d['distance_probes']))
+    replacements['LANDING_TABLE'] = landing_table(by_id, lme, d['distance_probes'])
     replacements['READING_TABLE'] = table(
         ['Trial', 'Files', 'Correct', 'Time', 'Tokens generated'],
         [[r['strategy'], r['files'], score(r), r['time'], r['written']]
@@ -436,6 +531,7 @@ def update(pages):
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
         ('context-retention.html', 'Remembering what was dropped', 'An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.', 'context-methods.html'),
+        ('context-distance.html', 'Past the window: what the agent still remembers', 'A 240K-token history behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them.', 'context-methods.html'),
         ('context-reproduce.html', 'How to reproduce the context tests', 'The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.', None),
     ]
     for name, title, description, parent in registry:

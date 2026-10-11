@@ -1,17 +1,35 @@
-<p>How can an AI finish a long job when its working memory is limited? The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> processed a stream of ledger updates, then answered <strong>24 questions about the final totals</strong>.</p>
+<p>How can an AI keep working on one long job when its history no longer fits in its working memory? The same <a href="@/context-model-choice.html">Qwen3.8-27B model</a> ran each test below; within a test, every approach answered the same questions.</p>
+<p><strong>The most reliable approach so far keeps a small, pinned state in view and moves old text, word for word, to an archive the model can search.</strong> Approaches that only drop or summarise old text forget the distant past, or report old values as current.</p>
+{{LANDING_TABLE}}
+<p class="ctx-table-note">Each row is a different task; compare within a row, not across rows. Times are for a whole run on one or two Intel Arc Pro B70 GPUs.</p>
+<section id="recommendations"><h2>Recommendations</h2>
+<p>What we would do today when building an agent whose history outgrows its window:</p>
+<ol>
+<li><strong>Keep the rules and the goal pinned at the top</strong> of the context, so no clean-up step can remove them. <a href="{{DP_CHARTER_URL}}">Outside studies</a> found that a pinned head was the only compaction that kept rules intact.</li>
+<li><strong>Put shared instructions in the system message</strong> and keep them unchanged, so the prefix cache can reuse them: a repeated 30K prompt started answering in 0.8 seconds instead of 11.4. <a href="@/context-prefix-cache.html">How prefix caching works</a>.</li>
+<li><strong>Never summarise a summary.</strong> Outside studies find each round drifts further from the original, and summarising was the slowest method we ran. Keep the originals. <a href="@/context-summaries.html">What summaries keep and lose</a>.</li>
+<li><strong>Drop tool output whose effect already lives in the environment, but keep the verbatim text searchable</strong> in an archive with a search tool. Dropping it outright lost every “who did it” detail. <a href="@/context-distance.html#findings">Archive and search versus compaction</a>.</li>
+<li><strong>Give a method that edits inside the window at least 32K tokens of room.</strong> At 16K the batch, the state, the instructions and the thinking did not fit, and accuracy collapsed.</li>
+<li><strong>Measure with questions planted at known distances back, not only end-of-run questions.</strong> Final-question scores alone hide stale state: one method scored 13/15 on the planted questions and then 4/14 on the final ones. <a href="@/context-distance.html#results">The distance tables</a>.</li>
+</ol>
+</section>
+<h2>What we are trying to solve now</h2>
+<p>An agent that works on one task for weeks, with millions of tokens of history behind a capped live window, and stays fast and on goal. The next tests add rules that must still hold at the end, procedures learned early, and a second seed at 32K. <a href="@/context-distance.html#now">The problem, the model’s limits and the plan</a>.</p>
+<details><summary>The first ledger comparison (121K tokens, 24 final questions)</summary>
 <p>CLM edits the model’s next prompt. Files keep records outside it for tools to read. <a href="@/context-clm-vs-files.html">How the approaches differ</a>.</p>
 {{OVERVIEW_TABLE}}
-<p>Files let the model keep a small working context while code maintained the totals. Both file-using approaches finished in <strong>1.9 minutes with all 24 answers right</strong>.</p>
 <p class="ctx-table-note">The stream contained 121K tokens; the file-using runs held under 9K at once. The large-window runs used two versions of the ledger; its second run filled the window before answering. <a href="@/context-results.html#comparison">Full comparison, including the 478K stream</a>.</p>
+</details>
 <h2>Other ways to handle more context</h2>
 {{OVERVIEW_OTHER_TABLE}}
 <h2>The practical difference</h2>
-<p><strong>Files store the records. Active context is what the model can use right now.</strong> In these tests, that active numerical state stayed in GPU memory. <a href="@/context-model-tools.html">How tools bring saved information into the next prompt</a>.</p>
+<p><strong>Files and archives store the records. Active context is what the model can use right now.</strong> In these tests, that active numerical state stayed in GPU memory. <a href="@/context-model-tools.html">How tools bring saved information into the next prompt</a>.</p>
 <ul class="ctx-read-next">
+  <li><a href="@/context-distance.html">Past the window: what the agent still remembers</a></li>
+  <li><a href="@/context-retention.html">Remembering what was dropped</a></li>
   <li><a href="@/context-methods.html">Compare the approaches</a></li>
   <li><a href="@/context-memory.html">Can disk replace missing GPU memory?</a></li>
   <li><a href="@/context-questions.html">Common questions, in plain language</a></li>
-  <li><a href="@/context-retention.html">Remembering what was dropped</a></li>
   <li><a href="@/context-results.html">All measurements and original research</a></li>
   <li><a href="@/context-reproduce.html">How to reproduce</a></li>
 </ul>

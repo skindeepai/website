@@ -1,5 +1,5 @@
 <p><strong>Files completed the ledger fastest. Caching shortened the wait before an answer. Longer active context slowed generation.</strong></p>
-<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Ledger tasks</a><a href="#bookkeeping">Bookkeeping checks</a><a href="#reading">Narrative reading</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#retention">Retention</a><a href="#sources">Original research</a><a href="@/context-reproduce.html">Reproduce</a></nav>
+<nav class="ctx-jumps" aria-label="Results sections"><a href="#comparison">Ledger tasks</a><a href="#bookkeeping">Bookkeeping checks</a><a href="#reading">Narrative reading</a><a href="#window">Speed by length</a><a href="#recall">Recall</a><a href="#cache">Prefix cache</a><a href="#retention">Retention</a><a href="#distance">Past the window</a><a href="#sources">Original research</a><a href="@/context-reproduce.html">Reproduce</a></nav>
 <section id="comparison"><h2>Completing a long task</h2>
 <p>Each approach used Qwen3.8-27B on two B70 GPUs. A synthetic ledger delivered 20 batches totaling about 121K input tokens. Updates set, add to or delete roughly 160 counters; accompanying memos were irrelevant. The final question asked for 24 current values. Each batch could be fetched only once. Large-window and revised self-editing arms used seeds 0 and 1; other 121K arms used seed 0. <a href="@/context-model-tools.html#prompts">Model setup and task prompts</a>.</p>
 {{TASK_CHART}}
@@ -70,6 +70,10 @@
 <p>These two trials used different harness revisions. Seed 0 is the rerun with the final questions pinned in context; its earlier attempt lost those questions. The question counts shown below come from each trial’s grader.</p>
 {{QUOTED_RETENTION_TABLE}}
 <p><a href="@/context-retention.html">What this shows and how the archive works</a> · <a href="@/context-reproduce.html">How to reproduce</a></p>
+</section>
+<section id="distance"><h2>Past the window: questions by distance</h2>
+<p>A 240K-token history behind a 16K or 32K live window, with questions planted at known distances back. At 32K, archive and search answered 13/15 planted questions and all 14 final ones; window-drop answered none beyond about 25 batches back, and compaction reported six old values as current.</p>
+<p><a href="@/context-distance.html">Full tables, findings and limits</a> · <a href="{{DP_NOTE_URL}}">Lab note</a> · <a href="{{DP_DATA_URL}}">Raw evidence</a></p>
 </section>
 <details id="cleaning"><summary>CPU cleanup and reasoning history</summary>
 {{CLEANING_TABLE}}
