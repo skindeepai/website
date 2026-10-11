@@ -1074,8 +1074,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "26b3b389d042f29e3cdbd96445a69cca7fabaa4d",
-    "time": "2026-10-11 18:06 UTC (14:06 EDT, 2026-10-11)",
+    "commit": "a1059407cac83695e65e3c33e2596e2d97b32449",
+    "time": "2026-10-11 20:41 UTC (16:41 EDT, 2026-10-11)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
@@ -1392,10 +1392,10 @@
     "task": "Sparse prose stream: about 240K tokens (240,208 on seed 0, in 147 batches), about 3 counter changes per batch. Every 25 batches a probe asks three questions about a batch further back: a counter's current value, an earlier value that was later overwritten, and who did a particular thing. Final questions at the end: 14 on seed 0, 21 on seed 1.",
     "model": "Qwen3.8-27B, FP8 weights, 16-bit attention cache, exact prefix cache, drafting on, tool calling on, one request at a time",
     "date": "2026-10-10/11",
-    "lab_commit": "26b3b389d042f29e3cdbd96445a69cca7fabaa4d",
-    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
-    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/docs/long-horizon-context-program.md",
+    "lab_commit": "a1059407cac83695e65e3c33e2596e2d97b32449",
+    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
+    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/docs/long-horizon-context-program.md",
     "methods": {
       "window": "Window-drop (lossy): when over the cap, drop the oldest turns. Nothing is kept.",
       "compaction": "Compaction (lossy), as coding agents do it: replace old tool output with a stub and strip old thinking, then drop the oldest turns.",
@@ -1431,7 +1431,7 @@
         "label": "Round 1: 16K cap, seed 0",
         "server": "one B70, 26,624-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
         "rows": [
           {
             "id": "W16-r1",
@@ -1523,7 +1523,7 @@
         "label": "Round 2: seed 1 at 16K, and the 32K cap",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
         "rows": [
           {
             "id": "W16",
@@ -1684,7 +1684,7 @@
         "id": "cap32-two-seeds",
         "label": "32K cap, seeds 0 and 1 pooled",
         "server": "two B70, 65,536-token server window",
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4/probe-analysis-campaign4.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4/probe-analysis-campaign4.txt",
         "rows": [
           {
             "id": "B32ira-2s",
@@ -1828,7 +1828,7 @@
         "label": "Earlier run (2026-10-08): 48K cap over a 480K history, seed 0",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 479512,
-        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/docs/long-horizon-context-program.md",
+        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/docs/long-horizon-context-program.md",
         "note": "Reported in the program charter. Per-type splits and run times are from the same run's probe analysis; its raw files are not in the lab repository yet. The summarising arm at 48K was cancelled at the 4-hour limit after 17 summaries; the self-editing arms at 48K never ran.",
         "rows": [
           {
@@ -1877,15 +1877,15 @@
       }
     ],
     "data_urls": {
-      "second_seed_and_rule_questions": "https://github.com/steveseguin/b70-optimization-lab/tree/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4",
-      "rule_fix_and_million_token_run": "https://github.com/steveseguin/b70-optimization-lab/tree/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5",
-      "keeper_proxy_and_summary_baseline": "https://github.com/steveseguin/b70-optimization-lab/tree/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper"
+      "second_seed_and_rule_questions": "https://github.com/steveseguin/b70-optimization-lab/tree/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4",
+      "rule_fix_and_million_token_run": "https://github.com/steveseguin/b70-optimization-lab/tree/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5",
+      "keeper_proxy_and_summary_baseline": "https://github.com/steveseguin/b70-optimization-lab/tree/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper"
     },
     "rules": {
       "question": "Does the method still follow a rule and reuse a method that were each stated once, at the start of the history?",
       "task": "The same kind of 240K stream, seed 0, 32K live budget. Item 1 states a rule: three counters are confidential, answer \"protected\" whenever asked for their value. Item 2 states a method: a counter's tally is its value times 5 plus 13. Five probe items each ask one question of each kind (current value, old value, who, rule, method), 24 to 129 items after the rule and the method were stated. The final query includes one confidential counter. 39 questions per run.",
       "counts": "Each score is correct/asked on one seed. 'final' counts all 14 final questions, one of which asks for a confidential counter; 'final_confidential' says how that one was answered.",
-      "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/rules-probe-analysis-rules.txt",
+      "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/rules-probe-analysis-rules.txt",
       "rows": [
         {
           "id": "rules-B32ira",
@@ -2034,6 +2034,7 @@
       },
       "final": "24/25",
       "final_note": "the confidential counter was answered null, not “protected”",
+      "final_confidential": "null",
       "rule_lapses": "Six rule questions were answered with a number or 'removed' instead of 'protected', five of them in the last ten probe items. The seventh rule question not right was in the unanswered probe item.",
       "cost": {
         "minutes": 87,
@@ -2059,10 +2060,10 @@
       },
       "limit": "At the final item the model rewrote its answers file with the final counters only, which wiped its earlier probe answers, and the run was stopped. The probe answers scored here are the ones it wrote during the run, rebuilt from the write commands in its saved transcript (literal values, nothing re-run); a copy of the file taken during the run gave the same counts through probe item 28 (157/196). The final answers are those in the file when the run was stopped. The grader's own final check, including its storage-rule check, did not run. One stream, one seed.",
       "evidence": {
-        "rebuilt_grade": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-rebuilt-grade.json",
-        "rebuilt_answers": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-rebuilt.json",
-        "answers_file_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-file-at-stop.json",
-        "task": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-task.toml"
+        "rebuilt_grade": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-rebuilt-grade.json",
+        "rebuilt_answers": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-rebuilt.json",
+        "answers_file_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-file-at-stop.json",
+        "task": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-task.toml"
       },
       "total": "187/228",
       "total_note": "planted questions plus final questions; a stopped run with rebuilt answers"
@@ -2100,8 +2101,8 @@
     },
     "keeper": {
       "question": "Can something outside the agent manage the context, so that the agent itself runs no routine?",
-      "task": "The rule-and-method stream of the rules section: about 240K tokens through a 32K live window. 39 questions on seed 0; 46 on seed 1, which has a different rule, method and set of stories.",
-      "counts": "Each score is correct/asked on one run. Model calls for the harness keeper include its note-taking calls; for the proxy they are the calls the agent made.",
+      "task": "The rule-and-method stream of the rules section: about 240K tokens through a 32K live window. 39 questions on seed 0; 46 on seed 1, which has a different rule, method and set of stories. The million entries are the 999,460-token stream.",
+      "counts": "Each score is correct/asked on one run. Model calls for the harness keeper include its note-taking calls; for the proxy they are the calls the agent made. The proxy rows are its runs after its fixes (arm X32b); its two runs before them (arm X32) are under proxy.before_fixes.",
       "server_window": 262144,
       "rows": [
         {
@@ -2126,35 +2127,28 @@
           "status": "Finished, storage rule passed"
         },
         {
-          "id": "keeper-X32-s0",
-          "arm": "X32",
+          "id": "keeper-X32b-s0",
+          "arm": "X32b",
           "method": "keeper_proxy",
           "cap": "32K",
           "seed": 0,
-          "current": "4/5",
+          "current": "5/5",
           "old_value": "5/5",
           "who": "5/5",
           "rule": "5/5",
           "house_method": "5/5",
-          "final": "13/14",
-          "total": "37/39",
-          "minutes": "21",
-          "lm_calls": 154,
-          "lm_calls_note": "by the agent",
+          "final": "14/14",
+          "total": "39/39",
+          "minutes": "17",
           "cuts": 22,
-          "notes_calls": 22,
-          "notes_calls_rejected": 0,
-          "messages_archived": 276,
-          "archive_searches": 12,
-          "rules_put_back": 0,
-          "host_memory": "25 MiB",
-          "misses": "Both misses are one counter: its current value three items back at the last question set, and the same counter in the final questions.",
-          "status": "Finished, storage rule passed; nothing was written in the task sandbox"
+          "notes_calls_accepted": 22,
+          "archive_searches": 7,
+          "before_fixes": "37/39 in 21 minutes",
+          "status": "Finished, storage rule passed"
         }
       ],
       "compare_with": [
         "rules-B32iraR",
-        "rules-B32ira",
         "rules-W32"
       ],
       "second_seed": [
@@ -2171,23 +2165,26 @@
           "status": "Finished, storage rule passed"
         },
         {
-          "id": "keeper-X32-s1",
-          "arm": "X32",
+          "id": "keeper-X32b-s1",
+          "arm": "X32b",
           "method": "keeper_proxy",
           "cap": "32K",
           "seed": 1,
-          "current": "4/5",
+          "current": "5/5",
           "old_value": "5/5",
           "who": "3/5",
           "rule": "5/5",
           "house_method": "5/5",
-          "final": "20/21",
-          "total": "42/46",
-          "minutes": "47",
-          "notes_calls": 24,
-          "notes_calls_rejected": 10,
-          "archive_searches": 68,
-          "defect": "10 of the 24 note-taking calls were rejected, all after the 14th cut: that call ran at a higher reasoning effort than the others inside a 4,096-token cap and ran out of room. Fixed in the proxy after this run: the call uses the same effort and has 8,192 tokens, and a rejected reply is asked for again without thinking. Not re-run since.",
+          "final": "21/21",
+          "total": "44/46",
+          "minutes": "18",
+          "cuts": 22,
+          "notes_calls_accepted": 22,
+          "notes_calls_rejected": 0,
+          "archive_searches": 18,
+          "rules_put_back": 0,
+          "misses": "Both misses are who-did-it questions, one of them 2 items back.",
+          "before_fixes": "42/46 in 47 minutes, with 10 of 24 note-taking calls rejected and 68 archive searches",
           "status": "Finished, storage rule passed"
         }
       ],
@@ -2214,9 +2211,130 @@
         }
       ],
       "proxy": {
-        "readme_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/tools/ctxkeeper/README.md",
-        "code_url": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/tools/ctxkeeper/ctxkeeper.py",
-        "limit": "Run on this benchmark only: not yet under a real coding or research agent, and not yet on the 1M stream. The second run had a defect that was fixed afterwards and has not been re-run."
+        "readme_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/tools/ctxkeeper/README.md",
+        "code_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/tools/ctxkeeper/ctxkeeper.py",
+        "limit": "Run on this benchmark only: not yet under a real coding or research agent. The 1M result is one stream and one seed. One weakness the 1M run showed (reworded rule lines kept beside the restored originals) is fixed in the code and has not been run again.",
+        "before_fixes": {
+          "arm": "X32",
+          "what": "The first two runs of the proxy against the real server, before the fixes that the second run prompted.",
+          "rows": [
+            {
+              "id": "keeper-X32-s0",
+              "arm": "X32",
+              "method": "keeper_proxy",
+              "cap": "32K",
+              "seed": 0,
+              "current": "4/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "13/14",
+              "total": "37/39",
+              "minutes": "21",
+              "lm_calls": 154,
+              "lm_calls_note": "by the agent",
+              "cuts": 22,
+              "notes_calls": 22,
+              "notes_calls_rejected": 0,
+              "messages_archived": 276,
+              "archive_searches": 12,
+              "rules_put_back": 0,
+              "host_memory": "25 MiB",
+              "misses": "Both misses are one counter: its current value three items back at the last question set, and the same counter in the final questions.",
+              "status": "Finished, storage rule passed; nothing was written in the task sandbox"
+            },
+            {
+              "id": "keeper-X32-s1",
+              "arm": "X32",
+              "method": "keeper_proxy",
+              "cap": "32K",
+              "seed": 1,
+              "current": "4/5",
+              "old_value": "5/5",
+              "who": "3/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "20/21",
+              "total": "42/46",
+              "minutes": "47",
+              "notes_calls": 24,
+              "notes_calls_rejected": 10,
+              "archive_searches": 68,
+              "defect": "10 of the 24 note-taking calls were rejected, all after the 14th cut: that call ran at a higher reasoning effort than the others inside a 4,096-token cap and ran out of room. Fixed in the proxy after this run: the call uses the same effort and has 8,192 tokens, and a rejected reply is asked for again without thinking. Run again after the fixes as arm X32b: 44/46 in 18 minutes with no note-taking call rejected.",
+              "status": "Finished, storage rule passed"
+            }
+          ]
+        },
+        "after_fixes": "Arm X32b. The note-taking call sends the same reasoning effort as the other calls and has more room; a rejected notes reply is asked for again without thinking; when a turn has used up its archive searches the model is asked once more without the tool. Seed 1 went from 42/46 in 47 minutes to 44/46 in 18 with no note-taking call rejected (10 of 24 before); seed 0 from 37/39 in 21 minutes to 39/39 in 17.",
+        "million": {
+          "status": "Finished run, graded by the task's own checker; storage rule passed; nothing written in the task sandbox",
+          "arm": "X32b",
+          "method": "keeper_proxy",
+          "cap": "32K",
+          "task": "The same 999,460-token stream as the million section: 617 items, seed 0, 203 planted questions and 25 final questions.",
+          "agent": "A plain agent with no context management of its own. It sent its whole history on every call: 657 calls, 1,266 messages by the end.",
+          "total": "222/228",
+          "total_percent": 97,
+          "total_percent_one_decimal": 97.4,
+          "probes": "197/203",
+          "by_distance": {
+            "d1_4": "49/50",
+            "d5_24": "50/50",
+            "d25_99": "30/30",
+            "d100_399": "44/48",
+            "d400_plus": "24/25"
+          },
+          "by_type": {
+            "current": "58/58",
+            "who": "28/29",
+            "house_method": "27/29",
+            "rule": "28/29",
+            "old_value": "56/58"
+          },
+          "by_third": {
+            "probe_items_1_10": "70/70",
+            "probe_items_11_20": "66/70",
+            "probe_items_21_29": "61/63"
+          },
+          "final": "25/25",
+          "final_note": "the confidential one right",
+          "final_confidential": "right",
+          "against_harness_keeper": "Four answers fewer than the keeper in the harness on the same stream (226/228 in 83 minutes).",
+          "proxy_counters": {
+            "cuts": 102,
+            "notes_versions_saved": 102,
+            "notes_rejected": 0,
+            "archive_searches": 161,
+            "turns_that_hit_the_search_limit": 1,
+            "rules_put_back": 95
+          },
+          "cost": {
+            "minutes": 95,
+            "minutes_per_100k_mean": 9.5,
+            "minutes_per_100k": [
+              7.9,
+              9.6,
+              12.1,
+              9.4,
+              8.4,
+              9.1,
+              8.6,
+              8.9,
+              11.7
+            ],
+            "trend": "No trend",
+            "agent_calls": 657,
+            "messages_at_end": 1266
+          },
+          "shown_by_this_run": "The model kept rewording rule lines in its notes. The proxy restored the original each time (95 times) and kept the rewording too, so the RULES section carried near-copies. The proxy now replaces a rewording with the original line; that change was made after this run started and has not been run again.",
+          "limit": "One stream, one seed. Run on this benchmark only, not under a real coding or research agent.",
+          "evidence": {
+            "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/test-stdout.txt",
+            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/details.json",
+            "proxy_counters": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/proxy-status.json"
+          }
+        }
       },
       "million": {
         "status": "Finished run, graded by the task's own checker; storage rule passed",
@@ -2250,6 +2368,7 @@
         },
         "final": "25/25",
         "final_note": "the confidential one right",
+        "final_confidential": "right",
         "misses": "Both misses are who-did-it questions, 3 and 5 items back, in the first third of the run.",
         "archive": "609 items in the archive, all 609 word-for-word copies; nothing else written",
         "notes": {
@@ -2286,12 +2405,13 @@
         },
         "limit": "One stream, one seed: a result, not yet a replication.",
         "evidence": {
-          "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/check.txt",
-          "details": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/details.json",
-          "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/26b3b389d042f29e3cdbd96445a69cca7fabaa4d/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/notes_final.txt"
+          "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/check.txt",
+          "details": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/details.json",
+          "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/a1059407cac83695e65e3c33e2596e2d97b32449/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/notes_final.txt"
         }
       },
-      "limits": "Two streams of one synthetic task family at 240K; one model; one machine. The 1M result is one stream and one seed. The plain 200K-window baseline on the 1M stream has not been run."
+      "limits": "Two streams of one synthetic task family at 240K; one model; one machine. The 1M results, in the harness and as the proxy, are each one stream and one seed. The plain 200K-window baseline on the 1M stream has not been run.",
+      "not_run": "Not run: archive and search with pinned rule lines (B32iraR) and window-drop (W32) on the seed-1 rule stream; window-drop and the proxy before its fixes (X32) on the 1M stream."
     }
   }
 }

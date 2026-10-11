@@ -214,17 +214,21 @@ def distance_replacements(dp):
         assert tuple(map(sum, zip(*(v for k, v in parts.items() if k != 'total')))) == parts['total'] == (parts['total'][0], asked), r['id']
         return parts
 
-    keeper_rows = []
     assert [r['method'] for r in keeper['rows']] == ['keeper', 'keeper_proxy']
-    for r in keeper['rows'] + [rules_by_id[i] for i in keeper['compare_with']]:
-        parts = rule_stream_parts(r, 39)
-        memory = tuple(map(sum, zip(*(parts[k] for k in ('current', 'old_value', 'who')))))
-        keeper_rows.append([label(r), r['total'], f'{memory[0]}/{memory[1]}', r['rule'], r['house_method'], r['final'], r['minutes'],
-                            f"{r['lm_calls']:,}" + (' ' + r['lm_calls_note'] if r.get('lm_calls_note') else '')])
+    assert [r['arm'] for r in keeper['rows']] == [r['arm'] for r in keeper['second_seed']] == ['N32j', 'X32b']
+    first = {r['method']: r for r in keeper['rows']}
     second = {r['method']: r for r in keeper['second_seed']}
     assert set(second) == {'keeper', 'keeper_proxy'} and fraction_parts(second['keeper']['total'])[1] == 46
-    rule_stream_parts(second['keeper_proxy'], 46)
-    assert len(keeper['lessons']) == 3 and dp['lab_commit'] in keeper['proxy']['readme_url']
+    proxy = keeper['proxy']
+    before = {r['seed']: r for r in proxy['before_fixes']['rows']}
+    assert set(before) == {0, 1} and all(r['arm'] == proxy['before_fixes']['arm'] == 'X32' and r['method'] == 'keeper_proxy' for r in before.values())
+    compared = [rules_by_id[i] for i in keeper['compare_with']]
+    assert [r['arm'] for r in compared] == ['B32iraR', 'W32'] and keeper['not_run']
+    for r in keeper['rows'] + [before[0]] + compared:
+        rule_stream_parts(r, 39)
+    for r in (second['keeper_proxy'], before[1]):
+        rule_stream_parts(r, 46)
+    assert len(keeper['lessons']) == 3 and all(dp['lab_commit'] in proxy[k] for k in ('readme_url', 'code_url'))
 
     # Summarising at a threshold: one seed of the plain stream, beside the first-seed 32K runs of the other methods.
     sb = dp['summary_baseline']
@@ -260,21 +264,52 @@ def distance_replacements(dp):
     k_cost = km['cost']
     assert k_cost['lm_calls'] == k_cost['agent_calls'] + k_cost['notes_calls'] and len(k_cost['minutes_per_100k']) == 9
     assert all(dp['lab_commit'] in url for url in km['evidence'].values())
+    # The proxy's run on the same stream also finished and was graded: same questions, same checks.
+    xm = proxy['million']
+    assert xm['status'].startswith('Finished run') and xm['method'] == 'keeper_proxy' and xm['arm'] == first['keeper_proxy']['arm'] and xm['limit']
+    x_probes, x_final, x_total = (fraction_parts(xm[k]) for k in ('probes', 'final', 'total'))
+    for split in ('by_distance', 'by_type', 'by_third'):
+        assert list(xm[split]) == list(m[split]), split + ': the proxy run is split differently'
+        assert tuple(map(sum, zip(*map(fraction_parts, xm[split].values())))) == x_probes, 'proxy ' + split + ' does not add up'
+        assert all(fraction_parts(xm[split][k])[1] == fraction_parts(m[split][k])[1] for k in xm[split]), split + ': different questions'
+    assert (x_probes[0] + x_final[0], x_probes[1] + x_final[1]) == x_total and x_total[1] == k_total[1] and x_probes[1] == k_probes[1]
+    assert round(100 * x_total[0] / x_total[1]) == xm['total_percent'] == round(xm['total_percent_one_decimal'])
+    x_cost = xm['cost']
+    assert len(x_cost['minutes_per_100k']) == 9 and all(dp['lab_commit'] in url for url in xm['evidence'].values())
+
+    def run_cell(r):
+        return r['total'] + ' in ' + str(r['minutes']) + ' min'
+    first_asked, second_asked = fraction_parts(first['keeper']['total'])[1], fraction_parts(second['keeper']['total'])[1]
+    keeper_rows = [
+        [label(first['keeper']), run_cell(first['keeper']), run_cell(second['keeper']), km['total'] + ' in ' + str(k_cost['minutes']) + ' min'],
+        [label(first['keeper_proxy']), run_cell(first['keeper_proxy']), run_cell(second['keeper_proxy']),
+         xm['total'] + ' in ' + str(x_cost['minutes']) + ' min'],
+        [DP_METHODS['keeper_proxy'] + ', before its fixes (' + before[0]['arm'] + ')', run_cell(before[0]), run_cell(before[1]), 'Not run']]
+    for r in compared:
+        keeper_rows.append([label(r), run_cell(r), 'Not run', m['total'] + ', a stopped run' if r['arm'] == m['arm'] else 'Not run'])
     names = {'d1_4': 'Asked 1–4 batches back', 'd5_24': 'Asked 5–24 back', 'd25_99': 'Asked 25–99 back',
              'd100_399': 'Asked 100–399 back', 'd400_plus': 'Asked 400 or more back', 'current': 'Current-value questions',
              'who': 'Who-did-it questions', 'house_method': 'House-method questions', 'rule': 'Standing-rule questions',
              'old_value': 'Old-value questions', 'probe_items_1_10': 'First third of the run (question sets 1–10)',
              'probe_items_11_20': 'Middle third (sets 11–20)', 'probe_items_21_29': 'Last third (sets 21–29)'}
     cost = m['cost']
-    million_rows = ([['All ' + str(k_total[1]) + ' questions', km['total'] + ' (' + str(km['total_percent']) + '%)', m['total']],
-                     ['All planted questions', km['probes'] + ' (' + str(km['probes_percent']) + '%)',
+    # One of the final questions asks for a confidential counter; the note beside each final score must say the same thing.
+    rule_kept = {'right': 'Yes', 'null': 'No: answered null'}
+    assert all(('right' in r['final_note']) == (r['final_confidential'] == 'right') for r in (km, xm, m)) and 'null' in m['final_note']
+    million_rows = ([['All ' + str(k_total[1]) + ' questions', km['total'] + ' (' + str(km['total_percent']) + '%)',
+                      xm['total'] + ' (' + str(xm['total_percent']) + '%)', m['total']],
+                     ['All planted questions', km['probes'] + ' (' + str(km['probes_percent']) + '%)', xm['probes'],
                       m['probes'] + ' (' + str(m['probes_percent']) + '%)']]
-                    + [[names[k], km[split][k], v] for split in ('by_distance', 'by_type', 'by_third') for k, v in m[split].items()]
-                    + [['Final questions', km['final'] + ' (' + km['final_note'] + ')', m['final'] + ' (' + m['final_note'] + ')'],
-                       ['Minutes', str(k_cost['minutes']), str(cost['minutes'])],
-                       ['Minutes per 100K tokens', str(k_cost['minutes_per_100k_mean']), str(cost['minutes_per_100k_mean'])],
-                       ['Model calls', f"{k_cost['lm_calls']:,}", f"{cost['lm_calls']:,}"]])
+                    + [[names[k], km[split][k], xm[split][k], v] for split in ('by_distance', 'by_type', 'by_third') for k, v in m[split].items()]
+                    + [['Final questions', km['final'], xm['final'], m['final']],
+                       ['Rule kept in the final questions', *(rule_kept[r['final_confidential']] for r in (km, xm, m))],
+                       ['Minutes', str(k_cost['minutes']), str(x_cost['minutes']), str(cost['minutes'])],
+                       ['Minutes per 100K tokens', str(k_cost['minutes_per_100k_mean']), str(x_cost['minutes_per_100k_mean']),
+                        str(cost['minutes_per_100k_mean'])],
+                       ['Model calls', f"{k_cost['lm_calls']:,} ({k_cost['agent_calls']:,} by the agent)",
+                        f"{x_cost['agent_calls']:,} by the agent", f"{cost['lm_calls']:,}"]])
     segments = [str(x) for x in k_cost['minutes_per_100k']]
+    x_segments = [str(x) for x in x_cost['minutes_per_100k']]
     costs = [[label(r), f"{r['tokens_written']:,}", f"{r['lm_calls']:,}", f"{r['peak_context']:,}",
               str(r.get('recalls', '–'))] for r in rounds['round2']['rows'] if r['cap'] == '32K']
     out = {
@@ -288,11 +323,13 @@ def distance_replacements(dp):
                                 'Each seed on its own at a 32K window', 'ctx-comparison'),
         'DP_TABLE_RULES': table(['Method at 32K', 'Values, old values, who', 'Standing rule', 'House method', 'Final questions', 'All 39',
                                  'Minutes'], rule_rows, 'A rule and a method stated once at the start: questions right', 'ctx-comparison'),
-        'DP_TABLE_1M': table(['What was counted', label(km) + ': finished and graded', label(m) + ': stopped run'], million_rows,
-                             'One million tokens through a 32K window: the keeper and the earlier stopped run'),
-        'DP_TABLE_KEEPER': table(['Method at 32K', 'All 39', 'Values, old values, who', 'Standing rule', 'House method', 'Final questions',
-                                  'Minutes', 'Model calls'], keeper_rows, 'The keeper against the earlier methods: questions right',
-                                 'ctx-comparison ctx-fit'),
+        'DP_TABLE_1M': table(['What was counted', label(km) + ': finished and graded', label(xm) + ': finished and graded',
+                              label(m) + ': stopped run'], million_rows,
+                             'One million tokens through a 32K window: the keeper, the keeper as a proxy and the earlier stopped run'),
+        'DP_TABLE_KEEPER': table(['Method at 32K', 'First 240K stream, ' + str(first_asked) + ' questions',
+                                  'Second 240K stream, ' + str(second_asked) + ' questions',
+                                  '1,000,000-token stream, ' + str(k_total[1]) + ' questions'], keeper_rows,
+                                 'The keeper, the keeper as a proxy and two earlier methods: questions right and minutes per run'),
         'DP_TABLE_SUMMARY': table(['Method at 32K', 'All 29', 'Probes right', 'Current value', 'Old value', 'Who did it', 'Final questions',
                                    'Minutes'], summary_rows, 'Summarising at a threshold against the other methods, first seed',
                                   'ctx-comparison ctx-fit'),
@@ -300,6 +337,10 @@ def distance_replacements(dp):
         'DP_K1M_GRADE': escape(km['evidence']['grade'], quote=True),
         'DP_K1M_DETAILS': escape(km['evidence']['details'], quote=True),
         'DP_K1M_NOTES': escape(km['evidence']['final_notes'], quote=True),
+        'DP_X1M_SEGMENTS': escape(', '.join(x_segments[:-1]) + ' and ' + x_segments[-1]),
+        'DP_X1M_GRADE': escape(xm['evidence']['grade'], quote=True),
+        'DP_X1M_DETAILS': escape(xm['evidence']['details'], quote=True),
+        'DP_X1M_COUNTERS': escape(xm['evidence']['proxy_counters'], quote=True),
         'DP_PROXY_README': escape(keeper['proxy']['readme_url'], quote=True),
         'DP_PROXY_CODE': escape(keeper['proxy']['code_url'], quote=True),
         'DP_KEEPER_DATA_URL': escape(dp['data_urls']['keeper_proxy_and_summary_baseline'], quote=True),
@@ -337,6 +378,7 @@ def landing_table(by_id, lme, dp):
     k0, x0 = keeper['rows']
     k1 = {r['method']: r for r in keeper['second_seed']}
     km = keeper['million']
+    xm = keeper['proxy']['million']
     seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
     c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
@@ -371,7 +413,8 @@ def landing_table(by_id, lme, dp):
          + rules['W32']['total'] + '. Four methods with no pinned place for a rule: ' + f'{no_place[0]}/{no_place[1]}' + ' rule questions',
          'context-distance.html#keeper'],
         ['A 1,000,000-token history through a 32K window (one stream, one seed)',
-         'The keeper: ' + km['total'] + ' right in ' + str(km['cost']['minutes']) + ' min, graded by the task’s own checker',
+         'The keeper: ' + km['total'] + ' right in ' + str(km['cost']['minutes']) + ' min; run as a proxy: ' + xm['total'] + ' in '
+         + str(xm['cost']['minutes']) + ' min. Both graded by the task’s own checker',
          'Archive and search with pinned rule lines: ' + million['total'] + ' in a stopped run that was not verified',
          'context-distance.html#million'],
     ]
