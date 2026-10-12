@@ -3,6 +3,7 @@ from pathlib import Path
 from html import escape
 import json
 import re
+import build_search
 
 ROOT = Path(__file__).resolve().parents[1]
 NAV = [
@@ -32,6 +33,8 @@ def journey_markup(config, prefix):
 
 def build():
     pages = json.loads((ROOT / 'content/pages.json').read_text(encoding='utf-8'))
+    build_search.update(pages)
+    search_bodies = {}
     for name, p in pages.items():
         depth = len(Path(name).parts) - 1
         prefix = '../' * depth
@@ -40,6 +43,8 @@ def build():
             '<a ' + ('aria-current="page" ' if name == href else '') + 'href="' + url(href) + '">' + label + '</a>' for href, label in links) + '</div>' for title, links in NAV)
         body = p.get('body', '')
         if 'template' in p: body = (ROOT / p['template']).read_text(encoding='utf-8')
+        body = build_search.anchors(body)
+        search_bodies[name] = body
         for old, new in p.get('link_replacements', {}).items():
             body = body.replace('href="@/' + old + '"', 'href="@/' + new + '"')
         body = body.replace('href="@/', 'href="' + prefix).replace('src="@/', 'src="' + prefix)
@@ -73,7 +78,7 @@ def build():
 {extra_css}<link rel="stylesheet" href="{url('lab.css')}"><script src="{url('scripts/lab.js')}" defer></script>{scripts}
 </head><body class="lab-page {'demo-page' if name == 'demo.html' else 'home-page' if name == 'index.html' else ''}">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="lab-header"><a class="wordmark" href="{url('index.html')}">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">{header_note}</span></header>
+<header class="lab-header"><a class="wordmark" href="{url('index.html')}">SkinDeep<span>RESEARCH</span></a><div class="header-actions"><a class="header-search" href="{url('search.html')}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></svg>Search</a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Menu <span aria-hidden="true">☰</span></button><span class="header-note">{header_note}</span></div></header>
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation">{nav}</nav><div class="rail-note"><a href="{url('sitemap.html')}">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
 <main class="lab-main" id="main" tabindex="-1">{trail}{topline}
 <h1>{escape(p['title'])}</h1><p class="page-lead">{escape(p['description'])}</p>{context}{body}
@@ -82,6 +87,7 @@ def build():
         target = ROOT / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding='utf-8', newline='\n')
+    build_search.build(pages, search_bodies)
     urls = ['https://skindeep.ai/' + ('' if n == 'index.html' else n) for n in pages]
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join('<url><loc>' + u + '</loc></url>\n' for u in urls) + '</urlset>\n', encoding='utf-8', newline='\n')
     print(f'Built {len(pages)} static pages.')

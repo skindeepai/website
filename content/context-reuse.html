@@ -14,7 +14,7 @@
 <dt>Recurrent state</dt><dd>A fixed-size running summary that some layers update as they read. It has no separate entry per token.</dd>
 </dl></details>
 
-<section id="why-reread"><h2>Why does changing earlier text mean re-reading what follows?</h2>
+<section id="why-reread"><h2>Why earlier edits force later text to be read again</h2>
 <p><strong>The model saves notes for every piece of text it reads, but each note was written while looking at everything before it.</strong> If you change something early, every later note was made against text that no longer exists. The only exact fix is to go back to the change and read again from there.</p>
 <figure class="ctx-diagram"><svg viewBox="0 0 400 236" role="img" aria-labelledby="reuse-d1-t reuse-d1-d" style="max-width:600px"><title id="reuse-d1-t">What each part of the cache depends on</title><desc id="reuse-d1-d">Three blocks of context, A, B and C. Below them, attention-cache entries: A’s were made from A, B’s from A and B, C’s from A, B and C. Below that, one running state updated after A, after B and after C. If B is edited, A’s entries stay valid, but B’s and C’s entries and every running state after A were computed from the old B.</desc>
 <defs><pattern id="reuse-p-stale" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f8dada"/><line x1="0" y1="0" x2="0" y2="6" stroke="#b23b3b" stroke-width="1.6"/></pattern></defs>
@@ -174,7 +174,7 @@
 </details>
 </section>
 
-<section id="time-at-stake"><h2>How much time is actually at stake?</h2>
+<section id="time-at-stake"><h2>Time spent rereading</h2>
 <p><strong>In the lab’s agent runs, writing took most of the time and reading was the small part: about 7–14%.</strong> Even a perfect, free suffix reuse could remove only that slice, and most of it is new text that has to be read once under any scheme.</p>
 {{REUSE_TIME_TABLE}}
 <p class="ctx-table-note">Reading is estimated from measured cold-read speeds; writing is the remainder and includes call overhead. The thinking-reduced runs were timed as a whole, not split.</p>
@@ -189,7 +189,7 @@
 </details>
 </section>
 
-<section id="why-not"><h2>So why not do the same?</h2>
+<section id="why-not"><h2>Requirements for reuse</h2>
 <p><strong>Because it trades exact, repeatable results for a saving that is a few percent of run time here.</strong> The same benefit is available exactly for edits near the end of the context, and most of this model cannot be spliced anyway.</p>
 <ol>
 <li><strong>Exactness.</strong> The lab’s rule is that a faster path must give the same answer as the reference. SCR’s answers depend on the edit history and cannot be checked token by token. The measured prize is a few percent of a run.</li>
@@ -198,7 +198,7 @@
 </ol>
 </section>
 
-<section id="what-it-would-take"><h2>What would it take?</h2>
+<section id="what-it-would-take"><h2>Changes needed in the runtime</h2>
 <p><strong>A port of the patch, a decision about the recurrent layers, and a different way to judge results.</strong> It is possible engineering, not a setting.</p>
 <ul>
 <li><strong>Port it.</strong> SCR patches SGLang; this lab serves with vLLM. It needs a key/value block copy with position re-rotation in the attention kernels, plus a per-conversation side buffer of 64 KiB per token: about 2 GiB for 30K tokens, about 12 GiB for 200K.</li>

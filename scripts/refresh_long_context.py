@@ -799,16 +799,16 @@ def update(pages):
             '<img src="@/images/context-how-' + key + '.png" width="1200" height="360" decoding="async" alt="' + escape(alt, quote=True) + '"></picture></figure>')
 
     registry = [
-        ('context.html', 'Working past the context limit', 'Which ways of managing an AI’s memory actually helped?', None),
+        ('context.html', 'Working past the context limit', 'Compare ways to preserve facts and keep long tasks moving.', None),
         ('context-questions.html', 'Longer context, plain answers', 'Common questions about memory, disk, speed and what “unlimited” can mean.', None),
         ('context-methods.html', 'Ways to work with more context', 'A visual guide to keeper, self-editing, files and quoted events.', None),
         ('context-files.html', 'Keep records in files', 'A long task can use a small working context.', 'context-methods.html'),
         ('context-cache.html', 'Read once, reuse the unchanged start', 'Prefix caching reduces the wait before an answer; long-context generation still has a cost.', 'context-methods.html'),
-        ('context-memory.html', 'Can disk replace GPU memory?', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
+        ('context-memory.html', 'Disk and GPU memory', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
         ('context-clm.html', 'Let the model edit its own context', 'How self-editing differs from keeper, summaries and state files.', 'context-methods.html'),
         ('context-model-tools.html', 'How the model uses files', 'Follow a tool request from the GPU model to disk and back, with the actual prompt sources.', 'context-methods.html'),
-        ('context-clm-vs-files.html', 'CLM or files: what changes?', 'Compare live context editing, an automatically loaded state file and a separate archive.', 'context-methods.html'),
-        ('context-model-choice.html', 'Is the 27B model enough?', 'What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.', 'context-methods.html'),
+        ('context-clm-vs-files.html', 'CLM and external files', 'Compare live context editing, an automatically loaded state file and a separate archive.', 'context-methods.html'),
+        ('context-model-choice.html', 'Choosing a context model', 'What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.', 'context-methods.html'),
         ('context-results.html', 'Longer context: the measured results', 'Task outcomes, speed, recall and the source records behind the explanations.', None),
         ('context-large-window.html', 'Use a larger context window', 'Keep more conversation in view: how it works, its results and where it runs out.', 'context-methods.html'),
         ('context-summaries.html', 'Replace old history with a summary', 'How periodic summaries make room, what they preserve and what they can lose.', 'context-methods.html'),

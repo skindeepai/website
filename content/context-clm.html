@@ -1,6 +1,6 @@
 <p><strong>CLM gives the model an editable conversation.</strong> Here CLM means <em>Context Language Model</em>: the model can replace obsolete parts of its live transcript with useful state, rather than only appending new messages.</p>
 <p>The model here is Qwen3.8-27B. <a href="@/context-clm-vs-files.html">CLM versus files</a> explains the storage rules; <a href="@/context-model-tools.html#prompts">model setup and prompts</a> shows how the application makes each approach work.</p>
-<section id="keeper"><h2>CLM versus keeper: who does the managing?</h2>
+<section id="keeper"><h2>CLM and keeper divide the work differently</h2>
 <p><strong>CLM gives the working agent control over its context. Keeper gives that responsibility to the surrounding software.</strong> Both can use the same model. Keeper still uses a model to write notes; the working agent no longer has to choose when and how to make room.</p>
 <div class="table-scroll ctx-table ctx-versus" role="region" aria-label="CLM and keeper responsibilities" tabindex="0"><table><thead><tr><th scope="col">Aspect</th><th scope="col">CLM / self-editing</th><th scope="col">Keeper</th></tr></thead><tbody>
 <tr><th scope="row">Who acts?</th><td>The task agent requests edits.</td><td>The application makes room before the window overflows.</td></tr>
@@ -16,10 +16,10 @@
 <h2>What a CLM edit looks like</h2>
 <figure class="ctx-illustration ctx-render"><a href="@/images/context-clm-render.webp"><img src="@/images/context-clm-render.webp" width="1536" height="1024" alt="The working agent edits its live transcript, and the next model call receives the changed context." loading="lazy"></a><figcaption>Illustration: replace an obsolete passage with useful state, then continue. <a href="@/images/context-clm-render.webp">Enlarge</a>.</figcaption></figure>
 <p>For example, the agent can replace &ldquo;10 apples; add 3&rdquo; with &ldquo;apples: 13.&rdquo; That keeps the current total. To answer who added them later, it must also keep that detail or save the original passage in an archive.</p>
-<h2>How is that different from a summary or a plan file?</h2>
+<h2>Summaries, notes and live edits</h2>
 <p>A <a href="@/context-summaries.html">periodic summary</a> replaces a large portion of the conversation at a chosen threshold. <a href="@/context-self-editing.html">Original CLM</a> can make smaller, targeted edits: update a counter, delete a superseded log, or keep an exact quotation. In both cases, information removed without a saved copy is gone.</p>
 <p>An ordinary plan file lives outside the live conversation. The model sees it when the application loads it. The CLM mirror is different: an accepted edit changes the message history sent on the next call. Merely saving a transcript file does not make this happen.</p>
-<h2>What did the experiment find?</h2>
+<h2>Measured results</h2>
 <p>With external data files forbidden, the first revision was faster but only one of its two runs was fully correct. A later revision checked the update script and reduced unnecessary thinking; it answered all 24 questions on both ledger seeds in 6.6 and 5.7 minutes.</p>
 {{CLM_TIME_PLOT}}
 <details><summary>Earlier CLM runs and their scores</summary>{{CLM_RESULT_TABLE}}</details>

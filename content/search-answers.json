@@ -1,0 +1,111 @@
+[
+  {
+    "title": "CLM and keeper divide the work differently",
+    "questions": [
+      "How is CLM different from keeper?",
+      "Who decides what to remember?",
+      "Is keeper self-editing?"
+    ],
+    "answer": "CLM lets the working agent edit its own live conversation. The application reads the edited transcript into the next model call. The agent must decide what to retain while doing the task.\n\nA keeper moves that responsibility into the surrounding program: it archives exact old turns, asks the model to refresh short working notes, protects rules and makes the originals searchable. The proxy applies that policy between a client and model server. Neither approach gives the model unlimited simultaneous attention.",
+    "url": "context-clm.html#keeper",
+    "page": "Self-editing context",
+    "topic": "Longer context"
+  },
+  {
+    "title": "A small working context with searchable originals",
+    "questions": [
+      "What worked better than compaction?",
+      "How do I stop a long-running agent forgetting?",
+      "Keeper versus summary versus sliding window"
+    ],
+    "answer": "Keeping exact originals, short working notes and protected rules gave the strongest results in the synthetic long-history tests. On the first 240K-token stream, keeper and proxy each answered 39/39 questions, an archive with pinned rules 35/39, window dropping 23/39 and periodic compaction 20/39.\n\nThese are comparisons on the same stream and model, not a general ranking of agents. The proxy has not yet been tested under a real coding or research agent.",
+    "url": "context.html#comparison",
+    "page": "Longer context",
+    "topic": "Longer context"
+  },
+  {
+    "title": "How the keeper remembers",
+    "questions": [
+      "How does keeper work?",
+      "What are keeper notes?",
+      "Does the keeper save the original conversation?"
+    ],
+    "answer": "Before old turns leave the working window, the keeper archives them word for word. A separate no-tool call to the same model refreshes short notes about rules, current state and open work. The program restores omitted rules and repeats them beside questions. Search can bring selected original passages back into the live context.\n\nThe archive can grow beyond the window. Only the notes, recent turns and retrieved passages occupy the next prompt.",
+    "url": "context-distance.html#how",
+    "page": "Long-history tests",
+    "topic": "Longer context"
+  },
+  {
+    "title": "Keeper at a million tokens",
+    "questions": [
+      "Did keeper work at one million tokens?",
+      "How accurate was the memory proxy?",
+      "Did the keeper forget anything?"
+    ],
+    "answer": "On one synthetic million-token stream, the keeper answered 226 of 228 questions correctly in 83 minutes. The proxy answered 222 of 228 in 95 minutes. These are one run each, with a small working context and an external archive.\n\nThey show that this policy can continue beyond the model's window on this task. They do not establish perfect recall or performance under a real coding agent.",
+    "url": "context-distance.html#million",
+    "page": "Long-history tests",
+    "topic": "Longer context"
+  },
+  {
+    "title": "A file is a record, not automatic model memory",
+    "questions": [
+      "Does saving the transcript mean the model remembers it?",
+      "How does an agent read files?",
+      "Is a plan file the same as CLM?"
+    ],
+    "answer": "The model sees the prompt supplied in the current call. Saving a transcript or plan on disk does not automatically put its contents into that prompt. Tools must retrieve a passage, load a file or calculate a result from the records.\n\nCLM's transcript has a special role: accepted edits become the next live conversation. Revised CLM also reloads STATE.txt on every call; that text counts against the context budget. Ordinary archive files have neither behavior.",
+    "url": "context-model-tools.html#automatic",
+    "page": "The model, tools and files",
+    "topic": "Longer context"
+  },
+  {
+    "title": "Disk storage does not replace GPU working memory",
+    "questions": [
+      "Can I run 200K context with almost no VRAM?",
+      "Can the model think directly from an SSD?",
+      "Does saving a file offload the KV cache?",
+      "Can RAM replace GPU memory?"
+    ],
+    "answer": "Saving text keeps records outside the model. The active numerical state used to generate a reply still needs an execution engine and working memory. For this model, a 200,000-token attention cache is estimated at about 12.2 GiB across the two GPUs, before other state and working memory.\n\nAn offloading engine could trade transfers or CPU work for capacity, but active RAM or disk offload was not benchmarked in these runs. Reading a file between model calls is a different operation.",
+    "url": "context-memory.html#size",
+    "page": "Disk and GPU memory",
+    "topic": "Longer context"
+  },
+  {
+    "title": "Prefix caching saves repeated reading",
+    "questions": [
+      "Does caching make the model write faster?",
+      "What is prefix caching?",
+      "Why is the first token faster?"
+    ],
+    "answer": "Prefix caching reuses the numerical work for an unchanged beginning of the prompt. In the 30K-token test, a matching cached prefix reduced time to first token from about 11.4 seconds to 0.8 seconds. Writing speed stayed around 89 tokens per second.\n\nIt saves repeated reading; it does not shrink the live history or give the model more memory. A cold read still has to process the prompt, and edits limit which cached prefix can be reused.",
+    "url": "context-prefix-cache.html",
+    "page": "Prefix caching",
+    "topic": "Longer context"
+  },
+  {
+    "title": "Use code for exact bookkeeping",
+    "questions": [
+      "Which approach was fastest on the ledger?",
+      "Why were files and code faster than CLM?",
+      "Should the model calculate every update?"
+    ],
+    "answer": "In the 121K-token ledger test, files and code answered all 24 questions in about 1.9 minutes. Code maintained exact totals outside the live prompt, so the model did not need to repeatedly read and rewrite the whole ledger.\n\nThis works especially well when the task has precise update rules. It does not establish the same advantage for open-ended conversation or prose understanding, where deciding what matters is harder.",
+    "url": "context-methods.html#bookkeeping",
+    "page": "Context approaches",
+    "topic": "Longer context"
+  },
+  {
+    "title": "Summaries can lose details that later matter",
+    "questions": [
+      "Why not just summarize everything?",
+      "Is compaction lossless?",
+      "Can summaries recover forgotten details?"
+    ],
+    "answer": "A summary replaces earlier text with a shorter account. It can preserve useful state, but a summary alone cannot recover a detail it left out. Keeping the original records makes later checking possible.\n\nSummaries matched the archive on the smaller retention test, with all 36 answers correct, but took longer. Whole-history reading led on the separate 56-question chat-memory test. The best choice depends on the task and whether the original source fits comfortably.",
+    "url": "context-retention.html",
+    "page": "Remembering the right details",
+    "topic": "Longer context"
+  }
+]

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="demo.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script><script src="scripts/preference-core.js" defer></script><script src="scripts/demo.js" defer></script>
 </head><body class="lab-page demo-page">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Research menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></header>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><div class="header-actions"><a class="header-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></svg>Search</a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></div></header>
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
 <main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="preferences.html">Learning what you like</a> · <a data-journey="approach" href="how-it-works.html">How learning works</a></nav><p class="page-status">Browser demo</p>
 <h1>Teach it what you like</h1><p class="page-lead">Tap Like or Pass on the drawings. Then see what it suggests.</p><nav id="journey-links" class="next-links small" aria-label="Results and evidence"><a data-journey="results" href="preference-results.html">Preference results</a> · <a data-journey="evidence" href="docs/method.md">Detailed evidence</a></nav><p class="small">Your drawings and ratings stay on this device.</p><div class="demo-wrap">
@@ -46,13 +46,13 @@
                 <p class="keys-hint" id="rating-keys">With the drawing focused: ← pass · → like · S skip · U undo</p>
                 <p class="reveal-hint" id="rating-progress" role="status">Rate a mix of likes and passes to reveal suggestions.</p>
 
-                <details class="al-box"><summary>How examples are chosen</summary>
+                <details class="al-box"><summary id="answer-1">How examples are chosen</summary>
                     <label><input type="checkbox" id="active-toggle" checked> Mix familiar and uncertain examples</label>
                     <p>Turn this off to choose examples at random.</p></details>
             </div>
 
-            <details class="session-settings"><summary>Session tools and evaluation</summary><div class="session-tools"><label>Seed <input id="session-seed" type="number" min="0" max="4294967295" value="17"></label><button id="export-session" class="small-btn">Export session</button><label class="small-btn">Import session <input id="import-session" type="file" accept="application/json,.json"></label><label><input id="evaluation-toggle" type="checkbox"> Test predictions without teaching</label><p id="session-status" class="session-status" role="status">Use reset to start the current domain from this seed. Everything stays on this device.</p><p id="evaluation-summary" class="session-status"></p></div></details>
-<details class="model-col"><summary>What the model has learned</summary>
+            <details class="session-settings"><summary id="answer-2">Session tools and evaluation</summary><div class="session-tools"><label>Seed <input id="session-seed" type="number" min="0" max="4294967295" value="17"></label><button id="export-session" class="small-btn">Export session</button><label class="small-btn">Import session <input id="import-session" type="file" accept="application/json,.json"></label><label><input id="evaluation-toggle" type="checkbox"> Test predictions without teaching</label><p id="session-status" class="session-status" role="status">Use reset to start the current domain from this seed. Everything stays on this device.</p><p id="evaluation-summary" class="session-status"></p></div></details>
+<details class="model-col"><summary id="answer-3">What the model has learned</summary>
                 <div class="stat-row">
                     <div class="stile"><div class="v" id="stat-n">0</div><div class="l">Ratings</div></div>
                     <div class="stile"><div class="v" id="stat-likes">0 👍 · 0 👎</div><div class="l">Split</div></div>
@@ -68,7 +68,7 @@
         </section>
 
         <details class="op-section locked-section" hidden id="generate">
-            <summary>See a suggested drawing</summary>
+            <summary id="answer-4">See a suggested drawing</summary>
 
 
             <div class="op-body">
@@ -92,7 +92,7 @@
         </details>
 
         <details class="op-section locked-section" hidden id="score">
-            <summary>Compare new drawings</summary>
+            <summary id="answer-5">Compare new drawings</summary>
             <p class="op-lead">These are guesses about what you might like. Your own rating is the real test.</p>
 
             <div class="op-body">
@@ -102,7 +102,7 @@
         </details>
 
         <details class="op-section locked-section" hidden id="transform">
-            <summary>Adjust a drawing</summary>
+            <summary id="answer-6">Adjust a drawing</summary>
             <p class="op-lead">Change a drawing toward a higher predicted score. Some target scores cannot be reached.</p>
 
             <div class="op-body">
@@ -111,18 +111,18 @@
                     <div class="tf-arrow">→</div>
                     <figure class="tf-card"><div id="tf-after"></div><figcaption>after · <span id="tf-after-score">—</span></figcaption></figure>
                     <div class="tf-side">
-                        <h3>Target score: <span id="target-label">90%</span></h3>
+                        <h3 id="answer-7">Target score: <span id="target-label">90%</span></h3>
                         <div class="slider-row" style="max-width: 260px;">
                             <input type="range" id="target-score" min="0.55" max="0.95" step="0.05" value="0.9" aria-label="Target score">
                         </div>
-                        <p id="transform-status" role="status"></p><h3>What changed</h3>
+                        <p id="transform-status" role="status"></p><h3 id="answer-8">What changed</h3>
                         <ul id="tf-changes"><li>—</li></ul>
                     </div>
                 </div>
             </div>
         </details>
 
-        <details class="honesty"><summary>What this demo can and cannot show</summary><p>This is a small model learning the settings behind simple drawings. It does not run a trained image generator.</p><p>Training fit measures ratings the model has already seen. The evaluation option checks new examples without teaching from them. Scores are predictions, not guarantees.</p><p><a href="preference-results.html">Preference results</a> and <a href="how-it-works.html">how it works</a>.</p></details>
+        <details class="honesty"><summary id="answer-9">What this demo can and cannot show</summary><p>This is a small model learning the settings behind simple drawings. It does not run a trained image generator.</p><p>Training fit measures ratings the model has already seen. The evaluation option checks new examples without teaching from them. Scores are predictions, not guarantees.</p><p><a href="preference-results.html">Preference results</a> and <a href="how-it-works.html">how it works</a>.</p></details>
     </div>    <div id="reveal-overlay" role="dialog" aria-modal="true" aria-labelledby="reveal-title">
         <div class="reveal-card">
             <h3 id="reveal-title">Your predicted favorite, generated</h3>

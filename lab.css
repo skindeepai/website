@@ -20,6 +20,7 @@
 .lab-page .button, .lab-page .btn { color:white; }
 .lab-page .button.secondary { color:var(--blue); }
 .lab-menu, .small-btn, .domain-btn { border-color:#718198; }
+.header-actions{display:flex;align-items:center;gap:24px}.header-search{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:14px;text-decoration:none}.header-search:hover{text-decoration:underline}@media(max-width:800px){.header-actions{gap:12px}}@media(max-width:450px){.wordmark span{display:none}.header-actions{gap:8px}.lab-menu{padding-inline:10px}}
 .lab-page :focus-visible { outline:3px solid #204bb8; outline-offset:3px; box-shadow:0 0 0 3px white; }
 .lab-sidebar :focus-visible { outline-color:#afccff; box-shadow:none; }
 .lab-page :is(a,button,input,select,textarea,summary,[tabindex]) { scroll-margin-block:100px 24px; }
