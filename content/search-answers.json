@@ -18,7 +18,7 @@
       "How do I stop a long-running agent forgetting?",
       "Keeper versus summary versus sliding window"
     ],
-    "answer": "Keeping exact originals, short working notes and protected rules gave the strongest results in the synthetic long-history tests. On the first 240K-token stream, keeper and proxy each answered 39/39 questions, an archive with pinned rules 35/39, window dropping 23/39 and periodic compaction 20/39.\n\nThese are comparisons on the same stream and model, not a general ranking of agents. The proxy has not yet been tested under a real coding or research agent.",
+    "answer": "Keeping exact originals, short working notes and protected rules gave the strongest results in the synthetic long-history tests. On the first 240K-token stream, keeper and proxy each answered 39/39 questions, an archive with pinned rules 35/39, window dropping 23/39 and periodic compaction 20/39. Retrieval alone also answered 39/39 there, then fell behind late in a million-token history.\n\nThese are comparisons on the same stream and model, not a general ranking of agents. The proxy has not yet been tested under a real coding or research agent.",
     "url": "context.html#comparison",
     "page": "Longer context",
     "topic": "Longer context"
@@ -42,7 +42,7 @@
       "How accurate was the memory proxy?",
       "Did the keeper forget anything?"
     ],
-    "answer": "On one synthetic million-token stream, the keeper answered 226 of 228 questions correctly in 83 minutes. The proxy answered 222 of 228 in 95 minutes. These are one run each, with a small working context and an external archive.\n\nThey show that this policy can continue beyond the model's window on this task. They do not establish perfect recall or performance under a real coding agent.",
+    "answer": "On one synthetic million-token stream, the keeper with in-place notes answered all 228 questions in 50 minutes. Its earlier form answered 226 of 228 in 83 minutes, and the proxy 222 of 228 in 95 minutes. These are one run each, with a small working context and an external archive.\n\nThey show that this policy can continue beyond the model's window on this task. They do not establish perfect recall on other tasks or performance under a real coding agent.",
     "url": "context-distance.html#million",
     "page": "Long-history tests",
     "topic": "Longer context"
