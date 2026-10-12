@@ -150,7 +150,8 @@ DP_METHODS = {'window': 'Window-drop', 'compaction': 'Compaction', 'self_edit_re
               'archive': 'Self-editing + archive and search', 'archive_rules': 'Archive and search + pinned rule lines',
               'archive_free': 'Archive and search with free-text notes', 'keeper': 'Keeper', 'keeper_proxy': 'Keeper as a proxy',
               'summary': 'Summarise at 75% of the window', 'keeper_inplace': 'Keeper with in-place notes',
-              'retrieval': 'Retrieval only', 'keeper_inplace_retrieval': 'Keeper with in-place notes and retrieval'}
+              'retrieval': 'Retrieval only', 'keeper_inplace_retrieval': 'Keeper with in-place notes and retrieval',
+              'keeper_proxy_inplace': 'Keeper as a proxy, with in-place notes'}
 DP_ORDER = ['keeper', 'keeper_proxy', 'archive', 'window', 'summary', 'compaction', 'self_edit_read', 'archive_rules', 'archive_free']
 
 
@@ -393,9 +394,112 @@ def distance_replacements(dp):
     retrieval_million_cell = (rm['probes'] + ' of the questions asked along the way; the final ' + str(i_final[1])
                               + ' not answered. A stopped run')
 
+    # The proxy with in-place notes (2026-10-12): five builds, three of them run at 1M. Every run must add up, the
+    # headline rows are the current build, and the rows it is compared with must be the ones published above.
+    pi = proxy['in_place']
+    assert pi['method'] == 'keeper_proxy_inplace' and pi['limits'] and pi['not_run'] and len(pi['lessons']) == 9
+    assert all(x['lesson'] and x['from'] and x['fix'] for x in pi['lessons']) and len(pi['not_caught_by_any_check']) == 2
+    builds = {b['arm']: b for b in pi['builds']}
+    assert len(builds) == len(pi['builds']) == 5 and all(b['label'] and b['what'] and b['outcome'] for b in pi['builds'])
+    for r in pi['rows']:
+        assert r['arm'] in builds and r['method'] == 'keeper_proxy_inplace' and rule_stream_parts(r, asked_by_seed[r['seed']])
+        assert dp['lab_commit'] in r['audit_url'] and float(r['minutes']) > 0
+    pi_rows = {(r['arm'], r['seed']): r for r in pi['rows']}
+    assert len(pi_rows) == len(pi['rows']) == 10 and all((arm, seed) in pi_rows for arm in builds for seed in (0, 1))
+    for r in pi['rows']:
+        if r.get('same_run_as'):
+            twin = next(x for x in pi['rows'] if x['id'] == r['same_run_as'])
+            assert (twin['total'], twin['minutes'], twin['seed'], twin['notes_wrong']) == (r['total'], r['minutes'], r['seed'], r['notes_wrong'])
+    pi_lead = {r['seed']: r for r in pi['rows'] if r['headline']}
+    assert set(pi_lead) == {0, 1} and pi_lead[0]['arm'] == pi_lead[1]['arm'] == pi['builds'][-1]['arm']
+    assert all(fraction_parts(pi_lead[seed]['total']) == (asked_by_seed[seed], asked_by_seed[seed]) and pi_lead[seed]['notes_wrong'] == 0
+               and pi_lead[seed]['in_place_attempts_failed'] == 0 and pi_lead[seed]['notes_versions_audited'] == '17 of 17' for seed in (0, 1))
+    pim = pi['million']
+    pim_runs = pim['runs']
+    assert [r['attempt'] for r in pim_runs] == [1, 2, 3] and [r['headline'] for r in pim_runs] == [False, False, True] and pim['limit']
+    assert [b['arm'] for b in pi['builds'] if b['ran_at_1m']] == [r['arm'] for r in pim_runs]
+    for r in pim_runs:
+        assert r['status'].startswith('Finished run') and dp['lab_commit'] in r['audit_url'] and r['misses']
+        p_probes, p_final, p_total = (fraction_parts(r[k]) for k in ('probes', 'final', 'total'))
+        assert list(r['by_type']) == list(km['by_type']), r['arm'] + ': split differently'
+        assert tuple(map(sum, zip(*map(fraction_parts, r['by_type'].values())))) == p_probes, r['arm'] + ' by type does not add up'
+        assert all(fraction_parts(r['by_type'][k])[1] == fraction_parts(km['by_type'][k])[1] for k in km['by_type']), r['arm'] + ': different questions'
+        assert (p_probes[0] + p_final[0], p_probes[1] + p_final[1]) == p_total and p_total[1] == k_total[1] and p_final[1] == k_final[1]
+        assert r['blank'] + r['wrong'] == p_total[1] - p_total[0], r['arm'] + ': misses do not add up'
+        assert r['bar_met'] == (p_total[0] >= pim['bar_minimum_right'] and r['minutes'] < pim['bar_under_minutes'])
+        assert r['in_place_attempts_failed'] == 0 and r['notes_versions_audited'] == f"{r['cuts_in_place']} of {r['cuts_in_place']}"
+    pim_lead = pim_runs[-1]
+    assert pim_lead['arm'] == pi_lead[0]['arm'] and pim_lead['bar_met']
+    pc, c240 = pim['compare'], pi['compare_at_240k']
+    assert (pc['harness_keeper_in_place']['arm'], pc['harness_keeper_in_place']['total'], pc['harness_keeper_in_place']['minutes']) == (
+        im['arm'], im['total'], i_cost['minutes_one_decimal'])
+    assert (pc['proxy_full_rewrite']['arm'], pc['proxy_full_rewrite']['total'], round(pc['proxy_full_rewrite']['minutes'])) == (
+        xm['arm'], xm['total'], x_cost['minutes'])
+    assert (c240['harness_keeper_in_place']['arm'], c240['harness_keeper_in_place']['totals'], c240['harness_keeper_in_place']['minutes']) == (
+        im['arm'], [ip_lead[0]['total'], ip_lead[1]['total']], [ip_lead[0]['minutes'], ip_lead[1]['minutes']])
+    assert (c240['proxy_full_rewrite']['arm'], c240['proxy_full_rewrite']['totals']) == (
+        first['keeper_proxy']['arm'], [first['keeper_proxy']['total'], second['keeper_proxy']['total']])
+    assert [str(round(float(x))) for x in c240['proxy_full_rewrite']['minutes']] == [first['keeper_proxy']['minutes'], second['keeper_proxy']['minutes']]
+    # Where the time of the current build's 1M run went: the parts must agree with the totals quoted beside them.
+    tw = pim['where_the_time_went']
+    assert tw['arm'] == pim_lead['arm'] and round(tw['run_seconds'] / 60, 1) == pim_lead['minutes']
+    assert round(100 * (tw['server_reading_seconds'] + tw['server_writing_seconds']) / tw['run_seconds']) == tw['server_percent']
+    assert sum(tw['written_thousands'].values()) == int(tw['tokens_written'].removesuffix('K'))
+    assert tw['written_thousands']['notes'] == int(pim_lead['notes_tokens_written'].removesuffix('K'))
+    assert 0 < tw['proxy_handling_seconds'] - tw['proxy_waiting_for_the_server_seconds'] < 30 and tw['proxy_own_time'].startswith('Under half a minute')
+    assert all(dp['lab_commit'] in url for url in pi['evidence'].values())
+
+    # The harness keeper with in-place notes on a second 1M stream: its parts, and the two streams together, must add up.
+    sm = ip['second_million_stream']
+    assert sm['status'].startswith('Finished run') and sm['method'] == 'keeper_inplace' and sm['seed'] == 1 and sm['limit'] and sm['fix']
+    s_total, s_final = fraction_parts(sm['total']), fraction_parts(sm['final'])
+    s_types = tuple(map(sum, zip(*map(fraction_parts, sm['by_type'].values()))))
+    assert (s_types[0] + s_final[0], s_types[1] + s_final[1]) == s_total and sm['blank'] + sm['wrong'] == s_total[1] - s_total[0]
+    assert round(100 * s_total[0] / s_total[1], 1) == sm['total_percent_one_decimal']
+    assert (sm['first_stream']['arm'], sm['first_stream']['total'], sm['first_stream']['minutes']) == (im['arm'], im['total'], i_cost['minutes_one_decimal'])
+    both = fraction_parts(sm['both_streams']['total'])
+    assert both == (i_total[0] + s_total[0], i_total[1] + s_total[1])
+    assert (round(100 * both[0] / both[1]), round(100 * both[0] / both[1], 1)) == (sm['both_streams']['percent'], sm['both_streams']['percent_one_decimal'])
+    assert sm['notes_versions_audited'] == f"{sm['cuts_in_place']} of {sm['cuts_in_place']}" and sm['in_place_attempts_failed'] == 0
+    assert all(dp['lab_commit'] in url for url in sm['evidence'].values())
+
+    # A rule that names nothing it covers. Each run must add up twice: by question type, and as governed plus other questions.
+    ur = ro['unnamed_rule']
+    assert ur['limit'] and ur['stream_fault'] and ur['what_retrieval_answered'] and ur['what_the_keeper_did']
+    governed = {}
+    for who, method in (('keeper', 'keeper_inplace'), ('retrieval', 'retrieval')):
+        assert [r['seed'] for r in ur[who]] == [0, 1]
+        for r in ur[who]:
+            parts = rule_stream_parts({**r, 'method': method, 'id': 'unnamed-rule-' + r['arm']}, asked_by_seed[r['seed']])
+            kept, others = fraction_parts(r['governed_by_the_rule']), fraction_parts(r['other_questions'])
+            assert (kept[0] + others[0], kept[1] + others[1]) == parts['total'], r['arm'] + ': governed and other questions do not add up'
+        governed[who] = tuple(map(sum, zip(*(fraction_parts(r['governed_by_the_rule']) for r in ur[who]))))
+        assert governed[who] == fraction_parts(ur['both_streams'][who])
+    assert all(fraction_parts(a['governed_by_the_rule'])[1] == fraction_parts(b['governed_by_the_rule'])[1]
+               for a, b in zip(ur['keeper'], ur['retrieval'])), 'the two methods were asked different governed questions'
+    assert governed['keeper'][0] == governed['keeper'][1] and governed['retrieval'][0] == 0
+    # The page says the keeper's only misses outside the governed questions are the tallies it answered with the word.
+    assert sum(fraction_parts(r['other_questions'])[1] - fraction_parts(r['other_questions'])[0] for r in ur['keeper']) == ur['keeper_tallies_answered_with_the_word']
+    assert sum(fraction_parts(r['house_method'])[1] - fraction_parts(r['house_method'])[0] for r in ur['keeper']) == ur['keeper_tallies_answered_with_the_word']
+    assert all(dp['lab_commit'] in url for url in ur['evidence'].values())
+
+    # The harder stream on a second seed: one graded run, with retrieval; its partner did not finish, so there is no comparison.
+    h2 = hs['second_seed']
+    assert h2['seed'] == 1 and h2['reading'] and h2['why_slow'] and len(h2['runs']) == 2 and not set(r['arm'] for r in h2['runs']) & set(hard)
+    assert all(dp['lab_commit'] in r['evidence_url'] and r['what'] and r['note'] for r in h2['runs'])
+    h2_graded = [r for r in h2['runs'] if r['status'] == 'Finished, graded']
+    h2_stopped = [r for r in h2['runs'] if r['status'] != 'Finished, graded']
+    assert len(h2_graded) == 1 and h2_graded[0]['with_retrieval'] and len(h2_stopped) == 1
+    assert h2_stopped[0]['total'] is None and h2_stopped[0]['status'].startswith('Stopped') and not h2_stopped[0]['with_retrieval']
+    h2_total, h2_probes, h2_final = (fraction_parts(h2_graded[0][k]) for k in ('total', 'probes', 'final'))
+    assert (h2_probes[0] + h2_final[0], h2_probes[1] + h2_final[1]) == h2_total and h2_total[1] == h2['questions']
+    assert all(dp['lab_commit'] in url for url in h2['evidence'].values())
+
     keeper_rows = [
         [label(first['keeper']), run_cell(first['keeper']), run_cell(second['keeper']), km['total'] + ' in ' + str(k_cost['minutes']) + ' min'],
         [DP_METHODS['keeper_inplace'], run_cell(ip_lead[0]), run_cell(ip_lead[1]), im['total'] + ' in ' + str(i_cost['minutes']) + ' min'],
+        [DP_METHODS['keeper_proxy_inplace'], run_cell(pi_lead[0]), run_cell(pi_lead[1]),
+         pim_lead['total'] + ' in ' + str(round(pim_lead['minutes'])) + ' min'],
         [label(first['keeper_proxy']), run_cell(first['keeper_proxy']), run_cell(second['keeper_proxy']),
          xm['total'] + ' in ' + str(x_cost['minutes']) + ' min'],
         [DP_METHODS['keeper_proxy'] + ', before its fixes (' + before[0]['arm'] + ')', run_cell(before[0]), run_cell(before[1]), 'Not run'],
@@ -431,6 +535,31 @@ def distance_replacements(dp):
         ['In-place notes, with every check', run_cell(ip_lead[0]), run_cell(ip_lead[1]), timed(im['total'], i_cost['minutes'])],
         ['In-place notes, five earlier runs while the checks were added',
          '; '.join(run_cell(r) for r in ip_later if r['seed'] == 0), '; '.join(run_cell(r) for r in ip_later if r['seed'] == 1), 'Not run']]
+    # The proxy with in-place notes beside the two forms it is measured against: the three rows of the headline.
+    proxy_now_rows = [
+        ['Proxy with in-place notes (today’s build)', run_cell(pi_lead[0]), run_cell(pi_lead[1]),
+         timed(pim_lead['total'], round(pim_lead['minutes']))],
+        ['Keeper inside the test harness, in-place notes', run_cell(ip_lead[0]), run_cell(ip_lead[1]), timed(im['total'], i_cost['minutes'])],
+        ['Proxy, earlier form (rewrites all its notes at each cut)',
+         *(timed(total, minutes) for total, minutes in zip(c240['proxy_full_rewrite']['totals'], c240['proxy_full_rewrite']['minutes'])),
+         timed(xm['total'], x_cost['minutes'])]]
+    pim_by_arm = {r['arm']: r for r in pim_runs}
+
+    def build_cell(arm, seed):
+        r = pi_rows[(arm, seed)]
+        return escape(run_cell(r)) + (' (the same run as the first build’s)' if r.get('same_run_as') else '')
+    proxy_run_rows = [
+        [escape(b['label']), link(pi['evidence']['table_240k'], b['arm']), build_cell(b['arm'], 0), build_cell(b['arm'], 1),
+         escape(timed(pim_by_arm[b['arm']]['total'], pim_by_arm[b['arm']]['minutes'])) if b['ran_at_1m'] else 'Not run',
+         escape(b['outcome'])] for b in pi['builds']]
+    unnamed_rule_rows = (
+        [['Questions the rule governs, ' + name, k['governed_by_the_rule'], r['governed_by_the_rule']]
+         for name, k, r in zip(('first stream', 'second stream'), ur['keeper'], ur['retrieval'])]
+        + [['Questions the rule governs, both streams', ur['both_streams']['keeper'], ur['both_streams']['retrieval']]]
+        + [['The other questions, ' + name, k['other_questions'], r['other_questions']]
+           for name, k, r in zip(('first stream', 'second stream'), ur['keeper'], ur['retrieval'])]
+        + [['Whole stream, ' + name, run_cell(k), run_cell(r)]
+           for name, k, r in zip(('first', 'second'), ur['keeper'], ur['retrieval'])])
     inplace_million_rows = (
         [['All ' + str(i_total[1]) + ' questions', im['total'] + ' (' + str(im['total_percent']) + '%)',
           km['total'] + ' (' + str(km['total_percent']) + '%)']]
@@ -497,7 +626,10 @@ def distance_replacements(dp):
         + [['Retrieval only, final build', link(hs['evidence']['retrieval_answers_at_stop'], hs['retrieval']['arm']),
             escape(hs['retrieval']['answered_right']) + ' when stopped', 'Not reached', 'Stopped at 20.5', 'No notes',
             'Too slow to finish. The keeper with in-place notes had ' + escape(hs['retrieval']['keeper_inplace_at_that_point'])
-            + ' at that point.']])
+            + ' at that point.']]
+        + [[escape(r['what']), link(r['evidence_url'], r['arm']), hard_cell(r, 'total'), hard_cell(r, 'final'),
+            escape(r['minutes']) if r['minutes'] is not None else 'Stopped at 22.7',
+            str(r['notes_wrong']) if r['notes_wrong'] is not None else 'Not reported', escape(r['note'])] for r in h2['runs']])
     stream_heads = ['First 240K stream, ' + str(first_asked) + ' questions', 'Second 240K stream, ' + str(second_asked) + ' questions',
                     '1,000,000-token stream, ' + str(k_total[1]) + ' questions']
     segments = [str(x) for x in k_cost['minutes_per_100k']]
@@ -539,10 +671,31 @@ def distance_replacements(dp):
                                        'One million tokens: retrieval alone and the keeper on the questions asked along the way'),
         'DP_TABLE_RETRIEVAL_RUNS': html_table(['Build', 'Code in the evidence files', 'Stream', 'Questions right', 'Final questions',
                                                'Minutes'], retrieval_run_rows, 'Every retrieval-only run', 'ctx-comparison'),
-        'DP_TABLE_HARDER_RUNS': html_table(['Run', 'Code in the evidence files', 'Questions right of 50', 'Final questions', 'Minutes',
+        'DP_TABLE_HARDER_RUNS': html_table(['Run', 'Code in the evidence files', 'Questions right', 'Final questions', 'Minutes',
                                             'Counters ever wrong in the notes', 'What happened'], harder_run_rows,
                                            'Every run on the harder stream', 'ctx-comparison'),
         'DP_C10B_LOG': escape(hs['evidence']['log'], quote=True),
+        'DP_TABLE_PROXY_NOW': table(['How the notes are kept', *stream_heads], proxy_now_rows,
+                                    'The proxy with in-place notes, the keeper inside the test harness and the proxy’s earlier form: questions right and minutes per run'),
+        'DP_TABLE_PROXY_RUNS': html_table(['Build', 'Code in the evidence files', *stream_heads, 'What happened'], proxy_run_rows,
+                                          'Every build of the proxy with in-place notes', 'ctx-comparison'),
+        'DP_TABLE_UNNAMED_RULE': table(['What was counted', DP_METHODS['keeper_inplace'], DP_METHODS['retrieval']], unnamed_rule_rows,
+                                       'A rule that names nothing: the keeper with in-place notes against retrieval alone'),
+        'DP_C12_DATA_URL': escape(pi['evidence']['folder'], quote=True),
+        'DP_C12_TABLE_240K': escape(pi['evidence']['table_240k'], quote=True),
+        'DP_C12_TABLE_1M': escape(pi['evidence']['table_1m'], quote=True),
+        'DP_C12_LOG_NIGHT': escape(pi['evidence']['log_first_night'], quote=True),
+        'DP_C12_LOG_MORNING': escape(pi['evidence']['log_morning'], quote=True),
+        'DP_C12_CLOSEOUT': escape(pi['evidence']['closeout_note'], quote=True),
+        'DP_P1M_DETAILS': escape(pi['evidence']['details_1m'], quote=True),
+        'DP_P1M_AUDIT': escape(pi['evidence']['notes_audit_1m'], quote=True),
+        'DP_P1M_COUNTERS': escape(pi['evidence']['proxy_counters_1m'], quote=True),
+        'DP_PROXY_AUDIT_CODE': escape(pi['evidence']['audit_code'], quote=True),
+        'DP_S1M_DETAILS': escape(sm['evidence']['details'], quote=True),
+        'DP_S1M_AUDIT': escape(sm['evidence']['audit'], quote=True),
+        'DP_UR_TABLE': escape(ur['evidence']['table'], quote=True),
+        'DP_UR_TASK': escape(ur['evidence']['task_generator'], quote=True),
+        'DP_H2_TABLE': escape(h2['evidence']['table'], quote=True),
         'DP_AUDIT_RECOUNT': recount_note,
         'DP_I1M_SEGMENTS': escape(', '.join(i_segments[:-1]) + ' and ' + i_segments[-1]),
         'DP_I1M_GRADE': escape(im['evidence']['details'], quote=True),
@@ -615,6 +768,12 @@ def landing_table(by_id, lme, dp):
     hard_graded = [r for r in hs['runs'] if r['status'] == 'Finished, graded']
     hard_with = [r['total'] for r in hard_graded if r['with_retrieval']]
     hard_without = [r['total'] for r in hard_graded if not r['with_retrieval']]
+    hard_second = next(r for r in hs['second_seed']['runs'] if r['status'] == 'Finished, graded')
+    pi = keeper['proxy']['in_place']
+    pi_lead = {r['seed']: r for r in pi['rows'] if r['headline']}
+    pim_lead = next(r for r in pi['million']['runs'] if r['headline'])
+    sm = ip['second_million_stream']
+    ur = ro['unnamed_rule']
     seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
     c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
@@ -643,16 +802,20 @@ def landing_table(by_id, lme, dp):
          'Summarising at 75% of the window: ' + c32['total'] + ' in ' + c32['minutes'] + ' min; window-drop: '
          + seed0['W32']['total'] + ' in ' + seed0['W32']['minutes'] + ' min', 'context-distance.html#summary'],
         ['A rule and a method stated once at the start of a 240K history (two streams)',
-         'A keeper that asks nothing of the agent: ' + k0['total'] + ' and ' + k1['keeper']['total'] + '; run as a proxy: '
-         + x0['total'] + ' and ' + k1['keeper_proxy']['total'],
+         'A keeper that asks nothing of the agent: ' + k0['total'] + ' and ' + k1['keeper']['total'] + '; run as a proxy with in-place notes: '
+         + pi_lead[0]['total'] + ' and ' + pi_lead[1]['total'] + ' (' + x0['total'] + ' and ' + k1['keeper_proxy']['total']
+         + ' in the proxy’s earlier form)',
          'On the first stream, archive and search with pinned rule lines: ' + rules['B32iraR']['total'] + '; window-drop: '
          + rules['W32']['total'] + '. Four methods with no pinned place for a rule: ' + f'{no_place[0]}/{no_place[1]}' + ' rule questions',
          'context-distance.html#keeper'],
-        ['A 1,000,000-token history through a 32K window (one stream, one seed)',
-         'The keeper with in-place notes: ' + im['total'] + ' right in ' + str(im['cost']['minutes']) + ' min; with a full notes rewrite: '
-         + km['total'] + ' in ' + str(km['cost']['minutes']) + ' min; run as a proxy: ' + xm['total'] + ' in '
-         + str(xm['cost']['minutes']) + ' min. All three graded by the task’s own checker',
-         'Archive and search with pinned rule lines: ' + million['total'] + ' in a stopped run that was not verified',
+        ['A 1,000,000-token history through a 32K window',
+         'The keeper as a proxy, with in-place notes: ' + pim_lead['total'] + ' right in ' + str(round(pim_lead['minutes']))
+         + ' min, on one stream. The keeper inside the test harness, with in-place notes: ' + im['total'] + ' in '
+         + str(im['cost']['minutes']) + ' min on that stream and ' + sm['total'] + ' in ' + str(round(sm['minutes']))
+         + ' min on a second one. All graded by the task’s own checker',
+         'The keeper with a full notes rewrite: ' + km['total'] + ' in ' + str(km['cost']['minutes']) + ' min; the proxy’s earlier form: '
+         + xm['total'] + ' in ' + str(xm['cost']['minutes']) + ' min. Archive and search with pinned rule lines: ' + million['total']
+         + ' in a stopped run that was not verified',
          'context-distance.html#million'],
         ['Retrieval alone (“RAG”) against the keeper, on the same three histories',
          'The keeper with in-place notes: ' + ip_lead[0]['total'] + ' and ' + ip_lead[1]['total'] + ' at 240K; ' + im['probes']
@@ -660,8 +823,13 @@ def landing_table(by_id, lme, dp):
          'Retrieval only: ' + rb[0]['total'] + ' and ' + rb[1]['total'] + ' at 240K; ' + rm['probes']
          + ' along the 1,000,000-token history, where it did not answer the final questions (a stopped run)',
          'context-distance.html#retrieval'],
-        ['A harder 240K history that says “it” and makes some values depend on others (one seed, exploratory)',
-         'The keeper with in-place notes and retrieval together: ' + ' and '.join(hard_with),
+        ['A rule that names nothing it covers, on two 240K histories',
+         'The keeper with in-place notes applied it every time: ' + ur['both_streams']['keeper'],
+         'Retrieval only: ' + ur['both_streams']['retrieval'] + '. It gave the true number every time; the rule had left the window and no question leads a search back to it',
+         'context-distance.html#unnamed-rule'],
+        ['A harder 240K history that says “it” and makes some values depend on others (the comparison is one seed, exploratory)',
+         'The keeper with in-place notes and retrieval together: ' + ' and '.join(hard_with) + ', and ' + hard_second['total']
+         + ' on a second seed',
          'The keeper with notes only: ' + ' and '.join(hard_without) + '; retrieval only: stopped with ' + hs['retrieval']['answered_right']
          + ' right on the first three question sets',
          'context-distance.html#harder'],
@@ -707,6 +875,19 @@ def minutes_plot(title, rows, caption):
             + ' minutes</span></figcaption>' + body + '<p class="ctx-table-note">' + escape(caption) + '</p></figure>')
 
 
+def bar_plot(title, scale, rows, caption):
+    """Bars on one stated scale; rows are (label, sublabel, share of the scale from 0 to 1, value text, tone)."""
+    body = ''
+    for label, sublabel, share, value, tone in rows:
+        assert 0 <= share <= 1 and tone in ('keeper', 'proxy', 'baseline')
+        body += ('<div class="ctx-score-row"><div class="ctx-score-label">' + escape(label)
+                 + '<span>' + escape(sublabel) + '</span></div><div class="ctx-score-track" aria-hidden="true">'
+                 + '<span class="ctx-score-fill ctx-score-' + tone + '" style="width:' + f'{100 * share:.4f}'
+                 + '%"></span></div><strong>' + escape(value) + '</strong></div>')
+    return ('<figure class="ctx-score-plot"><figcaption><strong>' + escape(title) + '</strong><span>' + escape(scale)
+            + '</span></figcaption>' + body + '<p class="ctx-table-note">' + escape(caption) + '</p></figure>')
+
+
 def visual_replacements(by_id, dp):
     keeper = dp['keeper']
     k0, x0 = keeper['rows']
@@ -718,14 +899,45 @@ def visual_replacements(by_id, dp):
     ro = dp['retrieval_only']
     rb0 = next(r for r in ro['rows'] if r['build'] == 'final' and r['seed'] == 0)
     rm = ro['million']
+    pi = keeper['proxy']['in_place']
+    pi_lead = {r['seed']: r for r in pi['rows'] if r['headline']}
+    pim = pi['million']
+    pim_lead = next(r for r in pim['runs'] if r['headline'])
+    tw = pim['where_the_time_went']
+    sm = ip['second_million_stream']
+    ur = ro['unnamed_rule']
     short_rows = [(label, r['total'], r['minutes'] + ' min', tone) for label, r, tone in [
-        ('Keeper', k0, 'keeper'), ('Keeper, in-place notes', ip_lead[0], 'keeper'), ('Keeper proxy', x0, 'proxy'),
+        ('Keeper', k0, 'keeper'), ('Keeper, in-place notes', ip_lead[0], 'keeper'),
+        ('Keeper proxy, in-place notes', pi_lead[0], 'proxy'), ('Keeper proxy, earlier form', x0, 'proxy'),
         ('Retrieval only', rb0, 'baseline'),
         ('Agent-managed archive + pinned rules', rules['B32iraR'], 'baseline'),
         ('Window-drop', rules['W32'], 'baseline'), ('Tool-output compaction', rules['P32'], 'baseline')]]
-    million_rows = [(label, r['total'], str(r['cost']['minutes']) + ' min', tone) for label, r, tone in [
-        ('Keeper, in-place notes', im, 'keeper'), ('Keeper, full notes rewrite', keeper['million'], 'keeper'),
-        ('Keeper proxy', keeper['proxy']['million'], 'proxy')]]
+    million_rows = [('Keeper proxy, in-place notes', pim_lead['total'], str(round(pim_lead['minutes'])) + ' min', 'proxy')] + [
+        (label, r['total'], str(r['cost']['minutes']) + ' min', tone) for label, r, tone in [
+            ('Keeper, in-place notes', im, 'keeper'), ('Keeper, full notes rewrite', keeper['million'], 'keeper'),
+            ('Keeper proxy, full notes rewrite', keeper['proxy']['million'], 'proxy')]]
+    # The headline: minutes for the same million-token stream, with the score beside each bar.
+    proxy_now_rows = [
+        ('Proxy with in-place notes (today’s build)', pim_lead['total'], pim_lead['minutes'], 'proxy'),
+        ('Keeper inside the test harness, in-place notes', im['total'], im['cost']['minutes_one_decimal'], 'keeper'),
+        ('Proxy, earlier form', keeper['proxy']['million']['total'], pim['compare']['proxy_full_rewrite']['minutes'], 'proxy')]
+    tries = ['First try', 'Second try', 'Third try: today’s build']
+    proxy_tries_rows = [(tries[r['attempt'] - 1], r['total'], r['minutes'], 'proxy') for r in pim['runs']]
+    run_minutes = tw['run_seconds'] / 60
+    proxy_time_rows = [
+        ('The model server reading', tw['tokens_read_outside_the_cache'] + ' tokens', tw['server_reading_seconds'] / tw['run_seconds'],
+         str(round(tw['server_reading_seconds'] / 60)) + ' min', 'proxy'),
+        ('The model server writing', tw['tokens_written'] + ' tokens', tw['server_writing_seconds'] / tw['run_seconds'],
+         str(round(tw['server_writing_seconds'] / 60)) + ' min', 'proxy')]
+    busy_minutes = round((tw['server_reading_seconds'] + tw['server_writing_seconds']) / 60)
+    written = tw['written_thousands']
+    unnamed_rule_rows = [
+        ('Keeper with in-place notes', ur['both_streams']['keeper'], 'the rule stayed in its notes', 'keeper'),
+        ('Retrieval only', ur['both_streams']['retrieval'], 'no search led back to the rule', 'baseline')]
+    two_stream_rows = [
+        (name + ' stream, ' + str(fraction_parts(total)[1]) + ' questions', f'{float(minutes):.1f}' + ' min',
+         fraction_parts(total)[0] / fraction_parts(total)[1], total, 'keeper')
+        for name, total, minutes in [('First', im['total'], im['cost']['minutes_one_decimal']), ('Second', sm['total'], sm['minutes'])]]
     inplace_time_rows = [
         ('1,000,000 tokens, full notes rewrite', keeper['million']['total'], ip['full_rewrite']['million']['minutes'], 'baseline'),
         ('1,000,000 tokens, in-place notes', im['total'], im['cost']['minutes_one_decimal'], 'keeper'),
@@ -754,13 +966,13 @@ def visual_replacements(by_id, dp):
         ('ret-summary-119k', 'Summaries', 'baseline'), ('ret-table-119k', 'Current-state table only', 'baseline')]]
     compact = table(['Approach', 'What stays available', 'Correct'], [
         ['Keeper', 'Notes, protected rules, searchable originals', k0['total']],
-        ['Keeper proxy', 'The same policy between client and server', x0['total']],
+        ['Keeper proxy', 'The same policy in a small program between client and server', pi_lead[0]['total']],
         ['Retrieval only (RAG)', 'Every sentence in a store; the best matches shown with each question; no notes', rb0['total']],
         ['Agent-managed archive', 'A state table, pinned rules, searchable originals', rules['B32iraR']['total']],
         ['Window-drop', 'Recent turns only', rules['W32']['total']],
         ['Tool-output compaction', 'Short stubs in place of old tool output', rules['P32']['total']],
     ], 'The same 240K rule-and-method stream, seed 0, 32K live context', 'ctx-quick-table')
-    for label, target in [('Keeper', 'context-distance.html#keeper'), ('Keeper proxy', 'context-distance.html#proxy'),
+    for label, target in [('Keeper', 'context-distance.html#keeper'), ('Keeper proxy', 'context-distance.html#proxy-now'),
                           ('Retrieval only (RAG)', 'context-distance.html#retrieval'),
                           ('Agent-managed archive', 'context-distance.html#rule'), ('Window-drop', 'context-distance.html#methods'),
                           ('Tool-output compaction', 'context-distance.html#methods')]:
@@ -782,9 +994,21 @@ def visual_replacements(by_id, dp):
     return {
         'QUICK_COMPARISON': compact,
         'KEEPER_SCORE_PLOT': score_plot('Remembering facts and following the original rules', short_rows,
-            'Same 240K-token stream, seed 0, 32K live budget. One run per method; total elapsed time. The keeper, retrieval and pinned-rule arms used a larger server ceiling, while keeping the same live budget. The in-place and retrieval rows were measured later on the same stream.'),
+            'Same 240K-token stream, seed 0, 32K live budget. One run per method; total elapsed time. The keeper, retrieval and pinned-rule arms used a larger server ceiling, while keeping the same live budget. The in-place and retrieval rows were measured later on the same stream. Retrieval alone matches the keeper here because the rule names the counters it covers; a rule that names nothing was never found by retrieval alone, ' + ur['both_streams']['retrieval'].replace('/', ' of ') + ' on a later test.'),
         'MILLION_SCORE_PLOT': score_plot('One million tokens, a 32K working window', million_rows,
-            'Same stream and seed: 203 questions during the task, plus 25 at the end. All three runs finished and passed the storage rule. In-place notes keep the same notes at lower cost: the model writes down only what changed, and nothing is read twice. The proxy does not have them yet. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
+            'Same stream and seed: 203 questions during the task, plus 25 at the end. One run per bar; all four finished and were graded by the task’s own checker. The keeper runs inside the test harness. The proxy is a separate small program between an ordinary agent and the model server. In-place notes keep the same notes at lower cost: the model writes down only what changed, and nothing is read twice. On a second million-token stream the keeper with in-place notes answered ' + sm['total'].replace('/', ' of ') + '; the proxy has run on this one stream only. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
+        'PROXY_NOW_PLOT': minutes_plot('One million tokens: the proxy has caught up with the lab version', proxy_now_rows,
+            'Same 1,000,000-token stream and the same ' + str(fraction_parts(pim_lead['total'])[1]) + ' questions, 32K live window, one run per bar. The proxy serves an agent that sends its whole history and manages nothing. One model, one machine, one synthetic family of tasks.'),
+        'PROXY_TRIES_PLOT': minutes_plot('Three tries on the million-token stream', proxy_tries_rows,
+            'The proxy with in-place notes on the same stream, one run per bar, in the order they were made. The bar set before the first try was ' + str(pim['bar_minimum_right']) + ' or more right in under ' + str(pim['bar_under_minutes']) + ' minutes: the first try missed it on both counts. One more build, between the first and second tries, failed its check on the 240K streams and was not run at this size.'),
+        'PROXY_TIME_PLOT': bar_plot('The model server’s share of the run', 'Minutes of the whole run · scale 0–' + str(round(run_minutes)) + ' minutes',
+            proxy_time_rows,
+            'The proxy’s million-token run with today’s build; minutes are rounded. Together the two bars are about ' + str(busy_minutes) + ' of the ' + str(round(run_minutes)) + ' minutes (' + str(tw['server_percent']) + '%). Reading: the stream once, and 1.3 million tokens more in turns re-read after each cut, search results and note-taking. Writing: ' + f"{written['notes']},000" + ' tokens of notes, ' + f"{written['the_agents_own_turns']},000" + ' in the agent’s own turns and ' + f"{written['search_rounds']},000" + ' while searching. From the server’s own counters.'),
+        'UNNAMED_RULE_PLOT': score_plot('A rule that names nothing: how often was it applied?', unnamed_rule_rows,
+            'The ' + str(fraction_parts(ur['both_streams']['keeper'])[1]) + ' questions on two 240K streams whose right answer is the word “overdrawn”. One run per stream for each method, 32K live window.'),
+        'TWO_STREAM_PLOT': bar_plot('Two million-token streams, the keeper inside the test harness', 'Share of the questions answered correctly · scale 0–100% · longer is better',
+            two_stream_rows,
+            'In-place notes, 32K live window, one run per stream, both graded by the task’s own checker. The two streams have different numbers of questions, so each bar is a share of its own stream. Together: ' + sm['both_streams']['total'].replace('/', ' of ') + ' (' + str(sm['both_streams']['percent']) + '%). The second run used the note checks of the morning of 2026-10-12.'),
         'INPLACE_TIME_PLOT': minutes_plot('The same notes, with nothing read twice', inplace_time_rows,
             'Same streams and questions for both forms, 32K live window, one run per bar. All three in-place runs are the version with every check.'),
         'HARDER_SCORE_PLOT': score_plot('A harder stream: the keeper with and without retrieval', harder_rows,
@@ -871,6 +1095,12 @@ def update(pages):
     dp_retrieval = {r['seed']: r for r in d['distance_probes']['retrieval_only']['rows'] if r['build'] == 'final'}
     dp_hard = d['distance_probes']['retrieval_only']['hard_stream']
     dp_hard_graded = [r for r in dp_hard['runs'] if r['status'] == 'Finished, graded']
+    dp_hard_second = next(r for r in dp_hard['second_seed']['runs'] if r['status'] == 'Finished, graded')
+    dp_proxy_inplace = dp_keeper['proxy']['in_place']
+    dp_proxy_lead = {r['seed']: r for r in dp_proxy_inplace['rows'] if r['headline']}
+    dp_proxy_million = next(r for r in dp_proxy_inplace['million']['runs'] if r['headline'])
+    dp_second_million = dp_keeper['in_place']['second_million_stream']
+    dp_unnamed_rule = d['distance_probes']['retrieval_only']['unnamed_rule']
     dp_c32 = d['distance_probes']['summary_baseline']['row']
     dp_w32 = next(r for x in d['distance_probes']['rounds'] if x['id'] == 'round2' for r in x['rows'] if r['id'] == 'W32')
     method_rows = [
@@ -898,14 +1128,22 @@ def update(pages):
          + dp_inplace[1]['total'] + ' on the two 240K streams in ' + dp_inplace[0]['minutes'] + ' and ' + dp_inplace[1]['minutes']
          + ' minutes; ' + dp_keeper['in_place']['million']['total'] + ' over 1,000,000 tokens in '
          + str(dp_keeper['in_place']['million']['cost']['minutes']) + ' minutes, against ' + str(dp_keeper['million']['cost']['minutes'])
-         + ' for the full rewrite (one stream).'],
+         + ' for the full rewrite. On a second 1,000,000-token stream, ' + dp_second_million['total'] + ' in '
+         + str(round(dp_second_million['minutes'])) + ' minutes.'],
+        ['Keeper as a proxy, with in-place notes', 'The same notes kept by a small program in front of the model server, for an agent '
+         'that sends its whole history and manages nothing. ' + dp_proxy_lead[0]['total'] + ' and ' + dp_proxy_lead[1]['total']
+         + ' on the two 240K streams in ' + dp_proxy_lead[0]['minutes'] + ' and ' + dp_proxy_lead[1]['minutes'] + ' minutes; '
+         + dp_proxy_million['total'] + ' over 1,000,000 tokens in ' + str(round(dp_proxy_million['minutes']))
+         + ' minutes (one stream). Not yet run under a real coding or research agent.'],
         ['Retrieval only (RAG)', 'No notes. Every sentence goes into a store, and the best matches are shown when questions arrive. '
          + dp_retrieval[0]['total'] + ' and ' + dp_retrieval[1]['total'] + ' on the two 240K streams; over 1,000,000 tokens '
          + d['distance_probes']['retrieval_only']['million']['probes'] + ' of the questions asked along the way, and the final 25 not answered '
-         '(a stopped run).'],
+         '(a stopped run). A rule that names nothing it covers was never found: ' + dp_unnamed_rule['both_streams']['retrieval']
+         + ', against ' + dp_unnamed_rule['both_streams']['keeper'] + ' for the keeper.'],
         ['Keeper with retrieval added', 'The keeper with in-place notes, and the best-matching stored sentences shown with each set of '
          'questions. On a harder 240K stream, ' + ' and '.join(r['total'] for r in dp_hard_graded if r['with_retrieval']) + ', against '
-         + ' and '.join(r['total'] for r in dp_hard_graded if not r['with_retrieval']) + ' with notes only (one seed, exploratory). On the '
+         + ' and '.join(r['total'] for r in dp_hard_graded if not r['with_retrieval']) + ' with notes only (one seed, exploratory); '
+         + dp_hard_second['total'] + ' on a second seed, where the run without retrieval did not finish. On the '
          'second ordinary 240K stream, ' + dp_hard['on_the_second_ordinary_240k_stream']['total'] + ' in '
          + dp_hard['on_the_second_ordinary_240k_stream']['minutes'] + ' minutes. Not yet run over 1,000,000 tokens.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
@@ -916,6 +1154,7 @@ def update(pages):
                         ('Archive and search', 'context-retention.html'), ('Compaction (stub old tool output)', 'context-distance.html'),
                         ('Keeper (managed from outside the agent)', 'context-distance.html#keeper'),
                         ('Keeper with in-place notes', 'context-distance.html#faster'),
+                        ('Keeper as a proxy, with in-place notes', 'context-distance.html#proxy-now'),
                         ('Retrieval only (RAG)', 'context-distance.html#retrieval'),
                         ('Keeper with retrieval added', 'context-distance.html#harder')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')

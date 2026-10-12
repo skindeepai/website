@@ -1074,8 +1074,8 @@
     "speedup_vs_thinking": "6.5x"
   },
   "snapshot": {
-    "commit": "080ebd6b96b3f46860d640d4b68ef472f9484e45",
-    "time": "2026-10-12 06:31 UTC (02:31 EDT, 2026-10-12)",
+    "commit": "ea8a6a5b380b50568b1f8c8521de6c631448f7c7",
+    "time": "2026-10-12 14:54 UTC (10:54 EDT, 2026-10-12)",
     "research_started": "2026-10-05 04:58 UTC"
   },
   "timing_analysis": {
@@ -1388,14 +1388,14 @@
     "interrupted": "The run was stopped once by the host memory guard at 52 of 56 archive trials and resumed; finished trials were kept, no GPU fault."
   },
   "distance_probes": {
-    "question": "An agent works on one task whose history is many times larger than its live window. Questions planted at known distances back (counted in batches, called items in the evidence files) show what each way of managing the window still remembers, and whether it still follows a rule and a method stated at the start. The keeper section asks whether something outside the agent can do that managing. The in-place and retrieval sections ask how cheaply the keeper's notes can be kept, and what retrieval alone does on the same streams. The harder-stream entry asks what notes and retrieval do together on text that refers to things indirectly.",
+    "question": "An agent works on one task whose history is many times larger than its live window. Questions planted at known distances back (counted in batches, called items in the evidence files) show what each way of managing the window still remembers, and whether it still follows a rule and a method stated at the start. The keeper section asks whether something outside the agent can do that managing. The in-place and retrieval sections ask how cheaply the keeper's notes can be kept, and what retrieval alone does on the same streams. The harder-stream entry asks what notes and retrieval do together on text that refers to things indirectly. The entries of 2026-10-12 ask whether the fast form of the notes can be moved into the proxy without losing answers or speed, and whether a rule that names nothing it covers separates notes from retrieval.",
     "task": "Sparse prose stream: about 240K tokens (240,208 on seed 0, in 147 batches), about 3 counter changes per batch. Every 25 batches a probe asks three questions about a batch further back: a counter's current value, an earlier value that was later overwritten, and who did a particular thing. Final questions at the end: 14 on seed 0, 21 on seed 1.",
     "model": "Qwen3.8-27B, FP8 weights, 16-bit attention cache, exact prefix cache, drafting on, tool calling on, one request at a time",
     "date": "2026-10-10/12",
-    "lab_commit": "080ebd6b96b3f46860d640d4b68ef472f9484e45",
-    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
-    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/docs/long-horizon-context-program.md",
+    "lab_commit": "ea8a6a5b380b50568b1f8c8521de6c631448f7c7",
+    "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+    "data_url": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline",
+    "charter_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/docs/long-horizon-context-program.md",
     "methods": {
       "window": "Window-drop (lossy): when over the cap, drop the oldest turns. Nothing is kept.",
       "compaction": "Compaction (lossy), as coding agents do it: replace old tool output with a stub and strip old thinking, then drop the oldest turns.",
@@ -1408,7 +1408,8 @@
       "keeper_proxy": "Keeper as a proxy: the same policy in a small OpenAI-compatible proxy in front of the model server. The agent sends its whole history on every call and manages nothing; the proxy keeps the live window at 32K, and its archive and notes live outside the task sandbox.",
       "keeper_inplace": "Keeper with in-place notes: the same keeper with a cheaper way to keep its NOTES. Every ten items the note-taking call is the conversation the server has already read, with one more message at its end. The model replies with the changes only, the harness applies and checks them, and every turn in view then goes to the archive, so the window starts again from the task and the NOTES.",
       "retrieval": "Retrieval only (\"RAG\"): no notes, no pinned rules, no search tool. Every item goes into a store as it arrives; when an item asks questions the harness shows the best-matching stored sentences for each question, each with the sentence after it (keyword matching).",
-      "keeper_inplace_retrieval": "Keeper with in-place notes and retrieval at question time: the same keeper, and whenever an item asks questions the harness also shows the best-matching stored sentences for each question, each with the sentence after it (keyword matching, 20 per question)."
+      "keeper_inplace_retrieval": "Keeper with in-place notes and retrieval at question time: the same keeper, and whenever an item asks questions the harness also shows the best-matching stored sentences for each question, each with the sentence after it (keyword matching, 20 per question).",
+      "keeper_proxy_inplace": "Keeper as a proxy, with in-place notes: the proxy takes its notes the way the harness keeper with in-place notes does. The note-taking call is the view the server has just read, without the newest exchange, plus one message; the reply holds only what changed; the proxy checks and applies it, archives the noted messages word for word, and the view becomes the opening messages, the NOTES and the newest exchange."
     },
     "columns": [
       "arm",
@@ -1434,7 +1435,7 @@
         "label": "Round 1: 16K cap, seed 0",
         "server": "one B70, 26,624-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis.txt",
         "rows": [
           {
             "id": "W16-r1",
@@ -1526,7 +1527,7 @@
         "label": "Round 2: seed 1 at 16K, and the 32K cap",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 240208,
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-10-context-16k-baseline/probe-analysis-round2.txt",
         "rows": [
           {
             "id": "W16",
@@ -1687,7 +1688,7 @@
         "id": "cap32-two-seeds",
         "label": "32K cap, seeds 0 and 1 pooled",
         "server": "two B70, 65,536-token server window",
-        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4/probe-analysis-campaign4.txt",
+        "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4/probe-analysis-campaign4.txt",
         "rows": [
           {
             "id": "B32ira-2s",
@@ -1831,7 +1832,7 @@
         "label": "Earlier run (2026-10-08): 48K cap over a 480K history, seed 0",
         "server": "two B70, 65,536-token server window",
         "history_tokens": 479512,
-        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/docs/long-horizon-context-program.md",
+        "source_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/docs/long-horizon-context-program.md",
         "note": "Reported in the program charter. Per-type splits and run times are from the same run's probe analysis; its raw files are not in the lab repository yet. The summarising arm at 48K was cancelled at the 4-hour limit after 17 summaries; the self-editing arms at 48K never ran.",
         "rows": [
           {
@@ -1880,16 +1881,17 @@
       }
     ],
     "data_urls": {
-      "second_seed_and_rule_questions": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4",
-      "rule_fix_and_million_token_run": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5",
-      "keeper_proxy_and_summary_baseline": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper",
-      "in_place_notes_audit_and_retrieval": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10"
+      "second_seed_and_rule_questions": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign4",
+      "rule_fix_and_million_token_run": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5",
+      "keeper_proxy_and_summary_baseline": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper",
+      "in_place_notes_audit_and_retrieval": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10",
+      "proxy_in_place_notes_and_a_rule_that_names_nothing": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12"
     },
     "rules": {
       "question": "Does the method still follow a rule and reuse a method that were each stated once, at the start of the history?",
       "task": "The same kind of 240K stream, seed 0, 32K live budget. Item 1 states a rule: three counters are confidential, answer \"protected\" whenever asked for their value. Item 2 states a method: a counter's tally is its value times 5 plus 13. Five probe items each ask one question of each kind (current value, old value, who, rule, method), 24 to 129 items after the rule and the method were stated. The final query includes one confidential counter. 39 questions per run.",
       "counts": "Each score is correct/asked on one seed. 'final' counts all 14 final questions, one of which asks for a confidential counter; 'final_confidential' says how that one was answered.",
-      "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/rules-probe-analysis-rules.txt",
+      "analysis_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/rules-probe-analysis-rules.txt",
       "rows": [
         {
           "id": "rules-B32ira",
@@ -2064,10 +2066,10 @@
       },
       "limit": "At the final item the model rewrote its answers file with the final counters only, which wiped its earlier probe answers, and the run was stopped. The probe answers scored here are the ones it wrote during the run, rebuilt from the write commands in its saved transcript (literal values, nothing re-run); a copy of the file taken during the run gave the same counts through probe item 28 (157/196). The final answers are those in the file when the run was stopped. The grader's own final check, including its storage-rule check, did not run. One stream, one seed.",
       "evidence": {
-        "rebuilt_grade": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-rebuilt-grade.json",
-        "rebuilt_answers": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-rebuilt.json",
-        "answers_file_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-file-at-stop.json",
-        "task": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-task.toml"
+        "rebuilt_grade": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-rebuilt-grade.json",
+        "rebuilt_answers": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-rebuilt.json",
+        "answers_file_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-B32iraR-answers-file-at-stop.json",
+        "task": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign5/1m-task.toml"
       },
       "total": "187/228",
       "total_note": "planted questions plus final questions; a stopped run with rebuilt answers"
@@ -2106,7 +2108,7 @@
     "keeper": {
       "question": "Can something outside the agent manage the context, so that the agent itself runs no routine?",
       "task": "The rule-and-method stream of the rules section: about 240K tokens through a 32K live window. 39 questions on seed 0; 46 on seed 1, which has a different rule, method and set of stories. The million entries are the 999,460-token stream.",
-      "counts": "Each score is correct/asked on one run. Model calls for the harness keeper include its note-taking calls; for the proxy they are the calls the agent made. The proxy rows are its runs after its fixes (arm X32b); its two runs before them (arm X32) are under proxy.before_fixes. The in_place entries are the same harness keeper with in-place notes; their minutes have one decimal.",
+      "counts": "Each score is correct/asked on one run. Model calls for the harness keeper include its note-taking calls; for the proxy they are the calls the agent made. The proxy rows are its runs after its fixes (arm X32b); its two runs before them (arm X32) are under proxy.before_fixes. The in_place entries are the same harness keeper with in-place notes; their minutes have one decimal. proxy.in_place holds the proxy with in-place notes (2026-10-12); its minutes are whole-job time to one decimal, as the lab note gives them.",
       "server_window": 262144,
       "rows": [
         {
@@ -2215,9 +2217,9 @@
         }
       ],
       "proxy": {
-        "readme_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/tools/ctxkeeper/README.md",
-        "code_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/tools/ctxkeeper/ctxkeeper.py",
-        "limit": "Run on this benchmark only: not yet under a real coding or research agent. The 1M result is one stream and one seed. One weakness the 1M run showed (reworded rule lines kept beside the restored originals) is fixed in the code and has not been run again.",
+        "readme_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/tools/ctxkeeper/README.md",
+        "code_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/tools/ctxkeeper/ctxkeeper.py",
+        "limit": "Run on this benchmark only: not yet under a real coding or research agent. Each 1M result of the proxy is one stream and one seed. One weakness the full-rewrite 1M run showed (reworded rule lines kept beside the restored originals) is fixed in the code and has not been run again with the full rewrite.",
         "before_fixes": {
           "arm": "X32",
           "what": "The first two runs of the proxy against the real server, before the fixes that the second run prompted.",
@@ -2334,9 +2336,509 @@
           "shown_by_this_run": "The model kept rewording rule lines in its notes. The proxy restored the original each time (95 times) and kept the rewording too, so the RULES section carried near-copies. The proxy now replaces a rewording with the original line; that change was made after this run started and has not been run again.",
           "limit": "One stream, one seed. Run on this benchmark only, not under a real coding or research agent.",
           "evidence": {
-            "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/test-stdout.txt",
-            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/details.json",
-            "proxy_counters": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/proxy-status.json"
+            "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/test-stdout.txt",
+            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/details.json",
+            "proxy_counters": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/X32b-1000k-s0/proxy-status.json"
+          }
+        },
+        "in_place": {
+          "question": "Can the fast form of the keeper (in-place notes) be moved out of the test harness into the proxy, for an agent that sends its whole history and manages nothing, without losing answers or speed?",
+          "method": "keeper_proxy_inplace",
+          "date": "2026-10-12",
+          "what": "Keeper as a proxy, with in-place notes: the proxy takes its notes the way the harness keeper with in-place notes does. The note-taking call is the view the server has just read, without the newest exchange, plus one message; the reply holds only what changed; the proxy checks and applies it, archives the noted messages word for word, and the view becomes the opening messages, the NOTES and the newest exchange.",
+          "differences_from_the_harness_keeper": "Forced by a client that resends its history: the newest exchange stays in view (the model has to act on it), so about nine items are noted per call instead of ten; the latest user message stays in view while it is being worked on; a question that arrived in a tool result blocks the cut until it is closed.",
+          "agent": "A plain agent with no context management of its own. It sends its whole history on every call.",
+          "minutes": "Whole-job minutes as the lab note gives them. The minutes column of the evidence tables counts the agent only and reads lower for the proxy runs.",
+          "builds": [
+            {
+              "arm": "X32i",
+              "label": "First build",
+              "ran_at_1m": false,
+              "what": "In-place notes in the proxy as first written.",
+              "outcome": "On the second stream a reply that had been asked for again replaced the first one. It held four lines where the first held 27, so the changes of nine batches were lost: 40 of 46, with 15 values wrong in the notes."
+            },
+            {
+              "arm": "X32m",
+              "label": "Second build: replies are merged",
+              "ran_at_1m": true,
+              "what": "A reply that is asked for again replaces only the lines of the names it mentions; every other line of the reply before it stays.",
+              "outcome": "Every answer right on both 240K streams. Over 1,000,000 tokens it missed the bar set beforehand on both counts: six answers blank and six wrong."
+            },
+            {
+              "arm": "X32n",
+              "label": "Third build: fixes from the first million-token run",
+              "ran_at_1m": false,
+              "what": "Search hits show the first line of their message; the searches of a turn that ended empty are carried into the next request; note lines are counted and followed by their parts; every amount in a line's working must be stated in the turns.",
+              "outcome": "Faster, and it failed the check set before the long run. Both low scores come from one weak point: a questioned note got no usable answer and the whole step fell back to the full rewrite. The 1,000,000-token run was not made on this build."
+            },
+            {
+              "arm": "X32n2",
+              "label": "Fourth build: a questioned reply stands",
+              "ran_at_1m": true,
+              "what": "A questioned reply never falls back to the full rewrite: the first reply stands without the questioned lines. A line for a name the noted turns never mention is left out. The notes request says what the first message after the NOTES is.",
+              "outcome": "Every answer right on both 240K streams, with nothing wrong in the notes. Over 1,000,000 tokens it met the bar. Six of its eight misses, probably seven, are one mix-up between message numbers and item numbers in the search tool."
+            },
+            {
+              "arm": "X32p",
+              "label": "Fifth build, the current one: the search tool counts in the stream’s own numbers",
+              "ran_at_1m": true,
+              "what": "The search tool shows and takes the content's own item numbers and nothing else; when there are more matches than fit, the nearest ones are shown and the line that says so comes first; a misspelled name is given to the name it was meant for.",
+              "outcome": "Within two answers of the keeper inside the test harness, and as fast."
+            }
+          ],
+          "rows": [
+            {
+              "id": "X32i-s0",
+              "arm": "X32i",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 0,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "14/14",
+              "total": "39/39",
+              "minutes": "10.2",
+              "headline": false,
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "note": "The same run as X32m seed 0, call for call: the merge fix did not come into play.",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32i-rules-s0/notes-audit.txt"
+            },
+            {
+              "id": "X32i-s1",
+              "arm": "X32i",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 1,
+              "current": "4/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "16/21",
+              "total": "40/46",
+              "minutes": "12.3",
+              "headline": false,
+              "notes_wrong": 15,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32i-rules-s1/notes-audit.txt"
+            },
+            {
+              "id": "X32m-s0",
+              "arm": "X32m",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 0,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "14/14",
+              "total": "39/39",
+              "minutes": "10.2",
+              "headline": false,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 8,
+              "notes_tokens_written": "22K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "same_run_as": "X32i-s0",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32m-rules-s0/notes-audit.txt"
+            },
+            {
+              "id": "X32m-s1",
+              "arm": "X32m",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 1,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "21/21",
+              "total": "46/46",
+              "minutes": "13.1",
+              "headline": false,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 14,
+              "notes_tokens_written": "31K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32m-rules-s1/notes-audit.txt"
+            },
+            {
+              "id": "X32n-s0",
+              "arm": "X32n",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 0,
+              "current": "0/5",
+              "old_value": "0/5",
+              "who": "0/5",
+              "rule": "0/5",
+              "house_method": "0/5",
+              "final": "14/14",
+              "total": "14/39",
+              "minutes": "9.6",
+              "headline": false,
+              "in_place_attempts_failed": 1,
+              "replies_asked_again": 4,
+              "notes_tokens_written": "17.9K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "note": "All 25 answers given along the way were right until the final item, where the model wrote the 14 final values over the whole answers file.",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32n-rules-s0/notes-audit.txt"
+            },
+            {
+              "id": "X32n-s1",
+              "arm": "X32n",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 1,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "20/21",
+              "total": "45/46",
+              "minutes": "11.0",
+              "headline": false,
+              "in_place_attempts_failed": 1,
+              "replies_asked_again": 6,
+              "notes_tokens_written": "23.9K",
+              "notes_wrong": null,
+              "notes_versions_audited": "17 of 17",
+              "note": "One counter stale in the final list. The lab note does not give this run's audit count; the audit file is linked.",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32n-rules-s1/notes-audit.txt"
+            },
+            {
+              "id": "X32n2-s0",
+              "arm": "X32n2",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 0,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "14/14",
+              "total": "39/39",
+              "minutes": "8.8",
+              "headline": false,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 1,
+              "notes_tokens_written": "16.0K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32n2-rules-s0/notes-audit.txt"
+            },
+            {
+              "id": "X32n2-s1",
+              "arm": "X32n2",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 1,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "21/21",
+              "total": "46/46",
+              "minutes": "9.7",
+              "headline": false,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 2,
+              "notes_tokens_written": "20.0K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32n2-rules-s1/notes-audit.txt"
+            },
+            {
+              "id": "X32p-s0",
+              "arm": "X32p",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 0,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "14/14",
+              "total": "39/39",
+              "minutes": "8.5",
+              "headline": true,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 2,
+              "notes_tokens_written": "15.7K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32p-rules-s0/notes-audit.txt"
+            },
+            {
+              "id": "X32p-s1",
+              "arm": "X32p",
+              "method": "keeper_proxy_inplace",
+              "cap": "32K",
+              "seed": 1,
+              "current": "5/5",
+              "old_value": "5/5",
+              "who": "5/5",
+              "rule": "5/5",
+              "house_method": "5/5",
+              "final": "21/21",
+              "total": "46/46",
+              "minutes": "9.4",
+              "headline": true,
+              "cuts_in_place": 17,
+              "in_place_attempts_failed": 0,
+              "replies_asked_again": 2,
+              "notes_tokens_written": "20.1K",
+              "notes_wrong": 0,
+              "notes_versions_audited": "17 of 17",
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32p-rules-s1/notes-audit.txt"
+            }
+          ],
+          "compare_at_240k": {
+            "harness_keeper_in_place": {
+              "arm": "N32u",
+              "totals": [
+                "39/39",
+                "46/46"
+              ],
+              "minutes": [
+                "9.9",
+                "10.0"
+              ]
+            },
+            "proxy_full_rewrite": {
+              "arm": "X32b",
+              "totals": [
+                "39/39",
+                "44/46"
+              ],
+              "minutes": [
+                "17.0",
+                "18.0"
+              ],
+              "note": "The same two runs that the keeper rows above give as 17 and 18 minutes."
+            }
+          },
+          "million": {
+            "task": "The same 999,460-token stream as the million section: 617 items, seed 0, 203 planted questions and 25 final questions.",
+            "bar_set_before_the_first_run": "220/228 or more in under 70 minutes.",
+            "bar_minimum_right": 220,
+            "bar_under_minutes": 70,
+            "runs": [
+              {
+                "arm": "X32m",
+                "attempt": 1,
+                "headline": false,
+                "status": "Finished run, graded by the task's own checker; not void",
+                "total": "216/228",
+                "minutes": 75.8,
+                "bar_met": false,
+                "probes": "191/203",
+                "final": "25/25",
+                "by_type": {
+                  "current": "56/58",
+                  "who": "26/29",
+                  "house_method": "28/29",
+                  "rule": "28/29",
+                  "old_value": "53/58"
+                },
+                "blank": 6,
+                "wrong": 6,
+                "cuts_in_place": 77,
+                "in_place_attempts_failed": 0,
+                "replies_asked_again": 33,
+                "archive_searches": 255,
+                "notes_tokens_written": "134K",
+                "notes_wrong": 2,
+                "notes_versions_audited": "77 of 77",
+                "notes_wrong_note": "Two counters. The audit file counts 4: the other two are answers the model stored as STATE lines, not counters.",
+                "calls_over_20_seconds": 60,
+                "minutes_in_those_calls": 42,
+                "misses": "Six blank at one question item: the model made its eight searches, returned an empty reply, and in the next request everything found was gone, because the proxy answers searches itself and the client never holds them. Six wrong, all about a numbered item: search hits were labelled with message numbers.",
+                "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32m-1m-s0/notes-audit.txt"
+              },
+              {
+                "arm": "X32n2",
+                "attempt": 2,
+                "headline": false,
+                "status": "Finished run, graded by the task's own checker; not void",
+                "total": "220/228",
+                "minutes": 53.3,
+                "bar_met": true,
+                "probes": "196/203",
+                "final": "24/25",
+                "by_type": {
+                  "current": "56/58",
+                  "who": "29/29",
+                  "house_method": "28/29",
+                  "rule": "29/29",
+                  "old_value": "54/58"
+                },
+                "blank": 0,
+                "wrong": 8,
+                "cuts_in_place": 76,
+                "in_place_attempts_failed": 0,
+                "replies_asked_again": 5,
+                "archive_searches": 161,
+                "notes_tokens_written": "119K",
+                "notes_wrong": 2,
+                "notes_versions_audited": "76 of 76",
+                "calls_over_20_seconds": 24,
+                "minutes_in_those_calls": 12,
+                "misses": "Six, probably seven, are one confusion: the search tool took message numbers while each hit also showed its item. The model searched \"before 332\" meaning item 332 and got everything before message 332, which is item 150, read that as complete and answered against its own correct NOTES. One change was lost to a misspelled name; one sign slip in the notes cost a value in the final list.",
+                "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32n2-1m-s0/notes-audit.txt"
+              },
+              {
+                "arm": "X32p",
+                "attempt": 3,
+                "headline": true,
+                "status": "Finished run, graded by the task's own checker; not void",
+                "total": "226/228",
+                "minutes": 49.6,
+                "bar_met": true,
+                "probes": "201/203",
+                "final": "25/25",
+                "by_type": {
+                  "current": "58/58",
+                  "who": "29/29",
+                  "house_method": "27/29",
+                  "rule": "29/29",
+                  "old_value": "58/58"
+                },
+                "blank": 0,
+                "wrong": 2,
+                "cuts_in_place": 75,
+                "in_place_attempts_failed": 0,
+                "replies_asked_again": 15,
+                "archive_searches": 112,
+                "notes_tokens_written": "93K",
+                "notes_wrong": 5,
+                "notes_versions_audited": "75 of 75",
+                "notes_wrong_note": "Five counters wrong for a stretch. Two are the doing of a new rule that left out lines the checker could not follow; neither cost an answer. Two were read wrongly by the model, and one of those is behind one of the two wrong tallies.",
+                "calls_over_20_seconds": 12,
+                "minutes_in_those_calls": 6.5,
+                "misses": "Both misses are tallies (house-method questions).",
+                "expected_before_the_run": "225 or more in 46 to 54 minutes.",
+                "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32p-1m-s0/notes-audit.txt"
+              }
+            ],
+            "compare": {
+              "harness_keeper_in_place": {
+                "arm": "N32u",
+                "total": "228/228",
+                "minutes": 50.2
+              },
+              "proxy_full_rewrite": {
+                "arm": "X32b",
+                "total": "222/228",
+                "minutes": 95.1,
+                "note": "The same run that proxy.million gives as 95 minutes."
+              }
+            },
+            "where_the_time_went": {
+              "arm": "X32p",
+              "run_seconds": 2975,
+              "server_reading_seconds": 869,
+              "server_writing_seconds": 1676,
+              "server_percent": 86,
+              "tokens_read_outside_the_cache": "2.36M",
+              "read": "The stream once, and 1.3 million tokens more in turns re-read after each cut, search results and note-taking.",
+              "tokens_written": "172K",
+              "tokens_written_per_second": 103,
+              "written_thousands": {
+                "notes": 93,
+                "the_agents_own_turns": 55,
+                "search_rounds": 24
+              },
+              "proxy_handling_seconds": 2593.362,
+              "proxy_waiting_for_the_server_seconds": 2565.522,
+              "proxy_own_time": "Under half a minute: the proxy's own counters give 2,593.4 seconds handling requests, of which 2,565.5 waiting for the model server.",
+              "source": "The server's own counters, sampled every 30 seconds, and the proxy's state file."
+            },
+            "limit": "One stream, one seed. Run on this benchmark only, not under a real coding or research agent."
+          },
+          "lessons": [
+            {
+              "lesson": "Results that only the proxy saw must not be lost when a turn ends empty.",
+              "from": "The proxy answers the model's archive searches itself, so the agent's history never holds them. At one question item the model made its eight searches and then returned an empty reply; in the next request everything found was gone, and six answers were never written.",
+              "fix": "The searches of a turn that ended with nothing for the client are shown again in the next request, and an empty reply is asked for once more with thinking off."
+            },
+            {
+              "lesson": "A search tool must count one way.",
+              "from": "Hits were labelled with message numbers while the questions speak of item numbers: six wrong answers about a numbered item. Then each hit showed both, and the model asked for everything \"before 332\" meaning item 332 and got everything before message 332, which is item 150. It trusted that search over its own correct notes: six more wrong answers, probably seven.",
+              "fix": "The tool can run in the content's own numbering: every number it shows or takes is then an item number. With it, every earlier-value question was right (58/58)."
+            },
+            {
+              "lesson": "A list that is cut short has to say so first.",
+              "from": "\"The first 40 of 63\", with the note at the end, was read as all there is.",
+              "fix": "A cut-off list says so in its first line and shows the matches nearest to what was asked for."
+            },
+            {
+              "lesson": "What stays in view after a cut gets written down twice.",
+              "from": "The proxy keeps the newest exchange in view so that a real agent can still see what it has just fetched. The model's remark in that exchange was about the result before it, already in the notes; at the next notes call it noted those changes again, once the wrong way round (an 84 that had been added was taken away).",
+              "fix": "The notes request says what that first message is, and a line for a name that none of the noted turns mentions is left out."
+            },
+            {
+              "lesson": "A questioned note must never fall back to a slower, different path.",
+              "from": "When the model gave no usable answer to a question about its notes, the whole cut was redone with a full rewrite. In one run that lost a change. In another the rewrite added a \"rule\" that restated the task's opening message; rules are repeated at every question item, and at the last one the model followed it literally and overwrote a file holding 25 right answers: 14/39 where the next build scored 39/39.",
+              "fix": "The first reply stands, without the questioned lines."
+            },
+            {
+              "lesson": "A model told to show its working will invent working.",
+              "from": "\"The clerk recorded katu85 at five hundred and twenty-three\" came back as 650 - 27 = 623. It adds up and starts from the value held, so the checks passed it.",
+              "fix": "Every amount in a line's working has to be stated in the text. Not caught yet: a value that was set, noted as a change by that same number."
+            },
+            {
+              "lesson": "A safety rule can be too eager.",
+              "from": "\"A line whose number the turns do not state is left out\" also left out three lines that were right or nearly right but written in a form the checker could not follow. Their counters kept stale values; the two wrong counters that were the rule's doing cost no answer.",
+              "fix": "A line is left out only for a number the turns contradict, never because the checker lost its way. Unit-tested; not yet run on the streams."
+            },
+            {
+              "lesson": "The server kept being stopped at the end of long runs, and it was not the run.",
+              "from": "A script that summarises results held every saved snapshot of a trial at once: 1.7 GB on disk after a 1M proxy run, beside a model server with about 2 GB of host memory to spare.",
+              "fix": "One snapshot is held at a time: 50 MB."
+            },
+            {
+              "lesson": "New checking code is read by a second reviewer before it runs.",
+              "from": "Five reviews in one day found 46 issues, several of which would have stored a wrong value. One morning fix ran before its review, because the usual reviewer cannot run beside the busy model server.",
+              "fix": "A reviewer that only reads can run beside the server, so the review no longer has to wait for the cards."
+            }
+          ],
+          "not_caught_by_any_check": [
+            "A change noted with the wrong sign.",
+            "A value that was set, noted as a change by the same number."
+          ],
+          "not_run": "The proxy on the second 1M stream; the proxy with the open-question fix and with the corrected rule for lines the checker cannot follow; the proxy under a real agent program. A real-code task is built and reviewed and has not been run: a real library with 40 injected defects, worked as tickets one at a time, with standing instructions that arrive along the way.",
+          "limits": "One model, one machine, one synthetic task family, one run per cell. The proxy's 1M result is one stream. The notes are not perfect: on the 1M run five counters were wrong for a stretch, and one of them is behind one of the two missed tallies.",
+          "evidence": {
+            "folder": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12",
+            "table_240k": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/table-rules-240k.txt",
+            "table_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/table-1m.txt",
+            "log_first_night": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign11.log",
+            "log_morning": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign12.log",
+            "proxy_counters_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32p-1m-s0/state.json",
+            "notes_audit_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/proxy/X32p-1m-s0/notes-audit.txt",
+            "details_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/runs/client-1m/X32p__sparse-memory-t1000k-s0/details.json",
+            "audit_code": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/proxy_notes_audit.py",
+            "closeout_note": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/notes/2026-10-12-context-campaigns-11-12-closeout.md"
           }
         }
       },
@@ -2409,12 +2911,12 @@
         },
         "limit": "One stream, one seed: a result, not yet a replication.",
         "evidence": {
-          "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/check.txt",
-          "details": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/details.json",
-          "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/notes_final.txt"
+          "grade": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/check.txt",
+          "details": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/details.json",
+          "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-keeper/N32j-1000k-s0/notes_final.txt"
         }
       },
-      "limits": "Two streams of one synthetic task family at 240K; one model; one machine. The 1M results, in the harness with either form of the notes and as the proxy, are each one stream and one seed. The fully checked in-place version has one run on each 240K stream and one at 1M. The proxy does not have in-place notes yet. The plain 200K-window baseline on the 1M stream has not been run.",
+      "limits": "Two streams of one synthetic task family at 240K; one model; one machine; one run per cell. At 1M the harness keeper with in-place notes has two streams (228/228 and 210/222); the proxy with in-place notes and both full-rewrite forms have one. The proxy has been run on this benchmark only, not under a real coding or research agent. The plain 200K-window baseline on the 1M stream has not been run.",
       "not_run": "Not run: archive and search with pinned rule lines (B32iraR) and window-drop (W32) on the seed-1 rule stream; window-drop and the proxy before its fixes (X32) on the 1M stream.",
       "in_place": {
         "question": "Where does the keeper's time go, and can its notes be kept at lower cost without losing answers?",
@@ -2705,13 +3207,13 @@
           },
           "notes_wrong": 0,
           "preregistered_bar": "222/228 or better (the proxy's score) in under 60 minutes.",
-          "limit": "One stream, one seed. The first run of the version with every check; its two 240K runs were made two hours later (rows N32u-s0 and N32u-s1).",
+          "limit": "One stream, one seed. The first run of the version with every check; its two 240K runs were made two hours later (rows N32u-s0 and N32u-s1). A second 1M stream was run on 2026-10-12: second_million_stream.",
           "evidence": {
-            "table": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-1m.txt",
-            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/details.json",
-            "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/notes_final.txt",
-            "counters": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/keeper_stats.json",
-            "audit": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32u-s0.txt"
+            "table": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-1m.txt",
+            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/details.json",
+            "final_notes": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/notes_final.txt",
+            "counters": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/runs/client-1m/N32u__sparse-memory-t1000k-s0/keeper_stats.json",
+            "audit": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32u-s0.txt"
           }
         },
         "audit": {
@@ -2727,7 +3229,7 @@
               "total": "39/39",
               "minutes": "15.7",
               "notes_wrong": 0,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j-s0.txt"
             },
             {
               "notes": "Full rewrite, with thinking",
@@ -2736,7 +3238,7 @@
               "total": "46/46",
               "minutes": "16.5",
               "notes_wrong": 0,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j-s1.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j-s1.txt"
             },
             {
               "notes": "Full rewrite, with thinking",
@@ -2746,7 +3248,7 @@
               "minutes": "82.9",
               "notes_wrong": 5,
               "wrong_note": "all in one version",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32j-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32j-s0.txt"
             },
             {
               "notes": "Full rewrite, with thinking, deeper cuts",
@@ -2755,7 +3257,7 @@
               "total": "39/39",
               "minutes": "12.7",
               "notes_wrong": 1,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j35-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32j35-s0.txt"
             },
             {
               "notes": "Changes only, no thinking",
@@ -2764,7 +3266,7 @@
               "total": "39/39",
               "minutes": "14.4",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32d-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32d-s0.txt"
             },
             {
               "notes": "Changes only, no thinking",
@@ -2773,7 +3275,7 @@
               "total": "39/39",
               "minutes": "12.2",
               "notes_wrong": 8,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e-s0.txt"
             },
             {
               "notes": "Changes only, no thinking",
@@ -2782,7 +3284,7 @@
               "total": "36/39",
               "minutes": "10.3",
               "notes_wrong": 6,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e35-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e35-s0.txt"
             },
             {
               "notes": "Changes only, no thinking",
@@ -2791,7 +3293,7 @@
               "total": "39/39",
               "minutes": "9.8",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e25-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e25-s0.txt"
             },
             {
               "notes": "Changes only, no thinking",
@@ -2800,7 +3302,7 @@
               "total": "38/39",
               "minutes": "10.8",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32c35-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32c35-s0.txt"
             },
             {
               "notes": "In place, no thinking",
@@ -2809,7 +3311,7 @@
               "total": "39/39",
               "minutes": "11.3",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32x-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32x-s0.txt"
             },
             {
               "notes": "In place, with thinking",
@@ -2818,7 +3320,7 @@
               "total": "39/39",
               "minutes": "9.5",
               "notes_wrong": 0,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32xth-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32xth-s0.txt"
             },
             {
               "notes": "In place, with thinking",
@@ -2827,7 +3329,7 @@
               "total": "46/46",
               "minutes": "8.5",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32y-s1.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32y-s1.txt"
             },
             {
               "notes": "In place, with thinking",
@@ -2836,7 +3338,7 @@
               "total": "38/39",
               "minutes": "9.3",
               "notes_wrong": 3,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32z-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32z-s0.txt"
             },
             {
               "notes": "In place, with thinking",
@@ -2845,7 +3347,7 @@
               "total": "39/39",
               "minutes": "9.6",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32w-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32w-s0.txt"
             },
             {
               "notes": "In place, with thinking",
@@ -2854,7 +3356,7 @@
               "total": "45/46",
               "minutes": "9.7",
               "notes_wrong": 2,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32v-s1.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32v-s1.txt"
             },
             {
               "notes": "In place, with thinking, every check",
@@ -2864,7 +3366,7 @@
               "minutes": "9.9",
               "notes_wrong": 0,
               "wrong_note": "in 15 versions",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u-s0.txt"
             },
             {
               "notes": "In place, with thinking, every check",
@@ -2874,7 +3376,7 @@
               "minutes": "10.0",
               "notes_wrong": 1,
               "wrong_note": "one misread sentence; no question asked for it meanwhile",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u-s1.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u-s1.txt"
             },
             {
               "notes": "In place, with thinking, every check",
@@ -2884,7 +3386,7 @@
               "minutes": "50.2",
               "notes_wrong": 0,
               "wrong_note": "in 63 versions",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32u-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-1m-N32u-s0.txt"
             },
             {
               "notes": "In place, every check, notes every six items",
@@ -2894,7 +3396,7 @@
               "minutes": "10.0",
               "notes_wrong": 2,
               "wrong_note": "one from a defect, now fixed",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u6-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32u6-s0.txt"
             },
             {
               "notes": "In place, every check, retrieval at each question",
@@ -2904,7 +3406,7 @@
               "minutes": "11.2",
               "notes_wrong": 0,
               "wrong_note": "in the 14 of 15 versions the audit could place",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32sr-s1.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32sr-s1.txt"
             },
             {
               "notes": "In place, with thinking, before the last check",
@@ -2913,7 +3415,7 @@
               "total": "42/50",
               "minutes": "14.9",
               "notes_wrong": 14,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32z-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32z-s0.txt"
             },
             {
               "notes": "In place, every check, three of the four fixes",
@@ -2923,7 +3425,7 @@
               "minutes": "19.6",
               "notes_wrong": 10,
               "wrong_note": "a run the grader voided",
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32s-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32s-s0.txt"
             },
             {
               "notes": "In place, every check, none of the fixes, retrieval at each question",
@@ -2932,7 +3434,7 @@
               "total": "47/50",
               "minutes": "19.4",
               "notes_wrong": 10,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32ur-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32ur-s0.txt"
             },
             {
               "notes": "In place, every check, all four fixes, retrieval at each question",
@@ -2941,7 +3443,7 @@
               "total": "46/50",
               "minutes": "14.4",
               "notes_wrong": 6,
-              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32sr-s0.txt"
+              "audit_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32sr-s0.txt"
             }
           ],
           "recount": {
@@ -2976,15 +3478,15 @@
             "files": "The audit files linked in this record are the recount (lab commit 080ebd6b9)."
           }
         },
-        "not_run": "Not run: the keeper with retrieval at question time (N32sr) on the 1M stream; a second seed at 1M; a second seed of the harder stream. Not built: in-place notes in the proxy.",
-        "limits": "One seed and one stream at 1M for in-place notes, and one run on each 240K stream with every check. With every check the NOTES still held one wrong counter for a stretch on the second 240K stream. The five earlier 240K runs were made while the checks were being added; two of them lost one answer each. One synthetic task family, one model, one machine; not a real agent task.",
+        "not_run": "Not run: the keeper with retrieval at question time on the 1M stream; the second 1M stream again with the fix that keeps an open question in view; the proxy on the second 1M stream.",
+        "limits": "Two streams at 1M for in-place notes in the harness (228/228 and 210/222), and one run on each 240K stream with every check. With every check the NOTES still held one wrong counter for a stretch on the second 240K stream and one on the second 1M stream. The five earlier 240K runs were made while the checks were being added; two of them lost one answer each. One synthetic task family, one model, one machine; not a real agent task.",
         "evidence": {
-          "folder": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10",
-          "table_240k": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-rules-240k.txt",
-          "table_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-1m.txt",
-          "keeper_code": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/scripts/context/clm_keeper.py",
-          "audit_code": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/scripts/context/notes_audit.py",
-          "audit_example": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e-s0.txt"
+          "folder": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10",
+          "table_240k": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-rules-240k.txt",
+          "table_1m": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-1m.txt",
+          "keeper_code": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/clm_keeper.py",
+          "audit_code": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/notes_audit.py",
+          "audit_example": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32e-s0.txt"
         },
         "every_check": {
           "arm": "N32u",
@@ -3024,6 +3526,58 @@
           "notes_wrong": 2,
           "reading": "Notes every six items instead of ten, tried once on the first 240K stream: the same score in the same time, with two counters wrong in the NOTES for a while. No gain; ten stays.",
           "defect_found": "One of the two wrong counters came from a defect, now fixed: a no-change line with a remark after it was stored as that counter's value. Such a line is now still a no-change line."
+        },
+        "second_million_stream": {
+          "status": "Finished run, graded by the task's own checker; not void",
+          "arm": "N32n",
+          "method": "keeper_inplace",
+          "cap": "32K",
+          "seed": 1,
+          "date": "2026-10-12",
+          "task": "A second 1M stream of the same family: 618 items, seed 1, 222 questions.",
+          "code": "In-place notes with the checks of the morning of 2026-10-12; the harness's own search tool, which was not changed that day.",
+          "total": "210/222",
+          "total_percent_one_decimal": 94.6,
+          "minutes": 50.0,
+          "final": "19/19",
+          "by_type": {
+            "current": "55/58",
+            "who": "26/28",
+            "house_method": "26/29",
+            "rule": "28/29",
+            "old_value": "55/58",
+            "small_detail": "1/1"
+          },
+          "by_type_note": "The lab note lists the five types and the final list (209/221); the one further question is the small-detail probe in the run log.",
+          "blank": 7,
+          "wrong": 5,
+          "cuts_in_place": 65,
+          "in_place_attempts_failed": 0,
+          "notes_calls": 78,
+          "notes_tokens_written": "95K",
+          "notes_wrong": 1,
+          "notes_versions_audited": "65 of 65",
+          "expected_before_the_run": "97% or more in 45 to 60 minutes.",
+          "first_stream": {
+            "arm": "N32u",
+            "total": "228/228",
+            "minutes": 50.2
+          },
+          "both_streams": {
+            "total": "438/450",
+            "percent": 97,
+            "percent_one_decimal": 97.3
+          },
+          "the_seven_blank": "One event, a hole in the keeper and not in the notes. At the last question item the model was fetching whole old items to answer; the window filled, the ordinary cut ran, and it moved the question item itself out of view. The model finished reading, no longer saw any question, and went on. Nothing was written for that item.",
+          "the_other_five": "Two tallies and one current value computed from a search although the NOTES held the right value; one who-did-it question; one earlier value.",
+          "fix": "An open question is never cut out of view by any cut, in the harness and in the proxy. In the code; not yet run.",
+          "limit": "One run. The proxy has not run on this stream.",
+          "evidence": {
+            "table": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/table-1m.txt",
+            "details": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/runs/client-1m/N32n__sparse-memory-t1000k-s1/details.json",
+            "audit": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/audit-client-1m-N32n-s1.txt",
+            "log": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign12.log"
+          }
         }
       }
     },
@@ -3185,12 +3739,12 @@
         },
         "limit": "One stream, one seed, one stopped run.",
         "evidence": {
-          "answers_scored": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/c10-R32c40-1000k-s0-partial.json",
-          "answers_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/c10-R32c40-1000k-s0-answers-at-stop.json"
+          "answers_scored": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/c10-R32c40-1000k-s0-partial.json",
+          "answers_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/c10-R32c40-1000k-s0-answers-at-stop.json"
         }
       },
       "hard_stream": {
-        "status": "Exploratory: one seed, and its difficulty is not calibrated",
+        "status": "Exploratory: the comparison with and without retrieval is one seed, and the difficulty of the stream is not calibrated",
         "task": "A 240K stream in which every change names its counter in one sentence and changes it in the next (\"it\"), with doublings, thirds and values that depend on another counter. 50 questions.",
         "question": "On text that refers to things indirectly, do notes and retrieval together do better than either alone?",
         "runs": [
@@ -3206,7 +3760,7 @@
             "minutes": "14.9",
             "notes_wrong": 14,
             "note": "Its notes went wrong mostly where one counter depends on another.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32z-s0.txt"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32z-s0.txt"
           },
           {
             "arm": "N32u",
@@ -3220,7 +3774,7 @@
             "minutes": "17.4",
             "notes_wrong": null,
             "note": "Stuck at the first question set: one archive search was sent and refused 362 times in a row.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-hard-240k.txt"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-hard-240k.txt"
           },
           {
             "arm": "N32t",
@@ -3234,7 +3788,7 @@
             "minutes": null,
             "notes_wrong": null,
             "note": "All 5 right at the first question set, then it circled between three different searches.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/campaign10b.log"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/campaign10b.log"
           },
           {
             "arm": "N32s",
@@ -3248,7 +3802,7 @@
             "minutes": "19.6",
             "notes_wrong": 10,
             "note": "Void: the answers file held one key that was not asked for, so 43 is a raw score. The standing rule was lost at the first cut.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32s-s0.txt"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32s-s0.txt"
           },
           {
             "arm": "N32ur",
@@ -3262,7 +3816,7 @@
             "minutes": "19.4",
             "notes_wrong": 10,
             "note": "Three questions missed.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32ur-s0.txt"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32ur-s0.txt"
           },
           {
             "arm": "N32sr",
@@ -3276,7 +3830,7 @@
             "minutes": "14.4",
             "notes_wrong": 6,
             "note": "The same three questions missed, and a fourth.",
-            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32sr-s0.txt"
+            "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-hard-N32sr-s0.txt"
           }
         ],
         "retrieval": {
@@ -3327,13 +3881,54 @@
             "fix": "A rule named in any reply of one note-taking call is kept (5/5 again in the next run)."
           }
         ],
-        "reading": "On text that refers to things indirectly the two together beat either alone: 47/50 and 46/50 with retrieval added to the keeper, 42/50 (and 43/50 in a voided run) with notes only, and retrieval alone too slow to finish. One seed: this says which way the difference points, no more.",
-        "limits": "One seed, and the difficulty of the stream is not calibrated. The two runs with retrieval are two states of the code, not two runs of one. The NOTES were not clean in any of the four runs that read the whole stream (6 to 14 counters ever wrong). The keeper with retrieval has not been run at 1M.",
+        "reading": "On text that refers to things indirectly the two together beat either alone: 47/50 and 46/50 with retrieval added to the keeper, 42/50 (and 43/50 in a voided run) with notes only, and retrieval alone too slow to finish. One seed: this says which way the difference points, no more. A second seed on 2026-10-12 gave 46/49 with retrieval added; its partner run without retrieval did not finish, so the comparison is still one seed.",
+        "limits": "The comparison with and without retrieval is one seed, and the difficulty of the stream is not calibrated. The two first-seed runs with retrieval are two states of the code, not two runs of one. The NOTES were not clean in any run that read a whole stream (5 to 14 counters ever wrong). The keeper with retrieval has not been run at 1M.",
         "evidence": {
-          "table": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-hard-240k.txt",
-          "retrieval_answers_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/hard-R32b-answers-at-stop.json",
-          "log": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/campaign10b.log",
-          "audit_on_the_second_ordinary_240k_stream": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32sr-s1.txt"
+          "table": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-hard-240k.txt",
+          "retrieval_answers_at_stop": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/hard-R32b-answers-at-stop.json",
+          "log": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/campaign10b.log",
+          "audit_on_the_second_ordinary_240k_stream": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/audit-client-rules-N32sr-s1.txt"
+        },
+        "second_seed": {
+          "date": "2026-10-12",
+          "seed": 1,
+          "questions": 49,
+          "runs": [
+            {
+              "arm": "N32nr",
+              "what": "Second seed: notes and retrieval, with the stricter note checks of that morning",
+              "with_retrieval": true,
+              "status": "Finished, graded",
+              "total": "46/49",
+              "probes": "24/25",
+              "final": "22/24",
+              "minutes": "23.4",
+              "notes_wrong": 5,
+              "notes_versions_audited": "16 of 16",
+              "note": "Missed two values in the final list and one tally.",
+              "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/audit-client-hard-N32nr-s1.txt"
+            },
+            {
+              "arm": "N32n",
+              "what": "Second seed: notes only, with the same checks",
+              "with_retrieval": false,
+              "status": "Stopped by hand at item 78 of 147 after 22.7 minutes; not graded",
+              "total": null,
+              "probes": null,
+              "final": null,
+              "minutes": null,
+              "notes_wrong": null,
+              "answered_until_then": "10/10",
+              "note": "It sat on one set of questions for eight minutes and was stopped by hand. Its 10 answers until then were all right.",
+              "evidence_url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign12.log"
+            }
+          ],
+          "why_slow": "That morning's amount check questioned every line of the kind \"went up by as much as X held\": the amount is another counter's value, not a number in the sentence. Each question costs a rewritten reply: 51 notes calls for 17 cuts.",
+          "reading": "The accuracy with retrieval held on a second seed (46/49). Whether retrieval adds answers could not be compared on this seed, because the partner run did not finish.",
+          "evidence": {
+            "table": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/table-hard-240k.txt",
+            "log": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign12.log"
+          }
         }
       },
       "coverage_before_the_runs": {
@@ -3343,16 +3938,105 @@
         "million_at_20_per_question": "187/228",
         "million_at_40": "220/228",
         "million_at_80": "227/228",
-        "url": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/rag-coverage.txt"
+        "url": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/rag-coverage.txt"
       },
-      "correction": "Before these runs we expected retrieval alone to lose the standing rule. On this test it did not at 240K: the rule names the counters it covers, so a question about one of them retrieves it. The expectation came from the earlier archive method, in which the model decides when to search. The rule was lost only late in the 1M stream (4 times in 29).",
-      "reading": "Retrieval finds things; notes hold what must always be in view (rules, current state) at a fixed size. The keeper has both: its archive search is retrieval on demand. Automatic retrieval at question time added to the keeper was run in campaign 10b: on the harder stream the two together scored 47/50 and 46/50 against 42/50 for notes alone, and on the second ordinary 240K stream 46/46 in 11.2 minutes.",
-      "limits": "Keyword retriever only. One stopped run at 1M, which did not answer the final questions. The harder stream is one seed and not calibrated. A rule that does not name what it covers has not been tested. The keeper with retrieval added has not been run at 1M. One synthetic task family, one model, one machine.",
+      "correction": "Before these runs we expected retrieval alone to lose the standing rule. On this test it did not at 240K: the rule names the counters it covers, so a question about one of them retrieves it. The expectation came from the earlier archive method, in which the model decides when to search. The rule was lost only late in the 1M stream (4 times in 29). A rule that names nothing it covers was tested on 2026-10-12 and there the expectation held: unnamed_rule.",
+      "reading": "Retrieval finds things; notes hold what must always be in view (rules, current state) at a fixed size. The keeper has both: its archive search is retrieval on demand. Automatic retrieval at question time added to the keeper was run in campaign 10b: on the harder stream the two together scored 47/50 and 46/50 against 42/50 for notes alone, and on the second ordinary 240K stream 46/46 in 11.2 minutes. A rule that names nothing it covers shows the difference directly: the keeper applied it 16/16 times, retrieval alone 0/16.",
+      "limits": "Keyword retriever only. One stopped run at 1M, which did not answer the final questions. On the harder stream the comparison with and without retrieval is one seed and not calibrated. The stream with a rule that names nothing has one ambiguous clause (tallies below zero). The keeper with retrieval added has not been run at 1M. One synthetic task family, one model, one machine.",
       "evidence": {
-        "folder": "https://github.com/steveseguin/b70-optimization-lab/tree/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10",
-        "table_240k": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-rules-240k.txt",
-        "retrieval_code": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/scripts/context/rag_retrieve.py",
-        "keeper_code": "https://github.com/steveseguin/b70-optimization-lab/blob/080ebd6b96b3f46860d640d4b68ef472f9484e45/experiments/qwen38-27b-b70/scripts/context/clm_keeper.py"
+        "folder": "https://github.com/steveseguin/b70-optimization-lab/tree/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10",
+        "table_240k": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-11-context-campaign10/table-rules-240k.txt",
+        "retrieval_code": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/rag_retrieve.py",
+        "keeper_code": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/clm_keeper.py"
+      },
+      "unnamed_rule": {
+        "question": "Does a rule that names nothing it covers separate notes from retrieval?",
+        "date": "2026-10-12",
+        "task": "The 240K rule-and-method stream with one more rule in item 1: \"any figure below zero is reported as the single word overdrawn, never as a number\", for every answer about a counter, now or earlier, and the final list. It names no counter and shares no word with the questions it governs. 7 of 39 expected answers on seed 0 and 9 of 46 on seed 1 are that word.",
+        "reading_rule_set_before_the_runs": "\"Kept\" at 80% or more of the governed questions, \"lost\" at 20% or less.",
+        "keeper": [
+          {
+            "arm": "N32k",
+            "seed": 0,
+            "cap": "32K",
+            "current": "5/5",
+            "old_value": "5/5",
+            "who": "5/5",
+            "rule": "5/5",
+            "house_method": "4/5",
+            "final": "14/14",
+            "total": "38/39",
+            "minutes": "9.7",
+            "governed_by_the_rule": "7/7",
+            "other_questions": "31/32",
+            "status": "Finished, graded"
+          },
+          {
+            "arm": "N32m",
+            "seed": 1,
+            "cap": "32K",
+            "current": "5/5",
+            "old_value": "5/5",
+            "who": "5/5",
+            "rule": "5/5",
+            "house_method": "2/5",
+            "final": "21/21",
+            "total": "43/46",
+            "minutes": "11.4",
+            "governed_by_the_rule": "9/9",
+            "other_questions": "34/37",
+            "status": "Finished, graded"
+          }
+        ],
+        "retrieval": [
+          {
+            "arm": "R32b",
+            "seed": 0,
+            "cap": "32K",
+            "current": "2/5",
+            "old_value": "2/5",
+            "who": "5/5",
+            "rule": "5/5",
+            "house_method": "5/5",
+            "final": "12/14",
+            "total": "31/39",
+            "minutes": "10.4",
+            "governed_by_the_rule": "0/7",
+            "other_questions": "31/32",
+            "status": "Finished, graded"
+          },
+          {
+            "arm": "R32b",
+            "seed": 1,
+            "cap": "32K",
+            "current": "4/5",
+            "old_value": "2/5",
+            "who": "5/5",
+            "rule": "5/5",
+            "house_method": "5/5",
+            "final": "15/21",
+            "total": "36/46",
+            "minutes": "9.8",
+            "governed_by_the_rule": "0/9",
+            "other_questions": "36/37",
+            "status": "Finished, graded"
+          }
+        ],
+        "both_streams": {
+          "keeper": "16/16",
+          "retrieval": "0/16"
+        },
+        "what_retrieval_answered": "The true negative number, all 16 times. The rule had left the window by the first question item, and nothing in \"What value does X hold now?\" leads a search back to it.",
+        "what_the_keeper_did": "The rule was a RULES line from the first cut, whole, and it was repeated at every question item.",
+        "stream_fault": "The rule's last clause, \"a tally is still worked out from the true figure\", does not say how a tally that comes out below zero is to be reported. The keeper, with the rule in view, answered \"overdrawn\" for four such tallies; the grader expects the number. Those four are all of the keeper's misses outside the governed questions. Retrieval, which had lost the rule, gave the number and was marked right.",
+        "keeper_tallies_answered_with_the_word": 4,
+        "why_the_earlier_comparison_could_not_show_this": "There the rule named its counters, so a search for a counter found the rule.",
+        "limit": "Two streams, one run per cell, one synthetic task family. The two keeper runs are two states of the code.",
+        "evidence": {
+          "table": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/table-crule-240k.txt",
+          "log": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/campaign11.log",
+          "task_generator": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/make_sparse_prose_tasks.py"
+        }
       }
     }
   }
