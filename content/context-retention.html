@@ -1,7 +1,8 @@
-<p><strong>The goal: when an agent has to make room, lose less than summarising does, and spend less time doing it.</strong> Moving dropped text to a searchable archive answered every question, including those about text it had dropped, in a quarter of the summariser’s time.</p>
+<p><strong>Saving the original text matched summaries on accuracy and took less time.</strong> On this retention test, both answered every question. A current-state table alone lost details from the past.</p>
 <h2>The test</h2>
 <p>The 119K-token narrative reading task, with twelve extra questions asked only at the end: values that were later overwritten, and small details in the text. 36 questions in all. Every approach had a 32K working budget except keep-everything, which used the full window.</p>
-{{RETENTION_TABLE}}
+{{RETENTION_SCORE_PLOT}}
+<details><summary>All five approaches, context use and tokens written</summary>{{RETENTION_TABLE}}</details>
 <h2>What it showed</h2>
 <ul class="ctx-read-next">
 <li><strong>The archive beat summarising on time and writing, at equal correctness.</strong> Both answered {{RET_ARCHIVE_RIGHT}}. The archive agent took {{RET_ARCHIVE_TIME}} and wrote {{RET_ARCHIVE_WRITTEN}}; the summariser took {{RET_SUMMARY_TIME}} and wrote {{RET_SUMMARY_WRITTEN}}.</li>

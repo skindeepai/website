@@ -424,6 +424,90 @@ def landing_table(by_id, lme, dp):
     return html
 
 
+def score_plot(title, rows, caption):
+    """Accessible, responsive bars from the same records used by the evidence tables."""
+    denominators = {fraction_parts(value)[1] for _, value, _, _ in rows}
+    assert len(denominators) == 1, 'A plot must compare the same question set'
+    total = denominators.pop()
+    body = ''
+    for label, value, timing, tone in rows:
+        correct, asked = fraction_parts(value)
+        assert 0 <= correct <= asked and tone in ('keeper', 'proxy', 'baseline')
+        body += ('<div class="ctx-score-row"><div class="ctx-score-label">' + escape(label)
+                 + '<span>' + escape(timing) + '</span></div><div class="ctx-score-track" aria-hidden="true">'
+                 + '<span class="ctx-score-fill ctx-score-' + tone + '" style="width:'
+                 + f'{100 * correct / asked:.4f}' + '%"></span></div>'
+                 + '<strong>' + escape(value) + '</strong></div>')
+    return ('<figure class="ctx-score-plot"><figcaption><strong>' + escape(title)
+            + '</strong><span>Correct answers · scale 0–'
+            + str(total) + ' · longer is better</span></figcaption>' + body
+            + '<p class="ctx-table-note">' + escape(caption) + '</p></figure>')
+
+
+def visual_replacements(by_id, dp):
+    keeper = dp['keeper']
+    k0, x0 = keeper['rows']
+    rules = {r['arm']: r for r in dp['rules']['rows']}
+    short_rows = [(label, r['total'], r['minutes'] + ' min', tone) for label, r, tone in [
+        ('Keeper', k0, 'keeper'), ('Keeper proxy', x0, 'proxy'),
+        ('Agent-managed archive + pinned rules', rules['B32iraR'], 'baseline'),
+        ('Window-drop', rules['W32'], 'baseline'), ('Tool-output compaction', rules['P32'], 'baseline')]]
+    million_rows = [(label, r['total'], str(r['cost']['minutes']) + ' min', tone) for label, r, tone in [
+        ('Keeper', keeper['million'], 'keeper'), ('Keeper proxy', keeper['proxy']['million'], 'proxy')]]
+    plain = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
+    summary = dp['summary_baseline']['row']
+    summary_rows = [(label, r['total'], r['minutes'] + ' min', tone) for label, r, tone in [
+        ('Archive + search', plain['B32ira'], 'keeper'), ('Window-drop', plain['W32'], 'baseline'),
+        ('Summarise at 75%', summary, 'baseline'), ('Tool-output compaction', plain['P32'], 'baseline')]]
+    retention_rows = [(label, score(by_id[key]), by_id[key]['time'], tone) for key, label, tone in [
+        ('ret-archive-119k', 'State + archive + search', 'keeper'),
+        ('ret-summary-119k', 'Summaries', 'baseline'), ('ret-table-119k', 'Current-state table only', 'baseline')]]
+    compact = table(['Approach', 'What stays available', 'Correct'], [
+        ['Keeper', 'Notes, protected rules, searchable originals', k0['total']],
+        ['Keeper proxy', 'The same policy between client and server', x0['total']],
+        ['Agent-managed archive', 'A state table, pinned rules, searchable originals', rules['B32iraR']['total']],
+        ['Window-drop', 'Recent turns only', rules['W32']['total']],
+        ['Tool-output compaction', 'Short stubs in place of old tool output', rules['P32']['total']],
+    ], 'The same 240K rule-and-method stream, seed 0, 32K live context', 'ctx-quick-table')
+    for label, target in [('Keeper', 'context-distance.html#keeper'), ('Keeper proxy', 'context-distance.html#proxy'),
+                          ('Agent-managed archive', 'context-distance.html#rule'), ('Window-drop', 'context-distance.html#methods'),
+                          ('Tool-output compaction', 'context-distance.html#methods')]:
+        compact = compact.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + target, label) + '</th>')
+    def time_plot(title, choices, caption):
+        rows = [(label, by_id[key]) for key, label in choices]
+        values = [float(r['time'].removesuffix(' min')) for _, r in rows]
+        ceiling = math.ceil(max(values) / 10) * 10
+        bars = ''
+        for (label, row), value in zip(rows, values):
+            bars += ('<div class="ctx-score-row"><div class="ctx-score-label">' + escape(label)
+                     + '<span>' + score(row) + ' correct</span></div><div class="ctx-score-track" aria-hidden="true">'
+                     + '<span class="ctx-score-fill ctx-score-proxy" style="width:'
+                     + f'{100 * value / ceiling:.4f}' + '%"></span></div><strong>' + f'{value:g}' + ' min</strong></div>')
+        return ('<figure class="ctx-score-plot"><figcaption><strong>' + escape(title)
+                + '</strong><span>Total elapsed time · shorter is faster · scale 0–' + str(ceiling)
+                + ' minutes</span></figcaption>' + bars + '<p class="ctx-table-note">' + escape(caption) + '</p></figure>')
+
+    return {
+        'QUICK_COMPARISON': compact,
+        'KEEPER_SCORE_PLOT': score_plot('Remembering facts and following the original rules', short_rows,
+            'Same 240K-token stream, seed 0, 32K live budget. One run per method; total elapsed time. The keeper and pinned-rule arms used a larger server ceiling, while keeping the same live budget.'),
+        'MILLION_SCORE_PLOT': score_plot('One million tokens, a 32K working window', million_rows,
+            'Same stream and seed: 203 questions during the task, plus 25 at the end. Both runs finished and passed the storage rule. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
+        'SUMMARY_SCORE_PLOT': score_plot('When old text leaves the window', summary_rows,
+            'Same plain 240K-token history, seed 0, 32K budget; 29 questions. This test has no standing-rule questions and is separate from the keeper comparison.'),
+        'RETENTION_SCORE_PLOT': score_plot('Can it still answer about the past?', retention_rows,
+            'Same 119K-token narrative history, seed 0, 32K budget; 36 final questions, including 12 about earlier text. Total elapsed time.'),
+        'CLM_TIME_PLOT': time_plot('Less time maintaining the same ledger', [
+            ('paper', 'Original self-editing'), ('summary', 'Summaries'),
+            ('improved-121k-s0', 'First revision'), ('improved-light-121k-s0', 'Checked updates, less thinking'),
+            ('files-plain', 'Files + code')],
+            '121K ledger, seed 0; 24 final questions. Original self-editing lost five batches in a harness rollback. External data files were allowed only in the files arm. Different permissions and harnesses are part of this comparison.'),
+        'QUOTED_TIME_PLOT': time_plot('Reading prose, then keeping the totals', [
+            ('read-improved-1m', 'Read-mode self-editing'), ('quoted-1m', 'Quoted events + code')],
+            'Same million-token narrative task, seed 0, 32K budget; 24 final questions. These are the original matched runs; fixed-checker reruns and intermediate-state checks are recorded in the detailed results.'),
+    }
+
+
 def update(pages):
     d = json.loads((ROOT / DATA).read_text(encoding='utf-8'))
     d, trial_manifest = load_published(d)
@@ -594,6 +678,7 @@ def update(pages):
         for field in ('right', 'time', 'written'):
             replacements['RET_' + key.split('-')[1].upper() + '_' + field.upper()] = escape(by_id[key][field])
     replacements['RETENTION_DATA'] = RETENTION_DATA
+    replacements.update(visual_replacements(by_id, d['distance_probes']))
     lme = d['longmemeval']
     def lme_row(r):
         return [r['approach'], r['budget'], f"{r['right']} of {r['asked']}" + (' (stopped)' if r.get('stopped') else ''),
@@ -716,11 +801,11 @@ def update(pages):
     registry = [
         ('context.html', 'Working past the context limit', 'Which ways of managing an AI’s memory actually helped?', None),
         ('context-questions.html', 'Longer context, plain answers', 'Common questions about memory, disk, speed and what “unlimited” can mean.', None),
-        ('context-methods.html', 'Ways to work with more context', 'Compare what each approach keeps, what it costs and what the experiments showed.', None),
+        ('context-methods.html', 'Ways to work with more context', 'A visual guide to keeper, self-editing, files and quoted events.', None),
         ('context-files.html', 'Keep records in files', 'A long task can use a small working context.', 'context-methods.html'),
         ('context-cache.html', 'Read once, reuse the unchanged start', 'Prefix caching reduces the wait before an answer; long-context generation still has a cost.', 'context-methods.html'),
         ('context-memory.html', 'Can disk replace GPU memory?', 'Text files, saved numerical state and active offloading solve different problems.', 'context-methods.html'),
-        ('context-clm.html', 'Let the model edit its own context', 'CLM, summaries and state files: how a long task can use a short working history.', 'context-methods.html'),
+        ('context-clm.html', 'Let the model edit its own context', 'How self-editing differs from keeper, summaries and state files.', 'context-methods.html'),
         ('context-model-tools.html', 'How the model uses files', 'Follow a tool request from the GPU model to disk and back, with the actual prompt sources.', 'context-methods.html'),
         ('context-clm-vs-files.html', 'CLM or files: what changes?', 'Compare live context editing, an automatically loaded state file and a separate archive.', 'context-methods.html'),
         ('context-model-choice.html', 'Is the 27B model enough?', 'What Qwen3.8-27B solved with tools, and how a stronger or trained model might help.', 'context-methods.html'),
@@ -738,7 +823,7 @@ def update(pages):
         ('context-cache-parking.html', 'Park an inactive cache on disk', 'Save computed state between sessions, then restore it before generating.', 'context-methods.html'),
         ('context-cache-offload.html', 'Offload an active cache to RAM or disk', 'How moving numerical state can trade speed for capacity, and why it differs from saving text.', 'context-methods.html'),
         ('context-retention.html', 'Remembering what was dropped', 'An archive of dropped text with a search tool answered questions about the past as well as summarising, in a quarter of the time.', 'context-methods.html'),
-        ('context-distance.html', 'Past the window: what the agent still remembers', 'A history of 240K to 1,000,000 tokens behind a 16K or 32K live window, with questions planted at known distances back: which ways of managing the window still answer them, which still follow a rule, and a keeper that does the managing from outside the agent.', 'context-methods.html'),
+        ('context-distance.html', 'Past the window: what the agent still remembers', 'Facts, old values and standing rules across histories of up to a million tokens.', 'context-methods.html'),
         ('context-reproduce.html', 'How to reproduce the context tests', 'The tasks, graders, agent harness, comparison driver and probes, with what others can and cannot rerun.', None),
     ]
     for name, title, description, parent in registry:

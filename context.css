@@ -10,3 +10,21 @@
 .ctx-source-list{padding-left:20px}.ctx-source-list li{margin:12px 0}.ctx-source-list span{display:block;font-size:.88rem;color:var(--muted)}
 .ctx-diagram{margin:22px 0 26px;max-width:780px}.ctx-diagram img{display:block;width:100%;height:auto}.ctx-diagram svg{display:block;width:100%;height:auto;margin:0 auto}.ctx-page ol{max-width:66ch;padding-left:24px}.ctx-page ol li{padding-left:3px;margin:9px 0;line-height:1.65}
 @media print{.ctx-plot,.ctx-illustration{break-inside:avoid}.ctx-table{overflow:visible}.ctx-table table{min-width:0}}
+
+/* Measured bars and illustrated guides, scoped to the context pages. */
+.ctx-page .ctx-quick-table table{min-width:0;width:100%;table-layout:fixed}
+.ctx-quick-table th:first-child{width:28%}.ctx-quick-table th:nth-child(2){width:55%}.ctx-quick-table th:last-child{width:17%}
+.ctx-page .ctx-quick-table th,.ctx-page .ctx-quick-table td{min-width:0;overflow-wrap:break-word}
+.ctx-quick-table tbody th{font-weight:500}.ctx-quick-table td:last-child{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:650}
+.ctx-render{max-width:720px}.ctx-render img{border-radius:6px}.ctx-render>a{display:block}
+.ctx-score-plot{margin:28px 0;max-width:780px;padding:20px 0;border-block:1px solid var(--line)}
+.ctx-score-plot>figcaption{margin-bottom:22px}.ctx-score-plot>figcaption strong{display:block;font-size:1.05rem}
+.ctx-score-plot>figcaption>span{display:block;font-size:.84rem;color:var(--muted);margin-top:4px}
+.ctx-score-row{display:grid;grid-template-columns:minmax(140px,1.1fr) minmax(100px,1.7fr) 74px;align-items:center;gap:16px;margin:16px 0}
+.ctx-score-label{font-size:.93rem;line-height:1.4}.ctx-score-label>span{display:block;color:var(--muted);font-size:.83rem;margin-top:3px}
+.ctx-score-track{height:18px;background:#e5eaf0;border-radius:2px;overflow:hidden}.ctx-score-fill{display:block;height:100%}
+.ctx-score-keeper{background:#247b7d}.ctx-score-proxy{background:#386891}.ctx-score-baseline{background:#7b8797}
+.ctx-score-row>strong{text-align:right;white-space:nowrap;font-size:.94rem;font-variant-numeric:tabular-nums}
+.ctx-score-plot .ctx-table-note{margin:20px 0 0}.ctx-page .ctx-versus table{min-width:0;table-layout:fixed;width:100%}
+.ctx-versus th:first-child{width:22%}.ctx-versus th:not(:first-child){width:39%}.ctx-page .ctx-versus th,.ctx-page .ctx-versus td{min-width:0;overflow-wrap:break-word}
+@media(max-width:600px){.ctx-quick-table th:first-child{width:28%}.ctx-quick-table th:nth-child(2){width:50%}.ctx-quick-table th:last-child{width:22%}.ctx-score-row{grid-template-columns:minmax(0,1fr) 76px;gap:7px 12px;margin:20px 0}.ctx-score-label{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px}.ctx-score-label>span{flex-shrink:0;margin-top:0}.ctx-score-track{height:16px}.ctx-score-plot{padding:16px 0}.ctx-page .ctx-versus td,.ctx-page .ctx-versus th{font-size:.85rem;padding:10px 6px}.ctx-versus th:first-child{width:25%}.ctx-versus th:not(:first-child){width:37.5%}}
