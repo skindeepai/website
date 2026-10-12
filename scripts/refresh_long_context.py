@@ -150,7 +150,7 @@ DP_METHODS = {'window': 'Window-drop', 'compaction': 'Compaction', 'self_edit_re
               'archive': 'Self-editing + archive and search', 'archive_rules': 'Archive and search + pinned rule lines',
               'archive_free': 'Archive and search with free-text notes', 'keeper': 'Keeper', 'keeper_proxy': 'Keeper as a proxy',
               'summary': 'Summarise at 75% of the window', 'keeper_inplace': 'Keeper with in-place notes',
-              'retrieval': 'Retrieval only'}
+              'retrieval': 'Retrieval only', 'keeper_inplace_retrieval': 'Keeper with in-place notes and retrieval'}
 DP_ORDER = ['keeper', 'keeper_proxy', 'archive', 'window', 'summary', 'compaction', 'self_edit_read', 'archive_rules', 'archive_free']
 
 
@@ -298,7 +298,7 @@ def distance_replacements(dp):
         assert r['method'] == 'keeper_inplace' and rule_stream_parts(r, asked_by_seed[r['seed']])
     ip_lead = {r['seed']: r for r in ip['rows'] if r['headline']}
     ip_later = [r for r in ip['rows'] if not r['headline']]
-    assert set(ip_lead) == {0, 1} and len(ip_later) == 3
+    assert set(ip_lead) == {0, 1} and len(ip_later) == 5
     fr = ip['full_rewrite']
     fr_rows = {r['seed']: r for r in fr['rows']}
     assert fr['arm'] == first['keeper']['arm'] and fr_rows[0]['total'] == first['keeper']['total'] and fr_rows[1]['total'] == second['keeper']['total']
@@ -317,6 +317,16 @@ def distance_replacements(dp):
     assert i_cost['lm_calls'] == i_cost['agent_calls'] + i_cost['notes_calls'] and len(i_cost['minutes_per_100k']) == 9
     assert round(i_cost['minutes_one_decimal']) == i_cost['minutes'] and i_notes['cuts_in_place'] <= i_notes['cuts'] == i_notes['versions_audited']
     assert all(dp['lab_commit'] in url for url in (*im['evidence'].values(), *ip['evidence'].values()))
+    # The headline rows are the version with every check, the one that also ran at 1M; its three runs must add up.
+    ec = ip['every_check']
+    assert all(r['arm'] == im['arm'] == ec['arm'] for r in ip_lead.values()) and ec['runs'] == 3
+    assert ec['notes_wrong'] == [ip_lead[0]['notes_wrong'], ip_lead[1]['notes_wrong'], im['notes_wrong']] and ec['the_one_wrong_counter']
+    checked_runs = [fraction_parts(x) for x in (ip_lead[0]['total'], ip_lead[1]['total'], im['total'])]
+    assert tuple(map(sum, zip(*checked_runs))) == fraction_parts(ec['total'])
+    rewrite_runs = [fraction_parts(x) for x in (fr_rows[0]['total'], fr_rows[1]['total'], km['total'])]
+    assert tuple(map(sum, zip(*rewrite_runs))) == fraction_parts(ec['full_rewrite_total'])
+    assert ec['minutes'] == [ip_lead[0]['minutes'], ip_lead[1]['minutes'], str(i_cost['minutes_one_decimal'])]
+    assert ec['full_rewrite_minutes'] == [fr_rows[0]['minutes'], fr_rows[1]['minutes'], str(fr['million']['minutes'])]
     # The notes audit: one row per audited run; the in-place rows above must carry the same counts.
     audit = ip['audit']
     wrong = {(r['arm'], r['stream']): r['notes_wrong'] for r in audit['rows']}
@@ -327,6 +337,10 @@ def distance_replacements(dp):
     assert all(r['notes_wrong'] == wrong[(r['arm'], ('First' if r['seed'] == 0 else 'Second') + ' 240K')] for r in ip['rows'])
     assert all(fr_rows[seed]['notes_wrong'] == wrong[(fr['arm'], name + ' 240K')] == 0 for seed, name in ((0, 'First'), (1, 'Second')))
     assert wrong[(im['arm'], '1,000,000')] == im['notes_wrong'] == 0 and wrong[(fr['arm'], '1,000,000')] == fr['million']['notes_wrong']
+    six = ip['six_items_per_notes_call']
+    six_audit = next(r for r in audit['rows'] if r['arm'] == six['arm'])
+    assert (six_audit['total'], six_audit['minutes'], six_audit['notes_wrong']) == (six['total'], six['minutes'], six['notes_wrong'])
+    assert six['total'] == ip_lead[six['seed']]['total'] and six['reading'] and six['defect_found']
 
     # Retrieval alone on the same streams. Its 1M run is a stopped run: only the questions asked along the way are compared.
     ro = dp['retrieval_only']
@@ -349,7 +363,31 @@ def distance_replacements(dp):
     assert all(fraction_parts(rk['by_stream_third'][k])[1] == fraction_parts(v)[1] for k, v in rm['by_stream_third'].items())
     assert fraction_parts(rm['final']) == (0, i_final[1]) and rk['minutes'] == i_cost['minutes_one_decimal']
     hs = ro['hard_stream']
-    assert hs['status'].startswith('Exploratory') and wrong[(hs['keeper_inplace']['arm'], 'Harder 240K')] == hs['keeper_inplace']['notes_wrong']
+    # The harder stream: one seed, exploratory. Every graded run must add up, and its audit count must match the audit table.
+    assert hs['status'].startswith('Exploratory') and hs['limits'] and hs['reading'] and hs['misses'] and len(hs['lessons']) == 4
+    assert all(x['lesson'] and x['from'] and x['fix'] for x in hs['lessons'])
+    hard = {r['arm']: r for r in hs['runs']}
+    assert len(hard) == len(hs['runs']) and all(dp['lab_commit'] in r['evidence_url'] and r['what'] and r['status'] for r in hs['runs'])
+    for r in hs['runs']:
+        if r['total'] is None:
+            assert r['status'].startswith('Stopped') and r['note']
+            continue
+        h_total, h_probes, h_final = (fraction_parts(r[k]) for k in ('total', 'probes', 'final'))
+        assert (h_probes[0] + h_final[0], h_probes[1] + h_final[1]) == h_total and h_total[1] == 50, r['arm'] + ' does not add up'
+        if r['notes_wrong'] is not None:
+            assert wrong[(r['arm'], 'Harder 240K')] == r['notes_wrong'], r['arm'] + ': audit count differs'
+    hard_graded = [r for r in hs['runs'] if r['status'] == 'Finished, graded']
+    hard_with = [r for r in hard_graded if r['with_retrieval']]
+    hard_without = [r for r in hard_graded if not r['with_retrieval']]
+    hard_void = [r for r in hs['runs'] if r['status'] == 'Finished, void']
+    assert len(hard_with) == 2 and len(hard_without) == 1 and len(hard_void) == 1 and not hard_void[0]['with_retrieval']
+    # The claim on the page: both runs with retrieval scored above every run without it, void or not.
+    assert min(fraction_parts(r['total'])[0] for r in hard_with) > max(fraction_parts(r['total'])[0] for r in hard_without + hard_void)
+    ordinary = hs['on_the_second_ordinary_240k_stream']
+    assert ordinary['seed'] == 1 and fraction_parts(ordinary['total']) == (second_asked, second_asked) and ordinary['arm'] in hard
+    assert wrong[(ordinary['arm'], 'Second 240K')] == ordinary['notes_wrong'] == 0
+    assert (ordinary['without_retrieval']['arm'], ordinary['without_retrieval']['total'], ordinary['without_retrieval']['minutes']) == (
+        ip_lead[1]['arm'], ip_lead[1]['total'], ip_lead[1]['minutes'])
     assert all(dp['lab_commit'] in url for url in (*ro['evidence'].values(), *rm['evidence'].values(), *hs['evidence'].values(),
                                                    ro['coverage_before_the_runs']['url']))
     retrieval_million_cell = (rm['probes'] + ' of the questions asked along the way; the final ' + str(i_final[1])
@@ -390,8 +428,8 @@ def distance_replacements(dp):
     inplace_rows = [
         ['Full notes rewrite (the keeper above)', timed(fr_rows[0]['total'], fr_rows[0]['minutes']),
          timed(fr_rows[1]['total'], fr_rows[1]['minutes']), timed(km['total'], k_cost['minutes'])],
-        ['In-place notes', run_cell(ip_lead[0]), run_cell(ip_lead[1]), timed(im['total'], i_cost['minutes'])],
-        ['In-place notes, three more runs while checks were added',
+        ['In-place notes, with every check', run_cell(ip_lead[0]), run_cell(ip_lead[1]), timed(im['total'], i_cost['minutes'])],
+        ['In-place notes, five earlier runs while the checks were added',
          '; '.join(run_cell(r) for r in ip_later if r['seed'] == 0), '; '.join(run_cell(r) for r in ip_later if r['seed'] == 1), 'Not run']]
     inplace_million_rows = (
         [['All ' + str(i_total[1]) + ' questions', im['total'] + ' (' + str(im['total_percent']) + '%)',
@@ -410,10 +448,23 @@ def distance_replacements(dp):
             fr['million']['notes_wrong_note']]])
     audit_rows = [[escape(r['notes']), link(r['audit_url'], r['arm']), escape(r['stream']), escape(r['total']), escape(str(r['minutes'])),
                    str(r['notes_wrong']) + (' (' + escape(r['wrong_note']) + ')' if r.get('wrong_note') else '')] for r in audit['rows']]
+    recount = audit.get('recount')
+    recount_note = ''
+    if recount:
+        # Every recounted row must carry the new count, and each rose by one; the sentence names streams, not arm codes.
+        assert all(wrong[(c['arm'], c['stream'])] == c['to'] == c['from'] + 1 for c in recount['changed'])
+        per_stream = {}
+        for c in recount['changed']:
+            per_stream[c['stream']] = per_stream.get(c['stream'], 0) + 1
+        places = ' and '.join(str(n) + ' on the ' + stream[0].lower() + stream[1:] + ' stream' for stream, n in per_stream.items())
+        recount_note = ('<p>The audit was run again after a fault was found in the audit tool: it had skipped some versions of the notes. '
+                        'In the recount ' + str(len(recount['changed'])) + ' counts in this table rose by one: ' + escape(places)
+                        + '. The linked files show the recount.</p>')
     retrieval_rows = [
         [DP_METHODS['retrieval'] + ', final build', run_cell(ro_by_build['final'][0]), run_cell(ro_by_build['final'][1]), retrieval_million_cell],
         [DP_METHODS['keeper_inplace'], run_cell(ip_lead[0]), run_cell(ip_lead[1]),
          im['probes'] + ' of the questions asked along the way; ' + im['final'] + ' final'],
+        [DP_METHODS['keeper_inplace_retrieval'], 'Not run', run_cell(ordinary), 'Not run'],
         [DP_METHODS['retrieval'] + ', first build', run_cell(ro_by_build['first'][0]),
          'Not run', 'Not run'],
         [DP_METHODS['retrieval'] + ', second build', run_cell(ro_by_build['second'][0]),
@@ -437,6 +488,16 @@ def distance_replacements(dp):
             escape(rm['probes']) + ' along the way', 'Not answered', 'Stopped at ' + str(rm['stopped_after_minutes'])],
            ['Final build', link(hs['evidence']['retrieval_answers_at_stop'], hs['retrieval']['arm']), 'Harder 240K',
             escape(hs['retrieval']['answered_right']) + ' when stopped', 'Not reached', 'Stopped at 20.5']])
+    def hard_cell(r, key):
+        return escape(r[key]) if r[key] is not None else 'Not graded'
+    harder_run_rows = (
+        [[escape(r['what']), link(r['evidence_url'], r['arm']), hard_cell(r, 'total') + (' raw, void' if r['status'] == 'Finished, void' else ''),
+          hard_cell(r, 'final'), escape(r['minutes']) if r['minutes'] is not None else 'Stopped at 11',
+          str(r['notes_wrong']) if r['notes_wrong'] is not None else 'Not reported', escape(r['note'])] for r in hs['runs']]
+        + [['Retrieval only, final build', link(hs['evidence']['retrieval_answers_at_stop'], hs['retrieval']['arm']),
+            escape(hs['retrieval']['answered_right']) + ' when stopped', 'Not reached', 'Stopped at 20.5', 'No notes',
+            'Too slow to finish. The keeper with in-place notes had ' + escape(hs['retrieval']['keeper_inplace_at_that_point'])
+            + ' at that point.']])
     stream_heads = ['First 240K stream, ' + str(first_asked) + ' questions', 'Second 240K stream, ' + str(second_asked) + ' questions',
                     '1,000,000-token stream, ' + str(k_total[1]) + ' questions']
     segments = [str(x) for x in k_cost['minutes_per_100k']]
@@ -478,6 +539,11 @@ def distance_replacements(dp):
                                        'One million tokens: retrieval alone and the keeper on the questions asked along the way'),
         'DP_TABLE_RETRIEVAL_RUNS': html_table(['Build', 'Code in the evidence files', 'Stream', 'Questions right', 'Final questions',
                                                'Minutes'], retrieval_run_rows, 'Every retrieval-only run', 'ctx-comparison'),
+        'DP_TABLE_HARDER_RUNS': html_table(['Run', 'Code in the evidence files', 'Questions right of 50', 'Final questions', 'Minutes',
+                                            'Counters ever wrong in the notes', 'What happened'], harder_run_rows,
+                                           'Every run on the harder stream', 'ctx-comparison'),
+        'DP_C10B_LOG': escape(hs['evidence']['log'], quote=True),
+        'DP_AUDIT_RECOUNT': recount_note,
         'DP_I1M_SEGMENTS': escape(', '.join(i_segments[:-1]) + ' and ' + i_segments[-1]),
         'DP_I1M_GRADE': escape(im['evidence']['details'], quote=True),
         'DP_I1M_NOTES': escape(im['evidence']['final_notes'], quote=True),
@@ -545,6 +611,10 @@ def landing_table(by_id, lme, dp):
     ro = dp['retrieval_only']
     rb = {r['seed']: r for r in ro['rows'] if r['build'] == 'final'}
     rm = ro['million']
+    hs = ro['hard_stream']
+    hard_graded = [r for r in hs['runs'] if r['status'] == 'Finished, graded']
+    hard_with = [r['total'] for r in hard_graded if r['with_retrieval']]
+    hard_without = [r['total'] for r in hard_graded if not r['with_retrieval']]
     seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
     c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
@@ -590,6 +660,11 @@ def landing_table(by_id, lme, dp):
          'Retrieval only: ' + rb[0]['total'] + ' and ' + rb[1]['total'] + ' at 240K; ' + rm['probes']
          + ' along the 1,000,000-token history, where it did not answer the final questions (a stopped run)',
          'context-distance.html#retrieval'],
+        ['A harder 240K history that says “it” and makes some values depend on others (one seed, exploratory)',
+         'The keeper with in-place notes and retrieval together: ' + ' and '.join(hard_with),
+         'The keeper with notes only: ' + ' and '.join(hard_without) + '; retrieval only: stopped with ' + hs['retrieval']['answered_right']
+         + ' right on the first three question sets',
+         'context-distance.html#harder'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
     for r in rows:
@@ -626,7 +701,7 @@ def minutes_plot(title, rows, caption):
         body += ('<div class="ctx-score-row"><div class="ctx-score-label">' + escape(label)
                  + '<span>' + escape(value) + ' correct</span></div><div class="ctx-score-track" aria-hidden="true">'
                  + '<span class="ctx-score-fill ctx-score-' + tone + '" style="width:'
-                 + f'{100 * float(minutes) / ceiling:.4f}' + '%"></span></div><strong>' + f'{float(minutes):g}' + ' min</strong></div>')
+                 + f'{100 * float(minutes) / ceiling:.4f}' + '%"></span></div><strong>' + f'{float(minutes):.1f}' + ' min</strong></div>')
     return ('<figure class="ctx-score-plot"><figcaption><strong>' + escape(title)
             + '</strong><span>Minutes for the whole run · shorter is faster · scale 0–' + str(ceiling)
             + ' minutes</span></figcaption>' + body + '<p class="ctx-table-note">' + escape(caption) + '</p></figure>')
@@ -658,6 +733,14 @@ def visual_replacements(by_id, dp):
         ('First 240K stream, in-place notes', ip_lead[0]['total'], ip_lead[0]['minutes'], 'keeper'),
         ('Second 240K stream, full notes rewrite', fr[1]['total'], fr[1]['minutes'], 'baseline'),
         ('Second 240K stream, in-place notes', ip_lead[1]['total'], ip_lead[1]['minutes'], 'keeper')]
+    hard = {r['arm']: r for r in ro['hard_stream']['runs']}
+    harder_rows = [(label, hard[arm]['total'], hard[arm]['minutes'] + ' min' + extra, tone) for label, arm, extra, tone in [
+        ('Notes and retrieval, first run', 'N32ur', '', 'keeper'),
+        ('Notes and retrieval, after the fixes', 'N32sr', '', 'keeper'),
+        ('Notes only, earlier version', 'N32z', '', 'baseline'),
+        ('Notes only, voided run', 'N32s', ' · raw score', 'baseline')]]
+    assert [hard[arm]['status'] for arm in ('N32ur', 'N32sr', 'N32z', 'N32s')] == ['Finished, graded'] * 3 + ['Finished, void']
+    assert [hard[arm]['with_retrieval'] for arm in ('N32ur', 'N32sr', 'N32z', 'N32s')] == [True, True, False, False]
     retrieval_million_rows = [
         ('Keeper, in-place notes', im['probes'], str(im['cost']['minutes_one_decimal']) + ' min, whole run', 'keeper'),
         ('Retrieval only', rm['probes'], str(rm['minutes_to_reach_the_final_item']) + ' min to the final questions', 'baseline')]
@@ -703,7 +786,9 @@ def visual_replacements(by_id, dp):
         'MILLION_SCORE_PLOT': score_plot('One million tokens, a 32K working window', million_rows,
             'Same stream and seed: 203 questions during the task, plus 25 at the end. All three runs finished and passed the storage rule. In-place notes keep the same notes at lower cost: the model writes down only what changed, and nothing is read twice. The proxy does not have them yet. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
         'INPLACE_TIME_PLOT': minutes_plot('The same notes, with nothing read twice', inplace_time_rows,
-            'Same streams and questions for both forms, 32K live window, one run per bar. The two 240K in-place runs were made before the last checks were added.'),
+            'Same streams and questions for both forms, 32K live window, one run per bar. All three in-place runs are the version with every check.'),
+        'HARDER_SCORE_PLOT': score_plot('A harder stream: the keeper with and without retrieval', harder_rows,
+            'Same harder 240K stream and seed, 32K live window, 50 questions, one run per bar. The 43 is a raw score: the grader voided that run because its answers file held one key that was not asked for. Retrieval alone is not a bar: it was stopped after 20.5 minutes with 10 of its first 15 answers right. One more notes-only run got stuck in a loop and scored 3; it is the first lesson below.'),
         'RETRIEVAL_SCORE_PLOT': score_plot('One million tokens: the 203 questions asked along the way', retrieval_million_rows,
             'Same stream and seed, 32K live window. The 25 final questions are left out: the keeper answered all 25, and the retrieval run answered none of them, a limit of that build. The retrieval run was stopped at 59 minutes and is scored from the answers it had written by then; it is not a finished, graded run.'),
         'SUMMARY_SCORE_PLOT': score_plot('When old text leaves the window', summary_rows,
@@ -784,6 +869,8 @@ def update(pages):
     assert dp_keeper['second_seed'][0]['method'] == 'keeper'
     dp_inplace = {r['seed']: r for r in dp_keeper['in_place']['rows'] if r['headline']}
     dp_retrieval = {r['seed']: r for r in d['distance_probes']['retrieval_only']['rows'] if r['build'] == 'final'}
+    dp_hard = d['distance_probes']['retrieval_only']['hard_stream']
+    dp_hard_graded = [r for r in dp_hard['runs'] if r['status'] == 'Finished, graded']
     dp_c32 = d['distance_probes']['summary_baseline']['row']
     dp_w32 = next(r for x in d['distance_probes']['rounds'] if x['id'] == 'round2' for r in x['rows'] if r['id'] == 'W32')
     method_rows = [
@@ -815,7 +902,12 @@ def update(pages):
         ['Retrieval only (RAG)', 'No notes. Every sentence goes into a store, and the best matches are shown when questions arrive. '
          + dp_retrieval[0]['total'] + ' and ' + dp_retrieval[1]['total'] + ' on the two 240K streams; over 1,000,000 tokens '
          + d['distance_probes']['retrieval_only']['million']['probes'] + ' of the questions asked along the way, and the final 25 not answered '
-         '(a stopped run).']]
+         '(a stopped run).'],
+        ['Keeper with retrieval added', 'The keeper with in-place notes, and the best-matching stored sentences shown with each set of '
+         'questions. On a harder 240K stream, ' + ' and '.join(r['total'] for r in dp_hard_graded if r['with_retrieval']) + ', against '
+         + ' and '.join(r['total'] for r in dp_hard_graded if not r['with_retrieval']) + ' with notes only (one seed, exploratory). On the '
+         'second ordinary 240K stream, ' + dp_hard['on_the_second_ordinary_240k_stream']['total'] + ' in '
+         + dp_hard['on_the_second_ordinary_240k_stream']['minutes'] + ' minutes. Not yet run over 1,000,000 tokens.']]
     methods = table(['Approach', 'What changes, and the result'], method_rows, 'Context approaches compared', 'ctx-summary-table ctx-other-table')
     for label, path in [('Bigger active window', 'context-large-window.html'), ('Exact prefix cache', 'context-prefix-cache.html'), ('Suffix cache reuse (CLM paper)', 'context-reuse.html'),
                         ('Files, no context editing', 'context-files-code.html'), ('Files, editing available', 'context-files-editing.html'), ('CLM self-editing', 'context-self-editing.html'),
@@ -824,7 +916,8 @@ def update(pages):
                         ('Archive and search', 'context-retention.html'), ('Compaction (stub old tool output)', 'context-distance.html'),
                         ('Keeper (managed from outside the agent)', 'context-distance.html#keeper'),
                         ('Keeper with in-place notes', 'context-distance.html#faster'),
-                        ('Retrieval only (RAG)', 'context-distance.html#retrieval')]:
+                        ('Retrieval only (RAG)', 'context-distance.html#retrieval'),
+                        ('Keeper with retrieval added', 'context-distance.html#harder')]:
         methods = methods.replace('<th scope="row">' + label + '</th>', '<th scope="row">' + link('@/' + path, label) + '</th>')
     chart = chart_image('context-decode-speed', 'Observed output rate: 127 tokens per second at 8K context, 99 at 30K, 70 at 60K, 49 at 120K, 40 at 160K, 35 at 200K, 31 at 230K and 27 at 250K.',
                         'Separate prompt tests: one reply each at 8K and 30K; medians of 20 replies at the longer lengths.', 936)
