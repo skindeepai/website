@@ -1825,7 +1825,7 @@
       ]
      }
     ],
-    "cost_per_run": "Across both seeds, archive and search read 5.3M prompt tokens per run, 81\u201382% of them from the prefix cache, and wrote 38\u201349K tokens."
+    "cost_per_run": "Across both seeds, archive and search read 5.3M prompt tokens per run, 81–82% of them from the prefix cache, and wrote 38–49K tokens."
    },
    {
     "id": "cap48-20261008",
@@ -2039,7 +2039,7 @@
     "probe_items_21_29": "55/63"
    },
    "final": "24/25",
-   "final_note": "the confidential counter was answered null, not \u201cprotected\u201d",
+   "final_note": "the confidential counter was answered null, not “protected”",
    "final_confidential": "null",
    "rule_lapses": "Six rule questions were answered with a number or 'removed' instead of 'protected', five of them in the last ten probe items. The seventh rule question not right was in the unanswered probe item.",
    "cost": {
@@ -2380,7 +2380,7 @@
       },
       {
        "arm": "X32p",
-       "label": "Fifth build, the current one: the search tool counts in the stream\u2019s own numbers",
+       "label": "Fifth build, the current one: the search tool counts in the stream’s own numbers",
        "ran_at_1m": true,
        "what": "The search tool shows and takes the content's own item numbers and nothing else; when there are more matches than fit, the nearest ones are shown and the line that says so comes first; a misspelled name is given to the name it was meant for.",
        "outcome": "Within two answers of the keeper inside the test harness, and as fast."
@@ -4092,10 +4092,10 @@
   "repair": {
    "task": "the repair marathon: a real library (more-itertools 10.7.0, MIT) with 40 injected one-token defects, worked as 44 tickets one at a time by a plain shell agent (one command per turn, thinking on, at most 8,192 tokens a reply, temperature 0); three tickets are notices carrying a standing instruction, and on the second seed a last ticket asks for the seven fixes made before the log file existed",
    "date": "2026-10-12",
-   "lab_commit": "3a45c306a01ef081292766c458696a37f436bd86",
-   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/tasks",
-   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/repair",
+   "lab_commit": "a4b568910585a51778a93a8d49123caa8f235307",
+   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/tasks",
+   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/data",
    "n_bugs": 40,
    "notices": 3,
    "audit_asked": 7,
@@ -4259,6 +4259,32 @@
        "audit": "0/7",
        "minutes": 45.4,
        "calls": "256"
+      },
+      {
+       "arm": "FAp",
+       "manages": "The proxy; the client is the lab's own stand-alone agent program (one shell tool, structured tool calls, no context management)",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 33.3,
+       "calls": "287 (+15 by the proxy)",
+       "note": "the proxy cut 562 messages into its archive in 12 passes, took 6,264 tokens of notes, and answered one archive search"
+      },
+      {
+       "arm": "FAd",
+       "manages": "Nothing; the same agent direct against the 262K window",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 55.0,
+       "calls": "276",
+       "note": "the history carried every reply's reasoning, about 215K tokens by the end, which the proxy strips; that, not the window, is the 55 minutes"
       }
      ]
     }
@@ -4268,8 +4294,8 @@
     "XR4": 57000,
     "XR5": 102000
    },
-   "pending": "the proxy under a real coding agent program",
-   "limit": "One model, one library, one run per cell; seed 2x has no summariser row. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
+   "pending": "the proxy under a third-party coding agent program (the owner picks which); the lab's own stand-alone agent has now run: the same perfect score through the proxy at a 32K window in 33.3 minutes as direct against the full 262K window in 55.0 minutes",
+   "limit": "One model, one library, one run per cell; seed 2x has no summariser row, and its freeagent pair is one agent program on one seed. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
   }
  }
 }

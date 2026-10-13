@@ -677,7 +677,7 @@ def distance_replacements(dp):
                 a = fraction_parts(r['audit'])
                 assert 0 <= a[0] <= a[1] == rp['audit_asked'], r['arm']
     rp_s0, rp_s1x, rp_s2x = rp['seeds']
-    assert rp_s2x['id'] == 's2x' and rp_s2x['variant'] and [r['arm'] for r in rp_s2x['rows']] == ['XR6', 'W32g']
+    assert rp_s2x['id'] == 's2x' and rp_s2x['variant'] and [r['arm'] for r in rp_s2x['rows']] == ['XR6', 'W32g', 'FAp', 'FAd']
     repair_head = ['Arm', 'Context managed by', 'Fixed', 'Clean', *rp['rule_labels']]
 
     def repair_rows(s):
