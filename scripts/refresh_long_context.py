@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = 'results/long-context/result.json'
+LAB_COMMIT_13D = '283a90e374818ec3c0c84495ee9a8a6004856a29'
 RETENTION_DATA = ('https://github.com/steveseguin/b70-optimization-lab/tree/974df5792372b424d66d8225af171c4a94307e74/'
                   'experiments/qwen38-27b-b70/data/2026-10-05-context/retention')
 
@@ -463,6 +464,25 @@ def distance_replacements(dp):
     assert sm['notes_versions_audited'] == f"{sm['cuts_in_place']} of {sm['cuts_in_place']}" and sm['in_place_attempts_failed'] == 0
     assert all(dp['lab_commit'] in url for url in sm['evidence'].values())
 
+    # The proxy with in-place notes on the same second stream (the evening of the same day): the same checks.
+    ps = pi['second_million_stream']
+    assert ps['status'].startswith('Finished run') and ps['method'] == 'keeper_proxy_inplace' and ps['seed'] == 1 and ps['limit']
+    p2_total, p2_final = fraction_parts(ps['total']), fraction_parts(ps['final'])
+    p2_types = tuple(map(sum, zip(*map(fraction_parts, ps['by_type'].values()))))
+    assert (p2_types[0] + p2_final[0], p2_types[1] + p2_final[1]) == p2_total
+    assert ps['blank'] + ps['wrong'] == p2_total[1] - p2_total[0]
+    assert round(100 * p2_total[0] / p2_total[1], 1) == ps['total_percent_one_decimal']
+    assert list(ps['by_type']) == list(sm['by_type']) and all(
+        fraction_parts(ps['by_type'][k])[1] == fraction_parts(v)[1] for k, v in sm['by_type'].items()), 'the proxy was asked different questions'
+    assert fraction_parts(ps['first_stream']['total']) == fraction_parts(pim_lead['total'])
+    assert (ps['first_stream']['arm'], ps['first_stream']['minutes']) == (pim_lead['arm'], pim_lead['minutes'])
+    p2_both = fraction_parts(ps['both_streams']['total'])
+    assert p2_both == tuple(map(sum, zip(fraction_parts(pim_lead['total']), p2_total)))
+    assert (round(100 * p2_both[0] / p2_both[1]), round(100 * p2_both[0] / p2_both[1], 1)) == (
+        ps['both_streams']['percent'], ps['both_streams']['percent_one_decimal'])
+    assert ps['notes_versions_audited'] == f"{ps['cuts_in_place']} of {ps['cuts_in_place']}" and ps['in_place_attempts_failed'] == 0
+    assert ps['expected_before_the_run'] and all(LAB_COMMIT_13D in url for url in ps['evidence'].values())
+
     # A rule that names nothing it covers. Each run must add up twice: by question type, and as governed plus other questions.
     ur = ro['unnamed_rule']
     assert ur['limit'] and ur['stream_fault'] and ur['what_retrieval_answered'] and ur['what_the_keeper_did']
@@ -735,6 +755,9 @@ def distance_replacements(dp):
         'DP_PROXY_AUDIT_CODE': escape(pi['evidence']['audit_code'], quote=True),
         'DP_S1M_DETAILS': escape(sm['evidence']['details'], quote=True),
         'DP_S1M_AUDIT': escape(sm['evidence']['audit'], quote=True),
+        'DP_P1M2_LOG': escape(ps['evidence']['log'], quote=True),
+        'DP_P1M2_AUDIT': escape(ps['evidence']['audit'], quote=True),
+        'DP_P1M2_STATE': escape(ps['evidence']['state'], quote=True),
         'DP_UR_TABLE': escape(ur['evidence']['table'], quote=True),
         'DP_UR_TASK': escape(ur['evidence']['task_generator'], quote=True),
         'DP_H2_TABLE': escape(h2['evidence']['table'], quote=True),
@@ -815,6 +838,7 @@ def landing_table(by_id, lme, dp):
     pi_lead = {r['seed']: r for r in pi['rows'] if r['headline']}
     pim_lead = next(r for r in pi['million']['runs'] if r['headline'])
     sm = ip['second_million_stream']
+    ps = pi['second_million_stream']
     ur = ro['unnamed_rule']
     rp = dp['repair']
     rp0 = {r['arm']: r for r in rp['seeds'][0]['rows']}
@@ -856,9 +880,10 @@ def landing_table(by_id, lme, dp):
          'context-distance.html#keeper'],
         ['A 1,000,000-token history through a 32K window',
          'The keeper as a proxy, with in-place notes: ' + pim_lead['total'] + ' right in ' + str(round(pim_lead['minutes']))
-         + ' min, on one stream. The keeper inside the test harness, with in-place notes: ' + im['total'] + ' in '
-         + str(im['cost']['minutes']) + ' min on that stream and ' + sm['total'] + ' in ' + str(round(sm['minutes']))
-         + ' min on a second one. All graded by the task’s own checker',
+         + ' min on one stream, and ' + ps['total'] + ' in ' + str(round(ps['minutes']))
+         + ' min on a second. The keeper inside the test harness, with in-place notes: ' + im['total'] + ' in '
+         + str(im['cost']['minutes']) + ' min on the first stream and ' + sm['total'] + ' in ' + str(round(sm['minutes']))
+         + ' min on the second. All graded by the task’s own checker',
          'The keeper with a full notes rewrite: ' + km['total'] + ' in ' + str(km['cost']['minutes']) + ' min; the proxy’s earlier form: '
          + xm['total'] + ' in ' + str(xm['cost']['minutes']) + ' min. Archive and search with pinned rule lines: ' + million['total']
          + ' in a stopped run that was not verified',
@@ -883,7 +908,8 @@ def landing_table(by_id, lme, dp):
          'The proxy between agent and server: ' + rp0['XR']['clean'] + ' and ' + rp1['XR3']['clean'] + ' clean; the audit of the oldest fixes '
          + rp1['XR3']['audit'] + ', and ' + str(rp1['XR4']['minutes']) + ' min at medium thinking effort',
          'Summaries: ' + rp0['C32']['clean'] + ' then ' + rp1['C32']['clean'] + ' (one summary came back as work, not a summary; audit '
-         + rp1['C32']['audit'] + '); window-drop: ' + rp0['W32']['clean'] + ' on the one graded seed',
+         + rp1['C32']['audit'] + '); at the same medium effort summaries matched the proxy, ' + rp1['C32m']['clean'] + ' clean, audit '
+         + rp1['C32m']['audit'] + ', ' + str(rp1['C32m']['minutes']) + ' min; window-drop: ' + rp0['W32']['clean'] + ' on the one graded seed',
          'context-distance.html#repair'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
@@ -986,10 +1012,15 @@ def visual_replacements(by_id, dp):
     unnamed_rule_rows = [
         ('Keeper with in-place notes', ur['both_streams']['keeper'], 'the rule stayed in its notes', 'keeper'),
         ('Retrieval only', ur['both_streams']['retrieval'], 'no search led back to the rule', 'baseline')]
+    ps = pi['second_million_stream']
     two_stream_rows = [
-        (name + ' stream, ' + str(fraction_parts(total)[1]) + ' questions', f'{float(minutes):.1f}' + ' min',
-         fraction_parts(total)[0] / fraction_parts(total)[1], total, 'keeper')
-        for name, total, minutes in [('First', im['total'], im['cost']['minutes_one_decimal']), ('Second', sm['total'], sm['minutes'])]]
+        (label + ' stream, ' + str(fraction_parts(total)[1]) + ' questions', f'{float(minutes):.1f}' + ' min',
+         fraction_parts(total)[0] / fraction_parts(total)[1], total, tone)
+        for label, total, minutes, tone in [
+            ('Keeper, first', im['total'], im['cost']['minutes_one_decimal'], 'keeper'),
+            ('Keeper, second', sm['total'], sm['minutes'], 'keeper'),
+            ('Proxy, first', pim_lead['total'], pim_lead['minutes'], 'proxy'),
+            ('Proxy, second', ps['total'], ps['minutes'], 'proxy')]]
     inplace_time_rows = [
         ('1,000,000 tokens, full notes rewrite', keeper['million']['total'], ip['full_rewrite']['million']['minutes'], 'baseline'),
         ('1,000,000 tokens, in-place notes', im['total'], im['cost']['minutes_one_decimal'], 'keeper'),
@@ -1048,7 +1079,7 @@ def visual_replacements(by_id, dp):
         'KEEPER_SCORE_PLOT': score_plot('Remembering facts and following the original rules', short_rows,
             'Same 240K-token stream, seed 0, 32K live budget. One run per method; total elapsed time. The keeper, retrieval and pinned-rule arms used a larger server ceiling, while keeping the same live budget. The in-place and retrieval rows were measured later on the same stream. Retrieval alone matches the keeper here because the rule names the counters it covers; a rule that names nothing was never found by retrieval alone, ' + ur['both_streams']['retrieval'].replace('/', ' of ') + ' on a later test.'),
         'MILLION_SCORE_PLOT': score_plot('One million tokens, a 32K working window', million_rows,
-            'Same stream and seed: 203 questions during the task, plus 25 at the end. One run per bar; all four finished and were graded by the task’s own checker. The keeper runs inside the test harness. The proxy is a separate small program between an ordinary agent and the model server. In-place notes keep the same notes at lower cost: the model writes down only what changed, and nothing is read twice. On a second million-token stream the keeper with in-place notes answered ' + sm['total'].replace('/', ' of ') + '; the proxy has run on this one stream only. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
+            'Same stream and seed: 203 questions during the task, plus 25 at the end. One run per bar; all four finished and were graded by the task’s own checker. The keeper runs inside the test harness. The proxy is a separate small program between an ordinary agent and the model server. In-place notes keep the same notes at lower cost: the model writes down only what changed, and nothing is read twice. On a second million-token stream the keeper with in-place notes answered ' + sm['total'].replace('/', ' of ') + ' and the proxy ' + ps['total'].replace('/', ' of ') + '. Qwen3.8-27B on two B70 GPUs; total elapsed time.'),
         'PROXY_NOW_PLOT': minutes_plot('One million tokens: the proxy has caught up with the lab version', proxy_now_rows,
             'Same 1,000,000-token stream and the same ' + str(fraction_parts(pim_lead['total'])[1]) + ' questions, 32K live window, one run per bar. The proxy serves an agent that sends its whole history and manages nothing. One model, one machine, one synthetic family of tasks.'),
         'PROXY_TRIES_PLOT': minutes_plot('Three tries on the million-token stream', proxy_tries_rows,
@@ -1058,9 +1089,12 @@ def visual_replacements(by_id, dp):
             'The proxy’s million-token run with today’s build; minutes are rounded. Together the two bars are about ' + str(busy_minutes) + ' of the ' + str(round(run_minutes)) + ' minutes (' + str(tw['server_percent']) + '%). Reading: the stream once, and 1.3 million tokens more in turns re-read after each cut, search results and note-taking. Writing: ' + f"{written['notes']},000" + ' tokens of notes, ' + f"{written['the_agents_own_turns']},000" + ' in the agent’s own turns and ' + f"{written['search_rounds']},000" + ' while searching. From the server’s own counters.'),
         'UNNAMED_RULE_PLOT': score_plot('A rule that names nothing: how often was it applied?', unnamed_rule_rows,
             'The ' + str(fraction_parts(ur['both_streams']['keeper'])[1]) + ' questions on two 240K streams whose right answer is the word “overdrawn”. One run per stream for each method, 32K live window.'),
-        'TWO_STREAM_PLOT': bar_plot('Two million-token streams, the keeper inside the test harness', 'Share of the questions answered correctly · scale 0–100% · longer is better',
+        'TWO_STREAM_PLOT': bar_plot('Two million-token streams: the keeper inside the harness, and the proxy', 'Share of the questions answered correctly · scale 0–100% · longer is better',
             two_stream_rows,
-            'In-place notes, 32K live window, one run per stream, both graded by the task’s own checker. The two streams have different numbers of questions, so each bar is a share of its own stream. Together: ' + sm['both_streams']['total'].replace('/', ' of ') + ' (' + str(sm['both_streams']['percent']) + '%). The second run used the note checks of the morning of 2026-10-12.'),
+            'In-place notes, 32K live window, one run per bar, each graded by the task’s own checker. The two streams have different numbers of questions, so each bar is a share of its own stream. Together: the keeper '
+            + sm['both_streams']['total'].replace('/', ' of ') + ' (' + str(sm['both_streams']['percent']) + '%), the proxy '
+            + ps['both_streams']['total'].replace('/', ' of ') + ' (' + str(ps['both_streams']['percent_one_decimal'])
+            + '%). The keeper’s second run used the note checks of the morning of 2026-10-12; the proxy’s second run, that evening, was the first text the two fitted check rules had not seen.'),
         'INPLACE_TIME_PLOT': minutes_plot('The same notes, with nothing read twice', inplace_time_rows,
             'Same streams and questions for both forms, 32K live window, one run per bar. All three in-place runs are the version with every check.'),
         'HARDER_SCORE_PLOT': score_plot('A harder stream: the keeper with and without retrieval', harder_rows,
