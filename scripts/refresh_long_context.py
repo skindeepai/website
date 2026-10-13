@@ -637,6 +637,39 @@ def distance_replacements(dp):
     x_segments = [str(x) for x in x_cost['minutes_per_100k']]
     costs = [[label(r), f"{r['tokens_written']:,}", f"{r['lm_calls']:,}", f"{r['peak_context']:,}",
               str(r.get('recalls', '–'))] for r in rounds['round2']['rows'] if r['cap'] == '32K']
+
+    # The repair marathon on real code: 40 planted one-token defects and three standing instructions, one run per arm.
+    rp = dp['repair']
+    assert rp['n_bugs'] == 40 and rp['notices'] == 3 and rp['audit_asked'] == 7 and len(rp['rule_labels']) == 3
+    assert all(rp['lab_commit'] in rp[k] for k in ('note_url', 'task_url', 'runs_url'))
+    for s in rp['seeds']:
+        for r in s['rows']:
+            if 'ungraded' in r:
+                assert r['fixed'] == r['clean'] == '—', r['arm']
+                continue
+            fixed, clean = fraction_parts(r['fixed']), fraction_parts(r['clean'])
+            assert 0 <= clean[0] <= fixed[0] and fixed == (fixed[0], 40) and clean[1] == 40, r['arm']
+            rules_kept = [fraction_parts(r[k]) for k in ('r1', 'r2', 'r3')]
+            assert all(0 <= n <= m for n, m in rules_kept), r['arm']
+            # clean counts tickets (a ticket can break several rules), the rule columns count applications: no shared total
+            assert fixed[0] - clean[0] <= sum(m - n for n, m in rules_kept) or fixed[0] == clean[0], r['arm']
+            if r.get('audit'):
+                a = fraction_parts(r['audit'])
+                assert 0 <= a[0] <= a[1] == rp['audit_asked'], r['arm']
+    rp_s0, rp_s1x = rp['seeds']
+    repair_head = ['Arm', 'Context managed by', 'Fixed', 'Clean', *rp['rule_labels']]
+
+    def repair_rows(s):
+        out_rows = []
+        for r in s['rows']:
+            cells = [r['arm'] + (' — ' + r['manages'] if r['manages'] else ''), r['fixed'], r['clean'], r['r1'], r['r2'], r['r3']]
+            if s['audit_ticket']:
+                cells.append(r['audit'] if r['audit'] is not None else '—')
+            cells += [str(r['minutes']), r['calls'] + ((' (' + r['note'] + ')') if r.get('note') else '')]
+            out_rows.append(cells)
+        return out_rows
+
+    repair_head_s1 = repair_head + ['Oldest fixes recalled (7 asked)', 'Minutes', 'Model calls']
     out = {
         'DP_TABLE_ROUND2': table(head + tail, rows(r2), 'Questions right by distance back and by type, 16K and 32K windows', 'ctx-comparison'),
         'DP_TABLE_ROUND1': table(head + tail, rows(rounds['round1']['rows']), 'First round: 16K window, seed 0, one GPU', 'ctx-comparison'),
@@ -681,6 +714,15 @@ def distance_replacements(dp):
                                           'Every build of the proxy with in-place notes', 'ctx-comparison'),
         'DP_TABLE_UNNAMED_RULE': table(['What was counted', DP_METHODS['keeper_inplace'], DP_METHODS['retrieval']], unnamed_rule_rows,
                                        'A rule that names nothing: the keeper with in-place notes against retrieval alone'),
+        'DP_REPAIR_TABLE_S0': table(repair_head + ['Minutes', 'Model calls'], repair_rows(rp_s0),
+                                    'The repair marathon, first seed: 40 planted defects fixed, and clean of the three standing instructions', 'ctx-comparison ctx-fit'),
+        'DP_REPAIR_TABLE_S1X': table(repair_head_s1, repair_rows(rp_s1x),
+                                     'The repair marathon, second seed, with a final audit of the seven oldest fixes', 'ctx-comparison ctx-fit'),
+        'DP_REPAIR_TASK_URL': escape(rp['task_url'], quote=True),
+        'DP_REPAIR_RUNS_URL': escape(rp['runs_url'], quote=True),
+        'DP_REPAIR_NOTE_URL': escape(rp['note_url'], quote=True),
+        'DP_REPAIR_PENDING': escape(rp['pending']),
+        'DP_REPAIR_LIMIT': escape(rp['limit']),
         'DP_C12_DATA_URL': escape(pi['evidence']['folder'], quote=True),
         'DP_C12_TABLE_240K': escape(pi['evidence']['table_240k'], quote=True),
         'DP_C12_TABLE_1M': escape(pi['evidence']['table_1m'], quote=True),
@@ -774,6 +816,10 @@ def landing_table(by_id, lme, dp):
     pim_lead = next(r for r in pi['million']['runs'] if r['headline'])
     sm = ip['second_million_stream']
     ur = ro['unnamed_rule']
+    rp = dp['repair']
+    rp0 = {r['arm']: r for r in rp['seeds'][0]['rows']}
+    rp1 = {r['arm']: r for r in rp['seeds'][1]['rows']}
+    assert rp['seeds'][0]['id'] == 's0' and rp['seeds'][1]['id'] == 's1x'
     seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
     c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
@@ -833,6 +879,12 @@ def landing_table(by_id, lme, dp):
          'The keeper with notes only: ' + ' and '.join(hard_without) + '; retrieval only: stopped with ' + hs['retrieval']['answered_right']
          + ' right on the first three question sets',
          'context-distance.html#harder'],
+        ['A real-code repair marathon: 40 planted defects and three standing instructions that arrive as notices (two seeds)',
+         'The proxy between agent and server: ' + rp0['XR']['clean'] + ' and ' + rp1['XR3']['clean'] + ' clean; the audit of the oldest fixes '
+         + rp1['XR3']['audit'] + ', and ' + str(rp1['XR4']['minutes']) + ' min at medium thinking effort',
+         'Summaries: ' + rp0['C32']['clean'] + ' then ' + rp1['C32']['clean'] + ' (one summary came back as work, not a summary; audit '
+         + rp1['C32']['audit'] + '); window-drop: ' + rp0['W32']['clean'] + ' on the one graded seed',
+         'context-distance.html#repair'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')
     for r in rows:

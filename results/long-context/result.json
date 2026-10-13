@@ -4038,6 +4038,44 @@
           "task_generator": "https://github.com/steveseguin/b70-optimization-lab/blob/ea8a6a5b380b50568b1f8c8521de6c631448f7c7/experiments/qwen38-27b-b70/scripts/context/make_sparse_prose_tasks.py"
         }
       }
+    },
+    "repair": {
+      "task": "the repair marathon: a real library (more-itertools 10.7.0, MIT) with 40 injected one-token defects, worked as 44 tickets one at a time by a plain shell agent (one command per turn, thinking on, at most 8,192 tokens a reply, temperature 0); three tickets are notices carrying a standing instruction, and on the second seed a last ticket asks for the seven fixes made before the log file existed",
+      "date": "2026-10-12",
+      "lab_commit": "6276f975429d40f69bc27080a3414cbbf68debec",
+      "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/6276f975429d40f69bc27080a3414cbbf68debec/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+      "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/6276f975429d40f69bc27080a3414cbbf68debec/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign13/tasks",
+      "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/6276f975429d40f69bc27080a3414cbbf68debec/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign13/repair",
+      "n_bugs": 40,
+      "notices": 3,
+      "audit_asked": 7,
+      "rule_labels": ["Marker on every changed line", "One FIXES.md line per fix", "Recipe fixes named in RECIPES.txt"],
+      "seeds": [
+        {
+          "id": "s0",
+          "task_name": "repair-n40-s0",
+          "audit_ticket": false,
+          "rows": [
+            {"arm": "XR", "manages": "The proxy between agent and server", "fixed": "40/40", "clean": "40/40", "r1": "38/38", "r2": "33/33", "r3": "27/27", "audit": null, "minutes": 37.8, "calls": "268 (+17 by the proxy)"},
+            {"arm": "W32", "manages": "Sliding window, 32K", "fixed": "40/40", "clean": "30/40", "r1": "36/38", "r2": "33/33", "r3": "17/27", "audit": null, "minutes": 29.3, "calls": "245"},
+            {"arm": "C32", "manages": "Summary compaction, 32K", "fixed": "40/40", "clean": "40/40", "r1": "38/38", "r2": "33/33", "r3": "27/27", "audit": null, "minutes": 28.5, "calls": "256 (+6 summaries)"}
+          ]
+        },
+        {
+          "id": "s1x",
+          "task_name": "repair-n40-s1x",
+          "audit_ticket": true,
+          "rows": [
+            {"arm": "XR3", "manages": "The proxy between agent and server", "fixed": "40/40", "clean": "40/40", "r1": "38/38", "r2": "33/33", "r3": "27/27", "audit": "7/7", "minutes": 47.1, "calls": "319"},
+            {"arm": "XR4", "manages": "The proxy, every call at medium thinking effort", "fixed": "40/40", "clean": "40/40", "r1": "38/38", "r2": "33/33", "r3": "27/27", "audit": "7/7", "minutes": 29.5, "calls": "290"},
+            {"arm": "C32", "manages": "Summary compaction, 32K", "fixed": "40/40", "clean": "33/40", "r1": "31/38", "r2": "26/33", "r3": "24/27", "audit": "0/7", "minutes": 60, "calls": "309", "note": "cut at the 60-minute cap; graded live at minute 56"},
+            {"arm": "W32", "manages": "Sliding window, 32K", "ungraded": "stuck on one hard ticket in both runs (ticket 37, then ticket 26); cut at the cap once, then stopped by the host's memory guard", "fixed": "—", "clean": "—", "r1": "—", "r2": "—", "r3": "—", "audit": "—", "minutes": 60, "calls": "—"}
+          ]
+        }
+      ],
+      "thrown_away_tokens": {"XR3": 95000, "XR4": 57000},
+      "pending": "the summariser at the same medium effort through a pass-through proxy (C32m), a short first cap on a thinking reply (XR5), and the proxy on the second million-token stream",
+      "limit": "One model, one library, one run per cell; the window's second seed was never graded. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
     }
   }
 }
