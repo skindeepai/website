@@ -676,7 +676,8 @@ def distance_replacements(dp):
             if r.get('audit'):
                 a = fraction_parts(r['audit'])
                 assert 0 <= a[0] <= a[1] == rp['audit_asked'], r['arm']
-    rp_s0, rp_s1x = rp['seeds']
+    rp_s0, rp_s1x, rp_s2x = rp['seeds']
+    assert rp_s2x['id'] == 's2x' and rp_s2x['variant'] and [r['arm'] for r in rp_s2x['rows']] == ['XR6', 'W32g']
     repair_head = ['Arm', 'Context managed by', 'Fixed', 'Clean', *rp['rule_labels']]
 
     def repair_rows(s):
@@ -738,6 +739,8 @@ def distance_replacements(dp):
                                     'The repair marathon, first seed: 40 planted defects fixed, and clean of the three standing instructions', 'ctx-comparison ctx-fit'),
         'DP_REPAIR_TABLE_S1X': table(repair_head_s1, repair_rows(rp_s1x),
                                      'The repair marathon, second seed, with a final audit of the seven oldest fixes', 'ctx-comparison ctx-fit'),
+        'DP_REPAIR_TABLE_S2X': table(repair_head_s1, repair_rows(rp_s2x),
+                                     'The repair marathon without its trap tickets (the *_index functions and peekable left out), third seed, with the same final audit', 'ctx-comparison ctx-fit'),
         'DP_REPAIR_TASK_URL': escape(rp['task_url'], quote=True),
         'DP_REPAIR_RUNS_URL': escape(rp['runs_url'], quote=True),
         'DP_REPAIR_NOTE_URL': escape(rp['note_url'], quote=True),
@@ -843,7 +846,8 @@ def landing_table(by_id, lme, dp):
     rp = dp['repair']
     rp0 = {r['arm']: r for r in rp['seeds'][0]['rows']}
     rp1 = {r['arm']: r for r in rp['seeds'][1]['rows']}
-    assert rp['seeds'][0]['id'] == 's0' and rp['seeds'][1]['id'] == 's1x'
+    rp2 = {r['arm']: r for r in rp['seeds'][2]['rows']}
+    assert rp['seeds'][0]['id'] == 's0' and rp['seeds'][1]['id'] == 's1x' and rp['seeds'][2]['id'] == 's2x'
     seed0 = {r['id']: r for r in next(x for x in dp['rounds'] if x['id'] == 'round2')['rows'] if r['cap'] == '32K'}
     c32 = dp['summary_baseline']['row']
     no_place = [fraction_parts(r['rule']) for r in dp['rules']['rows'] if r['method'] not in ('archive_rules', 'archive_free')]
@@ -904,12 +908,13 @@ def landing_table(by_id, lme, dp):
          'The keeper with notes only: ' + ' and '.join(hard_without) + '; retrieval only: stopped with ' + hs['retrieval']['answered_right']
          + ' right on the first three question sets',
          'context-distance.html#harder'],
-        ['A real-code repair marathon: 40 planted defects and three standing instructions that arrive as notices (two seeds)',
+        ['A real-code repair marathon: 40 planted defects and three standing instructions that arrive as notices (three seeds)',
          'The proxy between agent and server: ' + rp0['XR']['clean'] + ' and ' + rp1['XR3']['clean'] + ' clean; the audit of the oldest fixes '
          + rp1['XR3']['audit'] + ', and ' + str(rp1['XR4']['minutes']) + ' min at medium thinking effort',
          'Summaries: ' + rp0['C32']['clean'] + ' then ' + rp1['C32']['clean'] + ' (one summary came back as work, not a summary; audit '
          + rp1['C32']['audit'] + '); at the same medium effort summaries matched the proxy, ' + rp1['C32m']['clean'] + ' clean, audit '
-         + rp1['C32m']['audit'] + ', ' + str(rp1['C32m']['minutes']) + ' min; window-drop: ' + rp0['W32']['clean'] + ' on the one graded seed',
+         + rp1['C32m']['audit'] + ', ' + str(rp1['C32m']['minutes']) + ' min; window-drop: ' + rp0['W32']['clean'] + ' and '
+         + rp1['W32']['clean'] + ' clean, and ' + rp2['W32g']['clean'] + ' without the task’s trap tickets',
          'context-distance.html#repair'],
     ]
     html = table(['What was tested', 'Best so far', 'Compared with'], [r[:3] for r in rows], 'What each long-context test found', 'ctx-summary-table')

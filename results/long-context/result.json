@@ -4092,10 +4092,10 @@
   "repair": {
    "task": "the repair marathon: a real library (more-itertools 10.7.0, MIT) with 40 injected one-token defects, worked as 44 tickets one at a time by a plain shell agent (one command per turn, thinking on, at most 8,192 tokens a reply, temperature 0); three tickets are notices carrying a standing instruction, and on the second seed a last ticket asks for the seven fixes made before the log file existed",
    "date": "2026-10-12",
-   "lab_commit": "283a90e374818ec3c0c84495ee9a8a6004856a29",
-   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/283a90e374818ec3c0c84495ee9a8a6004856a29/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/283a90e374818ec3c0c84495ee9a8a6004856a29/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign13/tasks",
-   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/283a90e374818ec3c0c84495ee9a8a6004856a29/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign13/repair",
+   "lab_commit": "3a45c306a01ef081292766c458696a37f436bd86",
+   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/tasks",
+   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/3a45c306a01ef081292766c458696a37f436bd86/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/repair",
    "n_bugs": 40,
    "notices": 3,
    "audit_asked": 7,
@@ -4218,15 +4218,47 @@
       {
        "arm": "W32",
        "manages": "Sliding window, 32K",
-       "ungraded": "stuck on one hard ticket in both runs (ticket 37, then ticket 26); cut at the cap once, then stopped by the host's memory guard",
-       "fixed": "\u2014",
-       "clean": "\u2014",
-       "r1": "\u2014",
-       "r2": "\u2014",
-       "r3": "\u2014",
-       "audit": "\u2014",
-       "minutes": 60,
-       "calls": "\u2014"
+       "fixed": "40/40",
+       "clean": "22/40",
+       "r1": "20/38",
+       "r2": "15/33",
+       "r3": "21/27",
+       "audit": "0/7",
+       "minutes": 55,
+       "calls": "283",
+       "note": "graded at the task's own 55-minute limit, third attempt; the two earlier runs stuck on one trap ticket and were never graded"
+      }
+     ]
+    },
+    {
+     "id": "s2x",
+     "task_name": "repair-n40-s2x",
+     "variant": "seed 2, the audit ticket kept, the *_index functions and peekable left out of the pool",
+     "audit_ticket": true,
+     "rows": [
+      {
+       "arm": "XR6",
+       "manages": "The proxy between agent and server",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 20.1,
+       "calls": "221 (+8 by the proxy)"
+      },
+      {
+       "arm": "W32g",
+       "manages": "Sliding window, 32K",
+       "fixed": "40/40",
+       "clean": "35/40",
+       "r1": "34/38",
+       "r2": "28/33",
+       "r3": "27/27",
+       "audit": "0/7",
+       "minutes": 45.4,
+       "calls": "256"
       }
      ]
     }
@@ -4236,8 +4268,8 @@
     "XR4": 57000,
     "XR5": 102000
    },
-   "pending": "a graded sliding-window row on the second seed, and the proxy under a real coding agent program",
-   "limit": "One model, one library, one run per cell; the window's second seed was never graded. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
+   "pending": "the proxy under a real coding agent program",
+   "limit": "One model, one library, one run per cell; seed 2x has no summariser row. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
   }
  }
 }
