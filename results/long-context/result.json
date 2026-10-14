@@ -1,6 +1,6 @@
 {
  "schema": "skindeep.long-context.v3",
- "updated": "2026-10-12",
+ "updated": "2026-10-14",
  "about": "Published context measurements. Speed aggregations identify their source files and sample counts. Disk figures are payload calculations and hypothetical transfer lower bounds, not measured model speeds.",
  "setup": "Qwen3.8-27B with FP8 weights and a 16-bit attention cache, two Intel Arc Pro B70 GPUs, R314 runtime, one request at a time.",
  "lab": "https://github.com/steveseguin/b70-optimization-lab/blob/18cd050812e4c2e2e07b381123c773b923bf266e/experiments/qwen38-27b-b70/",
@@ -2751,6 +2751,12 @@
         "total": "222/228",
         "minutes": 95.1,
         "note": "The same run that proxy.million gives as 95 minutes."
+       },
+       "plain_window_200k": {
+        "arm": "W200",
+        "total": "166/228",
+        "minutes": 228,
+        "note": "The plain-window control at the largest window a dedicated card allows: perfect on what fits (current values 58/58, procedures 29/29, final lists 24/25), blind to what slides out (the standing rule 0/29, old values 40/58, names 15/29)."
        }
       },
       "where_the_time_went": {
@@ -4092,10 +4098,10 @@
   "repair": {
    "task": "the repair marathon: a real library (more-itertools 10.7.0, MIT) with 40 injected one-token defects, worked as 44 tickets one at a time by a plain shell agent (one command per turn, thinking on, at most 8,192 tokens a reply, temperature 0); three tickets are notices carrying a standing instruction, and on the second seed a last ticket asks for the seven fixes made before the log file existed",
    "date": "2026-10-12",
-   "lab_commit": "a4b568910585a51778a93a8d49123caa8f235307",
-   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
-   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/tasks",
-   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/a4b568910585a51778a93a8d49123caa8f235307/experiments/qwen38-27b-b70/data",
+   "lab_commit": "c9f23d80f36a1efa883da3556eaa982abc117f7e",
+   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+   "task_url": "https://github.com/steveseguin/b70-optimization-lab/tree/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/tasks",
+   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/data",
    "n_bugs": 40,
    "notices": 3,
    "audit_asked": 7,
@@ -4227,6 +4233,19 @@
        "minutes": 55,
        "calls": "283",
        "note": "graded at the task's own 55-minute limit, third attempt; the two earlier runs stuck on one trap ticket and were never graded"
+      },
+      {
+       "arm": "XR7",
+       "manages": "The proxy; its note-keeping calls render like the main calls, so the server cache recognises them",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 36.07,
+       "calls": "241 (+9 by the proxy)",
+       "note": "the cache alignment holds on the first seed too: 91.5% of the notes calls' reading came from the cache (XR3's notes ran 81%)"
       }
      ]
     },
@@ -4285,6 +4304,84 @@
        "minutes": 55.0,
        "calls": "276",
        "note": "the history carried every reply's reasoning, about 215K tokens by the end, which the proxy strips; that, not the window, is the 55 minutes"
+      },
+      {
+       "arm": "XR7",
+       "manages": "The proxy; its note-keeping calls render like the main calls, so the server cache recognises them",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 38.15,
+       "calls": "237 (+10 by the proxy)",
+       "note": "the cache fix works: 91.2% of the notes calls' reading came from the cache (XR6: 2.2%); the notes calls think again, which cost 70K written tokens and the time"
+      },
+      {
+       "arm": "XR4",
+       "manages": "The proxy, every call at medium thinking effort",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 15.63,
+       "calls": "233 (+6 by the proxy)",
+       "note": "the fastest repair run on record: medium effort aligns the notes calls with the mains and keeps them from thinking; 90.1% cache, 4,549 tokens of notes in 6 cuts"
+      },
+      {
+       "arm": "XR8",
+       "manages": "XR7 cutting deeper (notes at 35% of the window instead of 60%)",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 28.88,
+       "calls": "222 (+9 by the proxy)",
+       "note": "safe and no faster: the cut count is set by the note-gathering threshold, not by how deep each cut lands"
+      },
+      {
+       "arm": "X24",
+       "manages": "XR4's recipe at a 24,576-token window",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 13.08,
+       "calls": "203 (+6 by the proxy)",
+       "note": "full quality below the old 32K working size; the smaller window shortens every prompt"
+      },
+      {
+       "arm": "X16",
+       "manages": "XR4's recipe at a 16,384-token window",
+       "fixed": "40/40",
+       "clean": "39/40",
+       "r1": "37/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 29.8,
+       "calls": "219",
+       "note": "the starvation end: 29 cuts with no room to take notes; the one lost ticket is a fix that works but missed the maintainer's mark on one line"
+      },
+      {
+       "arm": "C32",
+       "manages": "Summary compaction, 32K",
+       "fixed": "40/40",
+       "clean": "40/40",
+       "r1": "38/38",
+       "r2": "33/33",
+       "r3": "27/27",
+       "audit": "7/7",
+       "minutes": 33.0,
+       "calls": "266 (+10 summaries)",
+       "note": "the missing seed-2x summariser row: full marks this time; no summary broke"
       }
      ]
     }
@@ -4295,7 +4392,83 @@
     "XR5": 102000
    },
    "pending": "the proxy under a third-party coding agent program (the owner picks which); the lab's own stand-alone agent has now run: the same perfect score through the proxy at a 32K window in 33.3 minutes as direct against the full 262K window in 55.0 minutes",
-   "limit": "One model, one library, one run per cell; seed 2x has no summariser row, and its freeagent pair is one agent program on one seed. The summariser's lost instructions trace to one bad summary, which a checking harness would have caught."
+   "limit": "One model, one library, one run per cell; the freeagent pair is one agent program on one seed, and the window curve (X24, X16) is seed 2x only. The summariser's lost instructions on seed 1x trace to one bad summary, which a checking harness would have caught."
+  },
+  "two_million": {
+   "status": "Finished runs, graded by the task's own checker; not void",
+   "date": "2026-10-14",
+   "task": "The third stream doubles the length and turns on every difficulty the generator has, plus twelve round-trip decoys (a counter is quietly set, later loses k, later gains it back): 2,000,864 tokens, 1,043 items, 382 questions, seed 0.",
+   "server_window": 262144,
+   "cap": "32K",
+   "expected_before_the_runs": "Registered before generation: the proxy at 90% or more of the graded answers, silent-wrong notes at or under the 1M rate (1 in 1,435 lines), 0 of the 12 decoys slipping through the note checks, the surprise audit at 7 of 8 or better, a four-hour cap.",
+   "decoys": {
+    "planted": 12,
+    "accepted_wrong_by_the_proxy": 0,
+    "final_query": "every decoy asked in the final query (11 of 12) answered with its true value",
+    "mid_window_note": "4 of the 12 sat at their decoy value for three to five notes versions before catching up: lag, not capture"
+   },
+   "arms": [
+    {
+     "arm": "N2M",
+     "method": "The keeper inside the test harness",
+     "total": "360/382",
+     "percent": 94.2,
+     "minutes": 172.9,
+     "final": "38/39",
+     "by_type": {
+      "current": "89/98",
+      "old_value": "95/98",
+      "who": "47/49",
+      "rule": "49/49",
+      "procedure": "42/49"
+     },
+     "rule_condition": "33/34 on the overdrawn questions",
+     "calls": 1737,
+     "notes_calls": 330,
+     "notes_tokens_written": "489K",
+     "notes_wrong": 28,
+     "recalls": 268,
+     "wrong": 21,
+     "blank": 1
+    },
+    {
+     "arm": "X2M",
+     "method": "The same policy as a proxy (XR4's recipe: notes-thinking off, medium effort on every call)",
+     "total": "351/382",
+     "percent": 91.9,
+     "minutes": 167.7,
+     "final": "38/39",
+     "by_type": {
+      "current": "91/98",
+      "old_value": "87/98",
+      "who": "48/49",
+      "rule": "48/49",
+      "procedure": "39/49"
+     },
+     "rule_condition": "33/34 on the overdrawn questions",
+     "calls": 1211,
+     "cuts_in_place": 129,
+     "asked_again": 212,
+     "recalls": 870,
+     "messages_archived": 2340,
+     "notes_tokens_written": "272K",
+     "notes_cache_percent": 89.2,
+     "surprise_audit": "7/8",
+     "silent_wrong": {
+      "count": 14,
+      "of_lines": 1825,
+      "one_in": 130,
+      "bar_one_in": 1435,
+      "met": false,
+      "what": "arithmetic slips on the adversarial constructs (thirds, fractions, cross-counter references); none a planted trap"
+     },
+     "wrong": 27,
+     "blank": 4
+    }
+   ],
+   "note_url": "https://github.com/steveseguin/b70-optimization-lab/blob/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md",
+   "runs_url": "https://github.com/steveseguin/b70-optimization-lab/tree/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign18",
+   "table_url": "https://github.com/steveseguin/b70-optimization-lab/blob/c9f23d80f36a1efa883da3556eaa982abc117f7e/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign18/table-2m.txt"
   }
  }
 }

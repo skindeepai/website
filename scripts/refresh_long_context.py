@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = 'results/long-context/result.json'
 LAB_COMMIT_13D = '283a90e374818ec3c0c84495ee9a8a6004856a29'
+LAB_COMMIT_18 = 'c9f23d80f36a1efa883da3556eaa982abc117f7e'
 RETENTION_DATA = ('https://github.com/steveseguin/b70-optimization-lab/tree/974df5792372b424d66d8225af171c4a94307e74/'
                   'experiments/qwen38-27b-b70/data/2026-10-05-context/retention')
 
@@ -483,6 +484,23 @@ def distance_replacements(dp):
     assert ps['notes_versions_audited'] == f"{ps['cuts_in_place']} of {ps['cuts_in_place']}" and ps['in_place_attempts_failed'] == 0
     assert ps['expected_before_the_run'] and all(LAB_COMMIT_13D in url for url in ps['evidence'].values())
 
+    # The 2M adversarial stream: the keeper and the proxy, both finished and graded; every number must add up.
+    tm = dp['two_million']
+    assert tm['status'].startswith('Finished runs') and tm['expected_before_the_runs']
+    assert tm['decoys']['planted'] == 12 and tm['decoys']['accepted_wrong_by_the_proxy'] == 0
+    assert len(tm['arms']) == 2 and [a['arm'] for a in tm['arms']] == ['N2M', 'X2M']
+    for a in tm['arms']:
+        t, f = fraction_parts(a['total']), fraction_parts(a['final'])
+        types = tuple(map(sum, zip(*map(fraction_parts, a['by_type'].values()))))
+        assert (types[0] + f[0], types[1] + f[1]) == t, a['arm']
+        assert a['wrong'] + a['blank'] == t[1] - t[0], a['arm']
+        assert round(100 * t[0] / t[1], 1) == a['percent'], a['arm']
+    xa = tm['arms'][1]
+    assert fraction_parts(xa['surprise_audit']) == (7, 8)
+    sw = xa['silent_wrong']
+    assert round(sw['of_lines'] / sw['count']) == sw['one_in'] and (sw['one_in'] < sw['bar_one_in']) == (not sw['met'])
+    assert all(LAB_COMMIT_18 in tm[k] for k in ('note_url', 'runs_url', 'table_url'))
+
     # A rule that names nothing it covers. Each run must add up twice: by question type, and as governed plus other questions.
     ur = ro['unnamed_rule']
     assert ur['limit'] and ur['stream_fault'] and ur['what_retrieval_answered'] and ur['what_the_keeper_did']
@@ -677,7 +695,7 @@ def distance_replacements(dp):
                 a = fraction_parts(r['audit'])
                 assert 0 <= a[0] <= a[1] == rp['audit_asked'], r['arm']
     rp_s0, rp_s1x, rp_s2x = rp['seeds']
-    assert rp_s2x['id'] == 's2x' and rp_s2x['variant'] and [r['arm'] for r in rp_s2x['rows']] == ['XR6', 'W32g', 'FAp', 'FAd']
+    assert rp_s2x['id'] == 's2x' and rp_s2x['variant'] and [r['arm'] for r in rp_s2x['rows']] == ['XR6', 'W32g', 'FAp', 'FAd', 'XR7', 'XR4', 'XR8', 'X24', 'X16', 'C32']
     repair_head = ['Arm', 'Context managed by', 'Fixed', 'Clean', *rp['rule_labels']]
 
     def repair_rows(s):
@@ -741,6 +759,15 @@ def distance_replacements(dp):
                                      'The repair marathon, second seed, with a final audit of the seven oldest fixes', 'ctx-comparison ctx-fit'),
         'DP_REPAIR_TABLE_S2X': table(repair_head_s1, repair_rows(rp_s2x),
                                      'The repair marathon without its trap tickets (the *_index functions and peekable left out), third seed, with the same final audit', 'ctx-comparison ctx-fit'),
+        'DP_TABLE_2M': html_table(['How the context was managed', 'All 382', 'Final lists', 'Current values', 'Old values',
+                                   'Who did it', 'Standing rule', 'Procedures', 'Minutes'],
+                                  [[a['method'], a['total'] + ' (' + str(a['percent']) + '%)', a['final'], a['by_type']['current'],
+                                    a['by_type']['old_value'], a['by_type']['who'], a['by_type']['rule'], a['by_type']['procedure'],
+                                    str(a['minutes'])] for a in tm['arms']],
+                                  'The two-million-token adversarial stream: the keeper inside the harness and the same policy as a proxy, one run each, graded by the task’s own checker', 'ctx-comparison ctx-fit'),
+        'DP_2M_NOTE_URL': escape(tm['note_url'], quote=True),
+        'DP_2M_RUNS_URL': escape(tm['runs_url'], quote=True),
+        'DP_2M_TABLE_URL': escape(tm['table_url'], quote=True),
         'DP_REPAIR_TASK_URL': escape(rp['task_url'], quote=True),
         'DP_REPAIR_RUNS_URL': escape(rp['runs_url'], quote=True),
         'DP_REPAIR_NOTE_URL': escape(rp['note_url'], quote=True),
