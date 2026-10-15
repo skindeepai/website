@@ -113,9 +113,10 @@
     "questions": [
       "Can I use the keeper myself?",
       "How do I install ctxkeeper?",
-      "Does the proxy work with my agent?"
+      "Does the proxy work with my agent?",
+      "Which coding agents work with ctxkeeper?"
     ],
-    "answer": "ctxkeeper is a free, public-domain proxy that applies the keeper between your agent and any OpenAI-compatible model server, such as vLLM or llama.cpp. Install it with pip or Docker, start it with the address of your server, and point your agent at the proxy instead.\n\nIt works with programs that use Chat Completions, send their whole history each time and have their own trimming turned off. Before release it was tested on a 40-bug code-repair task (all fixed, every rule kept) and on a second model and server. Results were measured on one model family and one machine.",
+    "answer": "ctxkeeper is a free, public-domain proxy that applies the keeper between your agent and any OpenAI-compatible model server, such as vLLM or llama.cpp. Install it with pip or Docker, start it with the address of your server, and point your agent at the proxy instead.\n\nIt works with programs that use Chat Completions, send their whole history each time and have their own trimming turned off. Twelve open-source coding agents were run through it on a 40-bug code-repair task, among them Cline, Goose, OpenHands, Qwen Code, Kimi Code, Mistral Vibe, Hermes Agent and mini-swe-agent; ten of the eleven that ran fixed 39 or 40 of the 40 bugs. Results were measured on one model family and one machine.",
     "url": "context-use.html",
     "page": "Use it: the ctxkeeper proxy",
     "topic": "Longer context"
