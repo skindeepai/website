@@ -34,13 +34,14 @@
 <tr><th scope="row">Two million tokens with planted traps (values that change and change back, corrections)</th><td><strong>351/382 (92%)</strong>; none of 12 traps taken</td><td>No window holds it</td></tr>
 </tbody></table></div>
 <p class="ctx-table-note">One model on one machine. <a href="context-distance.html#repair">The repair task in detail</a> &middot; <a href="context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="context-distance.html#two-million">The two-million-token stream</a>.</p>
-<p><strong>What it costs.</strong> The model writes its own notes on the same server, so nothing extra is loaded. In the million-token run about 15 of the 50 minutes went on writing notes and about 15 on reading (2.4M tokens for a 1M-token history). A short view keeps every step fast, which is why the 200K window above took 228 minutes.</p>
+<p><strong>What it costs.</strong> The model writes its own notes on the same server, so nothing extra is loaded. In the million-token run about 15 of the 50 minutes went on writing notes and about 15 on reading (2.4M tokens for a 1M-token history); on the repair task notes took under a tenth of the time. A short view keeps every step fast, which is why the 200K window above took 228 minutes.</p>
+<p><strong>On one card.</strong> The same model on a single B70 with a 26K view fixed all 40 bugs, kept every rule and answered 7/7 in 21 minutes (two cards: 16).</p>
 </section>
 <section id="try"><h2 id="answer-3">Try it</h2>
 <p>You need Python 3.10 or newer (or Docker) and a model server that speaks the OpenAI API: vLLM, llama.cpp’s server, SGLang, Ollama’s OpenAI endpoint and others. ctxkeeper uses Python’s standard library only.</p>
-<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.0.1
-pip install $R/ctxkeeper-1.0.1-py3-none-any.whl
-# or with Docker: docker build -t ctxkeeper $R/ctxkeeper-1.0.1.tar.gz
+<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
+pip install $R/ctxkeeper-1.1.0-py3-none-any.whl
+# or with Docker: docker build -t ctxkeeper $R/ctxkeeper-1.1.0.tar.gz
 
 ctxkeeper --upstream http://127.0.0.1:8000 --recipe agent</code></pre>
 <p>Give <code>--upstream</code> your server’s address without <code>/v1</code>. Then point your agent or app at <code>http://127.0.0.1:18200/v1</code> instead of the server. To see it work, run the demo: it holds a conversation several working views long, says a codename, a budget and a standing rule at the start, and asks about all three at the end.</p>
@@ -83,20 +84,31 @@ reply = client.chat.completions.create(model="your-model", messages=history)</co
 <tr><th scope="row"><code>--recipe agent</code></th><td>Any OpenAI-compatible server</td><td>40/40 clean, 7/7; 36 to 38 min</td></tr>
 <tr><th scope="row"><code>--recipe qwen</code></th><td>Qwen3 behind vLLM</td><td>40/40 clean, 7/7; 16 min</td></tr>
 </tbody></table></div>
-<p>The Qwen recipe writes its notes without thinking and keeps the prompt identical, so the server’s cache does most of the note-taking work. Both use a 32K working view. On the repair task 24K did as well (13 minutes); at 16K one rule slipped once. A bigger view is slower, because the model reads more on every turn.</p>
+<p>The Qwen recipe writes its notes without thinking and keeps the prompt identical, so the server’s cache does most of the note-taking work. Both use a 32K working view, about the fastest we found:</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Working view sizes"><table><thead><tr><th scope="col">Working view</th><th scope="col">240K-token question stream</th><th scope="col">Repair task</th></tr></thead><tbody>
+<tr><th scope="row">8K</th><td>39/39; 40 min</td><td>not run</td></tr>
+<tr><th scope="row">12K</th><td>39/39; 24 min</td><td>40 fixed, 38 kept the rules; 30 min</td></tr>
+<tr><th scope="row">16K</th><td>39/39; 10 min</td><td>40/40, 7/7; 35 min</td></tr>
+<tr><th scope="row">24K</th><td>38/39; 9 min</td><td>40/40, 7/7; 13 min</td></tr>
+<tr><th scope="row">32K</th><td>39/39; 9 min</td><td>40/40, 7/7; 16 min</td></tr>
+<tr><th scope="row">48K</th><td>39/39; 8 min</td><td>40/40, 7/7; 23 min</td></tr>
+<tr><th scope="row">64K</th><td>39/39; 10 min</td><td>not run</td></tr>
+</tbody></table></div>
+<p class="ctx-table-note">One run each; repair times swing with how long the model thinks. Below 16K the notes no longer fit beside the newest turns, so every cut rewrote them in full; with <code>--inplace-fit</code> they fit, and 8K took 13 minutes and 12K 10. A bigger view is slower because the model reads more on every turn.</p>
 </section>
 <section id="tested"><h2 id="answer-7">Tested before release</h2>
-<p>Version 1.0.0 was installed the way you would install it and run as its instructions say. Version 1.0.1 changes only how requests are passed on, and its program files are the ones the agent test above ran.</p>
+<p>Version 1.0.0 was installed the way you would install it and run as its instructions say. Version 1.0.1 changes only how requests are passed on, and its program files are the ones the agent test above ran. Version 1.1.0 only adds options, all off by default; with them off it sends exactly the same requests as 1.0.1, checked request by request.</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Release test"><table><thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead><tbody>
 <tr><th scope="row">The bug-fixing task above, through a separate agent program, with <code>--recipe qwen</code> and nothing else</th><td>40 of 40 fixed, all 40 following every rule, 7 of 7 questions, in 31 minutes</td></tr>
 <tr><th scope="row">The demo through the Docker image, 300K tokens: longer than the model server itself can hold</th><td>4 of 4, in 4 minutes</td></tr>
 <tr><th scope="row">The OpenAI library example above</th><td>Ordinary reply, tool call and streaming all worked</td></tr>
 <tr><th scope="row">A different model and server: Gemma 4 26B on llama.cpp, 100K tokens</th><td>4 of 4, in 4.5 minutes (one quick run, not a measurement)</td></tr>
+<tr><th scope="row">Version 1.1.0 from the public release, through its Docker image, to the same Gemma server with only a 4K working view (<code>--inplace-fit</code>), 16K tokens</th><td>4 of 4, in 1 minute</td></tr>
 </tbody></table></div>
 </section>
 <section id="limits"><h2 id="answer-8">Limits</h2>
 <ul>
-<li><strong>Measured on one model family and one machine, with the model keeping its own notes.</strong> Other models should work if they use tools reliably and can keep the notes format; that, and a separate smaller model as the keeper, have not been measured yet.</li>
+<li><strong>Measured on one model family and one machine, with the model keeping its own notes.</strong> Other models should work if they use tools reliably and can keep the notes format; that has not been measured. A separate, smaller model as the keeper did worse: LFM2.5-24B-A2B on a second card kept the house rules on 20 of 40 bugs and answered 19 of 39 on the 240K test, and it was slower, because it reads every turn afresh instead of from the main model’s cache.</li>
 <li><strong>The notes are written by the model, so they can be wrong.</strong> On the hardest test about 1 notes line in 130 was silently wrong; on the million-token test, 1 in 1,435. The originals stay searchable, but nothing forces the model to look. In the agent test one notes line wrongly said seven questions had never been asked, and the agent deleted the answers it had already written.</li>
 <li><strong>No login, and everything is stored as plain text</strong> on the machine running it. It listens only on the local machine unless you tell it otherwise.</li>
 <li>The opening instructions are always kept, so they must fit well inside the working view.</li>
@@ -104,13 +116,14 @@ reply = client.chat.completions.create(model="your-model", messages=history)</co
 </section>
 <details><summary id="answer-9">Downloads, source and records</summary>
 <ul class="ctx-source-list">
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.0.1">Release 1.0.1</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.0.1/tools/ctxkeeper/README.md">Full instructions</a><span>Every option, the status page, where state is kept, and how to run the tests.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Release 1.1.0</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/tools/ctxkeeper/README.md">Full instructions</a><span>Every option, the status page, where state is kept, and how to run the tests.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/tools/ctxkeeper">Source</a><span>Two Python files, their tests against a scripted model, and the build history.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/data/2026-10-14-context-campaign19">Release test records</a><span>The test script, each check’s output and the proxy’s counters.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/data/2026-10-15-context-campaign20">Agent test records</a><span>Each agent’s score, its grader output, the proxy’s notes and counters.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.1.0/experiments/qwen38-27b-b70/data/2026-10-16-context-campaign22">One-card and second-keeper records</a><span>The runs on a single card and with a separate keeper model; the view-size runs are in campaigns 21 and 23 beside it.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/tools/agentbench/README.md">Agent set-ups</a><span>How each of the twelve agents was installed, configured and run, and what had to be switched off.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md#campaign-20e-result-and-campaign-20-summary-2026-10-15-0800">Lab note</a><span>Every campaign that shaped the defaults, including what failed.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md">Lab note</a><span>Every campaign that shaped the defaults, including what failed.</span></li>
 </ul>
 </details>
 <p class="next-links"><a href="context.html">Longer context overview</a> &middot; <a href="context-distance.html">How far back it remembers</a> &middot; <a href="context-reproduce.html">Reproduce the tests</a></p>
