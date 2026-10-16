@@ -34,6 +34,7 @@
 <tr><th scope="row">Two million tokens with planted traps (values that change and change back, corrections)</th><td><strong>351/382 (92%)</strong>; none of 12 traps taken</td><td>No window holds it</td></tr>
 </tbody></table></div>
 <p class="ctx-table-note">One model on one machine. <a href="context-distance.html#repair">The repair task in detail</a> &middot; <a href="context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="context-distance.html#two-million">The two-million-token stream</a>.</p>
+<p><strong>What it costs.</strong> The model writes its own notes on the same server, so nothing extra is loaded. In the million-token run about 15 of the 50 minutes went on writing notes and about 15 on reading (2.4M tokens for a 1M-token history). A short view keeps every step fast, which is why the 200K window above took 228 minutes.</p>
 </section>
 <section id="try"><h2 id="answer-3">Try it</h2>
 <p>You need Python 3.10 or newer (or Docker) and a model server that speaks the OpenAI API: vLLM, llama.cpp’s server, SGLang, Ollama’s OpenAI endpoint and others. ctxkeeper uses Python’s standard library only.</p>
@@ -95,7 +96,7 @@ reply = client.chat.completions.create(model="your-model", messages=history)</co
 </section>
 <section id="limits"><h2 id="answer-8">Limits</h2>
 <ul>
-<li><strong>Measured on one model family and one machine.</strong> Other models should work if they use tools reliably and can keep the notes format; that has not been measured.</li>
+<li><strong>Measured on one model family and one machine, with the model keeping its own notes.</strong> Other models should work if they use tools reliably and can keep the notes format; that, and a separate smaller model as the keeper, have not been measured yet.</li>
 <li><strong>The notes are written by the model, so they can be wrong.</strong> On the hardest test about 1 notes line in 130 was silently wrong; on the million-token test, 1 in 1,435. The originals stay searchable, but nothing forces the model to look. In the agent test one notes line wrongly said seven questions had never been asked, and the agent deleted the answers it had already written.</li>
 <li><strong>No login, and everything is stored as plain text</strong> on the machine running it. It listens only on the local machine unless you tell it otherwise.</li>
 <li>The opening instructions are always kept, so they must fit well inside the working view.</li>
