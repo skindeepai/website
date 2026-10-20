@@ -88,8 +88,13 @@ python3 long_chat.py --base-url http://127.0.0.1:18200/v1</code></pre>
 <li><strong>Send the whole conversation each time.</strong> Turn off the agent’s own history trimming and summarizing. If earlier messages disappear or change, ctxkeeper may treat it as a different conversation.</li>
 <li>Request one reply at a time (<code>n=1</code>). Streaming is accepted, but the answer arrives in one piece at the end.</li>
 </ul>
+<p>If your client supports custom headers, send a unique <code>X-Ctx-Session</code> value for each conversation and keep it on every call, including after a restart. Otherwise, ctxkeeper identifies conversations by their model and opening messages; identical openings can collide. The working view uses estimated token counts, so allow server headroom and avoid single messages or requested replies larger than the server can handle.</p>
 <details><summary id="answer-9">Python client example</summary>
-<p>The optional OpenAI client library is a separate install: <code>python -m pip install openai</code>. Replace the model ID before running:</p>
+<p>The optional OpenAI client library is a separate install. In your client terminal, create and activate an environment; this also works when the proxy runs in Docker:</p>
+<pre><code>python3 -m venv .venv-client
+. .venv-client/bin/activate
+python -m pip install openai</code></pre>
+<p>Use this Python code with a model ID from the list above:</p>
 <pre><code>from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:18200/v1", api_key="unused")
 history = [{"role": "user", "content": "Remember: our project is called Cedar."}]
