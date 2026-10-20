@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ctxkeeper — keep your agent working past the context window</title><meta name="description" content="ctxkeeper is a free, public-domain proxy that gives your AI agent notes, a verbatim archive and search, so it keeps working past the model&#x27;s context window. pip or Docker install, measured results.">
+<link rel="canonical" href="https://skindeep.ai/ctxkeeper.html">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/ctxkeeper.html">
+<meta property="og:title" content="ctxkeeper — keep your agent working past the context window"><meta property="og:description" content="ctxkeeper is a free, public-domain proxy that gives your AI agent notes, a verbatim archive and search, so it keeps working past the model&#x27;s context window. pip or Docker install, measured results.">
+<meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ctxkeeper — keep your agent working past the context window"><meta name="twitter:description" content="ctxkeeper is a free, public-domain proxy that gives your AI agent notes, a verbatim archive and search, so it keeps working past the model&#x27;s context window. pip or Docker install, measured results."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+
+<link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="ctxkeeper.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
+</head><body class="lab-page ">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><div class="header-actions"><a class="header-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></svg>Search</a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></div></header>
+<aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Tools</p><a aria-current="page" href="ctxkeeper.html">ctxkeeper</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
+<main class="lab-main" id="main" tabindex="-1">
+<h1>ctxkeeper</h1><p class="page-lead">Keep your agent working when its conversation outgrows the model&#x27;s context window. Free, public-domain proxy; install with pip or Docker.</p><div class="ck">
+<section class="ck-hero" aria-label="Introduction">
+<p class="ck-eyebrow">Free &middot; public domain &middot; Python 3.10+, standard library only</p>
+<p class="ck-promise">A small proxy between your agent and any OpenAI-compatible model server. Your agent keeps its whole
+history; the model sees a short, current view — notes it maintains, the opening instructions, the newest turns.
+Everything older is archived word for word, searchable through a <code>recall</code> tool the proxy answers itself.</p>
+<div class="ck-actions">
+<a class="ck-btn ck-btn-primary" href="#try">Install in 60 seconds</a>
+<a class="ck-btn ck-btn-ghost" href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">Release 1.2.0 &amp; checksums</a>
+</div>
+<ul class="ck-stats" aria-label="Headline measurements">
+<li><strong>2M</strong><span>tokens tested, hostile stream</span></li>
+<li><strong>421/423 &middot; 417/423</strong><span>both seeds, 16/16 audits</span></li>
+<li><strong>226/228</strong><span>million-token recall</span></li>
+<li><strong>40/40</strong><span>real bugs fixed, 12 min</span></li>
+</ul>
+</section>
+
+<figure class="ck-diagram" aria-label="How ctxkeeper sits between your agent and the model server">
+<svg viewBox="0 0 760 210" role="img" aria-labelledby="ck-diag-title">
+<title id="ck-diag-title">Your agent talks to ctxkeeper; ctxkeeper talks to the model server. ctxkeeper keeps notes and a verbatim archive on disk.</title>
+<defs><marker id="ck-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="20" y="70" width="150" height="70" rx="10" class="ck-box"/>
+<text x="95" y="100" text-anchor="middle" class="ck-t">Your agent</text>
+<text x="95" y="120" text-anchor="middle" class="ck-ts">sends full history</text>
+<rect x="300" y="60" width="170" height="90" rx="10" class="ck-box ck-box-hi"/>
+<text x="385" y="98" text-anchor="middle" class="ck-t">ctxkeeper</text>
+<text x="385" y="118" text-anchor="middle" class="ck-ts">notes &middot; archive &middot; recall</text>
+<rect x="590" y="70" width="150" height="70" rx="10" class="ck-box"/>
+<text x="665" y="100" text-anchor="middle" class="ck-t">Model server</text>
+<text x="665" y="120" text-anchor="middle" class="ck-ts">vLLM &middot; llama.cpp &middot; &hellip;</text>
+<line x1="170" y1="105" x2="295" y2="105" class="ck-line" marker-end="url(#ck-arrow)"/>
+<line x1="470" y1="105" x2="585" y2="105" class="ck-line" marker-end="url(#ck-arrow)"/>
+<rect x="300" y="170" width="170" height="30" rx="8" class="ck-box ck-box-disk"/>
+<text x="385" y="190" text-anchor="middle" class="ck-ts">state on disk, word for word</text>
+<line x1="385" y1="150" x2="385" y2="165" class="ck-line" marker-end="url(#ck-arrow)"/>
+</svg>
+</figure>
+
+<section id="try"><h2 id="answer-1">Install and run</h2>
+<p>Point your agent at <code>http://127.0.0.1:8000/v1</code> instead of the model server. Nothing else about the agent changes.</p>
+<div class="ck-install-grid">
+<div class="ck-install">
+<h3 id="answer-2">pip</h3>
+<pre><code>python3 -m venv .venv-ctxkeeper
+. .venv-ctxkeeper/bin/activate
+python -m pip install \
+  "https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0/ctxkeeper-1.2.0-py3-none-any.whl"
+
+ctxkeeper --recipe qwen \
+  --upstream http://127.0.0.1:8080</code></pre>
+</div>
+<div class="ck-install">
+<h3 id="answer-3">Docker</h3>
+<pre><code>docker build -t ctxkeeper:1.2.0 \
+  "https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0/ctxkeeper-1.2.0.tar.gz"
+
+docker run --rm --network host \
+  -v ctxkeeper-state:/state \
+  ctxkeeper:1.2.0 --recipe qwen \
+  --upstream http://127.0.0.1:8080</code></pre>
+</div>
+</div>
+<p class="ck-small">Or take just the two files — <code>ctxkeeper.py</code> and <code>notesdelta.py</code> — from the
+<a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">release page</a>, which lists every file&rsquo;s SHA-256.
+The upstream must accept managed calls without an API key (client <code>Authorization</code> headers are not forwarded); keep the proxy on localhost or a trusted network.
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md">The full guide</a> covers every option, the status page and the tests.</p>
+</section>
+
+<section id="results"><h2 id="answer-4">Measured, not promised</h2>
+<p>Every row is a real run, graded by the task&rsquo;s own checker, on Qwen3.8-27B (FP8, vLLM, two Intel Arc Pro B70 cards)
+with a 32K-token working view.</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Measured results"><table><thead><tr><th scope="col">Task</th><th scope="col">With ctxkeeper</th><th scope="col">Without it</th></tr></thead><tbody>
+<tr><th scope="row">Fix 40 real bugs in a Python library, one ticket at a time, under three house rules; then 7 questions about the earliest fixes</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 12&ndash;38 min by settings</td><td>Latest 32K only: 22&ndash;35 of 40 kept the rules, 0/7 right</td></tr>
+<tr><th scope="row">The same task through a separate agent program that manages nothing itself</th><td><strong>40/40, 40/40, 7/7</strong>; 31&ndash;33 min</td><td>Whole history in a 262K window: same score; 55 min, 29.9M tokens read</td></tr>
+<tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
+<tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Both seeds: 421/423 and 417/423</strong>; 16/16 corrections applied on both, every forged line in the notes flagged, no forged value, method, rule or removal ever adopted. Two of 97 forgery-target answers slipped on silent arithmetic while the notes held the right value, so the strictest preregistered bar is not claimed.</td><td>Not run at this length</td></tr>
+</tbody></table></div>
+<p class="ctx-table-note">Release-gated: 1.2.0 was installed from the public release exactly as shown above, then ran the repair task
+(40/40, 7/7), the 300K demo through the Docker image (4/4), the SDK example (plain, tool call, streaming) and a 100K Gemma check (4/4)
+&mdash; <a href="context-distance.html#two-million">lab campaign 50</a>. One model, one machine; the notes are written by the model and can be wrong.</p>
+</section>
+
+<section id="models"><h2 id="answer-5">Which model do I need?</h2>
+<ul>
+<li><strong>Measured on Qwen3.8-27B</strong> (FP8 on two B70 cards). <strong>One card is enough</strong>: the repair task scored the same in 21 minutes.</li>
+<li>A quick check on a second family, <strong>Gemma 4 26B</strong> (Q8, llama.cpp), passed the demo 4 of 4. Other models need checking with your task: they must call tools reliably, keep the notes format, and fit the working view plus server overhead.</li>
+<li><strong>Let the model keep its own notes.</strong> A separate smaller keeper model was worse and slower (19 of 39 vs 39/39 on the 240K test): it reads every turn afresh instead of reusing the main model&rsquo;s cache.</li>
+</ul>
+</section>
+
+<section id="agent"><h2 id="answer-6">With your agent</h2>
+<p>ctxkeeper manages Chat Completions requests from clients that resend their full history:</p>
+<ul>
+<li>Use <strong>Chat Completions</strong> (<code>/v1/chat/completions</code>). Other endpoints, including Responses, pass through without context management.</li>
+<li><strong>Send the whole conversation each time.</strong> Turn off the agent&rsquo;s own history trimming and summarizing. If earlier messages disappear or change, ctxkeeper may treat it as a different conversation.</li>
+<li>Request one reply at a time (<code>n=1</code>). Streaming is accepted, but the answer arrives in one piece at the end.</li>
+</ul>
+<p>If your client supports custom headers, send a unique <code>X-Ctx-Session</code> value per conversation and keep it on every
+call, including after a restart. Otherwise ctxkeeper identifies conversations by their model and opening messages; identical
+openings can collide. The OpenAI SDK works as-is (<code>api_key="unused"</code> placeholder); a
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md#quick-start">client example</a>
+is in the guide. For new instructions inside tool results, such as tickets or files, <code>--recite-when '(?m)^TICKET \d+'</code>
+repeats recorded rules after matching messages.</p>
+</section>
+
+<section id="agents"><h2 id="answer-7">Tested with 12 coding agents</h2>
+<p>Twelve open-source coding agents ran through ctxkeeper on the bug-fixing task above, each as it ships (history trimming
+off). One run each, an hour at most, sorted by time.</p>
+<div class="table-scroll ctx-table ctx-summary-table ctx-agents-table" tabindex="0" role="region" aria-label="Coding agents through ctxkeeper"><table><colgroup><col><col><col><col><col></colgroup><thead><tr><th scope="col">Agent</th><th scope="col">Bugs fixed</th><th scope="col">Kept every rule</th><th scope="col">Answers right</th><th scope="col">Time</th></tr></thead><tbody>
+<tr><th scope="row"><a href="https://github.com/SWE-agent/mini-swe-agent">mini-swe-agent</a></th><td>40</td><td>40</td><td>7</td><td>14 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/openinterpreter/openinterpreter">Open Interpreter</a></th><td>40</td><td>39</td><td>7</td><td>18 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/cline/cline">Cline</a></th><td>40</td><td>40</td><td>7</td><td>24 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/aaif-goose/goose">Goose</a></th><td>40</td><td>40</td><td>7</td><td>24 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/OpenHands/software-agent-sdk">OpenHands</a></th><td>40</td><td>40</td><td>6</td><td>24 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/mistralai/mistral-vibe">Mistral Vibe</a></th><td>40</td><td>40</td><td>7</td><td>26 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a></th><td>40</td><td>40</td><td>7</td><td>26 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/earendil-works/pi">pi</a></th><td>39</td><td>39</td><td>0</td><td>28 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/anomalyco/opencode">OpenCode</a></th><td>40</td><td>40</td><td>7</td><td>33 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/QwenLM/qwen-code">Qwen Code</a></th><td>40</td><td>39</td><td>7</td><td>33 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/MoonshotAI/kimi-code">Kimi Code</a></th><td>40</td><td>40</td><td>7</td><td>38 min</td></tr>
+<tr><th scope="row"><a href="https://github.com/tailcallhq/forgecode">ForgeCode</a></th><td>25</td><td>25</td><td>not reached</td><td>60 min, out of time</td></tr>
+</tbody></table></div>
+<p class="ctx-table-note">Out of 40 bugs and 7 questions. The lab&rsquo;s own simple agent, for comparison: 40, 39, 7 in 21 min.
+pi wrote its 7 answers and then deleted them, because a wrong line in its notes said the questions had never been asked (see
+<a href="#limits">Limits</a>). ForgeCode was still fixing bugs correctly when its hour ran out. Running the agents found four ways
+their requests differed from what ctxkeeper expected, such as sending two opening instructions instead of one; version 1.0.1
+handles all four.</p>
+</section>
+
+<section id="settings"><h2 id="answer-8">Settings</h2>
+<p>A recipe is a set of options that were measured together; any option you give still wins. Both recipes use a 32K working
+view, about the fastest size found:</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Recipes"><table><thead><tr><th scope="col">Recipe</th><th scope="col">Use it for</th><th scope="col">Measured on the repair task</th></tr></thead><tbody>
+<tr><th scope="row"><code>--recipe agent</code></th><td>Servers accepting the Chat Completions and tool-call format above</td><td>40/40 clean, 7/7; 36 to 38 min</td></tr>
+<tr><th scope="row"><code>--recipe qwen</code></th><td>Qwen3 behind vLLM</td><td>40/40 clean, 7/7; 16 min</td></tr>
+</tbody></table></div>
+<details class="ck-details"><summary id="answer-9">Measured working-view sizes</summary>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Working view sizes"><table><thead><tr><th scope="col">Working view</th><th scope="col">240K-token question stream</th><th scope="col">Repair task</th></tr></thead><tbody>
+<tr><th scope="row">8K</th><td>39/39; 40 min</td><td>not run</td></tr>
+<tr><th scope="row">12K</th><td>39/39; 24 min</td><td>40 fixed, 38 kept the rules; 30 min</td></tr>
+<tr><th scope="row">16K</th><td>39/39; 10 min</td><td>40/40, 7/7; 35 min</td></tr>
+<tr><th scope="row">24K</th><td>38/39; 9 min</td><td>40/40, 7/7; 13 min</td></tr>
+<tr><th scope="row">32K</th><td>39/39; 9 min</td><td>40/40, 7/7; 16 min</td></tr>
+<tr><th scope="row">48K</th><td>39/39; 8 min</td><td>40/40, 7/7; 23 min</td></tr>
+<tr><th scope="row">64K</th><td>39/39; 10 min</td><td>not run</td></tr>
+</tbody></table></div>
+<p class="ctx-table-note">One run each; repair times swing with how long the model thinks. Below 16K the notes no longer fit
+beside the newest turns, so every cut rewrote them in full; with <code>--inplace-fit</code> they fit, and 8K took 13 minutes and
+12K 10. A bigger view is slower because the model reads more on every turn.</p>
+</details>
+</section>
+
+<section id="limits"><h2 id="answer-10">Limits, stated</h2>
+<ul>
+<li><strong>The notes are written by the model, so they can be wrong.</strong> The originals stay archived and searchable, but nothing forces the model to look. In one agent test a wrong notes line said seven questions had never been asked, and the agent deleted answers it had already written.</li>
+<li><strong>Silent arithmetic slips exist.</strong> Two 2M-seed answers mis-added while the notes held the right value; the arithmetic check only catches wrong working it can see.</li>
+<li><strong>No login; state is plain text</strong> on the machine running it. Bind to localhost (the commands above do). The Docker default binds to all interfaces — keep the explicit <code>--host 127.0.0.1</code> if you change the run command.</li>
+<li><strong>The opening instructions are always kept</strong>, so they must fit well inside the working view (default 32,768 tokens).</li>
+</ul>
+</section>
+
+<section id="more"><h2 id="answer-11">Evidence and source</h2>
+<ul class="ck-links">
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">Release 1.2.0</a><span>Package, source archive, program files, demo, SHA-256 sums. Public domain.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md">Full guide</a><span>Every option, the status page, where state is kept, how to run the tests.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.2.0/experiments/qwen38-27b-b70/data/2026-10-19-context-campaign49">2M hostile audits</a><span>Hash-bound seed receipts behind the two-million-token row.</span></li>
+<li><a href="context-distance.html">The research trail</a><span>Every campaign that shaped the defaults, including what failed.</span></li>
+</ul>
+</section>
+</div>
+
+<footer class="lab-footer"><span>SkinDeep.ai · Steve Seguin</span><a href="history.html">History</a><a href="research.html">Research FAQ</a><a href="mailto:contact@skindeep.ai">Contact</a></footer></main></body></html>
