@@ -15,7 +15,7 @@
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
 <main class="lab-main" id="main" tabindex="-1"><nav id="journey-trail" class="small" aria-label="Topic and approach"><a data-journey="topic" href="context.html">Longer context overview</a></nav>
 <h1>ctxkeeper: download and setup</h1><p class="page-lead">Download ctxkeeper for a local model server. Install with Python or Docker, connect your agent, and read the measured results and limits.</p><div class="ctx-page"><p><strong>Keep a long task going with ctxkeeper.</strong> This free, public-domain proxy gives your AI agent a shorter working view: current notes, opening instructions and recent turns. Older messages stay on disk, word for word, for the model to search. Install it between your agent and an existing model server.</p>
-<p><strong>Download stable 1.1.0:</strong> <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0/ctxkeeper-1.1.0-py3-none-any.whl">Python package (.whl)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0/ctxkeeper-1.1.0.tar.gz">Source archive (.tar.gz)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Release and checksums</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/tools/ctxkeeper/README.md">Full guide</a></p>
+<p><strong>Download 1.2.0:</strong> <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0/ctxkeeper-1.2.0-py3-none-any.whl">Python package (.whl)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0/ctxkeeper-1.2.0.tar.gz">Source archive (.tar.gz)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">Release and checksums</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md">Full guide</a></p>
 <p>Tested mainly with Qwen3.8-27B on vLLM, plus a small Gemma 4 / llama.cpp check. Eleven of twelve tested coding agents fixed 39 or 40 of 40 bugs. <a href="#try">Install and try it</a>; the results and limits are below.</p>
 <nav class="ctx-jumps" aria-label="Sections on this page"><a href="#what">What it does</a><a href="#results">Does it help?</a><a href="#models">Which model?</a><a href="#try">Try it</a><a href="#agent">With your agent</a><a href="#agents">Tested agents</a><a href="#settings">Settings</a><a href="#tested">Release test</a><a href="#limits">Limits</a></nav>
 <section id="what"><h2 id="answer-1">What it does</h2>
@@ -28,14 +28,14 @@
 <p>The proxy changes the messages sent to the model. It manages Chat Completions requests from clients that keep sending their full history; see <a href="#agent">the client requirements</a>. <a href="context-distance.html#how">Follow the keeper step by step</a>.</p>
 </section>
 <section id="results"><h2 id="answer-2">Does it help?</h2>
-<p>Measured with Qwen3.8-27B on two Intel Arc Pro B70 graphics cards, with a working view of 32K tokens. Each row is a real run, graded by the task’s own checker. The repair and million-token results describe the earlier released work; the two-million-token row is development work, separate from the stable download.</p>
+<p>Measured with Qwen3.8-27B on two Intel Arc Pro B70 graphics cards, with a working view of 32K tokens. Each row is a real run, graded by the task’s own checker. The repair and million-token results describe the earlier released work; the two-million-token row is the stable download above, both seeds.</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="ctxkeeper results"><table><colgroup><col style="width:38%"><col style="width:31%"><col style="width:31%"></colgroup><thead><tr><th scope="col">Task</th><th scope="col">With ctxkeeper</th><th scope="col">Without it</th></tr></thead><tbody>
 <tr><th scope="row">Fix 40 real bugs in a Python library, one ticket at a time, under three house rules; then 7 questions about the earliest fixes</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 16 to 38 min, by settings</td><td>Latest 32K only: 22 to 35 of 40 kept the rules, 0/7 right</td></tr>
 <tr><th scope="row">The same task through a separate agent program that manages nothing itself</th><td><strong>40/40, 40/40, 7/7</strong>; 31 to 33 min, about 3M tokens read</td><td>Whole history in a 262K window: same score; 55 min, 29.9M read</td></tr>
 <tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
 <tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>1.2.0, both seeds: 421/423 and 417/423</strong>; 16/16 corrections applied on both, every forged line in the notes flagged, and no forged value, method, rule or removal ever adopted. Two of 97 forgery-target answers slipped on silent arithmetic while the notes held the right value, so the strictest preregistered bar is not claimed. Earlier dev9 runs: 414/423 and 416/423.</td><td>Not run at this length</td></tr>
 </tbody></table></div>
-<p class="ctx-table-note"><strong>1.2.0 is a published prerelease; the stable download above remains 1.1.0.</strong> The 1.2.0 release gate — installing exactly as below, then the repair, long-chat and SDK checks — is running against the public download now; this page updates when it finishes. One model on one machine. <a href="context-distance.html#repair">The repair task in detail</a> &middot; <a href="context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="context-distance.html#two-million">The two-million-token stream</a>.</p>
+<p class="ctx-table-note"><strong>1.2.0 is the stable download above.</strong> Its release gate — installed from the public release exactly as below, then the repair, long-chat and SDK checks — passed on 2026-10-20 (lab campaign 50). One model on one machine. <a href="context-distance.html#repair">The repair task in detail</a> &middot; <a href="context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="context-distance.html#two-million">The two-million-token stream</a>.</p>
 <p><strong>What it costs.</strong> The model writes its own notes on the same server, so nothing extra is loaded. In the million-token run about 15 of the 50 minutes went on writing notes and about 15 on reading (2.4M tokens for a 1M-token history); on the repair task notes took under a tenth of the time. A short view keeps every step fast, which is why the 200K window above took 228 minutes.</p>
 <p><strong>On one card.</strong> The same model on a single B70 with a 26K view fixed all 40 bugs, kept every rule and answered 7/7 in 21 minutes (two cards: 16).</p>
 </section>
@@ -50,23 +50,23 @@
 </ul>
 <p class="ctx-table-note">Not measured yet: other models&rsquo; quality through the proxy, and more than one conversation at a time. Window sizes and the speed numbers behind this advice are in <a href="#settings">Settings</a> below.</p>
 </section>
-<section id="try"><h2 id="answer-4">Install and try stable 1.1.0</h2>
+<section id="try"><h2 id="answer-4">Install and try 1.2.0</h2>
 <p>You need <strong>Python 3.10 or newer with pip and venv</strong>, or Docker for the proxy, and a <strong>running model server</strong>. ctxkeeper does not download or serve a model. The proxy and demo use Python’s standard library. The commands below use a local server at <code>http://127.0.0.1:8000</code> that accepts Chat Completions and tool calls, with enough context for the default 32K view.</p>
 <h3 id="answer-5">Python install</h3>
 <p>In a terminal on Linux or macOS:</p>
 <pre><code>python3 -m venv .venv-ctxkeeper
 . .venv-ctxkeeper/bin/activate
-R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
-python -m pip install "$R/ctxkeeper-1.1.0-py3-none-any.whl"
+R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0
+python -m pip install "$R/ctxkeeper-1.2.0-py3-none-any.whl"
 ctxkeeper --upstream http://127.0.0.1:8000 --recipe agent \
   --state-dir "$HOME/.local/share/ctxkeeper"</code></pre>
 <p>Replace the upstream address with your model server’s address, <strong>without <code>/v1</code></strong>. Leave this terminal running. Stop it with Ctrl-C when your agent is idle; restart the same command with the same state directory to reuse saved notes and archives. Your agent still needs to preserve and resend its full conversation.</p>
 <details><summary id="answer-6">Docker instead (Linux)</summary>
 <p>Build from the released source archive, then run the proxy with a persistent named volume. Linux host networking lets <code>127.0.0.1:8000</code> reach a model server running on the host. The explicit bind address keeps this example local to your machine.</p>
-<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
-docker build -t ctxkeeper:1.1.0 "$R/ctxkeeper-1.1.0.tar.gz"
+<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0
+docker build -t ctxkeeper:1.2.0 "$R/ctxkeeper-1.2.0.tar.gz"
 docker run --rm -it --name ctxkeeper --network host \
-  -v ctxkeeper-state:/state ctxkeeper:1.1.0 \
+  -v ctxkeeper-state:/state ctxkeeper:1.2.0 \
   --host 127.0.0.1 --recipe agent --upstream http://127.0.0.1:8000</code></pre>
 <p>Keep it running while your agent works. Ctrl-C stops the proxy; the named volume survives <code>--rm</code>. Run the same command again to reuse it. Docker Desktop networking differs; use a reachable host address for your setup. The demo below runs on your host and needs Python 3.10 or newer.</p>
 </details>
@@ -75,14 +75,14 @@ docker run --rm -it --name ctxkeeper --network host \
 <pre><code>curl --fail --show-error http://127.0.0.1:18200/v1/models
 curl --fail --show-error http://127.0.0.1:18200/ctxkeeper/status</code></pre>
 <p>The model list checks reachability; it does not test note quality. The status may be empty before the first conversation. The demo grows a conversation beyond the working view and checks a codename, a changing budget and a standing rule at the end:</p>
-<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
+<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0
 curl --fail --location --output long_chat.py "$R/long_chat.py"
 python3 long_chat.py --base-url http://127.0.0.1:18200/v1</code></pre>
 <p>The demo uses the first model returned by <code>/v1/models</code>; add <code>--model your-model-id</code> to choose another. It prints its answers and a score. Test your own workload before relying on the notes.</p>
 </section>
 <section id="agent"><h2 id="answer-8">Connect your agent or app</h2>
 <p>Set its <strong>OpenAI-compatible base URL to <code>http://127.0.0.1:18200/v1</code></strong>, including <code>/v1</code>. Set the model to an ID from the model list above. If the client requires an API key, use <code>unused</code> for this local setup.</p>
-<p><strong>Stable 1.1.0 requires an upstream that accepts these managed calls without an API key.</strong> It does not forward the client’s Authorization header for Chat Completions and has no upstream-key option. Setting a real key in your agent will not authenticate those calls. ctxkeeper itself has no login.</p>
+<p><strong>Stable 1.2.0 requires an upstream that accepts these managed calls without an API key.</strong> It does not forward the client’s Authorization header for Chat Completions and has no upstream-key option. Setting a real key in your agent will not authenticate those calls. ctxkeeper itself has no login.</p>
 <ul>
 <li>Use <strong>Chat Completions</strong> (<code>/v1/chat/completions</code>). Other endpoints, including Responses, pass through without context management.</li>
 <li><strong>Send the whole conversation each time.</strong> Turn off the agent’s own history trimming and summarizing. If earlier messages disappear or change, ctxkeeper may treat it as a different conversation.</li>
@@ -142,13 +142,14 @@ history.append(reply.choices[0].message.model_dump(exclude_none=True))
 <p class="ctx-table-note">One run each; repair times swing with how long the model thinks. Below 16K the notes no longer fit beside the newest turns, so every cut rewrote them in full; with <code>--inplace-fit</code> they fit, and 8K took 13 minutes and 12K 10. A bigger view is slower because the model reads more on every turn.</p>
 </section>
 <section id="tested"><h2 id="answer-12">Tested before release</h2>
-<p>Version 1.0.0 was installed the way you would install it and run as its instructions say. Version 1.0.1 changes only how requests are passed on, and its program files are the ones the agent test above ran. Version 1.1.0 only adds options, all off by default; with them off it sends exactly the same requests as 1.0.1, checked request by request.</p>
+<p>Version 1.0.0 was installed the way you would install it and run as its instructions say. Version 1.0.1 changes only how requests are passed on, and its program files are the ones the agent test above ran. Version 1.1.0 only adds options, all off by default; with them off it sends exactly the same requests as 1.0.1, checked request by request. Version 1.2.0 was installed from its public release exactly as shown on this page — the pip wheel, and a Docker image built from the source archive — and then ran the checks below (lab campaign 50, 2026-10-20).</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Release test"><table><thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead><tbody>
 <tr><th scope="row">The bug-fixing task above, through a separate agent program, with <code>--recipe qwen</code> and nothing else</th><td>40 of 40 fixed, all 40 following every rule, 7 of 7 questions, in 31 minutes</td></tr>
 <tr><th scope="row">The demo through the Docker image, 300K tokens: longer than the model server itself can hold</th><td>4 of 4, in 4 minutes</td></tr>
 <tr><th scope="row">The OpenAI library example above</th><td>Ordinary reply, tool call and streaming all worked</td></tr>
 <tr><th scope="row">A different model and server: Gemma 4 26B on llama.cpp, 100K tokens</th><td>4 of 4, in 4.5 minutes (one quick run, not a measurement)</td></tr>
 <tr><th scope="row">Version 1.1.0 from the public release, through its Docker image, to the same Gemma server with only a 4K working view (<code>--inplace-fit</code>), 16K tokens</th><td>4 of 4, in 1 minute</td></tr>
+<tr><th scope="row">Version 1.2.0 from the public release: the bug-fixing task through the pip-installed proxy, the 300K demo through the Docker image built from the source archive, the SDK example, and the 100K Gemma check</th><td>40 of 40 fixed, all 40 following every rule, 7 of 7 questions, in 12 minutes; 4 of 4 on the demo and the Gemma check; ordinary reply, tool call and streaming all worked</td></tr>
 </tbody></table></div>
 </section>
 <section id="limits"><h2 id="answer-13">Limits</h2>
@@ -161,14 +162,14 @@ history.append(reply.choices[0].message.model_dump(exclude_none=True))
 </section>
 <details><summary id="answer-14">Downloads, source and records</summary>
 <ul class="ctx-source-list">
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Stable release 1.1.0</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/tools/ctxkeeper/README.md">Full instructions</a><span>Every option, the status page, where state is kept, and how to run the tests.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">Stable release 1.2.0</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md">Full instructions</a><span>Every option, the status page, where state is kept, and how to run the tests.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/tools/ctxkeeper">Source</a><span>Two Python files, their tests against a scripted model, and the build history.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/data/2026-10-14-context-campaign19">Release test records</a><span>The test script, each check’s output and the proxy’s counters.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/data/2026-10-15-context-campaign20">Agent test records</a><span>Each agent’s score, its grader output, the proxy’s notes and counters.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.1.0/experiments/qwen38-27b-b70/data/2026-10-16-context-campaign22">One-card and second-keeper records</a><span>The runs on a single card and with a separate keeper model; the view-size runs are in campaigns 21 and 23 beside it.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.2.0/experiments/qwen38-27b-b70/data/2026-10-16-context-campaign22">One-card and second-keeper records</a><span>The runs on a single card and with a separate keeper model; the view-size runs are in campaigns 21 and 23 beside it.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/tools/agentbench/README.md">Agent set-ups</a><span>How each of the twelve agents was installed, configured and run, and what had to be switched off.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md">Lab note</a><span>Every campaign that shaped the defaults, including what failed.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md">Lab note</a><span>Every campaign that shaped the defaults, including what failed.</span></li>
 </ul>
 </details>
 <p class="next-links"><a href="context.html">Longer context overview</a> &middot; <a href="context-distance.html">How far back it remembers</a> &middot; <a href="context-reproduce.html">Reproduce the tests</a></p>
