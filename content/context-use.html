@@ -1,48 +1,88 @@
-<p><strong>The keeper is now a free program you can download.</strong> ctxkeeper sits between your AI agent and your model server. Your agent keeps sending its whole history; the model is shown a short, current view of it: its standing rules, up-to-date notes and the latest turns, with everything older kept word for word and searchable. A long task can carry on long after its conversation has outgrown what the model can read at once. Twelve well-known open-source coding agents have been run through it; eleven of the twelve fixed 39 or 40 of 40 bugs.</p>
-<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#what">What it does</a><a href="#results">Does it help?</a><a href="#try">Try it</a><a href="#agent">With your agent</a><a href="#agents">Tested agents</a><a href="#settings">Settings</a><a href="#tested">Release test</a><a href="#limits">Limits</a></nav>
+<p><strong>Keep a long task going with ctxkeeper.</strong> This free, public-domain proxy gives your AI agent a shorter working view: current notes, opening instructions and recent turns. Older messages stay on disk, word for word, for the model to search. Install it between your agent and an existing model server.</p>
+<p><strong>Download stable 1.1.0:</strong> <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0/ctxkeeper-1.1.0-py3-none-any.whl">Python package (.whl)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0/ctxkeeper-1.1.0.tar.gz">Source archive (.tar.gz)</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Release and checksums</a> &middot; <a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/tools/ctxkeeper/README.md">Full guide</a></p>
+<p>Tested mainly with Qwen3.8-27B on vLLM, plus a small Gemma 4 / llama.cpp check. Eleven of twelve tested coding agents fixed 39 or 40 of 40 bugs. <a href="#try">Install and try it</a>; the results and limits are below.</p>
+<nav class="ctx-jumps" aria-label="Sections on this page"><a href="#what">What it does</a><a href="#results">Does it help?</a><a href="#models">Which model?</a><a href="#try">Try it</a><a href="#agent">With your agent</a><a href="#agents">Tested agents</a><a href="#settings">Settings</a><a href="#tested">Release test</a><a href="#limits">Limits</a></nav>
 <section id="what"><h2>What it does</h2>
 <p>Think of a desk and a filing cabinet. The model works at a small desk: the opening instructions, a page of notes and the newest messages. Everything else goes into the cabinet, unchanged. Three things keep the desk useful:</p>
 <ol>
-<li><strong>Notes, kept up to date.</strong> Every so often the model writes down only what changed: a new rule, a changed figure (with the working), a new open question. ctxkeeper checks each line before accepting it; a sum is recomputed, a rule can never be dropped.</li>
+<li><strong>Notes, kept up to date.</strong> Every so often the model writes down only what changed: a new rule, a changed figure (with the working), a new open question. ctxkeeper checks the notes format and arithmetic it recognizes, and keeps rules already recorded in the notes. These checks do not prove that the notes are true.</li>
 <li><strong>Search.</strong> The model gets one extra tool, <code>recall</code>, that searches the cabinet. ctxkeeper answers it itself; your agent never sees that step.</li>
-<li><strong>Rules stay in force.</strong> Standing rules are repeated next to every new instruction, so a rule given hours earlier still applies.</li>
+<li><strong>Rule reminders.</strong> By default, rules recorded in the notes are repeated after new user messages. Instructions inside tool results need an optional matching rule (<code>--recite-when</code>). The model can still make mistakes.</li>
 </ol>
-<p>Nothing about the model or the server changes. Anything that can be pointed at an OpenAI-compatible address can use it. <a href="@/context-distance.html#how">Follow the keeper step by step</a>.</p>
+<p>The proxy changes the messages sent to the model. It manages Chat Completions requests from clients that keep sending their full history; see <a href="#agent">the client requirements</a>. <a href="@/context-distance.html#how">Follow the keeper step by step</a>.</p>
 </section>
 <section id="results"><h2>Does it help?</h2>
-<p>Measured with Qwen3.8-27B on two Intel Arc Pro B70 graphics cards, with a working view of 32K tokens. Each row is a real run, graded by the task’s own checker.</p>
+<p>Measured with Qwen3.8-27B on two Intel Arc Pro B70 graphics cards, with a working view of 32K tokens. Each row is a real run, graded by the task’s own checker. The repair and million-token results describe the earlier released work; the two-million-token row is development work, separate from the stable download.</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="ctxkeeper results"><table><colgroup><col style="width:38%"><col style="width:31%"><col style="width:31%"></colgroup><thead><tr><th scope="col">Task</th><th scope="col">With ctxkeeper</th><th scope="col">Without it</th></tr></thead><tbody>
 <tr><th scope="row">Fix 40 real bugs in a Python library, one ticket at a time, under three house rules; then 7 questions about the earliest fixes</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 16 to 38 min, by settings</td><td>Latest 32K only: 22 to 35 of 40 kept the rules, 0/7 right</td></tr>
 <tr><th scope="row">The same task through a separate agent program that manages nothing itself</th><td><strong>40/40, 40/40, 7/7</strong>; 31 to 33 min, about 3M tokens read</td><td>Whole history in a 262K window: same score; 55 min, 29.9M read</td></tr>
 <tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
-<tr><th scope="row">Two million tokens with planted traps (values that change and change back, corrections)</th><td><strong>351/382 (92%)</strong>; none of 12 traps taken</td><td>No window holds it</td></tr>
+<tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Development 1.2.0.dev10: 421/423 on seed 0</strong>; every forgery target kept and 16/16 corrections applied. Seed 2 is pending. Earlier dev9 runs: 414/423 and 416/423, with two forgery-target answers wrong on the latter.</td><td>Not run at this length</td></tr>
 </tbody></table></div>
-<p class="ctx-table-note">One model on one machine. <a href="@/context-distance.html#repair">The repair task in detail</a> &middot; <a href="@/context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="@/context-distance.html#two-million">The two-million-token stream</a>.</p>
+<p class="ctx-table-note"><strong>1.2.0 is not released.</strong> Its development result does not establish the stable 1.1.0 package’s performance on this hostile test. One model on one machine. <a href="@/context-distance.html#repair">The repair task in detail</a> &middot; <a href="@/context-distance.html#proxy-now">The million-token runs</a> &middot; <a href="@/context-distance.html#two-million">The two-million-token stream</a>.</p>
 <p><strong>What it costs.</strong> The model writes its own notes on the same server, so nothing extra is loaded. In the million-token run about 15 of the 50 minutes went on writing notes and about 15 on reading (2.4M tokens for a 1M-token history); on the repair task notes took under a tenth of the time. A short view keeps every step fast, which is why the 200K window above took 228 minutes.</p>
 <p><strong>On one card.</strong> The same model on a single B70 with a 26K view fixed all 40 bugs, kept every rule and answered 7/7 in 21 minutes (two cards: 16).</p>
 </section>
-<section id="try"><h2>Try it</h2>
-<p>You need Python 3.10 or newer (or Docker) and a model server that speaks the OpenAI API: vLLM, llama.cpp’s server, SGLang, Ollama’s OpenAI endpoint and others. ctxkeeper uses Python’s standard library only.</p>
-<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
-pip install $R/ctxkeeper-1.1.0-py3-none-any.whl
-# or with Docker: docker build -t ctxkeeper $R/ctxkeeper-1.1.0.tar.gz
-
-ctxkeeper --upstream http://127.0.0.1:8000 --recipe agent</code></pre>
-<p>Give <code>--upstream</code> your server’s address without <code>/v1</code>. Then point your agent or app at <code>http://127.0.0.1:18200/v1</code> instead of the server. To see it work, run the demo: it holds a conversation several working views long, says a codename, a budget and a standing rule at the start, and asks about all three at the end.</p>
-<pre><code>curl -LO $R/long_chat.py
-python3 long_chat.py --base-url http://127.0.0.1:18200/v1</code></pre>
-</section>
-<section id="agent"><h2>Use it with your agent or app</h2>
-<p>It works with anything that takes an OpenAI-compatible base URL, if the program:</p>
+<section id="models"><h2>Which model do I need?</h2>
+<p>The main task results on this page were measured on <strong>Qwen3.8-27B</strong> (FP8, served by vLLM on Intel Arc Pro B70 cards). A quick check on a second family, <strong>Gemma 4 26B</strong> (Q8, llama.cpp), passed the demo 4 of 4. Other models need checking with your task. They must call tools reliably, keep the notes format, and fit the configured working view plus their server’s overhead. The default view is 32,768 tokens, including the reply.</p>
 <ul>
-<li>uses Chat Completions (<code>/v1/chat/completions</code>); other requests pass straight through, unmanaged;</li>
-<li>sends its whole history each time, with its own trimming or summarizing turned off;</li>
-<li>asks for one reply at a time. Streaming works, but the reply arrives in one piece at the end.</li>
+<li><strong>Let the model keep its own notes.</strong> A separate smaller keeper model, tried on a second card, was worse and slower (19 of 39 against 39/39 on the 240K test): it must read every turn afresh, while the main model re-reads its own cached view.</li>
+<li><strong>One card is enough:</strong> the repair task scored the same in 21 minutes (two cards: 16).</li>
+<li><strong>Turn the server&rsquo;s prefix cache on:</strong> 91% of the notes calls’ prompt tokens came from the cache in the measured Qwen run.</li>
+<li><strong>With speculative decoding</strong> (MTP), keep the default in-line notes; background notes were correct but 8% slower there.</li>
+<li><strong>With the Qwen recipe, thinking can stay on</strong> for the agent&rsquo;s turns; its notes calls disable thinking. The generic agent recipe does not set model-specific thinking options.</li>
 </ul>
+<p class="ctx-table-note">Not measured yet: other models&rsquo; quality through the proxy, and more than one conversation at a time. Window sizes and the speed numbers behind this advice are in <a href="#settings">Settings</a> below.</p>
+</section>
+<section id="try"><h2>Install and try stable 1.1.0</h2>
+<p>You need <strong>Python 3.10 or newer with pip and venv</strong>, or Docker for the proxy, and a <strong>running model server</strong>. ctxkeeper does not download or serve a model. The proxy and demo use Python’s standard library. The commands below use a local server at <code>http://127.0.0.1:8000</code> that accepts Chat Completions and tool calls, with enough context for the default 32K view.</p>
+<h3>Python install</h3>
+<p>In a terminal on Linux or macOS:</p>
+<pre><code>python3 -m venv .venv-ctxkeeper
+. .venv-ctxkeeper/bin/activate
+R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
+python -m pip install "$R/ctxkeeper-1.1.0-py3-none-any.whl"
+ctxkeeper --upstream http://127.0.0.1:8000 --recipe agent \
+  --state-dir "$HOME/.local/share/ctxkeeper"</code></pre>
+<p>Replace the upstream address with your model server’s address, <strong>without <code>/v1</code></strong>. Leave this terminal running. Stop it with Ctrl-C when your agent is idle; restart the same command with the same state directory to reuse saved notes and archives. Your agent still needs to preserve and resend its full conversation.</p>
+<details><summary>Docker instead (Linux)</summary>
+<p>Build from the released source archive, then run the proxy with a persistent named volume. Linux host networking lets <code>127.0.0.1:8000</code> reach a model server running on the host. The explicit bind address keeps this example local to your machine.</p>
+<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
+docker build -t ctxkeeper:1.1.0 "$R/ctxkeeper-1.1.0.tar.gz"
+docker run --rm -it --name ctxkeeper --network host \
+  -v ctxkeeper-state:/state ctxkeeper:1.1.0 \
+  --host 127.0.0.1 --recipe agent --upstream http://127.0.0.1:8000</code></pre>
+<p>Keep it running while your agent works. Ctrl-C stops the proxy; the named volume survives <code>--rm</code>. Run the same command again to reuse it. Docker Desktop networking differs; use a reachable host address for your setup. The demo below runs on your host and needs Python 3.10 or newer.</p>
+</details>
+<h3>Check the connection, then run the demo</h3>
+<p>In a second terminal, check that the proxy can reach the server and list its model IDs:</p>
+<pre><code>curl --fail --show-error http://127.0.0.1:18200/v1/models
+curl --fail --show-error http://127.0.0.1:18200/ctxkeeper/status</code></pre>
+<p>The model list checks reachability; it does not test note quality. The status may be empty before the first conversation. The demo grows a conversation beyond the working view and checks a codename, a changing budget and a standing rule at the end:</p>
+<pre><code>R=https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.1.0
+curl --fail --location --output long_chat.py "$R/long_chat.py"
+python3 long_chat.py --base-url http://127.0.0.1:18200/v1</code></pre>
+<p>The demo uses the first model returned by <code>/v1/models</code>; add <code>--model your-model-id</code> to choose another. It prints its answers and a score. Test your own workload before relying on the notes.</p>
+</section>
+<section id="agent"><h2>Connect your agent or app</h2>
+<p>Set its <strong>OpenAI-compatible base URL to <code>http://127.0.0.1:18200/v1</code></strong>, including <code>/v1</code>. Set the model to an ID from the model list above. If the client requires an API key, use <code>unused</code> for this local setup.</p>
+<p><strong>Stable 1.1.0 requires an upstream that accepts these managed calls without an API key.</strong> It does not forward the client’s Authorization header for Chat Completions and has no upstream-key option. Setting a real key in your agent will not authenticate those calls. ctxkeeper itself has no login.</p>
+<ul>
+<li>Use <strong>Chat Completions</strong> (<code>/v1/chat/completions</code>). Other endpoints, including Responses, pass through without context management.</li>
+<li><strong>Send the whole conversation each time.</strong> Turn off the agent’s own history trimming and summarizing. If earlier messages disappear or change, ctxkeeper may treat it as a different conversation.</li>
+<li>Request one reply at a time (<code>n=1</code>). Streaming is accepted, but the answer arrives in one piece at the end.</li>
+</ul>
+<details><summary>Python client example</summary>
+<p>The optional OpenAI client library is a separate install: <code>python -m pip install openai</code>. Replace the model ID before running:</p>
 <pre><code>from openai import OpenAI
 client = OpenAI(base_url="http://127.0.0.1:18200/v1", api_key="unused")
-reply = client.chat.completions.create(model="your-model", messages=history)</code></pre>
-<p>If new instructions arrive inside tool results, such as tickets, emails or files, tell ctxkeeper what they look like so it repeats the rules after each one: <code>--recite-when '(?m)^TICKET \d+'</code>. The bug-fixing task did not need it: its tickets arrive that way, and the rules held from the notes alone.</p>
+history = [{"role": "user", "content": "Remember: our project is called Cedar."}]
+reply = client.chat.completions.create(model="your-model-id", messages=history)
+print(reply.choices[0].message.content)
+history.append(reply.choices[0].message.model_dump(exclude_none=True))
+# Append each new user message and send the whole history on the next call.</code></pre>
+</details>
+<p>For new instructions inside tool results, such as tickets or files, <code>--recite-when '(?m)^TICKET \d+'</code> repeats recorded rules after matching messages. The release repair test kept its rules without this option; the fastest repair runs used it. Neither setting guarantees rule compliance.</p>
 </section>
 <section id="agents"><h2>Tested with 12 coding agents</h2>
 <p>We ran twelve open-source coding agents through ctxkeeper on the same bug-fixing task: 40 bugs handed out one ticket at a time, three house rules announced along the way, then 7 questions about the earliest fixes. Each agent ran as it ships, except that its own history trimming was switched off. One run each, an hour at most, sorted by time.</p>
@@ -65,7 +105,7 @@ reply = client.chat.completions.create(model="your-model", messages=history)</co
 <section id="settings"><h2>Settings</h2>
 <p>A recipe is a set of options that were measured together; any option you give still wins.</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Recipes"><table><thead><tr><th scope="col">Recipe</th><th scope="col">Use it for</th><th scope="col">Measured on the repair task</th></tr></thead><tbody>
-<tr><th scope="row"><code>--recipe agent</code></th><td>Any OpenAI-compatible server</td><td>40/40 clean, 7/7; 36 to 38 min</td></tr>
+<tr><th scope="row"><code>--recipe agent</code></th><td>Servers accepting the Chat Completions and tool-call format above</td><td>40/40 clean, 7/7; 36 to 38 min</td></tr>
 <tr><th scope="row"><code>--recipe qwen</code></th><td>Qwen3 behind vLLM</td><td>40/40 clean, 7/7; 16 min</td></tr>
 </tbody></table></div>
 <p>The Qwen recipe writes its notes without thinking and keeps the prompt identical, so the server’s cache does most of the note-taking work. Both use a 32K working view, about the fastest we found:</p>
@@ -92,15 +132,15 @@ reply = client.chat.completions.create(model="your-model", messages=history)</co
 </section>
 <section id="limits"><h2>Limits</h2>
 <ul>
-<li><strong>Measured on one model family and one machine, with the model keeping its own notes.</strong> Other models should work if they use tools reliably and can keep the notes format; that has not been measured. A separate, smaller model as the keeper did worse: LFM2.5-24B-A2B on a second card kept the house rules on 20 of 40 bugs and answered 19 of 39 on the 240K test, and it was slower, because it reads every turn afresh instead of from the main model’s cache.</li>
-<li><strong>The notes are written by the model, so they can be wrong.</strong> On the hardest test about 1 notes line in 130 was silently wrong; on the million-token test, 1 in 1,435. The originals stay searchable, but nothing forces the model to look. In the agent test one notes line wrongly said seven questions had never been asked, and the agent deleted the answers it had already written.</li>
-<li><strong>No login, and everything is stored as plain text</strong> on the machine running it. It listens only on the local machine unless you tell it otherwise.</li>
+<li><strong>Measured on one model family and one machine, with the model keeping its own notes.</strong> A small Gemma demo also passed; other models’ task quality has not been measured here. A separate, smaller model as the keeper did worse: LFM2.5-24B-A2B on a second card kept the house rules on 20 of 40 bugs and answered 19 of 39 on the 240K test, and it was slower, because it reads every turn afresh instead of from the main model’s cache.</li>
+<li><strong>The notes are written by the model, so they can be wrong.</strong> The latest development seed had one wrong counter line across 8,813 saved counter lines; an earlier run kept one wrong value for 118 notes versions. On the million-token test, one of 1,435 counter lines was wrong. The originals stay searchable, but nothing forces the model to look. In the agent test one notes line wrongly said seven questions had never been asked, and the agent deleted the answers it had already written.</li>
+<li><strong>No login, and everything is stored as plain text</strong> on the machine running it. The commands above bind only to the local machine. The Docker image’s own default binds to all interfaces, so keep the explicit <code>--host 127.0.0.1</code> in the host-network command.</li>
 <li>The opening instructions are always kept, so they must fit well inside the working view.</li>
 </ul>
 </section>
 <details><summary>Downloads, source and records</summary>
 <ul class="ctx-source-list">
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Release 1.1.0</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.1.0">Stable release 1.1.0</a><span>The package, the source archive, the two program files and the demo, with checksums. Public domain.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.1.0/tools/ctxkeeper/README.md">Full instructions</a><span>Every option, the status page, where state is kept, and how to run the tests.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/tools/ctxkeeper">Source</a><span>Two Python files, their tests against a scripted model, and the build history.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.0.1/experiments/qwen38-27b-b70/data/2026-10-14-context-campaign19">Release test records</a><span>The test script, each check’s output and the proxy’s counters.</span></li>

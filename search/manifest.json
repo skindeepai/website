@@ -2,8 +2,8 @@
   "model": "all-MiniLM-L6-v2",
   "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
   "dimensions": 384,
-  "count": 486,
-  "vector_count": 810,
+  "count": 491,
+  "vector_count": 816,
   "record_ids": [
     0,
     0,
@@ -809,13 +809,19 @@
     478,
     478,
     479,
+    479,
     480,
     481,
     482,
     483,
     484,
-    485
+    485,
+    486,
+    487,
+    488,
+    489,
+    490
   ],
-  "answers_sha256": "ade82b837560b6c27bcbcf79e680d498e92a538065af8418de4005d75c885c7a",
-  "vectors_sha256": "9f89704676901d64cb837245349b6ea43dbe0569050848eeb654b5c112c787a7"
+  "answers_sha256": "56f30b19241e7e34d0ca6f71e4e33f65df37967b9974c887f33477ccb5676e4f",
+  "vectors_sha256": "2064208f44992d666eb18e4570b1a935808d2e04f6fe9a3579f29d31211016ab"
 }

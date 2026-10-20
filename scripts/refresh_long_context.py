@@ -1477,7 +1477,7 @@ def update(pages):
 
     registry = [
         ('context.html', 'Working past the context limit', 'Compare ways to preserve facts and keep long tasks moving.', None),
-        ('context-use.html', 'Use it: the ctxkeeper proxy', 'Download a small free proxy that gives a long agent task notes, an archive and search, in front of any OpenAI-compatible model server.', None),
+        ('context-use.html', 'ctxkeeper: download and setup', 'Download ctxkeeper for a local model server. Install with Python or Docker, connect your agent, and read the measured results and limits.', None),
         ('context-questions.html', 'Longer context, plain answers', 'Common questions about memory, disk, speed and what “unlimited” can mean.', None),
         ('context-methods.html', 'Ways to work with more context', 'A visual guide to keeper, self-editing, files and quoted events.', None),
         ('context-files.html', 'Keep records in files', 'A long task can use a small working context.', 'context-methods.html'),
