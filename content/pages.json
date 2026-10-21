@@ -35,9 +35,9 @@
   },
   "ctxkeeper.html": {
     "title": "ctxkeeper",
-    "description": "Give your local AI a memory that doesn't run out: conversations far past the context window, on one graphics card, faster than a bigger window.",
-    "meta_title": "ctxkeeper — unlimited context for local AI models, on one GPU",
-    "meta_description": "ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test.",
+    "description": "Keep long conversations going with a small working view, saved notes and a searchable archive.",
+    "meta_title": "ctxkeeper — long conversations, small working context",
+    "meta_description": "ctxkeeper is a free, open-source proxy for local models and coding agents. Saved notes and a searchable archive keep long tasks going. Tested to 2 million tokens.",
     "styles": [
       "results.css",
       "context.css",
@@ -45,8 +45,8 @@
     ],
     "template": "content/ctxkeeper.html",
     "body": "",
-    "share_image": "images/ctxkeeper-card.png",
-    "share_alt": "ctxkeeper: unlimited context for local AI. The model reads a short view of its notes and the newest turns; everything older is archived on disk and searchable. Tested to 2 million tokens; fits one 32 GB GPU.",
+    "share_image": "images/ctxkeeper-card-v2.png",
+    "share_alt": "ctxkeeper: long conversations, a small working view. Older turns move to a searchable archive on disk. Tested to 2 million tokens.",
     "software": {
       "name": "ctxkeeper",
       "applicationCategory": "DeveloperApplication",

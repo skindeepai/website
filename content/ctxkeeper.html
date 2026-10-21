@@ -6,8 +6,8 @@ When a long chat or a long-running agent fills it, the model starts forgetting t
 Making the window bigger costs a lot of graphics-card memory. <strong>ctxkeeper takes a different route.</strong>
 It gives the model a notebook and a filing cabinet, so the conversation can keep going far past the window, on the hardware you already have.</p>
 <ul class="ck-wins">
-<li><strong>Longer.</strong> Tested on conversations of two million tokens (about 15 novels). Nothing in the design sets a ceiling.</li>
-<li><strong>Lighter.</strong> The model only ever reads a short working view, about 32,000 tokens by default, so it fits on a single 32&nbsp;GB graphics card.</li>
+<li><strong>Longer.</strong> Tested on conversations of two million tokens, with older turns kept in a searchable archive.</li>
+<li><strong>Lighter.</strong> A small working view replaces the growing history in model requests. A smaller-budget setup passed the repair test on one 32&nbsp;GB card.</li>
 <li><strong>Faster.</strong> On a million-token memory test it finished in 50 minutes instead of 228, and got more answers right.</li>
 </ul>
 <div class="ck-actions">
@@ -25,7 +25,7 @@ always does. ctxkeeper passes the model a short, current version instead:</p>
 <li><strong>A notebook</strong> the model keeps for itself: the rules it must follow, what it has done, what is still open. When the view fills, the model updates its notes before older turns leave the view.</li>
 <li><strong>The newest turns</strong> of the conversation.</li>
 </ol>
-<p>Everything older is filed away on disk, word for word, nothing summarised away. The model gets a <code>recall</code> tool to
+<p>Turns moved out of the view are filed away on disk, word for word. The model gets a <code>recall</code> tool to
 search that archive whenever it needs an exact detail from earlier, the way you would look something up in a filing cabinet.</p>
 <figure class="ck-diagram" aria-label="How ctxkeeper sits between your app and the model server">
 <svg viewBox="0 0 760 230" role="img" aria-labelledby="ck-diag-title">
@@ -52,26 +52,11 @@ search that archive whenever it needs an exact detail from earlier, the way you 
 </figure>
 </section>
 
-<section id="cache"><h2>&ldquo;How do you keep the cache forever?&rdquo;</h2>
-<p><strong>You don&rsquo;t, and that is the point.</strong> A model&rsquo;s working memory on the graphics card (the <em>KV cache</em>)
-grows with every token it reads. ctxkeeper never lets the model read more than the short view, so that memory stays small and
-the model stays fast however long the conversation gets. The history itself is ordinary text in files on disk, which is cheap:
-ten million tokens of conversation is roughly 40&nbsp;MB.</p>
-<p>Here is what that means on one 32&nbsp;GB card running Qwen3.8-27B (FP8). The model itself takes about 26&nbsp;GB, which leaves room
-for about <strong>28,000 tokens</strong> of conversation. Without ctxkeeper, that is as long as a conversation can get.</p>
-<div class="ck-bars" role="img" aria-label="Graphics-card memory needed to hold a conversation for Qwen3.8-27B: about 3 GiB for 28,000 tokens; about 217 GiB for 2 million tokens; about 1,084 GiB for 10 million tokens. With ctxkeeper the model holds only its working view at any length.">
-<p class="ck-bars-title">Graphics-card memory to hold the whole conversation at once</p>
-<div class="ck-bar-row"><span class="ck-bar-label">28K tokens (fits one card)</span><span class="ck-bar-track"><span class="ck-bar ck-bar-hi" style="width:0.6%"></span></span><span class="ck-bar-value">3 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label">2 million tokens</span><span class="ck-bar-track"><span class="ck-bar" style="width:20%"></span></span><span class="ck-bar-value">~217 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label">10 million tokens</span><span class="ck-bar-track"><span class="ck-bar" style="width:100%"></span></span><span class="ck-bar-value">~1,084 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label"><strong>Any length, through ctxkeeper</strong></span><span class="ck-bar-track"><span class="ck-bar ck-bar-hi" style="width:0.6%"></span></span><span class="ck-bar-value"><strong>the working view only</strong></span></div>
-<p class="ck-bars-note">The 28K row was measured on a 32&nbsp;GB Intel Arc Pro B70 (3.05&nbsp;GiB left after loading the model, 28,131 tokens).
-The other rows scale that figure up; they are calculations, not measurements. ctxkeeper has been tested up to 2 million tokens, not 10 million.</p>
-</div>
-<p>On that one card, ctxkeeper ran the bug-fixing test below with the same score as on two cards (40 of 40, in 21 minutes). Any card
-with 32&nbsp;GB, such as AMD&rsquo;s Radeon AI Pro R9700, has the same memory budget; we have only tested Intel Arc Pro B70 cards. With two cards
-the server holds about 370,000 tokens, enough for roughly ten 32K working views side by side (a calculation; several agents at once
-through one ctxkeeper has not been load-tested).</p>
+<section id="cache"><h2>Does the history have to stay in VRAM?</h2>
+<p><strong>No. The archive and notes live on disk.</strong> The model server processes a small working view.
+If its cache has expired or the server restarts, it reads that view again; ctxkeeper does not save and reload precomputed GPU state.</p>
+<p><strong>You can return to a saved conversation later.</strong> Keep your app&rsquo;s complete conversation and ctxkeeper&rsquo;s state folder.
+They have no built-in expiry in ctxkeeper. <a href="ctxkeeper-connect.html#saved-conversations">How to save and resume &rarr;</a></p>
 </section>
 
 <section id="results"><h2>Measured, not promised</h2>
@@ -131,7 +116,7 @@ your app&rsquo;s key), so keep it on your own machine or a trusted network.
 
 <section id="models"><h2>Which model do I need?</h2>
 <ul>
-<li><strong>Tested most on Qwen3.8-27B</strong> (FP8). One 32&nbsp;GB card is enough, and two cards are faster.</li>
+<li><strong>Tested most on Qwen3.8-27B</strong> (FP8). The one-card test used a smaller 26,624-token budget and CPU-offloaded embeddings; <a href="ctxkeeper-results.html#one-card">see the hardware settings</a>.</li>
 <li><strong>A quick check on Gemma 4 26B</strong> (Q8, llama.cpp) passed the demo 4 of 4. Other models should work if they call tools reliably and keep their notes in the expected format; try your own task first.</li>
 <li><strong>Let the main model keep its own notes.</strong> A separate, smaller note-taking model was worse and slower (19 of 39 against 39 of 39 on a 240K-token test).</li>
 </ul>

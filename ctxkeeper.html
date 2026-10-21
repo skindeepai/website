@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ctxkeeper — unlimited context for local AI models, on one GPU</title><meta name="description" content="ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test.">
+<title>ctxkeeper — long conversations, small working context</title><meta name="description" content="ctxkeeper is a free, open-source proxy for local models and coding agents. Saved notes and a searchable archive keep long tasks going. Tested to 2 million tokens.">
 <link rel="canonical" href="https://skindeep.ai/ctxkeeper.html">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/ctxkeeper.html">
-<meta property="og:title" content="ctxkeeper — unlimited context for local AI models, on one GPU"><meta property="og:description" content="ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test.">
-<meta property="og:image" content="https://skindeep.ai/images/ctxkeeper-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ctxkeeper: unlimited context for local AI. The model reads a short view of its notes and the newest turns; everything older is archived on disk and searchable. Tested to 2 million tokens; fits one 32 GB GPU.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ctxkeeper — unlimited context for local AI models, on one GPU"><meta name="twitter:description" content="ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test."><meta name="twitter:image" content="https://skindeep.ai/images/ctxkeeper-card.png"><meta name="twitter:image:alt" content="ctxkeeper: unlimited context for local AI. The model reads a short view of its notes and the newest turns; everything older is archived on disk and searchable. Tested to 2 million tokens; fits one 32 GB GPU.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "url": "https://skindeep.ai/ctxkeeper.html", "description": "ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test.", "image": "https://skindeep.ai/images/ctxkeeper-card.png", "author": {"@type": "Person", "name": "Steve Seguin"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "name": "ctxkeeper", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any system with Python 3.10 or newer", "softwareVersion": "1.2.0", "license": "https://unlicense.org/", "downloadUrl": "https://pypi.org/project/ctxkeeper/", "codeRepository": "https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.2.0/tools/ctxkeeper"}</script>
+<meta property="og:title" content="ctxkeeper — long conversations, small working context"><meta property="og:description" content="ctxkeeper is a free, open-source proxy for local models and coding agents. Saved notes and a searchable archive keep long tasks going. Tested to 2 million tokens.">
+<meta property="og:image" content="https://skindeep.ai/images/ctxkeeper-card-v2.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ctxkeeper: long conversations, a small working view. Older turns move to a searchable archive on disk. Tested to 2 million tokens.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ctxkeeper — long conversations, small working context"><meta name="twitter:description" content="ctxkeeper is a free, open-source proxy for local models and coding agents. Saved notes and a searchable archive keep long tasks going. Tested to 2 million tokens."><meta name="twitter:image" content="https://skindeep.ai/images/ctxkeeper-card-v2.png"><meta name="twitter:image:alt" content="ctxkeeper: long conversations, a small working view. Older turns move to a searchable archive on disk. Tested to 2 million tokens.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "url": "https://skindeep.ai/ctxkeeper.html", "description": "ctxkeeper is a free, open-source proxy for local models and coding agents. Saved notes and a searchable archive keep long tasks going. Tested to 2 million tokens.", "image": "https://skindeep.ai/images/ctxkeeper-card-v2.png", "author": {"@type": "Person", "name": "Steve Seguin"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "name": "ctxkeeper", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any system with Python 3.10 or newer", "softwareVersion": "1.2.0", "license": "https://unlicense.org/", "downloadUrl": "https://pypi.org/project/ctxkeeper/", "codeRepository": "https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.2.0/tools/ctxkeeper"}</script>
 <link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="ctxkeeper.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
 </head><body class="lab-page ">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="lab-header"><a class="wordmark" href="index.html">SkinDeep<span>RESEARCH</span></a><div class="header-actions"><a class="header-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></svg>Search</a><button class="lab-menu" type="button" aria-expanded="false" aria-controls="lab-nav">Menu <span aria-hidden="true">☰</span></button><span class="header-note">Steve Seguin</span></div></header>
 <aside class="lab-sidebar" id="lab-nav"><nav aria-label="Research navigation"><div class="nav-group"><p>The lab</p><a href="index.html">Overview</a><a href="research.html">Research FAQ</a><a href="results.html">Test results</a></div><div class="nav-group"><p>Tools</p><a aria-current="page" href="ctxkeeper.html">ctxkeeper</a></div><div class="nav-group"><p>Topics</p><a href="preferences.html">Learning what you like</a><a href="decisions.html">Decisions without text</a><a href="coordinates.html">Finding where to click</a><a href="adaptive.html">Stopping early</a><a href="context.html">Longer context</a></div><div class="nav-group"><p>Explore</p><a href="demo-directory.html">Live demos</a><a href="history.html">History & archive</a><a href="about.html">About</a></div></nav><div class="rail-note"><a href="sitemap.html">All pages</a><a href="https://github.com/skindeepai">Source on GitHub ↗</a></div></aside>
 <main class="lab-main" id="main" tabindex="-1">
-<h1>ctxkeeper</h1><p class="page-lead">Give your local AI a memory that doesn&#x27;t run out: conversations far past the context window, on one graphics card, faster than a bigger window.</p><div class="ck">
+<h1>ctxkeeper</h1><p class="page-lead">Keep long conversations going with a small working view, saved notes and a searchable archive.</p><div class="ck">
 <section class="ck-hero" aria-label="Introduction">
 <p class="ck-eyebrow">Free &middot; open source, public domain &middot; runs on your own machine</p>
 <p class="ck-promise">Every AI model has a <strong>context window</strong>: the amount of conversation it can read at once.
@@ -22,8 +22,8 @@ When a long chat or a long-running agent fills it, the model starts forgetting t
 Making the window bigger costs a lot of graphics-card memory. <strong>ctxkeeper takes a different route.</strong>
 It gives the model a notebook and a filing cabinet, so the conversation can keep going far past the window, on the hardware you already have.</p>
 <ul class="ck-wins">
-<li><strong>Longer.</strong> Tested on conversations of two million tokens (about 15 novels). Nothing in the design sets a ceiling.</li>
-<li><strong>Lighter.</strong> The model only ever reads a short working view, about 32,000 tokens by default, so it fits on a single 32&nbsp;GB graphics card.</li>
+<li><strong>Longer.</strong> Tested on conversations of two million tokens, with older turns kept in a searchable archive.</li>
+<li><strong>Lighter.</strong> A small working view replaces the growing history in model requests. A smaller-budget setup passed the repair test on one 32&nbsp;GB card.</li>
 <li><strong>Faster.</strong> On a million-token memory test it finished in 50 minutes instead of 228, and got more answers right.</li>
 </ul>
 <div class="ck-actions">
@@ -41,7 +41,7 @@ always does. ctxkeeper passes the model a short, current version instead:</p>
 <li><strong>A notebook</strong> the model keeps for itself: the rules it must follow, what it has done, what is still open. When the view fills, the model updates its notes before older turns leave the view.</li>
 <li><strong>The newest turns</strong> of the conversation.</li>
 </ol>
-<p>Everything older is filed away on disk, word for word, nothing summarised away. The model gets a <code>recall</code> tool to
+<p>Turns moved out of the view are filed away on disk, word for word. The model gets a <code>recall</code> tool to
 search that archive whenever it needs an exact detail from earlier, the way you would look something up in a filing cabinet.</p>
 <figure class="ck-diagram" aria-label="How ctxkeeper sits between your app and the model server">
 <svg viewBox="0 0 760 230" role="img" aria-labelledby="ck-diag-title">
@@ -68,26 +68,11 @@ search that archive whenever it needs an exact detail from earlier, the way you 
 </figure>
 </section>
 
-<section id="cache"><h2 id="answer-2">&ldquo;How do you keep the cache forever?&rdquo;</h2>
-<p><strong>You don&rsquo;t, and that is the point.</strong> A model&rsquo;s working memory on the graphics card (the <em>KV cache</em>)
-grows with every token it reads. ctxkeeper never lets the model read more than the short view, so that memory stays small and
-the model stays fast however long the conversation gets. The history itself is ordinary text in files on disk, which is cheap:
-ten million tokens of conversation is roughly 40&nbsp;MB.</p>
-<p>Here is what that means on one 32&nbsp;GB card running Qwen3.8-27B (FP8). The model itself takes about 26&nbsp;GB, which leaves room
-for about <strong>28,000 tokens</strong> of conversation. Without ctxkeeper, that is as long as a conversation can get.</p>
-<div class="ck-bars" role="img" aria-label="Graphics-card memory needed to hold a conversation for Qwen3.8-27B: about 3 GiB for 28,000 tokens; about 217 GiB for 2 million tokens; about 1,084 GiB for 10 million tokens. With ctxkeeper the model holds only its working view at any length.">
-<p class="ck-bars-title">Graphics-card memory to hold the whole conversation at once</p>
-<div class="ck-bar-row"><span class="ck-bar-label">28K tokens (fits one card)</span><span class="ck-bar-track"><span class="ck-bar ck-bar-hi" style="width:0.6%"></span></span><span class="ck-bar-value">3 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label">2 million tokens</span><span class="ck-bar-track"><span class="ck-bar" style="width:20%"></span></span><span class="ck-bar-value">~217 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label">10 million tokens</span><span class="ck-bar-track"><span class="ck-bar" style="width:100%"></span></span><span class="ck-bar-value">~1,084 GiB</span></div>
-<div class="ck-bar-row"><span class="ck-bar-label"><strong>Any length, through ctxkeeper</strong></span><span class="ck-bar-track"><span class="ck-bar ck-bar-hi" style="width:0.6%"></span></span><span class="ck-bar-value"><strong>the working view only</strong></span></div>
-<p class="ck-bars-note">The 28K row was measured on a 32&nbsp;GB Intel Arc Pro B70 (3.05&nbsp;GiB left after loading the model, 28,131 tokens).
-The other rows scale that figure up; they are calculations, not measurements. ctxkeeper has been tested up to 2 million tokens, not 10 million.</p>
-</div>
-<p>On that one card, ctxkeeper ran the bug-fixing test below with the same score as on two cards (40 of 40, in 21 minutes). Any card
-with 32&nbsp;GB, such as AMD&rsquo;s Radeon AI Pro R9700, has the same memory budget; we have only tested Intel Arc Pro B70 cards. With two cards
-the server holds about 370,000 tokens, enough for roughly ten 32K working views side by side (a calculation; several agents at once
-through one ctxkeeper has not been load-tested).</p>
+<section id="cache"><h2 id="answer-2">Does the history have to stay in VRAM?</h2>
+<p><strong>No. The archive and notes live on disk.</strong> The model server processes a small working view.
+If its cache has expired or the server restarts, it reads that view again; ctxkeeper does not save and reload precomputed GPU state.</p>
+<p><strong>You can return to a saved conversation later.</strong> Keep your app&rsquo;s complete conversation and ctxkeeper&rsquo;s state folder.
+They have no built-in expiry in ctxkeeper. <a href="ctxkeeper-connect.html#saved-conversations">How to save and resume &rarr;</a></p>
 </section>
 
 <section id="results"><h2 id="answer-3">Measured, not promised</h2>
@@ -147,7 +132,7 @@ your app&rsquo;s key), so keep it on your own machine or a trusted network.
 
 <section id="models"><h2 id="answer-8">Which model do I need?</h2>
 <ul>
-<li><strong>Tested most on Qwen3.8-27B</strong> (FP8). One 32&nbsp;GB card is enough, and two cards are faster.</li>
+<li><strong>Tested most on Qwen3.8-27B</strong> (FP8). The one-card test used a smaller 26,624-token budget and CPU-offloaded embeddings; <a href="ctxkeeper-results.html#one-card">see the hardware settings</a>.</li>
 <li><strong>A quick check on Gemma 4 26B</strong> (Q8, llama.cpp) passed the demo 4 of 4. Other models should work if they call tools reliably and keep their notes in the expected format; try your own task first.</li>
 <li><strong>Let the main model keep its own notes.</strong> A separate, smaller note-taking model was worse and slower (19 of 39 against 39 of 39 on a 240K-token test).</li>
 </ul>

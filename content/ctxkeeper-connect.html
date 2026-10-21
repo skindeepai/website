@@ -2,6 +2,30 @@
 <p><strong>Pi and OpenCode can use ctxkeeper with a local model server.</strong> Start the proxy, choose your model,
 then follow the client setup below. These instructions cover ctxkeeper 1.2.0.</p>
 <p><a href="@/ctxkeeper.html#agent">Back to the compatibility overview</a></p>
+<h2 id="saved-conversations">Save a conversation and return later</h2>
+<p><strong>Keep both your client&rsquo;s complete conversation history and ctxkeeper&rsquo;s state directory.</strong>
+ctxkeeper saves archived turns, notes and notes history per conversation. It does not independently save every newest
+turn or final reply, and it cannot resume a chat from a session ID alone.</p>
+<p>For long-term storage, choose a persistent folder you back up instead of relying on the default
+<code>~/.cache/ctxkeeper</code> directory. For example:</p>
+<pre><code>ctxkeeper --recipe agent \
+  --upstream http://127.0.0.1:8080 \
+  --state-dir "$HOME/.local/share/ctxkeeper"</code></pre>
+<p>Use that same directory when restarting ctxkeeper, reopen the saved chat in your client, and resend its full history.
+If you use <code>X-Ctx-Session</code>, retain the same unique value for that conversation.
+Copy any existing state directory before changing its location. Keep the client&rsquo;s history backups too.</p>
+<p>There is no time-based expiry in ctxkeeper&rsquo;s saved state, so the files can remain for months.
+Restart persistence is unit-tested; months-long retention is not a separate benchmark.
+The model must process the working view again if its server-side cache is gone.</p>
+<p><strong>Separate chats remain separate.</strong> The recall tool searches the current session&rsquo;s archive.
+Version 1.2.0 has no global search across all chats, complete per-turn window snapshots, or one-click session restore.</p>
+<h3>What about saving the already-processed GPU state?</h3>
+<p>That is a separate model-server feature. <a href="https://docs.lmcache.ai/kv_cache/local_storage.html">Disk cache offloading</a>
+can reuse precomputed state in compatible serving stacks, but ctxkeeper does not implement it and it has not been
+validated in our B70 setup. Long-term reuse would require a persistent cache index and retention policy, compatible
+model weights, tokenization, templates and runtime settings, and the same prompt prefix. Hybrid models also need their recurrent state.</p>
+<p>A saved cache speeds up processing of a matching prefix; it does not let an oversized history fit the model&rsquo;s
+active context limit. Text history remains the recoverable source if the cache is missing or incompatible.</p>
 <h2 id="before-connecting">Before connecting</h2>
 <p>First start your tool-capable model server, then run ctxkeeper using the <a href="@/ctxkeeper.html#try">installation commands</a>. Use <code>--recipe qwen</code>
 for the tested Qwen/vLLM setup, or <code>--recipe agent</code> for other compatible models. Find the model ID with:</p>

@@ -18,6 +18,30 @@
 <p><strong>Pi and OpenCode can use ctxkeeper with a local model server.</strong> Start the proxy, choose your model,
 then follow the client setup below. These instructions cover ctxkeeper 1.2.0.</p>
 <p><a href="ctxkeeper.html#agent">Back to the compatibility overview</a></p>
+<h2 id="saved-conversations">Save a conversation and return later</h2>
+<p><strong>Keep both your client&rsquo;s complete conversation history and ctxkeeper&rsquo;s state directory.</strong>
+ctxkeeper saves archived turns, notes and notes history per conversation. It does not independently save every newest
+turn or final reply, and it cannot resume a chat from a session ID alone.</p>
+<p>For long-term storage, choose a persistent folder you back up instead of relying on the default
+<code>~/.cache/ctxkeeper</code> directory. For example:</p>
+<pre><code>ctxkeeper --recipe agent \
+  --upstream http://127.0.0.1:8080 \
+  --state-dir "$HOME/.local/share/ctxkeeper"</code></pre>
+<p>Use that same directory when restarting ctxkeeper, reopen the saved chat in your client, and resend its full history.
+If you use <code>X-Ctx-Session</code>, retain the same unique value for that conversation.
+Copy any existing state directory before changing its location. Keep the client&rsquo;s history backups too.</p>
+<p>There is no time-based expiry in ctxkeeper&rsquo;s saved state, so the files can remain for months.
+Restart persistence is unit-tested; months-long retention is not a separate benchmark.
+The model must process the working view again if its server-side cache is gone.</p>
+<p><strong>Separate chats remain separate.</strong> The recall tool searches the current session&rsquo;s archive.
+Version 1.2.0 has no global search across all chats, complete per-turn window snapshots, or one-click session restore.</p>
+<h3 id="answer-1">What about saving the already-processed GPU state?</h3>
+<p>That is a separate model-server feature. <a href="https://docs.lmcache.ai/kv_cache/local_storage.html">Disk cache offloading</a>
+can reuse precomputed state in compatible serving stacks, but ctxkeeper does not implement it and it has not been
+validated in our B70 setup. Long-term reuse would require a persistent cache index and retention policy, compatible
+model weights, tokenization, templates and runtime settings, and the same prompt prefix. Hybrid models also need their recurrent state.</p>
+<p>A saved cache speeds up processing of a matching prefix; it does not let an oversized history fit the model&rsquo;s
+active context limit. Text history remains the recoverable source if the cache is missing or incompatible.</p>
 <h2 id="before-connecting">Before connecting</h2>
 <p>First start your tool-capable model server, then run ctxkeeper using the <a href="ctxkeeper.html#try">installation commands</a>. Use <code>--recipe qwen</code>
 for the tested Qwen/vLLM setup, or <code>--recipe agent</code> for other compatible models. Find the model ID with:</p>
@@ -26,7 +50,7 @@ for the tested Qwen/vLLM setup, or <code>--recipe agent</code> for other compati
 configuration files. The large client history ceiling lets the agent retain old turns; <strong>ctxkeeper still sends a
 32K working view</strong>. It does not ask you to allocate a ten-million-token model context.</p>
 
-<details open class="ck-details" id="connect-pi"><summary id="answer-1">Pi &mdash; configuration and launch command</summary>
+<details open class="ck-details" id="connect-pi"><summary id="answer-2">Pi &mdash; configuration and launch command</summary>
 <p>Complete <a href="#before-connecting">Before connecting</a>, then add a provider in <code>~/.pi/agent/models.json</code>:</p>
 <pre><code class="language-json">{
   "providers": {
@@ -55,7 +79,7 @@ are included in the <a href="ctxkeeper.html#agents">agent comparison</a>. See Pi
 <a href="https://pi.dev/docs/latest/settings">settings reference</a>.</p>
 </details>
 
-<details open class="ck-details" id="connect-opencode"><summary id="answer-2">OpenCode 1.x &mdash; configuration and launch command</summary>
+<details open class="ck-details" id="connect-opencode"><summary id="answer-3">OpenCode 1.x &mdash; configuration and launch command</summary>
 <p>Complete <a href="#before-connecting">Before connecting</a>, then add this to your project&rsquo;s <code>opencode.json</code>. This is the 1.x configuration format, tested with 1.19.0.</p>
 <pre><code class="language-json">{
   "$schema": "https://opencode.ai/config.json",
@@ -87,7 +111,7 @@ which ctxkeeper passes through without managing context. See OpenCode&rsquo;s
 <a href="https://opencode.ai/docs/config/">configuration reference</a>. Check the format before adapting this to a new major version.</p>
 </details>
 
-<details open class="ck-details" id="connect-sdk"><summary id="answer-3">OpenAI SDK and other Chat Completions clients</summary>
+<details open class="ck-details" id="connect-sdk"><summary id="answer-4">OpenAI SDK and other Chat Completions clients</summary>
 <p>Use base URL <code>http://127.0.0.1:18200/v1</code>, model <code>YOUR_MODEL_ID</code>, and the placeholder API key
 <code>unused</code> if your client requires a key. Call <code>chat.completions.create</code>, keep the full message list,
 and request one reply at a time (<code>n=1</code>). The
@@ -98,7 +122,7 @@ history trimming and summarizing. Cline, Goose, mini-swe-agent and others were a
 the exact provider controls depend on the client version.</p>
 </details>
 
-<details open class="ck-details" id="connect-codex"><summary id="answer-4">Codex &mdash; why a base URL is not enough yet</summary>
+<details open class="ck-details" id="connect-codex"><summary id="answer-5">Codex &mdash; why a base URL is not enough yet</summary>
 <p>Current Codex custom providers use the Responses API. ctxkeeper 1.2.0 forwards that endpoint without making notes,
 cutting context or serving recall. Pointing Codex at port 18200 therefore does not enable these features.</p>
 <p>A managed connection needs Responses support in ctxkeeper or a tested Responses-to-Chat-Completions adapter.
@@ -106,7 +130,7 @@ Neither is included in this release. For a working local-model setup today, use 
 See the <a href="https://learn.chatgpt.com/docs/config-file/config-reference">Codex configuration reference</a>.</p>
 </details>
 
-<details open class="ck-details" id="connect-claude"><summary id="answer-5">Claude Code &mdash; a protocol adapter is required</summary>
+<details open class="ck-details" id="connect-claude"><summary id="answer-6">Claude Code &mdash; a protocol adapter is required</summary>
 <p>Claude Code&rsquo;s custom gateway uses the Anthropic Messages format, which ctxkeeper 1.2.0 does not manage.
 Setting <code>ANTHROPIC_BASE_URL</code> to ctxkeeper alone will not add its memory features.</p>
 <p>A possible integration would need a Messages-to-Chat-Completions adapter before ctxkeeper and an upstream gateway
@@ -115,7 +139,7 @@ that authenticates with the model provider. That combination has not been tested
 tool calls, thinking and streaming must survive the conversion. The Claude web app is not a configurable Chat Completions client.</p>
 </details>
 
-<details open class="ck-details" id="connect-grok"><summary id="answer-6">Grok and other hosted models &mdash; supply credentials upstream</summary>
+<details open class="ck-details" id="connect-grok"><summary id="answer-7">Grok and other hosted models &mdash; supply credentials upstream</summary>
 <p>Grok is a model you can use through the xAI API. Its
 <a href="https://docs.x.ai/developers/model-capabilities/legacy/chat-completions">Chat Completions endpoint</a>
 uses the right protocol, but requires an API key. ctxkeeper 1.2.0 does not forward the client&rsquo;s Authorization header
@@ -126,7 +150,7 @@ in the client. Keep the key in the gateway; <code>apiKey: "unused"</code> in the
 <p>This hosted route is not tested or packaged here. A Grok website or app subscription is not the API connection described above.</p>
 </details>
 
-<details open class="ck-details"><summary id="answer-7">Check the connection and keep conversations separate</summary>
+<details open class="ck-details"><summary id="answer-8">Check the connection and keep conversations separate</summary>
 <pre><code>curl http://127.0.0.1:18200/ctxkeeper/status</code></pre>
 <p>Check the status while using the client. Notes and cuts start once the conversation grows beyond the working budget;
 a short successful reply alone does not demonstrate memory management.</p>

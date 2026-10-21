@@ -41,6 +41,17 @@ See the <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/e
 <p>The million-token ctxkeeper run used additional task-specific thinking and notes-check settings.
 These comparisons used the same server allocation and <strong>did not measure a reduction in VRAM use</strong>.</p>
 <h2 id="answer-3">Release validation</h2>
+<h3 id="one-card">One-card hardware result</h3>
+<p>On one 32&nbsp;GB Intel Arc Pro B70, Qwen3.8-27B FP8 fixed 40/40 bugs, kept all rules and answered 7/7 questions
+in 21.1 minutes. This run used a <strong>26,624-token total budget</strong>, with 8,192 tokens reserved for replies,
+and offloaded input embeddings to CPU memory. Its largest actual model request was about 14K tokens.
+It was not the default 32K setup. See the
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md#o1r-result-the-keeper-reply-test-and-campaign-22c-registration-2026-10-16-1028-before-22c-runs">campaign 22b result</a>.</p>
+<p>The server&rsquo;s reported cache-pool capacity is not a measured per-conversation VRAM footprint.
+This hybrid model has attention-cache and recurrent-state overhead that varies with server settings.
+We have not measured full-history VRAM requirements at 2M or 10M tokens, or concurrent-agent capacity.
+Equal advertised card memory does not establish equivalent runtime support or usable memory.</p>
+<h3 id="answer-4">Published package checks</h3>
 <p class="ctx-table-note">Version 1.2.0 was installed from the public release using the <a href="ctxkeeper.html#try">published installation steps</a>, then ran the repair task
 (40/40, 7/7), the 300K demo through the Docker image (4/4), the SDK example (plain, tool call, streaming) and a 100K Gemma check (4/4)
 &mdash; <a href="context-distance.html#two-million">lab campaign 50</a>. One model, one machine; the notes are written by the model and can be wrong.</p>
