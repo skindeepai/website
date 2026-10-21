@@ -44,8 +44,7 @@ Everything older is archived word for word, searchable through a <code>recall</c
 <h3>pip</h3>
 <pre><code>python3 -m venv .venv-ctxkeeper
 . .venv-ctxkeeper/bin/activate
-python -m pip install \
-  "https://github.com/steveseguin/b70-optimization-lab/releases/download/ctxkeeper-v1.2.0/ctxkeeper-1.2.0-py3-none-any.whl"
+python -m pip install ctxkeeper
 
 ctxkeeper --recipe qwen \
   --upstream http://127.0.0.1:8080</code></pre>
@@ -61,10 +60,11 @@ docker run --rm --network host \
   --upstream http://127.0.0.1:8080</code></pre>
 </div>
 </div>
-<p class="ck-small">Or take just the two files — <code>ctxkeeper.py</code> and <code>notesdelta.py</code> — from the
+<p class="ck-small">Source, issues and the full guide: <a href="https://github.com/skindeepai/ctxkeeper">github.com/skindeepai/ctxkeeper</a>.
+Or take just the two files — <code>ctxkeeper.py</code> and <code>notesdelta.py</code> — from the
 <a href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">release page</a>, which lists every file&rsquo;s SHA-256.
 The upstream must accept managed calls without an API key (client <code>Authorization</code> headers are not forwarded); keep the proxy on localhost or a trusted network.
-<a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md">The full guide</a> covers every option, the status page and the tests.</p>
+<a href="https://github.com/skindeepai/ctxkeeper/blob/main/README.md">The full guide</a> covers every option, the status page and the tests.</p>
 </section>
 
 <section id="results"><h2>Measured, not promised</h2>
