@@ -26,6 +26,20 @@
 .ck-install h3{margin:0 0 8px}
 .ck-install pre{margin:0;font-size:.8rem;line-height:1.55;border-radius:10px}
 .ck-small{font-size:.9rem;color:var(--muted);max-width:78ch}
+.ck-comparison{margin:22px 0}
+.ck-comparison img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+.ck-comparison figcaption{font-size:.88rem;line-height:1.5;color:var(--muted);margin-top:10px}
+.ck-details{border-top:1px solid var(--line);padding:4px 0;margin:10px 0;scroll-margin-top:24px}
+.ck-details summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:600}
+.ck-details[open] summary{margin-bottom:10px}
+.ck pre{max-width:100%;overflow-x:auto;font-size:.8rem;line-height:1.55}
+.ck .ctx-summary-table table{width:100%;min-width:0;table-layout:fixed}
+.ck .ctx-summary-table th,.ck .ctx-summary-table td{white-space:normal;overflow-wrap:anywhere;font-size:.9rem;line-height:1.5}
+.ck .ck-compatibility th:first-child{width:30%}
+.ck .ck-compatibility th:nth-child(2){width:70%}
+.ck .ctx-agents-table table{min-width:550px}
+.ck .ctx-agents-table th:first-child{width:28%}
+.ck .ctx-agents-table th:not(:first-child){width:18%}
 .ck-links{list-style:none;padding:0;margin:0;display:grid;gap:0;max-width:760px}
 .ck-links li{display:block;padding:12px 0;border-bottom:1px solid var(--line);margin:0}
 .ck-links a{font-weight:600}

@@ -6,6 +6,7 @@ history; the model sees a short, current view — notes it maintains, the openin
 Everything older is archived word for word, searchable through a <code>recall</code> tool the proxy answers itself.</p>
 <div class="ck-actions">
 <a class="ck-btn ck-btn-primary" href="#try">Install in 60 seconds</a>
+<a class="ck-btn ck-btn-ghost" href="#agent">Connect your agent</a>
 <a class="ck-btn ck-btn-ghost" href="https://github.com/steveseguin/b70-optimization-lab/releases/tag/ctxkeeper-v1.2.0">Release 1.2.0 &amp; checksums</a>
 </div>
 <ul class="ck-stats" aria-label="Headline measurements">
@@ -56,7 +57,7 @@ ctxkeeper --recipe qwen \
 
 docker run --rm --network host \
   -v ctxkeeper-state:/state \
-  ctxkeeper:1.2.0 --recipe qwen \
+  ctxkeeper:1.2.0 --host 127.0.0.1 --recipe qwen \
   --upstream http://127.0.0.1:8080</code></pre>
 </div>
 </div>
@@ -68,14 +69,36 @@ The upstream must accept managed calls without an API key (client <code>Authoriz
 </section>
 
 <section id="results"><h2>Measured, not promised</h2>
-<p>Every row is a real run, graded by the task&rsquo;s own checker, on Qwen3.8-27B (FP8, vLLM, two Intel Arc Pro B70 cards)
-with a 32K-token working view.</p>
+<p><strong>A 32K working view kept up with a full 262K context &mdash; and finished sooner.</strong> On a separate
+million-token memory task, it answered more questions correctly than a 200K sliding window, in less time.
+The older history stayed on disk, available through recall.</p>
+<figure class="ck-comparison">
+<a href="@/images/ctxkeeper-comparison-v1.png" aria-label="Open the comparison graphic at full size">
+<img src="@/images/ctxkeeper-comparison-v1.png" width="1086" height="1448" loading="lazy" decoding="async"
+alt="Measured on Qwen3.8-27B FP8, vLLM, two Intel Arc Pro B70 cards. Repair task: ctxkeeper's 32K live view took 33 minutes versus 55 minutes with full history and 262K capacity; both kept every rule on 40 of 40 fixes and answered 7 of 7 earlier-work questions. Million-token memory task: ctxkeeper's 32K view answered 226 of 228 in 50 minutes; a 200K sliding window answered 166 of 228 in 228 minutes. Compare within each task; times rounded. VRAM savings were not measured.">
+</a>
+<figcaption><a href="@/images/ctxkeeper-comparison-v1.png">Open or save the full-size graphic</a>.
+Smaller active context means less history in each model request. These runs used the same server allocation;
+<strong>they did not measure a reduction in VRAM use.</strong></figcaption>
+</figure>
+<details class="ck-details"><summary>Text results, test settings and original evidence</summary>
+<p>Each comparison below comes from the same task and seed, graded by its own checker, on Qwen3.8-27B
+(FP8, vLLM, two Intel Arc Pro B70 cards). ctxkeeper used a 32K-token working view. These are individual
+runs with task-specific settings, not averages or a promise for every model.</p>
 <div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Measured results"><table><thead><tr><th scope="col">Task</th><th scope="col">With ctxkeeper</th><th scope="col">Without it</th></tr></thead><tbody>
-<tr><th scope="row">Fix 40 real bugs in a Python library, one ticket at a time, under three house rules; then 7 questions about the earliest fixes</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 12&ndash;38 min by settings</td><td>Latest 32K only: 22&ndash;35 of 40 kept the rules, 0/7 right</td></tr>
-<tr><th scope="row">The same task through a separate agent program that manages nothing itself</th><td><strong>40/40, 40/40, 7/7</strong>; 31&ndash;33 min</td><td>Whole history in a 262K window: same score; 55 min, 29.9M tokens read</td></tr>
+<tr><th scope="row">Fix 40 real bugs, under three house rules; then 7 questions about the earliest fixes. Same 32K limit on both sides.</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 20 min</td><td>Latest 32K only: 40/40 fixed, 35/40 kept every rule, 0/7 right; 45 min</td></tr>
+<tr><th scope="row">The same repair task through freeagent, a separate agent program that manages nothing itself</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 33 min</td><td>Whole history, 262K capacity: same score; 55 min</td></tr>
 <tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
 <tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Both seeds: 421/423 and 417/423</strong>; 16/16 corrections applied on both, every forged line in the notes flagged, no forged value, method, rule or removal ever adopted. Two of 97 forgery-target answers slipped on silent arithmetic while the notes held the right value, so the strictest preregistered bar is not claimed.</td><td>Not run at this length</td></tr>
 </tbody></table></div>
+<p class="ck-small">Original records:
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/campaign14.log">32K repair comparison (XR6 / W32g)</a>;
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign15/campaign15.log">freeagent versus full history</a>;
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/runs/client-1m/X32p__sparse-memory-t1000k-s0/details.json">million-token ctxkeeper run</a> and
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign16/campaign16.log">200K-window baseline</a>.
+The full-history server had 262,144-token capacity; its largest actual prompt was about 215K. The million-token
+ctxkeeper run used additional task-specific thinking and notes-check settings.</p>
+</details>
 <p class="ctx-table-note">Release-gated: 1.2.0 was installed from the public release exactly as shown above, then ran the repair task
 (40/40, 7/7), the 300K demo through the Docker image (4/4), the SDK example (plain, tool call, streaming) and a 100K Gemma check (4/4)
 &mdash; <a href="@/context-distance.html#two-million">lab campaign 50</a>. One model, one machine; the notes are written by the model and can be wrong.</p>
@@ -89,19 +112,134 @@ with a 32K-token working view.</p>
 </ul>
 </section>
 
-<section id="agent"><h2>With your agent</h2>
-<p>ctxkeeper manages Chat Completions requests from clients that resend their full history:</p>
-<ul>
-<li>Use <strong>Chat Completions</strong> (<code>/v1/chat/completions</code>). Other endpoints, including Responses, pass through without context management.</li>
-<li><strong>Send the whole conversation each time.</strong> Turn off the agent&rsquo;s own history trimming and summarizing. If earlier messages disappear or change, ctxkeeper may treat it as a different conversation.</li>
-<li>Request one reply at a time (<code>n=1</code>). Streaming is accepted, but the answer arrives in one piece at the end.</li>
-</ul>
+<section id="agent"><h2>Connect your agent</h2>
+<p><strong>Start with Pi or OpenCode and a local model server.</strong> Both were tested through ctxkeeper.
+Version 1.2.0 manages <code>/v1/chat/completions</code>; the client must keep sending its full conversation.</p>
+<div class="table-scroll ctx-table ctx-summary-table ck-compatibility" tabindex="0" role="region" aria-label="Client compatibility"><table><thead><tr><th scope="col">Client or model</th><th scope="col">Connection in 1.2.0</th></tr></thead><tbody>
+<tr><th scope="row"><a href="#connect-pi">Pi</a></th><td>Tested with a local model. Add a Chat Completions provider and disable compaction.</td></tr>
+<tr><th scope="row"><a href="#connect-opencode">OpenCode 1.x</a></th><td>Tested with a local model. Use its OpenAI-compatible provider and disable compaction and pruning.</td></tr>
+<tr><th scope="row"><a href="#connect-sdk">OpenAI SDK / custom client</a></th><td>Chat Completions supported. Keep the message history and handle tool calls.</td></tr>
+<tr><th scope="row"><a href="#connect-codex">Codex</a></th><td>Responses API passes through; no ctxkeeper memory management on that path.</td></tr>
+<tr><th scope="row"><a href="#connect-claude">Claude Code</a></th><td>Uses a different API. Needs an additional protocol adapter; not tested.</td></tr>
+<tr><th scope="row"><a href="#connect-grok">Grok via xAI API</a></th><td>Chat Completions protocol fits, but needs an upstream gateway to supply the API key; not tested.</td></tr>
+</tbody></table></div>
+<p>First start your tool-capable model server, then run ctxkeeper using the command above. Use <code>--recipe qwen</code>
+for the tested Qwen/vLLM setup, or <code>--recipe agent</code> for other compatible models. Find the model ID with:</p>
+<pre><code>curl http://127.0.0.1:18200/v1/models</code></pre>
+<p>Replace every <code>YOUR_MODEL_ID</code> below with the exact ID the server returns. Merge these examples into existing
+configuration files. The large client history ceiling lets the agent retain old turns; <strong>ctxkeeper still sends a
+32K working view</strong>. It does not ask you to allocate a ten-million-token model context.</p>
+
+<details class="ck-details" id="connect-pi"><summary>Pi &mdash; configuration and launch command</summary>
+<p>Add a provider in <code>~/.pi/agent/models.json</code>:</p>
+<pre><code class="language-json">{
+  "providers": {
+    "ctxkeeper": {
+      "baseUrl": "http://127.0.0.1:18200/v1",
+      "api": "openai-completions",
+      "apiKey": "unused",
+      "models": [{
+        "id": "YOUR_MODEL_ID",
+        "name": "Local model via ctxkeeper",
+        "input": ["text"],
+        "contextWindow": 10000000,
+        "maxTokens": 4096
+      }]
+    }
+  }
+}</code></pre>
+<p>In <code>~/.pi/agent/settings.json</code>, disable automatic compaction:</p>
+<pre><code class="language-json">{
+  "compaction": { "enabled": false }
+}</code></pre>
+<pre><code>pi --provider ctxkeeper --model YOUR_MODEL_ID</code></pre>
+<p>Avoid manual <code>/compact</code> during that conversation too. Tested with Pi 1.2.0; its result and the notes failure
+are included in the <a href="#agents">agent comparison</a>. See Pi&rsquo;s
+<a href="https://pi.dev/docs/latest/models">custom endpoint guide</a> and
+<a href="https://pi.dev/docs/latest/settings">settings reference</a>.</p>
+</details>
+
+<details class="ck-details" id="connect-opencode"><summary>OpenCode 1.x &mdash; configuration and launch command</summary>
+<p>Add this to your project&rsquo;s <code>opencode.json</code>. This is the 1.x configuration format, tested with 1.19.0.</p>
+<pre><code class="language-json">{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ctxkeeper/YOUR_MODEL_ID",
+  "small_model": "ctxkeeper/YOUR_MODEL_ID",
+  "provider": {
+    "ctxkeeper": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ctxkeeper",
+      "options": {
+        "baseURL": "http://127.0.0.1:18200/v1",
+        "apiKey": "unused"
+      },
+      "models": {
+        "YOUR_MODEL_ID": {
+          "name": "Local model via ctxkeeper",
+          "tool_call": true,
+          "limit": { "context": 10000000, "output": 4096 }
+        }
+      }
+    }
+  },
+  "compaction": { "auto": false, "prune": false }
+}</code></pre>
+<pre><code>opencode --model ctxkeeper/YOUR_MODEL_ID</code></pre>
+<p>Select <code>@ai-sdk/openai-compatible</code> so requests use Chat Completions. The OpenAI provider can use Responses,
+which ctxkeeper passes through without managing context. See OpenCode&rsquo;s
+<a href="https://opencode.ai/docs/providers/">provider guide</a> and
+<a href="https://opencode.ai/docs/config/">configuration reference</a>. Check the format before adapting this to a new major version.</p>
+</details>
+
+<details class="ck-details" id="connect-sdk"><summary>OpenAI SDK and other Chat Completions clients</summary>
+<p>Use base URL <code>http://127.0.0.1:18200/v1</code>, model <code>YOUR_MODEL_ID</code>, and the placeholder API key
+<code>unused</code> if your client requires a key. Call <code>chat.completions.create</code>, keep the full message list,
+and request one reply at a time (<code>n=1</code>). The
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md#quick-start">SDK example</a>
+covers plain replies, tool calls and streaming. Streaming is accepted, but each answer arrives in one piece at the end.</p>
+<p>For other clients, choose a custom OpenAI-compatible Chat Completions provider, set the same base URL, and disable
+history trimming and summarizing. Cline, Goose, mini-swe-agent and others were also <a href="#agents">tested below</a>;
+the exact provider controls depend on the client version.</p>
+</details>
+
+<details class="ck-details" id="connect-codex"><summary>Codex &mdash; why a base URL is not enough yet</summary>
+<p>Current Codex custom providers use the Responses API. ctxkeeper 1.2.0 forwards that endpoint without making notes,
+cutting context or serving recall. Pointing Codex at port 18200 therefore does not enable these features.</p>
+<p>A managed connection needs Responses support in ctxkeeper or a tested Responses-to-Chat-Completions adapter.
+Neither is included in this release. For a working local-model setup today, use the Pi or OpenCode configuration above.
+See the <a href="https://learn.chatgpt.com/docs/config-file/config-reference">Codex configuration reference</a>.</p>
+</details>
+
+<details class="ck-details" id="connect-claude"><summary>Claude Code &mdash; a protocol adapter is required</summary>
+<p>Claude Code&rsquo;s custom gateway uses the Anthropic Messages format, which ctxkeeper 1.2.0 does not manage.
+Setting <code>ANTHROPIC_BASE_URL</code> to ctxkeeper alone will not add its memory features.</p>
+<p>A possible integration would need a Messages-to-Chat-Completions adapter before ctxkeeper and an upstream gateway
+that authenticates with the model provider. That combination has not been tested here. Follow the
+<a href="https://code.claude.com/docs/en/llm-gateway-protocol">Claude Code gateway compatibility guide</a> when evaluating an adapter;
+tool calls, thinking and streaming must survive the conversion. The Claude web app is not a configurable Chat Completions client.</p>
+</details>
+
+<details class="ck-details" id="connect-grok"><summary>Grok and other hosted models &mdash; supply credentials upstream</summary>
+<p>Grok is a model you can use through the xAI API. Its
+<a href="https://docs.x.ai/developers/model-capabilities/legacy/chat-completions">Chat Completions endpoint</a>
+uses the right protocol, but requires an API key. ctxkeeper 1.2.0 does not forward the client&rsquo;s Authorization header
+or provide an upstream API-key setting.</p>
+<p>The route to evaluate is <strong>Pi or OpenCode &rarr; ctxkeeper &rarr; a local gateway holding your xAI key &rarr; xAI</strong>.
+Configure that gateway to expose Chat Completions locally, point <code>--upstream</code> at it, and select its Grok model alias
+in the client. Keep the key in the gateway; <code>apiKey: "unused"</code> in the examples is only a client placeholder.</p>
+<p>This hosted route is not tested or packaged here. A Grok website or app subscription is not the API connection described above.</p>
+</details>
+
+<details class="ck-details"><summary>Check the connection and keep conversations separate</summary>
+<pre><code>curl http://127.0.0.1:18200/ctxkeeper/status</code></pre>
+<p>Check the status while using the client. Notes and cuts start once the conversation grows beyond the working budget;
+a short successful reply alone does not demonstrate memory management.</p>
 <p>If your client supports custom headers, send a unique <code>X-Ctx-Session</code> value per conversation and keep it on every
-call, including after a restart. Otherwise ctxkeeper identifies conversations by their model and opening messages; identical
-openings can collide. The OpenAI SDK works as-is (<code>api_key="unused"</code> placeholder); a
-<a href="https://github.com/steveseguin/b70-optimization-lab/blob/ctxkeeper-v1.2.0/tools/ctxkeeper/README.md#quick-start">client example</a>
-is in the guide. For new instructions inside tool results, such as tickets or files, <code>--recite-when '(?m)^TICKET \d+'</code>
+call, including after a restart. Otherwise ctxkeeper identifies conversations by their model and opening messages;
+identical openings can collide. If earlier messages disappear or change, it may treat the history as a new conversation.</p>
+<p>For new instructions inside tool results, such as tickets or files, <code>--recite-when '(?m)^TICKET \d+'</code>
 repeats recorded rules after matching messages.</p>
+</details>
 </section>
 
 <section id="agents"><h2>Tested with 12 coding agents</h2>
