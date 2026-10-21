@@ -10,10 +10,6 @@
 .ck-btn-primary:hover{background:#1e44b8;color:#fff}
 .ck-btn-ghost{color:var(--blue);background:transparent}
 .ck-btn-ghost:hover{background:#e7edf9}
-.ck-stats{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;margin:0 0 8px}
-.ck-stats li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.ck-stats strong{display:block;font-size:1.25rem;letter-spacing:-.02em}
-.ck-stats span{font-size:.82rem;color:var(--muted);line-height:1.35;display:block}
 .ck-diagram{margin:26px 0 30px;color:var(--ink)}
 .ck-diagram svg{display:block;width:100%;max-width:760px;height:auto}
 .ck-box{fill:var(--paper);stroke:var(--line);stroke-width:1.5}
@@ -60,4 +56,17 @@
 .ck-links li{display:block;padding:12px 0;border-bottom:1px solid var(--line);margin:0}
 .ck-links a{font-weight:600}
 .ck-links span{display:block;font-size:.88rem;color:var(--muted)}
-@media(max-width:700px){.ck-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.ck-install-grid{grid-template-columns:minmax(0,1fr)}.ck-promise{font-size:1.02rem}}
+@media(max-width:700px){.ck-install-grid{grid-template-columns:minmax(0,1fr)}.ck-promise{font-size:1.02rem}}
+.ck-wins{list-style:none;padding:0;margin:0 0 22px;max-width:68ch}
+.ck-wins li{padding:8px 0 8px 16px;border-left:3px solid var(--blue);margin:0 0 8px;line-height:1.55}
+.ck-steps{max-width:68ch;line-height:1.6}
+.ck-steps li{margin:0 0 6px}
+.ck-bars{margin:18px 0 22px;max-width:760px}
+.ck-bars-title{font-weight:600;margin:16px 0 8px;font-size:.95rem}
+.ck-bar-row{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr) minmax(0,12rem);gap:10px;align-items:center;margin:0 0 7px;font-size:.88rem}
+.ck-bar-track{display:block;height:14px;background:var(--line);border-radius:3px;overflow:hidden}
+.ck-bar{display:block;height:100%;min-width:3px;background:var(--muted);border-radius:3px}
+.ck-bar-hi{background:var(--blue)}
+.ck-bar-value{color:var(--ink)}
+.ck-bars-note{font-size:.84rem;color:var(--muted);line-height:1.5;margin:10px 0 0}
+@media(max-width:700px){.ck-bar-row{grid-template-columns:minmax(0,1fr) 7.5rem;gap:4px 10px}.ck-bar-value{font-size:.8rem;line-height:1.3}.ck-bar-label{grid-column:1/-1}.ck-bar-track{grid-column:1}}

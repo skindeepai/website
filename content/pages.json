@@ -12,7 +12,11 @@
     "description": "The measurements, settings and evidence behind the ctxkeeper comparisons.",
     "meta_title": "ctxkeeper results — context, speed and accuracy | SkinDeep",
     "meta_description": "Original measurements and limits for ctxkeeper's 32K working view versus full history and sliding windows.",
-    "styles": ["results.css", "context.css", "ctxkeeper.css"],
+    "styles": [
+      "results.css",
+      "context.css",
+      "ctxkeeper.css"
+    ],
     "template": "content/ctxkeeper-results.html",
     "body": ""
   },
@@ -21,22 +25,37 @@
     "description": "Setup instructions and compatibility details for ctxkeeper 1.2.0.",
     "meta_title": "Connect Pi, OpenCode and other clients to ctxkeeper | SkinDeep",
     "meta_description": "Copyable Pi and OpenCode configurations, SDK guidance, and Codex, Claude Code and Grok compatibility details.",
-    "styles": ["results.css", "context.css", "ctxkeeper.css"],
+    "styles": [
+      "results.css",
+      "context.css",
+      "ctxkeeper.css"
+    ],
     "template": "content/ctxkeeper-connect.html",
     "body": ""
   },
   "ctxkeeper.html": {
     "title": "ctxkeeper",
-    "description": "Keep your agent working when its conversation outgrows the model's context window. Free, public-domain proxy; install with pip or Docker.",
-    "meta_title": "ctxkeeper — keep your agent working past the context window",
-    "meta_description": "ctxkeeper is a free, public-domain proxy that gives your AI agent notes, a verbatim archive and search, so it keeps working past the model's context window. pip or Docker install, measured results.",
+    "description": "Give your local AI a memory that doesn't run out: conversations far past the context window, on one graphics card, faster than a bigger window.",
+    "meta_title": "ctxkeeper — unlimited context for local AI models, on one GPU",
+    "meta_description": "ctxkeeper is a free, open-source proxy that lets a local AI model or coding agent keep working far past its context window. Tested to 2 million tokens; fits one 32 GB GPU; 4.5x faster than a 200K window on a million-token test.",
     "styles": [
       "results.css",
       "context.css",
       "ctxkeeper.css"
     ],
     "template": "content/ctxkeeper.html",
-    "body": ""
+    "body": "",
+    "share_image": "images/ctxkeeper-card.png",
+    "share_alt": "ctxkeeper: unlimited context for local AI. The model reads a short view of its notes and the newest turns; everything older is archived on disk and searchable. Tested to 2 million tokens; fits one 32 GB GPU.",
+    "software": {
+      "name": "ctxkeeper",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any system with Python 3.10 or newer",
+      "softwareVersion": "1.2.0",
+      "license": "https://unlicense.org/",
+      "downloadUrl": "https://pypi.org/project/ctxkeeper/",
+      "codeRepository": "https://github.com/steveseguin/b70-optimization-lab/tree/ctxkeeper-v1.2.0/tools/ctxkeeper"
+    }
   },
   "preferences.html": {
     "title": "Learning what you like",

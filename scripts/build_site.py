@@ -57,9 +57,16 @@ def build():
         canonical = 'https://skindeep.ai/' + ('' if name == 'index.html' else name)
         meta_title = p.get('meta_title', p['title'] + ' — SkinDeep Research')
         meta_description = p.get('meta_description', p['description'])
-        share_image = 'https://skindeep.ai/images/skindeep-research-card.png'
-        share_alt = 'SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.'
+        share_image = 'https://skindeep.ai/' + p.get('share_image', 'images/skindeep-research-card.png')
+        share_alt = p.get('share_alt', 'SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.')
         structured = ''
+        if p.get('software'):
+            structured = '<script type="application/ld+json">' + json.dumps(dict({
+                '@context': 'https://schema.org', '@type': 'SoftwareApplication', 'url': canonical,
+                'description': meta_description, 'image': share_image,
+                'author': {'@type': 'Person', 'name': 'Steve Seguin'},
+                'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}
+            }, **p['software']), ensure_ascii=False).replace('<', '\u003c') + '</script>'
         if name == 'index.html':
             structured = '<script type="application/ld+json">' + json.dumps({
                 '@context': 'https://schema.org', '@type': 'WebSite', 'name': 'SkinDeep',
