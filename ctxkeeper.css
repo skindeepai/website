@@ -34,6 +34,10 @@
 .ck .ck-compatibility th:first-child{width:30%}
 .ck .ck-compatibility th:nth-child(2){width:70%}
 .ck .ctx-agents-table table{min-width:550px}
+.ck .ck-measure-table th:first-child{width:20%}
+.ck .ck-measure-table th:nth-child(2){width:27%}
+.ck .ck-measure-table th:nth-child(3){width:21%}
+.ck .ck-measure-table th:nth-child(4){width:32%}
 .ck .ctx-agents-table th:first-child{width:28%}
 .ck .ctx-agents-table th:not(:first-child){width:18%}
 .ck-client-table table{width:100%;min-width:0;table-layout:fixed}

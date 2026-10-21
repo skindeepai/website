@@ -1,0 +1,77 @@
+<div class="ck">
+<section class="ck-hero" aria-label="Introduction">
+<p class="ck-eyebrow">Research engine &middot; Intel Arc Pro B70 &middot; measured, with receipts</p>
+<p class="ck-promise">Most local models run on a general-purpose engine. <strong>We built our own</strong> for one model family:
+a small inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. It exists to prove two things at
+once &mdash; <strong>speed</strong>, and output that is <strong>provably identical</strong> to a reference run, byte for byte.
+A run that cannot prove itself does not get published.</p>
+<ul class="ck-wins">
+<li><strong>Fast.</strong> 58.6 tokens a second on two cards, 31.8 on one, on the model we run most.</li>
+<li><strong>Exact.</strong> Every published output is checked against an oracle or an independent repeat run, with receipts kept.</li>
+<li><strong>Open about gaps.</strong> Caps and pending checks are stated on the page, not hidden in footnotes.</li>
+</ul>
+<div class="ck-actions">
+<a class="ck-btn ck-btn-primary" href="#numbers">See the numbers</a>
+<a class="ck-btn ck-btn-ghost" href="#swap">Session swap</a>
+<a class="ck-btn ck-btn-ghost" href="#evidence">Evidence</a>
+</div>
+</section>
+
+<section id="what"><h2>What it is</h2>
+<p>Qwen3.8 Flash-Next is a hybrid model: 48 layers, of which 36 use gated delta net (a linear-attention design) and
+12 use full attention, plus a 512-expert mixture layer and an early composite layer. General engines run it through
+generic kernels. This engine is designed around that exact structure: a per-layer plan, a resident cache for the
+experts, and snapshot banks for the state.</p>
+<p>It is a research engine, not a shipped product. There is nothing to download as a finished program; the
+reproducible artifacts are the <a href="#evidence">recipe pages and lab records</a> linked below.</p>
+</section>
+
+<section id="numbers"><h2>Measured, with the caps stated</h2>
+<p>Decode is how fast the model writes; prompt reading is how fast it ingests. All figures come from sealed,
+receipt-backed runs in the lab repository. Where a measurement has a limit, the limit is printed next to it.</p>
+<div class="table-scroll ctx-table ctx-summary-table ck-measure-table" tabindex="0" role="region" aria-label="Measured performance of the own runtime">
+<table><thead><tr><th scope="col">Setup</th><th scope="col">Decode</th><th scope="col">Prompt reading</th><th scope="col">Exactness</th></tr></thead><tbody>
+<tr><th scope="row">Flash-Next UD-IQ3_XXS, two B70 cards</th><td>58.557&ndash;58.632 tok/s (fresh suites); requalified 58.724 / 58.676 on 2026-10-20</td><td>75.884&ndash;75.973 tok/s</td><td>Oracle checks the first 128 tokens; full 6,495-token outputs repeat exactly across loads</td></tr>
+<tr><th scope="row">Flash-Next UD-IQ3_XXS, one B70 card</th><td>31.510&ndash;31.782 tok/s; requalified 31.766 / 31.774</td><td>32.595&ndash;32.752 tok/s</td><td>Same discipline</td></tr>
+<tr><th scope="row">Record runs (approved on LocalMaxxing)</th><td>58.798109 tok/s (two cards) &middot; 34.573038 (one card)</td><td>&mdash;</td><td><strong>Capped scope:</strong> 128-token suites, stated on the package pages</td></tr>
+<tr><th scope="row">Qwen3.8 27B, GGUF-comparable lane</th><td>37.59 / 37.77 tok/s at 4K context &middot; 37.71 / 37.70 at 32K (llama.cpp reference on the same suite: 28.49)</td><td>&mdash;</td><td>12 of 12 requests bit-exact at both capacities; 128-token suite</td></tr>
+</tbody></table></div>
+<p class="ck-small"><strong>Pending, and labeled as such:</strong> the strict quality promotion for the full512 profiles is
+still pending, and oracle coverage beyond 128 tokens is an explicit, declared gap. Other honest limits today: greedy
+decoding only (no sampler), a sequential controller (no multi-user concurrency), and context measured at 4,096 tokens
+&mdash; other capacities are unmeasured, not claimed. Published device numbers belong to the sealed historical binary;
+the rebuilt portable binary still needs its own sealed qualification.</p>
+</section>
+
+<section id="swap"><h2>Session swap: park the computation, not just the text</h2>
+<p>Ordinarily, returning to an old conversation means the model reads the whole prompt again. Because we own the
+engine, it can do something frontends cannot: <strong>save a session&rsquo;s computed state to disk, restore it later, and
+continue without re-reading the prompt</strong>. The ideas behind this are described on our
+<a href="context-cache-parking.html">cache parking</a> and <a href="context-cache-offload.html">cache offload</a> pages.</p>
+<p><strong>Checkpoint restore is EXPERIMENTAL.</strong> There is no completed save/restore benchmark yet &mdash; the same
+status our parking page states. What exists is a written design contract &mdash; save, inspect, restore and delete, with
+compatibility checks and prefix-plus-delta rules &mdash; and that contract is the path to the first completed benchmark:
+a restart-and-continue test that must reproduce the output exactly before any number is published.</p>
+<p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Read the session-swap design contract &rarr;</a></p>
+</section>
+
+<section id="ctxkeeper"><h2>How it fits with ctxkeeper</h2>
+<p><a href="ctxkeeper.html">ctxkeeper</a> keeps a long conversation durable from the outside: notes, a searchable
+archive, and a parking policy, working with any model server. The own runtime is the other half: the checkpoint
+engine inside the server that can save and restore the actual computation. ctxkeeper decides <em>what</em> a session
+needs to remember; the engine provides the <em>how</em> for instant resume. The session-swap contract above is what the
+ctxkeeper integration is being built against.</p>
+</section>
+
+<section id="evidence"><h2>Evidence and source</h2>
+<ul class="ck-links">
+<li><a href="https://github.com/steveseguin/b70-optimization-lab">The lab repository</a><span>The engine, the sealed run packets, the scoreboard and the receipts behind every number on this page.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/docs/own-runtime.md">docs/own-runtime.md</a><span>The source of truth for this page: measured state, open items and honest non-goals.</span></li>
+<li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp2-b70.html">Two-card recipe on neural.download</a><span>Reproducible package for the two-B70 setup, with its caps and missing checks listed.</span></li>
+<li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp1-b70.html">One-card recipe on neural.download</a><span>The same, for a single B70 card.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Session-swap design contract</a><span>The experimental checkpoint contract, labeled experimental until its exactness test passes.</span></li>
+</ul>
+<p class="ck-small">These are research results from one lab on one model family, not a claim of being the only fast
+option: vLLM and llama.cpp remain the general-purpose engines we compare against and use elsewhere.</p>
+</section>
+</div>
