@@ -40,6 +40,22 @@
 .ck .ctx-agents-table table{min-width:550px}
 .ck .ctx-agents-table th:first-child{width:28%}
 .ck .ctx-agents-table th:not(:first-child){width:18%}
+.ck-client-table table{width:100%;min-width:0;table-layout:fixed}
+.ck-client-table th:first-child{width:34%}
+.ck-client-table th:nth-child(2){width:44%}
+.ck-client-table th:nth-child(3){width:22%}
+.ck-client-table th,.ck-client-table td{white-space:normal;font-size:.9rem;line-height:1.4;vertical-align:middle}
+.ck-client-table tbody th{font-weight:600}
+.ck-client-table a{display:inline-flex;align-items:center;min-height:44px}
+.ck-support{display:inline-block;padding:5px 8px;border-radius:5px;font-size:.82rem;font-weight:600}
+.ck-support-tested{color:#175a42;background:#e1f1e8}
+.ck-support-adapter{color:#725015;background:#fbefd2}
+.ck-support-unavailable{color:#4e5968;background:#e8ecf1}
+.ck-connect-guide details,.ck-connect-guide h2{scroll-margin-top:100px}
+.ck-results-guide .ctx-summary-table th:first-child{width:34%}
+.ck-results-guide .ctx-summary-table th:nth-child(2),.ck-results-guide .ctx-summary-table th:nth-child(3){width:33%}
+.ck-results-guide .ctx-summary-table th,.ck-results-guide .ctx-summary-table td{padding:12px 7px}
+@media(max-width:480px){.ck-client-table th,.ck-client-table td{padding:8px 5px;font-size:.83rem}.ck-support{padding:5px;font-size:.75rem}}
 .ck-links{list-style:none;padding:0;margin:0;display:grid;gap:0;max-width:760px}
 .ck-links li{display:block;padding:12px 0;border-bottom:1px solid var(--line);margin:0}
 .ck-links a{font-weight:600}

@@ -7,6 +7,24 @@
     "meta_title": "SkinDeep | Preference learning and efficient AI research",
     "meta_description": "Research by Steve Seguin on preference learning, direct model outputs, early stopping and long context. Explore browser demos, benchmark results and experiment notes."
   },
+  "ctxkeeper-results.html": {
+    "title": "ctxkeeper: results and test details",
+    "description": "The measurements, settings and evidence behind the ctxkeeper comparisons.",
+    "meta_title": "ctxkeeper results — context, speed and accuracy | SkinDeep",
+    "meta_description": "Original measurements and limits for ctxkeeper's 32K working view versus full history and sliding windows.",
+    "styles": ["results.css", "context.css", "ctxkeeper.css"],
+    "template": "content/ctxkeeper-results.html",
+    "body": ""
+  },
+  "ctxkeeper-connect.html": {
+    "title": "Connect your agent to ctxkeeper",
+    "description": "Setup instructions and compatibility details for ctxkeeper 1.2.0.",
+    "meta_title": "Connect Pi, OpenCode and other clients to ctxkeeper | SkinDeep",
+    "meta_description": "Copyable Pi and OpenCode configurations, SDK guidance, and Codex, Claude Code and Grok compatibility details.",
+    "styles": ["results.css", "context.css", "ctxkeeper.css"],
+    "template": "content/ctxkeeper-connect.html",
+    "body": ""
+  },
   "ctxkeeper.html": {
     "title": "ctxkeeper",
     "description": "Keep your agent working when its conversation outgrows the model's context window. Free, public-domain proxy; install with pip or Docker.",

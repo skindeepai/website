@@ -1,0 +1,33 @@
+<div class="ck ck-results-guide">
+<p><strong>ctxkeeper matched the full-history repair score with a 32K working view and finished sooner.</strong>
+The comparisons below explain the settings, limits and original evidence behind the <a href="@/ctxkeeper.html#results">overview graphic</a>.</p>
+<h2>Measured comparisons</h2>
+<p>Each comparison below comes from the same task and seed, graded by its own checker, on Qwen3.8-27B
+(FP8, vLLM, two Intel Arc Pro B70 cards). ctxkeeper used a 32K-token working view. These are individual
+runs with task-specific settings, not averages or a promise for every model.</p>
+<div class="table-scroll ctx-table ctx-summary-table" tabindex="0" role="region" aria-label="Measured results"><table><thead><tr><th scope="col">Task</th><th scope="col">With ctxkeeper</th><th scope="col">Without it</th></tr></thead><tbody>
+<tr><th scope="row">Fix 40 real bugs, under three house rules; then 7 questions about the earliest fixes. Same 32K limit on both sides.</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 20 min</td><td>Latest 32K only: 40/40 fixed, 35/40 kept every rule, 0/7 right; 45 min</td></tr>
+<tr><th scope="row">The same repair task through freeagent, a separate agent program that manages nothing itself</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 33 min</td><td>Whole history, about 215K peak prompt (262K capacity): same score; 55 min</td></tr>
+<tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
+<tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Both seeds: 421/423 and 417/423</strong>; 16/16 corrections applied on both, every forged line in the notes flagged, no forged value, method, rule or removal ever adopted. Two of 97 forgery-target answers slipped on silent arithmetic while the notes held the right value, so the strictest preregistered bar is not claimed.</td><td>Not run at this length</td></tr>
+</tbody></table></div>
+<p class="ck-small">Original records:
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/campaign14.log">32K repair comparison (XR6 / W32g)</a>;
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign15/campaign15.log">freeagent versus full history</a>;
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/runs/client-1m/X32p__sparse-memory-t1000k-s0/details.json">million-token ctxkeeper run</a> and
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign16/campaign16.log">200K-window baseline</a>.
+</p>
+<h2>What the context numbers mean</h2>
+<p><strong>32K is the proxy&rsquo;s working-view budget; about 215K was the full-history run&rsquo;s largest prompt.</strong>
+The baseline server had 262,144-token capacity. Its history included prior reasoning, which ctxkeeper strips from
+the managed view. This accounted for most of the difference in total prompt traffic; notes, archiving and recall also ran.
+See the <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/notes/2026-10-10-context-16k-baseline.md#campaign-15-results-2026-10-13-1800-to-1949-one-server-per-launch-two-launches-kernel-log-clean">campaign 15 analysis</a>.</p>
+<p>The million-token ctxkeeper run used additional task-specific thinking and notes-check settings.
+These comparisons used the same server allocation and <strong>did not measure a reduction in VRAM use</strong>.</p>
+<h2>Release validation</h2>
+<p class="ctx-table-note">Version 1.2.0 was installed from the public release using the <a href="@/ctxkeeper.html#try">published installation steps</a>, then ran the repair task
+(40/40, 7/7), the 300K demo through the Docker image (4/4), the SDK example (plain, tool call, streaming) and a 100K Gemma check (4/4)
+&mdash; <a href="@/context-distance.html#two-million">lab campaign 50</a>. One model, one machine; the notes are written by the model and can be wrong.</p>
+
+<p><a href="@/ctxkeeper.html">Back to ctxkeeper</a></p>
+</div>
