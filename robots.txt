@@ -1,4 +1,4 @@
-# robots.txt for PLGL by SkinDeep.ai
+# robots.txt for SkinDeep.ai
 # Allow all crawlers
 
 User-agent: *

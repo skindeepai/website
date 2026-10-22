@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep</title><meta name="description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session-swap checkpoint design.">
+<title>Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep</title><meta name="description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22.">
 <link rel="canonical" href="https://skindeep.ai/own-runtime.html">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/own-runtime.html">
-<meta property="og:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta property="og:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session-swap checkpoint design.">
+<meta property="og:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta property="og:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22.">
 <meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta name="twitter:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session-swap checkpoint design."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta name="twitter:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
 
 <link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="ctxkeeper.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
 </head><body class="lab-page ">
@@ -57,8 +57,8 @@ receipt-backed runs in the lab repository. Where a measurement has a limit, the 
 </tbody></table></div>
 <p class="ck-small"><strong>Pending, and labeled as such:</strong> the strict quality promotion for the full512 profiles is
 still pending, and oracle coverage beyond 128 tokens is an explicit, declared gap. Other honest limits today: greedy
-decoding only (no sampler), a sequential controller (no multi-user concurrency), and context measured at 4,096 tokens
-&mdash; other capacities are unmeasured, not claimed. The one-card binary rebuilt from source was qualified on
+decoding only (no sampler), a sequential controller (no multi-user concurrency), and the Flash-Next full512 profiles are
+measured at 4,096 tokens &mdash; other capacities are unmeasured, not claimed. The one-card binary rebuilt from source was qualified on
 2026-10-22 (row above); the two-card rebuild has not been run on the cards yet, so the two-card numbers still belong
 to the sealed historical binary.</p>
 </section>
@@ -82,7 +82,7 @@ compatibility checks and prefix-plus-delta rules &mdash; is what that work is bu
 
 <section id="ctxkeeper"><h2 id="answer-4">How it fits with ctxkeeper</h2>
 <p><a href="ctxkeeper.html">ctxkeeper</a> keeps a long conversation durable from the outside: notes, a searchable
-archive, and a parking policy, working with any model server. The own runtime is the other half: the checkpoint
+archive and a small working view, working with any model server. The own runtime is the other half: the checkpoint
 engine inside the server that can save and restore the actual computation. ctxkeeper decides <em>what</em> a session
 needs to remember; the engine provides the <em>how</em> for instant resume. The session-swap contract above is what the
 ctxkeeper integration is being built against.</p>

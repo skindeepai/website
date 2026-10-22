@@ -234,7 +234,7 @@
       "L06"
     ],
     "question": "Can a nearly full GPU use disk for a 200K-token context?",
-    "answer": "Saving text to files can let a long task use a short working context. It does not give a GPU unlimited active memory. This model needs about 12.2 GiB of attention cache for 200,000 tokens, plus other working state. Parking an inactive numerical cache and streaming it during generation are different designs; neither has a completed benchmark in this research snapshot.",
+    "answer": "Saving text to files can let a long task use a short working context. It does not give a GPU unlimited active memory. This model needs about 12.2 GiB of attention cache for 200,000 tokens, plus other working state. Parking an inactive numerical cache and streaming it during generation are different designs; neither has a completed benchmark for this model. For a different model and engine, the lab’s own runtime passed its first save/restore test on 2026-10-22; that result belongs to that engine and does not change these numbers.",
     "links": [
       [
         "context-memory.html",
@@ -243,6 +243,10 @@
       [
         "context-files.html",
         "The measured file-using task"
+      ],
+      [
+        "own-runtime.html#swap",
+        "Own runtime: first save/restore test"
       ]
     ]
   },
@@ -252,7 +256,7 @@
       "L03"
     ],
     "question": "Can self-editing let a task continue beyond its context budget?",
-    "answer": "The revised self-editing agent processed a 121K-token ledger within a 32K working budget. It got 24/24 in 15 minutes on one seed and 21/24 in 21 minutes on another. The three misses came from a bug in its update script, with every batch retained. The 480K-stream result is still pending. Keeping the data available does not by itself ensure correct computation.",
+    "answer": "The revised self-editing agent processed a 121K-token ledger within a 32K working budget. It got 24/24 in 15 minutes on one seed and 21/24 in 21 minutes on another. The three misses came from a bug in its update script, with every batch retained. On a 478K-token stream, 1.8 times the model’s window, it got 24/24 in 8.2 minutes; code read most batches, so this shows processing beyond the window, not the model understanding all of that text. Keeping the data available does not by itself ensure correct computation.",
     "links": [
       [
         "context-clm.html",

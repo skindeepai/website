@@ -4,6 +4,8 @@ import re
 from html import escape
 from pathlib import Path
 
+from build_search import MOVED_NOTICES
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -147,10 +149,17 @@ def update(pages):
     pages['getting-started.html']['title'] = 'Run the code locally'
     pages['getting-started.html']['description'] = 'Run the website and reproduce the research experiments.'
 
+    # ctxkeeper's measured results belong with the other longer-context results.
+    body = pages['results.html'].get('body', '')
+    start = body.find('<section id="context">')
+    if start >= 0 and '@/ctxkeeper-results.html' not in body:
+        end = body.index('</p></section>', start)
+        pages['results.html']['body'] = body[:end] + ' · ' + link('ctxkeeper-results.html', 'ctxkeeper test results') + body[end:]
+
     # The HTML sitemap and XML sitemap now share one authoritative page registry.
     groups = {'The lab and reference pages': []}
     for name in pages:
-        if name == 'sitemap.html':
+        if name == 'sitemap.html' or name in MOVED_NOTICES:
             continue
         topic = pages[name].get('journey', {}).get('topic', {}).get('href')
         title = pages[topic]['title'] if topic else 'The lab and reference pages'

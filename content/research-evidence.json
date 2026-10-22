@@ -270,8 +270,8 @@
       "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-self-editing-first-comparison.md",
       "https://github.com/steveseguin/b70-optimization-lab/blob/9b25b1b19d319c019344dae5884b3abf79827313/experiments/qwen38-27b-b70/notes/2026-10-05-context-research-results.md"
     ],
-    "observed": "On a 121K-token ledger, original self-editing got 19/24 in 64 minutes after rollback discarded five batches. Revised self-editing retained every batch: seed 0 got 24/24 in 15 minutes; seed 1 got 21/24 in 21 minutes after a generated script stopped applying deletes. The large-window and summary arms got 24/24 in 26 and 41 minutes.",
-    "remaining": "One task family; original arms use seed 0, revised agent seeds 0 and 1. The 480K stream and verified-fold fix have no completed result in this snapshot."
+    "observed": "On a 121K-token ledger, original self-editing got 19/24 in 64 minutes after rollback discarded five batches. Revised self-editing retained every batch: seed 0 got 24/24 in 15 minutes; seed 1 got 21/24 in 21 minutes after a generated script stopped applying deletes. The large-window and summary arms got 24/24 in 26 and 41 minutes. On a 478K-token stream the revised agent got 24/24 in 8.2 minutes, with code reading 74 of 76 batches. A later verified-fold revision got 24/24 on both 121K seeds, in 6.6 and 5.7 minutes.",
+    "remaining": "One task family; original arms use seed 0, revised agent seeds 0 and 1, and the 478K stream one run. On that stream code did the reading, so it does not show the model understanding more text than its window."
   },
   "L04": {
     "status": "Measured pilot",

@@ -3,6 +3,7 @@ from pathlib import Path
 from html import escape
 import json
 import re
+import struct
 import build_search
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +33,12 @@ def journey_markup(config, prefix):
         context += '<script id="journey-config" type="application/json">' + json.dumps(config, ensure_ascii=False).replace('<', '\\u003c') + '</script><script src="' + prefix + 'scripts/journey.js" defer></script>'
     return trail, context
 
+def png_size(path):
+    """Width and height from a PNG header, so share-card metadata matches the file."""
+    header = (ROOT / path).read_bytes()[:24]
+    assert header[:8] == b'\x89PNG\r\n\x1a\n', path
+    return struct.unpack('>II', header[16:24])
+
 def build():
     pages = json.loads((ROOT / 'content/pages.json').read_text(encoding='utf-8'))
     build_search.update(pages)
@@ -57,7 +64,9 @@ def build():
         canonical = 'https://skindeep.ai/' + ('' if name == 'index.html' else name)
         meta_title = p.get('meta_title', p['title'] + ' — SkinDeep Research')
         meta_description = p.get('meta_description', p['description'])
-        share_image = 'https://skindeep.ai/' + p.get('share_image', 'images/skindeep-research-card.png')
+        share_path = p.get('share_image', 'images/skindeep-research-card.png')
+        share_image = 'https://skindeep.ai/' + share_path
+        share_width, share_height = png_size(share_path)
         share_alt = p.get('share_alt', 'SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.')
         structured = ''
         if p.get('software'):
@@ -80,7 +89,7 @@ def build():
 <link rel="icon" type="image/png" sizes="16x16" href="{url('favicon.png')}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="{canonical}">
 <meta property="og:title" content="{escape(meta_title, quote=True)}"><meta property="og:description" content="{escape(meta_description, quote=True)}">
-<meta property="og:image" content="{share_image}"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{share_alt}">
+<meta property="og:image" content="{share_image}"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="{share_width}"><meta property="og:image:height" content="{share_height}"><meta property="og:image:alt" content="{share_alt}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(meta_title, quote=True)}"><meta name="twitter:description" content="{escape(meta_description, quote=True)}"><meta name="twitter:image" content="{share_image}"><meta name="twitter:image:alt" content="{share_alt}">
 {structured}
 {extra_css}<link rel="stylesheet" href="{url('lab.css')}"><script src="{url('scripts/lab.js')}" defer></script>{scripts}
@@ -96,7 +105,7 @@ def build():
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding='utf-8', newline='\n')
     build_search.build(pages, search_bodies)
-    urls = ['https://skindeep.ai/' + ('' if n == 'index.html' else n) for n in pages]
+    urls = ['https://skindeep.ai/' + ('' if n == 'index.html' else n) for n in pages if n not in build_search.MOVED_NOTICES]
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join('<url><loc>' + u + '</loc></url>\n' for u in urls) + '</urlset>\n', encoding='utf-8', newline='\n')
     print(f'Built {len(pages)} static pages.')
 

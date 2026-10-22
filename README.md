@@ -6,6 +6,8 @@ A research lab exploring preference learning, direct model decisions, direct coo
 
 - `index.html`: lab overview and sidebar navigation.
 - `search.html`: local question search with prepared answers and links to the evidence.
+- `ctxkeeper.html`: ctxkeeper, a proxy that keeps long AI conversations going with notes and a searchable archive; results and setup guides are linked from it.
+- `own-runtime.html`: our own inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards, with measured speed and an experimental session swap.
 - `research.html`: 35 registered questions, status and next steps.
 - `results.html`: measured pilots, failures and limitations.
 - `demo.html`: local preferences, seeded sessions and blind evaluation.
@@ -32,9 +34,12 @@ Current pages use short explanations and compact, familiar illustrations in `con
 
 ```sh
 python scripts/check_site.py
+python scripts/check_seo.py
 python -m pip install -r experiments/requirements.txt
 python experiments/run_synthetic.py
 ```
+
+`check_site.py` checks every local link and anchor; `check_seo.py` checks page titles, descriptions, canonical URLs, share images, the favicon and that `sitemap.xml` lists every current page except moved notices.
 
 Browser checks: `node scripts/test_browser.cjs`. Use Playwright/Chromium in a separate tooling environment, or set `PLAYWRIGHT_MODULE` to an existing playwright-core module. The script tests every current page at seven widths with a two-renderer cap. See [experiments/README.md](experiments/README.md) for model downloads and runtime limits.
 
@@ -136,7 +141,7 @@ Detailed protocols preserve failed attempts and runtime-only amendments. [Valida
 
 ## Live demos by topic and method
 
-[The demo directory](demo-directory.html) now links real browser implementations of decision methods, Qwen instruction reuse/batching, practical classifiers, search reranking, maze policies, screenshot text locations and preference learning. Forty-three topic/method pages link directly to the relevant demo. Smaller BERT examples, OCR alternatives and recorded GUI-Actor results are explicitly distinguished.
+[The demo directory](demo-directory.html) now links real browser implementations of decision methods, Qwen instruction reuse/batching, practical classifiers, search reranking, maze policies, screenshot text locations and preference learning. Thirty-eight topic, method and results pages link directly to the relevant demo, and the 38 use-case pages link to a related one. Smaller BERT examples, OCR alternatives and recorded GUI-Actor results are explicitly distinguished.
 
 [Implementation and runtime checks](docs/method-demos.md) include actual model calls, export parity, failures found during testing, mobile/desktop checks and dataset limitations. No model-generated accuracy is invented for a user's unlabelled input.
 

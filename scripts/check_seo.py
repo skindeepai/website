@@ -7,6 +7,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 
+from build_search import MOVED_NOTICES
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -63,11 +65,14 @@ for name, page in pages.items():
     assert head.meta['twitter:card'] == 'summary_large_image', name
     image_url = head.meta['og:image']
     assert image_url == head.meta['twitter:image'], name
-    assert image_url == 'https://skindeep.ai/images/skindeep-research-card.png', name
+    share_path = page.get('share_image', 'images/skindeep-research-card.png')
+    assert image_url == 'https://skindeep.ai/' + share_path, name
     image = (ROOT / urlparse(image_url).path.lstrip('/')).read_bytes()
     assert image[:8] == b'\x89PNG\r\n\x1a\n', name
-    assert struct.unpack('>II', image[16:24]) == (1200, 630), name
-    assert head.meta['og:image:width'] == '1200' and head.meta['og:image:height'] == '630', name
+    width, height = struct.unpack('>II', image[16:24])
+    if 'share_image' not in page:
+        assert (width, height) == (1200, 630), name
+    assert head.meta['og:image:width'] == str(width) and head.meta['og:image:height'] == str(height), name
     assert head.meta['og:image:alt'] == head.meta['twitter:image:alt'] and head.meta['og:image:alt'], name
     icon = (ROOT / name).parent / head.links['icon']['href']
     assert icon.resolve() == (ROOT / 'favicon.png').resolve(), name
@@ -79,6 +84,6 @@ for name, page in pages.items():
 
 assert (ROOT / 'favicon.png').read_bytes() == subprocess.check_output(['git', 'show', '705fa7e:favicon.ico'], cwd=ROOT)
 urls = {node.text for node in ET.parse(ROOT / 'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
-assert urls == canonicals
+assert urls == canonicals - {'https://skindeep.ai/' + n for n in MOVED_NOTICES}
 assert 'Sitemap: https://skindeep.ai/sitemap.xml' in (ROOT / 'robots.txt').read_text()
 print(f'Passed metadata, sitemap, share-card and original-favicon checks for {len(pages)} pages.')

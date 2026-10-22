@@ -17,7 +17,7 @@ def update(pages):
         rows += '<tr><th scope="row">Learned combination</th><td>' + str(learned['metrics']['correct_first']) + ' / 100</td><td>Not timed</td></tr>'
         learned_note = '<p>A small learned combination reached ' + str(learned['metrics']['correct_first']) + '/100 after training on 600 separate claims and selecting its settings on another 209. This is an exploratory repeat of the same test, not fresh confirmation. It improved first results but found slightly fewer relevant papers in the top five than the fixed combination. <a href="@/docs/search-ranking.md#learned-combination-follow-up">Method and tradeoffs</a>.</p>'
     pages['search-demo.html'] = {
-        'title': 'Search real research',
+        'title': 'Search scientific papers',
         'description': 'Find papers with keywords or a small model that compares meaning.',
         'status': 'Live local demo',
         'scripts': ['scripts/search-demo.js'],

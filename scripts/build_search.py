@@ -10,6 +10,8 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'search'
 MODEL = 'all-MiniLM-L6-v2'
+# Pages kept only to send old links to a new page; they stay out of search and both sitemaps.
+MOVED_NOTICES = {'context-use.html'}
 
 
 def update(pages):
@@ -100,7 +102,7 @@ def build(pages, bodies):
     for row in records:
         row['curated'] = True
     seen = {r['answer'].casefold() for r in records}
-    excluded = {'search.html', 'sitemap.html', 'history.html', 'results-record.html', 'whitepaper.html', 'vc-analysis.html', 'investment-response.html', 'roadmap.html', 'future-explorations.html'}
+    excluded = {'search.html', 'sitemap.html', 'history.html', 'results-record.html', 'whitepaper.html', 'vc-analysis.html', 'investment-response.html', 'roadmap.html', 'future-explorations.html'} | MOVED_NOTICES
     for name, p in pages.items():
         if '/' in name or name in excluded:
             continue
