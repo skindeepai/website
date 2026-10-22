@@ -8,6 +8,7 @@ A run that cannot prove itself does not get published.</p>
 <ul class="ck-wins">
 <li><strong>Fast.</strong> 58.6 tokens a second on two cards, 31.8 on one, on the model we run most.</li>
 <li><strong>Exact.</strong> Every published output is checked against an oracle or an independent repeat run, with receipts kept.</li>
+<li><strong>Resumable.</strong> A session saved mid-answer was restored in a fresh process and finished the answer byte for byte; restore took 0.46 s against 36.75 s of re-reading.</li>
 <li><strong>Open about gaps.</strong> Caps and pending checks are stated on the page, not hidden in footnotes.</li>
 </ul>
 <div class="ck-actions">
@@ -33,14 +34,17 @@ receipt-backed runs in the lab repository. Where a measurement has a limit, the 
 <table><thead><tr><th scope="col">Setup</th><th scope="col">Decode</th><th scope="col">Prompt reading</th><th scope="col">Exactness</th></tr></thead><tbody>
 <tr><th scope="row">Flash-Next UD-IQ3_XXS, two B70 cards</th><td>58.557&ndash;58.632 tok/s (fresh suites); requalified 58.724 / 58.676 on 2026-10-20</td><td>75.884&ndash;75.973 tok/s</td><td>Oracle checks the first 128 tokens; full 6,495-token outputs repeat exactly across loads</td></tr>
 <tr><th scope="row">Flash-Next UD-IQ3_XXS, one B70 card</th><td>31.510&ndash;31.782 tok/s; requalified 31.766 / 31.774</td><td>32.595&ndash;32.752 tok/s</td><td>Same discipline</td></tr>
+<tr><th scope="row">One B70 card, binary rebuilt from source (2026-10-22)</th><td>31.83 / 31.81 tok/s, two fresh loads</td><td>not re-measured on this row</td><td>All 12 outputs identical across loads and identical to the sealed line: the rebuild reproduces the published one-card result</td></tr>
+<tr><th scope="row">One B70 card, save at 256 tokens then restore (2026-10-22)</th><td>restore 0.46 s + 6.78 s to finish 128 tokens, vs 36.75 s to re-read the prompt from cold</td><td>&mdash;</td><td>Merged 384-token output equals the uninterrupted run; two independent restores identical; first 128 tokens match the oracle</td></tr>
 <tr><th scope="row">Record runs (approved on LocalMaxxing)</th><td>58.798109 tok/s (two cards) &middot; 34.573038 (one card)</td><td>&mdash;</td><td><strong>Capped scope:</strong> 128-token suites, stated on the package pages</td></tr>
 <tr><th scope="row">Qwen3.8 27B, GGUF-comparable lane</th><td>37.59 / 37.77 tok/s at 4K context &middot; 37.71 / 37.70 at 32K (llama.cpp reference on the same suite: 28.49)</td><td>&mdash;</td><td>12 of 12 requests bit-exact at both capacities; 128-token suite</td></tr>
 </tbody></table></div>
 <p class="ck-small"><strong>Pending, and labeled as such:</strong> the strict quality promotion for the full512 profiles is
 still pending, and oracle coverage beyond 128 tokens is an explicit, declared gap. Other honest limits today: greedy
 decoding only (no sampler), a sequential controller (no multi-user concurrency), and context measured at 4,096 tokens
-&mdash; other capacities are unmeasured, not claimed. Published device numbers belong to the sealed historical binary;
-the rebuilt portable binary still needs its own sealed qualification.</p>
+&mdash; other capacities are unmeasured, not claimed. The one-card binary rebuilt from source was qualified on
+2026-10-22 (row above); the two-card rebuild has not been run on the cards yet, so the two-card numbers still belong
+to the sealed historical binary.</p>
 </section>
 
 <section id="swap"><h2>Session swap: park the computation, not just the text</h2>
@@ -48,10 +52,15 @@ the rebuilt portable binary still needs its own sealed qualification.</p>
 engine, it can do something frontends cannot: <strong>save a session&rsquo;s computed state to disk, restore it later, and
 continue without re-reading the prompt</strong>. The ideas behind this are described on our
 <a href="context-cache-parking.html">cache parking</a> and <a href="context-cache-offload.html">cache offload</a> pages.</p>
-<p><strong>Checkpoint restore is EXPERIMENTAL.</strong> There is no completed save/restore benchmark yet &mdash; the same
-status our parking page states. What exists is a written design contract &mdash; save, inspect, restore and delete, with
-compatibility checks and prefix-plus-delta rules &mdash; and that contract is the path to the first completed benchmark:
-a restart-and-continue test that must reproduce the output exactly before any number is published.</p>
+<p><strong>The first restart-and-continue test passed on 2026-10-22.</strong> On one card, a request ran to token 256 and
+was saved to disk (1.10 s, 68.8 MB). Two separate fresh processes each restored it and wrote 128 more tokens. Both
+merged outputs equal an uninterrupted run of the same prompt, byte for byte, and the two restores are identical to
+each other. Restoring took 0.46 s; re-reading the same prompt from cold took 36.75 s.</p>
+<p><strong>Checkpoint restore is still labeled EXPERIMENTAL.</strong> Today the engine can only resume the
+<em>same answer</em> it was interrupted in, from its original prompt. Adding the next question to a saved conversation,
+and saving again after a restore, are not implemented yet; they are the next engine work, and the label stays until
+they pass the same byte-identity test. The written design contract &mdash; save, inspect, restore and delete, with
+compatibility checks and prefix-plus-delta rules &mdash; is what that work is built against.</p>
 <p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Read the session-swap design contract &rarr;</a></p>
 </section>
 
@@ -69,7 +78,8 @@ ctxkeeper integration is being built against.</p>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/docs/own-runtime.md">docs/own-runtime.md</a><span>The source of truth for this page: measured state, open items and honest non-goals.</span></li>
 <li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp2-b70.html">Two-card recipe on neural.download</a><span>Reproducible package for the two-B70 setup, with its caps and missing checks listed.</span></li>
 <li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp1-b70.html">One-card recipe on neural.download</a><span>The same, for a single B70 card.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Session-swap design contract</a><span>The experimental checkpoint contract, labeled experimental until its exactness test passes.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Session-swap design contract</a><span>The checkpoint contract (v1.2): its same-generation exactness gate passed on 2026-10-22; labeled experimental until new-turn resume passes too.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/notes/2026-10-21-own-runtime-window-pin-guard-refusal.md">2026-10-22 device window record</a><span>The row-by-row results behind the rebuild and save/restore entries above, with evidence paths.</span></li>
 </ul>
 <p class="ck-small">These are research results from one lab on one model family, not a claim of being the only fast
 option: vLLM and llama.cpp remain the general-purpose engines we compare against and use elsewhere.</p>

@@ -22,6 +22,7 @@
 <p>Saving and restoring add waiting time. Once the required state is back in active memory, generation need not keep reading disk. It still pays the ordinary cost of the retained context.</p>
 <h2 id="answer-3">Evidence so far</h2>
 <p><strong>There is no completed save/restore benchmark in this research.</strong> For this model, the 200K-token attention cache alone is calculated at about 12.2 GiB across both GPUs. That is much larger than a text file.</p>
+<p>For a different model and engine, the lab's <a href="own-runtime.html#swap">own runtime</a> completed its first save/restore test on 2026-10-22: a one-card Qwen3.8 Flash-Next session saved at 256 tokens was restored in a fresh process and finished its answer byte for byte, with a 0.46 s restore against 36.75 s of re-reading. That result belongs to that engine; it does not change the numbers on this page.</p>
 <h2 id="answer-4">Where parking could help</h2>
 <p>It could let many inactive sessions share a smaller pool of active memory. Whether restoring is faster than rereading depends on storage speed, state size and the engine.</p>
 <p>The active session must still fit its execution setup. Parking cannot make a nearly full GPU hold a 200K-token active context with only a few KB left. That requires a different mechanism: <a href="context-cache-offload.html">active offloading</a>.</p>
