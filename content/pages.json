@@ -61,7 +61,7 @@
     "title": "Our own inference runtime",
     "description": "A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards, built for speed and provably identical output.",
     "meta_title": "Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep",
-    "meta_description": "A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22.",
+    "meta_description": "A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and session save/restore qualified on one card on 2026-10-22: resume, add a new question, and re-save, each matching a fresh run exactly.",
     "styles": [
       "results.css",
       "context.css",

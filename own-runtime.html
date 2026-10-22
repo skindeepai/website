@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep</title><meta name="description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22.">
+<title>Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep</title><meta name="description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and session save/restore qualified on one card on 2026-10-22: resume, add a new question, and re-save, each matching a fresh run exactly.">
 <link rel="canonical" href="https://skindeep.ai/own-runtime.html">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="SkinDeep"><meta property="og:url" content="https://skindeep.ai/own-runtime.html">
-<meta property="og:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta property="og:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22.">
+<meta property="og:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta property="og:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and session save/restore qualified on one card on 2026-10-22: resume, add a new question, and re-save, each matching a fresh run exactly.">
 <meta property="og:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta name="twitter:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and an experimental session swap that passed its first restart-and-continue test on 2026-10-22."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Own Xe runtime — fast and provably exact inference on Intel Arc Pro B70 | SkinDeep"><meta name="twitter:description" content="A custom inference engine for Qwen3.8 hybrid models on Intel Arc Pro B70 cards. Measured speed, byte-identical output receipts, and session save/restore qualified on one card on 2026-10-22: resume, add a new question, and re-save, each matching a fresh run exactly."><meta name="twitter:image" content="https://skindeep.ai/images/skindeep-research-card.png"><meta name="twitter:image:alt" content="SkinDeep research by Steve Seguin: learning preferences, returning decisions, finding click locations and stopping early.">
 
 <link rel="stylesheet" href="results.css"><link rel="stylesheet" href="context.css"><link rel="stylesheet" href="ctxkeeper.css"><link rel="stylesheet" href="lab.css"><script src="scripts/lab.js" defer></script>
 </head><body class="lab-page ">
@@ -77,8 +77,9 @@ each other. Restoring took 0.46 s; re-reading the same prompt from cold took 36.
 conversation, add the next question, and answer; on one card the answer equaled a fresh run of the whole conversation,
 byte for byte. It can also save again after a restore, and resuming from that second save matched as well. Refusals
 happen before anything touches the card: a tampered side file, a mismatched prefix or tokenizer, a wrong delete target.</p>
-<p><strong>Checkpoint restore is still labeled EXPERIMENTAL.</strong> The saved files carry that word until the next
-engine build changes it, and ctxkeeper does not call these operations yet. The written design contract &mdash; save,
+<p><strong>Saved sessions are now labeled &ldquo;qualified, one card&rdquo;.</strong> A third build the same day writes that
+label, with a record of which test qualified which operation, and still reads the earlier experimental files. Not yet:
+two-card sessions, and ctxkeeper does not call these operations. The written design contract &mdash; save,
 inspect, restore and delete, with compatibility checks and prefix-plus-delta rules &mdash; is what the integration is
 built against.</p>
 <p><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Read the session-swap design contract &rarr;</a></p>
@@ -98,7 +99,7 @@ ctxkeeper integration is being built against.</p>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/docs/own-runtime.md">docs/own-runtime.md</a><span>The source of truth for this page: measured state, open items and honest non-goals.</span></li>
 <li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp2-b70.html">Two-card recipe on neural.download</a><span>Reproducible package for the two-B70 setup, with its caps and missing checks listed.</span></li>
 <li><a href="https://neural.download/models/qwen38-flash-next-iq3xxs-ownrt-tp1-b70.html">One-card recipe on neural.download</a><span>The same, for a single B70 card.</span></li>
-<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Session-swap design contract</a><span>The checkpoint contract (v1.2): its same-generation exactness gate passed on 2026-10-22; labeled experimental until new-turn resume passes too.</span></li>
+<li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/own-xpu-runtime/SESSION-SWAP-DESIGN.md">Session-swap design contract</a><span>The checkpoint contract (v1.2): same-generation resume, new-turn append and restore-then-save all passed on one card on 2026-10-22.</span></li>
 <li><a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/notes/2026-10-21-own-runtime-window-pin-guard-refusal.md">2026-10-22 device window record</a><span>The row-by-row results behind the rebuild and save/restore entries above, with evidence paths.</span></li>
 </ul>
 <p class="ck-small">These are research results from one lab on one model family, not a claim of being the only fast
