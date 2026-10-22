@@ -9,13 +9,16 @@ runs with task-specific settings, not averages or a promise for every model.</p>
 <tr><th scope="row">Fix 40 real bugs, under three house rules; then 7 questions about the earliest fixes. Same 32K limit on both sides.</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 20 min</td><td>Latest 32K only: 40/40 fixed, 35/40 kept every rule, 0/7 right; 45 min</td></tr>
 <tr><th scope="row">The same repair task through freeagent, a separate agent program that manages nothing itself</th><td><strong>40/40 fixed, 40/40 kept every rule, 7/7 right</strong>; 33 min</td><td>Whole history, about 215K peak prompt (262K capacity): same score; 55 min</td></tr>
 <tr><th scope="row">228 questions about things said up to a million tokens earlier</th><td><strong>226/228</strong>; 50 min</td><td>200K window: 166/228, all 29 rule questions wrong; 228 min</td></tr>
-<tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Both seeds: 421/423 and 417/423</strong>; 16/16 corrections applied on both, every forged line in the notes flagged, no forged value, method, rule or removal ever adopted. Two of 97 forgery-target answers slipped on silent arithmetic while the notes held the right value, so the strictest preregistered bar is not claimed.</td><td>Not run at this length</td></tr>
+<tr><th scope="row">Two million tokens, hostile: forged notices and quiet corrections of old entries planted in the stream</th><td><strong>Both seeds: 423/423 and 420/423</strong> on the 1.3.0 release candidate (lab campaign 55, hash-bound audits); 16/16 corrections applied on both, every forged notice kept out, no wrong note line standing on seed 0 and two one-version slips on seed 2.</td><td>Not run at this length</td></tr>
 </tbody></table></div>
+<p class="ck-small">On the same stream the 1.2.0 download measured 421/423 and 417/423 (campaign 49). 1.3.0 is a prerelease that has passed its release gate; the download stays 1.2.0 until it is promoted. Seed 2&rsquo;s three misses in campaign 55 were two old-value questions the client left unanswered and one who-question, none from the notes.</p>
 <p class="ck-small">Original records:
 <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign14/campaign14.log">32K repair comparison (XR6 / W32g)</a>;
 <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign15/campaign15.log">freeagent versus full history</a>;
 <a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-12-context-campaign11-12/runs/client-1m/X32p__sparse-memory-t1000k-s0/details.json">million-token ctxkeeper run</a> and
-<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign16/campaign16.log">200K-window baseline</a>.
+<a href="https://github.com/steveseguin/b70-optimization-lab/blob/main/experiments/qwen38-27b-b70/data/2026-10-13-context-campaign16/campaign16.log">200K-window baseline</a>;
+<a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/data/2026-10-22-context-campaign55">two-million-token hostile audits and receipts, 1.3.0 (campaign 55)</a> and
+<a href="https://github.com/steveseguin/b70-optimization-lab/tree/main/experiments/qwen38-27b-b70/data/2026-10-22-ctxkeeper-1.3.0-release-gate">the 1.3.0 release-gate receipts</a>.
 </p>
 <h2>What the context numbers mean</h2>
 <p><strong>32K is the proxy&rsquo;s working-view budget; about 215K was the full-history run&rsquo;s largest prompt.</strong>
